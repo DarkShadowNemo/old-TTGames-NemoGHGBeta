@@ -1,7 +1,7 @@
 bl_info = {
         'name'			: 'Finding Nemo GHG Character Non Chunk Importer',
 	'author'		: 'DarkShadow Nemo',
-	'version'		: (0, 1, 2),
+	'version'		: (0, 2, 0),
 	'blender'		: (3, 0, 0),
 	'location'		: 'File > Import',
 	'description'           : 'Import GHG one mesh chunk makes it easier',
@@ -26,41 +26,13 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
                 description = 'File path used for finding the GHG file without chunks.',
                 type	    = bpy.types.OperatorFileListElement
         )
-        OFFSET1: BoolProperty(
-                name    = "0x030100010380",
-                description = "Imports OFFSET 1 called 0x03010001"
-        )
-        OFFSET2: BoolProperty(
-                name    = "0x030200010380",
-                description = "Imports OFFSET 2 called 0x03020001"
-        )
-        OFFSET3: BoolProperty(
-                name    = "0x040200010380",
-                description = "Imports OFFSET 3 called 0x04020001"
-        )
-        writeaccesstoghg: BoolProperty(
-                name    = "write to 0x03020001",
-                description = "writes to ghg and append it at the last offset to make it possible"
-        )
-        OFFSETWHOLEEntireGHG1: BoolProperty(
-                name    = "0x03010001",
-                description = "you must append binary and replace with this offset to make it work"
-        )
-        OFFSETWHOLEEntireGHG2: BoolProperty(
-                name    = "0x03020001",
-                description = "you must append binary and replace with this offset to make it work"
-        )
-        OFFSETWHOLEEntireGHG3: BoolProperty(
-                name    = "0x04020001",
-                description = "you must append binary and replace with this offset to make it work"
-        )
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, OFFSET1 = self.OFFSET1, OFFSET2 = self.OFFSET2, OFFSET3 = self.OFFSET3, writeaccesstoghg = self.writeaccesstoghg, OFFSETWHOLEEntireGHG1 = self.OFFSETWHOLEEntireGHG1, OFFSETWHOLEEntireGHG2 = self.OFFSETWHOLEEntireGHG2, OFFSETWHOLEEntireGHG3 = self.OFFSETWHOLEEntireGHG3)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path)
                 return {'FINISHED'}
 	
 def menu_func_import(self, context):
