@@ -1,7 +1,7 @@
 bl_info = {
         'name'			: 'Finding Nemo GHG Character Non Chunk Importer',
 	'author'		: 'DarkShadow Nemo',
-	'version'		: (0, 2, 1),
+	'version'		: (0, 2, 6),
 	'blender'		: (3, 0, 0),
 	'location'		: 'File > Import',
 	'description'           : 'Import GHG one mesh chunk makes it easier',
@@ -34,6 +34,8 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
                 importlib.reload(ghg_non_chunk_importer)
                 for path in paths: ghg_non_chunk_importer.NonParseGHG(path)
                 return {'FINISHED'}
+
+        
 	
 def menu_func_import(self, context):
         self.layout.operator(ImportNonChunkGHG.bl_idname, text='GHG Non Chunk Importer (.ghg)')
