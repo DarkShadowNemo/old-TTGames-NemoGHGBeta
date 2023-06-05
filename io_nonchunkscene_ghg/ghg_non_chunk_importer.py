@@ -4,22 +4,6 @@ import bpy
 import mathutils
 import math
 
-def align_roll( vec, vecz, tarz ):
-
-    sine_roll = vec.normalized().dot(vecz.normalized().cross(tarz.normalized()))
-
-    if 1 < abs(sine_roll):
-        sine_roll /= abs(sine_roll)
-            
-    if 0 < vecz.dot( tarz ):
-        return math.asin( sine_roll )
-        
-    elif 0 < sine_roll:
-        return -math.asin( sine_roll ) + math.pi
-        
-    else:
-        return -math.asin( sine_roll ) - math.pi
-
 def GHG_read(f, vertices=[], faces=[], normals=[], fa=-1, fb=0, fc=1, bones=[]):
     coll = bpy.context.collection
     skel = bpy.data.armatures.new('GHG Skeleton')
@@ -38,6 +22,7 @@ def GHG_read(f, vertices=[], faces=[], normals=[], fa=-1, fb=0, fc=1, bones=[]):
         boney = unpack("<f", f.read(4))[0]
         bonez = unpack("<f", f.read(4))[0]
         f.seek(4,1)
+        
         bones.append([bonex,boney,bonez])
         bone = skel.edit_bones.new("ghg bone")
         #todo clean bones and align roll
@@ -51,7 +36,6 @@ def GHG_read(f, vertices=[], faces=[], normals=[], fa=-1, fb=0, fc=1, bones=[]):
             bone.head[1],
             bone.head[2] + 0.03,
         )
-        matrix_ = mathutils.Matrix().transposed()
     bpy.ops.object.mode_set(mode = 'OBJECT')
     f.seek(0)
     
@@ -75,6 +59,58 @@ def GHG_read(f, vertices=[], faces=[], normals=[], fa=-1, fb=0, fc=1, bones=[]):
                 fb +=1
                 fc +=1
                 faces.append([fa,fb,fc])
+            #Finding Nemo
+            if vertices == 124:
+                #key
+                #if this requires the same it requires or and and condition
+                if faces.remove([46,47,48]):
+                    pass
+                elif faces.remove([72,73,74]):
+                    pass
+                elif faces.remove([73,74,75]):
+                    pass
+                elif faces.remove([42,43,44]):
+                    pass
+                elif faces.remove([43,44,45]):
+                    pass
+                elif faces.remove([47,48,49]):
+                    pass
+                elif faces.remove([107,108,109]):
+                    pass
+                elif faces.remove([106,107,108]):
+                    pass
+                elif faces.remove([114,115,116]):
+                    pass
+                elif faces.remove([110,111,112]):
+                    pass
+                elif faces.remove([111,112,113]):
+                    pass
+                elif faces.remove([115,116,117]):
+                    pass
+                elif faces.remove([25,26,27]):
+                    pass
+                elif faces.remove([24,25,26]):
+                    pass
+                elif faces.remove([99,100,101]):
+                    pass
+                elif faces.remove([98,99,100]):
+                    pass
+                elif faces.remove([67,68,69]):
+                    pass
+                elif faces.remove([66,67,68]):
+                    pass
+                elif faces.remove([92,93,94]):
+                    pass
+                elif faces.remove([93,94,95]):
+                    pass
+                elif faces.remove([19,20,21]):
+                    pass
+                elif faces.remove([18,19,20]):
+                    pass
+                elif faces.append([120,121,122]):
+                    pass
+                elif faces.append([121,122,123]):
+                    pass
         elif Chunk == b"\x03\x02\x00\x01":
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0]
