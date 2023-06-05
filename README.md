@@ -9,9 +9,3 @@ Total triangles in strips in scene: %d
 Total strips in scene: %d
 
 Total individual triangles in scene: %d
-
-todo list:
-
-work on individual triangles
-
-work on aligning correct roll bones to do with ghg
