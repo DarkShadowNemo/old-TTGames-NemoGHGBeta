@@ -1,7 +1,7 @@
 bl_info = {
         'name'			: 'Finding Nemo GHG Character Non Chunk Importer',
 	'author'		: 'DarkShadow Nemo',
-	'version'		: (0, 2, 6),
+	'version'		: (0, 3, 1),
 	'blender'		: (3, 0, 0),
 	'location'		: 'File > Import',
 	'description'           : 'Import GHG mesh chunk',
@@ -14,7 +14,6 @@ from bpy.props import CollectionProperty, StringProperty, BoolProperty, EnumProp
 from bpy_extras.io_utils import ImportHelper, ExportHelper
 
 from.import ghg_non_chunk_importer, ghg_non_chunk_exporter
-import sys
 
 class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         bl_idname  = 'import_non_chunk.ghg'
@@ -30,11 +29,20 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
         GHG_Meshes : BoolProperty(name="GHG Mesh")
+
+        seek__ : IntProperty(name="Control GHG Seek")
+
+        seek_uv : IntProperty(name="Control GHG UV Seek")
+
+        GHG_MESH_SEP : IntProperty(name="GHG SEPERATE MESH", description="you need to delete all the offset and keep the one offset data using a hex editor")
+
+        GHG_MESH_SEP_UV : IntProperty(name="GHG SEPERATE UV", description="you need to delete all the offset and keep the one offset data using a hex editor todo with uv below 0x03020001")
+        
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes, GHG_MESH_SEP = self.GHG_MESH_SEP, seek__ = self.seek__, GHG_MESH_SEP_UV = self.GHG_MESH_SEP_UV, seek_uv = self.seek_uv)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
