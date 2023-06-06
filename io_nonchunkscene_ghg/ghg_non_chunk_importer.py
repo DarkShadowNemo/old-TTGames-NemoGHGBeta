@@ -4,6 +4,60 @@ import bpy
 import mathutils
 import math
 
+
+#WHAT THE UVS ARE GOING STRANGE PATTERNS WITH BYTES???
+#need help on this
+def GHG_seek_uvs_tri(f, seek_=0, uvs=[]):
+    obdata = bpy.context.object.data
+    f.seek(seek_,1)
+    uvcount = unpack("B", f.read(1))[0]
+    f.seek(1,1)
+    for i in range(int(uvcount*2)):
+        uvx = unpack("B", f.read(1))[0] / 255.0
+        uvy = unpack("B", f.read(1))[0] / 255.0
+        uvs.append([uvx,uvy])
+    uv_tex = obdata.uv_layers.new()
+    uv_layer = obdata.uv_layers[0].data
+    vert_loops = {}
+    for l in obdata.loops:
+        vert_loops.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs):
+        for li in vert_loops[i]:
+            uv_layer[li].uv = coord
+
+def GHG_seek_indivitual_triangles(f, seek_= 0, normals=[], vertices=[], faces=[], fa=-1, fb=0, fc=1):
+    f.seek(seek_,1)
+    vertexCount = unpack("B", f.read(1))[0]
+    f.seek(1,1)
+    for i in range(vertexCount//2):
+        vx = unpack("<h", f.read(2))[0] / 4096.0
+        vy = unpack("<h", f.read(2))[0] / 4096.0
+        vz = unpack("<h", f.read(2))[0] / 4096.0
+        nz = unpack("<h", f.read(2))[0] / 4096.0
+        f.seek(8,1)
+        vertices.append([vx,vy,vz])
+        normals.append([0,0,1])
+    for i in range(vertexCount//2-2):
+        #faces = ([i+i%2],[i-i%2+1],[i+2])
+        fa += 1
+        fb += 1
+        fc += 1
+        faces.append([fa,fb,fc])
+            
+    mesh = bpy.data.meshes.new("dragonjan")
+    mesh.from_pydata(vertices, [], faces)
+    object = bpy.data.objects.new("dragonjan", mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials.new(name="dragonjan_materials")
+            
+    for fac in mesh.polygons:
+        fac.use_smooth = True
+
+    vindex = 0
+    for vertex in mesh.vertices:
+        vertex.normal = normals[vindex]
+        vindex += 1
+
 def GHG_read(f, vertices=[], faces=[], normals=[], fa=-1, fb=0, fc=1, bones=[]):
     coll = bpy.context.collection
     skel = bpy.data.armatures.new('GHG Skeleton')
@@ -59,74 +113,6 @@ def GHG_read(f, vertices=[], faces=[], normals=[], fa=-1, fb=0, fc=1, bones=[]):
                 fb +=1
                 fc +=1
                 faces.append([fa,fb,fc])
-            #Finding Nemo
-            if vertices == 124:
-                #key
-                #if this requires the same it requires or and and condition
-                if faces.remove([46,47,48]):
-                    pass
-                elif faces.remove([72,73,74]):
-                    pass
-                elif faces.remove([73,74,75]):
-                    pass
-                elif faces.remove([42,43,44]):
-                    pass
-                elif faces.remove([43,44,45]):
-                    pass
-                elif faces.remove([47,48,49]):
-                    pass
-                elif faces.remove([107,108,109]):
-                    pass
-                elif faces.remove([106,107,108]):
-                    pass
-                elif faces.remove([114,115,116]):
-                    pass
-                elif faces.remove([110,111,112]):
-                    pass
-                elif faces.remove([111,112,113]):
-                    pass
-                elif faces.remove([115,116,117]):
-                    pass
-                elif faces.remove([25,26,27]):
-                    pass
-                elif faces.remove([24,25,26]):
-                    pass
-                elif faces.remove([99,100,101]):
-                    pass
-                elif faces.remove([98,99,100]):
-                    pass
-                elif faces.remove([67,68,69]):
-                    pass
-                elif faces.remove([66,67,68]):
-                    pass
-                elif faces.remove([92,93,94]):
-                    pass
-                elif faces.remove([93,94,95]):
-                    pass
-                elif faces.remove([19,20,21]):
-                    pass
-                elif faces.remove([18,19,20]):
-                    pass
-                elif faces.append([120,121,122]):
-                    pass
-                elif faces.append([121,122,123]):
-                    pass
-        elif Chunk == b"\x03\x02\x00\x01":
-            f.seek(2,1)
-            vertexCount = unpack("B", f.read(1))[0]
-            f.seek(1,1)
-            for i in range(vertexCount//2):
-                vx = unpack("<h", f.read(2))[0] / 4096.0
-                vy = unpack("<h", f.read(2))[0] / 4096.0
-                vz = unpack("<h", f.read(2))[0] / 4096.0
-                nz = unpack("<h", f.read(2))[0] / 4096.0
-                f.seek(8,1)
-                vertices.append([vx,vy,vz])
-            for i in range(vertexCount//2-2):
-                fa +=1
-                fb +=1
-                fc +=1
-                faces.append([fa,fb,fc])
         elif Chunk == b"\x04\x02\x00\x01":
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0] // 2
@@ -155,12 +141,14 @@ def GHG_read(f, vertices=[], faces=[], normals=[], fa=-1, fb=0, fc=1, bones=[]):
 
 
 
-def NonParseGHG(filepath, GHG_Meshes=False, GHG_MESH_SEP=1):
+def NonParseGHG(filepath, GHG_Meshes=False, GHG_MESH_SEP=1, seek__=0, seek_uv=0, GHG_MESH_SEP_UV=1):
     with open(filepath, "rb") as f:
         if GHG_Meshes:
             GHG_read(f, vertices=[], faces=[], normals=[], fa=-1, fb=0, fc=1, bones=[])
         if GHG_MESH_SEP == 2:
-            GHG_seperate_readInt_two(f, vertices=[], faces=[], normals=[])
+            GHG_seek_indivitual_triangles(f, seek_= seek__, normals=[], vertices=[], faces=[], fa=-1, fb=0, fc=1)
+        if GHG_MESH_SEP_UV == 2:
+            GHG_seek_uvs_tri(f, seek_=seek_uv, uvs=[])
                 
         
                 
