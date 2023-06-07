@@ -4,7 +4,7 @@ import bpy
 import mathutils
 import math
 
-def GHG_read(f, vertices=[], faces=[], normals=[], fa=-2, fb=-1, fc=0, bones=[]):
+def GHG_read(f, vertices=[], edges=[], normals=[], ea=-1, eb=0, bones=[]):
     coll = bpy.context.collection
     skel = bpy.data.armatures.new('GHG Skeleton')
     arma = bpy.data.objects.new('GHG Armature', skel)
@@ -65,11 +65,10 @@ def GHG_read(f, vertices=[], faces=[], normals=[], fa=-2, fb=-1, fc=0, bones=[])
                 nz = unpack("<h", f.read(2))[0] / 4096.0
                 f.seek(8,1)
                 vertices.append([vx,vy,vz])
-            for i in range(vertexCount//5-2):
-                fa +=1 * 3
-                fb +=1 * 3
-                fc +=1 * 3
-                faces.append([fa,fb,fc])
+            for i in range(vertexCount//2-2):
+                ea +=1
+                eb +=1
+                edges.append([ea,eb])
         elif Chunk == b"\x04\x02\x00\x01":
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0] // 2
@@ -84,15 +83,14 @@ def GHG_read(f, vertices=[], faces=[], normals=[], fa=-2, fb=-1, fc=0, bones=[])
                 vzn = unpack("<f", f.read(4))[0]
                 nzx = unpack("<f", f.read(4))[0]
                 vertices.append([vx,vy,vz])
-            for i in range(vertexCount//5-2):
-                fa +=1*3
-                fb +=1*3
-                fc +=1*3
-                faces.append([fa,fb,fc])
+            for i in range(vertexCount//2-2):
+                ea +=1
+                eb +=1
+                edges.append([ea,eb])
 
     mesh = bpy.data.meshes.new("dragonjan")
     object = bpy.data.objects.new("dragonjan", mesh)
-    mesh.from_pydata(vertices, [], faces)
+    mesh.from_pydata(vertices, edges, [])
     bpy.context.collection.objects.link(object)
                 
 
@@ -101,7 +99,7 @@ def GHG_read(f, vertices=[], faces=[], normals=[], fa=-2, fb=-1, fc=0, bones=[])
 def NonParseGHG(filepath, GHG_Meshes=False, GHG_MESH_SEP=1, seek__=0, seek_uv=0, GHG_MESH_SEP_UV=1):
     with open(filepath, "rb") as f:
         if GHG_Meshes:
-            GHG_read(f, vertices=[], faces=[], normals=[], fa=-2, fb=-1, fc=0, bones=[])
+            GHG_read(f, vertices=[], edges=[], normals=[], ea=-1, eb=-0, bones=[])
         if GHG_MESH_SEP == 2:
             GHG_seek_indivitual_triangles(f, seek_= seek__, normals=[], vertices=[], faces=[], fa=-1, fb=0, fc=1)
         if GHG_MESH_SEP_UV == 2:
