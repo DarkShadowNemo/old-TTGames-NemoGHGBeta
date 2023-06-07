@@ -28,21 +28,21 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
-        GHG_Meshes : BoolProperty(name="GHG Mesh")
+        LEGO_STAR_WARS : IntProperty(name="Lego Star Wars 1")
 
-        seek__ : IntProperty(name="Control GHG Seek")
+        HAVEN_CALL_OF_THE_KING : IntProperty(name="Haven Call of the king")
 
-        seek_uv : IntProperty(name="Control GHG UV Seek")
+        CRASH_BANDICOOT_THE_WRATH_OF_CORTEX : IntProperty("TWOC")
 
-        GHG_MESH_SEP : IntProperty(name="GHG SEPERATE MESH", description="you need to delete all the offset and keep the one offset data using a hex editor")
+        FINDING_NEMO : IntProperty("Finding Nemo")
 
-        GHG_MESH_SEP_UV : IntProperty(name="GHG SEPERATE UV", description="you need to delete all the offset and keep the one offset data using a hex editor todo with uv below 0x03020001")
+        CUSTOM_ : IntProperty("CUSTOM")
         
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes, GHG_MESH_SEP = self.GHG_MESH_SEP, seek__ = self.seek__, GHG_MESH_SEP_UV = self.GHG_MESH_SEP_UV, seek_uv = self.seek_uv)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, LEGO_STAR_WARS = self.LEGO_STAR_WARS, HAVEN_CALL_OF_THE_KING = self.HAVEN_CALL_OF_THE_KING, CRASH_BANDICOOT_THE_WRATH_OF_CORTEX = self.CRASH_BANDICOOT_THE_WRATH_OF_CORTEX, FINDING_NEMO = self.FINDING_NEMO, CUSTOM_ = self.CUSTOM_)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
