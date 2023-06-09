@@ -28,21 +28,19 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
-        LEGO_STAR_WARS : IntProperty(name="Lego Star Wars 1")
+        offset_1 : BoolProperty(name="offset 0x03010001", description="0x030100010380XX6C")
 
-        HAVEN_CALL_OF_THE_KING : IntProperty(name="Haven Call of the king")
+        seek_ : IntProperty(name="seek 1", description="targets to seek 0x030100010380")
 
-        CRASH_BANDICOOT_THE_WRATH_OF_CORTEX : IntProperty("TWOC")
+        seek__ : IntProperty(name="seek 2", description="targets to seek 0x030200010380")
 
-        FINDING_NEMO : IntProperty("Finding Nemo")
-
-        CUSTOM_ : IntProperty("CUSTOM")
+        seek___ : IntProperty(name="seek 3", description="targets to seek 0x040200010380")
         
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, LEGO_STAR_WARS = self.LEGO_STAR_WARS, HAVEN_CALL_OF_THE_KING = self.HAVEN_CALL_OF_THE_KING, CRASH_BANDICOOT_THE_WRATH_OF_CORTEX = self.CRASH_BANDICOOT_THE_WRATH_OF_CORTEX, FINDING_NEMO = self.FINDING_NEMO, CUSTOM_ = self.CUSTOM_)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, offset_1 = self.offset_1, seek_ = self.seek_)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
