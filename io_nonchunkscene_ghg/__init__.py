@@ -1,7 +1,7 @@
 bl_info = {
         'name'			: 'Finding Nemo GHG Character Non Chunk Importer',
 	'author'		: 'DarkShadow Nemo',
-	'version'		: (0, 4, 1),
+	'version'		: (0, 4, 2),
 	'blender'		: (3, 0, 0),
 	'location'		: 'File > Import',
 	'description'           : 'Import GHG mesh chunk',
@@ -39,12 +39,16 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         seek__ : IntProperty(name="seek 2", description="targets to seek 0x030200010380")
 
         seek___ : IntProperty(name="seek 3", description="targets to seek 0x040200010380")
+
+        whole_entire_GHGMesh : BoolProperty(name="ENTIRE GHG", description="imports the whole entire ghg faster than finding indivitual offsets")
+
+        GHG_Bone_data : BoolProperty(name="GHG Bones", description="imports bones")
         
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, offset_1 = self.offset_1, seek_ = self.seek_, offset_2 = self.offset_2, seek__ = self.seek__, offset_3 = self.offset_3, seek___ = self.seek___)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Bone_data = self.GHG_Bone_data, whole_entire_GHGMesh = self.whole_entire_GHGMesh, offset_1 = self.offset_1, seek_ = self.seek_, offset_2 = self.offset_2, seek__ = self.seek__, offset_3 = self.offset_3, seek___ = self.seek___)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
