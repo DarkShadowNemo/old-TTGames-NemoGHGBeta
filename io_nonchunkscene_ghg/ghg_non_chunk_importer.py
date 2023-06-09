@@ -67,10 +67,14 @@ def read_GHG_mesh_3(f, seek3=0, vertices=[], faces=[]):
 
 
 
-def NonParseGHG(filepath, offset_1=False, seek_=0):
+def NonParseGHG(filepath, offset_1=False, seek_=0, offset_2=False, seek__=0, offset_3=False, seek___=0):
     with open(filepath, "rb") as f:
         if offset_1:
             read_GHG_mesh_1(f, seek1=seek_, vertices=[], faces=[])
+        if offset_2:
+            read_GHG_mesh_2(f, seek2=seek__, vertices=[], faces=[])
+        if offset_3:
+            read_GHG_mesh_3(f, seek3=seek___, vertices=[], faces=[])
                 
         
                 
