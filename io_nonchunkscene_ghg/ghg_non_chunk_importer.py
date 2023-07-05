@@ -63,7 +63,62 @@ def GHG_whole_entire_model_0x030200010380086D(f, vertices=[], faces=[], fa=-3,fb
     bpy.context.collection.objects.link(object)
 
 def GHG_whole_entire_model_0x0302000103800A6D(f, vertices=[], faces=[], fa=-3,fb=-2,fc=-1):
-    pass
+    f.seek(0)
+    ChunkRead = f.read()
+    f.seek(0)
+    for i in range(len(ChunkRead)):
+        Chunk = f.read(4)
+        if Chunk == b"\x03\x02\x00\x01":
+            f.seek(2,1)
+            vertexCount = unpack("B", f.read(1))[0]
+            f.seek(1,1)
+            if vertexCount == 10:
+                for i in range(vertexCount//2):
+                    vx = unpack("<h", f.read(2))[0] / 4096.0
+                    vy = unpack("<h", f.read(2))[0] / 4096.0
+                    vz = unpack("<h", f.read(2))[0] / 4096.0
+                    nz = unpack("<h", f.read(2))[0] / 4096.0
+                    f.seek(8,1)
+                    vertices.append([vx,vy,vz])
+                for i in range(vertexCount//8):
+                    fa+=1*5
+                    fb+=1*5
+                    fc+=1*5
+                    faces.append([fa,fb,fc])
+
+    mesh = bpy.data.meshes.new("dragonjan")
+    object = bpy.data.objects.new("dragonjan", mesh)
+    mesh.from_pydata(vertices, [], faces)
+    bpy.context.collection.objects.link(object)
+
+def GHG_whole_entire_model_0x0302000103800C6D(f, vertices=[], faces=[], fa=-4,fb=-3,fc=-2):
+    f.seek(0)
+    ChunkRead = f.read()
+    f.seek(0)
+    for i in range(len(ChunkRead)):
+        Chunk = f.read(4)
+        if Chunk == b"\x03\x02\x00\x01":
+            f.seek(2,1)
+            vertexCount = unpack("B", f.read(1))[0]
+            f.seek(1,1)
+            if vertexCount == 12:
+                for i in range(vertexCount//2):
+                    vx = unpack("<h", f.read(2))[0] / 4096.0
+                    vy = unpack("<h", f.read(2))[0] / 4096.0
+                    vz = unpack("<h", f.read(2))[0] / 4096.0
+                    nz = unpack("<h", f.read(2))[0] / 4096.0
+                    f.seek(8,1)
+                    vertices.append([vx,vy,vz])
+                for i in range(vertexCount//8):
+                    fa+=1*6
+                    fb+=1*6
+                    fc+=1*6
+                    faces.append([fa,fb,fc])
+
+    mesh = bpy.data.meshes.new("dragonjan")
+    object = bpy.data.objects.new("dragonjan", mesh)
+    mesh.from_pydata(vertices, [], faces)
+    bpy.context.collection.objects.link(object)
     
     
 
