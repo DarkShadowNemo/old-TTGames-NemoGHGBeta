@@ -4,7 +4,66 @@ import bpy
 import mathutils
 import math
 
-def GHG_whole_entire_model2(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1):
+def GHG_whole_entire_modelCRASH(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
+    f.seek(0)
+    ChunkRead = f.read()
+    f.seek(0)
+    for i in range(len(ChunkRead)):
+        Chunk = f.read(4)
+        if Chunk == b"\x04\x02\x00\x01":
+                f.seek(2,1)
+                vertexCount = unpack("B", f.read(1))[0]//2
+                f.seek(1,1)
+                for i in range(vertexCount):
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices.append([vx,vy,vz])
+                for i in range(vertexCount-2):
+                    fa+=1
+                    fb+=1
+                    fc+=1
+                    faces.append([fa,fb,fc])
+                if len(vertices) == 2277:
+                    if faces.remove([1456,1457,1458]):
+                        pass
+                    elif faces.remove([1455,1456,1457]):
+                        pass
+                    elif faces.remove([1715,1716,1717]):
+                        pass
+                    elif faces.remove([1714,1715,1716]):
+                        pass
+                    elif faces.remove([1087,1088,1089]):
+                        pass
+                    elif faces.remove([1088,1089,1090]):
+                        pass
+                    elif faces.remove([263,264,265]):
+                        pass
+                    elif faces.remove([273,274,275]):
+                        pass
+                    elif faces.remove([178,179,180]):
+                        pass
+                    elif faces.remove([1226,1227,1228]):
+                        pass
+                    elif faces.remove([1227,1228,1229]):
+                        pass
+                    elif faces.remove([230,231,232]):
+                        pass
+                    elif faces.remove([450,451,452]):
+                        pass
+                    elif faces.remove([449,450,451]):
+                        pass
+                    
+
+    mesh = bpy.data.meshes.new("dragonjan")
+    object = bpy.data.objects.new("dragonjan", mesh)
+    mesh.from_pydata(vertices, [], faces)
+    bpy.context.collection.objects.link(object)
+        
+
+def GHG_whole_entire_modelRay2(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1):
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -32,7 +91,7 @@ def GHG_whole_entire_model2(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1):
     mesh.from_pydata(vertices2, [], faces2)
     bpy.context.collection.objects.link(object)
 
-def GHG_whole_entire_model1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
+def GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -102,7 +161,7 @@ def GHG_whole_entire_model1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
     mesh.from_pydata(vertices, [], faces)
     bpy.context.collection.objects.link(object)
 
-def GHG_whole_model3(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
+def GHG_whole_modelRay3(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -138,14 +197,18 @@ def NonParseGHG(filepath, GHG_Meshes=1):
     with open(filepath, "rb") as f:
         if GHG_Meshes == 1:
             if os.path.basename(filepath) == "ray.ghg":
-                GHG_whole_entire_model1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
+                GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
         if GHG_Meshes == 2:
             if os.path.basename(filepath) == "ray.ghg":
-                GHG_whole_entire_model2(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1)
+                GHG_whole_entire_modelRay2(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1)
 
         if GHG_Meshes == 3:
             if os.path.basename(filepath) == "ray.ghg":
-                GHG_whole_entire_model3(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1)
+                GHG_whole_entire_modelRay3(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1)
+
+        if GHG_Meshes == 4:
+            if os.path.basename(filepath) == "CRASH_unpack.GHG":
+                GHG_whole_entire_modelCRASH(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
             
                 
         
