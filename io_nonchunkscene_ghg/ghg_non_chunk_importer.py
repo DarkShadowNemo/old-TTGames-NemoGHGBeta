@@ -384,6 +384,112 @@ def GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
                     pass
                 elif faces.remove([82,83,84]):
                     pass
+                elif faces.remove([35,36,37]):
+                    pass
+                elif faces.remove([36,37,38]):
+                    pass
+                elif faces.remove([38,39,40]):
+                    pass
+                elif faces.remove([37,38,39]):
+                    pass
+                elif faces.remove([34,35,36]):
+                    pass
+                elif faces.remove([33,34,35]):
+                    pass
+                elif faces.remove([32,33,34]):
+                    pass
+                elif faces.remove([31,32,33]):
+                    pass
+                elif faces.remove([143,144,145]):
+                    pass
+                elif faces.remove([142,143,144]):
+                    pass
+                elif faces.remove([44,45,46]):
+                    pass
+                elif faces.remove([45,46,47]):
+                    pass
+                elif faces.remove([47,48,49]):
+                    pass
+                elif faces.remove([46,47,48]):
+                    pass
+                elif faces.remove([48,49,50]):
+                    pass
+                elif faces.remove([49,50,51]):
+                    pass
+                elif faces.remove([115,116,117]):
+                    pass
+                elif faces.remove([116,117,118]):
+                    pass
+                elif faces.remove([117,118,119]):
+                    pass
+                elif faces.remove([118,119,120]):
+                    pass
+                elif faces.remove([119,120,121]):
+                    pass
+                elif faces.remove([120,121,122]):
+                    pass
+                elif faces.remove([121,122,123]):
+                    pass
+                elif faces.remove([122,123,124]):
+                    pass
+                elif faces.remove([123,124,125]):
+                    pass
+                elif faces.remove([124,125,126]):
+                    pass
+                elif faces.remove([112,113,114]):
+                    pass
+                elif faces.remove([111,112,113]):
+                    pass
+                elif faces.remove([110,111,112]):
+                    pass
+                elif faces.remove([109,110,111]):
+                    pass
+                elif faces.remove([108,109,110]):
+                    pass
+                elif faces.remove([107,108,109]):
+                    pass
+                elif faces.remove([106,107,108]):
+                    pass
+                elif faces.remove([105,106,107]):
+                    pass
+                elif faces.remove([133,134,135]):
+                    pass
+                elif faces.remove([132,133,134]):
+                    pass
+                elif faces.remove([131,132,133]):
+                    pass
+                elif faces.remove([130,131,132]):
+                    pass
+                elif faces.remove([129,130,131]):
+                    pass
+                elif faces.remove([128,129,130]):
+                    pass
+                elif faces.remove([127,128,129]):
+                    pass
+                elif faces.remove([126,127,128]):
+                    pass
+                elif faces.remove([125,126,127]):
+                    pass
+                elif faces.remove([92,93,94]):
+                    pass
+                elif faces.remove([91,92,93]):
+                    pass
+                elif faces.remove([90,91,92]):
+                    pass
+                elif faces.remove([89,90,91]):
+                    pass
+                elif faces.remove([88,89,90]):
+                    pass
+                elif faces.remove([87,88,89]):
+                    pass
+                elif faces.remove([86,87,88]):
+                    pass
+                elif faces.remove([85,86,87]):
+                    pass
+                elif faces.remove([84,85,86]):
+                    pass
+                elif faces.remove([93,94,95]):
+                    pass
                 
             
 
