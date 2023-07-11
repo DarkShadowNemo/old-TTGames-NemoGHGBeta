@@ -1,8 +1,70 @@
 from struct import pack, unpack
+from io import BytesIO as bio
 import os
 import bpy
 import mathutils
 import math
+
+def truncate_cstr(s: bytes) -> bytes:
+    index = s.find(0)
+    if index == -1: return s
+    return s[:index]
+def fetch_cstr(f: 'filelike') -> bytearray:
+    build = bytearray()
+    while 1:
+        strbyte = f.read(1)
+        if strbyte == b'\0' or not strbyte: break
+        build += strbyte
+    return build
+
+def GHG_whole_entire_modelAnakin_Jedi2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
+    f.seek(0)
+    ChunkRead = f.read()
+    f.seek(0)
+    for i in range(len(ChunkRead)):
+        Chunk = f.read(4)
+        if Chunk == b"\x03\x02\x00\x01":
+                f.seek(2,1)
+                vertexCount = unpack("B", f.read(1))[0]//2
+                f.seek(1,1)
+                for i in range(vertexCount):
+                    vx = unpack("<h", f.read(2))[0] / 4096.0
+                    vy = unpack("<h", f.read(2))[0] / 4096.0
+                    vz = unpack("<h", f.read(2))[0] / 4096.0
+                    nz = unpack("<h", f.read(2))[0] / 4096.0
+                    f.seek(8,1)
+                    vertices.append([vx,vy,vz])
+                for i in range(vertexCount-2):
+                    fa+=1
+                    fb+=1
+                    fc+=1
+                    faces.append([fa,fb,fc])
+                if len(vertices) == 3228:
+                    if faces.remove([60,61,62]):
+                        pass
+                    elif faces.remove([59,60,61]):
+                        pass
+                    elif faces.remove([80,81,82]):
+                        pass
+                    elif faces.remove([79,80,81]):
+                        pass
+                    elif faces.remove([2772,2773,2774]):
+                        pass
+                    elif faces.remove([2771,2772,2773]):
+                        pass
+                    elif faces.remove([2393,2394,2395]):
+                        pass
+                    elif faces.remove([1171,1172,1173]):
+                        pass
+                    elif faces.remove([2392,2393,2394]):
+                        pass
+                    elif faces.remove([1170,1171,1172]):
+                        pass
+
+    mesh = bpy.data.meshes.new("dragonjan")
+    object = bpy.data.objects.new("dragonjan", mesh)
+    mesh.from_pydata(vertices, [], faces)
+    bpy.context.collection.objects.link(object)
 
 def GHG_whole_entire_modelBubbles2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
     f.seek(0)
@@ -518,6 +580,10 @@ def NonParseGHG(filepath, GHG_Meshes=1):
         if GHG_Meshes == 4:
             if os.path.basename(filepath) == r"bubbles.ghg":
                 GHG_whole_entire_modelBubbles2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
+
+        if GHG_Meshes == 5:
+            if os.path.basename(filepath) == r"anakin_jedi.ghg":
+                GHG_whole_entire_modelAnakin_Jedi2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
             
                 
         
