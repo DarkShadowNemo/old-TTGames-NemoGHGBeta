@@ -60,6 +60,54 @@ def GHG_whole_entire_modelAnakin_Jedi2(f, vertices=[], faces=[], fa=-1, fb=0, fc
                         pass
                     elif faces.remove([1170,1171,1172]):
                         pass
+                    elif faces.remove([2454,2455,2456]):
+                        pass
+                    elif faces.remove([1233,1234,1235]):
+                        pass
+                    elif faces.remove([2455,2456,2457]):
+                        pass
+                    elif faces.remove([1232,1233,1234]):
+                        pass
+                    elif faces.remove([2991,2992,2993]):
+                        pass
+                    elif faces.remove([1638,1639,1640]):
+                        pass
+                    elif faces.remove([1639,1640,1641]):
+                        pass
+                    elif faces.remove([1680,1681,1682]):
+                        pass
+                    elif faces.remove([1681,1682,1683]):
+                        pass
+                    elif faces.remove([2776,2777,2778]):
+                        pass
+                    elif faces.remove([2761,2762,2763]):
+                        pass
+                    elif faces.remove([2778,2779,2780]):
+                        pass
+                    elif faces.remove([2770,2771,2772]):
+                        pass
+                    elif faces.remove([2768,2769,2770]):
+                        pass
+                    elif faces.remove([2779,2780,2781]):
+                        pass
+                    elif faces.remove([1513,1514,1515]):
+                        pass
+                    elif faces.remove([1512,1513,1514]):
+                        pass
+                    elif faces.remove([63,64,65]):
+                        pass
+                    elif faces.remove([64,65,66]):
+                        pass
+                    elif faces.remove([2469,2470,2471]):
+                        pass
+                    elif faces.remove([1269,1270,1271]):
+                        pass
+                    elif faces.remove([2468,2469,2470]):
+                        pass
+                    elif faces.remove([1268,1269,1270]):
+                        pass
+                    elif faces.remove([2762,2763,2764]):
+                        pass
 
     mesh = bpy.data.meshes.new("dragonjan")
     object = bpy.data.objects.new("dragonjan", mesh)
@@ -378,6 +426,89 @@ def GHG_whole_entire_modelRay2(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1):
                     fb+=1
                     fc+=1
                     faces2.append([fa,fb,fc])
+                if len(vertices2) == 2564:
+                    if faces2.remove([1131,1132,1133]):
+                        pass
+                    elif faces2.remove([1130,1131,1132]):
+                        pass
+                    elif faces2.remove([1468,1469,1470]):
+                        pass
+                    elif faces2.remove([1748,1749,1750]):
+                        pass
+                    elif faces2.remove([1741,1742,1743]):
+                        pass
+                    elif faces2.remove([1744,1745,1746]):
+                        pass
+                    elif faces2.remove([1747,1748,1749]):
+                        pass
+                    elif faces2.remove([1750,1751,1752]):
+                        pass
+                    elif faces2.remove([1749,1750,1751]):
+                        pass
+                    elif faces2.remove([313,314,315]):
+                        pass
+                    elif faces2.remove([1734,1735,1736]):
+                        pass
+                    elif faces2.remove([728,729,730]):
+                        pass
+                    elif faces2.remove([729,730,731]):
+                        pass
+                    elif faces2.remove([785,786,787]):
+                        pass
+                    elif faces2.remove([114,115,116]):
+                        pass
+                    elif faces2.remove([1412,1413,1414]):
+                        pass
+                    elif faces2.remove([692,693,694]):
+                        pass
+                    elif faces2.remove([689,690,691]):
+                        pass
+                    elif faces2.remove([581,582,583]):
+                        pass
+                    elif faces2.remove([577,578,579]):
+                        pass
+                    elif faces2.remove([576,577,578]):
+                        pass
+                    elif faces2.remove([573,574,575]):
+                        pass
+                    elif faces2.remove([574,575,576]):
+                        pass
+                    elif faces2.remove([580,581,582]):
+                        pass
+                    elif faces2.remove([578,579,580]):
+                        pass
+                    elif faces2.remove([575,576,577]):
+                        pass
+                    elif faces2.remove([572,573,574]):
+                        pass
+                    elif faces2.remove([711,712,713]):
+                        pass
+                    elif faces2.remove([112,113,114]):
+                        pass
+                    elif faces2.remove([778,779,780]):
+                        pass
+                    elif faces2.remove([777,778,779]):
+                        pass
+                    elif faces2.remove([776,777,778]):
+                        pass
+                    elif faces2.remove([1838,1839,1840]):
+                        pass
+                    elif faces2.remove([715,716,717]):
+                        pass
+                    elif faces2.remove([712,713,714]):
+                        pass
+                    elif faces2.remove([716,717,718]):
+                        pass
+                    elif faces2.remove([368,369,370]):
+                        pass
+                    elif faces2.remove([367,368,369]):
+                        pass
+                    elif faces2.remove([349,350,351]):
+                        pass
+                    elif faces2.remove([61,62,63]):
+                        pass
+                    elif faces2.remove([883,884,885]):
+                        pass
 
     mesh = bpy.data.meshes.new("dragonjan")
     object = bpy.data.objects.new("dragonjan", mesh)
