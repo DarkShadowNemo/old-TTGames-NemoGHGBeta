@@ -28,27 +28,15 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
-        offset_1 : BoolProperty(name="offset 0x03010001", description="0x030100010380XX6C")
+        GHG_Meshes : IntProperty(name="open FDSE ? 1")
 
-        offset_2 : BoolProperty(name="offset 0x03020001", description="0x030200010380XX6C")
-
-        offset_3 : BoolProperty(name="offset 0x04020001", description="0x040200010380XX6C")
-
-        seek_ : IntProperty(name="seek 1", description="targets to seek 0x030100010380")
-
-        seek__ : IntProperty(name="seek 2", description="targets to seek 0x030200010380")
-
-        seek___ : IntProperty(name="seek 3", description="targets to seek 0x040200010380")
-
-        whole_entire_GHGMesh : BoolProperty(name="ENTIRE GHG", description="imports the whole entire ghg faster than finding indivitual offsets")
-
-        GHG_Bone_data : BoolProperty(name="GHG Bones", description="imports bones")
+        #GHG_Bone_data : BoolProperty(name="Bones", description="imports bones")
         
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Bone_data = self.GHG_Bone_data, whole_entire_GHGMesh = self.whole_entire_GHGMesh, offset_1 = self.offset_1, seek_ = self.seek_, offset_2 = self.offset_2, seek__ = self.seek__, offset_3 = self.offset_3, seek___ = self.seek___)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
