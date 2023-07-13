@@ -4,6 +4,10 @@ import os
 import bpy
 import mathutils
 import math
+import bmesh
+from collections import namedtuple
+
+Matrix4x4 = namedtuple('Matrix4x4', 'm11 m12 m13 m14' 'm21 m22 m23 m24' 'm31 m32 m33 m34' 'm41 m42 m43 m44')
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -16,6 +20,37 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         if strbyte == b'\0' or not strbyte: break
         build += strbyte
     return build
+
+def GHG_whole_entire_bones(f):
+    f.seek(0)
+    FileSize = unpack("<I", f.read(4))[0]
+    unk = unpack("<I", f.read(4))[0]
+    TextureCount = unpack("<I", f.read(4))[0]
+    Texture_EntrySize = unpack("<I", f.read(4))[0]
+    MaterialCount = unpack("<I", f.read(4))[0]
+    Material_EntrySize = unpack("<I", f.read(4))[0]
+    BoneCount = unpack("<I", f.read(4))[0]
+    StartParentBoneEntrySize = unpack("<I", f.read(4))[0]
+    StartBoneEntrySize = unpack("<I", f.read(4))[0]
+    StartBoneEntrySize3 = unpack("<I", f.read(4))[0]
+    Unk_ = unpack("<I", f.read(4))[0]
+    Unk__ = unpack("<I", f.read(4))[0]
+    EndMaterialEntrySize = unpack("<I", f.read(4))[0]
+    NamedtableEntrySize = unpack("<I", f.read(4))[0]
+    f.seek(EndMaterialEntrySize-56,1)
+    ntbl_buffer = bio(f.read(NamedtableEntrySize))
+    name_i = 0
+    while 1:
+        name = fetch_cstr(ntbl_buffer).decode('ascii')
+        if not name: break
+        name_i +=1
+    f.seek(0)
+    f.seek(32,1)
+    f.seek(StartParentBoneEntrySize-32,1)
+
+    for i in range(BoneCount):
+        pass
+    
 
 def GHG_whole_entire_modelAnakin_Jedi2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
     f.seek(0)
@@ -509,6 +544,134 @@ def GHG_whole_entire_modelRay2(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1):
                         pass
                     elif faces2.remove([883,884,885]):
                         pass
+                    elif faces2.remove([333,334,335]):
+                        pass
+                    elif faces2.remove([334,335,336]):
+                        pass
+                    elif faces2.remove([885,886,887]):
+                        pass
+                    elif faces2.remove([884,885,886]):
+                        pass
+                    elif faces2.remove([759,760,761]):
+                        pass
+                    elif faces2.remove([758,759,760]):
+                        pass
+                    elif faces2.remove([762,763,764]):
+                        pass
+                    elif faces2.remove([761,762,763]):
+                        pass
+                    elif faces2.remove([768,769,770]):
+                        pass
+                    elif faces2.remove([769,770,771]):
+                        pass
+                    elif faces2.remove([779,780,781]):
+                        pass
+                    elif faces2.remove([780,781,782]):
+                        pass
+                    elif faces2.remove([781,782,783]):
+                        pass
+                    elif faces2.remove([111,112,113]):
+                        pass
+                    elif faces2.remove([568,569,570]):
+                        pass
+                    elif faces2.remove([117,118,119]):
+                        pass
+                    elif faces2.remove([1733,1734,1735]):
+                        pass
+                    elif faces2.remove([679,680,681]):
+                        pass
+                    elif faces2.remove([892,893,894]):
+                        pass
+                    elif faces2.remove([893,894,895]):
+                        pass
+                    elif faces2.remove([1848,1849,1850]):
+                        pass
+                    elif faces2.remove([1743,1744,1745]):
+                        pass
+                    elif faces2.remove([683,684,685]):
+                        pass
+                    elif faces2.remove([675,676,677]):
+                        pass
+                    elif faces2.remove([682,683,684]):
+                        pass
+                    elif faces2.remove([563,564,565]):
+                        pass
+                    elif faces2.remove([385,386,387]):
+                        pass
+                    elif faces2.remove([674,675,676]):
+                        pass
+                    elif faces2.remove([686,687,688]):
+                        pass
+                    elif faces2.remove([687,688,689]):
+                        pass
+                    elif faces2.remove([691,692,693]):
+                        pass
+                    elif faces2.remove([690,691,692]):
+                        pass
+                    elif faces2.remove([1713,1714,1715]):
+                        pass
+                    elif faces2.remove([1714,1715,1716]):
+                        pass
+                    elif faces2.remove([110,111,112]):
+                        pass
+                    elif faces2.remove([810,811,812]):
+                        pass
+                    elif faces2.remove([1494,1495,1496]):
+                        pass
+                    elif faces2.remove([685,686,687]):
+                        pass
+                    elif faces2.remove([684,685,686]):
+                        pass
+                    elif faces2.remove([564,565,566]):
+                        pass
+                    elif faces2.remove([567,568,569]):
+                        pass
+                    elif faces2.remove([371,372,373]):
+                        pass
+                    elif faces2.remove([372,373,374]):
+                        pass
+                    elif faces2.remove([1802,1803,1804]):
+                        pass
+                    elif faces2.remove([1805,1806,1807]):
+                        pass
+                    elif faces2.remove([688,689,690]):
+                        pass
+                    elif faces2.remove([952,953,954]):
+                        pass
+                    elif faces2.remove([1492,1493,1494]):
+                        pass
+                    elif faces2.remove([309,310,311]):
+                        pass
+                    elif faces2.remove([1807,1808,1809]):
+                        pass
+                    elif faces2.remove([822,823,824]):
+                        pass
+                    elif faces2.remove([949,950,951]):
+                        pass
+                    elif faces2.remove([954,955,956]):
+                        pass
+                    elif faces2.remove([60,61,62]):
+                        pass
+                    elif faces2.remove([1883,1884,1885]):
+                        pass
+                    elif faces2.remove([1884,1885,1886]):
+                        pass
+                    elif faces2.remove([1801,1802,1803]):
+                        pass
+                    elif faces2.remove([1440,1441,1442]):
+                        pass
+                    elif faces2.remove([950,951,952]):
+                        pass
+                    elif faces2.remove([908,909,910]):
+                        pass
+                    elif faces2.remove([907,908,909]):
+                        pass
+                    elif faces2.remove([955,956,957]):
+                        pass
+                    elif faces2.remove([980,981,982]):
+                        pass
+                    elif faces2.remove([1854,1855,1856]):
+                        pass
 
     mesh = bpy.data.meshes.new("dragonjan")
     object = bpy.data.objects.new("dragonjan", mesh)
@@ -715,7 +878,6 @@ def NonParseGHG(filepath, GHG_Meshes=1):
         if GHG_Meshes == 5:
             if os.path.basename(filepath) == r"anakin_jedi.ghg":
                 GHG_whole_entire_modelAnakin_Jedi2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
-            
                 
         
                 
