@@ -5,9 +5,9 @@ import bpy
 import mathutils
 import math
 import bmesh
-from collections import namedtuple
+#from collections import namedtuple
 
-Matrix4x4 = namedtuple('Matrix4x4', 'm11 m12 m13 m14' 'm21 m22 m23 m24' 'm31 m32 m33 m34' 'm41 m42 m43 m44')
+#Matrix4x4 = namedtuple('Matrix4x4', 'm11 m12 m13 m14' 'm21 m22 m23 m24' 'm31 m32 m33 m34' 'm41 m42 m43 m44')
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -21,7 +21,13 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         build += strbyte
     return build
 
-def GHG_whole_entire_bones(f):
+def GHG_whole_entire_bones(f, bone_parentlist=[]):
+    coll = bpy.context.collection
+    skel = bpy.data.armatures.new('GHG Skeleton')
+    arma = bpy.data.objects.new('GHG Armature', skel)
+    coll.objects.link(arma)
+    bpy.context.view_layer.objects.active = arma
+    bpy.ops.object.mode_set(mode = 'EDIT')
     f.seek(0)
     FileSize = unpack("<I", f.read(4))[0]
     unk = unpack("<I", f.read(4))[0]
@@ -30,9 +36,9 @@ def GHG_whole_entire_bones(f):
     MaterialCount = unpack("<I", f.read(4))[0]
     Material_EntrySize = unpack("<I", f.read(4))[0]
     BoneCount = unpack("<I", f.read(4))[0]
-    StartParentBoneEntrySize = unpack("<I", f.read(4))[0]
-    StartBoneEntrySize = unpack("<I", f.read(4))[0]
-    StartBoneEntrySize3 = unpack("<I", f.read(4))[0]
+    SclBoneEntrySize = unpack("<I", f.read(4))[0]
+    PosBoneEntrySize = unpack("<I", f.read(4))[0]
+    RotBoneEntrySize = unpack("<I", f.read(4))[0]
     Unk_ = unpack("<I", f.read(4))[0]
     Unk__ = unpack("<I", f.read(4))[0]
     EndMaterialEntrySize = unpack("<I", f.read(4))[0]
@@ -46,10 +52,45 @@ def GHG_whole_entire_bones(f):
         name_i +=1
     f.seek(0)
     f.seek(32,1)
-    f.seek(StartParentBoneEntrySize-32,1)
+    f.seek(SclBoneEntrySize-32,1)
 
     for i in range(BoneCount):
-        pass
+        f.seek(64,1)
+        bdiv4_v00 = unpack("<f", f.read(4))[0]
+        bdiv4_v04 = unpack("<f", f.read(4))[0]
+        bdiv4_v08 = unpack("<f", f.read(4))[0]
+        name_offset, = unpack("<L", f.read(4))
+        bone_parent = unpack("b", f.read(1))[0]
+        f.seek(15,1)
+        bone_parentlist.append(bone_parent)
+        ntbl_buffer.seek(name_offset - 1)
+        bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
+    f.seek(0)
+    f.seek(36,1)
+    f.seek(PosBoneEntrySize-36,1)
+    for i in range(BoneCount):
+        f.seek(48,1)
+        BX = unpack("<f", f.read(4))[0]
+        BY = unpack("<f", f.read(4))[0]
+        BZ = unpack("<f", f.read(4))[0]
+        f.seek(4,1)
+
+        bone = skel.edit_bones.new(bone_name)
+        bone.head = (
+            +BX,
+            +BY,
+            +BZ,
+	)
+        bone.tail = (
+            bone.head[0],
+            bone.head[1],
+            bone.head[2] + 0.03,
+        )
+
+    for bone_id, bone_parent in enumerate(bone_parentlist):
+        if bone_parent < 0: continue # root bone is set to -1
+        skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
+    bpy.ops.object.mode_set(mode = 'OBJECT')
     
 
 def GHG_whole_entire_modelAnakin_Jedi2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
@@ -858,8 +899,10 @@ def GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
 
 
 
-def NonParseGHG(filepath, GHG_Meshes=1):
+def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=False):
     with open(filepath, "rb") as f:
+        if GHG_Bones:
+            GHG_whole_entire_bones(f, bone_parentlist=[])
         if GHG_Meshes == 1:
             if os.path.basename(filepath) == r"ray.ghg":
                 GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
