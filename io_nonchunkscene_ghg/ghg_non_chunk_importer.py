@@ -5,9 +5,7 @@ import bpy
 import mathutils
 import math
 import bmesh
-#from collections import namedtuple
-
-#Matrix4x4 = namedtuple('Matrix4x4', 'm11 m12 m13 m14' 'm21 m22 m23 m24' 'm31 m32 m33 m34' 'm41 m42 m43 m44')
+        
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -21,7 +19,7 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         build += strbyte
     return build
 
-def GHG_whole_entire_bones(f, bone_parentlist=[]):
+def GHG_whole_entire_bones(f, bone_parentlist=[], bones_=[], vertices=[], faces=[], fa=-1, fb=0, fc=1):
     coll = bpy.context.collection
     skel = bpy.data.armatures.new('GHG Skeleton')
     arma = bpy.data.objects.new('GHG Armature', skel)
@@ -74,6 +72,7 @@ def GHG_whole_entire_bones(f, bone_parentlist=[]):
         BY = unpack("<f", f.read(4))[0]
         BZ = unpack("<f", f.read(4))[0]
         f.seek(4,1)
+        bones_.append([BX,BY,BZ])
 
         bone = skel.edit_bones.new(bone_name)
         bone.head = (
@@ -91,6 +90,359 @@ def GHG_whole_entire_bones(f, bone_parentlist=[]):
         if bone_parent < 0: continue # root bone is set to -1
         skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
     bpy.ops.object.mode_set(mode = 'OBJECT')
+                
+            
+
+def GHG_whole_entire_modelHermit2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
+    f.seek(0)
+    ChunkRead = f.read()
+    f.seek(0)
+    for i in range(len(ChunkRead)):
+        Chunk = f.read(4)
+        if Chunk == b"\x03\x02\x00\x01":
+            f.seek(2,1)
+            vertexCount = unpack("B", f.read(1))[0]//2
+            f.seek(1,1)
+            for i in range(vertexCount):
+                vx = unpack("<h", f.read(2))[0] / 4096.0
+                vy = unpack("<h", f.read(2))[0] / 4096.0
+                vz = unpack("<h", f.read(2))[0] / 4096.0
+                nz = unpack("<h", f.read(2))[0] / 4096.0
+                f.seek(8,1)
+                vertices.append([vx,vy,vz])
+            for i in range(vertexCount-2):
+                fa+=1
+                fb+=1
+                fc+=1
+                faces.append([fa,fb,fc])
+
+            if len(vertices) == 1053:
+                if faces.remove([781,782,783]):
+                    pass
+                elif faces.remove([783,784,785]):
+                    pass
+                elif faces.remove([862,863,864]):
+                    pass
+                elif faces.remove([871,872,873]):
+                    pass
+                elif faces.remove([863,864,865]):
+                    pass
+                elif faces.remove([867,868,869]):
+                    pass
+                elif faces.remove([603,604,605]):
+                    pass
+                elif faces.remove([868,869,870]):
+                    pass
+                elif faces.remove([870,871,872]):
+                    pass
+                elif faces.remove([864,865,866]):
+                    pass
+                elif faces.remove([869,870,871]):
+                    pass
+                elif faces.remove([866,867,868]):
+                    pass
+                elif faces.remove([602,603,604]):
+                    pass
+                elif faces.remove([465,466,467]):
+                    pass
+                elif faces.remove([466,467,468]):
+                    pass
+                elif faces.remove([461,462,463]):
+                    pass
+                elif faces.remove([464,465,466]):
+                    pass
+                elif faces.remove([462,463,464]):
+                    pass
+                elif faces.remove([519,520,521]):
+                    pass
+                elif faces.remove([518,519,520]):
+                    pass
+                elif faces.remove([478,479,480]):
+                    pass
+                elif faces.remove([496,497,498]):
+                    pass
+                elif faces.remove([497,498,499]):
+                    pass
+                elif faces.remove([586,587,588]):
+                    pass
+                elif faces.remove([587,588,589]):
+                    pass
+                elif faces.remove([585,586,587]):
+                    pass
+                elif faces.remove([583,584,585]):
+                    pass
+                elif faces.remove([584,585,586]):
+                    pass
+                elif faces.remove([573,574,575]):
+                    pass
+                elif faces.remove([574,575,576]):
+                    pass
+                elif faces.remove([575,576,577]):
+                    pass
+                elif faces.remove([576,577,578]):
+                    pass
+                elif faces.remove([588,589,590]):
+                    pass
+                elif faces.remove([455,456,457]):
+                    pass
+                elif faces.remove([572,573,574]):
+                    pass
+                elif faces.remove([571,572,573]):
+                    pass
+                elif faces.remove([341,342,343]):
+                    pass
+                elif faces.remove([342,343,344]):
+                    pass
+                elif faces.remove([736,737,738]):
+                    pass
+                elif faces.remove([737,738,739]):
+                    pass
+                elif faces.remove([732,733,734]):
+                    pass
+                elif faces.remove([731,732,733]):
+                    pass
+                elif faces.remove([729,730,731]):
+                    pass
+                elif faces.remove([730,731,732]):
+                    pass
+                elif faces.remove([734,735,736]):
+                    pass
+                elif faces.remove([735,736,737]):
+                    pass
+                elif faces.remove([458,459,460]):
+                    pass
+                elif faces.remove([782,783,784]):
+                    pass
+                elif faces.remove([801,802,803]):
+                    pass
+                elif faces.remove([667,668,669]):
+                    pass
+                elif faces.remove([800,801,802]):
+                    pass
+                elif faces.remove([656,657,658]):
+                    pass
+                elif faces.remove([657,658,659]):
+                    pass
+                elif faces.remove([799,800,801]):
+                    pass
+                elif faces.remove([666,667,668]):
+                    pass
+                elif faces.remove([663,664,665]):
+                    pass
+                elif faces.remove([655,656,657]):
+                    pass
+                elif faces.remove([665,666,667]):
+                    pass
+                elif faces.remove([664,665,666]):
+                    pass
+                elif faces.remove([654,655,656]):
+                    pass
+                elif faces.remove([798,799,800]):
+                    pass
+                elif faces.remove([520,521,522]):
+                    pass
+                elif faces.remove([521,522,523]):
+                    pass
+                elif faces.remove([22,23,24]):
+                    pass
+                elif faces.remove([21,22,23]):
+                    pass
+                elif faces.remove([34,35,36]):
+                    pass
+                elif faces.remove([94,95,96]):
+                    pass
+                elif faces.remove([33,34,35]):
+                    pass
+                elif faces.remove([140,141,142]):
+                    pass
+                elif faces.remove([46,47,48]):
+                    pass
+                elif faces.remove([56,57,58]):
+                    pass
+                elif faces.remove([57,58,59]):
+                    pass
+                elif faces.remove([156,157,158]):
+                    pass
+                elif faces.remove([155,156,157]):
+                    pass
+                elif faces.remove([960,961,962]):
+                    pass
+                elif faces.remove([962,963,964]):
+                    pass
+                elif faces.remove([948,949,950]):
+                    pass
+                elif faces.remove([949,950,951]):
+                    pass
+                elif faces.remove([961,962,963]):
+                    pass
+                elif faces.remove([963,964,965]):
+                    pass
+                elif faces.remove([947,948,949]):
+                    pass
+                elif faces.remove([946,947,948]):
+                    pass
+                elif faces.remove([959,960,961]):
+                    pass
+                elif faces.remove([362,363,364]):
+                    pass
+                elif faces.remove([364,365,366]):
+                    pass
+                elif faces.remove([363,364,365]):
+                    pass
+                elif faces.remove([418,419,420]):
+                    pass
+                elif faces.remove([419,420,421]):
+                    pass
+                elif faces.remove([456,457,458]):
+                    pass
+                elif faces.remove([450,451,452]):
+                    pass
+                elif faces.remove([382,383,384]):
+                    pass
+                elif faces.remove([383,384,385]):
+                    pass
+                elif faces.remove([449,450,451]):
+                    pass
+                elif faces.remove([457,458,459]):
+                    pass
+                elif faces.remove([285,286,287]):
+                    pass
+                elif faces.remove([284,285,286]):
+                    pass
+                elif faces.remove([7,8,9]):
+                    pass
+                elif faces.remove([90,91,92]):
+                    pass
+                elif faces.remove([88,89,90]):
+                    pass
+                elif faces.remove([89,90,91]):
+                    pass
+                elif faces.remove([5,6,7]):
+                    pass
+                elif faces.remove([23,24,25]):
+                    pass
+                elif faces.remove([3,4,5]):
+                    pass
+                elif faces.remove([4,5,6]):
+                    pass
+                elif faces.remove([24,25,26]):
+                    pass
+                elif faces.remove([1,2,3]):
+                    pass
+                elif faces.remove([2,3,4]):
+                    pass
+                elif faces.remove([20,21,22]):
+                    pass
+                elif faces.remove([11,12,13]):
+                    pass
+                elif faces.remove([10,11,12]):
+                    pass
+                elif faces.remove([31,32,33]):
+                    pass
+                elif faces.remove([9,10,11]):
+                    pass
+                elif faces.remove([14,15,16]):
+                    pass
+                elif faces.remove([13,14,15]):
+                    pass
+                elif faces.remove([12,13,14]):
+                    pass
+                elif faces.remove([28,29,30]):
+                    pass
+                elif faces.remove([30,31,32]):
+                    pass
+                elif faces.remove([29,30,31]):
+                    pass
+                elif faces.remove([19,20,21]):
+                    pass
+                elif faces.remove([32,33,34]):
+                    pass
+                elif faces.remove([103,104,105]):
+                    pass
+                elif faces.remove([97,98,99]):
+                    pass
+                elif faces.remove([95,96,97]):
+                    pass
+                elif faces.remove([133,134,135]):
+                    pass
+                elif faces.remove([139,140,141]):
+                    pass
+                elif faces.remove([6,7,8]):
+                    pass
+                elif faces.remove([45,46,47]):
+                    pass
+                elif faces.remove([447,448,449]):
+                    pass
+                elif faces.remove([433,434,435]):
+                    pass
+                elif faces.remove([430,431,432]):
+                    pass
+                elif faces.remove([432,433,434]):
+                    pass
+                elif faces.remove([448,449,450]):
+                    pass
+                elif faces.remove([424,425,426]):
+                    pass
+                elif faces.remove([425,426,427]):
+                    pass
+                elif faces.remove([429,430,431]):
+                    pass
+                elif faces.remove([483,484,485]):
+                    pass
+                elif faces.remove([482,483,484]):
+                    pass
+                elif faces.remove([479,480,481]):
+                    pass
+                elif faces.remove([498,499,500]):
+                    pass
+                elif faces.remove([467,468,469]):
+                    pass
+                elif faces.remove([499,500,501]):
+                    pass
+                elif faces.remove([488,489,490]):
+                    pass
+                elif faces.remove([487,488,489]):
+                    pass
+                elif faces.remove([391,392,393]):
+                    pass
+                elif faces.remove([392,393,394]):
+                    pass
+                elif faces.remove([439,440,441]):
+                    pass
+                elif faces.remove([438,439,440]):
+                    pass
+                elif faces.remove([434,435,436]):
+                    pass
+                elif faces.remove([435,436,437]):
+                    pass
+                elif faces.remove([436,437,438]):
+                    pass
+                elif faces.remove([437,438,439]):
+                    pass
+                elif faces.remove([441,442,443]):
+                    pass
+                elif faces.append([463,468,470]):
+                    pass
+                elif faces.append([463,470,516]):
+                    pass
+                elif faces.append([461,579,580]):
+                    pass
+                elif faces.append([1016,1019,1020]):
+                    pass
+                elif faces.append([1016,1017,1020]):
+                    pass
+                elif faces.append([1017,1020,1026]):
+                    pass
+                elif faces.append([1019,1020,1026]):
+                    pass
+                elif faces.append([374,442,376]):
+                    pass
+                
+
+    mesh = bpy.data.meshes.new("dragonjan")
+    object = bpy.data.objects.new("dragonjan", mesh)
+    mesh.from_pydata(vertices, [], faces)
+    bpy.context.collection.objects.link(object)
     
 
 def GHG_whole_entire_modelAnakin_Jedi2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
@@ -212,6 +564,132 @@ def GHG_whole_entire_modelBubbles2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
                     fb+=1
                     fc+=1
                     faces.append([fa,fb,fc])
+
+                if len(vertices) == 1085:
+                    if faces.remove([101,102,103]):
+                        pass
+                    elif faces.remove([100,101,102]):
+                        pass
+                    elif faces.remove([723,724,725]):
+                        pass
+                    elif faces.remove([698,699,700]):
+                        pass
+                    elif faces.remove([697,698,699]):
+                        pass
+                    elif faces.remove([673,674,675]):
+                        pass
+                    elif faces.remove([757,758,759]):
+                        pass
+                    elif faces.remove([722,723,724]):
+                        pass
+                    elif faces.remove([467,468,469]):
+                        pass
+                    elif faces.remove([489,490,491]):
+                        pass
+                    elif faces.remove([501,502,503]):
+                        pass
+                    elif faces.remove([500,501,502]):
+                        pass
+                    elif faces.remove([582,583,584]):
+                        pass
+                    elif faces.remove([583,584,585]):
+                        pass
+                    elif faces.remove([484,485,486]):
+                        pass
+                    elif faces.remove([566,567,568]):
+                        pass
+                    elif faces.remove([567,568,569]):
+                        pass
+                    elif faces.remove([579,580,581]):
+                        pass
+                    elif faces.remove([469,470,471]):
+                        pass
+                    elif faces.remove([433,434,435]):
+                        pass
+                    elif faces.remove([432,433,434]):
+                        pass
+                    elif faces.remove([450,451,452]):
+                        pass
+                    elif faces.remove([455,456,457]):
+                        pass
+                    elif faces.remove([486,487,488]):
+                        pass
+                    elif faces.remove([485,486,487]):
+                        pass
+                    elif faces.remove([468,469,470]):
+                        pass
+                    elif faces.remove([456,457,458]):
+                        pass
+                    elif faces.remove([451,452,453]):
+                        pass
+                    elif faces.remove([488,489,490]):
+                        pass
+                    elif faces.remove([431,432,433]):
+                        pass
+                    elif faces.remove([449,450,451]):
+                        pass
+                    elif faces.remove([676,677,678]):
+                        pass
+                    elif faces.remove([373,374,375]):
+                        pass
+                    elif faces.remove([372,373,374]):
+                        pass
+                    elif faces.remove([371,372,373]):
+                        pass
+                    elif faces.remove([370,371,372]):
+                        pass
+                    elif faces.remove([681,682,683]):
+                        pass
+                    elif faces.remove([414,415,416]):
+                        pass
+                    elif faces.remove([374,375,376]):
+                        pass
+                    elif faces.remove([496,497,498]):
+                        pass
+                    elif faces.remove([495,496,497]):
+                        pass
+                    elif faces.remove([728,729,730]):
+                        pass
+                    elif faces.remove([220,221,222]):
+                        pass
+                    elif faces.remove([219,220,221]):
+                        pass
+                    elif faces.remove([413,414,415]):
+                        pass
+                    elif faces.remove([391,392,393]):
+                        pass
+                    elif faces.remove([560,561,562]):
+                        pass
+                    elif faces.remove([384,385,386]):
+                        pass
+                    elif faces.remove([570,571,572]):
+                        pass
+                    elif faces.remove([554,555,556]):
+                        pass
+                    elif faces.remove([555,556,557]):
+                        pass
+                    elif faces.remove([389,390,391]):
+                        pass
+                    elif faces.remove([364,365,366]):
+                        pass
+                    elif faces.remove([387,388,389]):
+                        pass
+                    elif faces.remove([902,903,904]):
+                        pass
+                    elif faces.remove([903,904,905]):
+                        pass
+                    elif faces.remove([914,915,916]):
+                        pass
+                    elif faces.remove([119,120,121]):
+                        pass
+                    elif faces.remove([118,119,120]):
+                        pass
+                    elif faces.remove([122,123,124]):
+                        pass
+                    elif faces.remove([131,132,133]):
+                        pass
+                    elif faces.remove([121,122,123]):
+                        pass
 
     mesh = bpy.data.meshes.new("dragonjan")
     object = bpy.data.objects.new("dragonjan", mesh)
@@ -473,6 +951,62 @@ def GHG_whole_entire_modelCRASH(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
                         pass
                     elif faces.remove([1477,1478,1479]):
                         pass
+                    elif faces.remove([1546,1547,1548]):
+                        pass
+                    elif faces.remove([1545,1546,1547]):
+                        pass
+                    elif faces.remove([1587,1588,1589]):
+                        pass
+                    elif faces.remove([1526,1527,1528]):
+                        pass
+                    elif faces.remove([1641,1642,1643]):
+                        pass
+                    elif faces.remove([1642,1643,1644]):
+                        pass
+                    elif faces.remove([1568,1569,1670]):
+                        pass
+                    elif faces.remove([1655,1656,1657]):
+                        pass
+                    elif faces.remove([1680,1681,1682]):
+                        pass
+                    elif faces.remove([1679,1680,1681]):
+                        pass
+                    elif faces.remove([1549,1550,1551]):
+                        pass
+                    elif faces.remove([1525,1526,1527]):
+                        pass
+                    elif faces.remove([1622,1623,1624]):
+                        pass
+                    elif faces.remove([1621,1622,1623]):
+                        pass
+                    elif faces.remove([1566,1567,1568]):
+                        pass
+                    elif faces.remove([1586,1587,1588]):
+                        pass
+                    elif faces.remove([1575,1576,1577]):
+                        pass
+                    elif faces.remove([1689,1690,1691]):
+                        pass
+                    elif faces.remove([1697,1698,1699]):
+                        pass
+                    elif faces.remove([1703,1704,1705]):
+                        pass
+                    elif faces.remove([1702,1703,1704]):
+                        pass
+                    elif faces.remove([1675,1676,1677]):
+                        pass
+                    elif faces.remove([1705,1706,1707]):
+                        pass
+                    elif faces.remove([1709,1710,1711]):
+                        pass
+                    elif faces.remove([1708,1709,1710]):
+                        pass
+                    elif faces.remove([1599,1600,1601]):
+                        pass
+                    elif faces.remove([1600,1601,1602]):
+                        pass
+                    elif faces.remove([1656,1657,1658]):
+                        pass
 
     mesh = bpy.data.meshes.new("dragonjan")
     object = bpy.data.objects.new("dragonjan", mesh)
@@ -713,6 +1247,92 @@ def GHG_whole_entire_modelRay2(f, vertices2=[], faces2=[], fa=-1, fb=0, fc=1):
                         pass
                     elif faces2.remove([1854,1855,1856]):
                         pass
+                    elif faces2.remove([103,104,105]):
+                        pass
+                    elif faces2.remove([337,338,339]):
+                        pass
+                    elif faces2.remove([973,974,975]):
+                        pass
+                    elif faces2.remove([1845,1846,1847]):
+                        pass
+                    elif faces2.remove([1847,1848,1849]):
+                        pass
+                    elif faces2.remove([974,975,976]):
+                        pass
+                    elif faces2.remove([905,906,907]):
+                        pass
+                    elif faces2.remove([1849,1850,1851]):
+                        pass
+                    elif faces2.remove([1846,1847,1848]):
+                        pass
+                    elif faces2.remove([887,888,889]):
+                        pass
+                    elif faces2.remove([1843,1844,1845]):
+                        pass
+                    elif faces2.remove([904,905,906]):
+                        pass
+                    elif faces2.remove([562,563,564]):
+                        pass
+                    elif faces2.remove([565,566,567]):
+                        pass
+                    elif faces2.remove([566,567,568]):
+                        pass
+                    elif faces2.remove([1864,1865,1866]):
+                        pass
+                    elif faces2.remove([1806,1807,1808]):
+                        pass
+                    elif faces2.remove([852,853,854]):
+                        pass
+                    elif faces2.remove([1240,1241,1242]):
+                        pass
+                    elif faces2.remove([1685,1686,1687]):
+                        pass
+                    elif faces2.remove([1729,1730,1731]):
+                        pass
+                    elif faces2.remove([1682,1683,1684]):
+                        pass
+                    elif faces2.remove([1076,1077,1078]):
+                        pass
+                    elif faces2.remove([1077,1078,1079]):
+                        pass
+                    elif faces2.remove([722,723,724]):
+                        pass
+                    elif faces2.remove([1686,1687,1688]):
+                        pass
+                    elif faces2.remove([1073,1074,1075]):
+                        pass
+                    elif faces2.remove([1072,1073,1074]):
+                        pass
+                    elif faces2.remove([1493,1494,1495]):
+                        pass
+                    elif faces2.remove([384,385,386]):
+                        pass
+                    elif faces2.remove([1277,1278,1279]):
+                        pass
+                    elif faces2.remove([640,641,642]):
+                        pass
+                    elif faces2.remove([1702,1703,1704]):
+                        pass
+                    elif faces2.remove([966,967,968]):
+                        pass
+                    elif faces2.remove([789,790,791]):
+                        pass
+                    elif faces2.remove([99,100,101]):
+                        pass
+                    elif faces2.remove([318,319,320]):
+                        pass
+                    elif faces2.remove([1011,1012,1013]):
+                        pass
+                    elif faces2.remove([1010,1011,1012]):
+                        pass
+                    elif faces2.remove([967,968,969]):
+                        pass
+                    elif faces2.remove([1648,1649,1650]):
+                        pass
+                    elif faces2.remove([606,607,608]):
+                        pass
+                    elif faces2.remove([1067,1068,1069]):
+                        pass
 
     mesh = bpy.data.meshes.new("dragonjan")
     object = bpy.data.objects.new("dragonjan", mesh)
@@ -902,7 +1522,7 @@ def GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
 def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=False):
     with open(filepath, "rb") as f:
         if GHG_Bones:
-            GHG_whole_entire_bones(f, bone_parentlist=[])
+            GHG_whole_entire_bones(f, bone_parentlist=[], bones_=[])
         if GHG_Meshes == 1:
             if os.path.basename(filepath) == r"ray.ghg":
                 GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
@@ -921,6 +1541,10 @@ def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=False):
         if GHG_Meshes == 5:
             if os.path.basename(filepath) == r"anakin_jedi.ghg":
                 GHG_whole_entire_modelAnakin_Jedi2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
+
+        if GHG_Meshes == 6:
+            if os.path.basename(filepath) == r"hermit.ghg":
+                GHG_whole_entire_modelHermit2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
                 
         
                 
