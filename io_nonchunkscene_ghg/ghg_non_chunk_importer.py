@@ -5,7 +5,6 @@ import bpy
 import mathutils
 import math
 import bmesh
-        
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -19,7 +18,8 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         build += strbyte
     return build
 
-def GHG_whole_entire_bones(f, bone_parentlist=[], bones_=[], vertices=[], faces=[], fa=-1, fb=0, fc=1):
+def GHG_whole_entire_bones(f, bone_parentlist=[],bones_=[]):
+        
     coll = bpy.context.collection
     skel = bpy.data.armatures.new('GHG Skeleton')
     arma = bpy.data.objects.new('GHG Armature', skel)
@@ -63,6 +63,7 @@ def GHG_whole_entire_bones(f, bone_parentlist=[], bones_=[], vertices=[], faces=
         bone_parentlist.append(bone_parent)
         ntbl_buffer.seek(name_offset - 1)
         bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
+        
     f.seek(0)
     f.seek(36,1)
     f.seek(PosBoneEntrySize-36,1)
@@ -73,23 +74,70 @@ def GHG_whole_entire_bones(f, bone_parentlist=[], bones_=[], vertices=[], faces=
         BZ = unpack("<f", f.read(4))[0]
         f.seek(4,1)
         bones_.append([BX,BY,BZ])
+        
+    
 
-        bone = skel.edit_bones.new(bone_name)
+    
+            
+        bone = skel.edit_bones.new("bone_name")
         bone.head = (
             +BX,
-            +BY,
             +BZ,
-	)
+            +BY,
+        )
         bone.tail = (
             bone.head[0],
             bone.head[1],
             bone.head[2] + 0.03,
         )
 
+        test = mathutils.Vector([BX, BY, BZ+1.0])
+
+        mat_rot = mathutils.Matrix.Rotation(math.radians(90.0), 4, 'X')
+        
+        mat_trans = mathutils.Matrix.Translation(test)
+            
+            
+        mat = mat_trans @ mat_rot
+        mat.inverted()
+            
+        #mat3 = mat.to_3x3()
+            
+        bone.transform(mat)
+
     for bone_id, bone_parent in enumerate(bone_parentlist):
         if bone_parent < 0: continue # root bone is set to -1
         skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
     bpy.ops.object.mode_set(mode = 'OBJECT')
+
+
+def GHG_whole_entire_modelPearl2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
+    f.seek(0)
+    ChunkRead = f.read()
+    f.seek(0)
+    for i in range(len(ChunkRead)):
+        Chunk = f.read(4)
+        if Chunk == b"\x03\x02\x00\x01":
+            f.seek(2,1)
+            vertexCount = unpack("B", f.read(1))[0]//2
+            f.seek(1,1)
+            for i in range(vertexCount):
+                vx = unpack("<h", f.read(2))[0] / 4096.0
+                vy = unpack("<h", f.read(2))[0] / 4096.0
+                vz = unpack("<h", f.read(2))[0] / 4096.0
+                nz = unpack("<h", f.read(2))[0] / 4096.0
+                f.seek(8,1)
+                vertices.append([vx,vy,vz])
+            for i in range(vertexCount-2):
+                fa+=1
+                fb+=1
+                fc+=1
+                faces.append([fa,fb,fc])
+
+    mesh = bpy.data.meshes.new("dragonjan")
+    object = bpy.data.objects.new("dragonjan", mesh)
+    mesh.from_pydata(vertices, [], faces)
+    bpy.context.collection.objects.link(object)
                 
             
 
@@ -421,6 +469,36 @@ def GHG_whole_entire_modelHermit2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
                     pass
                 elif faces.remove([441,442,443]):
                     pass
+                elif faces.remove([381,382,383]):
+                    pass
+                elif faces.remove([380,381,382]):
+                    pass
+                elif faces.remove([361,362,363]):
+                    pass
+                elif faces.remove([360,361,362]):
+                    pass
+                elif faces.remove([440,441,442]):
+                    pass
+                elif faces.remove([396,397,398]):
+                    pass
+                elif faces.remove([484,485,486]):
+                    pass
+                elif faces.remove([485,486,487]):
+                    pass
+                elif faces.remove([486,487,488]):
+                    pass
+                elif faces.remove([504,505,506]):
+                    pass
+                elif faces.remove([505,506,507]):
+                    pass
+                elif faces.remove([503,504,505]):
+                    pass
+                elif faces.append([477,509,596]):
+                    pass
+                elif faces.append([475,477,509]):
+                    pass
+                elif faces.append([476,504,595]):
+                    pass
                 elif faces.append([463,468,470]):
                     pass
                 elif faces.append([463,470,516]):
@@ -429,6 +507,10 @@ def GHG_whole_entire_modelHermit2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
                     pass
                 elif faces.append([1016,1019,1020]):
                     pass
+                elif faces.append([477,596,598]):
+                    pass
+                elif faces.append([475,509,511]):
+                    pass
                 elif faces.append([1016,1017,1020]):
                     pass
                 elif faces.append([1017,1020,1026]):
@@ -436,6 +518,24 @@ def GHG_whole_entire_modelHermit2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
                 elif faces.append([1019,1020,1026]):
                     pass
                 elif faces.append([374,442,376]):
+                    pass
+                elif faces.append([471,515,517]):
+                    pass
+                elif faces.append([469,471,517]):
+                    pass
+                elif faces.append([470,491,516]):
+                    pass
+                elif faces.append([470,472,491]):
+                    pass
+                elif faces.append([473,475,511]):
+                    pass
+                elif faces.append([473,511,513]):
+                    pass
+                elif faces.remove([129,130,131]):
+                    pass
+                elif faces.append([471,473,513]):
+                    pass
+                elif faces.append([471,513,515]):
                     pass
                 
 
@@ -1522,7 +1622,7 @@ def GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1):
 def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=False):
     with open(filepath, "rb") as f:
         if GHG_Bones:
-            GHG_whole_entire_bones(f, bone_parentlist=[], bones_=[])
+            GHG_whole_entire_bones(f, bone_parentlist=[],bones_=[])
         if GHG_Meshes == 1:
             if os.path.basename(filepath) == r"ray.ghg":
                 GHG_whole_entire_modelRay1(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
@@ -1545,6 +1645,13 @@ def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=False):
         if GHG_Meshes == 6:
             if os.path.basename(filepath) == r"hermit.ghg":
                 GHG_whole_entire_modelHermit2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
+
+        if GHG_Meshes == 7:
+            pass
+
+        if GHG_Meshes == 8:
+            if os.path.basename(filepath) == r"pearl.ghg":
+                GHG_whole_entire_modelPearl2(f, vertices=[], faces=[], fa=-1, fb=0, fc=1)
                 
         
                 
