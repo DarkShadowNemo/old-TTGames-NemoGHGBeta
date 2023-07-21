@@ -1,42 +1,32 @@
 import bpy
-import bmesh
 from struct import pack
 
 def WriteGHG(f):
-    f.write(pack("<I", 464*len(bpy.data.materials)+144+16))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", len(bpy.data.materials))) # remove dots stroke manually through the script tabs
-    f.write(pack("<I", 144))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 464*len(bpy.data.materials)+160))
-    """if len(ob.pose.bones)==0:
-        f.write(pack("<I", 0))
-        f.write(pack("<I", 0))
-    elif len(ob.pose.bones):
-        f.write(pack("<I", 96*len(ob.pose.bones)+144+16+464))
-        f.write(pack("<I", 64*len(ob.pose.bones)+96*len(ob.pose.bones)+144+16+464))"""
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0)) #3
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0)) #3
+    ob = bpy.context.object
+    f.write(pack("<I", 0)) # size
+    f.write(pack("<I", 0)) # unk
+    f.write(pack("<I", 0)) # textures
+    f.write(pack("<I", 0)) # 144
+    f.write(pack("<I", len(bpy.data.materials)))
+    f.write(pack("<I", 0)) # 144
+    f.write(pack("<I", len(ob.pose.bones)))
+    f.write(pack("<I", 0)) # parent start size
+    f.write(pack("<I", 0)) # pos start size
+    f.write(pack("<I", 0)) # unk start size
+    f.write(pack("<I", 0)) #
+    f.write(pack("<I", 0)) #
+    f.write(pack("<I", 0)) # namedtable size
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
-    for i in range(13):
+    f.write(pack("<I", 1)) # maybe object amount
+    f.write(pack("<I", 0))
+    f.write(pack("<I", 0))
+    for i in range(16):
         f.write(pack("<f", 1))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    #todo loop material size with multiple objects
-        
-    f.write(pack("<I", 144+16))
+
+    f.write(pack("<I", 160))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
@@ -265,7 +255,6 @@ def WriteGHG(f):
         f.write(pack("B", 0))
         f.write(pack("B", 0))
         f.write(pack("B", 0))
-            #######
         f.write(pack("<I", 0))
         f.write(pack("B", 0x3D))
         f.write(pack("B", 0))
@@ -318,36 +307,49 @@ def WriteGHG(f):
         f.write(pack("<I", 0))
         f.write(pack("<I", 0))
         f.write(pack("<I", 0))
+    for pbone_ in ob.pose.bones:
+        f.write(b"dragonjan_bones")
+        f.write(pack("B", 0))
+    f.write(b"defaultlayer")
+    f.write(pack("B", 0))
+    f.write(pack("B", 0))
+    f.write(pack("B", 0))
+    f.write(pack("B", 0))
+    nametable_offset = 1
+    for pbone in ob.pose.bones: # transpose
+        f.write(pack("<f", 1))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 1))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 1))
+        f.write(pack("<f", 0))
+
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 1))
+
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<I", 0))
+
+        f.write(pack("b", ob.data.bones.find(pbone.parent.name) if pbone.parent is not None else -1))
+        f.write(pack("<I", nametable_offset))
+        nametable_offset+=1
+
+def WritingEditGHG(filepath):
+    with open(filepath, "wb") as f:
+        WriteGHG(f)
         
     
     
     
     
 
-def editOrderVerticesExport(f):
-    obdata = bpy.context.object.data
-    f.write(b"\x03\x01\x00\x01\x03\x80")
-    f.write(pack("b", len(obdata.vertices)))
-    f.write(pack("b", 108))
-    obj = bpy.context.object
-    if obj.mode == "EDIT":
-        bm=bmesh.from_edit_mesh(obj.data)
-        for v in bm.verts:
-            if v.select:
-                f.write(pack("<f", v.co.x))
-                f.write(pack("<f", v.co.y))
-                f.write(pack("<f", v.co.z))
-                f.write(pack("<f", 1))
-    else:
-        print("GHG is not in edit mode.")
-
-
-def WritingEditGHG(filepath, noappendGHG=False, appendGHG=False):
-    with open(filepath, "wb") as f:
-        if noappendGHG:
-            WriteGHG(f)
-        if appendGHG:
-            with open(filepath, "ab") as f:
-                editOrderVerticesExport(f)
-                
-    
