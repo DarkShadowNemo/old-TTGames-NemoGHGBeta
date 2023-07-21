@@ -1,7 +1,7 @@
 bl_info = {
         'name'			: 'Finding Nemo GHG Character Non Chunk Importer',
 	'author'		: 'DarkShadow Nemo',
-	'version'		: (0, 4, 2),
+	'version'		: (0, 5, 0),
 	'blender'		: (3, 0, 0),
 	'location'		: 'File > Import',
 	'description'           : 'Import GHG mesh chunk',
@@ -28,15 +28,13 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
-        GHG_Meshes : IntProperty(name="open FDSE ? 1")
-
-        #GHG_Bone_data : BoolProperty(name="Bones", description="imports bones")
+        GHG_Bones : IntProperty(name="Bones", description="imports bones")
         
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Bones = self.GHG_Bones)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
@@ -50,16 +48,16 @@ class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
                 type	    = bpy.types.OperatorFileListElement
         )
 
-        appendGHG : BoolProperty(name="append 0x030100010380")
+        #appendGHG : BoolProperty(name="append 0x030100010380")
 
-        noappendGHG : BoolProperty(name="no append 0x030100010380")
+        #noappendGHG : BoolProperty(name="no append 0x030100010380")
 
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
         def execute(self, context):
             importlib.reload(ghg_non_chunk_exporter)
-            ghg_non_chunk_exporter.WritingEditGHG(self.filepath, appendGHG = self.appendGHG, noappendGHG = self.noappendGHG)
+            ghg_non_chunk_exporter.WritingEditGHG(self.filepath)
             return {"FINISHED"}
 
         
