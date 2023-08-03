@@ -6,6 +6,10 @@ import mathutils
 import math
 import bmesh
 
+#luxo_list1 = [[201],[202],[203]] # incorrect face data
+
+"del luxo_list1[:]"
+
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
     if index == -1: return s
@@ -241,13 +245,16 @@ def GHG_whole_entire_bones(f, bone_parentlist=[],bones_=[]):
 def GHG_whole_beta(f, filepath):
     vertices=[]
     faces=[]
+    normals=[]
     material_ID = os.path.basename(os.path.splitext(filepath)[0])
     mat = bpy.data.materials.new(name=material_ID)
     bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
     ob = bpy.context.object
-    fa=-1
-    fb=0
-    fc=1
+    #######################
+    #another extra 
+    fa=-3
+    fb=-2
+    fc=-1
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -263,11 +270,14 @@ def GHG_whole_beta(f, filepath):
                 vz = unpack("<f", f.read(4))[0]
                 nz = unpack("<f", f.read(4))[0]
                 vertices.append([vx,vy,vz])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+                normals.append([0,0,nz]) # crack down normal z axis to faces
+            for i, norm in enumerate(normals):
+                if norm[2] == 1.0:
+                    for i in range(vertexCount-2):
+                        fa+=1*3
+                        fb+=1*3
+                        fc+=1*3
+                        faces.append([fa,fb,fc])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
@@ -282,11 +292,14 @@ def GHG_whole_beta(f, filepath):
                 nz = unpack("<h", f.read(2))[0] / 4096.0
                 f.seek(8,1)
                 vertices.append([vx,vy,vz])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+                normals.append([0,0,nz]) # crack down normal z axis to faces
+            for i, norm in enumerate(normals):
+                if norm[2] == 1.0:
+                    for i in range(vertexCount-2):
+                        fa+=1*3
+                        fb+=1*3
+                        fc+=1*3
+                        faces.append([fa,fb,fc])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
@@ -301,11 +314,14 @@ def GHG_whole_beta(f, filepath):
                 nz = unpack("<f", f.read(4))[0]
                 f.seek(16,1)
                 vertices.append([vx,vy,vz])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+                normals.append([0,0,nz]) # crack down normal z axis to faces
+            for i, norm in enumerate(normals):
+                if norm[2] == 1.0:
+                    for i in range(vertexCount-2):
+                        fa+=1*3
+                        fb+=1*3
+                        fc+=1*3
+                        faces.append([fa,fb,fc])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
