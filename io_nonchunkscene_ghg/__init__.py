@@ -28,13 +28,15 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
+        GHG_Meshes : IntProperty(name="offset Meshes", description="choose the correct ghg offset")
+
         GHG_Bones : IntProperty(name="Bones", description="imports bones")
         
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Bones = self.GHG_Bones)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes, GHG_Bones = self.GHG_Bones)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
