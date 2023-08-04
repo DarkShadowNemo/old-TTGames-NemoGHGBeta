@@ -372,8 +372,8 @@ def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1):
     with open(filepath, "rb") as f:
         if GHG_Meshes == 1:
             GHG_whole_beta_1(f, filepath)
-        if GHG_Meshes == 2_nemo:
-            GHG_whole_beta_2(f, filepath)
+        if GHG_Meshes == 2:
+            GHG_whole_beta_2_nemo(f, filepath)
         if GHG_Meshes == 3:
             GHG_whole_beta_3(f, filepath)
         if GHG_Bones == 1:
