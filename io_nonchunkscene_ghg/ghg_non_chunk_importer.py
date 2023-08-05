@@ -94,7 +94,7 @@ def GHG_whole_entire_bones_(f, bone_parentlist=[],bones_=[]):
         name_offset, = unpack("<L", f.read(4))
         f.seek(11,1)
         bone_parentlist.append(bone_parent)
-        ntbl_buffer.seek(name_offset - 1)
+        ntbl_buffer.seek(name_offset)
         bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
         
     f.seek(0)
@@ -238,7 +238,7 @@ def GHG_whole_entire_bones(f, bone_parentlist=[],bones_=[]):
         skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
     bpy.ops.object.mode_set(mode = 'OBJECT')
 
-def GHG_whole_beta_1(f, filepath):
+def GHG_whole_beta_1_0x030100010380XX6C_key_1(f, filepath):
     vertices=[]
     faces=[]
     normals=[]
@@ -267,14 +267,15 @@ def GHG_whole_beta_1(f, filepath):
                 nz = unpack("<f", f.read(4))[0]
                 vertices.append([vx,vy,vz])
                 normals.append([0,0,nz])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
+
+    for i in range(18):
+        fa+=1
+        fb+=1
+        fc+=1
+        faces.append([fa,fb,fc])
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh.from_pydata(vertices, [], faces)
@@ -388,7 +389,7 @@ def GHG_whole_beta_3(f, filepath):
 def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1):
     with open(filepath, "rb") as f:
         if GHG_Meshes == 1:
-            GHG_whole_beta_1(f, filepath)
+            GHG_whole_beta_1_0x030100010380XX6C_key_1(f, filepath)
         if GHG_Meshes == 2:
             GHG_whole_beta_2(f, filepath)
         if GHG_Meshes == 3:
