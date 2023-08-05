@@ -248,9 +248,9 @@ def GHG_whole_beta_1(f, filepath):
     ob = bpy.context.object
     #######################
     #another extra 
-    fa=0
-    fb=1
-    fc=2
+    fa=-1
+    fb=0
+    fc=1
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -267,12 +267,17 @@ def GHG_whole_beta_1(f, filepath):
                 nz = unpack("<f", f.read(4))[0]
                 vertices.append([vx,vy,vz])
                 normals.append([0,0,nz])
+            for i in range(vertexCount-2):
+                fa+=1
+                fb+=1
+                fc+=1
+                faces.append([fa,fb,fc])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], [])
+    mesh.from_pydata(vertices, [], faces)
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
     bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
@@ -289,7 +294,10 @@ def GHG_whole_beta_2(f, filepath):
     bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
     ob = bpy.context.object
     #######################
-    #another extra 
+    #another extra
+    fa = -1
+    fb = 0
+    fc = 1
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -307,14 +315,17 @@ def GHG_whole_beta_2(f, filepath):
                 f.seek(8,1)
                 vertices.append([vx,vy,vz])
                 normals.append([0,0,nz])
-                
-                
+            for i in range(vertexCount-2):
+                fa+=1
+                fb+=1
+                fc+=1
+                faces.append([fa,fb,fc])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], [])
+    mesh.from_pydata(vertices, [], faces)
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
     bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
@@ -332,9 +343,9 @@ def GHG_whole_beta_3(f, filepath):
     ob = bpy.context.object
     #######################
     #another extra 
-    fa=0
-    fb=1
-    fc=2
+    fa=-1
+    fb=0
+    fc=1
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -352,12 +363,17 @@ def GHG_whole_beta_3(f, filepath):
                 f.seek(16,1)
                 vertices.append([vx,vy,vz])
                 normals.append([0,0,nz])
+            for i in range(vertexCount-2):
+                fa+=1
+                fb+=1
+                fc+=1
+                faces.append([fa,fb,fc])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], [])
+    mesh.from_pydata(vertices, [], faces)
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
     bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
