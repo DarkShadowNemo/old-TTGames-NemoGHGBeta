@@ -5,6 +5,7 @@ import bpy
 import mathutils
 import math
 import bmesh
+#from .Nemo.ModelName.Key.Meshes.Key import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -17,38 +18,6 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         if strbyte == b'\0' or not strbyte: break
         build += strbyte
     return build
-
-def GHG_Textures(f, sizing=[]):
-    f.seek(0)
-    FileSize = unpack("<I", f.read(4))[0]
-    unk = unpack("<I", f.read(4))[0]
-    TextureCount = unpack("<I", f.read(4))[0]
-    TextureStartEntrySize = unpack("<I", f.read(4))[0]
-    f.seek(TextureStartEntrySize-16,1)
-    for i in range(TextureCount):
-        size = unpack("<I", f.read(4))[0]
-        sizing.append([size])
-    for i, siz in enumerate(sizing):
-        #the real GHG textures are always in type 1
-        f.seek(siz[0])
-        W = unpack("<H", f.read(2))[0]
-        type = unpack("<H", f.read(2))[0]
-        H = unpack("<H", f.read(2))[0]
-        unk = unpack("<H", f.read(2))[0]
-        size2 = unpack("<H", f.read(2))[0]
-        unk2 = unpack("<H", f.read(2))[0]
-        f.seek(3,1) # not sure what that is
-        flags4 = unpack("B", f.read(1))[0]
-        if type == 1:
-            size3 = unpack("<I", f.read(4))[0]
-            unk3 = unpack("B", f.read(1))[0]
-            depth = unpack("B", f.read(1))[0]
-            unk4 = unpack("<H", f.read(2))[0]
-            type = unpack("<H", f.read(2))[0]
-            unk5 = unpack("<H", f.read(2))[0]
-            unk6 = unpack("<H", f.read(2))[0]
-            unk7 = unpack("<H", f.read(2))[0]
-            bpy.data.images.new("GHG Image", width=W, height=H, alpha=True)
 
 def GHG_whole_entire_bones_(f, bone_parentlist=[],bones_=[]):
         
@@ -238,7 +207,7 @@ def GHG_whole_entire_bones(f, bone_parentlist=[],bones_=[]):
         skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
     bpy.ops.object.mode_set(mode = 'OBJECT')
 
-def GHG_whole_beta_1_0x030100010380XX6C_key_1(f, filepath):
+def GHG_whole_beta_1(f, filepath):
     vertices=[]
     faces=[]
     normals=[]
@@ -246,14 +215,12 @@ def GHG_whole_beta_1_0x030100010380XX6C_key_1(f, filepath):
     mat = bpy.data.materials.new(name=material_ID)
     bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
     ob = bpy.context.object
-    #######################
-    #another extra 
-    fa=-1
-    fb=0
-    fc=1
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
+    fa = -1
+    fb = 0
+    fc = 1
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x03\x01\x00\x01":
@@ -270,12 +237,11 @@ def GHG_whole_beta_1_0x030100010380XX6C_key_1(f, filepath):
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
-
-    for i in range(18):
-        fa+=1
-        fb+=1
-        fc+=1
-        faces.append([fa,fb,fc])
+            for i in range(vertexCount-2):
+                fa+=1
+                fb+=1
+                fc+=1
+                faces.append([fa,fb,fc])
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh.from_pydata(vertices, [], faces)
@@ -285,6 +251,8 @@ def GHG_whole_beta_1_0x030100010380XX6C_key_1(f, filepath):
     objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
     bpy.context.view_layer.objects.active = objs
     objs.data.materials.append(mat)
+
+    
 
 def GHG_whole_beta_2(f, filepath):
     vertices=[]
@@ -389,7 +357,7 @@ def GHG_whole_beta_3(f, filepath):
 def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1):
     with open(filepath, "rb") as f:
         if GHG_Meshes == 1:
-            GHG_whole_beta_1_0x030100010380XX6C_key_1(f, filepath)
+            GHG_whole_beta_1(f, filepath)
         if GHG_Meshes == 2:
             GHG_whole_beta_2(f, filepath)
         if GHG_Meshes == 3:
