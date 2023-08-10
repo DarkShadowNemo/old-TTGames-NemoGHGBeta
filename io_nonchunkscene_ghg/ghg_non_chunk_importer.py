@@ -5,7 +5,6 @@ import bpy
 import mathutils
 import math
 import bmesh
-#from .Nemo.ModelName.Key.Meshes.Key import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -18,6 +17,13 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         if strbyte == b'\0' or not strbyte: break
         build += strbyte
     return build
+
+def GHG_whole_entire_uv1(f):
+    pass
+def GHG_whole_entire_uv2(f):
+    pass
+def GHG_whole_entire_uv3(f):
+    pass
 
 def GHG_whole_entire_bones_(f, bone_parentlist=[],bones_=[]):
         
