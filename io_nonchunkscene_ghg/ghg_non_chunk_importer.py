@@ -18,8 +18,41 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         build += strbyte
     return build
 
-def GHG_whole_entire_uv1(f):
+def GHG_vertex_entire_vc1(f):
     pass
+
+def GHG_whole_entire_uv1(f, uvs=[]):
+    obdata = bpy.context.object.data
+    f.seek(0)
+    Chunk = f.read()
+    f.seek(0)
+    for i in range(len(Chunk)):
+        Chunk_ = f.read(4)
+        if Chunk_ == b"\x03\x01\x00\x01":
+            f.seek(2,1)
+            vertexcountskip = unpack("B", f.read(1))[0] # skip vertex data
+            f.seek(1,1)
+            for i in range(vertexcountskip):
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+            f.seek(6,1)
+            uvCount1 = unpack("B", f.read(1))[0]
+            f.seek(1,1)
+            for i in range(uvCount1):
+                uvx = unpack("<h", f.read(2))[0] / 4096.0
+                uvy = unpack("<h", f.read(2))[0] / 4096.0
+                f.seek(4,1)
+                uvs.append([uvx,uvy])
+            uv_tex = obdata.uv_layers.new()
+            uv_layer = obdata.uv_layers[0].data
+            vert_loops = {}
+            for l in obdata.loops:
+                vert_loops.setdefault(l.vertex_index, []).append(l.index)
+            for i, coord in enumerate(uvs):
+                for li in vert_loops[i]:
+                    uv_layer[li].uv = coord
 def GHG_whole_entire_uv2(f):
     pass
 def GHG_whole_entire_uv3(f):
@@ -289,7 +322,7 @@ def GHG_whole_beta_2(f, filepath):
                 nz = unpack("<h", f.read(2))[0] / 4096.0
                 f.seek(8,1)
                 vertices.append([vx,vy,vz])
-                normals.append([0,0,nz])
+                normals.append([0,0,1])
             for i in range(vertexCount-2):
                 fa+=1
                 fb+=1
@@ -337,7 +370,7 @@ def GHG_whole_beta_3(f, filepath):
                 nz = unpack("<f", f.read(4))[0]
                 f.seek(16,1)
                 vertices.append([vx,vy,vz])
-                normals.append([0,0,nz])
+                normals.append([0,0,1])
             for i in range(vertexCount-2):
                 fa+=1
                 fb+=1
