@@ -357,6 +357,19 @@ def GHG_whole_beta_3(f, filepath):
     vertices5_pt3=[]
     vertices5_pt4=[]
     vertices5_pt5=[]
+    vertices6=[]
+    vertices6_pt2=[]
+    vertices6_pt3=[]
+    vertices6_pt4=[]
+    vertices6_pt5=[]
+    vertices6_pt6=[]
+    vertices7=[]
+    vertices7_pt2=[]
+    vertices7_pt3=[]
+    vertices7_pt4=[]
+    vertices7_pt5=[]
+    vertices7_pt6=[]
+    vertices7_pt7=[]
     faces=[]
     faces2=[]
     faces2_pt2=[]
@@ -372,6 +385,19 @@ def GHG_whole_beta_3(f, filepath):
     faces5_pt3=[]
     faces5_pt4=[]
     faces5_pt5=[]
+    faces6=[]
+    faces6_pt2=[]
+    faces6_pt3=[]
+    faces6_pt4=[]
+    faces6_pt5=[]
+    faces6_pt6=[]
+    faces7=[]
+    faces7_pt2=[]
+    faces7_pt3=[]
+    faces7_pt4=[]
+    faces7_pt5=[]
+    faces7_pt6=[]
+    faces7_pt7=[]
     normals=[]
     normals2=[]
     normals2_pt2=[]
@@ -388,6 +414,19 @@ def GHG_whole_beta_3(f, filepath):
     normals5_pt3=[]
     normals5_pt4=[]
     normals5_pt5=[]
+    normals6=[]
+    normals6_pt2=[]
+    normals6_pt3=[]
+    normals6_pt4=[]
+    normals6_pt5=[]
+    normals6_pt6=[]
+    normals7=[]
+    normals7_pt2=[]
+    normals7_pt3=[]
+    normals7_pt4=[]
+    normals7_pt5=[]
+    normals7_pt6=[]
+    normals7_pt7=[]
     material_ID = os.path.basename(os.path.splitext(filepath)[0])
     mat = bpy.data.materials.new(name=material_ID)
     bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
@@ -456,6 +495,58 @@ def GHG_whole_beta_3(f, filepath):
     fa___5pt5 = -3
     fb___5pt5 = -2
     fc___5pt5 = -1
+
+    fa___6 = -3
+    fb___6 = -2
+    fc___6 = -1
+
+    fa___6pt2 = -3
+    fb___6pt2 = -2
+    fc___6pt2 = -1
+
+    fa___6pt3 = -3
+    fb___6pt3 = -2
+    fc___6pt3 = -1
+
+    fa___6pt4 = -3
+    fb___6pt4 = -2
+    fc___6pt4 = -1
+
+    fa___6pt5 = -3
+    fb___6pt5 = -2
+    fc___6pt5 = -1
+
+    fa___6pt6 = -3
+    fb___6pt6 = -2
+    fc___6pt6 = -1
+
+    fa___7 = -3
+    fb___7 = -2
+    fc___7 = -1
+
+    fa___7pt2 = -3
+    fb___7pt2 = -2
+    fc___7pt2 = -1
+
+    fa___7pt3 = -3
+    fb___7pt3 = -2
+    fc___7pt3 = -1
+
+    fa___7pt4 = -3
+    fb___7pt4 = -2
+    fc___7pt4 = -1
+
+    fa___7pt5 = -3
+    fb___7pt5 = -2
+    fc___7pt5 = -1
+
+    fa___7pt6 = -3
+    fb___7pt6 = -2
+    fc___7pt6 = -1
+
+    fa___7pt7 = -3
+    fb___7pt7 = -2
+    fc___7pt7 = -1
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x04\x02\x00\x01":
@@ -791,6 +882,327 @@ def GHG_whole_beta_3(f, filepath):
                     fb___5pt5+=1*3
                     fc___5pt5+=1*3
                     faces5_pt5.append([fa___5pt5,fb___5pt5,fc___5pt5])
+
+            elif vertexCount == 8:
+                for i in range(vertexCount-5):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices6.append([vx,vy,vz])
+                    normals6.append([0,0,1])
+                for i in range(vertexCount-7):
+                    fa___6+=1*3
+                    fb___6+=1*3
+                    fc___6+=1*3
+                    faces6.append([fa___6,fb___6,fc___6])
+
+                for i in range(vertexCount-5):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-5):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices6_pt2.append([vx,vy,vz])
+                    normals6_pt2.append([0,0,1])
+                for i in range(vertexCount-7):
+                    fa___6pt2+=1*3
+                    fb___6pt2+=1*3
+                    fc___6pt2+=1*3
+                    faces6_pt2.append([fa___6pt2,fb___6pt2,fc___6pt2])
+
+                for i in range(vertexCount-5):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-5):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices6_pt3.append([vx,vy,vz])
+                    normals6_pt3.append([0,0,1])
+                for i in range(vertexCount-7):
+                    fa___6pt3+=1*3
+                    fb___6pt3+=1*3
+                    fc___6pt3+=1*3
+                    faces6_pt3.append([fa___6pt3,fb___6pt3,fc___6pt3])
+
+                for i in range(vertexCount-5):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-5):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices6_pt4.append([vx,vy,vz])
+                    normals6_pt4.append([0,0,1])
+                for i in range(vertexCount-7):
+                    fa___6pt4+=1*3
+                    fb___6pt4+=1*3
+                    fc___6pt4+=1*3
+                    faces6_pt4.append([fa___6pt4,fb___6pt4,fc___6pt4])
+
+                for i in range(vertexCount-5):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-5):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices6_pt5.append([vx,vy,vz])
+                    normals6_pt5.append([0,0,1])
+                for i in range(vertexCount-7):
+                    fa___6pt5+=1*3
+                    fb___6pt5+=1*3
+                    fc___6pt5+=1*3
+                    faces6_pt5.append([fa___6pt5,fb___6pt5,fc___6pt5])
+
+                for i in range(vertexCount-5):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-5):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices6_pt6.append([vx,vy,vz])
+                    normals6_pt6.append([0,0,1])
+                for i in range(vertexCount-7):
+                    fa___6pt6+=1*3
+                    fb___6pt6+=1*3
+                    fc___6pt6+=1*3
+                    faces6_pt6.append([fa___6pt6,fb___6pt6,fc___6pt6])
+
+            elif vertexCount == 9:
+                for i in range(vertexCount-6):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices7.append([vx,vy,vz])
+                    normals7.append([0,0,1])
+                for i in range(vertexCount-8):
+                    fa___7+=1*3
+                    fb___7+=1*3
+                    fc___7+=1*3
+                    faces7.append([fa___7,fb___7,fc___7])
+
+                for i in range(vertexCount-6):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-6):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices7_pt2.append([vx,vy,vz])
+                    normals7_pt2.append([0,0,1])
+                for i in range(vertexCount-8):
+                    fa___7pt2+=1*3
+                    fb___7pt2+=1*3
+                    fc___7pt2+=1*3
+                    faces7_pt2.append([fa___7pt2,fb___7pt2,fc___7pt2])
+
+                for i in range(vertexCount-6):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-6):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices7_pt3.append([vx,vy,vz])
+                    normals7_pt3.append([0,0,1])
+                for i in range(vertexCount-8):
+                    fa___7pt3+=1*3
+                    fb___7pt3+=1*3
+                    fc___7pt3+=1*3
+                    faces7_pt3.append([fa___7pt3,fb___7pt3,fc___7pt3])
+
+                for i in range(vertexCount-6):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-6):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices7_pt4.append([vx,vy,vz])
+                    normals7_pt4.append([0,0,1])
+                for i in range(vertexCount-8):
+                    fa___7pt4+=1*3
+                    fb___7pt4+=1*3
+                    fc___7pt4+=1*3
+                    faces7_pt4.append([fa___7pt4,fb___7pt4,fc___7pt4])
+
+                for i in range(vertexCount-6):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-6):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices7_pt5.append([vx,vy,vz])
+                    normals7_pt5.append([0,0,1])
+                for i in range(vertexCount-8):
+                    fa___7pt5+=1*3
+                    fb___7pt5+=1*3
+                    fc___7pt5+=1*3
+                    faces7_pt5.append([fa___7pt5,fb___7pt5,fc___7pt5])
+
+                for i in range(vertexCount-6):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-6):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices7_pt6.append([vx,vy,vz])
+                    normals7_pt6.append([0,0,1])
+                for i in range(vertexCount-8):
+                    fa___7pt6+=1*3
+                    fb___7pt6+=1*3
+                    fc___7pt6+=1*3
+                    faces7_pt6.append([fa___7pt6,fb___7pt6,fc___7pt6])
+
+                for i in range(vertexCount-6):
+                    f.seek(-16,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                    f.seek(-4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(4,1)
+                f.seek(16,1)
+                for i in range(vertexCount-6):
+                    
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    nz = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vertices7_pt7.append([vx,vy,vz])
+                    normals7_pt7.append([0,0,1])
+                for i in range(vertexCount-8):
+                    fa___7pt7+=1*3
+                    fb___7pt7+=1*3
+                    fc___7pt7+=1*3
+                    faces7_pt7.append([fa___7pt7,fb___7pt7,fc___7pt7])
+
+            elif vertexCount == 10:
+                pass
                     
                 
             for i, mat in enumerate(bpy.data.materials):
@@ -925,6 +1337,123 @@ def GHG_whole_beta_3(f, filepath):
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh.from_pydata(vertices5_pt5, [], faces5_pt5)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices6, [], faces6)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices6_pt2, [], faces6_pt2)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices6_pt3, [], faces6_pt3)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices6_pt4, [], faces6_pt4)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices6_pt5, [], faces6_pt5)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices6_pt6, [], faces6_pt6)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices7, [], faces7)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices7_pt2, [], faces7_pt2)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices7_pt3, [], faces7_pt3)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices7_pt4, [], faces7_pt4)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices7_pt5, [], faces7_pt5)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices7_pt6, [], faces7_pt6)
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    bpy.context.collection.objects.link(object)
+    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    objs.data.materials.append(mat)
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices7_pt7, [], faces7_pt7)
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
     bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
