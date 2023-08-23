@@ -2,7 +2,7 @@ import bpy
 from struct import pack
 import bmesh
 
-def WriteGHG(f):
+def WriteModdedGHG(f):
     ob = bpy.context.object
     f.write(pack("<I", 0)) # size
     f.write(pack("<I", 0)) # unk
@@ -318,7 +318,7 @@ def WriteGHG(f):
     f.write(pack("B", 0))
     nametable_offset = 1
     for pbone in ob.pose.bones: # transpose
-        f.write(pack("<f", 1))
+        f.write(pack("<f", pbone.length))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
@@ -350,7 +350,7 @@ def WriteGHG(f):
         f.write(pack("B", 0))
         nametable_offset+=1
     for pbone in ob.pose.bones:
-        f.write(pack("<f", 1))
+        f.write(pack("<f", pbone.length))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
@@ -367,7 +367,7 @@ def WriteGHG(f):
         f.write(pack("<f", pbone.head.z))
         f.write(pack("<f", 1))
     for pbone in ob.pose.bones:
-        f.write(pack("<f", 1))
+        f.write(pack("<f", pbone.length))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
@@ -383,7 +383,14 @@ def WriteGHG(f):
         f.write(pack("<f", -pbone.head.y))
         f.write(pack("<f", -pbone.head.z))
         f.write(pack("<f", 1))
+        
     f.write(b"defaultlayer")
+    f.write(pack("B", 0))
+    f.write(pack("B", 0))
+    f.write(pack("B", 0))
+    f.write(pack("B", 0))
+    f.write(pack("<I", 0))
+    f.write(pack("<I", 0))
 
 """import bpy
 import bmesh
@@ -399,7 +406,7 @@ else:
 
 def WritingEditGHG(filepath):
     with open(filepath, "wb") as f:
-        WriteGHG(f)
+        WriteModdedGHG(f)
         
     
     
