@@ -4,26 +4,26 @@ import bmesh
 
 def WriteModdedGHG(f):
     ob = bpy.context.object
-    f.write(pack("<I", 144)) # size
-    f.write(pack("<I", 0)) # unk
-    f.write(pack("<I", 0)) # textures
-    f.write(pack("<I", 0)) # 144
-    f.write(pack("<I", len(bpy.data.materials)))
-    f.write(pack("<I", 144)) # 144
-    f.write(pack("<I", len(ob.pose.bones)))
-    f.write(pack("<I", 96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # parent start size
-    f.write(pack("<I", 64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # pos start size
-    f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # unk start size
-    f.write(pack("<I", 0)) #
-    f.write(pack("<I", 0)) #
-    f.write(pack("<I", 464*len(bpy.data.materials)+144)) #
-    f.write(pack("<I", 16*len(ob.pose.bones)+13)) # 
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 1)) # maybe object amount
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
+    f.write(pack("<I", 144)) # size #4
+    f.write(pack("<I", 0)) # unk # 8
+    f.write(pack("<I", 0)) # texture # 12
+    f.write(pack("<I", 0)) # 144 # 16
+    f.write(pack("<I", len(bpy.data.materials))) # 20
+    f.write(pack("<I", 144)) # 144 # 24
+    f.write(pack("<I", len(ob.pose.bones))) #28
+    f.write(pack("<I", 16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 32
+    f.write(pack("<I", 96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 36
+    f.write(pack("<I", 64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 40
+    f.write(pack("<I", 0)) # # 44
+    f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) #48
+    f.write(pack("<I", 464*len(bpy.data.materials)+144)) #52
+    f.write(pack("<I", 16*len(ob.pose.bones)+13)) # #56
+    f.write(pack("<I", 0)) # 0 # 60
+    f.write(pack("<I", 0)) # 0 # 64
+    f.write(pack("<I", 0)) # 0 # 68
+    f.write(pack("<I", 0)) # 72
+    f.write(pack("<I", 1)) # 76
+    f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 80
     for i in range(16):
         f.write(pack("<f", 1))
 
