@@ -317,8 +317,8 @@ def WriteModdedGHG(f):
     f.write(pack("B", 0))
     f.write(pack("B", 0))
     nametable_offset = 1
-    for pbone in ob.pose.bones: # transpose
-        f.write(pack("<f", pbone.length))
+    for pbone in ob.pose.bones:
+        f.write(pack("<f", 1))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
@@ -350,40 +350,24 @@ def WriteModdedGHG(f):
         f.write(pack("B", 0))
         nametable_offset+=1
     for pbone in ob.pose.bones:
-        f.write(pack("<f", pbone.length))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 1))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 1))
-        f.write(pack("<f", 0))
+        f.write(pack("<ffff", *pbone.matrix[0]))
+        f.write(pack("<ffff", *pbone.matrix[2]))
+        f.write(pack("<ffff", *pbone.matrix[1]))
         f.write(pack("<f", pbone.head.x))
         f.write(pack("<f", pbone.head.y))
         f.write(pack("<f", pbone.head.z))
         f.write(pack("<f", 1))
     for pbone in ob.pose.bones:
-        f.write(pack("<f", pbone.length))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 1))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 0))
-        f.write(pack("<f", 1))
-        f.write(pack("<f", 0))
+        f.write(pack("<ffff", *pbone.matrix[0]))
+        f.write(pack("<ffff", *pbone.matrix[2]))
+        f.write(pack("<ffff", *pbone.matrix[1]))
         f.write(pack("<f", -pbone.head.x))
         f.write(pack("<f", -pbone.head.y))
         f.write(pack("<f", -pbone.head.z))
         f.write(pack("<f", 1))
-        
+
+    f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3+20))
+    f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3+36))
     f.write(b"defaultlayer")
     f.write(pack("B", 0))
     f.write(pack("B", 0))
@@ -391,6 +375,19 @@ def WriteModdedGHG(f):
     f.write(pack("B", 0))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
+    #more to work on this
+
+    for i, offset_obdata1 in enumerate(bpy.data.meshes):
+        
+
+        f.write(pack("B", 3))
+        f.write(pack("B", 1))
+        f.write(pack("B", 0))
+        f.write(pack("B", 1))
+        f.write(pack("B", 3))
+        f.write(pack("B", 128))
+        f.write(pack("B", len(offset_obdata1.vertices)))
+        f.write(pack("B", 108))
 
 """import bpy
 import bmesh
