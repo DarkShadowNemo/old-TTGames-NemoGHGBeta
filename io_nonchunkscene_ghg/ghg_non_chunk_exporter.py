@@ -4,20 +4,20 @@ import bmesh
 
 def WriteModdedGHG(f):
     ob = bpy.context.object
-    f.write(pack("<I", 0)) # size
+    f.write(pack("<I", 144)) # size
     f.write(pack("<I", 0)) # unk
     f.write(pack("<I", 0)) # textures
     f.write(pack("<I", 0)) # 144
     f.write(pack("<I", len(bpy.data.materials)))
-    f.write(pack("<I", 0)) # 144
+    f.write(pack("<I", 144)) # 144
     f.write(pack("<I", len(ob.pose.bones)))
-    f.write(pack("<I", 0)) # parent start size
-    f.write(pack("<I", 0)) # pos start size
-    f.write(pack("<I", 0)) # unk start size
+    f.write(pack("<I", 96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # parent start size
+    f.write(pack("<I", 64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # pos start size
+    f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # unk start size
     f.write(pack("<I", 0)) #
     f.write(pack("<I", 0)) #
-    f.write(pack("<I", 0)) # namedtable size
-    f.write(pack("<I", 0))
+    f.write(pack("<I", 464*len(bpy.data.materials)+144)) #
+    f.write(pack("<I", 16*len(ob.pose.bones)+13)) # 
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
