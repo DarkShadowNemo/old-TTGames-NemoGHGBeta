@@ -2,31 +2,33 @@ import bpy
 from struct import pack
 import bmesh
 
-def WriteModdedGHG(f):
+def WriteModdedGHG(f, TextureCount=True):
     ob = bpy.context.object
-    f.write(pack("<I", 144)) # size #4
-    f.write(pack("<I", 0)) # unk # 8
-    f.write(pack("<I", 0)) # texture # 12
-    f.write(pack("<I", 0)) # 144 # 16
-    f.write(pack("<I", len(bpy.data.materials))) # 20
-    f.write(pack("<I", 144)) # 144 # 24
-    f.write(pack("<I", len(ob.pose.bones))) #28
-    f.write(pack("<I", 16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 32
-    f.write(pack("<I", 96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 36
-    f.write(pack("<I", 64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 40
-    f.write(pack("<I", 0)) # # 44
-    f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) #48
-    f.write(pack("<I", 464*len(bpy.data.materials)+144)) #52
-    f.write(pack("<I", 16*len(ob.pose.bones)+13)) # #56
-    f.write(pack("<I", 0)) # 0 # 60
-    f.write(pack("<I", 0)) # 0 # 64
-    f.write(pack("<I", 0)) # 0 # 68
-    f.write(pack("<I", 0)) # 72
+    FileSize = f.write(pack("<I", 144)) # size #4
+    Unknown = f.write(pack("<I", 0)) # unk # 8
+    TextureCount = f.write(pack("<I", 0)) # texture # 12
+    TextureEntrySize1 = f.write(pack("<I", 0)) # 144 # 16
+    MaterialCount = f.write(pack("<I", len(bpy.data.materials))) # 20
+    MatrialSize = f.write(pack("<I", 144)) # 144 # 24
+    BoneCount = f.write(pack("<I", len(ob.pose.bones))) #28
+    unknownMatrixEntryStartSize1 = f.write(pack("<I", 16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 32
+    PositiveMatrixEntryStartSize1 = f.write(pack("<I", 96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 36
+    NegativeMatrixEntryStartSize1 = f.write(pack("<I", 64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 40
+    Unknown2 = f.write(pack("<I", 0)) # # 44
+    EndNegativeMatrixEntryEndSize1 = f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) #48
+    namedtableStartEntrySize1 = f.write(pack("<I", 464*len(bpy.data.materials)+144)) #52
+    namedtableEndEntrySize1 = f.write(pack("<I", 16*len(ob.pose.bones)+13)) # #56
+    unknownMatrixCount = f.write(pack("<I", 0)) # 0 # 60
+    unknownStartMatrixSize1 = f.write(pack("<I", 0)) # 0 # 64
+    unknownMatrixCount2 = f.write(pack("<I", 0)) # 0 # 68
+    unknownStartMatrixSize2 = f.write(pack("<I", 0)) # 72
     f.write(pack("<I", 1)) # 76
     f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3)) # 80
     for i in range(16):
         f.write(pack("<f", 1))
 
+    
+    #todo list of material entrysize
     f.write(pack("<I", 160))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
@@ -368,6 +370,9 @@ def WriteModdedGHG(f):
 
     f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3+20))
     f.write(pack("<I", 64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3+36))
+    f.write(pack("<I", 0))
+    f.write(pack("<I", 0))
+    f.write(pack("<I", 0)) #2nd offset entry start size
     f.write(b"defaultlayer")
     f.write(pack("B", 0))
     f.write(pack("B", 0))
@@ -375,19 +380,67 @@ def WriteModdedGHG(f):
     f.write(pack("B", 0))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
-    #more to work on this
-
+    f.write(pack("<I", 6+1+1+48*len(bpy.data.meshes)+64*len(ob.pose.bones)+64*len(ob.pose.bones)+96*len(ob.pose.bones)+16*len(ob.pose.bones)+464*len(bpy.data.materials)+13+144+3+44))
     for i, offset_obdata1 in enumerate(bpy.data.meshes):
-        
-
+        uv_offset_1 = True
+        vertexColor_offset_1 = True
         f.write(pack("B", 3))
         f.write(pack("B", 1))
         f.write(pack("B", 0))
         f.write(pack("B", 1))
         f.write(pack("B", 3))
         f.write(pack("B", 128))
-        f.write(pack("B", len(offset_obdata1.vertices)))
+        f.write(pack("B", 3))
         f.write(pack("B", 108))
+        if len(offset_obdata1.vertices) == 3:
+            
+            for v in offset_obdata1.vertices:
+                f.write(pack("<f", v.co.x))
+                f.write(pack("<f", v.co.y))
+                f.write(pack("<f", v.co.z))
+                f.write(pack("<f", 1))
+            f.write(pack("B", 1))
+            f.write(pack("B", 1))
+            f.write(pack("B", 0))
+            f.write(pack("B", 1))
+            f.write(pack("B", 0))
+            f.write(pack("B", 3))
+            f.write(pack("B", 0))
+            f.write(pack("B", 20))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 96))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+        else:
+            raise Exception("must contain 3 verts only")
+        if uv_offset_1 == True:
+            pass
+        if vertexColor_offset_1 == True:
+            pass
 
 """import bpy
 import bmesh
