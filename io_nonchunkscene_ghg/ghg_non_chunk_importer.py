@@ -6,9 +6,6 @@ import mathutils
 import math
 import bmesh
 
-def inverse():
-    pass
-
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
     if index == -1: return s
@@ -60,6 +57,7 @@ def GHG_whole_entire_uv2(f):
     pass
 def GHG_whole_entire_uv3(f):
     pass
+                    
 
 def GHG_whole_entire_bones(f, filepath):
 
@@ -87,7 +85,7 @@ def GHG_whole_entire_bones(f, filepath):
     Unk_ = unpack("<I", f.read(4))[0]
     Unk__ = unpack("<I", f.read(4))[0]
     EndMaterialEntrySize = unpack("<I", f.read(4))[0]
-    NamedtableEntrySize = unpack("<I", f.read(4))[0]
+    NamedtableEntrySize,=unpack("<I", f.read(4))
     f.seek(EndMaterialEntrySize-56,1)
     ntbl_buffer = bio(f.read(NamedtableEntrySize))
     name_i = 0
@@ -105,45 +103,58 @@ def GHG_whole_entire_bones(f, filepath):
         bdiv4_v04 = unpack("<f", f.read(4))[0]
         bdiv4_v08 = unpack("<f", f.read(4))[0]
         f.seek(4,1)
-        bone_parent = unpack("b", f.read(1))[0]
-        name_offset, = unpack("<L", f.read(4)) # WHAT doesnt work
-        f.seek(11,1)
+        bone_parent,=unpack("b", f.read(1))
         bone_parentlist.append(bone_parent)
         #ntbl_buffer.seek(name_offset - 1) or ntbl_buffer.seek(name_offset)
         #bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
+        name_offset,=unpack("<L", f.read(4)) # WHAT doesnt work
+        ntbl_buffer.seek(name_offset-1)
+        f.seek(11,1)
             
     f.seek(0)
     f.seek(36,1)
-    f.seek(PosBoneEntrySize-36,1)
+    f.seek(RotBoneEntrySize-36,1)
     for i in range(BoneCount):
-        f.seek(48,1)
-        BX = unpack("<f", f.read(4))[0]
-        BY = unpack("<f", f.read(4))[0]
-        BZ = unpack("<f", f.read(4))[0]
+        ScaleX = unpack("<f", f.read(4))[0]
+        f.seek(16,1)
+        ScaleY = unpack("<f", f.read(4))[0]
+        f.seek(16,1)
+        ScaleZ = unpack("<f", f.read(4))[0]
+        f.seek(4,1)
+        posx = unpack("<f", f.read(4))[0]
+        posy = unpack("<f", f.read(4))[0]
+        posz = unpack("<f", f.read(4))[0]
         f.seek(4,1)
 
-        bone = skel.edit_bones.new(os.path.basename(os.path.splitext(filepath)[0]))
+        bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
+    
+    
+
+        bone = skel.edit_bones.new(bone_name)
 
         bone.head = (
-            BX,
-            BY,
-            BZ,
+            posx*ScaleX,
+            -posy*ScaleY,
+            posz*ScaleZ,
 	)
         bone.tail = (
             bone.head[0],
             bone.head[1],
             bone.head[2] + 0.03,
         )
-        #bone.roll = rollBone
     for bone_id, bone_parent in enumerate(bone_parentlist):
         if bone_parent < 0: continue # root bone is set to -1
         skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
     bpy.ops.object.mode_set(mode = 'OBJECT')
 
 def GHG_whole_beta_1(f, filepath):
+    bm = bmesh.new()
     vertices=[]
-    faces=[]
     normals=[]
+    faces = []
+    fa = -1
+    fb = 0
+    fc = 1
     material_ID = os.path.basename(os.path.splitext(filepath)[0])
     mat = bpy.data.materials.new(name=material_ID)
     bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
@@ -151,9 +162,6 @@ def GHG_whole_beta_1(f, filepath):
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
-    fa = -1
-    fb = 0
-    fc = 1
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x03\x01\x00\x01":
@@ -166,15 +174,15 @@ def GHG_whole_beta_1(f, filepath):
                 vz = unpack("<f", f.read(4))[0]
                 nz = unpack("<f", f.read(4))[0]
                 vertices.append([vx,vy,vz])
-                normals.append([0,0,nz])
-            for i, mat in enumerate(bpy.data.materials):
-                mat.use_nodes = True
-                mat.blend_method = "HASHED"
+                normals.append([0,0,1])
             for i in range(vertexCount-2):
                 fa+=1
                 fb+=1
                 fc+=1
                 faces.append([fa,fb,fc])
+            for i, mat in enumerate(bpy.data.materials):
+                mat.use_nodes = True
+                mat.blend_method = "HASHED"
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh.from_pydata(vertices, [], faces)
@@ -188,21 +196,20 @@ def GHG_whole_beta_1(f, filepath):
     
 
 def GHG_whole_beta_2(f, filepath):
+    bm = bmesh.new()
     vertices=[]
+    faces=[]
     normals=[]
-    faces = []
     material_ID = os.path.basename(os.path.splitext(filepath)[0])
     mat = bpy.data.materials.new(name=material_ID)
     bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
     ob = bpy.context.object
-    #######################
-    #another extra
-    fa = -1
-    fb = 0
-    fc = 1
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
+    fa = -1
+    fb = 0
+    fc = 1
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x03\x02\x00\x01":
@@ -237,22 +244,20 @@ def GHG_whole_beta_2(f, filepath):
 
 def GHG_whole_beta_3(f, filepath):
     vertices=[]
-    normals=[]
+    vertices2=[]
     faces=[]
+    faces2=[]
+    normals=[]
     material_ID = os.path.basename(os.path.splitext(filepath)[0])
     mat = bpy.data.materials.new(name=material_ID)
     bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
     ob = bpy.context.object
-    #######################
-    #another extra
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
-    #index1
-    fa = -1
-    fb = 0
-    fc = 1
-    
+    fa1 = -1
+    fb1 = 0
+    fc1 = 1
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x04\x02\x00\x01":
@@ -263,18 +268,14 @@ def GHG_whole_beta_3(f, filepath):
                 vx = unpack("<f", f.read(4))[0]
                 vy = unpack("<f", f.read(4))[0]
                 vz = unpack("<f", f.read(4))[0]
-                vw = unpack("<f", f.read(4))[0]
+                nz = unpack("<f", f.read(4))[0]
                 f.seek(16,1)
                 vertices.append([vx,vy,vz])
-                normals.append([0,0,1])
-
             for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
-                    
-                
+                fa1+=1
+                fb1+=1
+                fc1+=1
+                faces.append([fa1,fb1,fc1])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
@@ -283,16 +284,11 @@ def GHG_whole_beta_3(f, filepath):
     mesh.from_pydata(vertices, [], faces)
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
-    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
     objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
     bpy.context.view_layer.objects.active = objs
     objs.data.materials.append(mat)
 
-    
-
-
-
-def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1):
+def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1, GHG_Individual_tri=1):
     with open(filepath, "rb") as f:
         if GHG_Meshes == 1:
             GHG_whole_beta_1(f, filepath)
