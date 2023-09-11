@@ -1,7 +1,7 @@
 bl_info = {
         'name'			: 'Finding Nemo GHG Character Non Chunk Importer',
 	'author'		: 'DarkShadow Nemo',
-	'version'		: (0, 5, 0),
+	'version'		: (0, 5, 4),
 	'blender'		: (3, 0, 0),
 	'location'		: 'File > Import',
 	'description'           : 'Import GHG mesh chunk',
@@ -14,6 +14,8 @@ from bpy.props import CollectionProperty, StringProperty, BoolProperty, EnumProp
 from bpy_extras.io_utils import ImportHelper, ExportHelper
 
 from.import ghg_non_chunk_importer, ghg_non_chunk_exporter
+
+#deprecated - ghg_non_chunk_exporter
 
 class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         bl_idname  = 'import_non_chunk.ghg'
@@ -31,12 +33,24 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         GHG_Meshes : IntProperty(name="offset Meshes", description="choose the correct ghg offset")
 
         GHG_Bones : IntProperty(name="Bones", description="imports bones")
+
+        GHG_Individual_tri : IntProperty(name="GHG Indivitual traingles", description="imports seperate tri")
+
+        """GHG_Triangle_Strips_with_uvs_and_rgba : IntProperty(name="Mesh Type", description="choose one with uvs and vertex colors")
+
+        GHG_Triangles : BoolProperty(name="imports Triangles", description="imports GHG Triangles")
+
+        SingleMesh : IntProperty(name="Single Mesh", description="imports ghg with no uvs and vertex colors")
+
+        UV_Type : IntProperty(name="UV Type", description="Imports uvs and assign to the ghg mesh")
+
+        VertexColor_Type : IntProperty(name="VertexColor Type", description="Imports uvs and assign to the ghg mesh")"""
         
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes, GHG_Bones = self.GHG_Bones)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes, GHG_Bones = self.GHG_Bones, GHG_Individual_tri = self.GHG_Individual_tri)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
