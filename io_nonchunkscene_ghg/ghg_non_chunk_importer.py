@@ -5,6 +5,7 @@ import bpy
 import mathutils
 import math
 import bmesh
+#from .characters.nigel import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -17,6 +18,9 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         if strbyte == b'\0' or not strbyte: break
         build += strbyte
     return build
+
+def GHG_entire_weights(f):
+    pass
 
 def GHG_vertex_entire_vc1(f):
     pass
@@ -54,7 +58,46 @@ def GHG_whole_entire_uv1(f, uvs=[]):
                 for li in vert_loops[i]:
                     uv_layer[li].uv = coord
 def GHG_whole_entire_uv2(f):
-    pass
+    obdata = bpy.context.object.data
+    f.seek(0)
+    Chunk = f.read()
+    f.seek(0)
+    uvs=[]
+    for i in range(len(Chunk)):
+        Chunk_ = f.read(4)
+        if Chunk_ == b"\x03\x02\x00\x01":
+            f.seek(2,1)
+            vertexcountskip = unpack("B", f.read(1))[0] // 2 # skip vertex data
+            f.seek(1,1)
+            for i in range(vertexcountskip):
+                f.seek(2,1)
+                f.seek(2,1)
+                f.seek(2,1)
+                f.seek(2,1)
+                f.seek(8,1)
+            f.seek(30,1)
+            vertexColor1 = unpack("B", f.read(1))[0]
+            f.seek(1,1)
+            for i in range(vertexColor1):
+                f.seek(1,1)
+                f.seek(1,1)
+                f.seek(1,1)
+                f.seek(1,1)
+            f.seek(34,1)
+            uvCount1 = unpack("B", f.read(1))[0]*2
+            f.seek(1,1)
+            for i in range(uvCount1):
+                uvx = unpack("B", f.read(1))[0] / 255.0
+                uvy = unpack("B", f.read(1))[0] / 255.0
+                uvs.append([uvx,uvy])
+            uv_tex = obdata.uv_layers.new()
+            uv_layer = obdata.uv_layers[0].data
+            vert_loops = {}
+            for l in obdata.loops:
+                vert_loops.setdefault(l.vertex_index, []).append(l.index)
+            for i, coord in enumerate(uvs):
+                for li in vert_loops[i]:
+                    uv_layer[li].uv = coord
 def GHG_whole_entire_uv3(f):
     pass
                     
@@ -62,6 +105,8 @@ def GHG_whole_entire_uv3(f):
 def GHG_whole_entire_bones(f, filepath):
 
     boneIndex = -1
+
+    Coordinates=[]
 
     bone_parentlist=[]
         
@@ -116,36 +161,43 @@ def GHG_whole_entire_bones(f, filepath):
     f.seek(RotBoneEntrySize-36,1)
     for i in range(BoneCount):
         ScaleX = unpack("<f", f.read(4))[0]
-        f.seek(16,1)
+        RotZ = unpack("<f", f.read(4))[0]
+        RotY = unpack("<f", f.read(4))[0]
+        unk1 = unpack("<f", f.read(4))[0]
+        _RotZ = unpack("<f", f.read(4))[0]
         ScaleY = unpack("<f", f.read(4))[0]
-        f.seek(16,1)
+        RotX = unpack("<f", f.read(4))[0]
+        _RotY = unpack("<f", f.read(4))[0]
+        unk2 = unpack("<f", f.read(4))[0]
+        _RotX = unpack("<f", f.read(4))[0]
         ScaleZ = unpack("<f", f.read(4))[0]
-        f.seek(4,1)
+        unk3 = unpack("<f", f.read(4))[0]
         posx = unpack("<f", f.read(4))[0]
         posy = unpack("<f", f.read(4))[0]
         posz = unpack("<f", f.read(4))[0]
-        f.seek(4,1)
+        unk4 = unpack("<f", f.read(4))[0]
+        Coordinates.append([1, RotZ, RotY, unk1, _RotZ, 1, RotX, _RotY, unk2, _RotX, 1, unk3, posx,posy,posz,unk4])
 
         bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
-    
-    
-
         bone = skel.edit_bones.new(bone_name)
 
         bone.head = (
-            posx*ScaleX,
-            -posy*ScaleY,
-            posz*ScaleZ,
+            posx,
+            posy,
+            posz,
 	)
         bone.tail = (
             bone.head[0],
             bone.head[1],
             bone.head[2] + 0.03,
         )
+    #bone.roll = RotZ
     for bone_id, bone_parent in enumerate(bone_parentlist):
         if bone_parent < 0: continue # root bone is set to -1
         skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
     bpy.ops.object.mode_set(mode = 'OBJECT')
+
+
 
 def GHG_whole_beta_1(f, filepath):
     bm = bmesh.new()
@@ -168,30 +220,38 @@ def GHG_whole_beta_1(f, filepath):
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0]
             f.seek(1,1)
-            for i in range(vertexCount):
-                vx = unpack("<f", f.read(4))[0]
-                vy = unpack("<f", f.read(4))[0]
-                vz = unpack("<f", f.read(4))[0]
-                nz = unpack("<f", f.read(4))[0]
-                vertices.append([vx,vy,vz])
-                normals.append([0,0,1])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+            for i in range(vertexCount//3):
+                vx1 = unpack("<f", f.read(4))[0]
+                vy1 = unpack("<f", f.read(4))[0]
+                vz1 = unpack("<f", f.read(4))[0]
+                nz1 = unpack("<f", f.read(4))[0]
+                vx2 = unpack("<f", f.read(4))[0]
+                vy2 = unpack("<f", f.read(4))[0]
+                vz2 = unpack("<f", f.read(4))[0]
+                nz2 = unpack("<f", f.read(4))[0]
+                vx3 = unpack("<f", f.read(4))[0]
+                vy3 = unpack("<f", f.read(4))[0]
+                vz3 = unpack("<f", f.read(4))[0]
+                nz3 = unpack("<f", f.read(4))[0]
+                verts1 = bm.verts.new([vx1, vy1, vz1])
+                verts2 = bm.verts.new([vx2, vy2, vz2])
+                verts3 = bm.verts.new([vx3, vy3, vz3])
+
+                bm.faces.new([verts1, verts2, verts3])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], faces)
+    bm.to_mesh(mesh)
+    
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
-    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
-    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
-    bpy.context.view_layer.objects.active = objs
-    objs.data.materials.append(mat)
+    for face in mesh.polygons:
+        face.use_smooth = True
+    bm.from_mesh(mesh)
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
+    bm.to_mesh(mesh)
 
     
 
@@ -216,33 +276,44 @@ def GHG_whole_beta_2(f, filepath):
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0] // 2
             f.seek(1,1)
-            for i in range(vertexCount):
-                vx = unpack("<h", f.read(2))[0] / 4096.0
-                vy = unpack("<h", f.read(2))[0] / 4096.0
-                vz = unpack("<h", f.read(2))[0] / 4096.0
-                nz = unpack("<h", f.read(2))[0] / 4096.0
+            for i in range(vertexCount//3):
+                vx1 = unpack("<h", f.read(2))[0] / 4096.0
+                vy1 = unpack("<h", f.read(2))[0] / 4096.0
+                vz1 = unpack("<h", f.read(2))[0] / 4096.0
+                nz1 = unpack("<h", f.read(2))[0] / 4096.0
                 f.seek(8,1)
-                vertices.append([vx,vy,vz])
-                normals.append([0,0,1])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+                vx2 = unpack("<h", f.read(2))[0] / 4096.0
+                vy2 = unpack("<h", f.read(2))[0] / 4096.0
+                vz2 = unpack("<h", f.read(2))[0] / 4096.0
+                nz2 = unpack("<h", f.read(2))[0] / 4096.0
+                f.seek(8,1)
+                vx3 = unpack("<h", f.read(2))[0] / 4096.0
+                vy3 = unpack("<h", f.read(2))[0] / 4096.0
+                vz3 = unpack("<h", f.read(2))[0] / 4096.0
+                nz3 = unpack("<h", f.read(2))[0] / 4096.0
+                f.seek(8,1)
+                verts1 = bm.verts.new([vx1, vy1, vz1])
+                verts2 = bm.verts.new([vx2, vy2, vz2])
+                verts3 = bm.verts.new([vx3, vy3, vz3])
+
+                bm.faces.new([verts1, verts2, verts3])
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], faces)
+    bm.to_mesh(mesh)
+    
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
-    bpy.data.materials[os.path.basename(os.path.splitext(filepath)[0])].use_backface_culling = True
-    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
-    bpy.context.view_layer.objects.active = objs
-    objs.data.materials.append(mat)
+    for face in mesh.polygons:
+        face.use_smooth = True
+    bm.from_mesh(mesh)
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
+    bm.to_mesh(mesh)
 
 def GHG_whole_beta_3(f, filepath):
+    bm = bmesh.new()
     vertices=[]
     vertices2=[]
     faces=[]
@@ -255,40 +326,53 @@ def GHG_whole_beta_3(f, filepath):
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
-    fa1 = -1
-    fb1 = 0
-    fc1 = 1
+    fa = -1
+    fb = 0
+    fc = 1
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x04\x02\x00\x01":
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0] // 2
             f.seek(1,1)
-            for i in range(vertexCount):
-                vx = unpack("<f", f.read(4))[0]
-                vy = unpack("<f", f.read(4))[0]
-                vz = unpack("<f", f.read(4))[0]
-                nz = unpack("<f", f.read(4))[0]
+            for i in range(vertexCount//3):
+                vx1 = unpack("<f", f.read(4))[0]
+                vy1 = unpack("<f", f.read(4))[0]
+                vz1 = unpack("<f", f.read(4))[0]
+                nz1 = unpack("<f", f.read(4))[0]
                 f.seek(16,1)
-                vertices.append([vx,vy,vz])
-            for i in range(vertexCount-2):
-                fa1+=1
-                fb1+=1
-                fc1+=1
-                faces.append([fa1,fb1,fc1])
+                vx2 = unpack("<f", f.read(4))[0]
+                vy2 = unpack("<f", f.read(4))[0]
+                vz2 = unpack("<f", f.read(4))[0]
+                nz2 = unpack("<f", f.read(4))[0]
+                f.seek(16,1)
+                vx3 = unpack("<f", f.read(4))[0]
+                vy3 = unpack("<f", f.read(4))[0]
+                vz3 = unpack("<f", f.read(4))[0]
+                nz3 = unpack("<f", f.read(4))[0]
+                f.seek(16,1)
+                verts1 = bm.verts.new([vx1, vy1, vz1])
+                verts2 = bm.verts.new([vx2, vy2, vz2])
+                verts3 = bm.verts.new([vx3, vy3, vz3])
+
+                bm.faces.new([verts1, verts2, verts3])
+                
             for i, mat in enumerate(bpy.data.materials):
                 mat.use_nodes = True
                 mat.blend_method = "HASHED"
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], faces)
+    bm.to_mesh(mesh)
+    
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
-    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
-    bpy.context.view_layer.objects.active = objs
-    objs.data.materials.append(mat)
+    for face in mesh.polygons:
+        face.use_smooth = True
+    bm.from_mesh(mesh)
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
+    bm.to_mesh(mesh)
 
-def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1, GHG_Individual_tri=1):
+def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1):
     with open(filepath, "rb") as f:
         if GHG_Meshes == 1:
             GHG_whole_beta_1(f, filepath)
@@ -296,6 +380,7 @@ def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1, GHG_Individual_tri=1):
             GHG_whole_beta_2(f, filepath)
         if GHG_Meshes == 3:
             GHG_whole_beta_3(f, filepath)
+        
         if GHG_Bones == 1:
             GHG_whole_entire_bones(f, filepath)
                 
