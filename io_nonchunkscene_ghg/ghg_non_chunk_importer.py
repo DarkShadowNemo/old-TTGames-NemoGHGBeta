@@ -5,7 +5,6 @@ import bpy
 import mathutils
 import math
 import bmesh
-#from .characters.nigel import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -182,9 +181,9 @@ def GHG_whole_entire_bones(f, filepath):
         bone = skel.edit_bones.new(bone_name)
 
         bone.head = (
-            posx,
-            posy,
-            posz,
+            +posx,
+            +posz,
+            +posy,
 	)
         bone.tail = (
             bone.head[0],
@@ -201,46 +200,45 @@ def GHG_whole_entire_bones(f, filepath):
 
 def GHG_whole_beta_1(f, filepath):
     bm = bmesh.new()
-    vertices=[]
-    normals=[]
-    faces = []
-    fa = -1
-    fb = 0
-    fc = 1
-    material_ID = os.path.basename(os.path.splitext(filepath)[0])
-    mat = bpy.data.materials.new(name=material_ID)
-    bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
-    ob = bpy.context.object
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
+    meshes={}
+
+    fa=0
+    fb=0
+    fc=0
+
+    faces=[]
+    new_vertices_bubble=([0.1623,0.2812,-0.1874],[0.0937,0.1623,-0.3247],[0.1623,0.0937,-0.3247],[0.2812,0.1623,-0.1874],[0.1623,0.2812,-0.1874],[0.1623,0.0937,-0.3247])
+    new_faces_bubble=[[0,2,1],[4,3,5]]
+
+    os.system("cls")
+    
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x03\x01\x00\x01":
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0]
-            f.seek(1,1)
+            flag = unpack("B", f.read(1))[0]
             for i in range(vertexCount//3):
                 vx1 = unpack("<f", f.read(4))[0]
                 vy1 = unpack("<f", f.read(4))[0]
                 vz1 = unpack("<f", f.read(4))[0]
-                nz1 = unpack("<f", f.read(4))[0]
+                vx1 = unpack("<f", f.read(4))[0]
                 vx2 = unpack("<f", f.read(4))[0]
                 vy2 = unpack("<f", f.read(4))[0]
                 vz2 = unpack("<f", f.read(4))[0]
-                nz2 = unpack("<f", f.read(4))[0]
+                vw2 = unpack("<f", f.read(4))[0]
                 vx3 = unpack("<f", f.read(4))[0]
                 vy3 = unpack("<f", f.read(4))[0]
                 vz3 = unpack("<f", f.read(4))[0]
-                nz3 = unpack("<f", f.read(4))[0]
-                verts1 = bm.verts.new([vx1, vy1, vz1])
-                verts2 = bm.verts.new([vx2, vy2, vz2])
-                verts3 = bm.verts.new([vx3, vy3, vz3])
+                vw3 = unpack("<f", f.read(4))[0]
+                verts1 = bm.verts.new([vx1,vz1,vy1])
+                verts2 = bm.verts.new([vx2,vz2,vy2])
+                verts3 = bm.verts.new([vx3,vz3,vy3])
 
-                bm.faces.new([verts1, verts2, verts3])
-            for i, mat in enumerate(bpy.data.materials):
-                mat.use_nodes = True
-                mat.blend_method = "HASHED"
+                bm.faces.new([verts1,verts3,verts2])
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     bm.to_mesh(mesh)
@@ -248,34 +246,42 @@ def GHG_whole_beta_1(f, filepath):
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
     for face in mesh.polygons:
-        face.use_smooth = True
+        face.use_smooth=True
     bm.from_mesh(mesh)
     bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
+        
+
     bm.to_mesh(mesh)
+
+    bpy.data.meshes.remove(mesh)
+
+    if os.path.basename(filepath) == r"bubble.ghg":
+        
+
+        new_mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+        new_mesh.from_pydata(new_vertices_bubble, [], new_faces_bubble)
+        new_object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), new_mesh)
+        bpy.context.collection.objects.link(new_object)
 
     
 
 def GHG_whole_beta_2(f, filepath):
     bm = bmesh.new()
-    vertices=[]
-    faces=[]
-    normals=[]
-    material_ID = os.path.basename(os.path.splitext(filepath)[0])
-    mat = bpy.data.materials.new(name=material_ID)
-    bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
-    ob = bpy.context.object
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
-    fa = -1
+    meshes = {}
+    fa = 0
     fb = 0
-    fc = 1
+    fc = 0
+    faces=[]
+    os.system("cls")
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x03\x02\x00\x01":
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0] // 2
-            f.seek(1,1)
+            flag = unpack("B", f.read(1))[0]
             for i in range(vertexCount//3):
                 vx1 = unpack("<h", f.read(2))[0] / 4096.0
                 vy1 = unpack("<h", f.read(2))[0] / 4096.0
@@ -292,14 +298,11 @@ def GHG_whole_beta_2(f, filepath):
                 vz3 = unpack("<h", f.read(2))[0] / 4096.0
                 nz3 = unpack("<h", f.read(2))[0] / 4096.0
                 f.seek(8,1)
-                verts1 = bm.verts.new([vx1, vy1, vz1])
-                verts2 = bm.verts.new([vx2, vy2, vz2])
-                verts3 = bm.verts.new([vx3, vy3, vz3])
+                verts1 = bm.verts.new([vx1,vz1,vy1])
+                verts2 = bm.verts.new([vx2,vz2,vy2])
+                verts3 = bm.verts.new([vx3,vz3,vy3])
 
-                bm.faces.new([verts1, verts2, verts3])
-            for i, mat in enumerate(bpy.data.materials):
-                mat.use_nodes = True
-                mat.blend_method = "HASHED"
+                bm.faces.new([verts1,verts3,verts2])
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     bm.to_mesh(mesh)
@@ -307,34 +310,38 @@ def GHG_whole_beta_2(f, filepath):
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
     for face in mesh.polygons:
-        face.use_smooth = True
+        face.use_smooth=True
     bm.from_mesh(mesh)
     bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
+        
+
     bm.to_mesh(mesh)
+
+    bpy.data.meshes.remove(mesh)
+
+    new_mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    new_mesh.from_pydata(new_vertices, [], [])
+    new_object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), new_mesh)
+    bpy.context.collection.objects.link(new_object)
 
 def GHG_whole_beta_3(f, filepath):
     bm = bmesh.new()
-    vertices=[]
-    vertices2=[]
-    faces=[]
-    faces2=[]
-    normals=[]
-    material_ID = os.path.basename(os.path.splitext(filepath)[0])
-    mat = bpy.data.materials.new(name=material_ID)
-    bpy.data.materials.get(os.path.basename(os.path.splitext(filepath)[0]))
-    ob = bpy.context.object
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
-    fa = -1
-    fb = 0
-    fc = 1
+    meshes={}
+    vertices=[]
+    fa=0
+    fb=0
+    fc=0
+    faces=[]
+    os.system("cls")
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x04\x02\x00\x01":
             f.seek(2,1)
-            vertexCount = unpack("B", f.read(1))[0] // 2
-            f.seek(1,1)
+            vertexCount = unpack("B", f.read(1))[0]//2
+            flag = unpack("B", f.read(1))[0]
             for i in range(vertexCount//3):
                 vx1 = unpack("<f", f.read(4))[0]
                 vy1 = unpack("<f", f.read(4))[0]
@@ -351,15 +358,11 @@ def GHG_whole_beta_3(f, filepath):
                 vz3 = unpack("<f", f.read(4))[0]
                 nz3 = unpack("<f", f.read(4))[0]
                 f.seek(16,1)
-                verts1 = bm.verts.new([vx1, vy1, vz1])
-                verts2 = bm.verts.new([vx2, vy2, vz2])
-                verts3 = bm.verts.new([vx3, vy3, vz3])
+                verts1 = bm.verts.new([vx1,vz1,vy1])
+                verts2 = bm.verts.new([vx2,vz2,vy2])
+                verts3 = bm.verts.new([vx3,vz3,vy3])
 
-                bm.faces.new([verts1, verts2, verts3])
-                
-            for i, mat in enumerate(bpy.data.materials):
-                mat.use_nodes = True
-                mat.blend_method = "HASHED"
+                bm.faces.new([verts1,verts3,verts2])
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     bm.to_mesh(mesh)
@@ -367,13 +370,25 @@ def GHG_whole_beta_3(f, filepath):
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
     for face in mesh.polygons:
-        face.use_smooth = True
+        face.use_smooth=True
     bm.from_mesh(mesh)
     bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
+        
+
     bm.to_mesh(mesh)
+
+    bpy.data.meshes.remove(mesh)
+
+    new_mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    new_mesh.from_pydata(new_vertices, [], [])
+    new_object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), new_mesh)
+    bpy.context.collection.objects.link(new_object)
+            
+    
 
 def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1):
     with open(filepath, "rb") as f:
+        
         if GHG_Meshes == 1:
             GHG_whole_beta_1(f, filepath)
         if GHG_Meshes == 2:
