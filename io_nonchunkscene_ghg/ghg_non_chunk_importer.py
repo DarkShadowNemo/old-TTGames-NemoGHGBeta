@@ -8,6 +8,7 @@ import bmesh
 from. GHG_Import.Games.Nemo.Bubble.bubble import *
 from. GHG_Import.Games.Nemo.Anemone.anemone import *
 from. GHG_Import.Games.Nemo.Key.key import *
+from. GHG_Import.Games.Nemo.Deb.deb import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -418,6 +419,8 @@ def NonParseGHG(filepath, GHG_Bones=1, GHG_Name=""):
             GHG_whole_beta_Anemone(f, filepath)
         if GHG_Name == "key":
             GHG_whole_beta_Key(f, filepath)
+        if GHG_Name == "deb":
+            GHG_whole_beta_Deb(f, filepath)
         
         if GHG_Bones == 1:
             GHG_whole_entire_bones(f, filepath)
