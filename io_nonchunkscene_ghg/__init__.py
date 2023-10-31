@@ -30,11 +30,11 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
-        GHG_Meshes : IntProperty(name="offset Meshes", description="choose the correct ghg offset")
+        #GHG_Meshes : IntProperty(name="offset Meshes", description="choose the correct ghg offset")
 
         GHG_Bones : IntProperty(name="Bones", description="imports bones")
 
-        GHG_Individual_tri : IntProperty(name="GHG Indivitual traingles", description="imports seperate tri")
+        GHG_Name : StringProperty(name="GHG name", description="insert your exact input name")
 
         """GHG_Triangle_Strips_with_uvs_and_rgba : IntProperty(name="Mesh Type", description="choose one with uvs and vertex colors")
 
@@ -50,7 +50,7 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
                 importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Meshes = self.GHG_Meshes, GHG_Bones = self.GHG_Bones, GHG_Individual_tri = self.GHG_Individual_tri)
+                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Bones = self.GHG_Bones, GHG_Name = self.GHG_Name)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
