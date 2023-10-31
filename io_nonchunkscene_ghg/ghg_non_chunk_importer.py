@@ -5,6 +5,9 @@ import bpy
 import mathutils
 import math
 import bmesh
+from. GHG_Import.Games.Nemo.Bubble.bubble import *
+from. GHG_Import.Games.Nemo.Anemone.anemone import *
+from. GHG_Import.Games.Nemo.Key.key import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -198,7 +201,7 @@ def GHG_whole_entire_bones(f, filepath):
 
 
 
-def GHG_whole_beta_1(f, filepath):
+"""def GHG_whole_beta_1(f, filepath):
     bm = bmesh.new()
     f.seek(0)
     ChunkRead = f.read()
@@ -210,10 +213,9 @@ def GHG_whole_beta_1(f, filepath):
     fc=0
 
     faces=[]
-    new_vertices_bubble=([0.1623,0.2812,-0.1874],[0.0937,0.1623,-0.3247],[0.1623,0.0937,-0.3247],[0.2812,0.1623,-0.1874],[0.1623,0.2812,-0.1874],[0.1623,0.0937,-0.3247])
-    new_faces_bubble=[[0,2,1],[4,3,5]]
 
     os.system("cls")
+
     
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
@@ -221,6 +223,48 @@ def GHG_whole_beta_1(f, filepath):
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0]
             flag = unpack("B", f.read(1))[0]
+            for i in range(vertexCount):
+                vx = unpack("<i", f.read(4))[0]
+                vy = unpack("<i", f.read(4))[0]
+                vz = unpack("<i", f.read(4))[0]
+                f.seek(4,1)
+                if vx == 1042695906:
+                    vertx1 = 0.1623
+                    #vertx3 = 0.1623
+                if vy == -1103101953:
+                    verty1 = 0.2812
+                if vz == 1049624575:
+                    vertz1 = -0.1874
+                elif vx == 1035993088:
+                    vertx2 = 0.0937
+                elif vy == -1096399135:
+                    verty2 = 0.1623
+                    verty3 = -0.3247
+                elif vz == 1042695904:
+                    vertz2 = -0.3247
+                elif vz == 1035993085:
+                    vertz3 = 0.0937
+                elif vx == 1049624576:
+                    pass
+                elif vz == 1042695903:
+                    pass
+                new_vertices_bubble=([0.2812,0.1623,-0.1874],[0.1623,0.0937,-0.3247],[0.1623,0.2812,-0.1874],
+                                     [vertx1,verty1,vertz1],[0.1623,0.0937,-0.3247],[0.0937,0.1623,-0.3247],
+                                     [0.1623,0.2812,-0.1874],[0.0937,0.1623,-0.3247],[0.0000,0.3247,-0.1874],
+                                     [0.0000,0.3247,-0.1874],[0.0937, 0.1623, -0.3247],[0.0000,0.1874,-0.3247],
+                                     [0.0000,0.3247,-0.1874],[0.0000,0.1874,-0.3247],[-0.1623, 0.2812,-0.1874],
+                                     [0.0000,0.1874,-0.3247],[-0.0937,0.1623,-0.3247],[-0.1623, 0.2812,-0.1874],
+                                     [-0.1623, 0.2812,-0.1874],[-0.0937,0.1623,-0.3247],[-0.2812,0.1623,-0.1874],
+                                     [-0.0937,0.1623,-0.3247],[-0.2812,0.1623,-0.1874],[0.0000,0.0000,0.0000])
+
+                new_faces_bubble=[[0,1,2],[3,4,5],[6,7,8],[9,10,11],[12,13,14],[15,16,17],[18,19,20],[21,22,23]]
+            for i in range(vertexCount):
+                f.seek(-4,1)
+                f.seek(-4,1)
+                f.seek(-4,1)
+                f.seek(-4,1)
+                                            
+                            
             for i in range(vertexCount//3):
                 vx1 = unpack("<f", f.read(4))[0]
                 vy1 = unpack("<f", f.read(4))[0]
@@ -256,12 +300,18 @@ def GHG_whole_beta_1(f, filepath):
     bpy.data.meshes.remove(mesh)
 
     if os.path.basename(filepath) == r"bubble.ghg":
+
+        try:
+            
         
 
-        new_mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-        new_mesh.from_pydata(new_vertices_bubble, [], new_faces_bubble)
-        new_object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), new_mesh)
-        bpy.context.collection.objects.link(new_object)
+            new_mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+            new_mesh.from_pydata(new_vertices_bubble, [], new_faces_bubble)
+            new_object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), new_mesh)
+            bpy.context.collection.objects.link(new_object)
+
+        except:
+            pass"""
 
     
 
@@ -317,13 +367,6 @@ def GHG_whole_beta_2(f, filepath):
 
     bm.to_mesh(mesh)
 
-    bpy.data.meshes.remove(mesh)
-
-    new_mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    new_mesh.from_pydata(new_vertices, [], [])
-    new_object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), new_mesh)
-    bpy.context.collection.objects.link(new_object)
-
 def GHG_whole_beta_3(f, filepath):
     bm = bmesh.new()
     f.seek(0)
@@ -331,10 +374,10 @@ def GHG_whole_beta_3(f, filepath):
     f.seek(0)
     meshes={}
     vertices=[]
-    fa=0
-    fb=0
-    fc=0
     faces=[]
+    fa=-1
+    fb=0
+    fc=1
     os.system("cls")
     for i in range(len(ChunkRead)):
         Chunk = f.read(4)
@@ -342,59 +385,39 @@ def GHG_whole_beta_3(f, filepath):
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0]//2
             flag = unpack("B", f.read(1))[0]
-            for i in range(vertexCount//3):
+            for i in range(vertexCount):
                 vx1 = unpack("<f", f.read(4))[0]
                 vy1 = unpack("<f", f.read(4))[0]
                 vz1 = unpack("<f", f.read(4))[0]
                 nz1 = unpack("<f", f.read(4))[0]
                 f.seek(16,1)
-                vx2 = unpack("<f", f.read(4))[0]
-                vy2 = unpack("<f", f.read(4))[0]
-                vz2 = unpack("<f", f.read(4))[0]
-                nz2 = unpack("<f", f.read(4))[0]
-                f.seek(16,1)
-                vx3 = unpack("<f", f.read(4))[0]
-                vy3 = unpack("<f", f.read(4))[0]
-                vz3 = unpack("<f", f.read(4))[0]
-                nz3 = unpack("<f", f.read(4))[0]
-                f.seek(16,1)
-                verts1 = bm.verts.new([vx1,vz1,vy1])
-                verts2 = bm.verts.new([vx2,vz2,vy2])
-                verts3 = bm.verts.new([vx3,vz3,vy3])
+                vertices.append([vx1,vz1,vy1])
+            for i in range(vertexCount-2):
+                fa+=1
+                fb+=1
+                fc+=1
+                faces.append([fa,fb,fc])
 
-                bm.faces.new([verts1,verts3,verts2])
-
-    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    bm.to_mesh(mesh)
-    
-    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    mesh = bpy.data.meshes.new("dragonjan")
+    mesh.from_pydata(vertices, [], faces)
+    object = bpy.data.objects.new("dragonjan", mesh)
     bpy.context.collection.objects.link(object)
-    for face in mesh.polygons:
-        face.use_smooth=True
-    bm.from_mesh(mesh)
-    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
-        
 
-    bm.to_mesh(mesh)
-
-    bpy.data.meshes.remove(mesh)
-
-    new_mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    new_mesh.from_pydata(new_vertices, [], [])
-    new_object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), new_mesh)
-    bpy.context.collection.objects.link(new_object)
+    for fac in mesh.polygons:
+        fac.use_smooth = True
+    
             
     
 
-def NonParseGHG(filepath, GHG_Meshes=1, GHG_Bones=1):
+def NonParseGHG(filepath, GHG_Bones=1, GHG_Name=""):
     with open(filepath, "rb") as f:
         
-        if GHG_Meshes == 1:
-            GHG_whole_beta_1(f, filepath)
-        if GHG_Meshes == 2:
-            GHG_whole_beta_2(f, filepath)
-        if GHG_Meshes == 3:
-            GHG_whole_beta_3(f, filepath)
+        if GHG_Name == "bubble":
+            GHG_whole_beta_Bubble(f, filepath)
+        if GHG_Name == "anemone":
+            GHG_whole_beta_Anemone(f, filepath)
+        if GHG_Name == "key":
+            GHG_whole_beta_Key(f, filepath)
         
         if GHG_Bones == 1:
             GHG_whole_entire_bones(f, filepath)
