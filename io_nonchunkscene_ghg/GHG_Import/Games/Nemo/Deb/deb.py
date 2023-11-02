@@ -914,7 +914,7 @@ def GHG_whole_beta_Deb(f, filepath):
                     pass
                 elif faces.remove([474,475,476]):
                     pass
-                elif faces.remove([257,258,289]):
+                elif faces.remove([257,258,259]):
                     pass
                 elif faces.remove([256,257,258]):
                     pass
@@ -1020,7 +1020,7 @@ def GHG_whole_beta_Deb(f, filepath):
                     pass
                 elif faces.remove([770,771,772]):
                     pass
-                elif faces.remove([739,740,771]):
+                elif faces.remove([739,740,741]):
                     pass
                 elif faces.remove([730,731,732]):
                     pass
@@ -1116,6 +1116,206 @@ def GHG_whole_beta_Deb(f, filepath):
                     pass
                 elif faces.remove([109,110,111]):
                     pass
+                elif faces.remove([475,476,477]):
+                    pass
+                elif faces.remove([483,484,485]):
+                    pass
+                elif faces.remove([482,483,484]):
+                    pass
+                elif faces.remove([896,897,898]):
+                    pass
+                elif faces.remove([897,898,899]):
+                    pass
+                elif faces.remove([815,816,817]):
+                    pass
+                elif faces.remove([887,888,889]):
+                    pass
+                elif faces.remove([888,889,890]):
+                    pass
+                elif faces.remove([618,619,620]):
+                    pass
+                elif faces.remove([818,819,820]):
+                    pass
+                elif faces.remove([571,572,573]):
+                    pass
+                elif faces.remove([821,822,823]):
+                    pass
+                elif faces.remove([574,575,576]):
+                    pass
+                elif faces.remove([398,399,400]):
+                    pass
+                elif faces.remove([344,345,346]):
+                    pass
+                elif faces.remove([338,339,340]):
+                    pass
+                elif faces.remove([686,687,688]):
+                    pass
+                elif faces.remove([337,338,339]):
+                    pass
+                elif faces.remove([687,688,689]):
+                    pass
+                elif faces.remove([688,689,690]):
+                    pass
+                elif faces.remove([822,823,824]):
+                    pass
+                elif faces.remove([539,540,541]):
+                    pass
+                elif faces.remove([816,817,818]):
+                    pass
+                elif faces.remove([189,190,191]):
+                    pass
+                elif faces.remove([161,162,163]):
+                    pass
+                elif faces.remove([188,189,190]):
+                    pass
+                elif faces.remove([209,210,211]):
+                    pass
+                elif faces.remove([210,211,212]):
+                    pass
+                elif faces.remove([187,188,189]):
+                    pass
+                elif faces.remove([166,167,168]):
+                    pass
+                elif faces.remove([168,169,170]):
+                    pass
+                elif faces.remove([167,168,169]):
+                    pass
+                elif faces.remove([176,177,178]):
+                    pass
+                elif faces.remove([252,253,254]):
+                    pass
+                elif faces.remove([251,252,253]):
+                    pass
+                elif faces.remove([254,255,256]):
+                    pass
+                elif faces.remove([253,254,255]):
+                    pass
+                elif faces.remove([184,185,186]):
+                    pass
+                elif faces.remove([185,186,187]):
+                    pass
+                elif faces.remove([180,181,182]):
+                    pass
+                elif faces.remove([181,182,183]):
+                    pass
+                elif faces.remove([748,749,750]):
+                    pass
+                elif faces.remove([719,720,721]):
+                    pass
+                elif faces.remove([715,716,717]):
+                    pass
+                elif faces.remove([714,715,716]):
+                    pass
+                elif faces.remove([681,682,683]):
+                    pass
+                elif faces.remove([383,384,385]):
+                    pass
+                elif faces.remove([382,383,384]):
+                    pass
+                elif faces.remove([381,382,383]):
+                    pass
+                elif faces.remove([701,702,703]):
+                    pass
+                elif faces.remove([695,696,697]):
+                    pass
+                elif faces.remove([700,701,702]):
+                    pass
+                elif faces.remove([273,274,275]):
+                    pass
+                elif faces.remove([988,989,990]):
+                    pass
+                elif faces.remove([777,778,779]):
+                    pass
+                elif faces.remove([565,566,567]):
+                    pass
+                elif faces.remove([505,506,507]):
+                    pass
+                elif faces.remove([393,394,395]):
+                    pass
+                elif faces.remove([563,564,565]):
+                    pass
+                elif faces.remove([28,29,30]):
+                    pass
+                elif faces.remove([27,28,29]):
+                    pass
+                elif faces.remove([25,26,27]):
+                    pass
+                elif faces.remove([24,25,26]):
+                    pass
+                elif faces.remove([18,19,20]):
+                    pass
+                elif faces.remove([32,33,34]):
+                    pass
+                elif faces.remove([4,5,6]):
+                    pass
+                elif faces.remove([2,3,4]):
+                    pass
+                elif faces.remove([31,32,33]):
+                    pass
+                elif faces.remove([753,754,755]):
+                    pass
+                elif faces.remove([751,752,753]):
+                    pass
+                elif faces.remove([749,750,751]):
+                    pass
+                elif faces.remove([343,344,345]):
+                    pass
+                elif faces.remove([487,488,489]):
+                    pass
+                elif faces.remove([562,563,564]):
+                    pass
+                elif faces.remove([561,562,563]):
+                    pass
+                elif faces.remove([892,893,894]):
+                    pass
+                #appending
+                elif faces.append([565,567,566]):
+                    pass
+                elif faces.append([563,567,565]):
+                    pass
+                elif faces.append([393,395,394]):
+                    pass
+                elif faces.append([563,565,564]):
+                    pass
+                elif faces.append([27,29,28]):
+                    pass
+                elif faces.append([25,27,26]):
+                    pass
+                elif faces.append([20,27,25]):
+                    pass
+                elif faces.append([18,20,19]):
+                    pass
+                elif faces.append([19,20,32]):
+                    pass
+                elif faces.append([19,29,27]):
+                    pass
+                elif faces.append([4,6,5]):
+                    pass
+                elif faces.append([2,4,3]):
+                    pass
+                elif faces.append([31,33,32]):
+                    pass
+                elif faces.append([563,567,565]):
+                    pass
+                elif faces.append([753,755,754]):
+                    pass
+                elif faces.append([751,753,752]):
+                    pass
+                elif faces.append([749,751,750]):
+                    pass
+                elif faces.append([343,345,344]):
+                    pass
+                elif faces.append([487,489,488]):
+                    pass
+                elif faces.append([562,599,601]):
+                    pass
+                elif faces.append([561,563,562]):
+                    pass
+                elif faces.append([926,893,927]):
+                    pass
+                elif faces.append([926,892,893]):
+                    pass
+                
 
     if os.path.basename(filepath) == r"deb.ghg":
         
