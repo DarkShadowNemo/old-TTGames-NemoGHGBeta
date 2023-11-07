@@ -259,15 +259,23 @@ def GHG_whole_beta_1(f, filepath):
     bpy.context.collection.objects.link(object)
     for face in mesh.polygons:
         face.use_smooth = True
-    bm.from_mesh(mesh)
-    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
+    for mesh in meshes:
+        bm.from_mesh(mesh)
+        bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
 
-    #modifier = mesh.modifiers.new(name="GSC Edge Split", type='EDGE_SPLIT')
-    #modifier.split_angle = 0
-    #modifier.use_edge_angle = True
+        modifier = mesh.modifiers.new(name="GHG Edge Split", type='EDGE_SPLIT')
+        modifier.split_angle = 0
+        modifier.use_edge_angle = True
         
 
-    bm.to_mesh(mesh)
+        bm.to_mesh(mesh)
+
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    bpy.ops.object.select_all(action='SELECT')
+    bpy.ops.object.editmode_toggle()
+    bpy.ops.mesh.separate(type='LOOSE')
+        
 
 def GHG_whole_beta_2(f, filepath):
     bm = bmesh.new()
@@ -287,26 +295,54 @@ def GHG_whole_beta_2(f, filepath):
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0] // 2
             flag = unpack("B", f.read(1))[0]
-            for i in range(vertexCount):
+            for i in range(vertexCount//6):
                 vx1 = unpack("<h", f.read(2))[0] / 4096.0
                 vy1 = unpack("<h", f.read(2))[0] / 4096.0
                 vz1 = unpack("<h", f.read(2))[0] / 4096.0
-                nz1 = unpack("<h", f.read(2))[0] / 4096.0
+                vw1 = unpack("<h", f.read(2))[0] / 4096.0
                 f.seek(8,1)
-                vertices.append([vx1,vz1,vy1])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+                vx2 = unpack("<h", f.read(2))[0] / 4096.0
+                vy2 = unpack("<h", f.read(2))[0] / 4096.0
+                vz2 = unpack("<h", f.read(2))[0] / 4096.0
+                vw2 = unpack("<h", f.read(2))[0] / 4096.0
+                f.seek(8,1)
+                vx3 = unpack("<h", f.read(2))[0] / 4096.0
+                vy3 = unpack("<h", f.read(2))[0] / 4096.0
+                vz3 = unpack("<h", f.read(2))[0] / 4096.0
+                vw3 = unpack("<h", f.read(2))[0] / 4096.0
+                f.seek(8,1)
 
-    mesh = bpy.data.meshes.new("dragonjan")
-    mesh.from_pydata(vertices, [], []) # take faces out until we know what it is
-    object = bpy.data.objects.new("dragonjan", mesh)
+                verts1 = bm.verts.new([vx1, vz1, vy1])
+                verts2 = bm.verts.new([vx2, vz2, vy2])
+                verts3 = bm.verts.new([vx3, vz3, vy3])
+
+                bm.faces.new([verts1, verts2, verts3])
+
+    bpy.context.view_layer.objects.active
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm.to_mesh(mesh)
+    
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
+    for face in mesh.polygons:
+        face.use_smooth = True
+    for mesh in meshes:
+        bm.from_mesh(mesh)
+        bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
 
-    for fac in mesh.polygons:
-        fac.use_smooth = True
+        modifier = mesh.modifiers.new(name="GHG Edge Split", type='EDGE_SPLIT')
+        modifier.split_angle = 0
+        modifier.use_edge_angle = True
+        
+
+        bm.to_mesh(mesh)
+
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    bpy.ops.object.select_all(action='SELECT')
+    bpy.ops.object.editmode_toggle()
+    bpy.ops.mesh.separate(type='LOOSE')
 
 def GHG_whole_beta_3(f, filepath):
     bm = bmesh.new()
@@ -326,26 +362,89 @@ def GHG_whole_beta_3(f, filepath):
             f.seek(2,1)
             vertexCount = unpack("B", f.read(1))[0]//2
             flag = unpack("B", f.read(1))[0]
-            for i in range(vertexCount):
+            for i in range(vertexCount//8):
                 vx1 = unpack("<f", f.read(4))[0]
                 vy1 = unpack("<f", f.read(4))[0]
                 vz1 = unpack("<f", f.read(4))[0]
-                nz1 = unpack("<f", f.read(4))[0]
+                vw1 = unpack("<f", f.read(4))[0]
+                f.seek(-4,1)
+                byte1__ = unpack("B", f.read(1))[0]
+                byte2 = unpack("B", f.read(1))[0]
+                byte3 = unpack("<Q", f.read(8))[0]
+                f.seek(-6,1)
                 f.seek(16,1)
-                vertices.append([vx1,vz1,vy1])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+                if byte1__ == 1:
+                    pass
+                vx2 = unpack("<f", f.read(4))[0]
+                vy2 = unpack("<f", f.read(4))[0]
+                vz2 = unpack("<f", f.read(4))[0]
+                vw2 = unpack("<f", f.read(4))[0]
+                f.seek(-4,1)
+                byte1_ = unpack("B", f.read(1))[0]
+                byte2_ = unpack("B", f.read(1))[0]
+                byte3_ = unpack("<Q", f.read(8))[0]
+                f.seek(-6,1)
+                f.seek(16,1)
+                if byte1_ == 1:
+                    pass
+                vx3 = unpack("<f", f.read(4))[0]
+                vy3 = unpack("<f", f.read(4))[0]
+                vz3 = unpack("<f", f.read(4))[0]
+                vw3 = unpack("<f", f.read(4))[0]
+                f.seek(-4,1)
+                byte1 = unpack("B", f.read(1))[0]
+                byte2 = unpack("B", f.read(1))[0]
+                byte3 = unpack("<Q", f.read(8))[0]
+                f.seek(-6,1)
+                f.seek(16,1)
+                if byte1 == 1:
+                    pass
+                elif byte1 == 0:
+                    verts1 = bm.verts.new([vx1, vz1, vy1])
+                    verts2 = bm.verts.new([vx2, vz2, vy2])
+                    verts3 = bm.verts.new([vx3, vz3, vy3])
 
-    mesh = bpy.data.meshes.new("dragonjan")
-    mesh.from_pydata(vertices, [], faces) # take faces out until we know what it is
-    object = bpy.data.objects.new("dragonjan", mesh)
+                    bm.faces.new([verts1, verts2, verts3])
+
+    bpy.context.view_layer.objects.active
+
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm.to_mesh(mesh)
+    
+    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
+    for face in mesh.polygons:
+        face.use_smooth = True
+    for mesh in meshes:
+        bm.from_mesh(mesh)
+        bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
 
-    for fac in mesh.polygons:
-        fac.use_smooth = True
+        modifier = mesh.modifiers.new(name="GHG Edge Split", type='EDGE_SPLIT')
+        modifier.split_angle = 0
+        modifier.use_edge_angle = True
+        
+
+        bm.to_mesh(mesh)
+
+    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = objs
+    bpy.ops.object.select_all(action='SELECT')
+    bpy.ops.object.editmode_toggle()
+    bpy.ops.mesh.separate(type='LOOSE')
+    bpy.ops.object.editmode_toggle()
+    bpy.ops.object.select_all(action='DESELECT')
+
+    for obj in bpy.context.scene.objects:
+        if obj.name.startswith ("nigel.036"):
+            obj.select_set (True)
+        elif obj.name.startswith ("nigel.020"):
+            obj.select_set (True)
+        elif obj.name.startswith ("nigel.029"):
+            obj.select_set (True)
+
+    bpy.ops.object.delete(use_global=False, confirm=False)
+
+
     
             
     
