@@ -201,129 +201,373 @@ def GHG_whole_entire_bones(f, filepath):
 
 
 def GHG_whole_beta_1(f, filepath):
-    bm = bmesh.new()
-    f.seek(0)
-    ChunkRead = f.read()
-    f.seek(0)
-    meshes={}
+    if os.path.basename(filepath) == r"key.ghg":
+        f.seek(0)
+        ChunkRead = f.read()
+        f.seek(0)
+        meshes={}
+        normals=[]
+        rgba=[]
+        uvs=[]
 
-    fa=-1
-    fb=0
-    fc=1
+        fa=-1
+        fb=0
+        fc=1
 
-    faces=[]
-    vertices=[]
+        faces=[]
+        vertices=[]
 
-    os.system("cls")
+        os.system("cls")
 
-    face_index_search = 0
+        face_index_search = 0
 
-    f.seek(0)
-    Chunk = f.read()
-    f.seek(0)
-    for i in range(len(Chunk)):
-        Chunks = f.read(4)
-        if Chunks == b"\x03\x01\x00\x01":
-            f.seek(2,1)
-            vertexCount = unpack("B", f.read(1))[0]
-            flag = unpack("B", f.read(1))[0]
-            for i in range(vertexCount):
-                vx = unpack("<f", f.read(4))[0]
-                vy = unpack("<f", f.read(4))[0]
-                vz = unpack("<f", f.read(4))[0]
-                FaceData = unpack("<Q", f.read(8))[0]
-                f.seek(-8,1)
-                f.seek(4,1)
-                vertices.append([vx,vz,vy])
-                for i in range(1):
-                    if magicFaceExponents == 4441297034452369409:
-                        for i in range(122):
+        f.seek(0)
+        Chunk = f.read()
+        f.seek(0)
+        for i in range(len(Chunk)):
+            Chunks = f.read(4)
+            if Chunk == b"\x03\x01\x00\x01":
+                f.seek(2,1)
+                vertexCount = unpack("B", f.read(1))[0]
+                flag = unpack("B", f.read(1))[0]
+                for i in range(vertexCount):
+                    vx = unpack("<f", f.read(4))[0]
+                    vy = unpack("<f", f.read(4))[0]
+                    vz = unpack("<f", f.read(4))[0]
+                    magicFaceExponents = unpack("<Q", f.read(8))[0]
+                    f.seek(-8,1)
+                    f.seek(4,1)
+                    vertices.append([vx,vz,vy])
+                    normals.append([0,0, 1])
+                    for i in range(1):
+                        if magicFaceExponents == 4441297034452369409:
+                            for i in range(122):
+                                
+                                faces.append([i - i % 2 + 1,i + i % 2,i + 2])
+                            if faces.remove([43, 44, 45]):
+                                pass
                             
-                            faces.append([i - i % 2 + 1,i + i % 2,i + 2])
-                        if faces.remove([43, 44, 45]):
-                            pass
-                        
-                        elif faces.remove([43, 42, 44]):
-                            pass
-                        elif faces.remove([19, 18,20]):
-                            pass
-                        elif faces.remove([19,20, 21]):
-                            pass
-                        elif faces.remove([67, 66,68]):
-                            pass
-                        
-                        elif faces.remove([67,68,69]):
-                            pass
-                        
-                        
-                        
-                        elif faces.remove([47,46,48]):
-                            pass
-                        elif faces.remove([73,72,74]):
-                            pass
-                        elif faces.remove([73,74,75]):
-                            pass
-                        elif faces.remove([47,48,49]):
-                            pass
-                        elif faces.remove([93,92,94]):
-                            pass
-                        elif faces.remove([93,94,95]):
-                            pass
-                        elif faces.remove([99,100,101]):
-                            pass
-                        elif faces.remove([99,98,100]):
-                            pass
-                        elif faces.remove([25,24,26]):
-                            pass
-                        elif faces.remove([25,26,27]):
-                            pass
-                        elif faces.remove([111,112,113]):
-                            pass
-                        elif faces.remove([115,116,117]):
-                            pass
-                        elif faces.remove([115,114,116]):
-                            pass
-                        elif faces.remove([111,110,112]):
-                            pass
-                        elif faces.remove([119,120,121]):
-                            pass
-                        elif faces.remove([119,118,120]):
-                            pass
-                        elif faces.remove([107,108,109]):
-                            pass
-                        elif faces.remove([107,106,108]):
-                            pass
+                            elif faces.remove([43, 42, 44]):
+                                pass
+                            elif faces.remove([19, 18,20]):
+                                pass
+                            elif faces.remove([19,20, 21]):
+                                pass
+                            elif faces.remove([67, 66,68]):
+                                pass
                             
-                        break
-                    elif magicFaceExponents == 13617892458184736769:
-                        faceA = magicFaceExponents**0-1
-                        faceB = magicFaceExponents**0
-                        faceC = magicFaceExponents**0+1
-                    
-                        faces.append([faceA,faceB,faceC])
-    f.seek(0)
-    MaterialChunkReach = f.read(16)
-    MaterialCount = unpack("<I", f.read(4))[0]
-    MaterialEntrySize1 = unpack("<I", f.read(4))[0]
-    f.seek(MaterialEntrySize1-24,1)
-    for i in range(MaterialCount):
-        ramMaterialStuff = f.read(288) # only appears in ram only
-        MaterialFlag = unpack("<I", f.read(4))[0]
-        if MaterialFlag == 29:
-            f.seek(32,1) # skip this don't need this, since trace it in ram
-            red1    = unpack("<I", f.read(4))[0] / 4294967295
-            green1  = unpack("<I", f.read(4))[0] / 4294967295
-            blue1   = unpack("<I", f.read(4))[0] / 4294967295
+                            elif faces.remove([67,68,69]):
+                                pass
+                            
+                            
+                            
+                            elif faces.remove([47,46,48]):
+                                pass
+                            elif faces.remove([73,72,74]):
+                                pass
+                            elif faces.remove([73,74,75]):
+                                pass
+                            elif faces.remove([47,48,49]):
+                                pass
+                            elif faces.remove([93,92,94]):
+                                pass
+                            elif faces.remove([93,94,95]):
+                                pass
+                            elif faces.remove([99,100,101]):
+                                pass
+                            elif faces.remove([99,98,100]):
+                                pass
+                            elif faces.remove([25,24,26]):
+                                pass
+                            elif faces.remove([25,26,27]):
+                                pass
+                            elif faces.remove([111,112,113]):
+                                pass
+                            elif faces.remove([115,116,117]):
+                                pass
+                            elif faces.remove([115,114,116]):
+                                pass
+                            elif faces.remove([111,110,112]):
+                                pass
+                            elif faces.remove([119,120,121]):
+                                pass
+                            elif faces.remove([119,118,120]):
+                                pass
+                            elif faces.remove([107,108,109]):
+                                pass
+                            elif faces.remove([107,106,108]):
+                                pass
+                                
+                            break
+                        elif magicFaceExponents == 13617892458184736769:
+                            faceA = magicFaceExponents**0-1
+                            faceB = magicFaceExponents**0
+                            faceC = magicFaceExponents**0+1
+                        
+                            faces.append([faceA,faceB,faceC])
+                f.seek(2,1)
+                uvcount = unpack("B", f.read(1))[0]
+                f.seek(1,1)
+                for i in range(uvcount):
+                    uvx = unpack("<h", f.read(2))[0] / 4096.0
+                    uvy = unpack("<h", f.read(2))[0] / 4096.0
+                    f.seek(4,1) #not sure
+                    uvs.append([uvx,uvy])
+                        
+                f.seek(2,1)
+                vertexcolorCount = unpack("B", f.read(1))[0]
+                flag = unpack("B", f.read(1))[0]
+                for i in range(vertexcolorCount):
+                    r = unpack("B", f.read(1))[0] / 127.0
+                    g = unpack("B", f.read(1))[0] / 127.0
+                    b = unpack("B", f.read(1))[0] / 127.0
+                    a = unpack("B", f.read(1))[0] / 127.0
+                    rgba.append([r,g,b,a])
+        f.seek(0)
+        MaterialChunkReach = f.read(16)
+        MaterialCount = unpack("<I", f.read(4))[0]
+        MaterialEntrySize1 = unpack("<I", f.read(4))[0]
+        f.seek(MaterialEntrySize1-24,1)
+        for i in range(MaterialCount):
+            matByte1 = unpack("B", f.read(1))[0]
+            matByte2 = unpack("B", f.read(1))[0]
+            matByte3 = unpack("B", f.read(1))[0]
+            matByte4 = unpack("B", f.read(1))[0]
+            matByte5 = unpack("B", f.read(1))[0]
+            matByte6 = unpack("B", f.read(1))[0]
+            matByte7 = unpack("B", f.read(1))[0]
+            matByte8 = unpack("B", f.read(1))[0]
+            matByte9 = unpack("B", f.read(1))[0]
+            matByte10 = unpack("B", f.read(1))[0]
+            matByte11 = unpack("B", f.read(1))[0]
+            matByte12 = unpack("B", f.read(1))[0]
+            matByte13 = unpack("B", f.read(1))[0]
+            matByte14 = unpack("B", f.read(1))[0]
+            matByte15 = unpack("B", f.read(1))[0]
+            matByte16 = unpack("B", f.read(1))[0]
+            matByte17 = unpack("B", f.read(1))[0]
+            matByte18 = unpack("B", f.read(1))[0]
+            matByte19 = unpack("B", f.read(1))[0]
+            matByte20 = unpack("B", f.read(1))[0]
+            matByte21 = unpack("B", f.read(1))[0]
+            matByte22 = unpack("B", f.read(1))[0]
+            matByte23 = unpack("B", f.read(1))[0]
+            matByte24 = unpack("B", f.read(1))[0]
+            matByte25 = unpack("B", f.read(1))[0]
+            matByte26 = unpack("B", f.read(1))[0]
+            matByte27 = unpack("B", f.read(1))[0]
+            matByte28 = unpack("B", f.read(1))[0]
+            matByte29 = unpack("B", f.read(1))[0]
+            matByte30 = unpack("B", f.read(1))[0]
+            matByte31 = unpack("B", f.read(1))[0]
+            matByte32 = unpack("B", f.read(1))[0]
+            matByte33 = unpack("B", f.read(1))[0]
+            matByte34 = unpack("B", f.read(1))[0]
+            matByte35 = unpack("B", f.read(1))[0]
+            matByte36 = unpack("B", f.read(1))[0]
+            matByte37 = unpack("B", f.read(1))[0]
+            matByte38 = unpack("B", f.read(1))[0]
+            matByte39 = unpack("B", f.read(1))[0]
+            matByte40 = unpack("B", f.read(1))[0]
+            matByte41 = unpack("B", f.read(1))[0]
+            matByte42 = unpack("B", f.read(1))[0]
+            matByte43 = unpack("B", f.read(1))[0]
+            matByte44 = unpack("B", f.read(1))[0]
+            matByte45 = unpack("B", f.read(1))[0]
+            matByte46 = unpack("B", f.read(1))[0]
+            matByte47 = unpack("B", f.read(1))[0]
+            matByte48 = unpack("B", f.read(1))[0]
+            matByte49 = unpack("B", f.read(1))[0]
+            matByte50 = unpack("B", f.read(1))[0]
+            matByte51 = unpack("B", f.read(1))[0]
+            matByte52 = unpack("B", f.read(1))[0]
+            matByte53 = unpack("B", f.read(1))[0]
+            matByte54 = unpack("B", f.read(1))[0]
+            matByte55 = unpack("B", f.read(1))[0]
+            matByte56 = unpack("B", f.read(1))[0]
+            matByte57 = unpack("B", f.read(1))[0]
+            matByte58 = unpack("B", f.read(1))[0]
+            matByte59 = unpack("B", f.read(1))[0]
+            matByte60 = unpack("B", f.read(1))[0]
+            matByte61 = unpack("B", f.read(1))[0]
+            matByte62 = unpack("B", f.read(1))[0]
+            matByte63 = unpack("B", f.read(1))[0]
+            matByte64 = unpack("B", f.read(1))[0]
+            matByte65 = unpack("B", f.read(1))[0]
+            matByte66 = unpack("B", f.read(1))[0]
+            matByte67 = unpack("B", f.read(1))[0]
+            matByte68 = unpack("B", f.read(1))[0]
+            matByte69 = unpack("B", f.read(1))[0]
+            matByte70 = unpack("B", f.read(1))[0]
+            matByte71 = unpack("B", f.read(1))[0]
+            matByte72 = unpack("B", f.read(1))[0]
+            matByte73 = unpack("B", f.read(1))[0]
+            matByte74 = unpack("B", f.read(1))[0]
+            matByte75 = unpack("B", f.read(1))[0]
+            matByte76 = unpack("B", f.read(1))[0]
+            matByte77 = unpack("B", f.read(1))[0]
+            matByte78 = unpack("B", f.read(1))[0]
+            matByte79 = unpack("B", f.read(1))[0]
+            matByte80 = unpack("B", f.read(1))[0]
+            matByte81 = unpack("B", f.read(1))[0]
+            matByte82 = unpack("B", f.read(1))[0]
+            matByte83 = unpack("B", f.read(1))[0]
+            matByte84 = unpack("B", f.read(1))[0]
+            matByte85 = unpack("B", f.read(1))[0]
+            matByte86 = unpack("B", f.read(1))[0]
+            matByte87 = unpack("B", f.read(1))[0]
+            matByte88 = unpack("B", f.read(1))[0]
+            matByte89 = unpack("B", f.read(1))[0]
+            matByte90 = unpack("B", f.read(1))[0]
+            matByte91 = unpack("B", f.read(1))[0]
+            matByte92 = unpack("B", f.read(1))[0]
+            matByte93 = unpack("B", f.read(1))[0]
+            matByte94 = unpack("B", f.read(1))[0]
+            matByte95 = unpack("B", f.read(1))[0]
+            matByte96 = unpack("B", f.read(1))[0]
+            matByte97 = unpack("B", f.read(1))[0]
+            matByte98 = unpack("B", f.read(1))[0]
+            matByte99 = unpack("B", f.read(1))[0]
+            matByte100 = unpack("B", f.read(1))[0]
+            matByte101 = unpack("B", f.read(1))[0]
+            matByte102 = unpack("B", f.read(1))[0]
+            matByte103 = unpack("B", f.read(1))[0]
+            matByte104 = unpack("B", f.read(1))[0]
+            matByte105 = unpack("B", f.read(1))[0]
+            matByte106 = unpack("B", f.read(1))[0]
+            matByte107 = unpack("B", f.read(1))[0]
+            matByte108 = unpack("B", f.read(1))[0]
+            matByte109 = unpack("B", f.read(1))[0]
+            matByte110 = unpack("B", f.read(1))[0]
+            matByte111 = unpack("B", f.read(1))[0]
+            matByte112 = unpack("B", f.read(1))[0]
+            matByte113 = unpack("B", f.read(1))[0]
+            matByte114 = unpack("B", f.read(1))[0]
+            matByte115 = unpack("B", f.read(1))[0]
+            matByte116 = unpack("B", f.read(1))[0]
+            matByte117 = unpack("B", f.read(1))[0]
+            matByte118 = unpack("B", f.read(1))[0]
+            matByte119 = unpack("B", f.read(1))[0]
+            matByte120 = unpack("B", f.read(1))[0]
+            matByte121 = unpack("B", f.read(1))[0]
+            matByte122 = unpack("B", f.read(1))[0]
+            matByte123 = unpack("B", f.read(1))[0]
+            matByte124 = unpack("B", f.read(1))[0]
+            matByte125 = unpack("B", f.read(1))[0]
+            matByte126 = unpack("B", f.read(1))[0]
+            matByte127 = unpack("B", f.read(1))[0]
+            matByte128 = unpack("B", f.read(1))[0]
+            matByte129 = unpack("B", f.read(1))[0]
+            matByte130 = unpack("B", f.read(1))[0]
+            matByte131 = unpack("B", f.read(1))[0]
+            matByte132 = unpack("B", f.read(1))[0]
+            matByte133 = unpack("B", f.read(1))[0]
+            matByte134 = unpack("B", f.read(1))[0]
+            matByte135 = unpack("B", f.read(1))[0]
+            matByte136 = unpack("B", f.read(1))[0]
+            matByte137 = unpack("B", f.read(1))[0]
+            matByte138 = unpack("B", f.read(1))[0]
+            matByte139 = unpack("B", f.read(1))[0]
+            matByte140 = unpack("B", f.read(1))[0]
+            matByte141 = unpack("B", f.read(1))[0]
+            matByte142 = unpack("B", f.read(1))[0]
+            matByte143 = unpack("B", f.read(1))[0]
+            matByte144 = unpack("B", f.read(1))[0]
+            matByte145 = unpack("B", f.read(1))[0]
+            matByte146 = unpack("B", f.read(1))[0]
+            matByte147 = unpack("B", f.read(1))[0]
+            matByte148 = unpack("B", f.read(1))[0]
+            matByte149 = unpack("B", f.read(1))[0]
+            matByte150 = unpack("B", f.read(1))[0]
+            subSurfaceColorCount = unpack("B", f.read(1))[0]
+            flag_ = unpack("B", f.read(1))[0]
+            for i in range(subSurfaceColorCount+1):
+                subSurfaceColorCountRed     = unpack("<f", f.read(4))[0]
+                subSurfaceColorCountGreen   = unpack("<f", f.read(4))[0]
+                subSurfaceColorCountBlue    = unpack("<f", f.read(4))[0]
+                subSurfaceColorCountAlpha   = unpack("<f", f.read(4))[0]
+            ramMaterialStuff = f.read(284) # only appears in ram only
+            MaterialFlag = unpack("<I", f.read(4))[0]
+            if MaterialFlag == 29:
+                f.seek(32,1) # skip this don't need this, since trace it in ram
+                red1    = unpack("<I", f.read(4))[0] / 4294967295
+                green1  = unpack("<I", f.read(4))[0] / 4294967295
+                blue1   = unpack("<I", f.read(4))[0] / 4294967295
 
-    #todo assign a filpath just in case
+        BSDF = "Principled BSDF"
+        vmesh = "dragonjanCol"
+        meshID = len(bpy.data.objects)
+        mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+        mesh.from_pydata(vertices, [], faces)
+        object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+        mesh.normals_split_custom_set_from_vertices(normals)
+        bpy.context.collection.objects.link(object)
+        mesh.vertex_colors.new(name=vmesh)
 
-    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], faces)
-    object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
-    bpy.context.collection.objects.link(object)
-    for face in mesh.polygons:
-        face.use_smooth = True
-    #bpy.data.materials.new # TODO
+        for fac in mesh.polygons:
+            fac.use_smooth = True
+
+        vindex = 0
+        for vertex in mesh.vertices:
+            vertex.normal = normals[vindex]
+            vindex += 1
+            
+        uv_tex = mesh.uv_layers.new()
+        uv_layer = mesh.uv_layers[0].data
+        vert_loops = {}
+        for l in mesh.loops:
+            vert_loops.setdefault(l.vertex_index, []).append(l.index)
+        for i, coord in enumerate(uvs):
+            for li in vert_loops[i]:
+                uv_layer[li].uv = coord
+                
+        index=0
+        for vcol in mesh.vertex_colors[0].data:
+            vcol.color = rgba[i]
+            index+=i
+
+        NU_MIX_MODE = 'ShaderNodeMixRGB'
+        NU_RGBA_VERT = 'ShaderNodeVertexColor'
+        MaterialName = "dragonjan Material"
+
+        name=0
+
+        obj = bpy.data.objects[name]
+        mats = bpy.data.materials.new("dragonjan Material")
+        obj.data.materials.append(mats)
+
+        previous_mix = None
+        previous_rgba = None
+
+        for i, mat in enumerate(bpy.data.materials):
+            mat.use_nodes = True
+            bpy.data.materials[MaterialName].node_tree.nodes[BSDF].inputs[7].default_value = 0
+            bpy.data.materials[MaterialName].node_tree.nodes[BSDF].inputs[9].default_value = 1
+            #bpy.data.node.add_search(use_transform=True, node_item=items)
+            mat.blend_method = "HASHED"
+            mix = mat.node_tree.nodes.new(NU_MIX_MODE)
+            rgbaV = mat.node_tree.nodes.new(NU_RGBA_VERT)
+            mat.node_tree.nodes["Mix"].blend_type = 'MULTIPLY'
+            mat.node_tree.nodes["Mix"].inputs[0].default_value = 1
+            bpy.data.materials[MaterialName].node_tree.nodes["Vertex Color"].layer_name = vmesh
+            nodes = mat.node_tree.nodes
+            links = mat.node_tree.links
+            principled = nodes.get('Principled BSDF')
+            mixer = nodes.get("ShaderNodeVertexColor")
+            for i in range(1):
+                mix.location.x = -300
+                if previous_mix:
+                    links.new(previous_mix.outputs[0], mix.inputs[0])
+            previous_mix = mix
+            links.new(mix.outputs[0], principled.inputs[0])
+            for i in range(1):
+                rgbaV.location.x = -300
+                rgbaV.location.y = -300
+                if previous_rgba:
+                    links.new(previous_rgba.outputs[0], rgbaV.inputs[0])
+            previous_rgba = rgbaV
+        links.new(rgbaV.outputs[1], principled.inputs[21])
+        links.new(rgbaV.outputs[0], mix.inputs[1])
 
 def GHG_whole_beta_2(f, filepath):
     pass
