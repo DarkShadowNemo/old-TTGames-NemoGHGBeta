@@ -235,150 +235,99 @@ def GHG_whole_beta_1(f, filepath):
                 f.seek(-8,1)
                 f.seek(4,1)
                 vertices.append([vx,vz,vy])
-    for i in range(1):
-        if FaceData == 4441297034452369409 or 13617892458184736769:
-            faceA = magicFaceExponents**0-1
-            faceB = magicFaceExponents**0
-            faceC = magicFaceExponents**0+1
-        
-            faces.append([faceA,faceB,faceC])
+                for i in range(1):
+                    if magicFaceExponents == 4441297034452369409:
+                        for i in range(122):
+                            
+                            faces.append([i - i % 2 + 1,i + i % 2,i + 2])
+                        if faces.remove([43, 44, 45]):
+                            pass
+                        
+                        elif faces.remove([43, 42, 44]):
+                            pass
+                        elif faces.remove([19, 18,20]):
+                            pass
+                        elif faces.remove([19,20, 21]):
+                            pass
+                        elif faces.remove([67, 66,68]):
+                            pass
+                        
+                        elif faces.remove([67,68,69]):
+                            pass
+                        
+                        
+                        
+                        elif faces.remove([47,46,48]):
+                            pass
+                        elif faces.remove([73,72,74]):
+                            pass
+                        elif faces.remove([73,74,75]):
+                            pass
+                        elif faces.remove([47,48,49]):
+                            pass
+                        elif faces.remove([93,92,94]):
+                            pass
+                        elif faces.remove([93,94,95]):
+                            pass
+                        elif faces.remove([99,100,101]):
+                            pass
+                        elif faces.remove([99,98,100]):
+                            pass
+                        elif faces.remove([25,24,26]):
+                            pass
+                        elif faces.remove([25,26,27]):
+                            pass
+                        elif faces.remove([111,112,113]):
+                            pass
+                        elif faces.remove([115,116,117]):
+                            pass
+                        elif faces.remove([115,114,116]):
+                            pass
+                        elif faces.remove([111,110,112]):
+                            pass
+                        elif faces.remove([119,120,121]):
+                            pass
+                        elif faces.remove([119,118,120]):
+                            pass
+                        elif faces.remove([107,108,109]):
+                            pass
+                        elif faces.remove([107,106,108]):
+                            pass
+                            
+                        break
+                    elif magicFaceExponents == 13617892458184736769:
+                        faceA = magicFaceExponents**0-1
+                        faceB = magicFaceExponents**0
+                        faceC = magicFaceExponents**0+1
+                    
+                        faces.append([faceA,faceB,faceC])
+    f.seek(0)
+    MaterialChunkReach = f.read(16)
+    MaterialCount = unpack("<I", f.read(4))[0]
+    MaterialEntrySize1 = unpack("<I", f.read(4))[0]
+    f.seek(MaterialEntrySize1-24,1)
+    for i in range(MaterialCount):
+        ramMaterialStuff = f.read(288) # only appears in ram only
+        MaterialFlag = unpack("<I", f.read(4))[0]
+        if MaterialFlag == 29:
+            f.seek(32,1) # skip this don't need this, since trace it in ram
+            red1    = unpack("<I", f.read(4))[0] / 4294967295
+            green1  = unpack("<I", f.read(4))[0] / 4294967295
+            blue1   = unpack("<I", f.read(4))[0] / 4294967295
 
-    
-    """for i in range(len(ChunkRead)):
-        Chunk = f.read(4)
-        if Chunk == b"\x03\x01\x00\x01":
-            f.seek(2,1)
-            vertexCount = unpack("B", f.read(1))[0]
-            flag = unpack("B", f.read(1))[0]
-            for i in range(vertexCount//3):
-                vx1 = unpack("<f", f.read(4))[0]
-                vy1 = unpack("<f", f.read(4))[0]
-                vz1 = unpack("<f", f.read(4))[0]
-                vw1 = unpack("<f", f.read(4))[0]
-                vx2 = unpack("<f", f.read(4))[0]
-                vy2 = unpack("<f", f.read(4))[0]
-                vz2 = unpack("<f", f.read(4))[0]
-                vw2 = unpack("<f", f.read(4))[0]
-                vx3 = unpack("<f", f.read(4))[0]
-                vy3 = unpack("<f", f.read(4))[0]
-                vz3 = unpack("<f", f.read(4))[0]
-                vw3 = unpack("<f", f.read(4))[0]
-                f.seek(-4,1)
-                byte1 = unpack("B", f.read(1))[0]
-                byte2 = unpack("B", f.read(1))[0]
-                byte3 = unpack("<Q", f.read(8))[0]
-                f.seek(-6,1)
-                if byte1 == 1:
-                    pass
-                elif byte1 == 0:
-                    verts1 = bm.verts.new([vx1, vz1, vy1])
-                    verts2 = bm.verts.new([vx2, vz2, vy2])
-                    verts3 = bm.verts.new([vx3, vz3, vy3])
-
-                    bm.faces.new([verts1, verts2, verts3])
+    #todo assign a filpath just in case
 
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    bm.to_mesh(mesh)
-    
+    mesh.from_pydata(vertices, [], faces)
     object = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     bpy.context.collection.objects.link(object)
     for face in mesh.polygons:
         face.use_smooth = True
-    for mesh in meshes:
-        bm.from_mesh(mesh)
-        bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0001)
-
-        modifier = mesh.modifiers.new(name="GHG Edge Split", type='EDGE_SPLIT')
-        modifier.split_angle = 0
-        modifier.use_edge_angle = True
-        
-
-        bm.to_mesh(mesh)
-
-    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
-    bpy.context.view_layer.objects.active = objs
-    bpy.ops.object.select_all(action='SELECT')
-    bpy.ops.object.editmode_toggle()
-    bpy.ops.mesh.separate(type='LOOSE')
-    bpy.ops.object.editmode_toggle()
-    bpy.ops.object.select_all(action='DESELECT')
-
-    for obj in bpy.context.scene.objects:
-        if obj.name.startswith ("key.012"):
-            obj.select_set (True)
-            
-
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            bpy.ops.object.mode_set(mode = 'EDIT') 
-            bpy.ops.mesh.select_mode(type="VERT")
-            bpy.ops.mesh.select_all(action = 'DESELECT')
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            obj.data.vertices[0].select = True
-            bpy.ops.object.mode_set(mode = 'EDIT')
-            bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "use_dissolve_ortho_edges":False, "mirror":False}, TRANSFORM_OT_translate={"value":(0, 0.141421, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_target":'CLOSEST', "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
-            bpy.ops.mesh.select_mode(type="EDGE")
-            bpy.ops.mesh.select_all(action = 'DESELECT')
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            obj.data.edges[1].select = True
-            obj.data.edges[3].select = True
-            bpy.ops.object.mode_set(mode = 'EDIT')
-            bpy.ops.mesh.edge_face_add()
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            bpy.ops.object.mode_set(mode = 'EDIT') 
-            bpy.ops.mesh.select_mode(type="VERT")
-            bpy.ops.mesh.select_all(action = 'DESELECT')
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            obj.data.vertices[2].select = True
-            bpy.ops.object.mode_set(mode = 'EDIT')
-            bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "use_dissolve_ortho_edges":False, "mirror":False}, TRANSFORM_OT_translate={"value":(0, 0.141421, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_target":'CLOSEST', "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
-            bpy.ops.transform.translate(value=(-0.153317, -0.0989428, 0.0228018), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
-            bpy.ops.mesh.select_mode(type="EDGE")
-            bpy.ops.mesh.select_all(action = 'DESELECT')
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            obj.data.edges[5].select = True
-            obj.data.edges[2].select = True
-            bpy.ops.object.mode_set(mode = 'EDIT')
-            bpy.ops.mesh.edge_face_add()
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-        elif obj.name.startswith ("key.028"):
-            obj.select_set (True)
-        elif obj.name.startswith ("key.013"):
-            obj.select_set (True)
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            bpy.ops.object.mode_set(mode = 'EDIT') 
-            bpy.ops.mesh.select_mode(type="EDGE")
-            bpy.ops.mesh.select_all(action = 'DESELECT')
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            obj.data.edges[0].select = True
-            bpy.ops.object.mode_set(mode = 'EDIT')
-            bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "use_dissolve_ortho_edges":False, "mirror":False}, TRANSFORM_OT_translate={"value":(0.206127, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(True, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_target":'CLOSEST', "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
-            bpy.ops.mesh.select_mode(type="VERT")
-            bpy.ops.mesh.select_all(action = 'DESELECT')
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            obj.data.vertices[4].select = True
-            bpy.ops.object.mode_set(mode = 'EDIT')
-            bpy.ops.transform.translate(value=(2.38419e-07, 0.036011, -0.0628509), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
-            bpy.ops.mesh.select_all(action = 'DESELECT')
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            obj.data.vertices[3].select = True
-            bpy.ops.object.mode_set(mode = 'EDIT')
-            bpy.ops.transform.translate(value=(2.38419e-07, -0.036011, -0.0628509), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
-            bpy.ops.mesh.select_all(action = 'DESELECT')
-            bpy.ops.object.mode_set(mode = 'OBJECT')
-            obj.data.vertices[1].select = True
-            obj.data.vertices[3].select = True
-            bpy.ops.object.mode_set(mode = 'EDIT')
-            bpy.ops.mesh.edge_face_add()
-            bpy.ops.object.editmode_toggle()
-            
-    bpy.ops.object.join()
-    bpy.ops.object.editmode_toggle()
-    bpy.ops.mesh.select_all(action='SELECT')
-    bpy.ops.mesh.remove_doubles()
-    bpy.ops.object.editmode_toggle()"""
+    #bpy.data.materials.new # TODO
 
 def GHG_whole_beta_2(f, filepath):
-    bm = bmesh.new()
+    pass
+    """bm = bmesh.new()
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -436,74 +385,11 @@ def GHG_whole_beta_2(f, filepath):
         modifier.use_edge_angle = True
         
 
-        bm.to_mesh(mesh)
-
-    """objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
-    bpy.context.view_layer.objects.active = objs
-    bpy.ops.object.select_all(action='SELECT')
-    bpy.ops.object.editmode_toggle()
-    bpy.ops.mesh.separate(type='LOOSE')
-    bpy.ops.object.editmode_toggle()
-    bpy.ops.object.select_all(action='DESELECT')
-
-    for obj in bpy.context.scene.objects:
-        if obj.name.startswith ("pearl.170"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.174"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.198"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.011"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.069"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.086"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.197"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.159"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.127"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.094"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.186"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.182"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.166"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.099"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.126"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.111"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.147"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.115"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.113"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.039"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.135"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.035"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.179"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.050"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.040"):
-            obj.select_set (True)
-        elif obj.name.startswith ("pearl.112"):
-            obj.select_set (True)
-
-    bpy.ops.object.delete(use_global=False, confirm=False)"""
+        bm.to_mesh(mesh)"""
 
 def GHG_whole_beta_3(f, filepath):
-    bm = bmesh.new()
+    pass
+    """bm = bmesh.new()
     f.seek(0)
     ChunkRead = f.read()
     f.seek(0)
@@ -582,39 +468,7 @@ def GHG_whole_beta_3(f, filepath):
         modifier.use_edge_angle = True
         
 
-        bm.to_mesh(mesh)
-
-    """objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
-    bpy.context.view_layer.objects.active = objs
-    bpy.ops.object.select_all(action='SELECT')
-    bpy.ops.object.editmode_toggle()
-    bpy.ops.mesh.separate(type='LOOSE')
-    bpy.ops.object.editmode_toggle()
-    bpy.ops.object.select_all(action='DESELECT')
-
-    for obj in bpy.context.scene.objects:
-        if obj.name.startswith ("nigel.036"):
-            obj.select_set (True)
-        elif obj.name.startswith ("nigel.020"):
-            obj.select_set (True)
-        elif obj.name.startswith ("nigel.029"):
-            obj.select_set (True)
-        elif obj.name.startswith ("dory2.073"):
-            obj.select_set (True)
-        elif obj.name.startswith ("dory2.064"):
-            obj.select_set (True)
-        elif obj.name.startswith ("dory2.061"):
-            obj.select_set (True)
-        elif obj.name.startswith ("dory2.062"):
-            obj.select_set (True)
-        elif obj.name.startswith ("dory2.066"):
-            obj.select_set (True)
-        elif obj.name.startswith ("dory2.036"):
-            obj.select_set (True)
-        elif obj.name.startswith ("dory2.052"):
-            obj.select_set (True)
-
-    bpy.ops.object.delete(use_global=False, confirm=False)"""
+        bm.to_mesh(mesh)"""
 
 
     
@@ -623,14 +477,15 @@ def GHG_whole_beta_3(f, filepath):
 
 def NonParseGHG(filepath, GHG_Bones=1, GHG_Name=""):
     with open(filepath, "rb") as f:
-        if GHG_Name == "any_1":
+        """if GHG_Name == "any_1":
             GHG_whole_beta_1(f, filepath)
         if GHG_Name == "any_2":
             GHG_whole_beta_2(f, filepath)
         if GHG_Name == "any_3":
             GHG_whole_beta_3(f, filepath)
         if GHG_Bones == 1:
-            GHG_whole_entire_bones(f, filepath)
+            GHG_whole_entire_bones(f, filepath)"""
+        pass
                 
         
                 
