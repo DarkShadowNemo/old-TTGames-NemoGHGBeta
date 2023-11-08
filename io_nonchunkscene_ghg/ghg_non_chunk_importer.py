@@ -218,8 +218,33 @@ def GHG_whole_beta_1(f, filepath):
 
     face_index_search = 0
 
+    f.seek(0)
+    Chunk = f.read()
+    f.seek(0)
+    for i in range(len(Chunk)):
+        Chunks = f.read(4)
+        if Chunks == b"\x03\x01\x00\x01":
+            f.seek(2,1)
+            vertexCount = unpack("B", f.read(1))[0]
+            flag = unpack("B", f.read(1))[0]
+            for i in range(vertexCount):
+                vx = unpack("<f", f.read(4))[0]
+                vy = unpack("<f", f.read(4))[0]
+                vz = unpack("<f", f.read(4))[0]
+                FaceData = unpack("<Q", f.read(8))[0]
+                f.seek(-8,1)
+                f.seek(4,1)
+                vertices.append([vx,vz,vy])
+    for i in range(1):
+        if FaceData == 4441297034452369409 or 13617892458184736769:
+            faceA = magicFaceExponents**0-1
+            faceB = magicFaceExponents**0
+            faceC = magicFaceExponents**0+1
+        
+            faces.append([faceA,faceB,faceC])
+
     
-    for i in range(len(ChunkRead)):
+    """for i in range(len(ChunkRead)):
         Chunk = f.read(4)
         if Chunk == b"\x03\x01\x00\x01":
             f.seek(2,1)
@@ -275,7 +300,82 @@ def GHG_whole_beta_1(f, filepath):
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.editmode_toggle()
     bpy.ops.mesh.separate(type='LOOSE')
-        
+    bpy.ops.object.editmode_toggle()
+    bpy.ops.object.select_all(action='DESELECT')
+
+    for obj in bpy.context.scene.objects:
+        if obj.name.startswith ("key.012"):
+            obj.select_set (True)
+            
+
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            bpy.ops.object.mode_set(mode = 'EDIT') 
+            bpy.ops.mesh.select_mode(type="VERT")
+            bpy.ops.mesh.select_all(action = 'DESELECT')
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            obj.data.vertices[0].select = True
+            bpy.ops.object.mode_set(mode = 'EDIT')
+            bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "use_dissolve_ortho_edges":False, "mirror":False}, TRANSFORM_OT_translate={"value":(0, 0.141421, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_target":'CLOSEST', "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+            bpy.ops.mesh.select_mode(type="EDGE")
+            bpy.ops.mesh.select_all(action = 'DESELECT')
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            obj.data.edges[1].select = True
+            obj.data.edges[3].select = True
+            bpy.ops.object.mode_set(mode = 'EDIT')
+            bpy.ops.mesh.edge_face_add()
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            bpy.ops.object.mode_set(mode = 'EDIT') 
+            bpy.ops.mesh.select_mode(type="VERT")
+            bpy.ops.mesh.select_all(action = 'DESELECT')
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            obj.data.vertices[2].select = True
+            bpy.ops.object.mode_set(mode = 'EDIT')
+            bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "use_dissolve_ortho_edges":False, "mirror":False}, TRANSFORM_OT_translate={"value":(0, 0.141421, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(False, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_target":'CLOSEST', "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+            bpy.ops.transform.translate(value=(-0.153317, -0.0989428, 0.0228018), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
+            bpy.ops.mesh.select_mode(type="EDGE")
+            bpy.ops.mesh.select_all(action = 'DESELECT')
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            obj.data.edges[5].select = True
+            obj.data.edges[2].select = True
+            bpy.ops.object.mode_set(mode = 'EDIT')
+            bpy.ops.mesh.edge_face_add()
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+        elif obj.name.startswith ("key.028"):
+            obj.select_set (True)
+        elif obj.name.startswith ("key.013"):
+            obj.select_set (True)
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            bpy.ops.object.mode_set(mode = 'EDIT') 
+            bpy.ops.mesh.select_mode(type="EDGE")
+            bpy.ops.mesh.select_all(action = 'DESELECT')
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            obj.data.edges[0].select = True
+            bpy.ops.object.mode_set(mode = 'EDIT')
+            bpy.ops.mesh.extrude_region_move(MESH_OT_extrude_region={"use_normal_flip":False, "use_dissolve_ortho_edges":False, "mirror":False}, TRANSFORM_OT_translate={"value":(0.206127, 0, 0), "orient_axis_ortho":'X', "orient_type":'GLOBAL', "orient_matrix":((1, 0, 0), (0, 1, 0), (0, 0, 1)), "orient_matrix_type":'GLOBAL', "constraint_axis":(True, False, False), "mirror":False, "use_proportional_edit":False, "proportional_edit_falloff":'SMOOTH', "proportional_size":1, "use_proportional_connected":False, "use_proportional_projected":False, "snap":False, "snap_target":'CLOSEST', "snap_point":(0, 0, 0), "snap_align":False, "snap_normal":(0, 0, 0), "gpencil_strokes":False, "cursor_transform":False, "texture_space":False, "remove_on_cancel":False, "view2d_edge_pan":False, "release_confirm":False, "use_accurate":False, "use_automerge_and_split":False})
+            bpy.ops.mesh.select_mode(type="VERT")
+            bpy.ops.mesh.select_all(action = 'DESELECT')
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            obj.data.vertices[4].select = True
+            bpy.ops.object.mode_set(mode = 'EDIT')
+            bpy.ops.transform.translate(value=(2.38419e-07, 0.036011, -0.0628509), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
+            bpy.ops.mesh.select_all(action = 'DESELECT')
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            obj.data.vertices[3].select = True
+            bpy.ops.object.mode_set(mode = 'EDIT')
+            bpy.ops.transform.translate(value=(2.38419e-07, -0.036011, -0.0628509), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
+            bpy.ops.mesh.select_all(action = 'DESELECT')
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+            obj.data.vertices[1].select = True
+            obj.data.vertices[3].select = True
+            bpy.ops.object.mode_set(mode = 'EDIT')
+            bpy.ops.mesh.edge_face_add()
+            bpy.ops.object.editmode_toggle()
+            
+    bpy.ops.object.join()
+    bpy.ops.object.editmode_toggle()
+    bpy.ops.mesh.select_all(action='SELECT')
+    bpy.ops.mesh.remove_doubles()
+    bpy.ops.object.editmode_toggle()"""
 
 def GHG_whole_beta_2(f, filepath):
     bm = bmesh.new()
@@ -338,11 +438,69 @@ def GHG_whole_beta_2(f, filepath):
 
         bm.to_mesh(mesh)
 
-    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    """objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
     bpy.context.view_layer.objects.active = objs
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.editmode_toggle()
     bpy.ops.mesh.separate(type='LOOSE')
+    bpy.ops.object.editmode_toggle()
+    bpy.ops.object.select_all(action='DESELECT')
+
+    for obj in bpy.context.scene.objects:
+        if obj.name.startswith ("pearl.170"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.174"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.198"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.011"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.069"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.086"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.197"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.159"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.127"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.094"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.186"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.182"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.166"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.099"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.126"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.111"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.147"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.115"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.113"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.039"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.135"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.035"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.179"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.050"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.040"):
+            obj.select_set (True)
+        elif obj.name.startswith ("pearl.112"):
+            obj.select_set (True)
+
+    bpy.ops.object.delete(use_global=False, confirm=False)"""
 
 def GHG_whole_beta_3(f, filepath):
     bm = bmesh.new()
@@ -426,7 +584,7 @@ def GHG_whole_beta_3(f, filepath):
 
         bm.to_mesh(mesh)
 
-    objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    """objs = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
     bpy.context.view_layer.objects.active = objs
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.editmode_toggle()
@@ -441,8 +599,22 @@ def GHG_whole_beta_3(f, filepath):
             obj.select_set (True)
         elif obj.name.startswith ("nigel.029"):
             obj.select_set (True)
+        elif obj.name.startswith ("dory2.073"):
+            obj.select_set (True)
+        elif obj.name.startswith ("dory2.064"):
+            obj.select_set (True)
+        elif obj.name.startswith ("dory2.061"):
+            obj.select_set (True)
+        elif obj.name.startswith ("dory2.062"):
+            obj.select_set (True)
+        elif obj.name.startswith ("dory2.066"):
+            obj.select_set (True)
+        elif obj.name.startswith ("dory2.036"):
+            obj.select_set (True)
+        elif obj.name.startswith ("dory2.052"):
+            obj.select_set (True)
 
-    bpy.ops.object.delete(use_global=False, confirm=False)
+    bpy.ops.object.delete(use_global=False, confirm=False)"""
 
 
     
