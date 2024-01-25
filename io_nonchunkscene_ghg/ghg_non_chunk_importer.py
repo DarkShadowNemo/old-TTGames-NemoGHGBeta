@@ -1,10 +1,10 @@
-from struct import pack, unpack
-from io import BytesIO as bio
+from struct import unpack, pack
 import os
+import bmesh
+import math
 import bpy
 import mathutils
-import math
-import bmesh
+from io import BytesIO as bio
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -18,94 +18,11 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         build += strbyte
     return build
 
-def GHG_entire_weights(f):
-    pass
-
-def GHG_vertex_entire_vc1(f):
-    pass
-
-def GHG_whole_entire_uv1(f, uvs=[]):
-    obdata = bpy.context.object.data
-    f.seek(0)
-    Chunk = f.read()
-    f.seek(0)
-    for i in range(len(Chunk)):
-        Chunk_ = f.read(4)
-        if Chunk_ == b"\x03\x01\x00\x01":
-            f.seek(2,1)
-            vertexcountskip = unpack("B", f.read(1))[0] # skip vertex data
-            f.seek(1,1)
-            for i in range(vertexcountskip):
-                f.seek(4,1)
-                f.seek(4,1)
-                f.seek(4,1)
-                f.seek(4,1)
-            f.seek(6,1)
-            uvCount1 = unpack("B", f.read(1))[0]
-            f.seek(1,1)
-            for i in range(uvCount1):
-                uvx = unpack("<h", f.read(2))[0] / 4096.0
-                uvy = unpack("<h", f.read(2))[0] / 4096.0
-                f.seek(4,1)
-                uvs.append([uvx,uvy])
-            uv_tex = obdata.uv_layers.new()
-            uv_layer = obdata.uv_layers[0].data
-            vert_loops = {}
-            for l in obdata.loops:
-                vert_loops.setdefault(l.vertex_index, []).append(l.index)
-            for i, coord in enumerate(uvs):
-                for li in vert_loops[i]:
-                    uv_layer[li].uv = coord
-def GHG_whole_entire_uv2(f):
-    obdata = bpy.context.object.data
-    f.seek(0)
-    Chunk = f.read()
-    f.seek(0)
-    uvs=[]
-    for i in range(len(Chunk)):
-        Chunk_ = f.read(4)
-        if Chunk_ == b"\x03\x02\x00\x01":
-            f.seek(2,1)
-            vertexcountskip = unpack("B", f.read(1))[0] // 2 # skip vertex data
-            f.seek(1,1)
-            for i in range(vertexcountskip):
-                f.seek(2,1)
-                f.seek(2,1)
-                f.seek(2,1)
-                f.seek(2,1)
-                f.seek(8,1)
-            f.seek(30,1)
-            vertexColor1 = unpack("B", f.read(1))[0]
-            f.seek(1,1)
-            for i in range(vertexColor1):
-                f.seek(1,1)
-                f.seek(1,1)
-                f.seek(1,1)
-                f.seek(1,1)
-            f.seek(34,1)
-            uvCount1 = unpack("B", f.read(1))[0]*2
-            f.seek(1,1)
-            for i in range(uvCount1):
-                uvx = unpack("B", f.read(1))[0] / 255.0
-                uvy = unpack("B", f.read(1))[0] / 255.0
-                uvs.append([uvx,uvy])
-            uv_tex = obdata.uv_layers.new()
-            uv_layer = obdata.uv_layers[0].data
-            vert_loops = {}
-            for l in obdata.loops:
-                vert_loops.setdefault(l.vertex_index, []).append(l.index)
-            for i, coord in enumerate(uvs):
-                for li in vert_loops[i]:
-                    uv_layer[li].uv = coord
-def GHG_whole_entire_uv3(f):
-    pass
-                    
-
 def GHG_whole_entire_bones(f, filepath):
 
     boneIndex = -1
 
-    Coordinates=[]
+    bones_=[]
 
     bone_parentlist=[]
         
@@ -152,226 +69,190 @@ def GHG_whole_entire_bones(f, filepath):
         #ntbl_buffer.seek(name_offset - 1) or ntbl_buffer.seek(name_offset)
         #bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
         name_offset,=unpack("<L", f.read(4)) # WHAT doesnt work
-        ntbl_buffer.seek(name_offset-1,1)
         f.seek(11,1)
+        ntbl_buffer.seek(name_offset-1,1)
             
     f.seek(0)
     f.seek(36,1)
     f.seek(RotBoneEntrySize-36,1)
     for i in range(BoneCount):
         ScaleX = unpack("<f", f.read(4))[0]
-        RotZ = unpack("<f", f.read(4))[0]
-        RotY = unpack("<f", f.read(4))[0]
-        unk1 = unpack("<f", f.read(4))[0]
-        _RotZ = unpack("<f", f.read(4))[0]
+        rotationz = unpack("<f", f.read(4))[0]
+        rotationy = unpack("<f", f.read(4))[0]
+        null1 = unpack("<f", f.read(4))[0]
+        nrotationz = unpack("<f", f.read(4))[0]
         ScaleY = unpack("<f", f.read(4))[0]
-        RotX = unpack("<f", f.read(4))[0]
-        _RotY = unpack("<f", f.read(4))[0]
-        unk2 = unpack("<f", f.read(4))[0]
-        _RotX = unpack("<f", f.read(4))[0]
+        rotationx = unpack("<f", f.read(4))[0]
+        nrotationy = unpack("<f", f.read(4))[0]
+        null2 = unpack("<f", f.read(4))[0]
+        nrotationx = unpack("<f", f.read(4))[0]
         ScaleZ = unpack("<f", f.read(4))[0]
-        unk3 = unpack("<f", f.read(4))[0]
+        null3 = unpack("<f", f.read(4))[0]
         posx = unpack("<f", f.read(4))[0]
         posy = unpack("<f", f.read(4))[0]
         posz = unpack("<f", f.read(4))[0]
-        unk4 = unpack("<f", f.read(4))[0]
-        Coordinates.append([1, RotZ, RotY, unk1, _RotZ, 1, RotX, _RotY, unk2, _RotX, 1, unk3, posx,posy,posz,unk4])
+        ScaleW = unpack("<f", f.read(4))[0]
+
+        matrix = mathutils.Matrix([[ScaleX,rotationz,rotationy,null1],[nrotationz,ScaleY,rotationx,nrotationy],[null2,nrotationx,ScaleZ,null3],[posx,posy,posz,ScaleW]]).inverted().to_3x3().transposed()
 
         bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
-        bone = skel.edit_bones.new(bone_name)
 
-        bone.head = (
-            +posx,
-            +posz,
-            +posy,
-	)
-        bone.tail = (
-            bone.head[0],
-            bone.head[1],
-            bone.head[2] + 0.03,
-        )
-    #bone.roll = RotZ
+        bone = skel.edit_bones.new(bone_name)
+        
+        bone.tail = mathutils.Vector([0,0,-0.03])
+        
+        bone.head = ([
+            posx,
+            posy,
+            posz,
+        ])
+        
+        bone.length = 0.03
+        
+        bone.transform(matrix)
     for bone_id, bone_parent in enumerate(bone_parentlist):
         if bone_parent < 0: continue # root bone is set to -1
         skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
     bpy.ops.object.mode_set(mode = 'OBJECT')
 
 
-
-def GHG_whole_beta_1(f, filepath):
-    bm = bmesh.new()
+def GHG_mesh_1(f, filepath):
     f.seek(0)
-    ChunkRead = f.read()
+    Chunk = f.read()
     f.seek(0)
-    meshes={}
-
     fa=-1
     fb=0
     fc=1
-
-    faces=[]
-    vertices=[]
-    v_=[]
-
-    os.system("cls")
-
-    
-    for i in range(len(ChunkRead)):
-        Chunk = f.read(4)
-        if Chunk == b"\x03\x01\x00\x01":
-            f.seek(2,1)
-            vertexCount = unpack("B", f.read(1))[0] # TODO vertexcount
-            flag = unpack("B", f.read(1))[0]
+    for i in range(len(Chunk)):
+        Chunks = f.read(4)
+        if Chunks == b"\x03\x01\x00\x01":
+            flag1 = unpack("B", f.read(1))[0]
+            f.seek(1,1)
+            vertexCount = unpack("B", f.read(1))[0]
+            flag2 = unpack("B", f.read(1))[0]
             for i in range(vertexCount):
-                vx1 = unpack("<f", f.read(4))[0] #TODO
-                vy1 = unpack("<f", f.read(4))[0] #TODO
-                vz1 = unpack("<f", f.read(4))[0] #TODO
-                vw1 = unpack("<f", f.read(4))[0] #DONE
-                VertexW = vw1-vw1+1 # clean up vertex w axis control
-                vertices.append([vx1*VertexW,vz1*VertexW,vy1*VertexW])
-            for i in range(vertexCount):
+                vx1 = unpack("<f", f.read(4))[0]
+                vy1 = unpack("<f", f.read(4))[0]
+                vz1 = unpack("<f", f.read(4))[0]
+                vw1 = unpack("<f", f.read(4))[0]
+                vertices.append([vx1,vz1,vy])
+            for i in range(vertexCount-2):
                 fa+=1
                 fb+=1
                 fc+=1
                 faces.append([fa,fb,fc])
-            if len(vertices) == len(vertices):
-                if faces.remove([len(vertices)-1,len(vertices),len(vertices)+1]):
-                    pass
-                elif faces.remove([len(vertices)-2,len(vertices)-1,len(vertices)]):
-                    pass
+                        
+    collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bpy.context.scene.collection.children.link(collection)
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices, [], faces)
+    objects = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    collection.objects.link(objects)
 
-    try:
-        
+    for fac in mesh.polygons:
+        fac.use_smooth = True
+                
 
-        mesh = bpy.data.meshes.new("dragonjan")
-        mesh.from_pydata(vertices, [], faces)
-        object = bpy.data.objects.new("dragonjan", mesh)
-        bpy.context.collection.objects.link(object)
-
-        for fac in mesh.polygons:
-            fac.use_smooth = True
-
-    except:
-        pass
-
-def GHG_whole_beta_2(f, filepath):
-    bm = bmesh.new()
+def GHG_mesh_2(f, filepath):
     f.seek(0)
-    ChunkRead = f.read()
+    Chunk = f.read()
     f.seek(0)
-    meshes = {}
     fa=-1
     fb=0
     fc=1
-    faces=[]
-    vertices=[]
-    os.system("cls")
-    for i in range(len(ChunkRead)):
-        Chunk = f.read(4)
-        if Chunk == b"\x03\x02\x00\x01":
-            f.seek(2,1)
-            vertexCount = unpack("B", f.read(1))[0] // 2
-            flag = unpack("B", f.read(1))[0]
-            for i in range(vertexCount):
-                vx1 = unpack("<h", f.read(2))[0] / 4096.0
-                vy1 = unpack("<h", f.read(2))[0] / 4096.0
-                vz1 = unpack("<h", f.read(2))[0] / 4096.0
-                vw1 = unpack("<h", f.read(2))[0] / 4096.0
-                f.seek(8,1)
-                VertexW = vw1-vw1+1 # clean up vertex w axis control
-                vertices.append([vx1*VertexW,vz1*VertexW,vy1*VertexW])
-            for i in range(vertexCount):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
-            if len(vertices) == len(vertices):
-                if faces.remove([len(vertices)-1,len(vertices),len(vertices)+1]):
-                    pass
-                elif faces.remove([len(vertices)-2,len(vertices)-1,len(vertices)]):
-                    pass
-
-    try:
-        
-
-        mesh = bpy.data.meshes.new("dragonjan")
-        mesh.from_pydata(vertices, [], faces)
-        object = bpy.data.objects.new("dragonjan", mesh)
-        bpy.context.collection.objects.link(object)
-
-        for fac in mesh.polygons:
-            fac.use_smooth = True
-
-    except:
-        pass
-
-def GHG_whole_beta_3(f, filepath):
-    bm = bmesh.new()
-    f.seek(0)
-    ChunkRead = f.read()
-    f.seek(0)
-    meshes={}
     vertices=[]
     faces=[]
-    fa=-1
-    fb=0
-    fc=1
-    os.system("cls")
-    for i in range(len(ChunkRead)):
-        Chunk = f.read(4)
-        if Chunk == b"\x04\x02\x00\x01":
-            f.seek(2,1)
+    edgeOn=1
+    for i in range(len(Chunk)):
+        Chunks = f.read(4)
+        if Chunks == b"\x03\x02\x00\x01":
+            flag1 = unpack("B", f.read(1))[0]
+            f.seek(1,1)
             vertexCount = unpack("B", f.read(1))[0]//2
-            flag = unpack("B", f.read(1))[0]
+            flag2 = unpack("B", f.read(1))[0]
+            for i in range(vertexCount):
+                vx1 = unpack("<h", f.read(2))[0] / 4096
+                vy1 = unpack("<h", f.read(2))[0] / 4096
+                vz1 = unpack("<h", f.read(2))[0] / 4096
+                vw1 = unpack("<h", f.read(2))[0] / 4096
+                f.seek(8,1)
+                vertices.append([vx1,vz1,vy1])
+            for i in range(vertexCount-2):
+                fa+=1
+                fb+=1
+                fc+=1
+                faces.append([fa,fb,fc])
+            offset1 = unpack("<I", f.read(4))[0]
+            offset2 = unpack("<I", f.read(4))[0]
+            unknown_1 = unpack("<I", f.read(4))[0]
+            float1 = unpack("<f", f.read(4))[0]
+            float2 = unpack("<f", f.read(4))[0]
+            float3 = unpack("<f", f.read(4))[0]
+                
+
+
+    collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bpy.context.scene.collection.children.link(collection)
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices, [], faces)
+    objects = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    collection.objects.link(objects)
+
+    for fac in mesh.polygons:
+        fac.use_smooth = True
+
+def GHG_mesh_3(f, filepath):
+    f.seek(0)
+    Chunk = f.read()
+    f.seek(0)
+    fa=-1
+    fb=0
+    fc=1
+    vertices=[]
+    faces=[]
+    for i in range(len(Chunk)):
+        Chunks = f.read(4)
+        if Chunks == b"\x04\x02\x00\x01":
+            flag1 = unpack("B", f.read(1))[0]
+            f.seek(1,1)
+            vertexCount = unpack("B", f.read(1))[0] // 2
+            flag2 = unpack("B", f.read(1))[0]
             for i in range(vertexCount):
                 vx1 = unpack("<f", f.read(4))[0]
                 vy1 = unpack("<f", f.read(4))[0]
                 vz1 = unpack("<f", f.read(4))[0]
                 vw1 = unpack("<f", f.read(4))[0]
                 f.seek(16,1)
-                VertexW = vw1-vw1+1 # clean up vertex w axis control
-                vertices.append([vx1*VertexW,vz1*VertexW,vy1*VertexW])
-            for i in range(vertexCount):
+                vertices.append([vx1,vz1,vy1])
+            for i in range(vertexCount-2):
                 fa+=1
                 fb+=1
                 fc+=1
                 faces.append([fa,fb,fc])
-            if len(vertices) == len(vertices):
-                if faces.remove([len(vertices)-1,len(vertices),len(vertices)+1]):
-                    pass
-                elif faces.remove([len(vertices)-2,len(vertices)-1,len(vertices)]):
-                    pass
 
-    try:
-        
+    collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bpy.context.scene.collection.children.link(collection)
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices, [], faces)
+    objects = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    collection.objects.link(objects)
 
-        mesh = bpy.data.meshes.new("dragonjan")
-        mesh.from_pydata(vertices, [], faces)
-        object = bpy.data.objects.new("dragonjan", mesh)
-        bpy.context.collection.objects.link(object)
+    for fac in mesh.polygons:
+        fac.use_smooth = True
 
-        for fac in mesh.polygons:
-            fac.use_smooth = True
-
-    except:
-        pass
-    
+def ghg_open(filepath, offset_on_off=False, offsets="", skeleton_on_or_off=False):
+    with open(filepath, "rb") as f:
+        if skeleton_on_or_off:
+            GHG_whole_entire_bones(f, filepath)
+        if offset_on_off:
+            if offsets == "0x030100010380XX6C":
+                GHG_mesh_1(f, filepath)
+            if offsets == "0x030200010380XX6D":
+                GHG_mesh_2(f, filepath)
+            if offsets == "0x040200010380XX6C":
+                GHG_mesh_3(f, filepath)
+            
+            
+                
             
     
-
-def NonParseGHG(filepath, GHG_Bones=1, GHG_Name=""):
-    with open(filepath, "rb") as f:
-        if GHG_Name == "any_1":
-            GHG_whole_beta_1(f, filepath)
-        if GHG_Name == "any_2":
-            GHG_whole_beta_2(f, filepath)
-        if GHG_Name == "any_3":
-            GHG_whole_beta_3(f, filepath)
-        if GHG_Bones == 1:
-            GHG_whole_entire_bones(f, filepath)
-                
-        
-                
-        
-        
-        
