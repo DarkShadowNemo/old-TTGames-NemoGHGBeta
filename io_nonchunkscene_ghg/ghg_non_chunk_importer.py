@@ -120,9 +120,12 @@ def GHG_mesh_1(f, filepath):
     f.seek(0)
     Chunk = f.read()
     f.seek(0)
-    fa=-1
-    fb=0
-    fc=1
+    bm = bmesh.new()
+    bm2 = bmesh.new()
+    bm3 = bmesh.new()
+    bm4 = bmesh.new()
+    bm5 = bmesh.new()
+    bm6 = bmesh.new()
     for i in range(len(Chunk)):
         Chunks = f.read(4)
         if Chunks == b"\x03\x01\x00\x01":
@@ -130,26 +133,337 @@ def GHG_mesh_1(f, filepath):
             f.seek(1,1)
             vertexCount = unpack("B", f.read(1))[0]
             flag2 = unpack("B", f.read(1))[0]
-            for i in range(vertexCount):
-                vx1 = unpack("<f", f.read(4))[0]
-                vy1 = unpack("<f", f.read(4))[0]
-                vz1 = unpack("<f", f.read(4))[0]
-                vw1 = unpack("<f", f.read(4))[0]
-                vertices.append([vx1,vz1,vy])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+            if vertexCount == 3:
+                
+                for i in range(vertexCount//3):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    faceon1 = unpack("B", f.read(1))[0]
+                    value1 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    faceon2 = unpack("B", f.read(1))[0]
+                    value2 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    faceon3 = unpack("B", f.read(1))[0]
+                    value3 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    fa = bm.verts.new([vx1,vz1,vy1])
+                    fb = bm.verts.new([vx2,vz2,vy2])
+                    fc = bm.verts.new([vx3,vz3,vy3])
+                    bm.faces.new([fa,fb,fc])
+            elif vertexCount == 4:
+                for i in range(vertexCount//4):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    faceon1 = unpack("B", f.read(1))[0]
+                    value1 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    faceon2 = unpack("B", f.read(1))[0]
+                    value2 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    faceon3 = unpack("B", f.read(1))[0]
+                    value3 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    faceon4 = unpack("B", f.read(1))[0]
+                    value4 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    fa1 = bm2.verts.new([vx1,vz1,vy1])
+                    fb1 = bm2.verts.new([vx2,vz2,vy2])
+                    fc1 = bm2.verts.new([vx3,vz3,vy3])
+                    fd1 = bm2.verts.new([vx4,vz4,vy4])
+                    bm2.faces.new([fa1,fb1,fc1])
+                    bm2.faces.new([fc1,fb1,fd1])
+            elif vertexCount == 5:
+                for i in range(vertexCount//5):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    faceon1 = unpack("B", f.read(1))[0]
+                    value1 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    faceon2 = unpack("B", f.read(1))[0]
+                    value2 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    faceon3 = unpack("B", f.read(1))[0]
+                    value3 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    faceon4 = unpack("B", f.read(1))[0]
+                    value4 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx5 = unpack("<f", f.read(4))[0]
+                    vy5 = unpack("<f", f.read(4))[0]
+                    vz5 = unpack("<f", f.read(4))[0]
+                    faceon5 = unpack("B", f.read(1))[0]
+                    value5 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    fa1 = bm3.verts.new([vx1,vz1,vy1])
+                    fb1 = bm3.verts.new([vx2,vz2,vy2])
+                    fc1 = bm3.verts.new([vx3,vz3,vy3])
+                    fd1 = bm3.verts.new([vx4,vz4,vy4])
+                    fe1 = bm3.verts.new([vx5,vz5,vy5])
+                    bm3.faces.new([fa1,fb1,fc1])
+                    bm3.faces.new([fc1,fb1,fd1])
+            elif vertexCount == 6:
+                for i in range(vertexCount//6):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    faceon1 = unpack("B", f.read(1))[0]
+                    value1 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    faceon2 = unpack("B", f.read(1))[0]
+                    value2 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    faceon3 = unpack("B", f.read(1))[0]
+                    value3 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    faceon4 = unpack("B", f.read(1))[0]
+                    value4 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx5 = unpack("<f", f.read(4))[0]
+                    vy5 = unpack("<f", f.read(4))[0]
+                    vz5 = unpack("<f", f.read(4))[0]
+                    faceon5 = unpack("B", f.read(1))[0]
+                    value5 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx6 = unpack("<f", f.read(4))[0]
+                    vy6 = unpack("<f", f.read(4))[0]
+                    vz6 = unpack("<f", f.read(4))[0]
+                    faceon6 = unpack("B", f.read(1))[0]
+                    value6 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    fa1 = bm4.verts.new([vx1,vz1,vy1])
+                    fb1 = bm4.verts.new([vx2,vz2,vy2])
+                    fc1 = bm4.verts.new([vx3,vz3,vy3])
+                    fd1 = bm4.verts.new([vx4,vz4,vy4])
+                    fe1 = bm4.verts.new([vx5,vz5,vy5])
+                    ff1 = bm4.verts.new([vx6,vz6,vy6])
+                    bm4.faces.new([fa1,fb1,fc1])
+                    bm4.faces.new([fc1,fb1,fd1])
+            elif vertexCount == 7:
+                for i in range(vertexCount//7):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    faceon1 = unpack("B", f.read(1))[0]
+                    value1 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    faceon2 = unpack("B", f.read(1))[0]
+                    value2 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    faceon3 = unpack("B", f.read(1))[0]
+                    value3 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    faceon4 = unpack("B", f.read(1))[0]
+                    value4 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx5 = unpack("<f", f.read(4))[0]
+                    vy5 = unpack("<f", f.read(4))[0]
+                    vz5 = unpack("<f", f.read(4))[0]
+                    faceon5 = unpack("B", f.read(1))[0]
+                    value5 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx6 = unpack("<f", f.read(4))[0]
+                    vy6 = unpack("<f", f.read(4))[0]
+                    vz6 = unpack("<f", f.read(4))[0]
+                    faceon6 = unpack("B", f.read(1))[0]
+                    value6 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx7 = unpack("<f", f.read(4))[0]
+                    vy7 = unpack("<f", f.read(4))[0]
+                    vz7 = unpack("<f", f.read(4))[0]
+                    faceon7 = unpack("B", f.read(1))[0]
+                    value7 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    fa1 = bm5.verts.new([vx1,vz1,vy1])
+                    fb1 = bm5.verts.new([vx2,vz2,vy2])
+                    fc1 = bm5.verts.new([vx3,vz3,vy3])
+                    fd1 = bm5.verts.new([vx4,vz4,vy4])
+                    fe1 = bm5.verts.new([vx5,vz5,vy5])
+                    ff1 = bm5.verts.new([vx6,vz6,vy6])
+                    fg1 = bm5.verts.new([vx7,vz7,vy7])
+                    bm5.faces.new([fa1,fb1,fc1])
+                    bm5.faces.new([fc1,fb1,fd1])
+            elif vertexCount == 8:
+                for i in range(vertexCount//8):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    faceon1 = unpack("B", f.read(1))[0]
+                    value1 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    faceon2 = unpack("B", f.read(1))[0]
+                    value2 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    faceon3 = unpack("B", f.read(1))[0]
+                    value3 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    faceon4 = unpack("B", f.read(1))[0]
+                    value4 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx5 = unpack("<f", f.read(4))[0]
+                    vy5 = unpack("<f", f.read(4))[0]
+                    vz5 = unpack("<f", f.read(4))[0]
+                    faceon5 = unpack("B", f.read(1))[0]
+                    value5 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx6 = unpack("<f", f.read(4))[0]
+                    vy6 = unpack("<f", f.read(4))[0]
+                    vz6 = unpack("<f", f.read(4))[0]
+                    faceon6 = unpack("B", f.read(1))[0]
+                    value6 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx7 = unpack("<f", f.read(4))[0]
+                    vy7 = unpack("<f", f.read(4))[0]
+                    vz7 = unpack("<f", f.read(4))[0]
+                    faceon7 = unpack("B", f.read(1))[0]
+                    value7 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    vx8 = unpack("<f", f.read(4))[0]
+                    vy8 = unpack("<f", f.read(4))[0]
+                    vz8 = unpack("<f", f.read(4))[0]
+                    faceon8 = unpack("B", f.read(1))[0]
+                    value8 = unpack("B", f.read(1))[0]
+                    f.seek(2,1)
+                    fa1 = bm6.verts.new([vx1,vz1,vy1])
+                    fb1 = bm6.verts.new([vx2,vz2,vy2])
+                    fc1 = bm6.verts.new([vx3,vz3,vy3])
+                    fd1 = bm6.verts.new([vx4,vz4,vy4])
+                    fe1 = bm6.verts.new([vx5,vz5,vy5])
+                    ff1 = bm6.verts.new([vx6,vz6,vy6])
+                    fg1 = bm6.verts.new([vx7,vz7,vy7])
+                    fh1 = bm6.verts.new([vx8,vz8,vy8])
+                    bm6.faces.new([fa1,fb1,fc1])
+                    bm6.faces.new([fc1,fb1,fd1])
+                                    
+                                
+                        
                         
     collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
     bpy.context.scene.collection.children.link(collection)
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], faces)
+    bm.from_mesh(mesh)
     objects = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     collection.objects.link(objects)
+    bmesh.ops.remove_doubles(bm, verts = bm.verts, dist = 0.0001)
+    for fac in bm.faces:
+        fac.normal_flip()
+    bm.to_mesh(mesh)
 
     for fac in mesh.polygons:
+        fac.use_smooth = True
+
+    mesh2 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm2.from_mesh(mesh2)
+    objects2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2)
+    collection.objects.link(objects2)
+    bmesh.ops.remove_doubles(bm2, verts = bm2.verts, dist = 0.0001)
+    for fac in bm2.faces:
+        fac.normal_flip()
+    bm2.to_mesh(mesh2)
+
+    for fac in mesh2.polygons:
+        fac.use_smooth = True
+
+    mesh3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm3.from_mesh(mesh3)
+    objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
+    collection.objects.link(objects3)
+    bmesh.ops.remove_doubles(bm3, verts = bm3.verts, dist = 0.0001)
+    for fac in bm3.faces:
+        fac.normal_flip()
+    bm3.to_mesh(mesh3)
+
+    for fac in mesh3.polygons:
+        fac.use_smooth = True
+
+    mesh4 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm4.from_mesh(mesh4)
+    objects4 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh4)
+    collection.objects.link(objects4)
+    bmesh.ops.remove_doubles(bm4, verts = bm4.verts, dist = 0.0001)
+    for fac in bm4.faces:
+        fac.normal_flip()
+    bm4.to_mesh(mesh4)
+
+    for fac in mesh4.polygons:
+        fac.use_smooth = True
+
+    mesh5 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm5.from_mesh(mesh5)
+    objects5 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh5)
+    collection.objects.link(objects5)
+    bmesh.ops.remove_doubles(bm5, verts = bm5.verts, dist = 0.0001)
+    for fac in bm5.faces:
+        fac.normal_flip()
+    bm5.to_mesh(mesh5)
+
+    for fac in mesh5.polygons:
+        fac.use_smooth = True
+
+    mesh6 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm6.from_mesh(mesh6)
+    objects6 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh6)
+    collection.objects.link(objects6)
+    bmesh.ops.remove_doubles(bm6, verts = bm6.verts, dist = 0.0001)
+    for fac in bm6.faces:
+        fac.normal_flip()
+    bm6.to_mesh(mesh6)
+
+    for fac in mesh6.polygons:
         fac.use_smooth = True
                 
 
@@ -157,12 +471,7 @@ def GHG_mesh_2(f, filepath):
     f.seek(0)
     Chunk = f.read()
     f.seek(0)
-    fa=-1
-    fb=0
-    fc=1
-    vertices=[]
-    faces=[]
-    edgeOn=1
+    bm = bmesh.new()
     for i in range(len(Chunk)):
         Chunks = f.read(4)
         if Chunks == b"\x03\x02\x00\x01":
@@ -176,27 +485,16 @@ def GHG_mesh_2(f, filepath):
                 vz1 = unpack("<h", f.read(2))[0] / 4096
                 vw1 = unpack("<h", f.read(2))[0] / 4096
                 f.seek(8,1)
-                vertices.append([vx1,vz1,vy1])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
-            offset1 = unpack("<I", f.read(4))[0]
-            offset2 = unpack("<I", f.read(4))[0]
-            unknown_1 = unpack("<I", f.read(4))[0]
-            float1 = unpack("<f", f.read(4))[0]
-            float2 = unpack("<f", f.read(4))[0]
-            float3 = unpack("<f", f.read(4))[0]
-                
-
-
+                bm.verts.new([vx1,vz1,vy1])
+                        
     collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
     bpy.context.scene.collection.children.link(collection)
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], faces)
+    bm.from_mesh(mesh)
     objects = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     collection.objects.link(objects)
+    bmesh.ops.remove_doubles(bm, verts = bm.verts, dist = 0.0001)
+    bm.to_mesh(mesh)
 
     for fac in mesh.polygons:
         fac.use_smooth = True
@@ -205,11 +503,12 @@ def GHG_mesh_3(f, filepath):
     f.seek(0)
     Chunk = f.read()
     f.seek(0)
-    fa=-1
-    fb=0
-    fc=1
-    vertices=[]
-    faces=[]
+    bm = bmesh.new()
+    bm2 = bmesh.new()
+    bm3 = bmesh.new()
+    bm4 = bmesh.new()
+    bm5 = bmesh.new()
+    bm6 = bmesh.new()
     for i in range(len(Chunk)):
         Chunks = f.read(4)
         if Chunks == b"\x04\x02\x00\x01":
@@ -217,27 +516,290 @@ def GHG_mesh_3(f, filepath):
             f.seek(1,1)
             vertexCount = unpack("B", f.read(1))[0] // 2
             flag2 = unpack("B", f.read(1))[0]
-            for i in range(vertexCount):
-                vx1 = unpack("<f", f.read(4))[0]
-                vy1 = unpack("<f", f.read(4))[0]
-                vz1 = unpack("<f", f.read(4))[0]
-                vw1 = unpack("<f", f.read(4))[0]
-                f.seek(16,1)
-                vertices.append([vx1,vz1,vy1])
-            for i in range(vertexCount-2):
-                fa+=1
-                fb+=1
-                fc+=1
-                faces.append([fa,fb,fc])
+            if vertexCount == 3:
+                
+                for i in range(vertexCount//3):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    vw1 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    vw2 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    vw3 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    fa = bm.verts.new([vx1,vz1,vy1])
+                    fb = bm.verts.new([vx2,vz2,vy2])
+                    fc = bm.verts.new([vx3,vz3,vy3])
+                    bm.edges.new([fa,fb])
+            elif vertexCount == 4:
+                
+                for i in range(vertexCount//4):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    vw1 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    vw2 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    vw3 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    vw4 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    fa = bm2.verts.new([vx1,vz1,vy1])
+                    fb = bm2.verts.new([vx2,vz2,vy2])
+                    fc = bm2.verts.new([vx3,vz3,vy3])
+                    fd = bm2.verts.new([vx4,vz4,vy4])
+                    bm2.edges.new([fa,fb])
+            elif vertexCount == 5:
+                
+                for i in range(vertexCount//5):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    vw1 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    vw2 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    vw3 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    vw4 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx5 = unpack("<f", f.read(4))[0]
+                    vy5 = unpack("<f", f.read(4))[0]
+                    vz5 = unpack("<f", f.read(4))[0]
+                    vw5 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    fa = bm3.verts.new([vx1,vz1,vy1])
+                    fb = bm3.verts.new([vx2,vz2,vy2])
+                    fc = bm3.verts.new([vx3,vz3,vy3])
+                    fd = bm3.verts.new([vx4,vz4,vy4])
+                    fe = bm3.verts.new([vx5,vz5,vy5])
+                    bm3.edges.new([fa,fb])
 
+            elif vertexCount == 6:
+                
+                for i in range(vertexCount//6):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    vw1 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    vw2 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    vw3 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    vw4 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx5 = unpack("<f", f.read(4))[0]
+                    vy5 = unpack("<f", f.read(4))[0]
+                    vz5 = unpack("<f", f.read(4))[0]
+                    vw5 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx6 = unpack("<f", f.read(4))[0]
+                    vy6 = unpack("<f", f.read(4))[0]
+                    vz6 = unpack("<f", f.read(4))[0]
+                    vw6 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    fa = bm4.verts.new([vx1,vz1,vy1])
+                    fb = bm4.verts.new([vx2,vz2,vy2])
+                    fc = bm4.verts.new([vx3,vz3,vy3])
+                    fd = bm4.verts.new([vx4,vz4,vy4])
+                    fe = bm4.verts.new([vx5,vz5,vy5])
+                    ff = bm4.verts.new([vx6,vz6,vy6])
+                    bm4.edges.new([fa,fb])
+            elif vertexCount == 7:
+                
+                for i in range(vertexCount//7):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    vw1 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    vw2 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    vw3 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    vw4 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx5 = unpack("<f", f.read(4))[0]
+                    vy5 = unpack("<f", f.read(4))[0]
+                    vz5 = unpack("<f", f.read(4))[0]
+                    vw5 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx6 = unpack("<f", f.read(4))[0]
+                    vy6 = unpack("<f", f.read(4))[0]
+                    vz6 = unpack("<f", f.read(4))[0]
+                    vw6 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx7 = unpack("<f", f.read(4))[0]
+                    vy7 = unpack("<f", f.read(4))[0]
+                    vz7 = unpack("<f", f.read(4))[0]
+                    vw7 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    fa = bm5.verts.new([vx1,vz1,vy1])
+                    fb = bm5.verts.new([vx2,vz2,vy2])
+                    fc = bm5.verts.new([vx3,vz3,vy3])
+                    fd = bm5.verts.new([vx4,vz4,vy4])
+                    fe = bm5.verts.new([vx5,vz5,vy5])
+                    ff = bm5.verts.new([vx6,vz6,vy6])
+                    fg = bm5.verts.new([vx7,vz7,vy7])
+                    bm5.edges.new([fa,fb])
+            elif vertexCount == 8:
+                
+                for i in range(vertexCount//8):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    vw1 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    vw2 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    vw3 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx4 = unpack("<f", f.read(4))[0]
+                    vy4 = unpack("<f", f.read(4))[0]
+                    vz4 = unpack("<f", f.read(4))[0]
+                    vw4 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx5 = unpack("<f", f.read(4))[0]
+                    vy5 = unpack("<f", f.read(4))[0]
+                    vz5 = unpack("<f", f.read(4))[0]
+                    vw5 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx6 = unpack("<f", f.read(4))[0]
+                    vy6 = unpack("<f", f.read(4))[0]
+                    vz6 = unpack("<f", f.read(4))[0]
+                    vw6 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx7 = unpack("<f", f.read(4))[0]
+                    vy7 = unpack("<f", f.read(4))[0]
+                    vz7 = unpack("<f", f.read(4))[0]
+                    vw7 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    vx8 = unpack("<f", f.read(4))[0]
+                    vy8 = unpack("<f", f.read(4))[0]
+                    vz8 = unpack("<f", f.read(4))[0]
+                    vw8 = unpack("<f", f.read(4))[0]
+                    f.seek(16,1)
+                    fa = bm6.verts.new([vx1,vz1,vy1])
+                    fb = bm6.verts.new([vx2,vz2,vy2])
+                    fc = bm6.verts.new([vx3,vz3,vy3])
+                    fd = bm6.verts.new([vx4,vz4,vy4])
+                    fe = bm6.verts.new([vx5,vz5,vy5])
+                    ff = bm6.verts.new([vx6,vz6,vy6])
+                    fg = bm6.verts.new([vx7,vz7,vy7])
+                    fh = bm6.verts.new([vx8,vz8,vy8])
+                    bm6.edges.new([fa,fb])
+                        
     collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
     bpy.context.scene.collection.children.link(collection)
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh.from_pydata(vertices, [], faces)
+    bm.from_mesh(mesh)
     objects = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
     collection.objects.link(objects)
+    bmesh.ops.remove_doubles(bm, verts = bm.verts, dist = 0.0001)
+    bm.to_mesh(mesh)
 
     for fac in mesh.polygons:
+        fac.use_smooth = True
+
+    mesh2 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm2.from_mesh(mesh2)
+    objects2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2)
+    collection.objects.link(objects2)
+    bmesh.ops.remove_doubles(bm2, verts = bm2.verts, dist = 0.0001)
+    bm2.to_mesh(mesh2)
+
+    for fac in mesh2.polygons:
+        fac.use_smooth = True
+
+    mesh3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm3.from_mesh(mesh3)
+    objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
+    collection.objects.link(objects3)
+    bmesh.ops.remove_doubles(bm3, verts = bm3.verts, dist = 0.0001)
+    bm3.to_mesh(mesh3)
+
+    for fac in mesh3.polygons:
+        fac.use_smooth = True
+
+    mesh4 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm4.from_mesh(mesh4)
+    objects4 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh4)
+    collection.objects.link(objects4)
+    bmesh.ops.remove_doubles(bm4, verts = bm4.verts, dist = 0.0001)
+    bm4.to_mesh(mesh4)
+
+    for fac in mesh4.polygons:
+        fac.use_smooth = True
+
+    mesh5 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm5.from_mesh(mesh5)
+    objects5 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh5)
+    collection.objects.link(objects5)
+    bmesh.ops.remove_doubles(bm5, verts = bm5.verts, dist = 0.0001)
+    bm5.to_mesh(mesh5)
+
+    for fac in mesh5.polygons:
+        fac.use_smooth = True
+
+    mesh6 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm6.from_mesh(mesh6)
+    objects6 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh6)
+    collection.objects.link(objects6)
+    bmesh.ops.remove_doubles(bm6, verts = bm6.verts, dist = 0.0001)
+    bm6.to_mesh(mesh6)
+
+    for fac in mesh6.polygons:
         fac.use_smooth = True
 
 def ghg_open(filepath, offset_on_off=False, offsets="", skeleton_on_or_off=False):
