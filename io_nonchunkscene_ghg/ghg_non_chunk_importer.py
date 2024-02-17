@@ -123,6 +123,67 @@ def GHG_mesh(f, filepath):
     Chunk = f.read()
     f.seek(0)
 
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkkk = bmesh.new()
+    bm_1kkkkkkkk = bmesh.new()
+    bm_1kkkkkkk = bmesh.new()
+    bm_1kkkkkk = bmesh.new()
+    bm_1kkkkk = bmesh.new()
+    bm_1kkkk = bmesh.new()
+    bm_1kkk = bmesh.new()
+    bm_1kk = bmesh.new()
+    bm_1k = bmesh.new()
+
     bm_1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj = bmesh.new()
 
     bm_1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj = bmesh.new()
@@ -208,6 +269,8 @@ def GHG_mesh(f, filepath):
     bm_1hh = bmesh.new()
     bm_1h = bmesh.new()
 
+    bm_1gggggggggggg = bmesh.new()
+    bm_1ggggggggggg = bmesh.new()
     bm_1gggggggggg = bmesh.new()
     bm_1ggggggggg = bmesh.new()
     bm_1gggggggg = bmesh.new()
@@ -223,6 +286,12 @@ def GHG_mesh(f, filepath):
     bm_1f = bmesh.new()
     bm_1ff = bmesh.new()
     bm_1fff = bmesh.new()
+    bm_1ffff = bmesh.new()
+    bm_1fffff = bmesh.new()
+    bm_1ffffff = bmesh.new()
+    bm_1fffffff = bmesh.new()
+    bm_1ffffffff = bmesh.new()
+    bm_1fffffffff = bmesh.new()
     bm_1dd = bmesh.new()
     bm_1dddd = bmesh.new()
     bm_1ddd = bmesh.new()
@@ -231,6 +300,9 @@ def GHG_mesh(f, filepath):
     bm_1ee = bmesh.new()
     bm_1eee = bmesh.new()
     bm_1eeee = bmesh.new()
+    bm_1eeeee = bmesh.new()
+    bm_1eeeeee = bmesh.new()
+    bm_1eeeeeee = bmesh.new()
     bm_1d = bmesh.new()
     bm_1c = bmesh.new()
     bm_1b = bmesh.new()
@@ -238,7 +310,47 @@ def GHG_mesh(f, filepath):
     bm_1 = bmesh.new()
     bm = bmesh.new()
     bm2 = bmesh.new()
-    bm3 = bmesh.new()
+    bm2a = bmesh.new()
+    bm2b = bmesh.new()
+    bm_3a = bmesh.new()
+    bm_3b = bmesh.new()
+    bm_3c = bmesh.new()
+    bm_3ca = bmesh.new()
+    bm_3cb = bmesh.new()
+    bm_3d = bmesh.new()
+    bm_3da = bmesh.new()
+    bm_3db = bmesh.new()
+    bm_3dc = bmesh.new()
+    bm_3e = bmesh.new()
+    bm_3ea = bmesh.new()
+    bm_3eb = bmesh.new()
+    bm_3ec = bmesh.new()
+    bm_3ed = bmesh.new()
+    bm_3f = bmesh.new()
+    bm_3fa = bmesh.new()
+    bm_3fb = bmesh.new()
+    bm_3fc = bmesh.new()
+    bm_3fd = bmesh.new()
+    bm_3g = bmesh.new()
+    bm_3ga = bmesh.new()
+    bm_3gb = bmesh.new()
+    bm_3gc = bmesh.new()
+    bm_3gd = bmesh.new()
+    bm_3ge = bmesh.new()
+    bm_3gf = bmesh.new()
+    bm_3gg = bmesh.new()
+    bm_3gh = bmesh.new()
+    bm_3h = bmesh.new()
+    bm_3ha = bmesh.new()
+    bm_3hb = bmesh.new()
+    bm_3hc = bmesh.new()
+    bm_3hd = bmesh.new()
+    bm_3he = bmesh.new()
+    bm_3hf = bmesh.new()
+    bm_3hg = bmesh.new()
+    bm_3hh = bmesh.new()
+    bm_3i = bmesh.new()
+    bm_3ia = bmesh.new()
     for i in range(len(Chunk)):
         Chunks = f.read(4)
         if Chunks == b"\x03\x01\x00\x01":
@@ -605,9 +717,9 @@ def GHG_mesh(f, filepath):
                     value2b = unpack("B", f.read(1))[0]
                     f.seek(-2,1)
                     vw2b = unpack("<f", f.read(4))[0]
-                    vx3a = unpack("<f", f.read(4))[0]
-                    vy3a = unpack("<f", f.read(4))[0]
-                    vz3a = unpack("<f", f.read(4))[0]
+                    vx3b = unpack("<f", f.read(4))[0]
+                    vy3b = unpack("<f", f.read(4))[0]
+                    vz3b = unpack("<f", f.read(4))[0]
                     type3b = unpack("B", f.read(1))[0]
                     value3b = unpack("B", f.read(1))[0]
                     f.seek(-2,1)
@@ -1292,6 +1404,272 @@ def GHG_mesh(f, filepath):
                     f.seek(-2,1)
                     vw9111 = unpack("<f", f.read(4))[0]
 
+                    f.seek(-144,1)
+
+                    vx11111 = unpack("<f", f.read(4))[0]
+                    vy11111 = unpack("<f", f.read(4))[0]
+                    vz11111 = unpack("<f", f.read(4))[0]
+                    type11111 = unpack("B", f.read(1))[0]
+                    value11111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11111 = unpack("<f", f.read(4))[0]
+                    vx21111 = unpack("<f", f.read(4))[0]
+                    vy21111 = unpack("<f", f.read(4))[0]
+                    vz21111 = unpack("<f", f.read(4))[0]
+                    type21111 = unpack("B", f.read(1))[0]
+                    value21111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw21111 = unpack("<f", f.read(4))[0]
+                    vx31111 = unpack("<f", f.read(4))[0]
+                    vy31111 = unpack("<f", f.read(4))[0]
+                    vz31111 = unpack("<f", f.read(4))[0]
+                    type31111 = unpack("B", f.read(1))[0]
+                    value31111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw31111 = unpack("<f", f.read(4))[0]
+                    vx41111 = unpack("<f", f.read(4))[0]
+                    vy41111 = unpack("<f", f.read(4))[0]
+                    vz41111 = unpack("<f", f.read(4))[0]
+                    type41111 = unpack("B", f.read(1))[0]
+                    value41111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw41111 = unpack("<f", f.read(4))[0]
+                    vx51111 = unpack("<f", f.read(4))[0]
+                    vy51111 = unpack("<f", f.read(4))[0]
+                    vz51111 = unpack("<f", f.read(4))[0]
+                    type51111 = unpack("B", f.read(1))[0]
+                    value51111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw51111 = unpack("<f", f.read(4))[0]
+                    vx61111 = unpack("<f", f.read(4))[0]
+                    vy61111 = unpack("<f", f.read(4))[0]
+                    vz61111 = unpack("<f", f.read(4))[0]
+                    type61111 = unpack("B", f.read(1))[0]
+                    value61111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw61111 = unpack("<f", f.read(4))[0]
+                    vx71111 = unpack("<f", f.read(4))[0]
+                    vy71111 = unpack("<f", f.read(4))[0]
+                    vz71111 = unpack("<f", f.read(4))[0]
+                    type71111 = unpack("B", f.read(1))[0]
+                    value71111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw71111 = unpack("<f", f.read(4))[0]
+                    vx81111 = unpack("<f", f.read(4))[0]
+                    vy81111 = unpack("<f", f.read(4))[0]
+                    vz81111 = unpack("<f", f.read(4))[0]
+                    type81111 = unpack("B", f.read(1))[0]
+                    value81111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw81111 = unpack("<f", f.read(4))[0]
+                    vx91111 = unpack("<f", f.read(4))[0]
+                    vy91111 = unpack("<f", f.read(4))[0]
+                    vz91111 = unpack("<f", f.read(4))[0]
+                    type91111 = unpack("B", f.read(1))[0]
+                    value91111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw91111 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-144,1)
+
+                    vx111111 = unpack("<f", f.read(4))[0]
+                    vy111111 = unpack("<f", f.read(4))[0]
+                    vz111111 = unpack("<f", f.read(4))[0]
+                    type111111 = unpack("B", f.read(1))[0]
+                    value111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw111111 = unpack("<f", f.read(4))[0]
+                    vx211111 = unpack("<f", f.read(4))[0]
+                    vy211111 = unpack("<f", f.read(4))[0]
+                    vz211111 = unpack("<f", f.read(4))[0]
+                    type211111 = unpack("B", f.read(1))[0]
+                    value211111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw211111 = unpack("<f", f.read(4))[0]
+                    vx311111 = unpack("<f", f.read(4))[0]
+                    vy311111 = unpack("<f", f.read(4))[0]
+                    vz311111 = unpack("<f", f.read(4))[0]
+                    type311111 = unpack("B", f.read(1))[0]
+                    value311111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw311111 = unpack("<f", f.read(4))[0]
+                    vx411111 = unpack("<f", f.read(4))[0]
+                    vy411111 = unpack("<f", f.read(4))[0]
+                    vz411111 = unpack("<f", f.read(4))[0]
+                    type411111 = unpack("B", f.read(1))[0]
+                    value411111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw411111 = unpack("<f", f.read(4))[0]
+                    vx511111 = unpack("<f", f.read(4))[0]
+                    vy511111 = unpack("<f", f.read(4))[0]
+                    vz511111 = unpack("<f", f.read(4))[0]
+                    type511111 = unpack("B", f.read(1))[0]
+                    value511111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw511111 = unpack("<f", f.read(4))[0]
+                    vx611111 = unpack("<f", f.read(4))[0]
+                    vy611111 = unpack("<f", f.read(4))[0]
+                    vz611111 = unpack("<f", f.read(4))[0]
+                    type611111 = unpack("B", f.read(1))[0]
+                    value611111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw611111 = unpack("<f", f.read(4))[0]
+                    vx711111 = unpack("<f", f.read(4))[0]
+                    vy711111 = unpack("<f", f.read(4))[0]
+                    vz711111 = unpack("<f", f.read(4))[0]
+                    type711111 = unpack("B", f.read(1))[0]
+                    value711111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw711111 = unpack("<f", f.read(4))[0]
+                    vx811111 = unpack("<f", f.read(4))[0]
+                    vy811111 = unpack("<f", f.read(4))[0]
+                    vz811111 = unpack("<f", f.read(4))[0]
+                    type811111 = unpack("B", f.read(1))[0]
+                    value811111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw811111 = unpack("<f", f.read(4))[0]
+                    vx911111 = unpack("<f", f.read(4))[0]
+                    vy911111 = unpack("<f", f.read(4))[0]
+                    vz911111 = unpack("<f", f.read(4))[0]
+                    type911111 = unpack("B", f.read(1))[0]
+                    value911111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw911111 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-144,1)
+
+                    vx1111111 = unpack("<f", f.read(4))[0]
+                    vy1111111 = unpack("<f", f.read(4))[0]
+                    vz1111111 = unpack("<f", f.read(4))[0]
+                    type1111111 = unpack("B", f.read(1))[0]
+                    value1111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1111111 = unpack("<f", f.read(4))[0]
+                    vx2111111 = unpack("<f", f.read(4))[0]
+                    vy2111111 = unpack("<f", f.read(4))[0]
+                    vz2111111 = unpack("<f", f.read(4))[0]
+                    type2111111 = unpack("B", f.read(1))[0]
+                    value2111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2111111 = unpack("<f", f.read(4))[0]
+                    vx3111111 = unpack("<f", f.read(4))[0]
+                    vy3111111 = unpack("<f", f.read(4))[0]
+                    vz3111111 = unpack("<f", f.read(4))[0]
+                    type3111111 = unpack("B", f.read(1))[0]
+                    value3111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3111111 = unpack("<f", f.read(4))[0]
+                    vx4111111 = unpack("<f", f.read(4))[0]
+                    vy4111111 = unpack("<f", f.read(4))[0]
+                    vz4111111 = unpack("<f", f.read(4))[0]
+                    type4111111 = unpack("B", f.read(1))[0]
+                    value4111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4111111 = unpack("<f", f.read(4))[0]
+                    vx5111111 = unpack("<f", f.read(4))[0]
+                    vy5111111 = unpack("<f", f.read(4))[0]
+                    vz5111111 = unpack("<f", f.read(4))[0]
+                    type5111111 = unpack("B", f.read(1))[0]
+                    value5111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5111111 = unpack("<f", f.read(4))[0]
+                    vx6111111 = unpack("<f", f.read(4))[0]
+                    vy6111111 = unpack("<f", f.read(4))[0]
+                    vz6111111 = unpack("<f", f.read(4))[0]
+                    type6111111 = unpack("B", f.read(1))[0]
+                    value6111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6111111 = unpack("<f", f.read(4))[0]
+                    vx7111111 = unpack("<f", f.read(4))[0]
+                    vy7111111 = unpack("<f", f.read(4))[0]
+                    vz7111111 = unpack("<f", f.read(4))[0]
+                    type7111111 = unpack("B", f.read(1))[0]
+                    value7111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7111111 = unpack("<f", f.read(4))[0]
+                    vx8111111 = unpack("<f", f.read(4))[0]
+                    vy8111111 = unpack("<f", f.read(4))[0]
+                    vz8111111 = unpack("<f", f.read(4))[0]
+                    type8111111 = unpack("B", f.read(1))[0]
+                    value8111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8111111 = unpack("<f", f.read(4))[0]
+                    vx9111111 = unpack("<f", f.read(4))[0]
+                    vy9111111 = unpack("<f", f.read(4))[0]
+                    vz9111111 = unpack("<f", f.read(4))[0]
+                    type9111111 = unpack("B", f.read(1))[0]
+                    value9111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9111111 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-144,1)
+
+                    vx11111111 = unpack("<f", f.read(4))[0]
+                    vy11111111 = unpack("<f", f.read(4))[0]
+                    vz11111111 = unpack("<f", f.read(4))[0]
+                    type11111111 = unpack("B", f.read(1))[0]
+                    value11111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11111111 = unpack("<f", f.read(4))[0]
+                    vx21111111 = unpack("<f", f.read(4))[0]
+                    vy21111111 = unpack("<f", f.read(4))[0]
+                    vz21111111 = unpack("<f", f.read(4))[0]
+                    type21111111 = unpack("B", f.read(1))[0]
+                    value21111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw21111111 = unpack("<f", f.read(4))[0]
+                    vx31111111 = unpack("<f", f.read(4))[0]
+                    vy31111111 = unpack("<f", f.read(4))[0]
+                    vz31111111 = unpack("<f", f.read(4))[0]
+                    type31111111 = unpack("B", f.read(1))[0]
+                    value31111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw31111111 = unpack("<f", f.read(4))[0]
+                    vx41111111 = unpack("<f", f.read(4))[0]
+                    vy41111111 = unpack("<f", f.read(4))[0]
+                    vz41111111 = unpack("<f", f.read(4))[0]
+                    type41111111 = unpack("B", f.read(1))[0]
+                    value41111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw41111111 = unpack("<f", f.read(4))[0]
+                    vx51111111 = unpack("<f", f.read(4))[0]
+                    vy51111111 = unpack("<f", f.read(4))[0]
+                    vz51111111 = unpack("<f", f.read(4))[0]
+                    type51111111 = unpack("B", f.read(1))[0]
+                    value51111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw51111111 = unpack("<f", f.read(4))[0]
+                    vx61111111 = unpack("<f", f.read(4))[0]
+                    vy61111111 = unpack("<f", f.read(4))[0]
+                    vz61111111 = unpack("<f", f.read(4))[0]
+                    type61111111 = unpack("B", f.read(1))[0]
+                    value61111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw61111111 = unpack("<f", f.read(4))[0]
+                    vx71111111 = unpack("<f", f.read(4))[0]
+                    vy71111111 = unpack("<f", f.read(4))[0]
+                    vz71111111 = unpack("<f", f.read(4))[0]
+                    type71111111 = unpack("B", f.read(1))[0]
+                    value71111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw71111111 = unpack("<f", f.read(4))[0]
+                    vx81111111 = unpack("<f", f.read(4))[0]
+                    vy81111111 = unpack("<f", f.read(4))[0]
+                    vz81111111 = unpack("<f", f.read(4))[0]
+                    type81111111 = unpack("B", f.read(1))[0]
+                    value81111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw81111111 = unpack("<f", f.read(4))[0]
+                    vx91111111 = unpack("<f", f.read(4))[0]
+                    vy91111111 = unpack("<f", f.read(4))[0]
+                    vz91111111 = unpack("<f", f.read(4))[0]
+                    type91111111 = unpack("B", f.read(1))[0]
+                    value91111111 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw91111111 = unpack("<f", f.read(4))[0]
+
+                    
+
                     
                     fa1 = bm_1e.verts.new([-vx1,-vy1,-vz1]) # 0
                     fb1 = bm_1e.verts.new([-vx2,-vy2,-vz2]) # 1
@@ -1334,37 +1712,25 @@ def GHG_mesh(f, filepath):
                     fhhhh1 = bm_1eeee.verts.new([-vx8111,-vy8111,-vz8111]) # 7
                     fiiii1 = bm_1eeee.verts.new([-vx9111,-vy9111,-vz9111]) # 8
 
-                    if type1111 == 1:
-                        if type2111 == 1:
-                            if type3111 == 0:
-                                if type4111 == 0:
-                                    if type5111 == 0:
-                                        if type6111 == 0:
-                                            if type7111 == 1:
-                                                if type8111 == 1:
-                                                    if type9111 == 0:
-                                                        bm_1eeee.faces.new([faaaa1,fbbbb1,fcccc1])
-                                                        bm_1eeee.faces.new([fbbbb1,fcccc1,fdddd1])
-                                                        bm_1eeee.faces.new([fcccc1,fdddd1,feeee1])
-                                                        bm_1eeee.faces.new([fdddd1,feeee1,fffff1])
-                                                        bm_1eeee.faces.new([fgggg1,fhhhh1,fiiii1])
-                                                        
-                                                        
+                    faaaaa1 = bm_1eeeee.verts.new([-vx11111,-vy11111,-vz11111]) # 0
+                    fbbbbb1 = bm_1eeeee.verts.new([-vx21111,-vy21111,-vz21111]) # 1
+                    fccccc1 = bm_1eeeee.verts.new([-vx31111,-vy31111,-vz31111]) # 2
+                    fddddd1 = bm_1eeeee.verts.new([-vx41111,-vy41111,-vz41111]) # 3
+                    feeeee1 = bm_1eeeee.verts.new([-vx51111,-vy51111,-vz51111]) # 4
+                    ffffff1 = bm_1eeeee.verts.new([-vx61111,-vy61111,-vz61111]) # 5
+                    fggggg1 = bm_1eeeee.verts.new([-vx71111,-vy71111,-vz71111]) # 6
+                    fhhhhh1 = bm_1eeeee.verts.new([-vx81111,-vy81111,-vz81111]) # 7
+                    fiiiii1 = bm_1eeeee.verts.new([-vx91111,-vy91111,-vz91111]) # 8
 
-                    if type111 == 1:
-                        if type211 == 1:
-                            if type311 == 0:
-                                if type411 == 0:
-                                    if type511 == 1:
-                                        if type611 == 1:
-                                            if type711 == 0:
-                                                if type811 == 0:
-                                                    if type911 == 0:
-                                                        bm_1eee.faces.new([faaa1,fbbb1,fccc1])
-                                                        bm_1eee.faces.new([fbbb1,fccc1,fddd1])
-                                                        bm_1eee.faces.new([feee1,ffff1,fggg1])
-                                                        bm_1eee.faces.new([ffff1,fggg1,fhhh1])
-                                                        bm_1eee.faces.new([fggg1,fhhh1,fiii1])
+                    faaaaaaa1 = bm_1eeeeeee.verts.new([-vx1111111,-vy1111111,-vz1111111]) # 0
+                    fbbbbbbb1 = bm_1eeeeeee.verts.new([-vx2111111,-vy2111111,-vz2111111]) # 1
+                    fccccccc1 = bm_1eeeeeee.verts.new([-vx3111111,-vy3111111,-vz3111111]) # 2
+                    fddddddd1 = bm_1eeeeeee.verts.new([-vx4111111,-vy4111111,-vz4111111]) # 3
+                    feeeeeee1 = bm_1eeeeeee.verts.new([-vx5111111,-vy5111111,-vz5111111]) # 4
+                    ffffffff1 = bm_1eeeeeee.verts.new([-vx6111111,-vy6111111,-vz6111111]) # 5
+                    fggggggg1 = bm_1eeeeeee.verts.new([-vx7111111,-vy7111111,-vz7111111]) # 6
+                    fhhhhhhh1 = bm_1eeeeeee.verts.new([-vx8111111,-vy8111111,-vz8111111]) # 7
+                    fiiiiiii1 = bm_1eeeeeee.verts.new([-vx9111111,-vy9111111,-vz9111111]) # 8
                                                         
 
                     if type11 == 1:
@@ -1395,6 +1761,66 @@ def GHG_mesh(f, filepath):
                                                         bm_1e.faces.new([fe1,ff1,fg1])
                                                         bm_1e.faces.new([ff1,fg1,fh1])
                                                         bm_1e.faces.new([fg1,fh1,fi1])
+
+                    if type11111 == 1:
+                        if type21111 == 1:
+                            if type31111 == 0:
+                                if type41111 == 1:
+                                    if type51111 == 1:
+                                        if type61111 == 0:
+                                            if type71111 == 0:
+                                                if type81111 == 0:
+                                                    if type91111 == 0:
+                                                        bm_1eeeee.faces.new([faaaaa1,fbbbbb1,fccccc1])
+                                                        bm_1eeeee.faces.new([fddddd1,feeeee1,ffffff1])
+                                                        bm_1eeeee.faces.new([feeeee1,ffffff1,fggggg1])
+                                                        bm_1eeeee.faces.new([ffffff1,fggggg1,fhhhhh1])
+                                                        bm_1eeeee.faces.new([fggggg1,fhhhhh1,fiiiii1])
+
+                    if type111 == 1:
+                        if type211 == 1:
+                            if type311 == 0:
+                                if type411 == 0:
+                                    if type511 == 1:
+                                        if type611 == 1:
+                                            if type711 == 0:
+                                                if type811 == 0:
+                                                    if type911 == 0:
+                                                        bm_1eee.faces.new([faaa1,fbbb1,fccc1])
+                                                        bm_1eee.faces.new([fbbb1,fccc1,fddd1])
+                                                        bm_1eee.faces.new([feee1,ffff1,fggg1])
+                                                        bm_1eee.faces.new([ffff1,fggg1,fhhh1])
+                                                        bm_1eee.faces.new([fggg1,fhhh1,fiii1])
+
+                    if type1111111 == 1:
+                        if type2111111 == 1:
+                            if type3111111 == 0:
+                                if type4111111 == 0:
+                                    if type5111111 == 0:
+                                        if type6111111 == 1:
+                                            if type7111111 == 1:
+                                                if type8111111 == 0:
+                                                    if type9111111 == 0:
+                                                        bm_1eeeeeee.faces.new([faaaaaaa1,fbbbbbbb1,fccccccc1])
+                                                        bm_1eeeeeee.faces.new([fbbbbbbb1,fccccccc1,fddddddd1])
+                                                        bm_1eeeeeee.faces.new([fccccccc1,fddddddd1,feeeeeee1])
+                                                        bm_1eeeeeee.faces.new([ffffffff1,fggggggg1,fhhhhhhh1])
+                                                        bm_1eeeeeee.faces.new([fggggggg1,fhhhhhhh1,fiiiiiii1])
+
+                    if type1111 == 1:
+                        if type2111 == 1:
+                            if type3111 == 0:
+                                if type4111 == 0:
+                                    if type5111 == 0:
+                                        if type6111 == 0:
+                                            if type7111 == 1:
+                                                if type8111 == 1:
+                                                    if type9111 == 0:
+                                                        bm_1eeee.faces.new([faaaa1,fbbbb1,fcccc1])
+                                                        bm_1eeee.faces.new([fbbbb1,fcccc1,fdddd1])
+                                                        bm_1eeee.faces.new([fcccc1,fdddd1,feeee1])
+                                                        bm_1eeee.faces.new([fdddd1,feeee1,fffff1])
+                                                        bm_1eeee.faces.new([fgggg1,fhhhh1,fiiii1])
 
             elif vertexCount == 10:
                 for i in range(vertexCount//10):
@@ -1613,6 +2039,444 @@ def GHG_mesh(f, filepath):
                     value1011 = unpack("B", f.read(1))[0]
                     f.seek(-2,1)
                     vw1011 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-160,1)
+
+                    vx1111 = unpack("<f", f.read(4))[0]
+                    vy1111 = unpack("<f", f.read(4))[0]
+                    vz1111 = unpack("<f", f.read(4))[0]
+                    type11a = unpack("B", f.read(1))[0]
+                    value11a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1111 = unpack("<f", f.read(4))[0]
+                    vx2111 = unpack("<f", f.read(4))[0]
+                    vy2111 = unpack("<f", f.read(4))[0]
+                    vz2111 = unpack("<f", f.read(4))[0]
+                    type21a = unpack("B", f.read(1))[0]
+                    value21a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2111 = unpack("<f", f.read(4))[0]
+                    vx3111 = unpack("<f", f.read(4))[0]
+                    vy3111 = unpack("<f", f.read(4))[0]
+                    vz3111 = unpack("<f", f.read(4))[0]
+                    type31a = unpack("B", f.read(1))[0]
+                    value31a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3111 = unpack("<f", f.read(4))[0]
+                    vx4111 = unpack("<f", f.read(4))[0]
+                    vy4111 = unpack("<f", f.read(4))[0]
+                    vz4111 = unpack("<f", f.read(4))[0]
+                    type41a = unpack("B", f.read(1))[0]
+                    value41a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4111 = unpack("<f", f.read(4))[0]
+                    vx5111 = unpack("<f", f.read(4))[0]
+                    vy5111 = unpack("<f", f.read(4))[0]
+                    vz5111 = unpack("<f", f.read(4))[0]
+                    type51a = unpack("B", f.read(1))[0]
+                    value51a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5111 = unpack("<f", f.read(4))[0]
+                    vx6111 = unpack("<f", f.read(4))[0]
+                    vy6111 = unpack("<f", f.read(4))[0]
+                    vz6111 = unpack("<f", f.read(4))[0]
+                    type61a = unpack("B", f.read(1))[0]
+                    value61a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6111 = unpack("<f", f.read(4))[0]
+                    vx7111 = unpack("<f", f.read(4))[0]
+                    vy7111 = unpack("<f", f.read(4))[0]
+                    vz7111 = unpack("<f", f.read(4))[0]
+                    type71a = unpack("B", f.read(1))[0]
+                    value71a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7111 = unpack("<f", f.read(4))[0]
+                    vx8111 = unpack("<f", f.read(4))[0]
+                    vy8111 = unpack("<f", f.read(4))[0]
+                    vz8111 = unpack("<f", f.read(4))[0]
+                    type81a = unpack("B", f.read(1))[0]
+                    value81a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8111 = unpack("<f", f.read(4))[0]
+                    vx9111 = unpack("<f", f.read(4))[0]
+                    vy9111 = unpack("<f", f.read(4))[0]
+                    vz9111 = unpack("<f", f.read(4))[0]
+                    type91a = unpack("B", f.read(1))[0]
+                    value91a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9111 = unpack("<f", f.read(4))[0]
+                    vx10111 = unpack("<f", f.read(4))[0]
+                    vy10111 = unpack("<f", f.read(4))[0]
+                    vz10111 = unpack("<f", f.read(4))[0]
+                    type101a = unpack("B", f.read(1))[0]
+                    value101a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10111 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-160,1)
+
+                    vx11111 = unpack("<f", f.read(4))[0]
+                    vy11111 = unpack("<f", f.read(4))[0]
+                    vz11111 = unpack("<f", f.read(4))[0]
+                    type11b = unpack("B", f.read(1))[0]
+                    value11b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11111 = unpack("<f", f.read(4))[0]
+                    vx21111 = unpack("<f", f.read(4))[0]
+                    vy21111 = unpack("<f", f.read(4))[0]
+                    vz21111 = unpack("<f", f.read(4))[0]
+                    type21b = unpack("B", f.read(1))[0]
+                    value21b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw21111 = unpack("<f", f.read(4))[0]
+                    vx31111 = unpack("<f", f.read(4))[0]
+                    vy31111 = unpack("<f", f.read(4))[0]
+                    vz31111 = unpack("<f", f.read(4))[0]
+                    type31b = unpack("B", f.read(1))[0]
+                    value31b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw31111 = unpack("<f", f.read(4))[0]
+                    vx41111 = unpack("<f", f.read(4))[0]
+                    vy41111 = unpack("<f", f.read(4))[0]
+                    vz41111 = unpack("<f", f.read(4))[0]
+                    type41b = unpack("B", f.read(1))[0]
+                    value41b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw41111 = unpack("<f", f.read(4))[0]
+                    vx51111 = unpack("<f", f.read(4))[0]
+                    vy51111 = unpack("<f", f.read(4))[0]
+                    vz51111 = unpack("<f", f.read(4))[0]
+                    type51b = unpack("B", f.read(1))[0]
+                    value51b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw51111 = unpack("<f", f.read(4))[0]
+                    vx61111 = unpack("<f", f.read(4))[0]
+                    vy61111 = unpack("<f", f.read(4))[0]
+                    vz61111 = unpack("<f", f.read(4))[0]
+                    type61b = unpack("B", f.read(1))[0]
+                    value61b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw61111 = unpack("<f", f.read(4))[0]
+                    vx71111 = unpack("<f", f.read(4))[0]
+                    vy71111 = unpack("<f", f.read(4))[0]
+                    vz71111 = unpack("<f", f.read(4))[0]
+                    type71b = unpack("B", f.read(1))[0]
+                    value71b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw71111 = unpack("<f", f.read(4))[0]
+                    vx81111 = unpack("<f", f.read(4))[0]
+                    vy81111 = unpack("<f", f.read(4))[0]
+                    vz81111 = unpack("<f", f.read(4))[0]
+                    type81b = unpack("B", f.read(1))[0]
+                    value81b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw81111 = unpack("<f", f.read(4))[0]
+                    vx91111 = unpack("<f", f.read(4))[0]
+                    vy91111 = unpack("<f", f.read(4))[0]
+                    vz91111 = unpack("<f", f.read(4))[0]
+                    type91b = unpack("B", f.read(1))[0]
+                    value91b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw91111 = unpack("<f", f.read(4))[0]
+                    vx101111 = unpack("<f", f.read(4))[0]
+                    vy101111 = unpack("<f", f.read(4))[0]
+                    vz101111 = unpack("<f", f.read(4))[0]
+                    type101b = unpack("B", f.read(1))[0]
+                    value101b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw101111 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-160,1)
+
+                    vx111111 = unpack("<f", f.read(4))[0]
+                    vy111111 = unpack("<f", f.read(4))[0]
+                    vz111111 = unpack("<f", f.read(4))[0]
+                    type11c = unpack("B", f.read(1))[0]
+                    value11c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw111111 = unpack("<f", f.read(4))[0]
+                    vx211111 = unpack("<f", f.read(4))[0]
+                    vy211111 = unpack("<f", f.read(4))[0]
+                    vz211111 = unpack("<f", f.read(4))[0]
+                    type21c = unpack("B", f.read(1))[0]
+                    value21c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw211111 = unpack("<f", f.read(4))[0]
+                    vx311111 = unpack("<f", f.read(4))[0]
+                    vy311111 = unpack("<f", f.read(4))[0]
+                    vz311111 = unpack("<f", f.read(4))[0]
+                    type31c = unpack("B", f.read(1))[0]
+                    value31c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw311111 = unpack("<f", f.read(4))[0]
+                    vx411111 = unpack("<f", f.read(4))[0]
+                    vy411111 = unpack("<f", f.read(4))[0]
+                    vz411111 = unpack("<f", f.read(4))[0]
+                    type41c = unpack("B", f.read(1))[0]
+                    value41c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw411111 = unpack("<f", f.read(4))[0]
+                    vx511111 = unpack("<f", f.read(4))[0]
+                    vy511111 = unpack("<f", f.read(4))[0]
+                    vz511111 = unpack("<f", f.read(4))[0]
+                    type51c = unpack("B", f.read(1))[0]
+                    value51c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw511111 = unpack("<f", f.read(4))[0]
+                    vx611111 = unpack("<f", f.read(4))[0]
+                    vy611111 = unpack("<f", f.read(4))[0]
+                    vz611111 = unpack("<f", f.read(4))[0]
+                    type61c = unpack("B", f.read(1))[0]
+                    value61c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw611111 = unpack("<f", f.read(4))[0]
+                    vx711111 = unpack("<f", f.read(4))[0]
+                    vy711111 = unpack("<f", f.read(4))[0]
+                    vz711111 = unpack("<f", f.read(4))[0]
+                    type71c = unpack("B", f.read(1))[0]
+                    value71c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw711111 = unpack("<f", f.read(4))[0]
+                    vx811111 = unpack("<f", f.read(4))[0]
+                    vy811111 = unpack("<f", f.read(4))[0]
+                    vz811111 = unpack("<f", f.read(4))[0]
+                    type81c = unpack("B", f.read(1))[0]
+                    value81c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw811111 = unpack("<f", f.read(4))[0]
+                    vx911111 = unpack("<f", f.read(4))[0]
+                    vy911111 = unpack("<f", f.read(4))[0]
+                    vz911111 = unpack("<f", f.read(4))[0]
+                    type91c = unpack("B", f.read(1))[0]
+                    value91c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw911111 = unpack("<f", f.read(4))[0]
+                    vx1011111 = unpack("<f", f.read(4))[0]
+                    vy1011111 = unpack("<f", f.read(4))[0]
+                    vz1011111 = unpack("<f", f.read(4))[0]
+                    type101c = unpack("B", f.read(1))[0]
+                    value101c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1011111 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-160,1)
+
+                    vx1111111 = unpack("<f", f.read(4))[0]
+                    vy1111111 = unpack("<f", f.read(4))[0]
+                    vz1111111 = unpack("<f", f.read(4))[0]
+                    type11d = unpack("B", f.read(1))[0]
+                    value11d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1111111 = unpack("<f", f.read(4))[0]
+                    vx2111111 = unpack("<f", f.read(4))[0]
+                    vy2111111 = unpack("<f", f.read(4))[0]
+                    vz2111111 = unpack("<f", f.read(4))[0]
+                    type21d = unpack("B", f.read(1))[0]
+                    value21d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2111111 = unpack("<f", f.read(4))[0]
+                    vx3111111 = unpack("<f", f.read(4))[0]
+                    vy3111111 = unpack("<f", f.read(4))[0]
+                    vz3111111 = unpack("<f", f.read(4))[0]
+                    type31d = unpack("B", f.read(1))[0]
+                    value31d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3111111 = unpack("<f", f.read(4))[0]
+                    vx4111111 = unpack("<f", f.read(4))[0]
+                    vy4111111 = unpack("<f", f.read(4))[0]
+                    vz4111111 = unpack("<f", f.read(4))[0]
+                    type41d = unpack("B", f.read(1))[0]
+                    value41d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4111111 = unpack("<f", f.read(4))[0]
+                    vx5111111 = unpack("<f", f.read(4))[0]
+                    vy5111111 = unpack("<f", f.read(4))[0]
+                    vz5111111 = unpack("<f", f.read(4))[0]
+                    type51d = unpack("B", f.read(1))[0]
+                    value51d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5111111 = unpack("<f", f.read(4))[0]
+                    vx6111111 = unpack("<f", f.read(4))[0]
+                    vy6111111 = unpack("<f", f.read(4))[0]
+                    vz6111111 = unpack("<f", f.read(4))[0]
+                    type61d = unpack("B", f.read(1))[0]
+                    value61d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6111111 = unpack("<f", f.read(4))[0]
+                    vx7111111 = unpack("<f", f.read(4))[0]
+                    vy7111111 = unpack("<f", f.read(4))[0]
+                    vz7111111 = unpack("<f", f.read(4))[0]
+                    type71d = unpack("B", f.read(1))[0]
+                    value71d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7111111 = unpack("<f", f.read(4))[0]
+                    vx8111111 = unpack("<f", f.read(4))[0]
+                    vy8111111 = unpack("<f", f.read(4))[0]
+                    vz8111111 = unpack("<f", f.read(4))[0]
+                    type81d = unpack("B", f.read(1))[0]
+                    value81d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8111111 = unpack("<f", f.read(4))[0]
+                    vx9111111 = unpack("<f", f.read(4))[0]
+                    vy9111111 = unpack("<f", f.read(4))[0]
+                    vz9111111 = unpack("<f", f.read(4))[0]
+                    type91d = unpack("B", f.read(1))[0]
+                    value91d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9111111 = unpack("<f", f.read(4))[0]
+                    vx10111111 = unpack("<f", f.read(4))[0]
+                    vy10111111 = unpack("<f", f.read(4))[0]
+                    vz10111111 = unpack("<f", f.read(4))[0]
+                    type101d = unpack("B", f.read(1))[0]
+                    value101d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10111111 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-160,1)
+
+                    vx1111111a = unpack("<f", f.read(4))[0]
+                    vy1111111a = unpack("<f", f.read(4))[0]
+                    vz1111111a = unpack("<f", f.read(4))[0]
+                    type11e = unpack("B", f.read(1))[0]
+                    value11e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1111111a = unpack("<f", f.read(4))[0]
+                    vx2111111a = unpack("<f", f.read(4))[0]
+                    vy2111111a = unpack("<f", f.read(4))[0]
+                    vz2111111a = unpack("<f", f.read(4))[0]
+                    type21e = unpack("B", f.read(1))[0]
+                    value21e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2111111a = unpack("<f", f.read(4))[0]
+                    vx3111111a = unpack("<f", f.read(4))[0]
+                    vy3111111a = unpack("<f", f.read(4))[0]
+                    vz3111111a = unpack("<f", f.read(4))[0]
+                    type31e = unpack("B", f.read(1))[0]
+                    value31e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3111111a = unpack("<f", f.read(4))[0]
+                    vx4111111a = unpack("<f", f.read(4))[0]
+                    vy4111111a = unpack("<f", f.read(4))[0]
+                    vz4111111a = unpack("<f", f.read(4))[0]
+                    type41e = unpack("B", f.read(1))[0]
+                    value41e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4111111a = unpack("<f", f.read(4))[0]
+                    vx5111111a = unpack("<f", f.read(4))[0]
+                    vy5111111a = unpack("<f", f.read(4))[0]
+                    vz5111111a = unpack("<f", f.read(4))[0]
+                    type51e = unpack("B", f.read(1))[0]
+                    value51e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5111111a = unpack("<f", f.read(4))[0]
+                    vx6111111a = unpack("<f", f.read(4))[0]
+                    vy6111111a = unpack("<f", f.read(4))[0]
+                    vz6111111a = unpack("<f", f.read(4))[0]
+                    type61e = unpack("B", f.read(1))[0]
+                    value61e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6111111a = unpack("<f", f.read(4))[0]
+                    vx7111111a = unpack("<f", f.read(4))[0]
+                    vy7111111a = unpack("<f", f.read(4))[0]
+                    vz7111111a = unpack("<f", f.read(4))[0]
+                    type71e = unpack("B", f.read(1))[0]
+                    value71e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7111111a = unpack("<f", f.read(4))[0]
+                    vx8111111a = unpack("<f", f.read(4))[0]
+                    vy8111111a = unpack("<f", f.read(4))[0]
+                    vz8111111a = unpack("<f", f.read(4))[0]
+                    type81e = unpack("B", f.read(1))[0]
+                    value81e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8111111a = unpack("<f", f.read(4))[0]
+                    vx9111111a = unpack("<f", f.read(4))[0]
+                    vy9111111a = unpack("<f", f.read(4))[0]
+                    vz9111111a = unpack("<f", f.read(4))[0]
+                    type91e = unpack("B", f.read(1))[0]
+                    value91e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9111111a = unpack("<f", f.read(4))[0]
+                    vx10111111a = unpack("<f", f.read(4))[0]
+                    vy10111111a = unpack("<f", f.read(4))[0]
+                    vz10111111a = unpack("<f", f.read(4))[0]
+                    type101e = unpack("B", f.read(1))[0]
+                    value101e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10111111a = unpack("<f", f.read(4))[0]
+
+                    f.seek(-160,1)
+
+                    vx1111111b = unpack("<f", f.read(4))[0]
+                    vy1111111b = unpack("<f", f.read(4))[0]
+                    vz1111111b = unpack("<f", f.read(4))[0]
+                    type11f = unpack("B", f.read(1))[0]
+                    value11f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1111111b = unpack("<f", f.read(4))[0]
+                    vx2111111b = unpack("<f", f.read(4))[0]
+                    vy2111111b = unpack("<f", f.read(4))[0]
+                    vz2111111b = unpack("<f", f.read(4))[0]
+                    type21f = unpack("B", f.read(1))[0]
+                    value21f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2111111b = unpack("<f", f.read(4))[0]
+                    vx3111111b = unpack("<f", f.read(4))[0]
+                    vy3111111b = unpack("<f", f.read(4))[0]
+                    vz3111111b = unpack("<f", f.read(4))[0]
+                    type31f = unpack("B", f.read(1))[0]
+                    value31f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3111111b = unpack("<f", f.read(4))[0]
+                    vx4111111b = unpack("<f", f.read(4))[0]
+                    vy4111111b = unpack("<f", f.read(4))[0]
+                    vz4111111b = unpack("<f", f.read(4))[0]
+                    type41f = unpack("B", f.read(1))[0]
+                    value41f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4111111b = unpack("<f", f.read(4))[0]
+                    vx5111111b = unpack("<f", f.read(4))[0]
+                    vy5111111b = unpack("<f", f.read(4))[0]
+                    vz5111111b = unpack("<f", f.read(4))[0]
+                    type51f = unpack("B", f.read(1))[0]
+                    value51f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5111111b = unpack("<f", f.read(4))[0]
+                    vx6111111b = unpack("<f", f.read(4))[0]
+                    vy6111111b = unpack("<f", f.read(4))[0]
+                    vz6111111b = unpack("<f", f.read(4))[0]
+                    type61f = unpack("B", f.read(1))[0]
+                    value61f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6111111b = unpack("<f", f.read(4))[0]
+                    vx7111111b = unpack("<f", f.read(4))[0]
+                    vy7111111b = unpack("<f", f.read(4))[0]
+                    vz7111111b = unpack("<f", f.read(4))[0]
+                    type71f = unpack("B", f.read(1))[0]
+                    value71f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7111111b = unpack("<f", f.read(4))[0]
+                    vx8111111b = unpack("<f", f.read(4))[0]
+                    vy8111111b = unpack("<f", f.read(4))[0]
+                    vz8111111b = unpack("<f", f.read(4))[0]
+                    type81f = unpack("B", f.read(1))[0]
+                    value81f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8111111b = unpack("<f", f.read(4))[0]
+                    vx9111111b = unpack("<f", f.read(4))[0]
+                    vy9111111b = unpack("<f", f.read(4))[0]
+                    vz9111111b = unpack("<f", f.read(4))[0]
+                    type91f = unpack("B", f.read(1))[0]
+                    value91f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9111111b = unpack("<f", f.read(4))[0]
+                    vx10111111b = unpack("<f", f.read(4))[0]
+                    vy10111111b = unpack("<f", f.read(4))[0]
+                    vz10111111b = unpack("<f", f.read(4))[0]
+                    type101f = unpack("B", f.read(1))[0]
+                    value101f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10111111b = unpack("<f", f.read(4))[0]
                     
                     fa1 = bm_1f.verts.new([-vx1,-vy1,-vz1]) # 0
                     fb1 = bm_1f.verts.new([-vx2,-vy2,-vz2]) # 1
@@ -1646,6 +2510,73 @@ def GHG_mesh(f, filepath):
                     fh1b = bm_1fff.verts.new([-vx811,-vy811,-vz811]) # 7
                     fi1b = bm_1fff.verts.new([-vx911,-vy911,-vz911]) # 8
                     fj1b = bm_1fff.verts.new([-vx1011,-vy1011,-vz1011]) # 9
+
+                    fa1bb = bm_1ffff.verts.new([-vx1111,-vy1111,-vz1111]) # 0
+                    fb1bb = bm_1ffff.verts.new([-vx2111,-vy2111,-vz2111]) # 1
+                    fc1bb = bm_1ffff.verts.new([-vx3111,-vy3111,-vz3111]) # 2
+                    fd1bb = bm_1ffff.verts.new([-vx4111,-vy4111,-vz4111]) # 3
+                    fe1bb = bm_1ffff.verts.new([-vx5111,-vy5111,-vz5111]) # 4
+                    ff1bb = bm_1ffff.verts.new([-vx6111,-vy6111,-vz6111]) # 5
+                    fg1bb = bm_1ffff.verts.new([-vx7111,-vy7111,-vz7111]) # 6
+                    fh1bb = bm_1ffff.verts.new([-vx8111,-vy8111,-vz8111]) # 7
+                    fi1bb = bm_1ffff.verts.new([-vx9111,-vy9111,-vz9111]) # 8
+                    fj1bb = bm_1ffff.verts.new([-vx10111,-vy10111,-vz10111]) # 9
+
+                    fa1bbb = bm_1fffff.verts.new([-vx11111,-vy11111,-vz11111]) # 0
+                    fb1bbb = bm_1fffff.verts.new([-vx21111,-vy21111,-vz21111]) # 1
+                    fc1bbb = bm_1fffff.verts.new([-vx31111,-vy31111,-vz31111]) # 2
+                    fd1bbb = bm_1fffff.verts.new([-vx41111,-vy41111,-vz41111]) # 3
+                    fe1bbb = bm_1fffff.verts.new([-vx51111,-vy51111,-vz51111]) # 4
+                    ff1bbb = bm_1fffff.verts.new([-vx61111,-vy61111,-vz61111]) # 5
+                    fg1bbb = bm_1fffff.verts.new([-vx71111,-vy71111,-vz71111]) # 6
+                    fh1bbb = bm_1fffff.verts.new([-vx81111,-vy81111,-vz81111]) # 7
+                    fi1bbb = bm_1fffff.verts.new([-vx91111,-vy91111,-vz91111]) # 8
+                    fj1bbb = bm_1fffff.verts.new([-vx101111,-vy101111,-vz101111]) # 9
+
+                    fa1bbbb = bm_1ffffff.verts.new([-vx111111,-vy111111,-vz111111]) # 0
+                    fb1bbbb = bm_1ffffff.verts.new([-vx211111,-vy211111,-vz211111]) # 1
+                    fc1bbbb = bm_1ffffff.verts.new([-vx311111,-vy311111,-vz311111]) # 2
+                    fd1bbbb = bm_1ffffff.verts.new([-vx411111,-vy411111,-vz411111]) # 3
+                    fe1bbbb = bm_1ffffff.verts.new([-vx511111,-vy511111,-vz511111]) # 4
+                    ff1bbbb = bm_1ffffff.verts.new([-vx611111,-vy611111,-vz611111]) # 5
+                    fg1bbbb = bm_1ffffff.verts.new([-vx711111,-vy711111,-vz711111]) # 6
+                    fh1bbbb = bm_1ffffff.verts.new([-vx811111,-vy811111,-vz811111]) # 7
+                    fi1bbbb = bm_1ffffff.verts.new([-vx911111,-vy911111,-vz911111]) # 8
+                    fj1bbbb = bm_1ffffff.verts.new([-vx1011111,-vy1011111,-vz1011111]) # 9
+
+                    fa1bbbbb = bm_1fffffff.verts.new([-vx1111111,-vy1111111,-vz1111111]) # 0
+                    fb1bbbbb = bm_1fffffff.verts.new([-vx2111111,-vy2111111,-vz2111111]) # 1
+                    fc1bbbbb = bm_1fffffff.verts.new([-vx3111111,-vy3111111,-vz3111111]) # 2
+                    fd1bbbbb = bm_1fffffff.verts.new([-vx4111111,-vy4111111,-vz4111111]) # 3
+                    fe1bbbbb = bm_1fffffff.verts.new([-vx5111111,-vy5111111,-vz5111111]) # 4
+                    ff1bbbbb = bm_1fffffff.verts.new([-vx6111111,-vy6111111,-vz6111111]) # 5
+                    fg1bbbbb = bm_1fffffff.verts.new([-vx7111111,-vy7111111,-vz7111111]) # 6
+                    fh1bbbbb = bm_1fffffff.verts.new([-vx8111111,-vy8111111,-vz8111111]) # 7
+                    fi1bbbbb = bm_1fffffff.verts.new([-vx9111111,-vy9111111,-vz9111111]) # 8
+                    fj1bbbbb = bm_1fffffff.verts.new([-vx10111111,-vy10111111,-vz10111111]) # 9
+
+                    fa1c = bm_1ffffffff.verts.new([-vx1111111a,-vy1111111a,-vz1111111a]) # 0
+                    fb1c = bm_1ffffffff.verts.new([-vx2111111a,-vy2111111a,-vz2111111a]) # 1
+                    fc1c = bm_1ffffffff.verts.new([-vx3111111a,-vy3111111a,-vz3111111a]) # 2
+                    fd1c = bm_1ffffffff.verts.new([-vx4111111a,-vy4111111a,-vz4111111a]) # 3
+                    fe1c = bm_1ffffffff.verts.new([-vx5111111a,-vy5111111a,-vz5111111a]) # 4
+                    ff1c = bm_1ffffffff.verts.new([-vx6111111a,-vy6111111a,-vz6111111a]) # 5
+                    fg1c = bm_1ffffffff.verts.new([-vx7111111a,-vy7111111a,-vz7111111a]) # 6
+                    fh1c = bm_1ffffffff.verts.new([-vx8111111a,-vy8111111a,-vz8111111a]) # 7
+                    fi1c = bm_1ffffffff.verts.new([-vx9111111a,-vy9111111a,-vz9111111a]) # 8
+                    fj1c = bm_1ffffffff.verts.new([-vx10111111a,-vy10111111a,-vz10111111a]) # 9
+
+                    fa1d = bm_1fffffffff.verts.new([-vx1111111b,-vy1111111b,-vz1111111b]) # 0
+                    fb1d = bm_1fffffffff.verts.new([-vx2111111b,-vy2111111b,-vz2111111b]) # 1
+                    fc1d = bm_1fffffffff.verts.new([-vx3111111b,-vy3111111b,-vz3111111b]) # 2
+                    fd1d = bm_1fffffffff.verts.new([-vx4111111b,-vy4111111b,-vz4111111b]) # 3
+                    fe1d = bm_1fffffffff.verts.new([-vx5111111b,-vy5111111b,-vz5111111b]) # 4
+                    ff1d = bm_1fffffffff.verts.new([-vx6111111b,-vy6111111b,-vz6111111b]) # 5
+                    fg1d = bm_1fffffffff.verts.new([-vx7111111b,-vy7111111b,-vz7111111b]) # 6
+                    fh1d = bm_1fffffffff.verts.new([-vx8111111b,-vy8111111b,-vz8111111b]) # 7
+                    fi1d = bm_1fffffffff.verts.new([-vx9111111b,-vy9111111b,-vz9111111b]) # 8
+                    fj1d = bm_1fffffffff.verts.new([-vx10111111b,-vy10111111b,-vz10111111b]) # 9
+                    
                     if type111 == 1:
                         if type211 == 1:
                             if type311 == 0:
@@ -1660,6 +2591,104 @@ def GHG_mesh(f, filepath):
                                                             bm_1fff.faces.new([fb1b,fc1b,fd1b]) # 1 2 3
                                                             bm_1fff.faces.new([fe1b,ff1b,fg1b]) # 4 5 6
                                                             bm_1fff.faces.new([fh1b,fi1b,fj1b]) # 8,9,10
+
+                    if type11f == 1:
+                        if type21f == 1:
+                            if type31f == 0:
+                                if type41f == 1:
+                                    if type51f == 1:
+                                        if type61f == 0:
+                                            if type71f == 0:
+                                                if type81f == 1:
+                                                    if type91f == 1:
+                                                        if type101f == 0:
+                                                            bm_1fffffffff.faces.new([fa1d,fb1d,fc1d])
+                                                            bm_1fffffffff.faces.new([fd1d,fe1d,ff1d])
+                                                            bm_1fffffffff.faces.new([fe1d,ff1d,fg1d])
+                                                            bm_1fffffffff.faces.new([fh1d,fi1d,fj1d])
+
+                    if type11e == 1:
+                        if type21e == 1:
+                            if type31e == 0:
+                                if type41e == 1:
+                                    if type51e == 1:
+                                        if type61e == 0:
+                                            if type71e == 1:
+                                                if type81e == 1:
+                                                    if type91e == 0:
+                                                        if type101e == 0:
+                                                            bm_1ffffffff.faces.new([fa1c,fb1c,fc1c])
+                                                            bm_1ffffffff.faces.new([fd1c,fe1c,ff1c])
+                                                            bm_1ffffffff.faces.new([fg1c,fh1c,fi1c])
+                                                            bm_1ffffffff.faces.new([fh1c,fi1c,fj1c])
+
+                    if type11d == 1:
+                        if type21d == 1:
+                            if type31d == 0:
+                                if type41d == 0:
+                                    if type51d == 0:
+                                        if type61d == 0:
+                                            if type71d == 0:
+                                                if type81d == 1:
+                                                    if type91d == 1:
+                                                        if type101d == 0:
+                                                            bm_1fffffff.faces.new([fa1bbbbb,fb1bbbbb,fc1bbbbb])
+                                                            bm_1fffffff.faces.new([fb1bbbbb,fc1bbbbb,fd1bbbbb])
+                                                            bm_1fffffff.faces.new([fc1bbbbb,fd1bbbbb,fe1bbbbb])
+                                                            bm_1fffffff.faces.new([fd1bbbbb,fe1bbbbb,ff1bbbbb])
+                                                            bm_1fffffff.faces.new([fe1bbbbb,ff1bbbbb,fg1bbbbb])
+                                                            bm_1fffffff.faces.new([fh1bbbbb,fi1bbbbb,fj1bbbbb])
+
+                    if type11c == 1:
+                        if type21c == 1:
+                            if type31c == 0:
+                                if type41c == 0:
+                                    if type51c == 0:
+                                        if type61c == 0:
+                                            if type71c == 1:
+                                                if type81c == 1:
+                                                    if type91c == 0:
+                                                        if type101c == 0:
+                                                            bm_1ffffff.faces.new([fa1bbbb,fb1bbbb,fc1bbbb])
+                                                            bm_1ffffff.faces.new([fb1bbbb,fc1bbbb,fd1bbbb])
+                                                            bm_1ffffff.faces.new([fc1bbbb,fd1bbbb,fe1bbbb])
+                                                            bm_1ffffff.faces.new([fd1bbbb,fe1bbbb,ff1bbbb])
+                                                            bm_1ffffff.faces.new([fg1bbbb,fh1bbbb,fi1bbbb])
+                                                            bm_1ffffff.faces.new([fh1bbbb,fi1bbbb,fj1bbbb])
+
+                    if type11b == 1:
+                        if type21b == 1:
+                            if type31b == 0:
+                                if type41b == 0:
+                                    if type51b == 0:
+                                        if type61b == 1:
+                                            if type71b == 1:
+                                                if type81b == 0:
+                                                    if type91b == 0:
+                                                        if type101b == 0:
+                                                            bm_1fffff.faces.new([fa1bbb,fb1bbb,fc1bbb])
+                                                            bm_1fffff.faces.new([fb1bbb,fc1bbb,fd1bbb])
+                                                            bm_1fffff.faces.new([fc1bbb,fd1bbb,fe1bbb])
+                                                            bm_1fffff.faces.new([ff1bbb,fg1bbb,fh1bbb])
+                                                            bm_1fffff.faces.new([fg1bbb,fh1bbb,fi1bbb])
+                                                            bm_1fffff.faces.new([fh1bbb,fi1bbb,fj1bbb])
+
+                    if type11a == 1:
+                        if type21a == 1:
+                            if type31a == 0:
+                                if type41a == 0:
+                                    if type51a == 1:
+                                        if type61a == 1:
+                                            if type71a == 0:
+                                                if type81a == 0:
+                                                    if type91a == 0:
+                                                        if type101a == 0:
+                                                            bm_1ffff.faces.new([fa1bb,fb1bb,fc1bb])
+                                                            bm_1ffff.faces.new([fb1bb,fc1bb,fd1bb])
+                                                            bm_1ffff.faces.new([fe1bb,ff1bb,fg1bb])
+                                                            bm_1ffff.faces.new([ff1bb,fg1bb,fh1bb])
+                                                            bm_1ffff.faces.new([fg1bb,fh1bb,fi1bb])
+                                                            bm_1ffff.faces.new([fh1bb,fi1bb,fj1bb])
                                                             
                     if type11 == 1:
                         if type21 == 1:
@@ -2499,6 +3528,192 @@ def GHG_mesh(f, filepath):
                     f.seek(-2,1)
                     vw11222222222 = unpack("<f", f.read(4))[0]
 
+                    f.seek(-176,1)
+
+                    vx12222222222 = unpack("<f", f.read(4))[0]
+                    vy12222222222 = unpack("<f", f.read(4))[0]
+                    vz12222222222 = unpack("<f", f.read(4))[0]
+                    type12222222222 = unpack("B", f.read(1))[0]
+                    value12222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12222222222 = unpack("<f", f.read(4))[0]
+                    vx22222222222 = unpack("<f", f.read(4))[0]
+                    vy22222222222 = unpack("<f", f.read(4))[0]
+                    vz22222222222 = unpack("<f", f.read(4))[0]
+                    type22222222222 = unpack("B", f.read(1))[0]
+                    value22222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw22222222222 = unpack("<f", f.read(4))[0]
+                    vx32222222222 = unpack("<f", f.read(4))[0]
+                    vy32222222222 = unpack("<f", f.read(4))[0]
+                    vz32222222222 = unpack("<f", f.read(4))[0]
+                    type32222222222 = unpack("B", f.read(1))[0]
+                    value32222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw32222222222 = unpack("<f", f.read(4))[0]
+                    vx42222222222 = unpack("<f", f.read(4))[0]
+                    vy42222222222 = unpack("<f", f.read(4))[0]
+                    vz42222222222 = unpack("<f", f.read(4))[0]
+                    type42222222222 = unpack("B", f.read(1))[0]
+                    value42222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw42222222222 = unpack("<f", f.read(4))[0]
+                    vx52222222222 = unpack("<f", f.read(4))[0]
+                    vy52222222222 = unpack("<f", f.read(4))[0]
+                    vz52222222222 = unpack("<f", f.read(4))[0]
+                    type52222222222 = unpack("B", f.read(1))[0]
+                    value52222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw52222222222 = unpack("<f", f.read(4))[0]
+                    vx62222222222 = unpack("<f", f.read(4))[0]
+                    vy62222222222 = unpack("<f", f.read(4))[0]
+                    vz62222222222 = unpack("<f", f.read(4))[0]
+                    type62222222222 = unpack("B", f.read(1))[0]
+                    value62222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw62222222222 = unpack("<f", f.read(4))[0]
+                    vx72222222222 = unpack("<f", f.read(4))[0]
+                    vy72222222222 = unpack("<f", f.read(4))[0]
+                    vz72222222222 = unpack("<f", f.read(4))[0]
+                    type72222222222 = unpack("B", f.read(1))[0]
+                    value72222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw72222222222 = unpack("<f", f.read(4))[0]
+                    vx82222222222 = unpack("<f", f.read(4))[0]
+                    vy82222222222 = unpack("<f", f.read(4))[0]
+                    vz82222222222 = unpack("<f", f.read(4))[0]
+                    type82222222222 = unpack("B", f.read(1))[0]
+                    value82222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw82222222222 = unpack("<f", f.read(4))[0]
+                    vx92222222222 = unpack("<f", f.read(4))[0]
+                    vy92222222222 = unpack("<f", f.read(4))[0]
+                    vz92222222222 = unpack("<f", f.read(4))[0]
+                    type92222222222 = unpack("B", f.read(1))[0]
+                    value92222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw92222222222 = unpack("<f", f.read(4))[0]
+                    vx102222222222 = unpack("<f", f.read(4))[0]
+                    vy102222222222 = unpack("<f", f.read(4))[0]
+                    vz102222222222 = unpack("<f", f.read(4))[0]
+                    type102222222222 = unpack("B", f.read(1))[0]
+                    value102222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw102222222222 = unpack("<f", f.read(4))[0]
+                    vx112222222222 = unpack("<f", f.read(4))[0]
+                    vy112222222222 = unpack("<f", f.read(4))[0]
+                    vz112222222222 = unpack("<f", f.read(4))[0]
+                    type112222222222 = unpack("B", f.read(1))[0]
+                    value112222222222 = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw112222222222 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-176,1)
+
+                    vx12222222222d = unpack("<f", f.read(4))[0]
+                    vy12222222222d = unpack("<f", f.read(4))[0]
+                    vz12222222222d = unpack("<f", f.read(4))[0]
+                    type12222222222d = unpack("B", f.read(1))[0]
+                    value12222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12222222222d = unpack("<f", f.read(4))[0]
+                    vx22222222222d = unpack("<f", f.read(4))[0]
+                    vy22222222222d = unpack("<f", f.read(4))[0]
+                    vz22222222222d = unpack("<f", f.read(4))[0]
+                    type22222222222d = unpack("B", f.read(1))[0]
+                    value22222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw22222222222d = unpack("<f", f.read(4))[0]
+                    vx32222222222d = unpack("<f", f.read(4))[0]
+                    vy32222222222d = unpack("<f", f.read(4))[0]
+                    vz32222222222d = unpack("<f", f.read(4))[0]
+                    type32222222222d = unpack("B", f.read(1))[0]
+                    value32222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw32222222222d = unpack("<f", f.read(4))[0]
+                    vx42222222222d = unpack("<f", f.read(4))[0]
+                    vy42222222222d = unpack("<f", f.read(4))[0]
+                    vz42222222222d = unpack("<f", f.read(4))[0]
+                    type42222222222d = unpack("B", f.read(1))[0]
+                    value42222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw42222222222d = unpack("<f", f.read(4))[0]
+                    vx52222222222d = unpack("<f", f.read(4))[0]
+                    vy52222222222d = unpack("<f", f.read(4))[0]
+                    vz52222222222d = unpack("<f", f.read(4))[0]
+                    type52222222222d = unpack("B", f.read(1))[0]
+                    value52222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw52222222222d = unpack("<f", f.read(4))[0]
+                    vx62222222222d = unpack("<f", f.read(4))[0]
+                    vy62222222222d = unpack("<f", f.read(4))[0]
+                    vz62222222222d = unpack("<f", f.read(4))[0]
+                    type62222222222d = unpack("B", f.read(1))[0]
+                    value62222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw62222222222d = unpack("<f", f.read(4))[0]
+                    vx72222222222d = unpack("<f", f.read(4))[0]
+                    vy72222222222d = unpack("<f", f.read(4))[0]
+                    vz72222222222d = unpack("<f", f.read(4))[0]
+                    type72222222222d = unpack("B", f.read(1))[0]
+                    value72222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw72222222222d = unpack("<f", f.read(4))[0]
+                    vx82222222222d = unpack("<f", f.read(4))[0]
+                    vy82222222222d = unpack("<f", f.read(4))[0]
+                    vz82222222222d = unpack("<f", f.read(4))[0]
+                    type82222222222d = unpack("B", f.read(1))[0]
+                    value82222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw82222222222d = unpack("<f", f.read(4))[0]
+                    vx92222222222d = unpack("<f", f.read(4))[0]
+                    vy92222222222d = unpack("<f", f.read(4))[0]
+                    vz92222222222d = unpack("<f", f.read(4))[0]
+                    type92222222222d = unpack("B", f.read(1))[0]
+                    value92222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw92222222222d = unpack("<f", f.read(4))[0]
+                    vx102222222222d = unpack("<f", f.read(4))[0]
+                    vy102222222222d = unpack("<f", f.read(4))[0]
+                    vz102222222222d = unpack("<f", f.read(4))[0]
+                    type102222222222d = unpack("B", f.read(1))[0]
+                    value102222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw102222222222d = unpack("<f", f.read(4))[0]
+                    vx112222222222d = unpack("<f", f.read(4))[0]
+                    vy112222222222d = unpack("<f", f.read(4))[0]
+                    vz112222222222d = unpack("<f", f.read(4))[0]
+                    type112222222222d = unpack("B", f.read(1))[0]
+                    value112222222222d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw112222222222d = unpack("<f", f.read(4))[0]
+
+                    fa1d = bm_1gggggggggggg.verts.new([-vx12222222222d,-vy12222222222d,-vz12222222222d]) # 0
+                    fb1d = bm_1gggggggggggg.verts.new([-vx22222222222d,-vy22222222222d,-vz22222222222d]) # 1
+                    fc1d = bm_1gggggggggggg.verts.new([-vx32222222222d,-vy32222222222d,-vz32222222222d]) # 2
+                    fd1d = bm_1gggggggggggg.verts.new([-vx42222222222d,-vy42222222222d,-vz42222222222d]) # 3
+                    fe1d = bm_1gggggggggggg.verts.new([-vx52222222222d,-vy52222222222d,-vz52222222222d]) # 4
+                    ff1d = bm_1gggggggggggg.verts.new([-vx62222222222d,-vy62222222222d,-vz62222222222d]) # 5
+                    fg1d = bm_1gggggggggggg.verts.new([-vx72222222222d,-vy72222222222d,-vz72222222222d]) # 6
+                    fh1d = bm_1gggggggggggg.verts.new([-vx82222222222d,-vy82222222222d,-vz82222222222d]) # 7
+                    fi1d = bm_1gggggggggggg.verts.new([-vx92222222222d,-vy92222222222d,-vz92222222222d]) # 8
+                    fj1d = bm_1gggggggggggg.verts.new([-vx102222222222d,-vy102222222222d,-vz102222222222d]) # 9
+                    fk1d = bm_1gggggggggggg.verts.new([-vx112222222222d,-vy112222222222d,-vz112222222222d]) # 10
+
+                    
+
+                    fa12222222222 = bm_1ggggggggggg.verts.new([-vx12222222222,-vy12222222222,-vz12222222222]) # 0
+                    fb12222222222 = bm_1ggggggggggg.verts.new([-vx22222222222,-vy22222222222,-vz22222222222]) # 1
+                    fc12222222222 = bm_1ggggggggggg.verts.new([-vx32222222222,-vy32222222222,-vz32222222222]) # 2
+                    fd12222222222 = bm_1ggggggggggg.verts.new([-vx42222222222,-vy42222222222,-vz42222222222]) # 3
+                    fe12222222222 = bm_1ggggggggggg.verts.new([-vx52222222222,-vy52222222222,-vz52222222222]) # 4
+                    ff12222222222 = bm_1ggggggggggg.verts.new([-vx62222222222,-vy62222222222,-vz62222222222]) # 5
+                    fg12222222222 = bm_1ggggggggggg.verts.new([-vx72222222222,-vy72222222222,-vz72222222222]) # 6
+                    fh12222222222 = bm_1ggggggggggg.verts.new([-vx82222222222,-vy82222222222,-vz82222222222]) # 7
+                    fi12222222222 = bm_1ggggggggggg.verts.new([-vx92222222222,-vy92222222222,-vz92222222222]) # 8
+                    fj12222222222 = bm_1ggggggggggg.verts.new([-vx102222222222,-vy102222222222,-vz102222222222]) # 9
+                    fk12222222222 = bm_1ggggggggggg.verts.new([-vx112222222222,-vy112222222222,-vz112222222222]) # 10
+
                     fa1222222222 = bm_1gggggggggg.verts.new([-vx1222222222,-vy1222222222,-vz1222222222]) # 0
                     fb1222222222 = bm_1gggggggggg.verts.new([-vx2222222222,-vy2222222222,-vz2222222222]) # 1
                     fc1222222222 = bm_1gggggggggg.verts.new([-vx3222222222,-vy3222222222,-vz3222222222]) # 2
@@ -2621,6 +3836,40 @@ def GHG_mesh(f, filepath):
                     fi1 = bm_1g.verts.new([-vx9,-vy9,-vz9]) # 8
                     fj1 = bm_1g.verts.new([-vx10,-vy10,-vz10]) # 9
                     fk1 = bm_1g.verts.new([-vx11,-vy11,-vz11]) # 10
+
+                    if type12222222222d == 1:
+                        if type22222222222d == 1:
+                            if type32222222222d == 0:
+                                if type42222222222d == 0:
+                                    if type52222222222d == 1:
+                                        if type62222222222d == 1:
+                                            if type72222222222d == 0:
+                                                if type82222222222d == 1:
+                                                    if type92222222222d == 1:
+                                                        if type102222222222d == 0:
+                                                            if type112222222222d == 0:
+                                                                bm_1gggggggggggg.faces.new([fa1d,fb1d,fc1d])
+                                                                bm_1gggggggggggg.faces.new([fb1d,fc1d,fd1d])
+                                                                bm_1gggggggggggg.faces.new([fe1d,ff1d,fg1d]) # 4 5 6
+                                                                bm_1gggggggggggg.faces.new([fh1d,fi1d,fj1d]) # 7 8 9
+                                                                bm_1gggggggggggg.faces.new([fi1d,fj1d,fk1d]) # 9 10 11
+
+                    if type12222222222 == 1:
+                        if type22222222222 == 1:
+                            if type32222222222 == 0:
+                                if type42222222222 == 1:
+                                    if type52222222222 == 1:
+                                        if type62222222222 == 0:
+                                            if type72222222222 == 0:
+                                                if type82222222222 == 0:
+                                                    if type92222222222 == 1:
+                                                        if type102222222222 == 1:
+                                                            if type112222222222 == 0:
+                                                                bm_1ggggggggggg.faces.new([fa1222222222,fb1222222222,fc1222222222]) # 0 1 2
+                                                                bm_1ggggggggggg.faces.new([fd1222222222,fe1222222222,ff1222222222]) # 3 4 5
+                                                                bm_1ggggggggggg.faces.new([fe1222222222,ff1222222222,fg1222222222]) # 4 5 6
+                                                                bm_1ggggggggggg.faces.new([ff1222222222,fg1222222222,fh1222222222]) # 7 8 9
+                                                                bm_1ggggggggggg.faces.new([fi1222222222,fj1222222222,fk1222222222]) # 9 10 11
 
                     if type1222222222 == 1:
                         if type2222222222 == 1:
@@ -13724,6 +14973,8827 @@ def GHG_mesh(f, filepath):
                     value15 = unpack("B", f.read(1))[0]
                     f.seek(-2,1)
                     vw15 = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1a = unpack("<f", f.read(4))[0]
+                    vy1a = unpack("<f", f.read(4))[0]
+                    vz1a = unpack("<f", f.read(4))[0]
+                    type1a = unpack("B", f.read(1))[0]
+                    value1a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1a = unpack("<f", f.read(4))[0]
+                    vx2a = unpack("<f", f.read(4))[0]
+                    vy2a = unpack("<f", f.read(4))[0]
+                    vz2a = unpack("<f", f.read(4))[0]
+                    type2a = unpack("B", f.read(1))[0]
+                    value2a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2a = unpack("<f", f.read(4))[0]
+                    vx3a = unpack("<f", f.read(4))[0]
+                    vy3a = unpack("<f", f.read(4))[0]
+                    vz3a = unpack("<f", f.read(4))[0]
+                    type3a = unpack("B", f.read(1))[0]
+                    value3a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3a = unpack("<f", f.read(4))[0]
+                    vx4a = unpack("<f", f.read(4))[0]
+                    vy4a = unpack("<f", f.read(4))[0]
+                    vz4a = unpack("<f", f.read(4))[0]
+                    type4a = unpack("B", f.read(1))[0]
+                    value4a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4a = unpack("<f", f.read(4))[0]
+                    vx5a = unpack("<f", f.read(4))[0]
+                    vy5a = unpack("<f", f.read(4))[0]
+                    vz5a = unpack("<f", f.read(4))[0]
+                    type5a = unpack("B", f.read(1))[0]
+                    value5a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5a = unpack("<f", f.read(4))[0]
+                    vx6a = unpack("<f", f.read(4))[0]
+                    vy6a = unpack("<f", f.read(4))[0]
+                    vz6a = unpack("<f", f.read(4))[0]
+                    type6a = unpack("B", f.read(1))[0]
+                    value6a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6a = unpack("<f", f.read(4))[0]
+                    vx7a = unpack("<f", f.read(4))[0]
+                    vy7a = unpack("<f", f.read(4))[0]
+                    vz7a = unpack("<f", f.read(4))[0]
+                    type7a = unpack("B", f.read(1))[0]
+                    value7a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7a = unpack("<f", f.read(4))[0]
+                    vx8a = unpack("<f", f.read(4))[0]
+                    vy8a = unpack("<f", f.read(4))[0]
+                    vz8a = unpack("<f", f.read(4))[0]
+                    type8a = unpack("B", f.read(1))[0]
+                    value8a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8a = unpack("<f", f.read(4))[0]
+                    vx9a = unpack("<f", f.read(4))[0]
+                    vy9a = unpack("<f", f.read(4))[0]
+                    vz9a = unpack("<f", f.read(4))[0]
+                    type9a = unpack("B", f.read(1))[0]
+                    value9a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9a = unpack("<f", f.read(4))[0]
+                    vx10a = unpack("<f", f.read(4))[0]
+                    vy10a = unpack("<f", f.read(4))[0]
+                    vz10a = unpack("<f", f.read(4))[0]
+                    type10a = unpack("B", f.read(1))[0]
+                    value10a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10a = unpack("<f", f.read(4))[0]
+                    vx11a = unpack("<f", f.read(4))[0]
+                    vy11a = unpack("<f", f.read(4))[0]
+                    vz11a = unpack("<f", f.read(4))[0]
+                    type11a = unpack("B", f.read(1))[0]
+                    value11a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11a = unpack("<f", f.read(4))[0]
+                    vx12a = unpack("<f", f.read(4))[0]
+                    vy12a = unpack("<f", f.read(4))[0]
+                    vz12a = unpack("<f", f.read(4))[0]
+                    type12a = unpack("B", f.read(1))[0]
+                    value12a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12a = unpack("<f", f.read(4))[0]
+                    vx13a = unpack("<f", f.read(4))[0]
+                    vy13a = unpack("<f", f.read(4))[0]
+                    vz13a = unpack("<f", f.read(4))[0]
+                    type13a = unpack("B", f.read(1))[0]
+                    value13a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13a = unpack("<f", f.read(4))[0]
+                    vx14a = unpack("<f", f.read(4))[0]
+                    vy14a = unpack("<f", f.read(4))[0]
+                    vz14a = unpack("<f", f.read(4))[0]
+                    type14a = unpack("B", f.read(1))[0]
+                    value14a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14a = unpack("<f", f.read(4))[0]
+                    vx15a = unpack("<f", f.read(4))[0]
+                    vy15a = unpack("<f", f.read(4))[0]
+                    vz15a = unpack("<f", f.read(4))[0]
+                    type15a = unpack("B", f.read(1))[0]
+                    value15a = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15a = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1b = unpack("<f", f.read(4))[0]
+                    vy1b = unpack("<f", f.read(4))[0]
+                    vz1b = unpack("<f", f.read(4))[0]
+                    type1b = unpack("B", f.read(1))[0]
+                    value1b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1b = unpack("<f", f.read(4))[0]
+                    vx2b = unpack("<f", f.read(4))[0]
+                    vy2b = unpack("<f", f.read(4))[0]
+                    vz2b = unpack("<f", f.read(4))[0]
+                    type2b = unpack("B", f.read(1))[0]
+                    value2b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2b = unpack("<f", f.read(4))[0]
+                    vx3b = unpack("<f", f.read(4))[0]
+                    vy3b = unpack("<f", f.read(4))[0]
+                    vz3b = unpack("<f", f.read(4))[0]
+                    type3b = unpack("B", f.read(1))[0]
+                    value3b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3b = unpack("<f", f.read(4))[0]
+                    vx4b = unpack("<f", f.read(4))[0]
+                    vy4b = unpack("<f", f.read(4))[0]
+                    vz4b = unpack("<f", f.read(4))[0]
+                    type4b = unpack("B", f.read(1))[0]
+                    value4b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4b = unpack("<f", f.read(4))[0]
+                    vx5b = unpack("<f", f.read(4))[0]
+                    vy5b = unpack("<f", f.read(4))[0]
+                    vz5b = unpack("<f", f.read(4))[0]
+                    type5b = unpack("B", f.read(1))[0]
+                    value5b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5b = unpack("<f", f.read(4))[0]
+                    vx6b = unpack("<f", f.read(4))[0]
+                    vy6b = unpack("<f", f.read(4))[0]
+                    vz6b = unpack("<f", f.read(4))[0]
+                    type6b = unpack("B", f.read(1))[0]
+                    value6b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6b = unpack("<f", f.read(4))[0]
+                    vx7b = unpack("<f", f.read(4))[0]
+                    vy7b = unpack("<f", f.read(4))[0]
+                    vz7b = unpack("<f", f.read(4))[0]
+                    type7b = unpack("B", f.read(1))[0]
+                    value7b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7b = unpack("<f", f.read(4))[0]
+                    vx8b = unpack("<f", f.read(4))[0]
+                    vy8b = unpack("<f", f.read(4))[0]
+                    vz8b = unpack("<f", f.read(4))[0]
+                    type8b = unpack("B", f.read(1))[0]
+                    value8b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8b = unpack("<f", f.read(4))[0]
+                    vx9b = unpack("<f", f.read(4))[0]
+                    vy9b = unpack("<f", f.read(4))[0]
+                    vz9b = unpack("<f", f.read(4))[0]
+                    type9b = unpack("B", f.read(1))[0]
+                    value9b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9b = unpack("<f", f.read(4))[0]
+                    vx10b = unpack("<f", f.read(4))[0]
+                    vy10b = unpack("<f", f.read(4))[0]
+                    vz10b = unpack("<f", f.read(4))[0]
+                    type10b = unpack("B", f.read(1))[0]
+                    value10b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10b = unpack("<f", f.read(4))[0]
+                    vx11b = unpack("<f", f.read(4))[0]
+                    vy11b = unpack("<f", f.read(4))[0]
+                    vz11b = unpack("<f", f.read(4))[0]
+                    type11b = unpack("B", f.read(1))[0]
+                    value11b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11b = unpack("<f", f.read(4))[0]
+                    vx12b = unpack("<f", f.read(4))[0]
+                    vy12b = unpack("<f", f.read(4))[0]
+                    vz12b = unpack("<f", f.read(4))[0]
+                    type12b = unpack("B", f.read(1))[0]
+                    value12b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12b = unpack("<f", f.read(4))[0]
+                    vx13b = unpack("<f", f.read(4))[0]
+                    vy13b = unpack("<f", f.read(4))[0]
+                    vz13b = unpack("<f", f.read(4))[0]
+                    type13b = unpack("B", f.read(1))[0]
+                    value13b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13b = unpack("<f", f.read(4))[0]
+                    vx14b = unpack("<f", f.read(4))[0]
+                    vy14b = unpack("<f", f.read(4))[0]
+                    vz14b = unpack("<f", f.read(4))[0]
+                    type14b = unpack("B", f.read(1))[0]
+                    value14b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14b = unpack("<f", f.read(4))[0]
+                    vx15b = unpack("<f", f.read(4))[0]
+                    vy15b = unpack("<f", f.read(4))[0]
+                    vz15b = unpack("<f", f.read(4))[0]
+                    type15b = unpack("B", f.read(1))[0]
+                    value15b = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15b = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1c = unpack("<f", f.read(4))[0]
+                    vy1c = unpack("<f", f.read(4))[0]
+                    vz1c = unpack("<f", f.read(4))[0]
+                    type1c = unpack("B", f.read(1))[0]
+                    value1c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1c = unpack("<f", f.read(4))[0]
+                    vx2c = unpack("<f", f.read(4))[0]
+                    vy2c = unpack("<f", f.read(4))[0]
+                    vz2c = unpack("<f", f.read(4))[0]
+                    type2c = unpack("B", f.read(1))[0]
+                    value2c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2c = unpack("<f", f.read(4))[0]
+                    vx3c = unpack("<f", f.read(4))[0]
+                    vy3c = unpack("<f", f.read(4))[0]
+                    vz3c = unpack("<f", f.read(4))[0]
+                    type3c = unpack("B", f.read(1))[0]
+                    value3c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3c = unpack("<f", f.read(4))[0]
+                    vx4c = unpack("<f", f.read(4))[0]
+                    vy4c = unpack("<f", f.read(4))[0]
+                    vz4c = unpack("<f", f.read(4))[0]
+                    type4c = unpack("B", f.read(1))[0]
+                    value4c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4c = unpack("<f", f.read(4))[0]
+                    vx5c = unpack("<f", f.read(4))[0]
+                    vy5c = unpack("<f", f.read(4))[0]
+                    vz5c = unpack("<f", f.read(4))[0]
+                    type5c = unpack("B", f.read(1))[0]
+                    value5c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5c = unpack("<f", f.read(4))[0]
+                    vx6c = unpack("<f", f.read(4))[0]
+                    vy6c = unpack("<f", f.read(4))[0]
+                    vz6c = unpack("<f", f.read(4))[0]
+                    type6c = unpack("B", f.read(1))[0]
+                    value6c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6c = unpack("<f", f.read(4))[0]
+                    vx7c = unpack("<f", f.read(4))[0]
+                    vy7c = unpack("<f", f.read(4))[0]
+                    vz7c = unpack("<f", f.read(4))[0]
+                    type7c = unpack("B", f.read(1))[0]
+                    value7c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7c = unpack("<f", f.read(4))[0]
+                    vx8c = unpack("<f", f.read(4))[0]
+                    vy8c = unpack("<f", f.read(4))[0]
+                    vz8c = unpack("<f", f.read(4))[0]
+                    type8c = unpack("B", f.read(1))[0]
+                    value8c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8c = unpack("<f", f.read(4))[0]
+                    vx9c = unpack("<f", f.read(4))[0]
+                    vy9c = unpack("<f", f.read(4))[0]
+                    vz9c = unpack("<f", f.read(4))[0]
+                    type9c = unpack("B", f.read(1))[0]
+                    value9c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9c = unpack("<f", f.read(4))[0]
+                    vx10c = unpack("<f", f.read(4))[0]
+                    vy10c = unpack("<f", f.read(4))[0]
+                    vz10c = unpack("<f", f.read(4))[0]
+                    type10c = unpack("B", f.read(1))[0]
+                    value10c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10c = unpack("<f", f.read(4))[0]
+                    vx11c = unpack("<f", f.read(4))[0]
+                    vy11c = unpack("<f", f.read(4))[0]
+                    vz11c = unpack("<f", f.read(4))[0]
+                    type11c = unpack("B", f.read(1))[0]
+                    value11c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11c = unpack("<f", f.read(4))[0]
+                    vx12c = unpack("<f", f.read(4))[0]
+                    vy12c = unpack("<f", f.read(4))[0]
+                    vz12c = unpack("<f", f.read(4))[0]
+                    type12c = unpack("B", f.read(1))[0]
+                    value12c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12c = unpack("<f", f.read(4))[0]
+                    vx13c = unpack("<f", f.read(4))[0]
+                    vy13c = unpack("<f", f.read(4))[0]
+                    vz13c = unpack("<f", f.read(4))[0]
+                    type13c = unpack("B", f.read(1))[0]
+                    value13c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13c = unpack("<f", f.read(4))[0]
+                    vx14c = unpack("<f", f.read(4))[0]
+                    vy14c = unpack("<f", f.read(4))[0]
+                    vz14c = unpack("<f", f.read(4))[0]
+                    type14c = unpack("B", f.read(1))[0]
+                    value14c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14c = unpack("<f", f.read(4))[0]
+                    vx15c = unpack("<f", f.read(4))[0]
+                    vy15c = unpack("<f", f.read(4))[0]
+                    vz15c = unpack("<f", f.read(4))[0]
+                    type15c = unpack("B", f.read(1))[0]
+                    value15c = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15c = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1d = unpack("<f", f.read(4))[0]
+                    vy1d = unpack("<f", f.read(4))[0]
+                    vz1d = unpack("<f", f.read(4))[0]
+                    type1d = unpack("B", f.read(1))[0]
+                    value1d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1d = unpack("<f", f.read(4))[0]
+                    vx2d = unpack("<f", f.read(4))[0]
+                    vy2d = unpack("<f", f.read(4))[0]
+                    vz2d = unpack("<f", f.read(4))[0]
+                    type2d = unpack("B", f.read(1))[0]
+                    value2d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2d = unpack("<f", f.read(4))[0]
+                    vx3d = unpack("<f", f.read(4))[0]
+                    vy3d = unpack("<f", f.read(4))[0]
+                    vz3d = unpack("<f", f.read(4))[0]
+                    type3d = unpack("B", f.read(1))[0]
+                    value3d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3d = unpack("<f", f.read(4))[0]
+                    vx4d = unpack("<f", f.read(4))[0]
+                    vy4d = unpack("<f", f.read(4))[0]
+                    vz4d = unpack("<f", f.read(4))[0]
+                    type4d = unpack("B", f.read(1))[0]
+                    value4d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4d = unpack("<f", f.read(4))[0]
+                    vx5d = unpack("<f", f.read(4))[0]
+                    vy5d = unpack("<f", f.read(4))[0]
+                    vz5d = unpack("<f", f.read(4))[0]
+                    type5d = unpack("B", f.read(1))[0]
+                    value5d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5d = unpack("<f", f.read(4))[0]
+                    vx6d = unpack("<f", f.read(4))[0]
+                    vy6d = unpack("<f", f.read(4))[0]
+                    vz6d = unpack("<f", f.read(4))[0]
+                    type6d = unpack("B", f.read(1))[0]
+                    value6d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6d = unpack("<f", f.read(4))[0]
+                    vx7d = unpack("<f", f.read(4))[0]
+                    vy7d = unpack("<f", f.read(4))[0]
+                    vz7d = unpack("<f", f.read(4))[0]
+                    type7d = unpack("B", f.read(1))[0]
+                    value7d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7d = unpack("<f", f.read(4))[0]
+                    vx8d = unpack("<f", f.read(4))[0]
+                    vy8d = unpack("<f", f.read(4))[0]
+                    vz8d = unpack("<f", f.read(4))[0]
+                    type8d = unpack("B", f.read(1))[0]
+                    value8d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8d = unpack("<f", f.read(4))[0]
+                    vx9d = unpack("<f", f.read(4))[0]
+                    vy9d = unpack("<f", f.read(4))[0]
+                    vz9d = unpack("<f", f.read(4))[0]
+                    type9d = unpack("B", f.read(1))[0]
+                    value9d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9d = unpack("<f", f.read(4))[0]
+                    vx10d = unpack("<f", f.read(4))[0]
+                    vy10d = unpack("<f", f.read(4))[0]
+                    vz10d = unpack("<f", f.read(4))[0]
+                    type10d = unpack("B", f.read(1))[0]
+                    value10d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10d = unpack("<f", f.read(4))[0]
+                    vx11d = unpack("<f", f.read(4))[0]
+                    vy11d = unpack("<f", f.read(4))[0]
+                    vz11d = unpack("<f", f.read(4))[0]
+                    type11d = unpack("B", f.read(1))[0]
+                    value11d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11d = unpack("<f", f.read(4))[0]
+                    vx12d = unpack("<f", f.read(4))[0]
+                    vy12d = unpack("<f", f.read(4))[0]
+                    vz12d = unpack("<f", f.read(4))[0]
+                    type12d = unpack("B", f.read(1))[0]
+                    value12d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12d = unpack("<f", f.read(4))[0]
+                    vx13d = unpack("<f", f.read(4))[0]
+                    vy13d = unpack("<f", f.read(4))[0]
+                    vz13d = unpack("<f", f.read(4))[0]
+                    type13d = unpack("B", f.read(1))[0]
+                    value13d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13d = unpack("<f", f.read(4))[0]
+                    vx14d = unpack("<f", f.read(4))[0]
+                    vy14d = unpack("<f", f.read(4))[0]
+                    vz14d = unpack("<f", f.read(4))[0]
+                    type14d = unpack("B", f.read(1))[0]
+                    value14d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14d = unpack("<f", f.read(4))[0]
+                    vx15d = unpack("<f", f.read(4))[0]
+                    vy15d = unpack("<f", f.read(4))[0]
+                    vz15d = unpack("<f", f.read(4))[0]
+                    type15d = unpack("B", f.read(1))[0]
+                    value15d = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15d = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1e = unpack("<f", f.read(4))[0]
+                    vy1e = unpack("<f", f.read(4))[0]
+                    vz1e = unpack("<f", f.read(4))[0]
+                    type1e = unpack("B", f.read(1))[0]
+                    value1e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1e = unpack("<f", f.read(4))[0]
+                    vx2e = unpack("<f", f.read(4))[0]
+                    vy2e = unpack("<f", f.read(4))[0]
+                    vz2e = unpack("<f", f.read(4))[0]
+                    type2e = unpack("B", f.read(1))[0]
+                    value2e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2e = unpack("<f", f.read(4))[0]
+                    vx3e = unpack("<f", f.read(4))[0]
+                    vy3e = unpack("<f", f.read(4))[0]
+                    vz3e = unpack("<f", f.read(4))[0]
+                    type3e = unpack("B", f.read(1))[0]
+                    value3e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3e = unpack("<f", f.read(4))[0]
+                    vx4e = unpack("<f", f.read(4))[0]
+                    vy4e = unpack("<f", f.read(4))[0]
+                    vz4e = unpack("<f", f.read(4))[0]
+                    type4e = unpack("B", f.read(1))[0]
+                    value4e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4e = unpack("<f", f.read(4))[0]
+                    vx5e = unpack("<f", f.read(4))[0]
+                    vy5e = unpack("<f", f.read(4))[0]
+                    vz5e = unpack("<f", f.read(4))[0]
+                    type5e = unpack("B", f.read(1))[0]
+                    value5e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5e = unpack("<f", f.read(4))[0]
+                    vx6e = unpack("<f", f.read(4))[0]
+                    vy6e = unpack("<f", f.read(4))[0]
+                    vz6e = unpack("<f", f.read(4))[0]
+                    type6e = unpack("B", f.read(1))[0]
+                    value6e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6e = unpack("<f", f.read(4))[0]
+                    vx7e = unpack("<f", f.read(4))[0]
+                    vy7e = unpack("<f", f.read(4))[0]
+                    vz7e = unpack("<f", f.read(4))[0]
+                    type7e = unpack("B", f.read(1))[0]
+                    value7e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7e = unpack("<f", f.read(4))[0]
+                    vx8e = unpack("<f", f.read(4))[0]
+                    vy8e = unpack("<f", f.read(4))[0]
+                    vz8e = unpack("<f", f.read(4))[0]
+                    type8e = unpack("B", f.read(1))[0]
+                    value8e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8e = unpack("<f", f.read(4))[0]
+                    vx9e = unpack("<f", f.read(4))[0]
+                    vy9e = unpack("<f", f.read(4))[0]
+                    vz9e = unpack("<f", f.read(4))[0]
+                    type9e = unpack("B", f.read(1))[0]
+                    value9e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9e = unpack("<f", f.read(4))[0]
+                    vx10e = unpack("<f", f.read(4))[0]
+                    vy10e = unpack("<f", f.read(4))[0]
+                    vz10e = unpack("<f", f.read(4))[0]
+                    type10e = unpack("B", f.read(1))[0]
+                    value10e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10e = unpack("<f", f.read(4))[0]
+                    vx11e = unpack("<f", f.read(4))[0]
+                    vy11e = unpack("<f", f.read(4))[0]
+                    vz11e = unpack("<f", f.read(4))[0]
+                    type11e = unpack("B", f.read(1))[0]
+                    value11e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11e = unpack("<f", f.read(4))[0]
+                    vx12e = unpack("<f", f.read(4))[0]
+                    vy12e = unpack("<f", f.read(4))[0]
+                    vz12e = unpack("<f", f.read(4))[0]
+                    type12e = unpack("B", f.read(1))[0]
+                    value12e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12e = unpack("<f", f.read(4))[0]
+                    vx13e = unpack("<f", f.read(4))[0]
+                    vy13e = unpack("<f", f.read(4))[0]
+                    vz13e = unpack("<f", f.read(4))[0]
+                    type13e = unpack("B", f.read(1))[0]
+                    value13e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13e = unpack("<f", f.read(4))[0]
+                    vx14e = unpack("<f", f.read(4))[0]
+                    vy14e = unpack("<f", f.read(4))[0]
+                    vz14e = unpack("<f", f.read(4))[0]
+                    type14e = unpack("B", f.read(1))[0]
+                    value14e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14e = unpack("<f", f.read(4))[0]
+                    vx15e = unpack("<f", f.read(4))[0]
+                    vy15e = unpack("<f", f.read(4))[0]
+                    vz15e = unpack("<f", f.read(4))[0]
+                    type15e = unpack("B", f.read(1))[0]
+                    value15e = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15e = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1f = unpack("<f", f.read(4))[0]
+                    vy1f = unpack("<f", f.read(4))[0]
+                    vz1f = unpack("<f", f.read(4))[0]
+                    type1f = unpack("B", f.read(1))[0]
+                    value1f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1f = unpack("<f", f.read(4))[0]
+                    vx2f = unpack("<f", f.read(4))[0]
+                    vy2f = unpack("<f", f.read(4))[0]
+                    vz2f = unpack("<f", f.read(4))[0]
+                    type2f = unpack("B", f.read(1))[0]
+                    value2f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2f = unpack("<f", f.read(4))[0]
+                    vx3f = unpack("<f", f.read(4))[0]
+                    vy3f = unpack("<f", f.read(4))[0]
+                    vz3f = unpack("<f", f.read(4))[0]
+                    type3f = unpack("B", f.read(1))[0]
+                    value3f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3f = unpack("<f", f.read(4))[0]
+                    vx4f = unpack("<f", f.read(4))[0]
+                    vy4f = unpack("<f", f.read(4))[0]
+                    vz4f = unpack("<f", f.read(4))[0]
+                    type4f = unpack("B", f.read(1))[0]
+                    value4f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4f = unpack("<f", f.read(4))[0]
+                    vx5f = unpack("<f", f.read(4))[0]
+                    vy5f = unpack("<f", f.read(4))[0]
+                    vz5f = unpack("<f", f.read(4))[0]
+                    type5f = unpack("B", f.read(1))[0]
+                    value5f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5f = unpack("<f", f.read(4))[0]
+                    vx6f = unpack("<f", f.read(4))[0]
+                    vy6f = unpack("<f", f.read(4))[0]
+                    vz6f = unpack("<f", f.read(4))[0]
+                    type6f = unpack("B", f.read(1))[0]
+                    value6f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6f = unpack("<f", f.read(4))[0]
+                    vx7f = unpack("<f", f.read(4))[0]
+                    vy7f = unpack("<f", f.read(4))[0]
+                    vz7f = unpack("<f", f.read(4))[0]
+                    type7f = unpack("B", f.read(1))[0]
+                    value7f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7f = unpack("<f", f.read(4))[0]
+                    vx8f = unpack("<f", f.read(4))[0]
+                    vy8f = unpack("<f", f.read(4))[0]
+                    vz8f = unpack("<f", f.read(4))[0]
+                    type8f = unpack("B", f.read(1))[0]
+                    value8f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8f = unpack("<f", f.read(4))[0]
+                    vx9f = unpack("<f", f.read(4))[0]
+                    vy9f = unpack("<f", f.read(4))[0]
+                    vz9f = unpack("<f", f.read(4))[0]
+                    type9f = unpack("B", f.read(1))[0]
+                    value9f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9f = unpack("<f", f.read(4))[0]
+                    vx10f = unpack("<f", f.read(4))[0]
+                    vy10f = unpack("<f", f.read(4))[0]
+                    vz10f = unpack("<f", f.read(4))[0]
+                    type10f = unpack("B", f.read(1))[0]
+                    value10f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10f = unpack("<f", f.read(4))[0]
+                    vx11f = unpack("<f", f.read(4))[0]
+                    vy11f = unpack("<f", f.read(4))[0]
+                    vz11f = unpack("<f", f.read(4))[0]
+                    type11f = unpack("B", f.read(1))[0]
+                    value11f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11f = unpack("<f", f.read(4))[0]
+                    vx12f = unpack("<f", f.read(4))[0]
+                    vy12f = unpack("<f", f.read(4))[0]
+                    vz12f = unpack("<f", f.read(4))[0]
+                    type12f = unpack("B", f.read(1))[0]
+                    value12f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12f = unpack("<f", f.read(4))[0]
+                    vx13f = unpack("<f", f.read(4))[0]
+                    vy13f = unpack("<f", f.read(4))[0]
+                    vz13f = unpack("<f", f.read(4))[0]
+                    type13f = unpack("B", f.read(1))[0]
+                    value13f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13f = unpack("<f", f.read(4))[0]
+                    vx14f = unpack("<f", f.read(4))[0]
+                    vy14f = unpack("<f", f.read(4))[0]
+                    vz14f = unpack("<f", f.read(4))[0]
+                    type14f = unpack("B", f.read(1))[0]
+                    value14f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14f = unpack("<f", f.read(4))[0]
+                    vx15f = unpack("<f", f.read(4))[0]
+                    vy15f = unpack("<f", f.read(4))[0]
+                    vz15f = unpack("<f", f.read(4))[0]
+                    type15f = unpack("B", f.read(1))[0]
+                    value15f = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15f = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1g = unpack("<f", f.read(4))[0]
+                    vy1g = unpack("<f", f.read(4))[0]
+                    vz1g = unpack("<f", f.read(4))[0]
+                    type1g = unpack("B", f.read(1))[0]
+                    value1g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1g = unpack("<f", f.read(4))[0]
+                    vx2g = unpack("<f", f.read(4))[0]
+                    vy2g = unpack("<f", f.read(4))[0]
+                    vz2g = unpack("<f", f.read(4))[0]
+                    type2g = unpack("B", f.read(1))[0]
+                    value2g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2g = unpack("<f", f.read(4))[0]
+                    vx3g = unpack("<f", f.read(4))[0]
+                    vy3g = unpack("<f", f.read(4))[0]
+                    vz3g = unpack("<f", f.read(4))[0]
+                    type3g = unpack("B", f.read(1))[0]
+                    value3g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3g = unpack("<f", f.read(4))[0]
+                    vx4g = unpack("<f", f.read(4))[0]
+                    vy4g = unpack("<f", f.read(4))[0]
+                    vz4g = unpack("<f", f.read(4))[0]
+                    type4g = unpack("B", f.read(1))[0]
+                    value4g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4g = unpack("<f", f.read(4))[0]
+                    vx5g = unpack("<f", f.read(4))[0]
+                    vy5g = unpack("<f", f.read(4))[0]
+                    vz5g = unpack("<f", f.read(4))[0]
+                    type5g = unpack("B", f.read(1))[0]
+                    value5g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5g = unpack("<f", f.read(4))[0]
+                    vx6g = unpack("<f", f.read(4))[0]
+                    vy6g = unpack("<f", f.read(4))[0]
+                    vz6g = unpack("<f", f.read(4))[0]
+                    type6g = unpack("B", f.read(1))[0]
+                    value6g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6g = unpack("<f", f.read(4))[0]
+                    vx7g = unpack("<f", f.read(4))[0]
+                    vy7g = unpack("<f", f.read(4))[0]
+                    vz7g = unpack("<f", f.read(4))[0]
+                    type7g = unpack("B", f.read(1))[0]
+                    value7g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7g = unpack("<f", f.read(4))[0]
+                    vx8g = unpack("<f", f.read(4))[0]
+                    vy8g = unpack("<f", f.read(4))[0]
+                    vz8g = unpack("<f", f.read(4))[0]
+                    type8g = unpack("B", f.read(1))[0]
+                    value8g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8g = unpack("<f", f.read(4))[0]
+                    vx9g = unpack("<f", f.read(4))[0]
+                    vy9g = unpack("<f", f.read(4))[0]
+                    vz9g = unpack("<f", f.read(4))[0]
+                    type9g = unpack("B", f.read(1))[0]
+                    value9g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9g = unpack("<f", f.read(4))[0]
+                    vx10g = unpack("<f", f.read(4))[0]
+                    vy10g = unpack("<f", f.read(4))[0]
+                    vz10g = unpack("<f", f.read(4))[0]
+                    type10g = unpack("B", f.read(1))[0]
+                    value10g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10g = unpack("<f", f.read(4))[0]
+                    vx11g = unpack("<f", f.read(4))[0]
+                    vy11g = unpack("<f", f.read(4))[0]
+                    vz11g = unpack("<f", f.read(4))[0]
+                    type11g = unpack("B", f.read(1))[0]
+                    value11g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11g = unpack("<f", f.read(4))[0]
+                    vx12g = unpack("<f", f.read(4))[0]
+                    vy12g = unpack("<f", f.read(4))[0]
+                    vz12g = unpack("<f", f.read(4))[0]
+                    type12g = unpack("B", f.read(1))[0]
+                    value12g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12g = unpack("<f", f.read(4))[0]
+                    vx13g = unpack("<f", f.read(4))[0]
+                    vy13g = unpack("<f", f.read(4))[0]
+                    vz13g = unpack("<f", f.read(4))[0]
+                    type13g = unpack("B", f.read(1))[0]
+                    value13g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13g = unpack("<f", f.read(4))[0]
+                    vx14g = unpack("<f", f.read(4))[0]
+                    vy14g = unpack("<f", f.read(4))[0]
+                    vz14g = unpack("<f", f.read(4))[0]
+                    type14g = unpack("B", f.read(1))[0]
+                    value14g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14g = unpack("<f", f.read(4))[0]
+                    vx15g = unpack("<f", f.read(4))[0]
+                    vy15g = unpack("<f", f.read(4))[0]
+                    vz15g = unpack("<f", f.read(4))[0]
+                    type15g = unpack("B", f.read(1))[0]
+                    value15g = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15g = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1h = unpack("<f", f.read(4))[0]
+                    vy1h = unpack("<f", f.read(4))[0]
+                    vz1h = unpack("<f", f.read(4))[0]
+                    type1h = unpack("B", f.read(1))[0]
+                    value1h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1h = unpack("<f", f.read(4))[0]
+                    vx2h = unpack("<f", f.read(4))[0]
+                    vy2h = unpack("<f", f.read(4))[0]
+                    vz2h = unpack("<f", f.read(4))[0]
+                    type2h = unpack("B", f.read(1))[0]
+                    value2h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2h = unpack("<f", f.read(4))[0]
+                    vx3h = unpack("<f", f.read(4))[0]
+                    vy3h = unpack("<f", f.read(4))[0]
+                    vz3h = unpack("<f", f.read(4))[0]
+                    type3h = unpack("B", f.read(1))[0]
+                    value3h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3h = unpack("<f", f.read(4))[0]
+                    vx4h = unpack("<f", f.read(4))[0]
+                    vy4h = unpack("<f", f.read(4))[0]
+                    vz4h = unpack("<f", f.read(4))[0]
+                    type4h = unpack("B", f.read(1))[0]
+                    value4h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4h = unpack("<f", f.read(4))[0]
+                    vx5h = unpack("<f", f.read(4))[0]
+                    vy5h = unpack("<f", f.read(4))[0]
+                    vz5h = unpack("<f", f.read(4))[0]
+                    type5h = unpack("B", f.read(1))[0]
+                    value5h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5h = unpack("<f", f.read(4))[0]
+                    vx6h = unpack("<f", f.read(4))[0]
+                    vy6h = unpack("<f", f.read(4))[0]
+                    vz6h = unpack("<f", f.read(4))[0]
+                    type6h = unpack("B", f.read(1))[0]
+                    value6h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6h = unpack("<f", f.read(4))[0]
+                    vx7h = unpack("<f", f.read(4))[0]
+                    vy7h = unpack("<f", f.read(4))[0]
+                    vz7h = unpack("<f", f.read(4))[0]
+                    type7h = unpack("B", f.read(1))[0]
+                    value7h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7h = unpack("<f", f.read(4))[0]
+                    vx8h = unpack("<f", f.read(4))[0]
+                    vy8h = unpack("<f", f.read(4))[0]
+                    vz8h = unpack("<f", f.read(4))[0]
+                    type8h = unpack("B", f.read(1))[0]
+                    value8h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8h = unpack("<f", f.read(4))[0]
+                    vx9h = unpack("<f", f.read(4))[0]
+                    vy9h = unpack("<f", f.read(4))[0]
+                    vz9h = unpack("<f", f.read(4))[0]
+                    type9h = unpack("B", f.read(1))[0]
+                    value9h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9h = unpack("<f", f.read(4))[0]
+                    vx10h = unpack("<f", f.read(4))[0]
+                    vy10h = unpack("<f", f.read(4))[0]
+                    vz10h = unpack("<f", f.read(4))[0]
+                    type10h = unpack("B", f.read(1))[0]
+                    value10h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10h = unpack("<f", f.read(4))[0]
+                    vx11h = unpack("<f", f.read(4))[0]
+                    vy11h = unpack("<f", f.read(4))[0]
+                    vz11h = unpack("<f", f.read(4))[0]
+                    type11h = unpack("B", f.read(1))[0]
+                    value11h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11h = unpack("<f", f.read(4))[0]
+                    vx12h = unpack("<f", f.read(4))[0]
+                    vy12h = unpack("<f", f.read(4))[0]
+                    vz12h = unpack("<f", f.read(4))[0]
+                    type12h = unpack("B", f.read(1))[0]
+                    value12h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12h = unpack("<f", f.read(4))[0]
+                    vx13h = unpack("<f", f.read(4))[0]
+                    vy13h = unpack("<f", f.read(4))[0]
+                    vz13h = unpack("<f", f.read(4))[0]
+                    type13h = unpack("B", f.read(1))[0]
+                    value13h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13h = unpack("<f", f.read(4))[0]
+                    vx14h = unpack("<f", f.read(4))[0]
+                    vy14h = unpack("<f", f.read(4))[0]
+                    vz14h = unpack("<f", f.read(4))[0]
+                    type14h = unpack("B", f.read(1))[0]
+                    value14h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14h = unpack("<f", f.read(4))[0]
+                    vx15h = unpack("<f", f.read(4))[0]
+                    vy15h = unpack("<f", f.read(4))[0]
+                    vz15h = unpack("<f", f.read(4))[0]
+                    type15h = unpack("B", f.read(1))[0]
+                    value15h = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15h = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1i = unpack("<f", f.read(4))[0]
+                    vy1i = unpack("<f", f.read(4))[0]
+                    vz1i = unpack("<f", f.read(4))[0]
+                    type1i = unpack("B", f.read(1))[0]
+                    value1i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1i = unpack("<f", f.read(4))[0]
+                    vx2i = unpack("<f", f.read(4))[0]
+                    vy2i = unpack("<f", f.read(4))[0]
+                    vz2i = unpack("<f", f.read(4))[0]
+                    type2i = unpack("B", f.read(1))[0]
+                    value2i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2i = unpack("<f", f.read(4))[0]
+                    vx3i = unpack("<f", f.read(4))[0]
+                    vy3i = unpack("<f", f.read(4))[0]
+                    vz3i = unpack("<f", f.read(4))[0]
+                    type3i = unpack("B", f.read(1))[0]
+                    value3i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3i = unpack("<f", f.read(4))[0]
+                    vx4i = unpack("<f", f.read(4))[0]
+                    vy4i = unpack("<f", f.read(4))[0]
+                    vz4i = unpack("<f", f.read(4))[0]
+                    type4i = unpack("B", f.read(1))[0]
+                    value4i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4i = unpack("<f", f.read(4))[0]
+                    vx5i = unpack("<f", f.read(4))[0]
+                    vy5i = unpack("<f", f.read(4))[0]
+                    vz5i = unpack("<f", f.read(4))[0]
+                    type5i = unpack("B", f.read(1))[0]
+                    value5i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5i = unpack("<f", f.read(4))[0]
+                    vx6i = unpack("<f", f.read(4))[0]
+                    vy6i = unpack("<f", f.read(4))[0]
+                    vz6i = unpack("<f", f.read(4))[0]
+                    type6i = unpack("B", f.read(1))[0]
+                    value6i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6i = unpack("<f", f.read(4))[0]
+                    vx7i = unpack("<f", f.read(4))[0]
+                    vy7i = unpack("<f", f.read(4))[0]
+                    vz7i = unpack("<f", f.read(4))[0]
+                    type7i = unpack("B", f.read(1))[0]
+                    value7i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7i = unpack("<f", f.read(4))[0]
+                    vx8i = unpack("<f", f.read(4))[0]
+                    vy8i = unpack("<f", f.read(4))[0]
+                    vz8i = unpack("<f", f.read(4))[0]
+                    type8i = unpack("B", f.read(1))[0]
+                    value8i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8i = unpack("<f", f.read(4))[0]
+                    vx9i = unpack("<f", f.read(4))[0]
+                    vy9i = unpack("<f", f.read(4))[0]
+                    vz9i = unpack("<f", f.read(4))[0]
+                    type9i = unpack("B", f.read(1))[0]
+                    value9i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9i = unpack("<f", f.read(4))[0]
+                    vx10i = unpack("<f", f.read(4))[0]
+                    vy10i = unpack("<f", f.read(4))[0]
+                    vz10i = unpack("<f", f.read(4))[0]
+                    type10i = unpack("B", f.read(1))[0]
+                    value10i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10i = unpack("<f", f.read(4))[0]
+                    vx11i = unpack("<f", f.read(4))[0]
+                    vy11i = unpack("<f", f.read(4))[0]
+                    vz11i = unpack("<f", f.read(4))[0]
+                    type11i = unpack("B", f.read(1))[0]
+                    value11i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11i = unpack("<f", f.read(4))[0]
+                    vx12i = unpack("<f", f.read(4))[0]
+                    vy12i = unpack("<f", f.read(4))[0]
+                    vz12i = unpack("<f", f.read(4))[0]
+                    type12i = unpack("B", f.read(1))[0]
+                    value12i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12i = unpack("<f", f.read(4))[0]
+                    vx13i = unpack("<f", f.read(4))[0]
+                    vy13i = unpack("<f", f.read(4))[0]
+                    vz13i = unpack("<f", f.read(4))[0]
+                    type13i = unpack("B", f.read(1))[0]
+                    value13i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13i = unpack("<f", f.read(4))[0]
+                    vx14i = unpack("<f", f.read(4))[0]
+                    vy14i = unpack("<f", f.read(4))[0]
+                    vz14i = unpack("<f", f.read(4))[0]
+                    type14i = unpack("B", f.read(1))[0]
+                    value14i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14i = unpack("<f", f.read(4))[0]
+                    vx15i = unpack("<f", f.read(4))[0]
+                    vy15i = unpack("<f", f.read(4))[0]
+                    vz15i = unpack("<f", f.read(4))[0]
+                    type15i = unpack("B", f.read(1))[0]
+                    value15i = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15i = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1j = unpack("<f", f.read(4))[0]
+                    vy1j = unpack("<f", f.read(4))[0]
+                    vz1j = unpack("<f", f.read(4))[0]
+                    type1j = unpack("B", f.read(1))[0]
+                    value1j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1j = unpack("<f", f.read(4))[0]
+                    vx2j = unpack("<f", f.read(4))[0]
+                    vy2j = unpack("<f", f.read(4))[0]
+                    vz2j = unpack("<f", f.read(4))[0]
+                    type2j = unpack("B", f.read(1))[0]
+                    value2j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2j = unpack("<f", f.read(4))[0]
+                    vx3j = unpack("<f", f.read(4))[0]
+                    vy3j = unpack("<f", f.read(4))[0]
+                    vz3j = unpack("<f", f.read(4))[0]
+                    type3j = unpack("B", f.read(1))[0]
+                    value3j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3j = unpack("<f", f.read(4))[0]
+                    vx4j = unpack("<f", f.read(4))[0]
+                    vy4j = unpack("<f", f.read(4))[0]
+                    vz4j = unpack("<f", f.read(4))[0]
+                    type4j = unpack("B", f.read(1))[0]
+                    value4j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4j = unpack("<f", f.read(4))[0]
+                    vx5j = unpack("<f", f.read(4))[0]
+                    vy5j = unpack("<f", f.read(4))[0]
+                    vz5j = unpack("<f", f.read(4))[0]
+                    type5j = unpack("B", f.read(1))[0]
+                    value5j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5j = unpack("<f", f.read(4))[0]
+                    vx6j = unpack("<f", f.read(4))[0]
+                    vy6j = unpack("<f", f.read(4))[0]
+                    vz6j = unpack("<f", f.read(4))[0]
+                    type6j = unpack("B", f.read(1))[0]
+                    value6j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6j = unpack("<f", f.read(4))[0]
+                    vx7j = unpack("<f", f.read(4))[0]
+                    vy7j = unpack("<f", f.read(4))[0]
+                    vz7j = unpack("<f", f.read(4))[0]
+                    type7j = unpack("B", f.read(1))[0]
+                    value7j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7j = unpack("<f", f.read(4))[0]
+                    vx8j = unpack("<f", f.read(4))[0]
+                    vy8j = unpack("<f", f.read(4))[0]
+                    vz8j = unpack("<f", f.read(4))[0]
+                    type8j = unpack("B", f.read(1))[0]
+                    value8j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8j = unpack("<f", f.read(4))[0]
+                    vx9j = unpack("<f", f.read(4))[0]
+                    vy9j = unpack("<f", f.read(4))[0]
+                    vz9j = unpack("<f", f.read(4))[0]
+                    type9j = unpack("B", f.read(1))[0]
+                    value9j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9j = unpack("<f", f.read(4))[0]
+                    vx10j = unpack("<f", f.read(4))[0]
+                    vy10j = unpack("<f", f.read(4))[0]
+                    vz10j = unpack("<f", f.read(4))[0]
+                    type10j = unpack("B", f.read(1))[0]
+                    value10j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10j = unpack("<f", f.read(4))[0]
+                    vx11j = unpack("<f", f.read(4))[0]
+                    vy11j = unpack("<f", f.read(4))[0]
+                    vz11j = unpack("<f", f.read(4))[0]
+                    type11j = unpack("B", f.read(1))[0]
+                    value11j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11j = unpack("<f", f.read(4))[0]
+                    vx12j = unpack("<f", f.read(4))[0]
+                    vy12j = unpack("<f", f.read(4))[0]
+                    vz12j = unpack("<f", f.read(4))[0]
+                    type12j = unpack("B", f.read(1))[0]
+                    value12j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12j = unpack("<f", f.read(4))[0]
+                    vx13j = unpack("<f", f.read(4))[0]
+                    vy13j = unpack("<f", f.read(4))[0]
+                    vz13j = unpack("<f", f.read(4))[0]
+                    type13j = unpack("B", f.read(1))[0]
+                    value13j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13j = unpack("<f", f.read(4))[0]
+                    vx14j = unpack("<f", f.read(4))[0]
+                    vy14j = unpack("<f", f.read(4))[0]
+                    vz14j = unpack("<f", f.read(4))[0]
+                    type14j = unpack("B", f.read(1))[0]
+                    value14j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14j = unpack("<f", f.read(4))[0]
+                    vx15j = unpack("<f", f.read(4))[0]
+                    vy15j = unpack("<f", f.read(4))[0]
+                    vz15j = unpack("<f", f.read(4))[0]
+                    type15j = unpack("B", f.read(1))[0]
+                    value15j = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15j = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1k = unpack("<f", f.read(4))[0]
+                    vy1k = unpack("<f", f.read(4))[0]
+                    vz1k = unpack("<f", f.read(4))[0]
+                    type1k = unpack("B", f.read(1))[0]
+                    value1k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1k = unpack("<f", f.read(4))[0]
+                    vx2k = unpack("<f", f.read(4))[0]
+                    vy2k = unpack("<f", f.read(4))[0]
+                    vz2k = unpack("<f", f.read(4))[0]
+                    type2k = unpack("B", f.read(1))[0]
+                    value2k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2k = unpack("<f", f.read(4))[0]
+                    vx3k = unpack("<f", f.read(4))[0]
+                    vy3k = unpack("<f", f.read(4))[0]
+                    vz3k = unpack("<f", f.read(4))[0]
+                    type3k = unpack("B", f.read(1))[0]
+                    value3k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3k = unpack("<f", f.read(4))[0]
+                    vx4k = unpack("<f", f.read(4))[0]
+                    vy4k = unpack("<f", f.read(4))[0]
+                    vz4k = unpack("<f", f.read(4))[0]
+                    type4k = unpack("B", f.read(1))[0]
+                    value4k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4k = unpack("<f", f.read(4))[0]
+                    vx5k = unpack("<f", f.read(4))[0]
+                    vy5k = unpack("<f", f.read(4))[0]
+                    vz5k = unpack("<f", f.read(4))[0]
+                    type5k = unpack("B", f.read(1))[0]
+                    value5k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5k = unpack("<f", f.read(4))[0]
+                    vx6k = unpack("<f", f.read(4))[0]
+                    vy6k = unpack("<f", f.read(4))[0]
+                    vz6k = unpack("<f", f.read(4))[0]
+                    type6k = unpack("B", f.read(1))[0]
+                    value6k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6k = unpack("<f", f.read(4))[0]
+                    vx7k = unpack("<f", f.read(4))[0]
+                    vy7k = unpack("<f", f.read(4))[0]
+                    vz7k = unpack("<f", f.read(4))[0]
+                    type7k = unpack("B", f.read(1))[0]
+                    value7k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7k = unpack("<f", f.read(4))[0]
+                    vx8k = unpack("<f", f.read(4))[0]
+                    vy8k = unpack("<f", f.read(4))[0]
+                    vz8k = unpack("<f", f.read(4))[0]
+                    type8k = unpack("B", f.read(1))[0]
+                    value8k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8k = unpack("<f", f.read(4))[0]
+                    vx9k = unpack("<f", f.read(4))[0]
+                    vy9k = unpack("<f", f.read(4))[0]
+                    vz9k = unpack("<f", f.read(4))[0]
+                    type9k = unpack("B", f.read(1))[0]
+                    value9k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9k = unpack("<f", f.read(4))[0]
+                    vx10k = unpack("<f", f.read(4))[0]
+                    vy10k = unpack("<f", f.read(4))[0]
+                    vz10k = unpack("<f", f.read(4))[0]
+                    type10k = unpack("B", f.read(1))[0]
+                    value10k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10k = unpack("<f", f.read(4))[0]
+                    vx11k = unpack("<f", f.read(4))[0]
+                    vy11k = unpack("<f", f.read(4))[0]
+                    vz11k = unpack("<f", f.read(4))[0]
+                    type11k = unpack("B", f.read(1))[0]
+                    value11k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11k = unpack("<f", f.read(4))[0]
+                    vx12k = unpack("<f", f.read(4))[0]
+                    vy12k = unpack("<f", f.read(4))[0]
+                    vz12k = unpack("<f", f.read(4))[0]
+                    type12k = unpack("B", f.read(1))[0]
+                    value12k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12k = unpack("<f", f.read(4))[0]
+                    vx13k = unpack("<f", f.read(4))[0]
+                    vy13k = unpack("<f", f.read(4))[0]
+                    vz13k = unpack("<f", f.read(4))[0]
+                    type13k = unpack("B", f.read(1))[0]
+                    value13k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13k = unpack("<f", f.read(4))[0]
+                    vx14k = unpack("<f", f.read(4))[0]
+                    vy14k = unpack("<f", f.read(4))[0]
+                    vz14k = unpack("<f", f.read(4))[0]
+                    type14k = unpack("B", f.read(1))[0]
+                    value14k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14k = unpack("<f", f.read(4))[0]
+                    vx15k = unpack("<f", f.read(4))[0]
+                    vy15k = unpack("<f", f.read(4))[0]
+                    vz15k = unpack("<f", f.read(4))[0]
+                    type15k = unpack("B", f.read(1))[0]
+                    value15k = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15k = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1l = unpack("<f", f.read(4))[0]
+                    vy1l = unpack("<f", f.read(4))[0]
+                    vz1l = unpack("<f", f.read(4))[0]
+                    type1l = unpack("B", f.read(1))[0]
+                    value1l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1l = unpack("<f", f.read(4))[0]
+                    vx2l = unpack("<f", f.read(4))[0]
+                    vy2l = unpack("<f", f.read(4))[0]
+                    vz2l = unpack("<f", f.read(4))[0]
+                    type2l = unpack("B", f.read(1))[0]
+                    value2l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2l = unpack("<f", f.read(4))[0]
+                    vx3l = unpack("<f", f.read(4))[0]
+                    vy3l = unpack("<f", f.read(4))[0]
+                    vz3l = unpack("<f", f.read(4))[0]
+                    type3l = unpack("B", f.read(1))[0]
+                    value3l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3l = unpack("<f", f.read(4))[0]
+                    vx4l = unpack("<f", f.read(4))[0]
+                    vy4l = unpack("<f", f.read(4))[0]
+                    vz4l = unpack("<f", f.read(4))[0]
+                    type4l = unpack("B", f.read(1))[0]
+                    value4l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4l = unpack("<f", f.read(4))[0]
+                    vx5l = unpack("<f", f.read(4))[0]
+                    vy5l = unpack("<f", f.read(4))[0]
+                    vz5l = unpack("<f", f.read(4))[0]
+                    type5l = unpack("B", f.read(1))[0]
+                    value5l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5l = unpack("<f", f.read(4))[0]
+                    vx6l = unpack("<f", f.read(4))[0]
+                    vy6l = unpack("<f", f.read(4))[0]
+                    vz6l = unpack("<f", f.read(4))[0]
+                    type6l = unpack("B", f.read(1))[0]
+                    value6l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6l = unpack("<f", f.read(4))[0]
+                    vx7l = unpack("<f", f.read(4))[0]
+                    vy7l = unpack("<f", f.read(4))[0]
+                    vz7l = unpack("<f", f.read(4))[0]
+                    type7l = unpack("B", f.read(1))[0]
+                    value7l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7l = unpack("<f", f.read(4))[0]
+                    vx8l = unpack("<f", f.read(4))[0]
+                    vy8l = unpack("<f", f.read(4))[0]
+                    vz8l = unpack("<f", f.read(4))[0]
+                    type8l = unpack("B", f.read(1))[0]
+                    value8l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8l = unpack("<f", f.read(4))[0]
+                    vx9l = unpack("<f", f.read(4))[0]
+                    vy9l = unpack("<f", f.read(4))[0]
+                    vz9l = unpack("<f", f.read(4))[0]
+                    type9l = unpack("B", f.read(1))[0]
+                    value9l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9l = unpack("<f", f.read(4))[0]
+                    vx10l = unpack("<f", f.read(4))[0]
+                    vy10l = unpack("<f", f.read(4))[0]
+                    vz10l = unpack("<f", f.read(4))[0]
+                    type10l = unpack("B", f.read(1))[0]
+                    value10l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10l = unpack("<f", f.read(4))[0]
+                    vx11l = unpack("<f", f.read(4))[0]
+                    vy11l = unpack("<f", f.read(4))[0]
+                    vz11l = unpack("<f", f.read(4))[0]
+                    type11l = unpack("B", f.read(1))[0]
+                    value11l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11l = unpack("<f", f.read(4))[0]
+                    vx12l = unpack("<f", f.read(4))[0]
+                    vy12l = unpack("<f", f.read(4))[0]
+                    vz12l = unpack("<f", f.read(4))[0]
+                    type12l = unpack("B", f.read(1))[0]
+                    value12l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12l = unpack("<f", f.read(4))[0]
+                    vx13l = unpack("<f", f.read(4))[0]
+                    vy13l = unpack("<f", f.read(4))[0]
+                    vz13l = unpack("<f", f.read(4))[0]
+                    type13l = unpack("B", f.read(1))[0]
+                    value13l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13l = unpack("<f", f.read(4))[0]
+                    vx14l = unpack("<f", f.read(4))[0]
+                    vy14l = unpack("<f", f.read(4))[0]
+                    vz14l = unpack("<f", f.read(4))[0]
+                    type14l = unpack("B", f.read(1))[0]
+                    value14l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14l = unpack("<f", f.read(4))[0]
+                    vx15l = unpack("<f", f.read(4))[0]
+                    vy15l = unpack("<f", f.read(4))[0]
+                    vz15l = unpack("<f", f.read(4))[0]
+                    type15l = unpack("B", f.read(1))[0]
+                    value15l = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15l = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1m = unpack("<f", f.read(4))[0]
+                    vy1m = unpack("<f", f.read(4))[0]
+                    vz1m = unpack("<f", f.read(4))[0]
+                    type1m = unpack("B", f.read(1))[0]
+                    value1m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1m = unpack("<f", f.read(4))[0]
+                    vx2m = unpack("<f", f.read(4))[0]
+                    vy2m = unpack("<f", f.read(4))[0]
+                    vz2m = unpack("<f", f.read(4))[0]
+                    type2m = unpack("B", f.read(1))[0]
+                    value2m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2m = unpack("<f", f.read(4))[0]
+                    vx3m = unpack("<f", f.read(4))[0]
+                    vy3m = unpack("<f", f.read(4))[0]
+                    vz3m = unpack("<f", f.read(4))[0]
+                    type3m = unpack("B", f.read(1))[0]
+                    value3m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3m = unpack("<f", f.read(4))[0]
+                    vx4m = unpack("<f", f.read(4))[0]
+                    vy4m = unpack("<f", f.read(4))[0]
+                    vz4m = unpack("<f", f.read(4))[0]
+                    type4m = unpack("B", f.read(1))[0]
+                    value4m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4m = unpack("<f", f.read(4))[0]
+                    vx5m = unpack("<f", f.read(4))[0]
+                    vy5m = unpack("<f", f.read(4))[0]
+                    vz5m = unpack("<f", f.read(4))[0]
+                    type5m = unpack("B", f.read(1))[0]
+                    value5m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5m = unpack("<f", f.read(4))[0]
+                    vx6m = unpack("<f", f.read(4))[0]
+                    vy6m = unpack("<f", f.read(4))[0]
+                    vz6m = unpack("<f", f.read(4))[0]
+                    type6m = unpack("B", f.read(1))[0]
+                    value6m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6m = unpack("<f", f.read(4))[0]
+                    vx7m = unpack("<f", f.read(4))[0]
+                    vy7m = unpack("<f", f.read(4))[0]
+                    vz7m = unpack("<f", f.read(4))[0]
+                    type7m = unpack("B", f.read(1))[0]
+                    value7m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7m = unpack("<f", f.read(4))[0]
+                    vx8m = unpack("<f", f.read(4))[0]
+                    vy8m = unpack("<f", f.read(4))[0]
+                    vz8m = unpack("<f", f.read(4))[0]
+                    type8m = unpack("B", f.read(1))[0]
+                    value8m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8m = unpack("<f", f.read(4))[0]
+                    vx9m = unpack("<f", f.read(4))[0]
+                    vy9m = unpack("<f", f.read(4))[0]
+                    vz9m = unpack("<f", f.read(4))[0]
+                    type9m = unpack("B", f.read(1))[0]
+                    value9m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9m = unpack("<f", f.read(4))[0]
+                    vx10m = unpack("<f", f.read(4))[0]
+                    vy10m = unpack("<f", f.read(4))[0]
+                    vz10m = unpack("<f", f.read(4))[0]
+                    type10m = unpack("B", f.read(1))[0]
+                    value10m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10m = unpack("<f", f.read(4))[0]
+                    vx11m = unpack("<f", f.read(4))[0]
+                    vy11m = unpack("<f", f.read(4))[0]
+                    vz11m = unpack("<f", f.read(4))[0]
+                    type11m = unpack("B", f.read(1))[0]
+                    value11m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11m = unpack("<f", f.read(4))[0]
+                    vx12m = unpack("<f", f.read(4))[0]
+                    vy12m = unpack("<f", f.read(4))[0]
+                    vz12m = unpack("<f", f.read(4))[0]
+                    type12m = unpack("B", f.read(1))[0]
+                    value12m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12m = unpack("<f", f.read(4))[0]
+                    vx13m = unpack("<f", f.read(4))[0]
+                    vy13m = unpack("<f", f.read(4))[0]
+                    vz13m = unpack("<f", f.read(4))[0]
+                    type13m = unpack("B", f.read(1))[0]
+                    value13m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13m = unpack("<f", f.read(4))[0]
+                    vx14m = unpack("<f", f.read(4))[0]
+                    vy14m = unpack("<f", f.read(4))[0]
+                    vz14m = unpack("<f", f.read(4))[0]
+                    type14m = unpack("B", f.read(1))[0]
+                    value14m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14m = unpack("<f", f.read(4))[0]
+                    vx15m = unpack("<f", f.read(4))[0]
+                    vy15m = unpack("<f", f.read(4))[0]
+                    vz15m = unpack("<f", f.read(4))[0]
+                    type15m = unpack("B", f.read(1))[0]
+                    value15m = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15m = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1n = unpack("<f", f.read(4))[0]
+                    vy1n = unpack("<f", f.read(4))[0]
+                    vz1n = unpack("<f", f.read(4))[0]
+                    type1n = unpack("B", f.read(1))[0]
+                    value1n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1n = unpack("<f", f.read(4))[0]
+                    vx2n = unpack("<f", f.read(4))[0]
+                    vy2n = unpack("<f", f.read(4))[0]
+                    vz2n = unpack("<f", f.read(4))[0]
+                    type2n = unpack("B", f.read(1))[0]
+                    value2n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2n = unpack("<f", f.read(4))[0]
+                    vx3n = unpack("<f", f.read(4))[0]
+                    vy3n = unpack("<f", f.read(4))[0]
+                    vz3n = unpack("<f", f.read(4))[0]
+                    type3n = unpack("B", f.read(1))[0]
+                    value3n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3n = unpack("<f", f.read(4))[0]
+                    vx4n = unpack("<f", f.read(4))[0]
+                    vy4n = unpack("<f", f.read(4))[0]
+                    vz4n = unpack("<f", f.read(4))[0]
+                    type4n = unpack("B", f.read(1))[0]
+                    value4n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4n = unpack("<f", f.read(4))[0]
+                    vx5n = unpack("<f", f.read(4))[0]
+                    vy5n = unpack("<f", f.read(4))[0]
+                    vz5n = unpack("<f", f.read(4))[0]
+                    type5n = unpack("B", f.read(1))[0]
+                    value5n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5n = unpack("<f", f.read(4))[0]
+                    vx6n = unpack("<f", f.read(4))[0]
+                    vy6n = unpack("<f", f.read(4))[0]
+                    vz6n = unpack("<f", f.read(4))[0]
+                    type6n = unpack("B", f.read(1))[0]
+                    value6n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6n = unpack("<f", f.read(4))[0]
+                    vx7n = unpack("<f", f.read(4))[0]
+                    vy7n = unpack("<f", f.read(4))[0]
+                    vz7n = unpack("<f", f.read(4))[0]
+                    type7n = unpack("B", f.read(1))[0]
+                    value7n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7n = unpack("<f", f.read(4))[0]
+                    vx8n = unpack("<f", f.read(4))[0]
+                    vy8n = unpack("<f", f.read(4))[0]
+                    vz8n = unpack("<f", f.read(4))[0]
+                    type8n = unpack("B", f.read(1))[0]
+                    value8n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8n = unpack("<f", f.read(4))[0]
+                    vx9n = unpack("<f", f.read(4))[0]
+                    vy9n = unpack("<f", f.read(4))[0]
+                    vz9n = unpack("<f", f.read(4))[0]
+                    type9n = unpack("B", f.read(1))[0]
+                    value9n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9n = unpack("<f", f.read(4))[0]
+                    vx10n = unpack("<f", f.read(4))[0]
+                    vy10n = unpack("<f", f.read(4))[0]
+                    vz10n = unpack("<f", f.read(4))[0]
+                    type10n = unpack("B", f.read(1))[0]
+                    value10n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10n = unpack("<f", f.read(4))[0]
+                    vx11n = unpack("<f", f.read(4))[0]
+                    vy11n = unpack("<f", f.read(4))[0]
+                    vz11n = unpack("<f", f.read(4))[0]
+                    type11n = unpack("B", f.read(1))[0]
+                    value11n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11n = unpack("<f", f.read(4))[0]
+                    vx12n = unpack("<f", f.read(4))[0]
+                    vy12n = unpack("<f", f.read(4))[0]
+                    vz12n = unpack("<f", f.read(4))[0]
+                    type12n = unpack("B", f.read(1))[0]
+                    value12n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12n = unpack("<f", f.read(4))[0]
+                    vx13n = unpack("<f", f.read(4))[0]
+                    vy13n = unpack("<f", f.read(4))[0]
+                    vz13n = unpack("<f", f.read(4))[0]
+                    type13n = unpack("B", f.read(1))[0]
+                    value13n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13n = unpack("<f", f.read(4))[0]
+                    vx14n = unpack("<f", f.read(4))[0]
+                    vy14n = unpack("<f", f.read(4))[0]
+                    vz14n = unpack("<f", f.read(4))[0]
+                    type14n = unpack("B", f.read(1))[0]
+                    value14n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14n = unpack("<f", f.read(4))[0]
+                    vx15n = unpack("<f", f.read(4))[0]
+                    vy15n = unpack("<f", f.read(4))[0]
+                    vz15n = unpack("<f", f.read(4))[0]
+                    type15n = unpack("B", f.read(1))[0]
+                    value15n = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15n = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1o = unpack("<f", f.read(4))[0]
+                    vy1o = unpack("<f", f.read(4))[0]
+                    vz1o = unpack("<f", f.read(4))[0]
+                    type1o = unpack("B", f.read(1))[0]
+                    value1o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1o = unpack("<f", f.read(4))[0]
+                    vx2o = unpack("<f", f.read(4))[0]
+                    vy2o = unpack("<f", f.read(4))[0]
+                    vz2o = unpack("<f", f.read(4))[0]
+                    type2o = unpack("B", f.read(1))[0]
+                    value2o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2o = unpack("<f", f.read(4))[0]
+                    vx3o = unpack("<f", f.read(4))[0]
+                    vy3o = unpack("<f", f.read(4))[0]
+                    vz3o = unpack("<f", f.read(4))[0]
+                    type3o = unpack("B", f.read(1))[0]
+                    value3o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3o = unpack("<f", f.read(4))[0]
+                    vx4o = unpack("<f", f.read(4))[0]
+                    vy4o = unpack("<f", f.read(4))[0]
+                    vz4o = unpack("<f", f.read(4))[0]
+                    type4o = unpack("B", f.read(1))[0]
+                    value4o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4o = unpack("<f", f.read(4))[0]
+                    vx5o = unpack("<f", f.read(4))[0]
+                    vy5o = unpack("<f", f.read(4))[0]
+                    vz5o = unpack("<f", f.read(4))[0]
+                    type5o = unpack("B", f.read(1))[0]
+                    value5o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5o = unpack("<f", f.read(4))[0]
+                    vx6o = unpack("<f", f.read(4))[0]
+                    vy6o = unpack("<f", f.read(4))[0]
+                    vz6o = unpack("<f", f.read(4))[0]
+                    type6o = unpack("B", f.read(1))[0]
+                    value6o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6o = unpack("<f", f.read(4))[0]
+                    vx7o = unpack("<f", f.read(4))[0]
+                    vy7o = unpack("<f", f.read(4))[0]
+                    vz7o = unpack("<f", f.read(4))[0]
+                    type7o = unpack("B", f.read(1))[0]
+                    value7o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7o = unpack("<f", f.read(4))[0]
+                    vx8o = unpack("<f", f.read(4))[0]
+                    vy8o = unpack("<f", f.read(4))[0]
+                    vz8o = unpack("<f", f.read(4))[0]
+                    type8o = unpack("B", f.read(1))[0]
+                    value8o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8o = unpack("<f", f.read(4))[0]
+                    vx9o = unpack("<f", f.read(4))[0]
+                    vy9o = unpack("<f", f.read(4))[0]
+                    vz9o = unpack("<f", f.read(4))[0]
+                    type9o = unpack("B", f.read(1))[0]
+                    value9o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9o = unpack("<f", f.read(4))[0]
+                    vx10o = unpack("<f", f.read(4))[0]
+                    vy10o = unpack("<f", f.read(4))[0]
+                    vz10o = unpack("<f", f.read(4))[0]
+                    type10o = unpack("B", f.read(1))[0]
+                    value10o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10o = unpack("<f", f.read(4))[0]
+                    vx11o = unpack("<f", f.read(4))[0]
+                    vy11o = unpack("<f", f.read(4))[0]
+                    vz11o = unpack("<f", f.read(4))[0]
+                    type11o = unpack("B", f.read(1))[0]
+                    value11o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11o = unpack("<f", f.read(4))[0]
+                    vx12o = unpack("<f", f.read(4))[0]
+                    vy12o = unpack("<f", f.read(4))[0]
+                    vz12o = unpack("<f", f.read(4))[0]
+                    type12o = unpack("B", f.read(1))[0]
+                    value12o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12o = unpack("<f", f.read(4))[0]
+                    vx13o = unpack("<f", f.read(4))[0]
+                    vy13o = unpack("<f", f.read(4))[0]
+                    vz13o = unpack("<f", f.read(4))[0]
+                    type13o = unpack("B", f.read(1))[0]
+                    value13o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13o = unpack("<f", f.read(4))[0]
+                    vx14o = unpack("<f", f.read(4))[0]
+                    vy14o = unpack("<f", f.read(4))[0]
+                    vz14o = unpack("<f", f.read(4))[0]
+                    type14o = unpack("B", f.read(1))[0]
+                    value14o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14o = unpack("<f", f.read(4))[0]
+                    vx15o = unpack("<f", f.read(4))[0]
+                    vy15o = unpack("<f", f.read(4))[0]
+                    vz15o = unpack("<f", f.read(4))[0]
+                    type15o = unpack("B", f.read(1))[0]
+                    value15o = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15o = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1p = unpack("<f", f.read(4))[0]
+                    vy1p = unpack("<f", f.read(4))[0]
+                    vz1p = unpack("<f", f.read(4))[0]
+                    type1p = unpack("B", f.read(1))[0]
+                    value1p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1p = unpack("<f", f.read(4))[0]
+                    vx2p = unpack("<f", f.read(4))[0]
+                    vy2p = unpack("<f", f.read(4))[0]
+                    vz2p = unpack("<f", f.read(4))[0]
+                    type2p = unpack("B", f.read(1))[0]
+                    value2p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2p = unpack("<f", f.read(4))[0]
+                    vx3p = unpack("<f", f.read(4))[0]
+                    vy3p = unpack("<f", f.read(4))[0]
+                    vz3p = unpack("<f", f.read(4))[0]
+                    type3p = unpack("B", f.read(1))[0]
+                    value3p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3p = unpack("<f", f.read(4))[0]
+                    vx4p = unpack("<f", f.read(4))[0]
+                    vy4p = unpack("<f", f.read(4))[0]
+                    vz4p = unpack("<f", f.read(4))[0]
+                    type4p = unpack("B", f.read(1))[0]
+                    value4p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4p = unpack("<f", f.read(4))[0]
+                    vx5p = unpack("<f", f.read(4))[0]
+                    vy5p = unpack("<f", f.read(4))[0]
+                    vz5p = unpack("<f", f.read(4))[0]
+                    type5p = unpack("B", f.read(1))[0]
+                    value5p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5p = unpack("<f", f.read(4))[0]
+                    vx6p = unpack("<f", f.read(4))[0]
+                    vy6p = unpack("<f", f.read(4))[0]
+                    vz6p = unpack("<f", f.read(4))[0]
+                    type6p = unpack("B", f.read(1))[0]
+                    value6p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6p = unpack("<f", f.read(4))[0]
+                    vx7p = unpack("<f", f.read(4))[0]
+                    vy7p = unpack("<f", f.read(4))[0]
+                    vz7p = unpack("<f", f.read(4))[0]
+                    type7p = unpack("B", f.read(1))[0]
+                    value7p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7p = unpack("<f", f.read(4))[0]
+                    vx8p = unpack("<f", f.read(4))[0]
+                    vy8p = unpack("<f", f.read(4))[0]
+                    vz8p = unpack("<f", f.read(4))[0]
+                    type8p = unpack("B", f.read(1))[0]
+                    value8p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8p = unpack("<f", f.read(4))[0]
+                    vx9p = unpack("<f", f.read(4))[0]
+                    vy9p = unpack("<f", f.read(4))[0]
+                    vz9p = unpack("<f", f.read(4))[0]
+                    type9p = unpack("B", f.read(1))[0]
+                    value9p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9p = unpack("<f", f.read(4))[0]
+                    vx10p = unpack("<f", f.read(4))[0]
+                    vy10p = unpack("<f", f.read(4))[0]
+                    vz10p = unpack("<f", f.read(4))[0]
+                    type10p = unpack("B", f.read(1))[0]
+                    value10p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10p = unpack("<f", f.read(4))[0]
+                    vx11p = unpack("<f", f.read(4))[0]
+                    vy11p = unpack("<f", f.read(4))[0]
+                    vz11p = unpack("<f", f.read(4))[0]
+                    type11p = unpack("B", f.read(1))[0]
+                    value11p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11p = unpack("<f", f.read(4))[0]
+                    vx12p = unpack("<f", f.read(4))[0]
+                    vy12p = unpack("<f", f.read(4))[0]
+                    vz12p = unpack("<f", f.read(4))[0]
+                    type12p = unpack("B", f.read(1))[0]
+                    value12p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12p = unpack("<f", f.read(4))[0]
+                    vx13p = unpack("<f", f.read(4))[0]
+                    vy13p = unpack("<f", f.read(4))[0]
+                    vz13p = unpack("<f", f.read(4))[0]
+                    type13p = unpack("B", f.read(1))[0]
+                    value13p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13p = unpack("<f", f.read(4))[0]
+                    vx14p = unpack("<f", f.read(4))[0]
+                    vy14p = unpack("<f", f.read(4))[0]
+                    vz14p = unpack("<f", f.read(4))[0]
+                    type14p = unpack("B", f.read(1))[0]
+                    value14p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14p = unpack("<f", f.read(4))[0]
+                    vx15p = unpack("<f", f.read(4))[0]
+                    vy15p = unpack("<f", f.read(4))[0]
+                    vz15p = unpack("<f", f.read(4))[0]
+                    type15p = unpack("B", f.read(1))[0]
+                    value15p = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15p = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1q = unpack("<f", f.read(4))[0]
+                    vy1q = unpack("<f", f.read(4))[0]
+                    vz1q = unpack("<f", f.read(4))[0]
+                    type1q = unpack("B", f.read(1))[0]
+                    value1q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1q = unpack("<f", f.read(4))[0]
+                    vx2q = unpack("<f", f.read(4))[0]
+                    vy2q = unpack("<f", f.read(4))[0]
+                    vz2q = unpack("<f", f.read(4))[0]
+                    type2q = unpack("B", f.read(1))[0]
+                    value2q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2q = unpack("<f", f.read(4))[0]
+                    vx3q = unpack("<f", f.read(4))[0]
+                    vy3q = unpack("<f", f.read(4))[0]
+                    vz3q = unpack("<f", f.read(4))[0]
+                    type3q = unpack("B", f.read(1))[0]
+                    value3q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3q = unpack("<f", f.read(4))[0]
+                    vx4q = unpack("<f", f.read(4))[0]
+                    vy4q = unpack("<f", f.read(4))[0]
+                    vz4q = unpack("<f", f.read(4))[0]
+                    type4q = unpack("B", f.read(1))[0]
+                    value4q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4q = unpack("<f", f.read(4))[0]
+                    vx5q = unpack("<f", f.read(4))[0]
+                    vy5q = unpack("<f", f.read(4))[0]
+                    vz5q = unpack("<f", f.read(4))[0]
+                    type5q = unpack("B", f.read(1))[0]
+                    value5q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5q = unpack("<f", f.read(4))[0]
+                    vx6q = unpack("<f", f.read(4))[0]
+                    vy6q = unpack("<f", f.read(4))[0]
+                    vz6q = unpack("<f", f.read(4))[0]
+                    type6q = unpack("B", f.read(1))[0]
+                    value6q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6q = unpack("<f", f.read(4))[0]
+                    vx7q = unpack("<f", f.read(4))[0]
+                    vy7q = unpack("<f", f.read(4))[0]
+                    vz7q = unpack("<f", f.read(4))[0]
+                    type7q = unpack("B", f.read(1))[0]
+                    value7q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7q = unpack("<f", f.read(4))[0]
+                    vx8q = unpack("<f", f.read(4))[0]
+                    vy8q = unpack("<f", f.read(4))[0]
+                    vz8q = unpack("<f", f.read(4))[0]
+                    type8q = unpack("B", f.read(1))[0]
+                    value8q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8q = unpack("<f", f.read(4))[0]
+                    vx9q = unpack("<f", f.read(4))[0]
+                    vy9q = unpack("<f", f.read(4))[0]
+                    vz9q = unpack("<f", f.read(4))[0]
+                    type9q = unpack("B", f.read(1))[0]
+                    value9q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9q = unpack("<f", f.read(4))[0]
+                    vx10q = unpack("<f", f.read(4))[0]
+                    vy10q = unpack("<f", f.read(4))[0]
+                    vz10q = unpack("<f", f.read(4))[0]
+                    type10q = unpack("B", f.read(1))[0]
+                    value10q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10q = unpack("<f", f.read(4))[0]
+                    vx11q = unpack("<f", f.read(4))[0]
+                    vy11q = unpack("<f", f.read(4))[0]
+                    vz11q = unpack("<f", f.read(4))[0]
+                    type11q = unpack("B", f.read(1))[0]
+                    value11q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11q = unpack("<f", f.read(4))[0]
+                    vx12q = unpack("<f", f.read(4))[0]
+                    vy12q = unpack("<f", f.read(4))[0]
+                    vz12q = unpack("<f", f.read(4))[0]
+                    type12q = unpack("B", f.read(1))[0]
+                    value12q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12q = unpack("<f", f.read(4))[0]
+                    vx13q = unpack("<f", f.read(4))[0]
+                    vy13q = unpack("<f", f.read(4))[0]
+                    vz13q = unpack("<f", f.read(4))[0]
+                    type13q = unpack("B", f.read(1))[0]
+                    value13q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13q = unpack("<f", f.read(4))[0]
+                    vx14q = unpack("<f", f.read(4))[0]
+                    vy14q = unpack("<f", f.read(4))[0]
+                    vz14q = unpack("<f", f.read(4))[0]
+                    type14q = unpack("B", f.read(1))[0]
+                    value14q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14q = unpack("<f", f.read(4))[0]
+                    vx15q = unpack("<f", f.read(4))[0]
+                    vy15q = unpack("<f", f.read(4))[0]
+                    vz15q = unpack("<f", f.read(4))[0]
+                    type15q = unpack("B", f.read(1))[0]
+                    value15q = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15q = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1r = unpack("<f", f.read(4))[0]
+                    vy1r = unpack("<f", f.read(4))[0]
+                    vz1r = unpack("<f", f.read(4))[0]
+                    type1r = unpack("B", f.read(1))[0]
+                    value1r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1r = unpack("<f", f.read(4))[0]
+                    vx2r = unpack("<f", f.read(4))[0]
+                    vy2r = unpack("<f", f.read(4))[0]
+                    vz2r = unpack("<f", f.read(4))[0]
+                    type2r = unpack("B", f.read(1))[0]
+                    value2r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2r = unpack("<f", f.read(4))[0]
+                    vx3r = unpack("<f", f.read(4))[0]
+                    vy3r = unpack("<f", f.read(4))[0]
+                    vz3r = unpack("<f", f.read(4))[0]
+                    type3r = unpack("B", f.read(1))[0]
+                    value3r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3r = unpack("<f", f.read(4))[0]
+                    vx4r = unpack("<f", f.read(4))[0]
+                    vy4r = unpack("<f", f.read(4))[0]
+                    vz4r = unpack("<f", f.read(4))[0]
+                    type4r = unpack("B", f.read(1))[0]
+                    value4r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4r = unpack("<f", f.read(4))[0]
+                    vx5r = unpack("<f", f.read(4))[0]
+                    vy5r = unpack("<f", f.read(4))[0]
+                    vz5r = unpack("<f", f.read(4))[0]
+                    type5r = unpack("B", f.read(1))[0]
+                    value5r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5r = unpack("<f", f.read(4))[0]
+                    vx6r = unpack("<f", f.read(4))[0]
+                    vy6r = unpack("<f", f.read(4))[0]
+                    vz6r = unpack("<f", f.read(4))[0]
+                    type6r = unpack("B", f.read(1))[0]
+                    value6r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6r = unpack("<f", f.read(4))[0]
+                    vx7r = unpack("<f", f.read(4))[0]
+                    vy7r = unpack("<f", f.read(4))[0]
+                    vz7r = unpack("<f", f.read(4))[0]
+                    type7r = unpack("B", f.read(1))[0]
+                    value7r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7r = unpack("<f", f.read(4))[0]
+                    vx8r = unpack("<f", f.read(4))[0]
+                    vy8r = unpack("<f", f.read(4))[0]
+                    vz8r = unpack("<f", f.read(4))[0]
+                    type8r = unpack("B", f.read(1))[0]
+                    value8r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8r = unpack("<f", f.read(4))[0]
+                    vx9r = unpack("<f", f.read(4))[0]
+                    vy9r = unpack("<f", f.read(4))[0]
+                    vz9r = unpack("<f", f.read(4))[0]
+                    type9r = unpack("B", f.read(1))[0]
+                    value9r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9r = unpack("<f", f.read(4))[0]
+                    vx10r = unpack("<f", f.read(4))[0]
+                    vy10r = unpack("<f", f.read(4))[0]
+                    vz10r = unpack("<f", f.read(4))[0]
+                    type10r = unpack("B", f.read(1))[0]
+                    value10r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10r = unpack("<f", f.read(4))[0]
+                    vx11r = unpack("<f", f.read(4))[0]
+                    vy11r = unpack("<f", f.read(4))[0]
+                    vz11r = unpack("<f", f.read(4))[0]
+                    type11r = unpack("B", f.read(1))[0]
+                    value11r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11r = unpack("<f", f.read(4))[0]
+                    vx12r = unpack("<f", f.read(4))[0]
+                    vy12r = unpack("<f", f.read(4))[0]
+                    vz12r = unpack("<f", f.read(4))[0]
+                    type12r = unpack("B", f.read(1))[0]
+                    value12r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12r = unpack("<f", f.read(4))[0]
+                    vx13r = unpack("<f", f.read(4))[0]
+                    vy13r = unpack("<f", f.read(4))[0]
+                    vz13r = unpack("<f", f.read(4))[0]
+                    type13r = unpack("B", f.read(1))[0]
+                    value13r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13r = unpack("<f", f.read(4))[0]
+                    vx14r = unpack("<f", f.read(4))[0]
+                    vy14r = unpack("<f", f.read(4))[0]
+                    vz14r = unpack("<f", f.read(4))[0]
+                    type14r = unpack("B", f.read(1))[0]
+                    value14r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14r = unpack("<f", f.read(4))[0]
+                    vx15r = unpack("<f", f.read(4))[0]
+                    vy15r = unpack("<f", f.read(4))[0]
+                    vz15r = unpack("<f", f.read(4))[0]
+                    type15r = unpack("B", f.read(1))[0]
+                    value15r = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15r = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1s = unpack("<f", f.read(4))[0]
+                    vy1s = unpack("<f", f.read(4))[0]
+                    vz1s = unpack("<f", f.read(4))[0]
+                    type1s = unpack("B", f.read(1))[0]
+                    value1s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1s = unpack("<f", f.read(4))[0]
+                    vx2s = unpack("<f", f.read(4))[0]
+                    vy2s = unpack("<f", f.read(4))[0]
+                    vz2s = unpack("<f", f.read(4))[0]
+                    type2s = unpack("B", f.read(1))[0]
+                    value2s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2s = unpack("<f", f.read(4))[0]
+                    vx3s = unpack("<f", f.read(4))[0]
+                    vy3s = unpack("<f", f.read(4))[0]
+                    vz3s = unpack("<f", f.read(4))[0]
+                    type3s = unpack("B", f.read(1))[0]
+                    value3s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3s = unpack("<f", f.read(4))[0]
+                    vx4s = unpack("<f", f.read(4))[0]
+                    vy4s = unpack("<f", f.read(4))[0]
+                    vz4s = unpack("<f", f.read(4))[0]
+                    type4s = unpack("B", f.read(1))[0]
+                    value4s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4s = unpack("<f", f.read(4))[0]
+                    vx5s = unpack("<f", f.read(4))[0]
+                    vy5s = unpack("<f", f.read(4))[0]
+                    vz5s = unpack("<f", f.read(4))[0]
+                    type5s = unpack("B", f.read(1))[0]
+                    value5s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5s = unpack("<f", f.read(4))[0]
+                    vx6s = unpack("<f", f.read(4))[0]
+                    vy6s = unpack("<f", f.read(4))[0]
+                    vz6s = unpack("<f", f.read(4))[0]
+                    type6s = unpack("B", f.read(1))[0]
+                    value6s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6s = unpack("<f", f.read(4))[0]
+                    vx7s = unpack("<f", f.read(4))[0]
+                    vy7s = unpack("<f", f.read(4))[0]
+                    vz7s = unpack("<f", f.read(4))[0]
+                    type7s = unpack("B", f.read(1))[0]
+                    value7s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7s = unpack("<f", f.read(4))[0]
+                    vx8s = unpack("<f", f.read(4))[0]
+                    vy8s = unpack("<f", f.read(4))[0]
+                    vz8s = unpack("<f", f.read(4))[0]
+                    type8s = unpack("B", f.read(1))[0]
+                    value8s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8s = unpack("<f", f.read(4))[0]
+                    vx9s = unpack("<f", f.read(4))[0]
+                    vy9s = unpack("<f", f.read(4))[0]
+                    vz9s = unpack("<f", f.read(4))[0]
+                    type9s = unpack("B", f.read(1))[0]
+                    value9s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9s = unpack("<f", f.read(4))[0]
+                    vx10s = unpack("<f", f.read(4))[0]
+                    vy10s = unpack("<f", f.read(4))[0]
+                    vz10s = unpack("<f", f.read(4))[0]
+                    type10s = unpack("B", f.read(1))[0]
+                    value10s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10s = unpack("<f", f.read(4))[0]
+                    vx11s = unpack("<f", f.read(4))[0]
+                    vy11s = unpack("<f", f.read(4))[0]
+                    vz11s = unpack("<f", f.read(4))[0]
+                    type11s = unpack("B", f.read(1))[0]
+                    value11s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11s = unpack("<f", f.read(4))[0]
+                    vx12s = unpack("<f", f.read(4))[0]
+                    vy12s = unpack("<f", f.read(4))[0]
+                    vz12s = unpack("<f", f.read(4))[0]
+                    type12s = unpack("B", f.read(1))[0]
+                    value12s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12s = unpack("<f", f.read(4))[0]
+                    vx13s = unpack("<f", f.read(4))[0]
+                    vy13s = unpack("<f", f.read(4))[0]
+                    vz13s = unpack("<f", f.read(4))[0]
+                    type13s = unpack("B", f.read(1))[0]
+                    value13s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13s = unpack("<f", f.read(4))[0]
+                    vx14s = unpack("<f", f.read(4))[0]
+                    vy14s = unpack("<f", f.read(4))[0]
+                    vz14s = unpack("<f", f.read(4))[0]
+                    type14s = unpack("B", f.read(1))[0]
+                    value14s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14s = unpack("<f", f.read(4))[0]
+                    vx15s = unpack("<f", f.read(4))[0]
+                    vy15s = unpack("<f", f.read(4))[0]
+                    vz15s = unpack("<f", f.read(4))[0]
+                    type15s = unpack("B", f.read(1))[0]
+                    value15s = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15s = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1t = unpack("<f", f.read(4))[0]
+                    vy1t = unpack("<f", f.read(4))[0]
+                    vz1t = unpack("<f", f.read(4))[0]
+                    type1t = unpack("B", f.read(1))[0]
+                    value1t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1t = unpack("<f", f.read(4))[0]
+                    vx2t = unpack("<f", f.read(4))[0]
+                    vy2t = unpack("<f", f.read(4))[0]
+                    vz2t = unpack("<f", f.read(4))[0]
+                    type2t = unpack("B", f.read(1))[0]
+                    value2t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2t = unpack("<f", f.read(4))[0]
+                    vx3t = unpack("<f", f.read(4))[0]
+                    vy3t = unpack("<f", f.read(4))[0]
+                    vz3t = unpack("<f", f.read(4))[0]
+                    type3t = unpack("B", f.read(1))[0]
+                    value3t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3t = unpack("<f", f.read(4))[0]
+                    vx4t = unpack("<f", f.read(4))[0]
+                    vy4t = unpack("<f", f.read(4))[0]
+                    vz4t = unpack("<f", f.read(4))[0]
+                    type4t = unpack("B", f.read(1))[0]
+                    value4t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4t = unpack("<f", f.read(4))[0]
+                    vx5t = unpack("<f", f.read(4))[0]
+                    vy5t = unpack("<f", f.read(4))[0]
+                    vz5t = unpack("<f", f.read(4))[0]
+                    type5t = unpack("B", f.read(1))[0]
+                    value5t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5t = unpack("<f", f.read(4))[0]
+                    vx6t = unpack("<f", f.read(4))[0]
+                    vy6t = unpack("<f", f.read(4))[0]
+                    vz6t = unpack("<f", f.read(4))[0]
+                    type6t = unpack("B", f.read(1))[0]
+                    value6t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6t = unpack("<f", f.read(4))[0]
+                    vx7t = unpack("<f", f.read(4))[0]
+                    vy7t = unpack("<f", f.read(4))[0]
+                    vz7t = unpack("<f", f.read(4))[0]
+                    type7t = unpack("B", f.read(1))[0]
+                    value7t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7t = unpack("<f", f.read(4))[0]
+                    vx8t = unpack("<f", f.read(4))[0]
+                    vy8t = unpack("<f", f.read(4))[0]
+                    vz8t = unpack("<f", f.read(4))[0]
+                    type8t = unpack("B", f.read(1))[0]
+                    value8t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8t = unpack("<f", f.read(4))[0]
+                    vx9t = unpack("<f", f.read(4))[0]
+                    vy9t = unpack("<f", f.read(4))[0]
+                    vz9t = unpack("<f", f.read(4))[0]
+                    type9t = unpack("B", f.read(1))[0]
+                    value9t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9t = unpack("<f", f.read(4))[0]
+                    vx10t = unpack("<f", f.read(4))[0]
+                    vy10t = unpack("<f", f.read(4))[0]
+                    vz10t = unpack("<f", f.read(4))[0]
+                    type10t = unpack("B", f.read(1))[0]
+                    value10t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10t = unpack("<f", f.read(4))[0]
+                    vx11t = unpack("<f", f.read(4))[0]
+                    vy11t = unpack("<f", f.read(4))[0]
+                    vz11t = unpack("<f", f.read(4))[0]
+                    type11t = unpack("B", f.read(1))[0]
+                    value11t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11t = unpack("<f", f.read(4))[0]
+                    vx12t = unpack("<f", f.read(4))[0]
+                    vy12t = unpack("<f", f.read(4))[0]
+                    vz12t = unpack("<f", f.read(4))[0]
+                    type12t = unpack("B", f.read(1))[0]
+                    value12t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12t = unpack("<f", f.read(4))[0]
+                    vx13t = unpack("<f", f.read(4))[0]
+                    vy13t = unpack("<f", f.read(4))[0]
+                    vz13t = unpack("<f", f.read(4))[0]
+                    type13t = unpack("B", f.read(1))[0]
+                    value13t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13t = unpack("<f", f.read(4))[0]
+                    vx14t = unpack("<f", f.read(4))[0]
+                    vy14t = unpack("<f", f.read(4))[0]
+                    vz14t = unpack("<f", f.read(4))[0]
+                    type14t = unpack("B", f.read(1))[0]
+                    value14t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14t = unpack("<f", f.read(4))[0]
+                    vx15t = unpack("<f", f.read(4))[0]
+                    vy15t = unpack("<f", f.read(4))[0]
+                    vz15t = unpack("<f", f.read(4))[0]
+                    type15t = unpack("B", f.read(1))[0]
+                    value15t = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15t = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1u = unpack("<f", f.read(4))[0]
+                    vy1u = unpack("<f", f.read(4))[0]
+                    vz1u = unpack("<f", f.read(4))[0]
+                    type1u = unpack("B", f.read(1))[0]
+                    value1u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1u = unpack("<f", f.read(4))[0]
+                    vx2u = unpack("<f", f.read(4))[0]
+                    vy2u = unpack("<f", f.read(4))[0]
+                    vz2u = unpack("<f", f.read(4))[0]
+                    type2u = unpack("B", f.read(1))[0]
+                    value2u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2u = unpack("<f", f.read(4))[0]
+                    vx3u = unpack("<f", f.read(4))[0]
+                    vy3u = unpack("<f", f.read(4))[0]
+                    vz3u = unpack("<f", f.read(4))[0]
+                    type3u = unpack("B", f.read(1))[0]
+                    value3u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3u = unpack("<f", f.read(4))[0]
+                    vx4u = unpack("<f", f.read(4))[0]
+                    vy4u = unpack("<f", f.read(4))[0]
+                    vz4u = unpack("<f", f.read(4))[0]
+                    type4u = unpack("B", f.read(1))[0]
+                    value4u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4u = unpack("<f", f.read(4))[0]
+                    vx5u = unpack("<f", f.read(4))[0]
+                    vy5u = unpack("<f", f.read(4))[0]
+                    vz5u = unpack("<f", f.read(4))[0]
+                    type5u = unpack("B", f.read(1))[0]
+                    value5u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5u = unpack("<f", f.read(4))[0]
+                    vx6u = unpack("<f", f.read(4))[0]
+                    vy6u = unpack("<f", f.read(4))[0]
+                    vz6u = unpack("<f", f.read(4))[0]
+                    type6u = unpack("B", f.read(1))[0]
+                    value6u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6u = unpack("<f", f.read(4))[0]
+                    vx7u = unpack("<f", f.read(4))[0]
+                    vy7u = unpack("<f", f.read(4))[0]
+                    vz7u = unpack("<f", f.read(4))[0]
+                    type7u = unpack("B", f.read(1))[0]
+                    value7u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7u = unpack("<f", f.read(4))[0]
+                    vx8u = unpack("<f", f.read(4))[0]
+                    vy8u = unpack("<f", f.read(4))[0]
+                    vz8u = unpack("<f", f.read(4))[0]
+                    type8u = unpack("B", f.read(1))[0]
+                    value8u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8u = unpack("<f", f.read(4))[0]
+                    vx9u = unpack("<f", f.read(4))[0]
+                    vy9u = unpack("<f", f.read(4))[0]
+                    vz9u = unpack("<f", f.read(4))[0]
+                    type9u = unpack("B", f.read(1))[0]
+                    value9u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9u = unpack("<f", f.read(4))[0]
+                    vx10u = unpack("<f", f.read(4))[0]
+                    vy10u = unpack("<f", f.read(4))[0]
+                    vz10u = unpack("<f", f.read(4))[0]
+                    type10u = unpack("B", f.read(1))[0]
+                    value10u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10u = unpack("<f", f.read(4))[0]
+                    vx11u = unpack("<f", f.read(4))[0]
+                    vy11u = unpack("<f", f.read(4))[0]
+                    vz11u = unpack("<f", f.read(4))[0]
+                    type11u = unpack("B", f.read(1))[0]
+                    value11u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11u = unpack("<f", f.read(4))[0]
+                    vx12u = unpack("<f", f.read(4))[0]
+                    vy12u = unpack("<f", f.read(4))[0]
+                    vz12u = unpack("<f", f.read(4))[0]
+                    type12u = unpack("B", f.read(1))[0]
+                    value12u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12u = unpack("<f", f.read(4))[0]
+                    vx13u = unpack("<f", f.read(4))[0]
+                    vy13u = unpack("<f", f.read(4))[0]
+                    vz13u = unpack("<f", f.read(4))[0]
+                    type13u = unpack("B", f.read(1))[0]
+                    value13u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13u = unpack("<f", f.read(4))[0]
+                    vx14u = unpack("<f", f.read(4))[0]
+                    vy14u = unpack("<f", f.read(4))[0]
+                    vz14u = unpack("<f", f.read(4))[0]
+                    type14u = unpack("B", f.read(1))[0]
+                    value14u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14u = unpack("<f", f.read(4))[0]
+                    vx15u = unpack("<f", f.read(4))[0]
+                    vy15u = unpack("<f", f.read(4))[0]
+                    vz15u = unpack("<f", f.read(4))[0]
+                    type15u = unpack("B", f.read(1))[0]
+                    value15u = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15u = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1v = unpack("<f", f.read(4))[0]
+                    vy1v = unpack("<f", f.read(4))[0]
+                    vz1v = unpack("<f", f.read(4))[0]
+                    type1v = unpack("B", f.read(1))[0]
+                    value1v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1v = unpack("<f", f.read(4))[0]
+                    vx2v = unpack("<f", f.read(4))[0]
+                    vy2v = unpack("<f", f.read(4))[0]
+                    vz2v = unpack("<f", f.read(4))[0]
+                    type2v = unpack("B", f.read(1))[0]
+                    value2v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2v = unpack("<f", f.read(4))[0]
+                    vx3v = unpack("<f", f.read(4))[0]
+                    vy3v = unpack("<f", f.read(4))[0]
+                    vz3v = unpack("<f", f.read(4))[0]
+                    type3v = unpack("B", f.read(1))[0]
+                    value3v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3v = unpack("<f", f.read(4))[0]
+                    vx4v = unpack("<f", f.read(4))[0]
+                    vy4v = unpack("<f", f.read(4))[0]
+                    vz4v = unpack("<f", f.read(4))[0]
+                    type4v = unpack("B", f.read(1))[0]
+                    value4v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4v = unpack("<f", f.read(4))[0]
+                    vx5v = unpack("<f", f.read(4))[0]
+                    vy5v = unpack("<f", f.read(4))[0]
+                    vz5v = unpack("<f", f.read(4))[0]
+                    type5v = unpack("B", f.read(1))[0]
+                    value5v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5v = unpack("<f", f.read(4))[0]
+                    vx6v = unpack("<f", f.read(4))[0]
+                    vy6v = unpack("<f", f.read(4))[0]
+                    vz6v = unpack("<f", f.read(4))[0]
+                    type6v = unpack("B", f.read(1))[0]
+                    value6v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6v = unpack("<f", f.read(4))[0]
+                    vx7v = unpack("<f", f.read(4))[0]
+                    vy7v = unpack("<f", f.read(4))[0]
+                    vz7v = unpack("<f", f.read(4))[0]
+                    type7v = unpack("B", f.read(1))[0]
+                    value7v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7v = unpack("<f", f.read(4))[0]
+                    vx8v = unpack("<f", f.read(4))[0]
+                    vy8v = unpack("<f", f.read(4))[0]
+                    vz8v = unpack("<f", f.read(4))[0]
+                    type8v = unpack("B", f.read(1))[0]
+                    value8v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8v = unpack("<f", f.read(4))[0]
+                    vx9v = unpack("<f", f.read(4))[0]
+                    vy9v = unpack("<f", f.read(4))[0]
+                    vz9v = unpack("<f", f.read(4))[0]
+                    type9v = unpack("B", f.read(1))[0]
+                    value9v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9v = unpack("<f", f.read(4))[0]
+                    vx10v = unpack("<f", f.read(4))[0]
+                    vy10v = unpack("<f", f.read(4))[0]
+                    vz10v = unpack("<f", f.read(4))[0]
+                    type10v = unpack("B", f.read(1))[0]
+                    value10v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10v = unpack("<f", f.read(4))[0]
+                    vx11v = unpack("<f", f.read(4))[0]
+                    vy11v = unpack("<f", f.read(4))[0]
+                    vz11v = unpack("<f", f.read(4))[0]
+                    type11v = unpack("B", f.read(1))[0]
+                    value11v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11v = unpack("<f", f.read(4))[0]
+                    vx12v = unpack("<f", f.read(4))[0]
+                    vy12v = unpack("<f", f.read(4))[0]
+                    vz12v = unpack("<f", f.read(4))[0]
+                    type12v = unpack("B", f.read(1))[0]
+                    value12v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12v = unpack("<f", f.read(4))[0]
+                    vx13v = unpack("<f", f.read(4))[0]
+                    vy13v = unpack("<f", f.read(4))[0]
+                    vz13v = unpack("<f", f.read(4))[0]
+                    type13v = unpack("B", f.read(1))[0]
+                    value13v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13v = unpack("<f", f.read(4))[0]
+                    vx14v = unpack("<f", f.read(4))[0]
+                    vy14v = unpack("<f", f.read(4))[0]
+                    vz14v = unpack("<f", f.read(4))[0]
+                    type14v = unpack("B", f.read(1))[0]
+                    value14v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14v = unpack("<f", f.read(4))[0]
+                    vx15v = unpack("<f", f.read(4))[0]
+                    vy15v = unpack("<f", f.read(4))[0]
+                    vz15v = unpack("<f", f.read(4))[0]
+                    type15v = unpack("B", f.read(1))[0]
+                    value15v = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15v = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1w = unpack("<f", f.read(4))[0]
+                    vy1w = unpack("<f", f.read(4))[0]
+                    vz1w = unpack("<f", f.read(4))[0]
+                    type1w = unpack("B", f.read(1))[0]
+                    value1w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1w = unpack("<f", f.read(4))[0]
+                    vx2w = unpack("<f", f.read(4))[0]
+                    vy2w = unpack("<f", f.read(4))[0]
+                    vz2w = unpack("<f", f.read(4))[0]
+                    type2w = unpack("B", f.read(1))[0]
+                    value2w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2w = unpack("<f", f.read(4))[0]
+                    vx3w = unpack("<f", f.read(4))[0]
+                    vy3w = unpack("<f", f.read(4))[0]
+                    vz3w = unpack("<f", f.read(4))[0]
+                    type3w = unpack("B", f.read(1))[0]
+                    value3w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3w = unpack("<f", f.read(4))[0]
+                    vx4w = unpack("<f", f.read(4))[0]
+                    vy4w = unpack("<f", f.read(4))[0]
+                    vz4w = unpack("<f", f.read(4))[0]
+                    type4w = unpack("B", f.read(1))[0]
+                    value4w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4w = unpack("<f", f.read(4))[0]
+                    vx5w = unpack("<f", f.read(4))[0]
+                    vy5w = unpack("<f", f.read(4))[0]
+                    vz5w = unpack("<f", f.read(4))[0]
+                    type5w = unpack("B", f.read(1))[0]
+                    value5w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5w = unpack("<f", f.read(4))[0]
+                    vx6w = unpack("<f", f.read(4))[0]
+                    vy6w = unpack("<f", f.read(4))[0]
+                    vz6w = unpack("<f", f.read(4))[0]
+                    type6w = unpack("B", f.read(1))[0]
+                    value6w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6w = unpack("<f", f.read(4))[0]
+                    vx7w = unpack("<f", f.read(4))[0]
+                    vy7w = unpack("<f", f.read(4))[0]
+                    vz7w = unpack("<f", f.read(4))[0]
+                    type7w = unpack("B", f.read(1))[0]
+                    value7w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7w = unpack("<f", f.read(4))[0]
+                    vx8w = unpack("<f", f.read(4))[0]
+                    vy8w = unpack("<f", f.read(4))[0]
+                    vz8w = unpack("<f", f.read(4))[0]
+                    type8w = unpack("B", f.read(1))[0]
+                    value8w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8w = unpack("<f", f.read(4))[0]
+                    vx9w = unpack("<f", f.read(4))[0]
+                    vy9w = unpack("<f", f.read(4))[0]
+                    vz9w = unpack("<f", f.read(4))[0]
+                    type9w = unpack("B", f.read(1))[0]
+                    value9w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9w = unpack("<f", f.read(4))[0]
+                    vx10w = unpack("<f", f.read(4))[0]
+                    vy10w = unpack("<f", f.read(4))[0]
+                    vz10w = unpack("<f", f.read(4))[0]
+                    type10w = unpack("B", f.read(1))[0]
+                    value10w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10w = unpack("<f", f.read(4))[0]
+                    vx11w = unpack("<f", f.read(4))[0]
+                    vy11w = unpack("<f", f.read(4))[0]
+                    vz11w = unpack("<f", f.read(4))[0]
+                    type11w = unpack("B", f.read(1))[0]
+                    value11w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11w = unpack("<f", f.read(4))[0]
+                    vx12w = unpack("<f", f.read(4))[0]
+                    vy12w = unpack("<f", f.read(4))[0]
+                    vz12w = unpack("<f", f.read(4))[0]
+                    type12w = unpack("B", f.read(1))[0]
+                    value12w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12w = unpack("<f", f.read(4))[0]
+                    vx13w = unpack("<f", f.read(4))[0]
+                    vy13w = unpack("<f", f.read(4))[0]
+                    vz13w = unpack("<f", f.read(4))[0]
+                    type13w = unpack("B", f.read(1))[0]
+                    value13w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13w = unpack("<f", f.read(4))[0]
+                    vx14w = unpack("<f", f.read(4))[0]
+                    vy14w = unpack("<f", f.read(4))[0]
+                    vz14w = unpack("<f", f.read(4))[0]
+                    type14w = unpack("B", f.read(1))[0]
+                    value14w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14w = unpack("<f", f.read(4))[0]
+                    vx15w = unpack("<f", f.read(4))[0]
+                    vy15w = unpack("<f", f.read(4))[0]
+                    vz15w = unpack("<f", f.read(4))[0]
+                    type15w = unpack("B", f.read(1))[0]
+                    value15w = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15w = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1x = unpack("<f", f.read(4))[0]
+                    vy1x = unpack("<f", f.read(4))[0]
+                    vz1x = unpack("<f", f.read(4))[0]
+                    type1x = unpack("B", f.read(1))[0]
+                    value1x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1x = unpack("<f", f.read(4))[0]
+                    vx2x = unpack("<f", f.read(4))[0]
+                    vy2x = unpack("<f", f.read(4))[0]
+                    vz2x = unpack("<f", f.read(4))[0]
+                    type2x = unpack("B", f.read(1))[0]
+                    value2x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2x = unpack("<f", f.read(4))[0]
+                    vx3x = unpack("<f", f.read(4))[0]
+                    vy3x = unpack("<f", f.read(4))[0]
+                    vz3x = unpack("<f", f.read(4))[0]
+                    type3x = unpack("B", f.read(1))[0]
+                    value3x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3x = unpack("<f", f.read(4))[0]
+                    vx4x = unpack("<f", f.read(4))[0]
+                    vy4x = unpack("<f", f.read(4))[0]
+                    vz4x = unpack("<f", f.read(4))[0]
+                    type4x = unpack("B", f.read(1))[0]
+                    value4x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4x = unpack("<f", f.read(4))[0]
+                    vx5x = unpack("<f", f.read(4))[0]
+                    vy5x = unpack("<f", f.read(4))[0]
+                    vz5x = unpack("<f", f.read(4))[0]
+                    type5x = unpack("B", f.read(1))[0]
+                    value5x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5x = unpack("<f", f.read(4))[0]
+                    vx6x = unpack("<f", f.read(4))[0]
+                    vy6x = unpack("<f", f.read(4))[0]
+                    vz6x = unpack("<f", f.read(4))[0]
+                    type6x = unpack("B", f.read(1))[0]
+                    value6x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6x = unpack("<f", f.read(4))[0]
+                    vx7x = unpack("<f", f.read(4))[0]
+                    vy7x = unpack("<f", f.read(4))[0]
+                    vz7x = unpack("<f", f.read(4))[0]
+                    type7x = unpack("B", f.read(1))[0]
+                    value7x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7x = unpack("<f", f.read(4))[0]
+                    vx8x = unpack("<f", f.read(4))[0]
+                    vy8x = unpack("<f", f.read(4))[0]
+                    vz8x = unpack("<f", f.read(4))[0]
+                    type8x = unpack("B", f.read(1))[0]
+                    value8x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8x = unpack("<f", f.read(4))[0]
+                    vx9x = unpack("<f", f.read(4))[0]
+                    vy9x = unpack("<f", f.read(4))[0]
+                    vz9x = unpack("<f", f.read(4))[0]
+                    type9x = unpack("B", f.read(1))[0]
+                    value9x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9x = unpack("<f", f.read(4))[0]
+                    vx10x = unpack("<f", f.read(4))[0]
+                    vy10x = unpack("<f", f.read(4))[0]
+                    vz10x = unpack("<f", f.read(4))[0]
+                    type10x = unpack("B", f.read(1))[0]
+                    value10x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10x = unpack("<f", f.read(4))[0]
+                    vx11x = unpack("<f", f.read(4))[0]
+                    vy11x = unpack("<f", f.read(4))[0]
+                    vz11x = unpack("<f", f.read(4))[0]
+                    type11x = unpack("B", f.read(1))[0]
+                    value11x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11x = unpack("<f", f.read(4))[0]
+                    vx12x = unpack("<f", f.read(4))[0]
+                    vy12x = unpack("<f", f.read(4))[0]
+                    vz12x = unpack("<f", f.read(4))[0]
+                    type12x = unpack("B", f.read(1))[0]
+                    value12x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12x = unpack("<f", f.read(4))[0]
+                    vx13x = unpack("<f", f.read(4))[0]
+                    vy13x = unpack("<f", f.read(4))[0]
+                    vz13x = unpack("<f", f.read(4))[0]
+                    type13x = unpack("B", f.read(1))[0]
+                    value13x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13x = unpack("<f", f.read(4))[0]
+                    vx14x = unpack("<f", f.read(4))[0]
+                    vy14x = unpack("<f", f.read(4))[0]
+                    vz14x = unpack("<f", f.read(4))[0]
+                    type14x = unpack("B", f.read(1))[0]
+                    value14x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14x = unpack("<f", f.read(4))[0]
+                    vx15x = unpack("<f", f.read(4))[0]
+                    vy15x = unpack("<f", f.read(4))[0]
+                    vz15x = unpack("<f", f.read(4))[0]
+                    type15x = unpack("B", f.read(1))[0]
+                    value15x = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15x = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1y = unpack("<f", f.read(4))[0]
+                    vy1y = unpack("<f", f.read(4))[0]
+                    vz1y = unpack("<f", f.read(4))[0]
+                    type1y = unpack("B", f.read(1))[0]
+                    value1y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1y = unpack("<f", f.read(4))[0]
+                    vx2y = unpack("<f", f.read(4))[0]
+                    vy2y = unpack("<f", f.read(4))[0]
+                    vz2y = unpack("<f", f.read(4))[0]
+                    type2y = unpack("B", f.read(1))[0]
+                    value2y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2y = unpack("<f", f.read(4))[0]
+                    vx3y = unpack("<f", f.read(4))[0]
+                    vy3y = unpack("<f", f.read(4))[0]
+                    vz3y = unpack("<f", f.read(4))[0]
+                    type3y = unpack("B", f.read(1))[0]
+                    value3y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3y = unpack("<f", f.read(4))[0]
+                    vx4y = unpack("<f", f.read(4))[0]
+                    vy4y = unpack("<f", f.read(4))[0]
+                    vz4y = unpack("<f", f.read(4))[0]
+                    type4y = unpack("B", f.read(1))[0]
+                    value4y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4y = unpack("<f", f.read(4))[0]
+                    vx5y = unpack("<f", f.read(4))[0]
+                    vy5y = unpack("<f", f.read(4))[0]
+                    vz5y = unpack("<f", f.read(4))[0]
+                    type5y = unpack("B", f.read(1))[0]
+                    value5y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5y = unpack("<f", f.read(4))[0]
+                    vx6y = unpack("<f", f.read(4))[0]
+                    vy6y = unpack("<f", f.read(4))[0]
+                    vz6y = unpack("<f", f.read(4))[0]
+                    type6y = unpack("B", f.read(1))[0]
+                    value6y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6y = unpack("<f", f.read(4))[0]
+                    vx7y = unpack("<f", f.read(4))[0]
+                    vy7y = unpack("<f", f.read(4))[0]
+                    vz7y = unpack("<f", f.read(4))[0]
+                    type7y = unpack("B", f.read(1))[0]
+                    value7y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7y = unpack("<f", f.read(4))[0]
+                    vx8y = unpack("<f", f.read(4))[0]
+                    vy8y = unpack("<f", f.read(4))[0]
+                    vz8y = unpack("<f", f.read(4))[0]
+                    type8y = unpack("B", f.read(1))[0]
+                    value8y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8y = unpack("<f", f.read(4))[0]
+                    vx9y = unpack("<f", f.read(4))[0]
+                    vy9y = unpack("<f", f.read(4))[0]
+                    vz9y = unpack("<f", f.read(4))[0]
+                    type9y = unpack("B", f.read(1))[0]
+                    value9y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9y = unpack("<f", f.read(4))[0]
+                    vx10y = unpack("<f", f.read(4))[0]
+                    vy10y = unpack("<f", f.read(4))[0]
+                    vz10y = unpack("<f", f.read(4))[0]
+                    type10y = unpack("B", f.read(1))[0]
+                    value10y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10y = unpack("<f", f.read(4))[0]
+                    vx11y = unpack("<f", f.read(4))[0]
+                    vy11y = unpack("<f", f.read(4))[0]
+                    vz11y = unpack("<f", f.read(4))[0]
+                    type11y = unpack("B", f.read(1))[0]
+                    value11y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11y = unpack("<f", f.read(4))[0]
+                    vx12y = unpack("<f", f.read(4))[0]
+                    vy12y = unpack("<f", f.read(4))[0]
+                    vz12y = unpack("<f", f.read(4))[0]
+                    type12y = unpack("B", f.read(1))[0]
+                    value12y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12y = unpack("<f", f.read(4))[0]
+                    vx13y = unpack("<f", f.read(4))[0]
+                    vy13y = unpack("<f", f.read(4))[0]
+                    vz13y = unpack("<f", f.read(4))[0]
+                    type13y = unpack("B", f.read(1))[0]
+                    value13y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13y = unpack("<f", f.read(4))[0]
+                    vx14y = unpack("<f", f.read(4))[0]
+                    vy14y = unpack("<f", f.read(4))[0]
+                    vz14y = unpack("<f", f.read(4))[0]
+                    type14y = unpack("B", f.read(1))[0]
+                    value14y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14y = unpack("<f", f.read(4))[0]
+                    vx15y = unpack("<f", f.read(4))[0]
+                    vy15y = unpack("<f", f.read(4))[0]
+                    vz15y = unpack("<f", f.read(4))[0]
+                    type15y = unpack("B", f.read(1))[0]
+                    value15y = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15y = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1z = unpack("<f", f.read(4))[0]
+                    vy1z = unpack("<f", f.read(4))[0]
+                    vz1z = unpack("<f", f.read(4))[0]
+                    type1z = unpack("B", f.read(1))[0]
+                    value1z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1z = unpack("<f", f.read(4))[0]
+                    vx2z = unpack("<f", f.read(4))[0]
+                    vy2z = unpack("<f", f.read(4))[0]
+                    vz2z = unpack("<f", f.read(4))[0]
+                    type2z = unpack("B", f.read(1))[0]
+                    value2z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2z = unpack("<f", f.read(4))[0]
+                    vx3z = unpack("<f", f.read(4))[0]
+                    vy3z = unpack("<f", f.read(4))[0]
+                    vz3z = unpack("<f", f.read(4))[0]
+                    type3z = unpack("B", f.read(1))[0]
+                    value3z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3z = unpack("<f", f.read(4))[0]
+                    vx4z = unpack("<f", f.read(4))[0]
+                    vy4z = unpack("<f", f.read(4))[0]
+                    vz4z = unpack("<f", f.read(4))[0]
+                    type4z = unpack("B", f.read(1))[0]
+                    value4z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4z = unpack("<f", f.read(4))[0]
+                    vx5z = unpack("<f", f.read(4))[0]
+                    vy5z = unpack("<f", f.read(4))[0]
+                    vz5z = unpack("<f", f.read(4))[0]
+                    type5z = unpack("B", f.read(1))[0]
+                    value5z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5z = unpack("<f", f.read(4))[0]
+                    vx6z = unpack("<f", f.read(4))[0]
+                    vy6z = unpack("<f", f.read(4))[0]
+                    vz6z = unpack("<f", f.read(4))[0]
+                    type6z = unpack("B", f.read(1))[0]
+                    value6z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6z = unpack("<f", f.read(4))[0]
+                    vx7z = unpack("<f", f.read(4))[0]
+                    vy7z = unpack("<f", f.read(4))[0]
+                    vz7z = unpack("<f", f.read(4))[0]
+                    type7z = unpack("B", f.read(1))[0]
+                    value7z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7z = unpack("<f", f.read(4))[0]
+                    vx8z = unpack("<f", f.read(4))[0]
+                    vy8z = unpack("<f", f.read(4))[0]
+                    vz8z = unpack("<f", f.read(4))[0]
+                    type8z = unpack("B", f.read(1))[0]
+                    value8z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8z = unpack("<f", f.read(4))[0]
+                    vx9z = unpack("<f", f.read(4))[0]
+                    vy9z = unpack("<f", f.read(4))[0]
+                    vz9z = unpack("<f", f.read(4))[0]
+                    type9z = unpack("B", f.read(1))[0]
+                    value9z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9z = unpack("<f", f.read(4))[0]
+                    vx10z = unpack("<f", f.read(4))[0]
+                    vy10z = unpack("<f", f.read(4))[0]
+                    vz10z = unpack("<f", f.read(4))[0]
+                    type10z = unpack("B", f.read(1))[0]
+                    value10z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10z = unpack("<f", f.read(4))[0]
+                    vx11z = unpack("<f", f.read(4))[0]
+                    vy11z = unpack("<f", f.read(4))[0]
+                    vz11z = unpack("<f", f.read(4))[0]
+                    type11z = unpack("B", f.read(1))[0]
+                    value11z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11z = unpack("<f", f.read(4))[0]
+                    vx12z = unpack("<f", f.read(4))[0]
+                    vy12z = unpack("<f", f.read(4))[0]
+                    vz12z = unpack("<f", f.read(4))[0]
+                    type12z = unpack("B", f.read(1))[0]
+                    value12z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12z = unpack("<f", f.read(4))[0]
+                    vx13z = unpack("<f", f.read(4))[0]
+                    vy13z = unpack("<f", f.read(4))[0]
+                    vz13z = unpack("<f", f.read(4))[0]
+                    type13z = unpack("B", f.read(1))[0]
+                    value13z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13z = unpack("<f", f.read(4))[0]
+                    vx14z = unpack("<f", f.read(4))[0]
+                    vy14z = unpack("<f", f.read(4))[0]
+                    vz14z = unpack("<f", f.read(4))[0]
+                    type14z = unpack("B", f.read(1))[0]
+                    value14z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14z = unpack("<f", f.read(4))[0]
+                    vx15z = unpack("<f", f.read(4))[0]
+                    vy15z = unpack("<f", f.read(4))[0]
+                    vz15z = unpack("<f", f.read(4))[0]
+                    type15z = unpack("B", f.read(1))[0]
+                    value15z = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15z = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1aa = unpack("<f", f.read(4))[0]
+                    vy1aa = unpack("<f", f.read(4))[0]
+                    vz1aa = unpack("<f", f.read(4))[0]
+                    type1aa = unpack("B", f.read(1))[0]
+                    value1aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1aa = unpack("<f", f.read(4))[0]
+                    vx2aa = unpack("<f", f.read(4))[0]
+                    vy2aa = unpack("<f", f.read(4))[0]
+                    vz2aa = unpack("<f", f.read(4))[0]
+                    type2aa = unpack("B", f.read(1))[0]
+                    value2aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2aa = unpack("<f", f.read(4))[0]
+                    vx3aa = unpack("<f", f.read(4))[0]
+                    vy3aa = unpack("<f", f.read(4))[0]
+                    vz3aa = unpack("<f", f.read(4))[0]
+                    type3aa = unpack("B", f.read(1))[0]
+                    value3aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3aa = unpack("<f", f.read(4))[0]
+                    vx4aa = unpack("<f", f.read(4))[0]
+                    vy4aa = unpack("<f", f.read(4))[0]
+                    vz4aa = unpack("<f", f.read(4))[0]
+                    type4aa = unpack("B", f.read(1))[0]
+                    value4aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4aa = unpack("<f", f.read(4))[0]
+                    vx5aa = unpack("<f", f.read(4))[0]
+                    vy5aa = unpack("<f", f.read(4))[0]
+                    vz5aa = unpack("<f", f.read(4))[0]
+                    type5aa = unpack("B", f.read(1))[0]
+                    value5aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5aa = unpack("<f", f.read(4))[0]
+                    vx6aa = unpack("<f", f.read(4))[0]
+                    vy6aa = unpack("<f", f.read(4))[0]
+                    vz6aa = unpack("<f", f.read(4))[0]
+                    type6aa = unpack("B", f.read(1))[0]
+                    value6aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6aa = unpack("<f", f.read(4))[0]
+                    vx7aa = unpack("<f", f.read(4))[0]
+                    vy7aa = unpack("<f", f.read(4))[0]
+                    vz7aa = unpack("<f", f.read(4))[0]
+                    type7aa = unpack("B", f.read(1))[0]
+                    value7aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7aa = unpack("<f", f.read(4))[0]
+                    vx8aa = unpack("<f", f.read(4))[0]
+                    vy8aa = unpack("<f", f.read(4))[0]
+                    vz8aa = unpack("<f", f.read(4))[0]
+                    type8aa = unpack("B", f.read(1))[0]
+                    value8aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8aa = unpack("<f", f.read(4))[0]
+                    vx9aa = unpack("<f", f.read(4))[0]
+                    vy9aa = unpack("<f", f.read(4))[0]
+                    vz9aa = unpack("<f", f.read(4))[0]
+                    type9aa = unpack("B", f.read(1))[0]
+                    value9aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9aa = unpack("<f", f.read(4))[0]
+                    vx10aa = unpack("<f", f.read(4))[0]
+                    vy10aa = unpack("<f", f.read(4))[0]
+                    vz10aa = unpack("<f", f.read(4))[0]
+                    type10aa = unpack("B", f.read(1))[0]
+                    value10aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10aa = unpack("<f", f.read(4))[0]
+                    vx11aa = unpack("<f", f.read(4))[0]
+                    vy11aa = unpack("<f", f.read(4))[0]
+                    vz11aa = unpack("<f", f.read(4))[0]
+                    type11aa = unpack("B", f.read(1))[0]
+                    value11aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11aa = unpack("<f", f.read(4))[0]
+                    vx12aa = unpack("<f", f.read(4))[0]
+                    vy12aa = unpack("<f", f.read(4))[0]
+                    vz12aa = unpack("<f", f.read(4))[0]
+                    type12aa = unpack("B", f.read(1))[0]
+                    value12aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12aa = unpack("<f", f.read(4))[0]
+                    vx13aa = unpack("<f", f.read(4))[0]
+                    vy13aa = unpack("<f", f.read(4))[0]
+                    vz13aa = unpack("<f", f.read(4))[0]
+                    type13aa = unpack("B", f.read(1))[0]
+                    value13aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13aa = unpack("<f", f.read(4))[0]
+                    vx14aa = unpack("<f", f.read(4))[0]
+                    vy14aa = unpack("<f", f.read(4))[0]
+                    vz14aa = unpack("<f", f.read(4))[0]
+                    type14aa = unpack("B", f.read(1))[0]
+                    value14aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14aa = unpack("<f", f.read(4))[0]
+                    vx15aa = unpack("<f", f.read(4))[0]
+                    vy15aa = unpack("<f", f.read(4))[0]
+                    vz15aa = unpack("<f", f.read(4))[0]
+                    type15aa = unpack("B", f.read(1))[0]
+                    value15aa = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15aa = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ab = unpack("<f", f.read(4))[0]
+                    vy1ab = unpack("<f", f.read(4))[0]
+                    vz1ab = unpack("<f", f.read(4))[0]
+                    type1ab = unpack("B", f.read(1))[0]
+                    value1ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ab = unpack("<f", f.read(4))[0]
+                    vx2ab = unpack("<f", f.read(4))[0]
+                    vy2ab = unpack("<f", f.read(4))[0]
+                    vz2ab = unpack("<f", f.read(4))[0]
+                    type2ab = unpack("B", f.read(1))[0]
+                    value2ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ab = unpack("<f", f.read(4))[0]
+                    vx3ab = unpack("<f", f.read(4))[0]
+                    vy3ab = unpack("<f", f.read(4))[0]
+                    vz3ab = unpack("<f", f.read(4))[0]
+                    type3ab = unpack("B", f.read(1))[0]
+                    value3ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ab = unpack("<f", f.read(4))[0]
+                    vx4ab = unpack("<f", f.read(4))[0]
+                    vy4ab = unpack("<f", f.read(4))[0]
+                    vz4ab = unpack("<f", f.read(4))[0]
+                    type4ab = unpack("B", f.read(1))[0]
+                    value4ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ab = unpack("<f", f.read(4))[0]
+                    vx5ab = unpack("<f", f.read(4))[0]
+                    vy5ab = unpack("<f", f.read(4))[0]
+                    vz5ab = unpack("<f", f.read(4))[0]
+                    type5ab = unpack("B", f.read(1))[0]
+                    value5ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ab = unpack("<f", f.read(4))[0]
+                    vx6ab = unpack("<f", f.read(4))[0]
+                    vy6ab = unpack("<f", f.read(4))[0]
+                    vz6ab = unpack("<f", f.read(4))[0]
+                    type6ab = unpack("B", f.read(1))[0]
+                    value6ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ab = unpack("<f", f.read(4))[0]
+                    vx7ab = unpack("<f", f.read(4))[0]
+                    vy7ab = unpack("<f", f.read(4))[0]
+                    vz7ab = unpack("<f", f.read(4))[0]
+                    type7ab = unpack("B", f.read(1))[0]
+                    value7ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ab = unpack("<f", f.read(4))[0]
+                    vx8ab = unpack("<f", f.read(4))[0]
+                    vy8ab = unpack("<f", f.read(4))[0]
+                    vz8ab = unpack("<f", f.read(4))[0]
+                    type8ab = unpack("B", f.read(1))[0]
+                    value8ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ab = unpack("<f", f.read(4))[0]
+                    vx9ab = unpack("<f", f.read(4))[0]
+                    vy9ab = unpack("<f", f.read(4))[0]
+                    vz9ab = unpack("<f", f.read(4))[0]
+                    type9ab = unpack("B", f.read(1))[0]
+                    value9ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ab = unpack("<f", f.read(4))[0]
+                    vx10ab = unpack("<f", f.read(4))[0]
+                    vy10ab = unpack("<f", f.read(4))[0]
+                    vz10ab = unpack("<f", f.read(4))[0]
+                    type10ab = unpack("B", f.read(1))[0]
+                    value10ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ab = unpack("<f", f.read(4))[0]
+                    vx11ab = unpack("<f", f.read(4))[0]
+                    vy11ab = unpack("<f", f.read(4))[0]
+                    vz11ab = unpack("<f", f.read(4))[0]
+                    type11ab = unpack("B", f.read(1))[0]
+                    value11ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ab = unpack("<f", f.read(4))[0]
+                    vx12ab = unpack("<f", f.read(4))[0]
+                    vy12ab = unpack("<f", f.read(4))[0]
+                    vz12ab = unpack("<f", f.read(4))[0]
+                    type12ab = unpack("B", f.read(1))[0]
+                    value12ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ab = unpack("<f", f.read(4))[0]
+                    vx13ab = unpack("<f", f.read(4))[0]
+                    vy13ab = unpack("<f", f.read(4))[0]
+                    vz13ab = unpack("<f", f.read(4))[0]
+                    type13ab = unpack("B", f.read(1))[0]
+                    value13ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ab = unpack("<f", f.read(4))[0]
+                    vx14ab = unpack("<f", f.read(4))[0]
+                    vy14ab = unpack("<f", f.read(4))[0]
+                    vz14ab = unpack("<f", f.read(4))[0]
+                    type14ab = unpack("B", f.read(1))[0]
+                    value14ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ab = unpack("<f", f.read(4))[0]
+                    vx15ab = unpack("<f", f.read(4))[0]
+                    vy15ab = unpack("<f", f.read(4))[0]
+                    vz15ab = unpack("<f", f.read(4))[0]
+                    type15ab = unpack("B", f.read(1))[0]
+                    value15ab = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ab = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ac = unpack("<f", f.read(4))[0]
+                    vy1ac = unpack("<f", f.read(4))[0]
+                    vz1ac = unpack("<f", f.read(4))[0]
+                    type1ac = unpack("B", f.read(1))[0]
+                    value1ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ac = unpack("<f", f.read(4))[0]
+                    vx2ac = unpack("<f", f.read(4))[0]
+                    vy2ac = unpack("<f", f.read(4))[0]
+                    vz2ac = unpack("<f", f.read(4))[0]
+                    type2ac = unpack("B", f.read(1))[0]
+                    value2ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ac = unpack("<f", f.read(4))[0]
+                    vx3ac = unpack("<f", f.read(4))[0]
+                    vy3ac = unpack("<f", f.read(4))[0]
+                    vz3ac = unpack("<f", f.read(4))[0]
+                    type3ac = unpack("B", f.read(1))[0]
+                    value3ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ac = unpack("<f", f.read(4))[0]
+                    vx4ac = unpack("<f", f.read(4))[0]
+                    vy4ac = unpack("<f", f.read(4))[0]
+                    vz4ac = unpack("<f", f.read(4))[0]
+                    type4ac = unpack("B", f.read(1))[0]
+                    value4ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ac = unpack("<f", f.read(4))[0]
+                    vx5ac = unpack("<f", f.read(4))[0]
+                    vy5ac = unpack("<f", f.read(4))[0]
+                    vz5ac = unpack("<f", f.read(4))[0]
+                    type5ac = unpack("B", f.read(1))[0]
+                    value5ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ac = unpack("<f", f.read(4))[0]
+                    vx6ac = unpack("<f", f.read(4))[0]
+                    vy6ac = unpack("<f", f.read(4))[0]
+                    vz6ac = unpack("<f", f.read(4))[0]
+                    type6ac = unpack("B", f.read(1))[0]
+                    value6ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ac = unpack("<f", f.read(4))[0]
+                    vx7ac = unpack("<f", f.read(4))[0]
+                    vy7ac = unpack("<f", f.read(4))[0]
+                    vz7ac = unpack("<f", f.read(4))[0]
+                    type7ac = unpack("B", f.read(1))[0]
+                    value7ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ac = unpack("<f", f.read(4))[0]
+                    vx8ac = unpack("<f", f.read(4))[0]
+                    vy8ac = unpack("<f", f.read(4))[0]
+                    vz8ac = unpack("<f", f.read(4))[0]
+                    type8ac = unpack("B", f.read(1))[0]
+                    value8ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ac = unpack("<f", f.read(4))[0]
+                    vx9ac = unpack("<f", f.read(4))[0]
+                    vy9ac = unpack("<f", f.read(4))[0]
+                    vz9ac = unpack("<f", f.read(4))[0]
+                    type9ac = unpack("B", f.read(1))[0]
+                    value9ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ac = unpack("<f", f.read(4))[0]
+                    vx10ac = unpack("<f", f.read(4))[0]
+                    vy10ac = unpack("<f", f.read(4))[0]
+                    vz10ac = unpack("<f", f.read(4))[0]
+                    type10ac = unpack("B", f.read(1))[0]
+                    value10ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ac = unpack("<f", f.read(4))[0]
+                    vx11ac = unpack("<f", f.read(4))[0]
+                    vy11ac = unpack("<f", f.read(4))[0]
+                    vz11ac = unpack("<f", f.read(4))[0]
+                    type11ac = unpack("B", f.read(1))[0]
+                    value11ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ac = unpack("<f", f.read(4))[0]
+                    vx12ac = unpack("<f", f.read(4))[0]
+                    vy12ac = unpack("<f", f.read(4))[0]
+                    vz12ac = unpack("<f", f.read(4))[0]
+                    type12ac = unpack("B", f.read(1))[0]
+                    value12ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ac = unpack("<f", f.read(4))[0]
+                    vx13ac = unpack("<f", f.read(4))[0]
+                    vy13ac = unpack("<f", f.read(4))[0]
+                    vz13ac = unpack("<f", f.read(4))[0]
+                    type13ac = unpack("B", f.read(1))[0]
+                    value13ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ac = unpack("<f", f.read(4))[0]
+                    vx14ac = unpack("<f", f.read(4))[0]
+                    vy14ac = unpack("<f", f.read(4))[0]
+                    vz14ac = unpack("<f", f.read(4))[0]
+                    type14ac = unpack("B", f.read(1))[0]
+                    value14ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ac = unpack("<f", f.read(4))[0]
+                    vx15ac = unpack("<f", f.read(4))[0]
+                    vy15ac = unpack("<f", f.read(4))[0]
+                    vz15ac = unpack("<f", f.read(4))[0]
+                    type15ac = unpack("B", f.read(1))[0]
+                    value15ac = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ac = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ad = unpack("<f", f.read(4))[0]
+                    vy1ad = unpack("<f", f.read(4))[0]
+                    vz1ad = unpack("<f", f.read(4))[0]
+                    type1ad = unpack("B", f.read(1))[0]
+                    value1ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ad = unpack("<f", f.read(4))[0]
+                    vx2ad = unpack("<f", f.read(4))[0]
+                    vy2ad = unpack("<f", f.read(4))[0]
+                    vz2ad = unpack("<f", f.read(4))[0]
+                    type2ad = unpack("B", f.read(1))[0]
+                    value2ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ad = unpack("<f", f.read(4))[0]
+                    vx3ad = unpack("<f", f.read(4))[0]
+                    vy3ad = unpack("<f", f.read(4))[0]
+                    vz3ad = unpack("<f", f.read(4))[0]
+                    type3ad = unpack("B", f.read(1))[0]
+                    value3ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ad = unpack("<f", f.read(4))[0]
+                    vx4ad = unpack("<f", f.read(4))[0]
+                    vy4ad = unpack("<f", f.read(4))[0]
+                    vz4ad = unpack("<f", f.read(4))[0]
+                    type4ad = unpack("B", f.read(1))[0]
+                    value4ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ad = unpack("<f", f.read(4))[0]
+                    vx5ad = unpack("<f", f.read(4))[0]
+                    vy5ad = unpack("<f", f.read(4))[0]
+                    vz5ad = unpack("<f", f.read(4))[0]
+                    type5ad = unpack("B", f.read(1))[0]
+                    value5ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ad = unpack("<f", f.read(4))[0]
+                    vx6ad = unpack("<f", f.read(4))[0]
+                    vy6ad = unpack("<f", f.read(4))[0]
+                    vz6ad = unpack("<f", f.read(4))[0]
+                    type6ad = unpack("B", f.read(1))[0]
+                    value6ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ad = unpack("<f", f.read(4))[0]
+                    vx7ad = unpack("<f", f.read(4))[0]
+                    vy7ad = unpack("<f", f.read(4))[0]
+                    vz7ad = unpack("<f", f.read(4))[0]
+                    type7ad = unpack("B", f.read(1))[0]
+                    value7ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ad = unpack("<f", f.read(4))[0]
+                    vx8ad = unpack("<f", f.read(4))[0]
+                    vy8ad = unpack("<f", f.read(4))[0]
+                    vz8ad = unpack("<f", f.read(4))[0]
+                    type8ad = unpack("B", f.read(1))[0]
+                    value8ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ad = unpack("<f", f.read(4))[0]
+                    vx9ad = unpack("<f", f.read(4))[0]
+                    vy9ad = unpack("<f", f.read(4))[0]
+                    vz9ad = unpack("<f", f.read(4))[0]
+                    type9ad = unpack("B", f.read(1))[0]
+                    value9ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ad = unpack("<f", f.read(4))[0]
+                    vx10ad = unpack("<f", f.read(4))[0]
+                    vy10ad = unpack("<f", f.read(4))[0]
+                    vz10ad = unpack("<f", f.read(4))[0]
+                    type10ad = unpack("B", f.read(1))[0]
+                    value10ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ad = unpack("<f", f.read(4))[0]
+                    vx11ad = unpack("<f", f.read(4))[0]
+                    vy11ad = unpack("<f", f.read(4))[0]
+                    vz11ad = unpack("<f", f.read(4))[0]
+                    type11ad = unpack("B", f.read(1))[0]
+                    value11ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ad = unpack("<f", f.read(4))[0]
+                    vx12ad = unpack("<f", f.read(4))[0]
+                    vy12ad = unpack("<f", f.read(4))[0]
+                    vz12ad = unpack("<f", f.read(4))[0]
+                    type12ad = unpack("B", f.read(1))[0]
+                    value12ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ad = unpack("<f", f.read(4))[0]
+                    vx13ad = unpack("<f", f.read(4))[0]
+                    vy13ad = unpack("<f", f.read(4))[0]
+                    vz13ad = unpack("<f", f.read(4))[0]
+                    type13ad = unpack("B", f.read(1))[0]
+                    value13ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ad = unpack("<f", f.read(4))[0]
+                    vx14ad = unpack("<f", f.read(4))[0]
+                    vy14ad = unpack("<f", f.read(4))[0]
+                    vz14ad = unpack("<f", f.read(4))[0]
+                    type14ad = unpack("B", f.read(1))[0]
+                    value14ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ad = unpack("<f", f.read(4))[0]
+                    vx15ad = unpack("<f", f.read(4))[0]
+                    vy15ad = unpack("<f", f.read(4))[0]
+                    vz15ad = unpack("<f", f.read(4))[0]
+                    type15ad = unpack("B", f.read(1))[0]
+                    value15ad = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ad = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ae = unpack("<f", f.read(4))[0]
+                    vy1ae = unpack("<f", f.read(4))[0]
+                    vz1ae = unpack("<f", f.read(4))[0]
+                    type1ae = unpack("B", f.read(1))[0]
+                    value1ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ae = unpack("<f", f.read(4))[0]
+                    vx2ae = unpack("<f", f.read(4))[0]
+                    vy2ae = unpack("<f", f.read(4))[0]
+                    vz2ae = unpack("<f", f.read(4))[0]
+                    type2ae = unpack("B", f.read(1))[0]
+                    value2ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ae = unpack("<f", f.read(4))[0]
+                    vx3ae = unpack("<f", f.read(4))[0]
+                    vy3ae = unpack("<f", f.read(4))[0]
+                    vz3ae = unpack("<f", f.read(4))[0]
+                    type3ae = unpack("B", f.read(1))[0]
+                    value3ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ae = unpack("<f", f.read(4))[0]
+                    vx4ae = unpack("<f", f.read(4))[0]
+                    vy4ae = unpack("<f", f.read(4))[0]
+                    vz4ae = unpack("<f", f.read(4))[0]
+                    type4ae = unpack("B", f.read(1))[0]
+                    value4ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ae = unpack("<f", f.read(4))[0]
+                    vx5ae = unpack("<f", f.read(4))[0]
+                    vy5ae = unpack("<f", f.read(4))[0]
+                    vz5ae = unpack("<f", f.read(4))[0]
+                    type5ae = unpack("B", f.read(1))[0]
+                    value5ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ae = unpack("<f", f.read(4))[0]
+                    vx6ae = unpack("<f", f.read(4))[0]
+                    vy6ae = unpack("<f", f.read(4))[0]
+                    vz6ae = unpack("<f", f.read(4))[0]
+                    type6ae = unpack("B", f.read(1))[0]
+                    value6ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ae = unpack("<f", f.read(4))[0]
+                    vx7ae = unpack("<f", f.read(4))[0]
+                    vy7ae = unpack("<f", f.read(4))[0]
+                    vz7ae = unpack("<f", f.read(4))[0]
+                    type7ae = unpack("B", f.read(1))[0]
+                    value7ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ae = unpack("<f", f.read(4))[0]
+                    vx8ae = unpack("<f", f.read(4))[0]
+                    vy8ae = unpack("<f", f.read(4))[0]
+                    vz8ae = unpack("<f", f.read(4))[0]
+                    type8ae = unpack("B", f.read(1))[0]
+                    value8ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ae = unpack("<f", f.read(4))[0]
+                    vx9ae = unpack("<f", f.read(4))[0]
+                    vy9ae = unpack("<f", f.read(4))[0]
+                    vz9ae = unpack("<f", f.read(4))[0]
+                    type9ae = unpack("B", f.read(1))[0]
+                    value9ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ae = unpack("<f", f.read(4))[0]
+                    vx10ae = unpack("<f", f.read(4))[0]
+                    vy10ae = unpack("<f", f.read(4))[0]
+                    vz10ae = unpack("<f", f.read(4))[0]
+                    type10ae = unpack("B", f.read(1))[0]
+                    value10ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ae = unpack("<f", f.read(4))[0]
+                    vx11ae = unpack("<f", f.read(4))[0]
+                    vy11ae = unpack("<f", f.read(4))[0]
+                    vz11ae = unpack("<f", f.read(4))[0]
+                    type11ae = unpack("B", f.read(1))[0]
+                    value11ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ae = unpack("<f", f.read(4))[0]
+                    vx12ae = unpack("<f", f.read(4))[0]
+                    vy12ae = unpack("<f", f.read(4))[0]
+                    vz12ae = unpack("<f", f.read(4))[0]
+                    type12ae = unpack("B", f.read(1))[0]
+                    value12ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ae = unpack("<f", f.read(4))[0]
+                    vx13ae = unpack("<f", f.read(4))[0]
+                    vy13ae = unpack("<f", f.read(4))[0]
+                    vz13ae = unpack("<f", f.read(4))[0]
+                    type13ae = unpack("B", f.read(1))[0]
+                    value13ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ae = unpack("<f", f.read(4))[0]
+                    vx14ae = unpack("<f", f.read(4))[0]
+                    vy14ae = unpack("<f", f.read(4))[0]
+                    vz14ae = unpack("<f", f.read(4))[0]
+                    type14ae = unpack("B", f.read(1))[0]
+                    value14ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ae = unpack("<f", f.read(4))[0]
+                    vx15ae = unpack("<f", f.read(4))[0]
+                    vy15ae = unpack("<f", f.read(4))[0]
+                    vz15ae = unpack("<f", f.read(4))[0]
+                    type15ae = unpack("B", f.read(1))[0]
+                    value15ae = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ae = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1af = unpack("<f", f.read(4))[0]
+                    vy1af = unpack("<f", f.read(4))[0]
+                    vz1af = unpack("<f", f.read(4))[0]
+                    type1af = unpack("B", f.read(1))[0]
+                    value1af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1af = unpack("<f", f.read(4))[0]
+                    vx2af = unpack("<f", f.read(4))[0]
+                    vy2af = unpack("<f", f.read(4))[0]
+                    vz2af = unpack("<f", f.read(4))[0]
+                    type2af = unpack("B", f.read(1))[0]
+                    value2af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2af = unpack("<f", f.read(4))[0]
+                    vx3af = unpack("<f", f.read(4))[0]
+                    vy3af = unpack("<f", f.read(4))[0]
+                    vz3af = unpack("<f", f.read(4))[0]
+                    type3af = unpack("B", f.read(1))[0]
+                    value3af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3af = unpack("<f", f.read(4))[0]
+                    vx4af = unpack("<f", f.read(4))[0]
+                    vy4af = unpack("<f", f.read(4))[0]
+                    vz4af = unpack("<f", f.read(4))[0]
+                    type4af = unpack("B", f.read(1))[0]
+                    value4af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4af = unpack("<f", f.read(4))[0]
+                    vx5af = unpack("<f", f.read(4))[0]
+                    vy5af = unpack("<f", f.read(4))[0]
+                    vz5af = unpack("<f", f.read(4))[0]
+                    type5af = unpack("B", f.read(1))[0]
+                    value5af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5af = unpack("<f", f.read(4))[0]
+                    vx6af = unpack("<f", f.read(4))[0]
+                    vy6af = unpack("<f", f.read(4))[0]
+                    vz6af = unpack("<f", f.read(4))[0]
+                    type6af = unpack("B", f.read(1))[0]
+                    value6af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6af = unpack("<f", f.read(4))[0]
+                    vx7af = unpack("<f", f.read(4))[0]
+                    vy7af = unpack("<f", f.read(4))[0]
+                    vz7af = unpack("<f", f.read(4))[0]
+                    type7af = unpack("B", f.read(1))[0]
+                    value7af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7af = unpack("<f", f.read(4))[0]
+                    vx8af = unpack("<f", f.read(4))[0]
+                    vy8af = unpack("<f", f.read(4))[0]
+                    vz8af = unpack("<f", f.read(4))[0]
+                    type8af = unpack("B", f.read(1))[0]
+                    value8af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8af = unpack("<f", f.read(4))[0]
+                    vx9af = unpack("<f", f.read(4))[0]
+                    vy9af = unpack("<f", f.read(4))[0]
+                    vz9af = unpack("<f", f.read(4))[0]
+                    type9af = unpack("B", f.read(1))[0]
+                    value9af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9af = unpack("<f", f.read(4))[0]
+                    vx10af = unpack("<f", f.read(4))[0]
+                    vy10af = unpack("<f", f.read(4))[0]
+                    vz10af = unpack("<f", f.read(4))[0]
+                    type10af = unpack("B", f.read(1))[0]
+                    value10af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10af = unpack("<f", f.read(4))[0]
+                    vx11af = unpack("<f", f.read(4))[0]
+                    vy11af = unpack("<f", f.read(4))[0]
+                    vz11af = unpack("<f", f.read(4))[0]
+                    type11af = unpack("B", f.read(1))[0]
+                    value11af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11af = unpack("<f", f.read(4))[0]
+                    vx12af = unpack("<f", f.read(4))[0]
+                    vy12af = unpack("<f", f.read(4))[0]
+                    vz12af = unpack("<f", f.read(4))[0]
+                    type12af = unpack("B", f.read(1))[0]
+                    value12af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12af = unpack("<f", f.read(4))[0]
+                    vx13af = unpack("<f", f.read(4))[0]
+                    vy13af = unpack("<f", f.read(4))[0]
+                    vz13af = unpack("<f", f.read(4))[0]
+                    type13af = unpack("B", f.read(1))[0]
+                    value13af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13af = unpack("<f", f.read(4))[0]
+                    vx14af = unpack("<f", f.read(4))[0]
+                    vy14af = unpack("<f", f.read(4))[0]
+                    vz14af = unpack("<f", f.read(4))[0]
+                    type14af = unpack("B", f.read(1))[0]
+                    value14af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14af = unpack("<f", f.read(4))[0]
+                    vx15af = unpack("<f", f.read(4))[0]
+                    vy15af = unpack("<f", f.read(4))[0]
+                    vz15af = unpack("<f", f.read(4))[0]
+                    type15af = unpack("B", f.read(1))[0]
+                    value15af = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15af = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ag = unpack("<f", f.read(4))[0]
+                    vy1ag = unpack("<f", f.read(4))[0]
+                    vz1ag = unpack("<f", f.read(4))[0]
+                    type1ag = unpack("B", f.read(1))[0]
+                    value1ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ag = unpack("<f", f.read(4))[0]
+                    vx2ag = unpack("<f", f.read(4))[0]
+                    vy2ag = unpack("<f", f.read(4))[0]
+                    vz2ag = unpack("<f", f.read(4))[0]
+                    type2ag = unpack("B", f.read(1))[0]
+                    value2ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ag = unpack("<f", f.read(4))[0]
+                    vx3ag = unpack("<f", f.read(4))[0]
+                    vy3ag = unpack("<f", f.read(4))[0]
+                    vz3ag = unpack("<f", f.read(4))[0]
+                    type3ag = unpack("B", f.read(1))[0]
+                    value3ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ag = unpack("<f", f.read(4))[0]
+                    vx4ag = unpack("<f", f.read(4))[0]
+                    vy4ag = unpack("<f", f.read(4))[0]
+                    vz4ag = unpack("<f", f.read(4))[0]
+                    type4ag = unpack("B", f.read(1))[0]
+                    value4ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ag = unpack("<f", f.read(4))[0]
+                    vx5ag = unpack("<f", f.read(4))[0]
+                    vy5ag = unpack("<f", f.read(4))[0]
+                    vz5ag = unpack("<f", f.read(4))[0]
+                    type5ag = unpack("B", f.read(1))[0]
+                    value5ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ag = unpack("<f", f.read(4))[0]
+                    vx6ag = unpack("<f", f.read(4))[0]
+                    vy6ag = unpack("<f", f.read(4))[0]
+                    vz6ag = unpack("<f", f.read(4))[0]
+                    type6ag = unpack("B", f.read(1))[0]
+                    value6ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ag = unpack("<f", f.read(4))[0]
+                    vx7ag = unpack("<f", f.read(4))[0]
+                    vy7ag = unpack("<f", f.read(4))[0]
+                    vz7ag = unpack("<f", f.read(4))[0]
+                    type7ag = unpack("B", f.read(1))[0]
+                    value7ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ag = unpack("<f", f.read(4))[0]
+                    vx8ag = unpack("<f", f.read(4))[0]
+                    vy8ag = unpack("<f", f.read(4))[0]
+                    vz8ag = unpack("<f", f.read(4))[0]
+                    type8ag = unpack("B", f.read(1))[0]
+                    value8ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ag = unpack("<f", f.read(4))[0]
+                    vx9ag = unpack("<f", f.read(4))[0]
+                    vy9ag = unpack("<f", f.read(4))[0]
+                    vz9ag = unpack("<f", f.read(4))[0]
+                    type9ag = unpack("B", f.read(1))[0]
+                    value9ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ag = unpack("<f", f.read(4))[0]
+                    vx10ag = unpack("<f", f.read(4))[0]
+                    vy10ag = unpack("<f", f.read(4))[0]
+                    vz10ag = unpack("<f", f.read(4))[0]
+                    type10ag = unpack("B", f.read(1))[0]
+                    value10ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ag = unpack("<f", f.read(4))[0]
+                    vx11ag = unpack("<f", f.read(4))[0]
+                    vy11ag = unpack("<f", f.read(4))[0]
+                    vz11ag = unpack("<f", f.read(4))[0]
+                    type11ag = unpack("B", f.read(1))[0]
+                    value11ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ag = unpack("<f", f.read(4))[0]
+                    vx12ag = unpack("<f", f.read(4))[0]
+                    vy12ag = unpack("<f", f.read(4))[0]
+                    vz12ag = unpack("<f", f.read(4))[0]
+                    type12ag = unpack("B", f.read(1))[0]
+                    value12ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ag = unpack("<f", f.read(4))[0]
+                    vx13ag = unpack("<f", f.read(4))[0]
+                    vy13ag = unpack("<f", f.read(4))[0]
+                    vz13ag = unpack("<f", f.read(4))[0]
+                    type13ag = unpack("B", f.read(1))[0]
+                    value13ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ag = unpack("<f", f.read(4))[0]
+                    vx14ag = unpack("<f", f.read(4))[0]
+                    vy14ag = unpack("<f", f.read(4))[0]
+                    vz14ag = unpack("<f", f.read(4))[0]
+                    type14ag = unpack("B", f.read(1))[0]
+                    value14ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ag = unpack("<f", f.read(4))[0]
+                    vx15ag = unpack("<f", f.read(4))[0]
+                    vy15ag = unpack("<f", f.read(4))[0]
+                    vz15ag = unpack("<f", f.read(4))[0]
+                    type15ag = unpack("B", f.read(1))[0]
+                    value15ag = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ag = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ah = unpack("<f", f.read(4))[0]
+                    vy1ah = unpack("<f", f.read(4))[0]
+                    vz1ah = unpack("<f", f.read(4))[0]
+                    type1ah = unpack("B", f.read(1))[0]
+                    value1ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ah = unpack("<f", f.read(4))[0]
+                    vx2ah = unpack("<f", f.read(4))[0]
+                    vy2ah = unpack("<f", f.read(4))[0]
+                    vz2ah = unpack("<f", f.read(4))[0]
+                    type2ah = unpack("B", f.read(1))[0]
+                    value2ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ah = unpack("<f", f.read(4))[0]
+                    vx3ah = unpack("<f", f.read(4))[0]
+                    vy3ah = unpack("<f", f.read(4))[0]
+                    vz3ah = unpack("<f", f.read(4))[0]
+                    type3ah = unpack("B", f.read(1))[0]
+                    value3ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ah = unpack("<f", f.read(4))[0]
+                    vx4ah = unpack("<f", f.read(4))[0]
+                    vy4ah = unpack("<f", f.read(4))[0]
+                    vz4ah = unpack("<f", f.read(4))[0]
+                    type4ah = unpack("B", f.read(1))[0]
+                    value4ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ah = unpack("<f", f.read(4))[0]
+                    vx5ah = unpack("<f", f.read(4))[0]
+                    vy5ah = unpack("<f", f.read(4))[0]
+                    vz5ah = unpack("<f", f.read(4))[0]
+                    type5ah = unpack("B", f.read(1))[0]
+                    value5ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ah = unpack("<f", f.read(4))[0]
+                    vx6ah = unpack("<f", f.read(4))[0]
+                    vy6ah = unpack("<f", f.read(4))[0]
+                    vz6ah = unpack("<f", f.read(4))[0]
+                    type6ah = unpack("B", f.read(1))[0]
+                    value6ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ah = unpack("<f", f.read(4))[0]
+                    vx7ah = unpack("<f", f.read(4))[0]
+                    vy7ah = unpack("<f", f.read(4))[0]
+                    vz7ah = unpack("<f", f.read(4))[0]
+                    type7ah = unpack("B", f.read(1))[0]
+                    value7ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ah = unpack("<f", f.read(4))[0]
+                    vx8ah = unpack("<f", f.read(4))[0]
+                    vy8ah = unpack("<f", f.read(4))[0]
+                    vz8ah = unpack("<f", f.read(4))[0]
+                    type8ah = unpack("B", f.read(1))[0]
+                    value8ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ah = unpack("<f", f.read(4))[0]
+                    vx9ah = unpack("<f", f.read(4))[0]
+                    vy9ah = unpack("<f", f.read(4))[0]
+                    vz9ah = unpack("<f", f.read(4))[0]
+                    type9ah = unpack("B", f.read(1))[0]
+                    value9ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ah = unpack("<f", f.read(4))[0]
+                    vx10ah = unpack("<f", f.read(4))[0]
+                    vy10ah = unpack("<f", f.read(4))[0]
+                    vz10ah = unpack("<f", f.read(4))[0]
+                    type10ah = unpack("B", f.read(1))[0]
+                    value10ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ah = unpack("<f", f.read(4))[0]
+                    vx11ah = unpack("<f", f.read(4))[0]
+                    vy11ah = unpack("<f", f.read(4))[0]
+                    vz11ah = unpack("<f", f.read(4))[0]
+                    type11ah = unpack("B", f.read(1))[0]
+                    value11ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ah = unpack("<f", f.read(4))[0]
+                    vx12ah = unpack("<f", f.read(4))[0]
+                    vy12ah = unpack("<f", f.read(4))[0]
+                    vz12ah = unpack("<f", f.read(4))[0]
+                    type12ah = unpack("B", f.read(1))[0]
+                    value12ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ah = unpack("<f", f.read(4))[0]
+                    vx13ah = unpack("<f", f.read(4))[0]
+                    vy13ah = unpack("<f", f.read(4))[0]
+                    vz13ah = unpack("<f", f.read(4))[0]
+                    type13ah = unpack("B", f.read(1))[0]
+                    value13ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ah = unpack("<f", f.read(4))[0]
+                    vx14ah = unpack("<f", f.read(4))[0]
+                    vy14ah = unpack("<f", f.read(4))[0]
+                    vz14ah = unpack("<f", f.read(4))[0]
+                    type14ah = unpack("B", f.read(1))[0]
+                    value14ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ah = unpack("<f", f.read(4))[0]
+                    vx15ah = unpack("<f", f.read(4))[0]
+                    vy15ah = unpack("<f", f.read(4))[0]
+                    vz15ah = unpack("<f", f.read(4))[0]
+                    type15ah = unpack("B", f.read(1))[0]
+                    value15ah = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ah = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ai = unpack("<f", f.read(4))[0]
+                    vy1ai = unpack("<f", f.read(4))[0]
+                    vz1ai = unpack("<f", f.read(4))[0]
+                    type1ai = unpack("B", f.read(1))[0]
+                    value1ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ai = unpack("<f", f.read(4))[0]
+                    vx2ai = unpack("<f", f.read(4))[0]
+                    vy2ai = unpack("<f", f.read(4))[0]
+                    vz2ai = unpack("<f", f.read(4))[0]
+                    type2ai = unpack("B", f.read(1))[0]
+                    value2ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ai = unpack("<f", f.read(4))[0]
+                    vx3ai = unpack("<f", f.read(4))[0]
+                    vy3ai = unpack("<f", f.read(4))[0]
+                    vz3ai = unpack("<f", f.read(4))[0]
+                    type3ai = unpack("B", f.read(1))[0]
+                    value3ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ai = unpack("<f", f.read(4))[0]
+                    vx4ai = unpack("<f", f.read(4))[0]
+                    vy4ai = unpack("<f", f.read(4))[0]
+                    vz4ai = unpack("<f", f.read(4))[0]
+                    type4ai = unpack("B", f.read(1))[0]
+                    value4ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ai = unpack("<f", f.read(4))[0]
+                    vx5ai = unpack("<f", f.read(4))[0]
+                    vy5ai = unpack("<f", f.read(4))[0]
+                    vz5ai = unpack("<f", f.read(4))[0]
+                    type5ai = unpack("B", f.read(1))[0]
+                    value5ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ai = unpack("<f", f.read(4))[0]
+                    vx6ai = unpack("<f", f.read(4))[0]
+                    vy6ai = unpack("<f", f.read(4))[0]
+                    vz6ai = unpack("<f", f.read(4))[0]
+                    type6ai = unpack("B", f.read(1))[0]
+                    value6ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ai = unpack("<f", f.read(4))[0]
+                    vx7ai = unpack("<f", f.read(4))[0]
+                    vy7ai = unpack("<f", f.read(4))[0]
+                    vz7ai = unpack("<f", f.read(4))[0]
+                    type7ai = unpack("B", f.read(1))[0]
+                    value7ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ai = unpack("<f", f.read(4))[0]
+                    vx8ai = unpack("<f", f.read(4))[0]
+                    vy8ai = unpack("<f", f.read(4))[0]
+                    vz8ai = unpack("<f", f.read(4))[0]
+                    type8ai = unpack("B", f.read(1))[0]
+                    value8ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ai = unpack("<f", f.read(4))[0]
+                    vx9ai = unpack("<f", f.read(4))[0]
+                    vy9ai = unpack("<f", f.read(4))[0]
+                    vz9ai = unpack("<f", f.read(4))[0]
+                    type9ai = unpack("B", f.read(1))[0]
+                    value9ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ai = unpack("<f", f.read(4))[0]
+                    vx10ai = unpack("<f", f.read(4))[0]
+                    vy10ai = unpack("<f", f.read(4))[0]
+                    vz10ai = unpack("<f", f.read(4))[0]
+                    type10ai = unpack("B", f.read(1))[0]
+                    value10ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ai = unpack("<f", f.read(4))[0]
+                    vx11ai = unpack("<f", f.read(4))[0]
+                    vy11ai = unpack("<f", f.read(4))[0]
+                    vz11ai = unpack("<f", f.read(4))[0]
+                    type11ai = unpack("B", f.read(1))[0]
+                    value11ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ai = unpack("<f", f.read(4))[0]
+                    vx12ai = unpack("<f", f.read(4))[0]
+                    vy12ai = unpack("<f", f.read(4))[0]
+                    vz12ai = unpack("<f", f.read(4))[0]
+                    type12ai = unpack("B", f.read(1))[0]
+                    value12ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ai = unpack("<f", f.read(4))[0]
+                    vx13ai = unpack("<f", f.read(4))[0]
+                    vy13ai = unpack("<f", f.read(4))[0]
+                    vz13ai = unpack("<f", f.read(4))[0]
+                    type13ai = unpack("B", f.read(1))[0]
+                    value13ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ai = unpack("<f", f.read(4))[0]
+                    vx14ai = unpack("<f", f.read(4))[0]
+                    vy14ai = unpack("<f", f.read(4))[0]
+                    vz14ai = unpack("<f", f.read(4))[0]
+                    type14ai = unpack("B", f.read(1))[0]
+                    value14ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ai = unpack("<f", f.read(4))[0]
+                    vx15ai = unpack("<f", f.read(4))[0]
+                    vy15ai = unpack("<f", f.read(4))[0]
+                    vz15ai = unpack("<f", f.read(4))[0]
+                    type15ai = unpack("B", f.read(1))[0]
+                    value15ai = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ai = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1aj = unpack("<f", f.read(4))[0]
+                    vy1aj = unpack("<f", f.read(4))[0]
+                    vz1aj = unpack("<f", f.read(4))[0]
+                    type1aj = unpack("B", f.read(1))[0]
+                    value1aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1aj = unpack("<f", f.read(4))[0]
+                    vx2aj = unpack("<f", f.read(4))[0]
+                    vy2aj = unpack("<f", f.read(4))[0]
+                    vz2aj = unpack("<f", f.read(4))[0]
+                    type2aj = unpack("B", f.read(1))[0]
+                    value2aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2aj = unpack("<f", f.read(4))[0]
+                    vx3aj = unpack("<f", f.read(4))[0]
+                    vy3aj = unpack("<f", f.read(4))[0]
+                    vz3aj = unpack("<f", f.read(4))[0]
+                    type3aj = unpack("B", f.read(1))[0]
+                    value3aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3aj = unpack("<f", f.read(4))[0]
+                    vx4aj = unpack("<f", f.read(4))[0]
+                    vy4aj = unpack("<f", f.read(4))[0]
+                    vz4aj = unpack("<f", f.read(4))[0]
+                    type4aj = unpack("B", f.read(1))[0]
+                    value4aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4aj = unpack("<f", f.read(4))[0]
+                    vx5aj = unpack("<f", f.read(4))[0]
+                    vy5aj = unpack("<f", f.read(4))[0]
+                    vz5aj = unpack("<f", f.read(4))[0]
+                    type5aj = unpack("B", f.read(1))[0]
+                    value5aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5aj = unpack("<f", f.read(4))[0]
+                    vx6aj = unpack("<f", f.read(4))[0]
+                    vy6aj = unpack("<f", f.read(4))[0]
+                    vz6aj = unpack("<f", f.read(4))[0]
+                    type6aj = unpack("B", f.read(1))[0]
+                    value6aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6aj = unpack("<f", f.read(4))[0]
+                    vx7aj = unpack("<f", f.read(4))[0]
+                    vy7aj = unpack("<f", f.read(4))[0]
+                    vz7aj = unpack("<f", f.read(4))[0]
+                    type7aj = unpack("B", f.read(1))[0]
+                    value7aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7aj = unpack("<f", f.read(4))[0]
+                    vx8aj = unpack("<f", f.read(4))[0]
+                    vy8aj = unpack("<f", f.read(4))[0]
+                    vz8aj = unpack("<f", f.read(4))[0]
+                    type8aj = unpack("B", f.read(1))[0]
+                    value8aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8aj = unpack("<f", f.read(4))[0]
+                    vx9aj = unpack("<f", f.read(4))[0]
+                    vy9aj = unpack("<f", f.read(4))[0]
+                    vz9aj = unpack("<f", f.read(4))[0]
+                    type9aj = unpack("B", f.read(1))[0]
+                    value9aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9aj = unpack("<f", f.read(4))[0]
+                    vx10aj = unpack("<f", f.read(4))[0]
+                    vy10aj = unpack("<f", f.read(4))[0]
+                    vz10aj = unpack("<f", f.read(4))[0]
+                    type10aj = unpack("B", f.read(1))[0]
+                    value10aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10aj = unpack("<f", f.read(4))[0]
+                    vx11aj = unpack("<f", f.read(4))[0]
+                    vy11aj = unpack("<f", f.read(4))[0]
+                    vz11aj = unpack("<f", f.read(4))[0]
+                    type11aj = unpack("B", f.read(1))[0]
+                    value11aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11aj = unpack("<f", f.read(4))[0]
+                    vx12aj = unpack("<f", f.read(4))[0]
+                    vy12aj = unpack("<f", f.read(4))[0]
+                    vz12aj = unpack("<f", f.read(4))[0]
+                    type12aj = unpack("B", f.read(1))[0]
+                    value12aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12aj = unpack("<f", f.read(4))[0]
+                    vx13aj = unpack("<f", f.read(4))[0]
+                    vy13aj = unpack("<f", f.read(4))[0]
+                    vz13aj = unpack("<f", f.read(4))[0]
+                    type13aj = unpack("B", f.read(1))[0]
+                    value13aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13aj = unpack("<f", f.read(4))[0]
+                    vx14aj = unpack("<f", f.read(4))[0]
+                    vy14aj = unpack("<f", f.read(4))[0]
+                    vz14aj = unpack("<f", f.read(4))[0]
+                    type14aj = unpack("B", f.read(1))[0]
+                    value14aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14aj = unpack("<f", f.read(4))[0]
+                    vx15aj = unpack("<f", f.read(4))[0]
+                    vy15aj = unpack("<f", f.read(4))[0]
+                    vz15aj = unpack("<f", f.read(4))[0]
+                    type15aj = unpack("B", f.read(1))[0]
+                    value15aj = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15aj = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ak = unpack("<f", f.read(4))[0]
+                    vy1ak = unpack("<f", f.read(4))[0]
+                    vz1ak = unpack("<f", f.read(4))[0]
+                    type1ak = unpack("B", f.read(1))[0]
+                    value1ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ak = unpack("<f", f.read(4))[0]
+                    vx2ak = unpack("<f", f.read(4))[0]
+                    vy2ak = unpack("<f", f.read(4))[0]
+                    vz2ak = unpack("<f", f.read(4))[0]
+                    type2ak = unpack("B", f.read(1))[0]
+                    value2ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ak = unpack("<f", f.read(4))[0]
+                    vx3ak = unpack("<f", f.read(4))[0]
+                    vy3ak = unpack("<f", f.read(4))[0]
+                    vz3ak = unpack("<f", f.read(4))[0]
+                    type3ak = unpack("B", f.read(1))[0]
+                    value3ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ak = unpack("<f", f.read(4))[0]
+                    vx4ak = unpack("<f", f.read(4))[0]
+                    vy4ak = unpack("<f", f.read(4))[0]
+                    vz4ak = unpack("<f", f.read(4))[0]
+                    type4ak = unpack("B", f.read(1))[0]
+                    value4ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ak = unpack("<f", f.read(4))[0]
+                    vx5ak = unpack("<f", f.read(4))[0]
+                    vy5ak = unpack("<f", f.read(4))[0]
+                    vz5ak = unpack("<f", f.read(4))[0]
+                    type5ak = unpack("B", f.read(1))[0]
+                    value5ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ak = unpack("<f", f.read(4))[0]
+                    vx6ak = unpack("<f", f.read(4))[0]
+                    vy6ak = unpack("<f", f.read(4))[0]
+                    vz6ak = unpack("<f", f.read(4))[0]
+                    type6ak = unpack("B", f.read(1))[0]
+                    value6ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ak = unpack("<f", f.read(4))[0]
+                    vx7ak = unpack("<f", f.read(4))[0]
+                    vy7ak = unpack("<f", f.read(4))[0]
+                    vz7ak = unpack("<f", f.read(4))[0]
+                    type7ak = unpack("B", f.read(1))[0]
+                    value7ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ak = unpack("<f", f.read(4))[0]
+                    vx8ak = unpack("<f", f.read(4))[0]
+                    vy8ak = unpack("<f", f.read(4))[0]
+                    vz8ak = unpack("<f", f.read(4))[0]
+                    type8ak = unpack("B", f.read(1))[0]
+                    value8ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ak = unpack("<f", f.read(4))[0]
+                    vx9ak = unpack("<f", f.read(4))[0]
+                    vy9ak = unpack("<f", f.read(4))[0]
+                    vz9ak = unpack("<f", f.read(4))[0]
+                    type9ak = unpack("B", f.read(1))[0]
+                    value9ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ak = unpack("<f", f.read(4))[0]
+                    vx10ak = unpack("<f", f.read(4))[0]
+                    vy10ak = unpack("<f", f.read(4))[0]
+                    vz10ak = unpack("<f", f.read(4))[0]
+                    type10ak = unpack("B", f.read(1))[0]
+                    value10ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ak = unpack("<f", f.read(4))[0]
+                    vx11ak = unpack("<f", f.read(4))[0]
+                    vy11ak = unpack("<f", f.read(4))[0]
+                    vz11ak = unpack("<f", f.read(4))[0]
+                    type11ak = unpack("B", f.read(1))[0]
+                    value11ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ak = unpack("<f", f.read(4))[0]
+                    vx12ak = unpack("<f", f.read(4))[0]
+                    vy12ak = unpack("<f", f.read(4))[0]
+                    vz12ak = unpack("<f", f.read(4))[0]
+                    type12ak = unpack("B", f.read(1))[0]
+                    value12ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ak = unpack("<f", f.read(4))[0]
+                    vx13ak = unpack("<f", f.read(4))[0]
+                    vy13ak = unpack("<f", f.read(4))[0]
+                    vz13ak = unpack("<f", f.read(4))[0]
+                    type13ak = unpack("B", f.read(1))[0]
+                    value13ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ak = unpack("<f", f.read(4))[0]
+                    vx14ak = unpack("<f", f.read(4))[0]
+                    vy14ak = unpack("<f", f.read(4))[0]
+                    vz14ak = unpack("<f", f.read(4))[0]
+                    type14ak = unpack("B", f.read(1))[0]
+                    value14ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ak = unpack("<f", f.read(4))[0]
+                    vx15ak = unpack("<f", f.read(4))[0]
+                    vy15ak = unpack("<f", f.read(4))[0]
+                    vz15ak = unpack("<f", f.read(4))[0]
+                    type15ak = unpack("B", f.read(1))[0]
+                    value15ak = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ak = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1al = unpack("<f", f.read(4))[0]
+                    vy1al = unpack("<f", f.read(4))[0]
+                    vz1al = unpack("<f", f.read(4))[0]
+                    type1al = unpack("B", f.read(1))[0]
+                    value1al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1al = unpack("<f", f.read(4))[0]
+                    vx2al = unpack("<f", f.read(4))[0]
+                    vy2al = unpack("<f", f.read(4))[0]
+                    vz2al = unpack("<f", f.read(4))[0]
+                    type2al = unpack("B", f.read(1))[0]
+                    value2al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2al = unpack("<f", f.read(4))[0]
+                    vx3al = unpack("<f", f.read(4))[0]
+                    vy3al = unpack("<f", f.read(4))[0]
+                    vz3al = unpack("<f", f.read(4))[0]
+                    type3al = unpack("B", f.read(1))[0]
+                    value3al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3al = unpack("<f", f.read(4))[0]
+                    vx4al = unpack("<f", f.read(4))[0]
+                    vy4al = unpack("<f", f.read(4))[0]
+                    vz4al = unpack("<f", f.read(4))[0]
+                    type4al = unpack("B", f.read(1))[0]
+                    value4al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4al = unpack("<f", f.read(4))[0]
+                    vx5al = unpack("<f", f.read(4))[0]
+                    vy5al = unpack("<f", f.read(4))[0]
+                    vz5al = unpack("<f", f.read(4))[0]
+                    type5al = unpack("B", f.read(1))[0]
+                    value5al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5al = unpack("<f", f.read(4))[0]
+                    vx6al = unpack("<f", f.read(4))[0]
+                    vy6al = unpack("<f", f.read(4))[0]
+                    vz6al = unpack("<f", f.read(4))[0]
+                    type6al = unpack("B", f.read(1))[0]
+                    value6al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6al = unpack("<f", f.read(4))[0]
+                    vx7al = unpack("<f", f.read(4))[0]
+                    vy7al = unpack("<f", f.read(4))[0]
+                    vz7al = unpack("<f", f.read(4))[0]
+                    type7al = unpack("B", f.read(1))[0]
+                    value7al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7al = unpack("<f", f.read(4))[0]
+                    vx8al = unpack("<f", f.read(4))[0]
+                    vy8al = unpack("<f", f.read(4))[0]
+                    vz8al = unpack("<f", f.read(4))[0]
+                    type8al = unpack("B", f.read(1))[0]
+                    value8al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8al = unpack("<f", f.read(4))[0]
+                    vx9al = unpack("<f", f.read(4))[0]
+                    vy9al = unpack("<f", f.read(4))[0]
+                    vz9al = unpack("<f", f.read(4))[0]
+                    type9al = unpack("B", f.read(1))[0]
+                    value9al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9al = unpack("<f", f.read(4))[0]
+                    vx10al = unpack("<f", f.read(4))[0]
+                    vy10al = unpack("<f", f.read(4))[0]
+                    vz10al = unpack("<f", f.read(4))[0]
+                    type10al = unpack("B", f.read(1))[0]
+                    value10al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10al = unpack("<f", f.read(4))[0]
+                    vx11al = unpack("<f", f.read(4))[0]
+                    vy11al = unpack("<f", f.read(4))[0]
+                    vz11al = unpack("<f", f.read(4))[0]
+                    type11al = unpack("B", f.read(1))[0]
+                    value11al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11al = unpack("<f", f.read(4))[0]
+                    vx12al = unpack("<f", f.read(4))[0]
+                    vy12al = unpack("<f", f.read(4))[0]
+                    vz12al = unpack("<f", f.read(4))[0]
+                    type12al = unpack("B", f.read(1))[0]
+                    value12al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12al = unpack("<f", f.read(4))[0]
+                    vx13al = unpack("<f", f.read(4))[0]
+                    vy13al = unpack("<f", f.read(4))[0]
+                    vz13al = unpack("<f", f.read(4))[0]
+                    type13al = unpack("B", f.read(1))[0]
+                    value13al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13al = unpack("<f", f.read(4))[0]
+                    vx14al = unpack("<f", f.read(4))[0]
+                    vy14al = unpack("<f", f.read(4))[0]
+                    vz14al = unpack("<f", f.read(4))[0]
+                    type14al = unpack("B", f.read(1))[0]
+                    value14al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14al = unpack("<f", f.read(4))[0]
+                    vx15al = unpack("<f", f.read(4))[0]
+                    vy15al = unpack("<f", f.read(4))[0]
+                    vz15al = unpack("<f", f.read(4))[0]
+                    type15al = unpack("B", f.read(1))[0]
+                    value15al = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15al = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1am = unpack("<f", f.read(4))[0]
+                    vy1am = unpack("<f", f.read(4))[0]
+                    vz1am = unpack("<f", f.read(4))[0]
+                    type1am = unpack("B", f.read(1))[0]
+                    value1am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1am = unpack("<f", f.read(4))[0]
+                    vx2am = unpack("<f", f.read(4))[0]
+                    vy2am = unpack("<f", f.read(4))[0]
+                    vz2am = unpack("<f", f.read(4))[0]
+                    type2am = unpack("B", f.read(1))[0]
+                    value2am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2am = unpack("<f", f.read(4))[0]
+                    vx3am = unpack("<f", f.read(4))[0]
+                    vy3am = unpack("<f", f.read(4))[0]
+                    vz3am = unpack("<f", f.read(4))[0]
+                    type3am = unpack("B", f.read(1))[0]
+                    value3am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3am = unpack("<f", f.read(4))[0]
+                    vx4am = unpack("<f", f.read(4))[0]
+                    vy4am = unpack("<f", f.read(4))[0]
+                    vz4am = unpack("<f", f.read(4))[0]
+                    type4am = unpack("B", f.read(1))[0]
+                    value4am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4am = unpack("<f", f.read(4))[0]
+                    vx5am = unpack("<f", f.read(4))[0]
+                    vy5am = unpack("<f", f.read(4))[0]
+                    vz5am = unpack("<f", f.read(4))[0]
+                    type5am = unpack("B", f.read(1))[0]
+                    value5am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5am = unpack("<f", f.read(4))[0]
+                    vx6am = unpack("<f", f.read(4))[0]
+                    vy6am = unpack("<f", f.read(4))[0]
+                    vz6am = unpack("<f", f.read(4))[0]
+                    type6am = unpack("B", f.read(1))[0]
+                    value6am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6am = unpack("<f", f.read(4))[0]
+                    vx7am = unpack("<f", f.read(4))[0]
+                    vy7am = unpack("<f", f.read(4))[0]
+                    vz7am = unpack("<f", f.read(4))[0]
+                    type7am = unpack("B", f.read(1))[0]
+                    value7am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7am = unpack("<f", f.read(4))[0]
+                    vx8am = unpack("<f", f.read(4))[0]
+                    vy8am = unpack("<f", f.read(4))[0]
+                    vz8am = unpack("<f", f.read(4))[0]
+                    type8am = unpack("B", f.read(1))[0]
+                    value8am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8am = unpack("<f", f.read(4))[0]
+                    vx9am = unpack("<f", f.read(4))[0]
+                    vy9am = unpack("<f", f.read(4))[0]
+                    vz9am = unpack("<f", f.read(4))[0]
+                    type9am = unpack("B", f.read(1))[0]
+                    value9am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9am = unpack("<f", f.read(4))[0]
+                    vx10am = unpack("<f", f.read(4))[0]
+                    vy10am = unpack("<f", f.read(4))[0]
+                    vz10am = unpack("<f", f.read(4))[0]
+                    type10am = unpack("B", f.read(1))[0]
+                    value10am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10am = unpack("<f", f.read(4))[0]
+                    vx11am = unpack("<f", f.read(4))[0]
+                    vy11am = unpack("<f", f.read(4))[0]
+                    vz11am = unpack("<f", f.read(4))[0]
+                    type11am = unpack("B", f.read(1))[0]
+                    value11am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11am = unpack("<f", f.read(4))[0]
+                    vx12am = unpack("<f", f.read(4))[0]
+                    vy12am = unpack("<f", f.read(4))[0]
+                    vz12am = unpack("<f", f.read(4))[0]
+                    type12am = unpack("B", f.read(1))[0]
+                    value12am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12am = unpack("<f", f.read(4))[0]
+                    vx13am = unpack("<f", f.read(4))[0]
+                    vy13am = unpack("<f", f.read(4))[0]
+                    vz13am = unpack("<f", f.read(4))[0]
+                    type13am = unpack("B", f.read(1))[0]
+                    value13am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13am = unpack("<f", f.read(4))[0]
+                    vx14am = unpack("<f", f.read(4))[0]
+                    vy14am = unpack("<f", f.read(4))[0]
+                    vz14am = unpack("<f", f.read(4))[0]
+                    type14am = unpack("B", f.read(1))[0]
+                    value14am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14am = unpack("<f", f.read(4))[0]
+                    vx15am = unpack("<f", f.read(4))[0]
+                    vy15am = unpack("<f", f.read(4))[0]
+                    vz15am = unpack("<f", f.read(4))[0]
+                    type15am = unpack("B", f.read(1))[0]
+                    value15am = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15am = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1an = unpack("<f", f.read(4))[0]
+                    vy1an = unpack("<f", f.read(4))[0]
+                    vz1an = unpack("<f", f.read(4))[0]
+                    type1an = unpack("B", f.read(1))[0]
+                    value1an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1an = unpack("<f", f.read(4))[0]
+                    vx2an = unpack("<f", f.read(4))[0]
+                    vy2an = unpack("<f", f.read(4))[0]
+                    vz2an = unpack("<f", f.read(4))[0]
+                    type2an = unpack("B", f.read(1))[0]
+                    value2an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2an = unpack("<f", f.read(4))[0]
+                    vx3an = unpack("<f", f.read(4))[0]
+                    vy3an = unpack("<f", f.read(4))[0]
+                    vz3an = unpack("<f", f.read(4))[0]
+                    type3an = unpack("B", f.read(1))[0]
+                    value3an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3an = unpack("<f", f.read(4))[0]
+                    vx4an = unpack("<f", f.read(4))[0]
+                    vy4an = unpack("<f", f.read(4))[0]
+                    vz4an = unpack("<f", f.read(4))[0]
+                    type4an = unpack("B", f.read(1))[0]
+                    value4an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4an = unpack("<f", f.read(4))[0]
+                    vx5an = unpack("<f", f.read(4))[0]
+                    vy5an = unpack("<f", f.read(4))[0]
+                    vz5an = unpack("<f", f.read(4))[0]
+                    type5an = unpack("B", f.read(1))[0]
+                    value5an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5an = unpack("<f", f.read(4))[0]
+                    vx6an = unpack("<f", f.read(4))[0]
+                    vy6an = unpack("<f", f.read(4))[0]
+                    vz6an = unpack("<f", f.read(4))[0]
+                    type6an = unpack("B", f.read(1))[0]
+                    value6an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6an = unpack("<f", f.read(4))[0]
+                    vx7an = unpack("<f", f.read(4))[0]
+                    vy7an = unpack("<f", f.read(4))[0]
+                    vz7an = unpack("<f", f.read(4))[0]
+                    type7an = unpack("B", f.read(1))[0]
+                    value7an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7an = unpack("<f", f.read(4))[0]
+                    vx8an = unpack("<f", f.read(4))[0]
+                    vy8an = unpack("<f", f.read(4))[0]
+                    vz8an = unpack("<f", f.read(4))[0]
+                    type8an = unpack("B", f.read(1))[0]
+                    value8an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8an = unpack("<f", f.read(4))[0]
+                    vx9an = unpack("<f", f.read(4))[0]
+                    vy9an = unpack("<f", f.read(4))[0]
+                    vz9an = unpack("<f", f.read(4))[0]
+                    type9an = unpack("B", f.read(1))[0]
+                    value9an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9an = unpack("<f", f.read(4))[0]
+                    vx10an = unpack("<f", f.read(4))[0]
+                    vy10an = unpack("<f", f.read(4))[0]
+                    vz10an = unpack("<f", f.read(4))[0]
+                    type10an = unpack("B", f.read(1))[0]
+                    value10an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10an = unpack("<f", f.read(4))[0]
+                    vx11an = unpack("<f", f.read(4))[0]
+                    vy11an = unpack("<f", f.read(4))[0]
+                    vz11an = unpack("<f", f.read(4))[0]
+                    type11an = unpack("B", f.read(1))[0]
+                    value11an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11an = unpack("<f", f.read(4))[0]
+                    vx12an = unpack("<f", f.read(4))[0]
+                    vy12an = unpack("<f", f.read(4))[0]
+                    vz12an = unpack("<f", f.read(4))[0]
+                    type12an = unpack("B", f.read(1))[0]
+                    value12an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12an = unpack("<f", f.read(4))[0]
+                    vx13an = unpack("<f", f.read(4))[0]
+                    vy13an = unpack("<f", f.read(4))[0]
+                    vz13an = unpack("<f", f.read(4))[0]
+                    type13an = unpack("B", f.read(1))[0]
+                    value13an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13an = unpack("<f", f.read(4))[0]
+                    vx14an = unpack("<f", f.read(4))[0]
+                    vy14an = unpack("<f", f.read(4))[0]
+                    vz14an = unpack("<f", f.read(4))[0]
+                    type14an = unpack("B", f.read(1))[0]
+                    value14an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14an = unpack("<f", f.read(4))[0]
+                    vx15an = unpack("<f", f.read(4))[0]
+                    vy15an = unpack("<f", f.read(4))[0]
+                    vz15an = unpack("<f", f.read(4))[0]
+                    type15an = unpack("B", f.read(1))[0]
+                    value15an = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15an = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ao = unpack("<f", f.read(4))[0]
+                    vy1ao = unpack("<f", f.read(4))[0]
+                    vz1ao = unpack("<f", f.read(4))[0]
+                    type1ao = unpack("B", f.read(1))[0]
+                    value1ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ao = unpack("<f", f.read(4))[0]
+                    vx2ao = unpack("<f", f.read(4))[0]
+                    vy2ao = unpack("<f", f.read(4))[0]
+                    vz2ao = unpack("<f", f.read(4))[0]
+                    type2ao = unpack("B", f.read(1))[0]
+                    value2ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ao = unpack("<f", f.read(4))[0]
+                    vx3ao = unpack("<f", f.read(4))[0]
+                    vy3ao = unpack("<f", f.read(4))[0]
+                    vz3ao = unpack("<f", f.read(4))[0]
+                    type3ao = unpack("B", f.read(1))[0]
+                    value3ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ao = unpack("<f", f.read(4))[0]
+                    vx4ao = unpack("<f", f.read(4))[0]
+                    vy4ao = unpack("<f", f.read(4))[0]
+                    vz4ao = unpack("<f", f.read(4))[0]
+                    type4ao = unpack("B", f.read(1))[0]
+                    value4ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ao = unpack("<f", f.read(4))[0]
+                    vx5ao = unpack("<f", f.read(4))[0]
+                    vy5ao = unpack("<f", f.read(4))[0]
+                    vz5ao = unpack("<f", f.read(4))[0]
+                    type5ao = unpack("B", f.read(1))[0]
+                    value5ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ao = unpack("<f", f.read(4))[0]
+                    vx6ao = unpack("<f", f.read(4))[0]
+                    vy6ao = unpack("<f", f.read(4))[0]
+                    vz6ao = unpack("<f", f.read(4))[0]
+                    type6ao = unpack("B", f.read(1))[0]
+                    value6ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ao = unpack("<f", f.read(4))[0]
+                    vx7ao = unpack("<f", f.read(4))[0]
+                    vy7ao = unpack("<f", f.read(4))[0]
+                    vz7ao = unpack("<f", f.read(4))[0]
+                    type7ao = unpack("B", f.read(1))[0]
+                    value7ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ao = unpack("<f", f.read(4))[0]
+                    vx8ao = unpack("<f", f.read(4))[0]
+                    vy8ao = unpack("<f", f.read(4))[0]
+                    vz8ao = unpack("<f", f.read(4))[0]
+                    type8ao = unpack("B", f.read(1))[0]
+                    value8ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ao = unpack("<f", f.read(4))[0]
+                    vx9ao = unpack("<f", f.read(4))[0]
+                    vy9ao = unpack("<f", f.read(4))[0]
+                    vz9ao = unpack("<f", f.read(4))[0]
+                    type9ao = unpack("B", f.read(1))[0]
+                    value9ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ao = unpack("<f", f.read(4))[0]
+                    vx10ao = unpack("<f", f.read(4))[0]
+                    vy10ao = unpack("<f", f.read(4))[0]
+                    vz10ao = unpack("<f", f.read(4))[0]
+                    type10ao = unpack("B", f.read(1))[0]
+                    value10ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ao = unpack("<f", f.read(4))[0]
+                    vx11ao = unpack("<f", f.read(4))[0]
+                    vy11ao = unpack("<f", f.read(4))[0]
+                    vz11ao = unpack("<f", f.read(4))[0]
+                    type11ao = unpack("B", f.read(1))[0]
+                    value11ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ao = unpack("<f", f.read(4))[0]
+                    vx12ao = unpack("<f", f.read(4))[0]
+                    vy12ao = unpack("<f", f.read(4))[0]
+                    vz12ao = unpack("<f", f.read(4))[0]
+                    type12ao = unpack("B", f.read(1))[0]
+                    value12ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ao = unpack("<f", f.read(4))[0]
+                    vx13ao = unpack("<f", f.read(4))[0]
+                    vy13ao = unpack("<f", f.read(4))[0]
+                    vz13ao = unpack("<f", f.read(4))[0]
+                    type13ao = unpack("B", f.read(1))[0]
+                    value13ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ao = unpack("<f", f.read(4))[0]
+                    vx14ao = unpack("<f", f.read(4))[0]
+                    vy14ao = unpack("<f", f.read(4))[0]
+                    vz14ao = unpack("<f", f.read(4))[0]
+                    type14ao = unpack("B", f.read(1))[0]
+                    value14ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ao = unpack("<f", f.read(4))[0]
+                    vx15ao = unpack("<f", f.read(4))[0]
+                    vy15ao = unpack("<f", f.read(4))[0]
+                    vz15ao = unpack("<f", f.read(4))[0]
+                    type15ao = unpack("B", f.read(1))[0]
+                    value15ao = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ao = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ap = unpack("<f", f.read(4))[0]
+                    vy1ap = unpack("<f", f.read(4))[0]
+                    vz1ap = unpack("<f", f.read(4))[0]
+                    type1ap = unpack("B", f.read(1))[0]
+                    value1ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ap = unpack("<f", f.read(4))[0]
+                    vx2ap = unpack("<f", f.read(4))[0]
+                    vy2ap = unpack("<f", f.read(4))[0]
+                    vz2ap = unpack("<f", f.read(4))[0]
+                    type2ap = unpack("B", f.read(1))[0]
+                    value2ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ap = unpack("<f", f.read(4))[0]
+                    vx3ap = unpack("<f", f.read(4))[0]
+                    vy3ap = unpack("<f", f.read(4))[0]
+                    vz3ap = unpack("<f", f.read(4))[0]
+                    type3ap = unpack("B", f.read(1))[0]
+                    value3ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ap = unpack("<f", f.read(4))[0]
+                    vx4ap = unpack("<f", f.read(4))[0]
+                    vy4ap = unpack("<f", f.read(4))[0]
+                    vz4ap = unpack("<f", f.read(4))[0]
+                    type4ap = unpack("B", f.read(1))[0]
+                    value4ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ap = unpack("<f", f.read(4))[0]
+                    vx5ap = unpack("<f", f.read(4))[0]
+                    vy5ap = unpack("<f", f.read(4))[0]
+                    vz5ap = unpack("<f", f.read(4))[0]
+                    type5ap = unpack("B", f.read(1))[0]
+                    value5ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ap = unpack("<f", f.read(4))[0]
+                    vx6ap = unpack("<f", f.read(4))[0]
+                    vy6ap = unpack("<f", f.read(4))[0]
+                    vz6ap = unpack("<f", f.read(4))[0]
+                    type6ap = unpack("B", f.read(1))[0]
+                    value6ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ap = unpack("<f", f.read(4))[0]
+                    vx7ap = unpack("<f", f.read(4))[0]
+                    vy7ap = unpack("<f", f.read(4))[0]
+                    vz7ap = unpack("<f", f.read(4))[0]
+                    type7ap = unpack("B", f.read(1))[0]
+                    value7ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ap = unpack("<f", f.read(4))[0]
+                    vx8ap = unpack("<f", f.read(4))[0]
+                    vy8ap = unpack("<f", f.read(4))[0]
+                    vz8ap = unpack("<f", f.read(4))[0]
+                    type8ap = unpack("B", f.read(1))[0]
+                    value8ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ap = unpack("<f", f.read(4))[0]
+                    vx9ap = unpack("<f", f.read(4))[0]
+                    vy9ap = unpack("<f", f.read(4))[0]
+                    vz9ap = unpack("<f", f.read(4))[0]
+                    type9ap = unpack("B", f.read(1))[0]
+                    value9ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ap = unpack("<f", f.read(4))[0]
+                    vx10ap = unpack("<f", f.read(4))[0]
+                    vy10ap = unpack("<f", f.read(4))[0]
+                    vz10ap = unpack("<f", f.read(4))[0]
+                    type10ap = unpack("B", f.read(1))[0]
+                    value10ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ap = unpack("<f", f.read(4))[0]
+                    vx11ap = unpack("<f", f.read(4))[0]
+                    vy11ap = unpack("<f", f.read(4))[0]
+                    vz11ap = unpack("<f", f.read(4))[0]
+                    type11ap = unpack("B", f.read(1))[0]
+                    value11ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ap = unpack("<f", f.read(4))[0]
+                    vx12ap = unpack("<f", f.read(4))[0]
+                    vy12ap = unpack("<f", f.read(4))[0]
+                    vz12ap = unpack("<f", f.read(4))[0]
+                    type12ap = unpack("B", f.read(1))[0]
+                    value12ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ap = unpack("<f", f.read(4))[0]
+                    vx13ap = unpack("<f", f.read(4))[0]
+                    vy13ap = unpack("<f", f.read(4))[0]
+                    vz13ap = unpack("<f", f.read(4))[0]
+                    type13ap = unpack("B", f.read(1))[0]
+                    value13ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ap = unpack("<f", f.read(4))[0]
+                    vx14ap = unpack("<f", f.read(4))[0]
+                    vy14ap = unpack("<f", f.read(4))[0]
+                    vz14ap = unpack("<f", f.read(4))[0]
+                    type14ap = unpack("B", f.read(1))[0]
+                    value14ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ap = unpack("<f", f.read(4))[0]
+                    vx15ap = unpack("<f", f.read(4))[0]
+                    vy15ap = unpack("<f", f.read(4))[0]
+                    vz15ap = unpack("<f", f.read(4))[0]
+                    type15ap = unpack("B", f.read(1))[0]
+                    value15ap = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ap = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1aq = unpack("<f", f.read(4))[0]
+                    vy1aq = unpack("<f", f.read(4))[0]
+                    vz1aq = unpack("<f", f.read(4))[0]
+                    type1aq = unpack("B", f.read(1))[0]
+                    value1aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1aq = unpack("<f", f.read(4))[0]
+                    vx2aq = unpack("<f", f.read(4))[0]
+                    vy2aq = unpack("<f", f.read(4))[0]
+                    vz2aq = unpack("<f", f.read(4))[0]
+                    type2aq = unpack("B", f.read(1))[0]
+                    value2aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2aq = unpack("<f", f.read(4))[0]
+                    vx3aq = unpack("<f", f.read(4))[0]
+                    vy3aq = unpack("<f", f.read(4))[0]
+                    vz3aq = unpack("<f", f.read(4))[0]
+                    type3aq = unpack("B", f.read(1))[0]
+                    value3aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3aq = unpack("<f", f.read(4))[0]
+                    vx4aq = unpack("<f", f.read(4))[0]
+                    vy4aq = unpack("<f", f.read(4))[0]
+                    vz4aq = unpack("<f", f.read(4))[0]
+                    type4aq = unpack("B", f.read(1))[0]
+                    value4aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4aq = unpack("<f", f.read(4))[0]
+                    vx5aq = unpack("<f", f.read(4))[0]
+                    vy5aq = unpack("<f", f.read(4))[0]
+                    vz5aq = unpack("<f", f.read(4))[0]
+                    type5aq = unpack("B", f.read(1))[0]
+                    value5aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5aq = unpack("<f", f.read(4))[0]
+                    vx6aq = unpack("<f", f.read(4))[0]
+                    vy6aq = unpack("<f", f.read(4))[0]
+                    vz6aq = unpack("<f", f.read(4))[0]
+                    type6aq = unpack("B", f.read(1))[0]
+                    value6aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6aq = unpack("<f", f.read(4))[0]
+                    vx7aq = unpack("<f", f.read(4))[0]
+                    vy7aq = unpack("<f", f.read(4))[0]
+                    vz7aq = unpack("<f", f.read(4))[0]
+                    type7aq = unpack("B", f.read(1))[0]
+                    value7aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7aq = unpack("<f", f.read(4))[0]
+                    vx8aq = unpack("<f", f.read(4))[0]
+                    vy8aq = unpack("<f", f.read(4))[0]
+                    vz8aq = unpack("<f", f.read(4))[0]
+                    type8aq = unpack("B", f.read(1))[0]
+                    value8aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8aq = unpack("<f", f.read(4))[0]
+                    vx9aq = unpack("<f", f.read(4))[0]
+                    vy9aq = unpack("<f", f.read(4))[0]
+                    vz9aq = unpack("<f", f.read(4))[0]
+                    type9aq = unpack("B", f.read(1))[0]
+                    value9aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9aq = unpack("<f", f.read(4))[0]
+                    vx10aq = unpack("<f", f.read(4))[0]
+                    vy10aq = unpack("<f", f.read(4))[0]
+                    vz10aq = unpack("<f", f.read(4))[0]
+                    type10aq = unpack("B", f.read(1))[0]
+                    value10aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10aq = unpack("<f", f.read(4))[0]
+                    vx11aq = unpack("<f", f.read(4))[0]
+                    vy11aq = unpack("<f", f.read(4))[0]
+                    vz11aq = unpack("<f", f.read(4))[0]
+                    type11aq = unpack("B", f.read(1))[0]
+                    value11aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11aq = unpack("<f", f.read(4))[0]
+                    vx12aq = unpack("<f", f.read(4))[0]
+                    vy12aq = unpack("<f", f.read(4))[0]
+                    vz12aq = unpack("<f", f.read(4))[0]
+                    type12aq = unpack("B", f.read(1))[0]
+                    value12aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12aq = unpack("<f", f.read(4))[0]
+                    vx13aq = unpack("<f", f.read(4))[0]
+                    vy13aq = unpack("<f", f.read(4))[0]
+                    vz13aq = unpack("<f", f.read(4))[0]
+                    type13aq = unpack("B", f.read(1))[0]
+                    value13aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13aq = unpack("<f", f.read(4))[0]
+                    vx14aq = unpack("<f", f.read(4))[0]
+                    vy14aq = unpack("<f", f.read(4))[0]
+                    vz14aq = unpack("<f", f.read(4))[0]
+                    type14aq = unpack("B", f.read(1))[0]
+                    value14aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14aq = unpack("<f", f.read(4))[0]
+                    vx15aq = unpack("<f", f.read(4))[0]
+                    vy15aq = unpack("<f", f.read(4))[0]
+                    vz15aq = unpack("<f", f.read(4))[0]
+                    type15aq = unpack("B", f.read(1))[0]
+                    value15aq = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15aq = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ar = unpack("<f", f.read(4))[0]
+                    vy1ar = unpack("<f", f.read(4))[0]
+                    vz1ar = unpack("<f", f.read(4))[0]
+                    type1ar = unpack("B", f.read(1))[0]
+                    value1ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ar = unpack("<f", f.read(4))[0]
+                    vx2ar = unpack("<f", f.read(4))[0]
+                    vy2ar = unpack("<f", f.read(4))[0]
+                    vz2ar = unpack("<f", f.read(4))[0]
+                    type2ar = unpack("B", f.read(1))[0]
+                    value2ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ar = unpack("<f", f.read(4))[0]
+                    vx3ar = unpack("<f", f.read(4))[0]
+                    vy3ar = unpack("<f", f.read(4))[0]
+                    vz3ar = unpack("<f", f.read(4))[0]
+                    type3ar = unpack("B", f.read(1))[0]
+                    value3ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ar = unpack("<f", f.read(4))[0]
+                    vx4ar = unpack("<f", f.read(4))[0]
+                    vy4ar = unpack("<f", f.read(4))[0]
+                    vz4ar = unpack("<f", f.read(4))[0]
+                    type4ar = unpack("B", f.read(1))[0]
+                    value4ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ar = unpack("<f", f.read(4))[0]
+                    vx5ar = unpack("<f", f.read(4))[0]
+                    vy5ar = unpack("<f", f.read(4))[0]
+                    vz5ar = unpack("<f", f.read(4))[0]
+                    type5ar = unpack("B", f.read(1))[0]
+                    value5ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ar = unpack("<f", f.read(4))[0]
+                    vx6ar = unpack("<f", f.read(4))[0]
+                    vy6ar = unpack("<f", f.read(4))[0]
+                    vz6ar = unpack("<f", f.read(4))[0]
+                    type6ar = unpack("B", f.read(1))[0]
+                    value6ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ar = unpack("<f", f.read(4))[0]
+                    vx7ar = unpack("<f", f.read(4))[0]
+                    vy7ar = unpack("<f", f.read(4))[0]
+                    vz7ar = unpack("<f", f.read(4))[0]
+                    type7ar = unpack("B", f.read(1))[0]
+                    value7ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ar = unpack("<f", f.read(4))[0]
+                    vx8ar = unpack("<f", f.read(4))[0]
+                    vy8ar = unpack("<f", f.read(4))[0]
+                    vz8ar = unpack("<f", f.read(4))[0]
+                    type8ar = unpack("B", f.read(1))[0]
+                    value8ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ar = unpack("<f", f.read(4))[0]
+                    vx9ar = unpack("<f", f.read(4))[0]
+                    vy9ar = unpack("<f", f.read(4))[0]
+                    vz9ar = unpack("<f", f.read(4))[0]
+                    type9ar = unpack("B", f.read(1))[0]
+                    value9ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ar = unpack("<f", f.read(4))[0]
+                    vx10ar = unpack("<f", f.read(4))[0]
+                    vy10ar = unpack("<f", f.read(4))[0]
+                    vz10ar = unpack("<f", f.read(4))[0]
+                    type10ar = unpack("B", f.read(1))[0]
+                    value10ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ar = unpack("<f", f.read(4))[0]
+                    vx11ar = unpack("<f", f.read(4))[0]
+                    vy11ar = unpack("<f", f.read(4))[0]
+                    vz11ar = unpack("<f", f.read(4))[0]
+                    type11ar = unpack("B", f.read(1))[0]
+                    value11ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ar = unpack("<f", f.read(4))[0]
+                    vx12ar = unpack("<f", f.read(4))[0]
+                    vy12ar = unpack("<f", f.read(4))[0]
+                    vz12ar = unpack("<f", f.read(4))[0]
+                    type12ar = unpack("B", f.read(1))[0]
+                    value12ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ar = unpack("<f", f.read(4))[0]
+                    vx13ar = unpack("<f", f.read(4))[0]
+                    vy13ar = unpack("<f", f.read(4))[0]
+                    vz13ar = unpack("<f", f.read(4))[0]
+                    type13ar = unpack("B", f.read(1))[0]
+                    value13ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ar = unpack("<f", f.read(4))[0]
+                    vx14ar = unpack("<f", f.read(4))[0]
+                    vy14ar = unpack("<f", f.read(4))[0]
+                    vz14ar = unpack("<f", f.read(4))[0]
+                    type14ar = unpack("B", f.read(1))[0]
+                    value14ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ar = unpack("<f", f.read(4))[0]
+                    vx15ar = unpack("<f", f.read(4))[0]
+                    vy15ar = unpack("<f", f.read(4))[0]
+                    vz15ar = unpack("<f", f.read(4))[0]
+                    type15ar = unpack("B", f.read(1))[0]
+                    value15ar = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ar = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1as = unpack("<f", f.read(4))[0]
+                    vy1as = unpack("<f", f.read(4))[0]
+                    vz1as = unpack("<f", f.read(4))[0]
+                    type1as = unpack("B", f.read(1))[0]
+                    value1as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1as = unpack("<f", f.read(4))[0]
+                    vx2as = unpack("<f", f.read(4))[0]
+                    vy2as = unpack("<f", f.read(4))[0]
+                    vz2as = unpack("<f", f.read(4))[0]
+                    type2as = unpack("B", f.read(1))[0]
+                    value2as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2as = unpack("<f", f.read(4))[0]
+                    vx3as = unpack("<f", f.read(4))[0]
+                    vy3as = unpack("<f", f.read(4))[0]
+                    vz3as = unpack("<f", f.read(4))[0]
+                    type3as = unpack("B", f.read(1))[0]
+                    value3as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3as = unpack("<f", f.read(4))[0]
+                    vx4as = unpack("<f", f.read(4))[0]
+                    vy4as = unpack("<f", f.read(4))[0]
+                    vz4as = unpack("<f", f.read(4))[0]
+                    type4as = unpack("B", f.read(1))[0]
+                    value4as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4as = unpack("<f", f.read(4))[0]
+                    vx5as = unpack("<f", f.read(4))[0]
+                    vy5as = unpack("<f", f.read(4))[0]
+                    vz5as = unpack("<f", f.read(4))[0]
+                    type5as = unpack("B", f.read(1))[0]
+                    value5as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5as = unpack("<f", f.read(4))[0]
+                    vx6as = unpack("<f", f.read(4))[0]
+                    vy6as = unpack("<f", f.read(4))[0]
+                    vz6as = unpack("<f", f.read(4))[0]
+                    type6as = unpack("B", f.read(1))[0]
+                    value6as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6as = unpack("<f", f.read(4))[0]
+                    vx7as = unpack("<f", f.read(4))[0]
+                    vy7as = unpack("<f", f.read(4))[0]
+                    vz7as = unpack("<f", f.read(4))[0]
+                    type7as = unpack("B", f.read(1))[0]
+                    value7as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7as = unpack("<f", f.read(4))[0]
+                    vx8as = unpack("<f", f.read(4))[0]
+                    vy8as = unpack("<f", f.read(4))[0]
+                    vz8as = unpack("<f", f.read(4))[0]
+                    type8as = unpack("B", f.read(1))[0]
+                    value8as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8as = unpack("<f", f.read(4))[0]
+                    vx9as = unpack("<f", f.read(4))[0]
+                    vy9as = unpack("<f", f.read(4))[0]
+                    vz9as = unpack("<f", f.read(4))[0]
+                    type9as = unpack("B", f.read(1))[0]
+                    value9as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9as = unpack("<f", f.read(4))[0]
+                    vx10as = unpack("<f", f.read(4))[0]
+                    vy10as = unpack("<f", f.read(4))[0]
+                    vz10as = unpack("<f", f.read(4))[0]
+                    type10as = unpack("B", f.read(1))[0]
+                    value10as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10as = unpack("<f", f.read(4))[0]
+                    vx11as = unpack("<f", f.read(4))[0]
+                    vy11as = unpack("<f", f.read(4))[0]
+                    vz11as = unpack("<f", f.read(4))[0]
+                    type11as = unpack("B", f.read(1))[0]
+                    value11as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11as = unpack("<f", f.read(4))[0]
+                    vx12as = unpack("<f", f.read(4))[0]
+                    vy12as = unpack("<f", f.read(4))[0]
+                    vz12as = unpack("<f", f.read(4))[0]
+                    type12as = unpack("B", f.read(1))[0]
+                    value12as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12as = unpack("<f", f.read(4))[0]
+                    vx13as = unpack("<f", f.read(4))[0]
+                    vy13as = unpack("<f", f.read(4))[0]
+                    vz13as = unpack("<f", f.read(4))[0]
+                    type13as = unpack("B", f.read(1))[0]
+                    value13as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13as = unpack("<f", f.read(4))[0]
+                    vx14as = unpack("<f", f.read(4))[0]
+                    vy14as = unpack("<f", f.read(4))[0]
+                    vz14as = unpack("<f", f.read(4))[0]
+                    type14as = unpack("B", f.read(1))[0]
+                    value14as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14as = unpack("<f", f.read(4))[0]
+                    vx15as = unpack("<f", f.read(4))[0]
+                    vy15as = unpack("<f", f.read(4))[0]
+                    vz15as = unpack("<f", f.read(4))[0]
+                    type15as = unpack("B", f.read(1))[0]
+                    value15as = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15as = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1at = unpack("<f", f.read(4))[0]
+                    vy1at = unpack("<f", f.read(4))[0]
+                    vz1at = unpack("<f", f.read(4))[0]
+                    type1at = unpack("B", f.read(1))[0]
+                    value1at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1at = unpack("<f", f.read(4))[0]
+                    vx2at = unpack("<f", f.read(4))[0]
+                    vy2at = unpack("<f", f.read(4))[0]
+                    vz2at = unpack("<f", f.read(4))[0]
+                    type2at = unpack("B", f.read(1))[0]
+                    value2at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2at = unpack("<f", f.read(4))[0]
+                    vx3at = unpack("<f", f.read(4))[0]
+                    vy3at = unpack("<f", f.read(4))[0]
+                    vz3at = unpack("<f", f.read(4))[0]
+                    type3at = unpack("B", f.read(1))[0]
+                    value3at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3at = unpack("<f", f.read(4))[0]
+                    vx4at = unpack("<f", f.read(4))[0]
+                    vy4at = unpack("<f", f.read(4))[0]
+                    vz4at = unpack("<f", f.read(4))[0]
+                    type4at = unpack("B", f.read(1))[0]
+                    value4at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4at = unpack("<f", f.read(4))[0]
+                    vx5at = unpack("<f", f.read(4))[0]
+                    vy5at = unpack("<f", f.read(4))[0]
+                    vz5at = unpack("<f", f.read(4))[0]
+                    type5at = unpack("B", f.read(1))[0]
+                    value5at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5at = unpack("<f", f.read(4))[0]
+                    vx6at = unpack("<f", f.read(4))[0]
+                    vy6at = unpack("<f", f.read(4))[0]
+                    vz6at = unpack("<f", f.read(4))[0]
+                    type6at = unpack("B", f.read(1))[0]
+                    value6at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6at = unpack("<f", f.read(4))[0]
+                    vx7at = unpack("<f", f.read(4))[0]
+                    vy7at = unpack("<f", f.read(4))[0]
+                    vz7at = unpack("<f", f.read(4))[0]
+                    type7at = unpack("B", f.read(1))[0]
+                    value7at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7at = unpack("<f", f.read(4))[0]
+                    vx8at = unpack("<f", f.read(4))[0]
+                    vy8at = unpack("<f", f.read(4))[0]
+                    vz8at = unpack("<f", f.read(4))[0]
+                    type8at = unpack("B", f.read(1))[0]
+                    value8at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8at = unpack("<f", f.read(4))[0]
+                    vx9at = unpack("<f", f.read(4))[0]
+                    vy9at = unpack("<f", f.read(4))[0]
+                    vz9at = unpack("<f", f.read(4))[0]
+                    type9at = unpack("B", f.read(1))[0]
+                    value9at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9at = unpack("<f", f.read(4))[0]
+                    vx10at = unpack("<f", f.read(4))[0]
+                    vy10at = unpack("<f", f.read(4))[0]
+                    vz10at = unpack("<f", f.read(4))[0]
+                    type10at = unpack("B", f.read(1))[0]
+                    value10at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10at = unpack("<f", f.read(4))[0]
+                    vx11at = unpack("<f", f.read(4))[0]
+                    vy11at = unpack("<f", f.read(4))[0]
+                    vz11at = unpack("<f", f.read(4))[0]
+                    type11at = unpack("B", f.read(1))[0]
+                    value11at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11at = unpack("<f", f.read(4))[0]
+                    vx12at = unpack("<f", f.read(4))[0]
+                    vy12at = unpack("<f", f.read(4))[0]
+                    vz12at = unpack("<f", f.read(4))[0]
+                    type12at = unpack("B", f.read(1))[0]
+                    value12at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12at = unpack("<f", f.read(4))[0]
+                    vx13at = unpack("<f", f.read(4))[0]
+                    vy13at = unpack("<f", f.read(4))[0]
+                    vz13at = unpack("<f", f.read(4))[0]
+                    type13at = unpack("B", f.read(1))[0]
+                    value13at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13at = unpack("<f", f.read(4))[0]
+                    vx14at = unpack("<f", f.read(4))[0]
+                    vy14at = unpack("<f", f.read(4))[0]
+                    vz14at = unpack("<f", f.read(4))[0]
+                    type14at = unpack("B", f.read(1))[0]
+                    value14at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14at = unpack("<f", f.read(4))[0]
+                    vx15at = unpack("<f", f.read(4))[0]
+                    vy15at = unpack("<f", f.read(4))[0]
+                    vz15at = unpack("<f", f.read(4))[0]
+                    type15at = unpack("B", f.read(1))[0]
+                    value15at = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15at = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1au = unpack("<f", f.read(4))[0]
+                    vy1au = unpack("<f", f.read(4))[0]
+                    vz1au = unpack("<f", f.read(4))[0]
+                    type1au = unpack("B", f.read(1))[0]
+                    value1au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1au = unpack("<f", f.read(4))[0]
+                    vx2au = unpack("<f", f.read(4))[0]
+                    vy2au = unpack("<f", f.read(4))[0]
+                    vz2au = unpack("<f", f.read(4))[0]
+                    type2au = unpack("B", f.read(1))[0]
+                    value2au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2au = unpack("<f", f.read(4))[0]
+                    vx3au = unpack("<f", f.read(4))[0]
+                    vy3au = unpack("<f", f.read(4))[0]
+                    vz3au = unpack("<f", f.read(4))[0]
+                    type3au = unpack("B", f.read(1))[0]
+                    value3au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3au = unpack("<f", f.read(4))[0]
+                    vx4au = unpack("<f", f.read(4))[0]
+                    vy4au = unpack("<f", f.read(4))[0]
+                    vz4au = unpack("<f", f.read(4))[0]
+                    type4au = unpack("B", f.read(1))[0]
+                    value4au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4au = unpack("<f", f.read(4))[0]
+                    vx5au = unpack("<f", f.read(4))[0]
+                    vy5au = unpack("<f", f.read(4))[0]
+                    vz5au = unpack("<f", f.read(4))[0]
+                    type5au = unpack("B", f.read(1))[0]
+                    value5au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5au = unpack("<f", f.read(4))[0]
+                    vx6au = unpack("<f", f.read(4))[0]
+                    vy6au = unpack("<f", f.read(4))[0]
+                    vz6au = unpack("<f", f.read(4))[0]
+                    type6au = unpack("B", f.read(1))[0]
+                    value6au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6au = unpack("<f", f.read(4))[0]
+                    vx7au = unpack("<f", f.read(4))[0]
+                    vy7au = unpack("<f", f.read(4))[0]
+                    vz7au = unpack("<f", f.read(4))[0]
+                    type7au = unpack("B", f.read(1))[0]
+                    value7au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7au = unpack("<f", f.read(4))[0]
+                    vx8au = unpack("<f", f.read(4))[0]
+                    vy8au = unpack("<f", f.read(4))[0]
+                    vz8au = unpack("<f", f.read(4))[0]
+                    type8au = unpack("B", f.read(1))[0]
+                    value8au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8au = unpack("<f", f.read(4))[0]
+                    vx9au = unpack("<f", f.read(4))[0]
+                    vy9au = unpack("<f", f.read(4))[0]
+                    vz9au = unpack("<f", f.read(4))[0]
+                    type9au = unpack("B", f.read(1))[0]
+                    value9au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9au = unpack("<f", f.read(4))[0]
+                    vx10au = unpack("<f", f.read(4))[0]
+                    vy10au = unpack("<f", f.read(4))[0]
+                    vz10au = unpack("<f", f.read(4))[0]
+                    type10au = unpack("B", f.read(1))[0]
+                    value10au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10au = unpack("<f", f.read(4))[0]
+                    vx11au = unpack("<f", f.read(4))[0]
+                    vy11au = unpack("<f", f.read(4))[0]
+                    vz11au = unpack("<f", f.read(4))[0]
+                    type11au = unpack("B", f.read(1))[0]
+                    value11au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11au = unpack("<f", f.read(4))[0]
+                    vx12au = unpack("<f", f.read(4))[0]
+                    vy12au = unpack("<f", f.read(4))[0]
+                    vz12au = unpack("<f", f.read(4))[0]
+                    type12au = unpack("B", f.read(1))[0]
+                    value12au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12au = unpack("<f", f.read(4))[0]
+                    vx13au = unpack("<f", f.read(4))[0]
+                    vy13au = unpack("<f", f.read(4))[0]
+                    vz13au = unpack("<f", f.read(4))[0]
+                    type13au = unpack("B", f.read(1))[0]
+                    value13au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13au = unpack("<f", f.read(4))[0]
+                    vx14au = unpack("<f", f.read(4))[0]
+                    vy14au = unpack("<f", f.read(4))[0]
+                    vz14au = unpack("<f", f.read(4))[0]
+                    type14au = unpack("B", f.read(1))[0]
+                    value14au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14au = unpack("<f", f.read(4))[0]
+                    vx15au = unpack("<f", f.read(4))[0]
+                    vy15au = unpack("<f", f.read(4))[0]
+                    vz15au = unpack("<f", f.read(4))[0]
+                    type15au = unpack("B", f.read(1))[0]
+                    value15au = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15au = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1av = unpack("<f", f.read(4))[0]
+                    vy1av = unpack("<f", f.read(4))[0]
+                    vz1av = unpack("<f", f.read(4))[0]
+                    type1av = unpack("B", f.read(1))[0]
+                    value1av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1av = unpack("<f", f.read(4))[0]
+                    vx2av = unpack("<f", f.read(4))[0]
+                    vy2av = unpack("<f", f.read(4))[0]
+                    vz2av = unpack("<f", f.read(4))[0]
+                    type2av = unpack("B", f.read(1))[0]
+                    value2av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2av = unpack("<f", f.read(4))[0]
+                    vx3av = unpack("<f", f.read(4))[0]
+                    vy3av = unpack("<f", f.read(4))[0]
+                    vz3av = unpack("<f", f.read(4))[0]
+                    type3av = unpack("B", f.read(1))[0]
+                    value3av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3av = unpack("<f", f.read(4))[0]
+                    vx4av = unpack("<f", f.read(4))[0]
+                    vy4av = unpack("<f", f.read(4))[0]
+                    vz4av = unpack("<f", f.read(4))[0]
+                    type4av = unpack("B", f.read(1))[0]
+                    value4av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4av = unpack("<f", f.read(4))[0]
+                    vx5av = unpack("<f", f.read(4))[0]
+                    vy5av = unpack("<f", f.read(4))[0]
+                    vz5av = unpack("<f", f.read(4))[0]
+                    type5av = unpack("B", f.read(1))[0]
+                    value5av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5av = unpack("<f", f.read(4))[0]
+                    vx6av = unpack("<f", f.read(4))[0]
+                    vy6av = unpack("<f", f.read(4))[0]
+                    vz6av = unpack("<f", f.read(4))[0]
+                    type6av = unpack("B", f.read(1))[0]
+                    value6av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6av = unpack("<f", f.read(4))[0]
+                    vx7av = unpack("<f", f.read(4))[0]
+                    vy7av = unpack("<f", f.read(4))[0]
+                    vz7av = unpack("<f", f.read(4))[0]
+                    type7av = unpack("B", f.read(1))[0]
+                    value7av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7av = unpack("<f", f.read(4))[0]
+                    vx8av = unpack("<f", f.read(4))[0]
+                    vy8av = unpack("<f", f.read(4))[0]
+                    vz8av = unpack("<f", f.read(4))[0]
+                    type8av = unpack("B", f.read(1))[0]
+                    value8av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8av = unpack("<f", f.read(4))[0]
+                    vx9av = unpack("<f", f.read(4))[0]
+                    vy9av = unpack("<f", f.read(4))[0]
+                    vz9av = unpack("<f", f.read(4))[0]
+                    type9av = unpack("B", f.read(1))[0]
+                    value9av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9av = unpack("<f", f.read(4))[0]
+                    vx10av = unpack("<f", f.read(4))[0]
+                    vy10av = unpack("<f", f.read(4))[0]
+                    vz10av = unpack("<f", f.read(4))[0]
+                    type10av = unpack("B", f.read(1))[0]
+                    value10av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10av = unpack("<f", f.read(4))[0]
+                    vx11av = unpack("<f", f.read(4))[0]
+                    vy11av = unpack("<f", f.read(4))[0]
+                    vz11av = unpack("<f", f.read(4))[0]
+                    type11av = unpack("B", f.read(1))[0]
+                    value11av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11av = unpack("<f", f.read(4))[0]
+                    vx12av = unpack("<f", f.read(4))[0]
+                    vy12av = unpack("<f", f.read(4))[0]
+                    vz12av = unpack("<f", f.read(4))[0]
+                    type12av = unpack("B", f.read(1))[0]
+                    value12av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12av = unpack("<f", f.read(4))[0]
+                    vx13av = unpack("<f", f.read(4))[0]
+                    vy13av = unpack("<f", f.read(4))[0]
+                    vz13av = unpack("<f", f.read(4))[0]
+                    type13av = unpack("B", f.read(1))[0]
+                    value13av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13av = unpack("<f", f.read(4))[0]
+                    vx14av = unpack("<f", f.read(4))[0]
+                    vy14av = unpack("<f", f.read(4))[0]
+                    vz14av = unpack("<f", f.read(4))[0]
+                    type14av = unpack("B", f.read(1))[0]
+                    value14av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14av = unpack("<f", f.read(4))[0]
+                    vx15av = unpack("<f", f.read(4))[0]
+                    vy15av = unpack("<f", f.read(4))[0]
+                    vz15av = unpack("<f", f.read(4))[0]
+                    type15av = unpack("B", f.read(1))[0]
+                    value15av = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15av = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1aw = unpack("<f", f.read(4))[0]
+                    vy1aw = unpack("<f", f.read(4))[0]
+                    vz1aw = unpack("<f", f.read(4))[0]
+                    type1aw = unpack("B", f.read(1))[0]
+                    value1aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1aw = unpack("<f", f.read(4))[0]
+                    vx2aw = unpack("<f", f.read(4))[0]
+                    vy2aw = unpack("<f", f.read(4))[0]
+                    vz2aw = unpack("<f", f.read(4))[0]
+                    type2aw = unpack("B", f.read(1))[0]
+                    value2aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2aw = unpack("<f", f.read(4))[0]
+                    vx3aw = unpack("<f", f.read(4))[0]
+                    vy3aw = unpack("<f", f.read(4))[0]
+                    vz3aw = unpack("<f", f.read(4))[0]
+                    type3aw = unpack("B", f.read(1))[0]
+                    value3aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3aw = unpack("<f", f.read(4))[0]
+                    vx4aw = unpack("<f", f.read(4))[0]
+                    vy4aw = unpack("<f", f.read(4))[0]
+                    vz4aw = unpack("<f", f.read(4))[0]
+                    type4aw = unpack("B", f.read(1))[0]
+                    value4aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4aw = unpack("<f", f.read(4))[0]
+                    vx5aw = unpack("<f", f.read(4))[0]
+                    vy5aw = unpack("<f", f.read(4))[0]
+                    vz5aw = unpack("<f", f.read(4))[0]
+                    type5aw = unpack("B", f.read(1))[0]
+                    value5aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5aw = unpack("<f", f.read(4))[0]
+                    vx6aw = unpack("<f", f.read(4))[0]
+                    vy6aw = unpack("<f", f.read(4))[0]
+                    vz6aw = unpack("<f", f.read(4))[0]
+                    type6aw = unpack("B", f.read(1))[0]
+                    value6aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6aw = unpack("<f", f.read(4))[0]
+                    vx7aw = unpack("<f", f.read(4))[0]
+                    vy7aw = unpack("<f", f.read(4))[0]
+                    vz7aw = unpack("<f", f.read(4))[0]
+                    type7aw = unpack("B", f.read(1))[0]
+                    value7aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7aw = unpack("<f", f.read(4))[0]
+                    vx8aw = unpack("<f", f.read(4))[0]
+                    vy8aw = unpack("<f", f.read(4))[0]
+                    vz8aw = unpack("<f", f.read(4))[0]
+                    type8aw = unpack("B", f.read(1))[0]
+                    value8aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8aw = unpack("<f", f.read(4))[0]
+                    vx9aw = unpack("<f", f.read(4))[0]
+                    vy9aw = unpack("<f", f.read(4))[0]
+                    vz9aw = unpack("<f", f.read(4))[0]
+                    type9aw = unpack("B", f.read(1))[0]
+                    value9aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9aw = unpack("<f", f.read(4))[0]
+                    vx10aw = unpack("<f", f.read(4))[0]
+                    vy10aw = unpack("<f", f.read(4))[0]
+                    vz10aw = unpack("<f", f.read(4))[0]
+                    type10aw = unpack("B", f.read(1))[0]
+                    value10aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10aw = unpack("<f", f.read(4))[0]
+                    vx11aw = unpack("<f", f.read(4))[0]
+                    vy11aw = unpack("<f", f.read(4))[0]
+                    vz11aw = unpack("<f", f.read(4))[0]
+                    type11aw = unpack("B", f.read(1))[0]
+                    value11aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11aw = unpack("<f", f.read(4))[0]
+                    vx12aw = unpack("<f", f.read(4))[0]
+                    vy12aw = unpack("<f", f.read(4))[0]
+                    vz12aw = unpack("<f", f.read(4))[0]
+                    type12aw = unpack("B", f.read(1))[0]
+                    value12aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12aw = unpack("<f", f.read(4))[0]
+                    vx13aw = unpack("<f", f.read(4))[0]
+                    vy13aw = unpack("<f", f.read(4))[0]
+                    vz13aw = unpack("<f", f.read(4))[0]
+                    type13aw = unpack("B", f.read(1))[0]
+                    value13aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13aw = unpack("<f", f.read(4))[0]
+                    vx14aw = unpack("<f", f.read(4))[0]
+                    vy14aw = unpack("<f", f.read(4))[0]
+                    vz14aw = unpack("<f", f.read(4))[0]
+                    type14aw = unpack("B", f.read(1))[0]
+                    value14aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14aw = unpack("<f", f.read(4))[0]
+                    vx15aw = unpack("<f", f.read(4))[0]
+                    vy15aw = unpack("<f", f.read(4))[0]
+                    vz15aw = unpack("<f", f.read(4))[0]
+                    type15aw = unpack("B", f.read(1))[0]
+                    value15aw = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15aw = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ax = unpack("<f", f.read(4))[0]
+                    vy1ax = unpack("<f", f.read(4))[0]
+                    vz1ax = unpack("<f", f.read(4))[0]
+                    type1ax = unpack("B", f.read(1))[0]
+                    value1ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ax = unpack("<f", f.read(4))[0]
+                    vx2ax = unpack("<f", f.read(4))[0]
+                    vy2ax = unpack("<f", f.read(4))[0]
+                    vz2ax = unpack("<f", f.read(4))[0]
+                    type2ax = unpack("B", f.read(1))[0]
+                    value2ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ax = unpack("<f", f.read(4))[0]
+                    vx3ax = unpack("<f", f.read(4))[0]
+                    vy3ax = unpack("<f", f.read(4))[0]
+                    vz3ax = unpack("<f", f.read(4))[0]
+                    type3ax = unpack("B", f.read(1))[0]
+                    value3ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ax = unpack("<f", f.read(4))[0]
+                    vx4ax = unpack("<f", f.read(4))[0]
+                    vy4ax = unpack("<f", f.read(4))[0]
+                    vz4ax = unpack("<f", f.read(4))[0]
+                    type4ax = unpack("B", f.read(1))[0]
+                    value4ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ax = unpack("<f", f.read(4))[0]
+                    vx5ax = unpack("<f", f.read(4))[0]
+                    vy5ax = unpack("<f", f.read(4))[0]
+                    vz5ax = unpack("<f", f.read(4))[0]
+                    type5ax = unpack("B", f.read(1))[0]
+                    value5ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ax = unpack("<f", f.read(4))[0]
+                    vx6ax = unpack("<f", f.read(4))[0]
+                    vy6ax = unpack("<f", f.read(4))[0]
+                    vz6ax = unpack("<f", f.read(4))[0]
+                    type6ax = unpack("B", f.read(1))[0]
+                    value6ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ax = unpack("<f", f.read(4))[0]
+                    vx7ax = unpack("<f", f.read(4))[0]
+                    vy7ax = unpack("<f", f.read(4))[0]
+                    vz7ax = unpack("<f", f.read(4))[0]
+                    type7ax = unpack("B", f.read(1))[0]
+                    value7ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ax = unpack("<f", f.read(4))[0]
+                    vx8ax = unpack("<f", f.read(4))[0]
+                    vy8ax = unpack("<f", f.read(4))[0]
+                    vz8ax = unpack("<f", f.read(4))[0]
+                    type8ax = unpack("B", f.read(1))[0]
+                    value8ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ax = unpack("<f", f.read(4))[0]
+                    vx9ax = unpack("<f", f.read(4))[0]
+                    vy9ax = unpack("<f", f.read(4))[0]
+                    vz9ax = unpack("<f", f.read(4))[0]
+                    type9ax = unpack("B", f.read(1))[0]
+                    value9ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ax = unpack("<f", f.read(4))[0]
+                    vx10ax = unpack("<f", f.read(4))[0]
+                    vy10ax = unpack("<f", f.read(4))[0]
+                    vz10ax = unpack("<f", f.read(4))[0]
+                    type10ax = unpack("B", f.read(1))[0]
+                    value10ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ax = unpack("<f", f.read(4))[0]
+                    vx11ax = unpack("<f", f.read(4))[0]
+                    vy11ax = unpack("<f", f.read(4))[0]
+                    vz11ax = unpack("<f", f.read(4))[0]
+                    type11ax = unpack("B", f.read(1))[0]
+                    value11ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ax = unpack("<f", f.read(4))[0]
+                    vx12ax = unpack("<f", f.read(4))[0]
+                    vy12ax = unpack("<f", f.read(4))[0]
+                    vz12ax = unpack("<f", f.read(4))[0]
+                    type12ax = unpack("B", f.read(1))[0]
+                    value12ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ax = unpack("<f", f.read(4))[0]
+                    vx13ax = unpack("<f", f.read(4))[0]
+                    vy13ax = unpack("<f", f.read(4))[0]
+                    vz13ax = unpack("<f", f.read(4))[0]
+                    type13ax = unpack("B", f.read(1))[0]
+                    value13ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ax = unpack("<f", f.read(4))[0]
+                    vx14ax = unpack("<f", f.read(4))[0]
+                    vy14ax = unpack("<f", f.read(4))[0]
+                    vz14ax = unpack("<f", f.read(4))[0]
+                    type14ax = unpack("B", f.read(1))[0]
+                    value14ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ax = unpack("<f", f.read(4))[0]
+                    vx15ax = unpack("<f", f.read(4))[0]
+                    vy15ax = unpack("<f", f.read(4))[0]
+                    vz15ax = unpack("<f", f.read(4))[0]
+                    type15ax = unpack("B", f.read(1))[0]
+                    value15ax = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ax = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ay = unpack("<f", f.read(4))[0]
+                    vy1ay = unpack("<f", f.read(4))[0]
+                    vz1ay = unpack("<f", f.read(4))[0]
+                    type1ay = unpack("B", f.read(1))[0]
+                    value1ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ay = unpack("<f", f.read(4))[0]
+                    vx2ay = unpack("<f", f.read(4))[0]
+                    vy2ay = unpack("<f", f.read(4))[0]
+                    vz2ay = unpack("<f", f.read(4))[0]
+                    type2ay = unpack("B", f.read(1))[0]
+                    value2ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ay = unpack("<f", f.read(4))[0]
+                    vx3ay = unpack("<f", f.read(4))[0]
+                    vy3ay = unpack("<f", f.read(4))[0]
+                    vz3ay = unpack("<f", f.read(4))[0]
+                    type3ay = unpack("B", f.read(1))[0]
+                    value3ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ay = unpack("<f", f.read(4))[0]
+                    vx4ay = unpack("<f", f.read(4))[0]
+                    vy4ay = unpack("<f", f.read(4))[0]
+                    vz4ay = unpack("<f", f.read(4))[0]
+                    type4ay = unpack("B", f.read(1))[0]
+                    value4ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ay = unpack("<f", f.read(4))[0]
+                    vx5ay = unpack("<f", f.read(4))[0]
+                    vy5ay = unpack("<f", f.read(4))[0]
+                    vz5ay = unpack("<f", f.read(4))[0]
+                    type5ay = unpack("B", f.read(1))[0]
+                    value5ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ay = unpack("<f", f.read(4))[0]
+                    vx6ay = unpack("<f", f.read(4))[0]
+                    vy6ay = unpack("<f", f.read(4))[0]
+                    vz6ay = unpack("<f", f.read(4))[0]
+                    type6ay = unpack("B", f.read(1))[0]
+                    value6ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ay = unpack("<f", f.read(4))[0]
+                    vx7ay = unpack("<f", f.read(4))[0]
+                    vy7ay = unpack("<f", f.read(4))[0]
+                    vz7ay = unpack("<f", f.read(4))[0]
+                    type7ay = unpack("B", f.read(1))[0]
+                    value7ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ay = unpack("<f", f.read(4))[0]
+                    vx8ay = unpack("<f", f.read(4))[0]
+                    vy8ay = unpack("<f", f.read(4))[0]
+                    vz8ay = unpack("<f", f.read(4))[0]
+                    type8ay = unpack("B", f.read(1))[0]
+                    value8ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ay = unpack("<f", f.read(4))[0]
+                    vx9ay = unpack("<f", f.read(4))[0]
+                    vy9ay = unpack("<f", f.read(4))[0]
+                    vz9ay = unpack("<f", f.read(4))[0]
+                    type9ay = unpack("B", f.read(1))[0]
+                    value9ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ay = unpack("<f", f.read(4))[0]
+                    vx10ay = unpack("<f", f.read(4))[0]
+                    vy10ay = unpack("<f", f.read(4))[0]
+                    vz10ay = unpack("<f", f.read(4))[0]
+                    type10ay = unpack("B", f.read(1))[0]
+                    value10ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ay = unpack("<f", f.read(4))[0]
+                    vx11ay = unpack("<f", f.read(4))[0]
+                    vy11ay = unpack("<f", f.read(4))[0]
+                    vz11ay = unpack("<f", f.read(4))[0]
+                    type11ay = unpack("B", f.read(1))[0]
+                    value11ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ay = unpack("<f", f.read(4))[0]
+                    vx12ay = unpack("<f", f.read(4))[0]
+                    vy12ay = unpack("<f", f.read(4))[0]
+                    vz12ay = unpack("<f", f.read(4))[0]
+                    type12ay = unpack("B", f.read(1))[0]
+                    value12ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ay = unpack("<f", f.read(4))[0]
+                    vx13ay = unpack("<f", f.read(4))[0]
+                    vy13ay = unpack("<f", f.read(4))[0]
+                    vz13ay = unpack("<f", f.read(4))[0]
+                    type13ay = unpack("B", f.read(1))[0]
+                    value13ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ay = unpack("<f", f.read(4))[0]
+                    vx14ay = unpack("<f", f.read(4))[0]
+                    vy14ay = unpack("<f", f.read(4))[0]
+                    vz14ay = unpack("<f", f.read(4))[0]
+                    type14ay = unpack("B", f.read(1))[0]
+                    value14ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ay = unpack("<f", f.read(4))[0]
+                    vx15ay = unpack("<f", f.read(4))[0]
+                    vy15ay = unpack("<f", f.read(4))[0]
+                    vz15ay = unpack("<f", f.read(4))[0]
+                    type15ay = unpack("B", f.read(1))[0]
+                    value15ay = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ay = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1az = unpack("<f", f.read(4))[0]
+                    vy1az = unpack("<f", f.read(4))[0]
+                    vz1az = unpack("<f", f.read(4))[0]
+                    type1az = unpack("B", f.read(1))[0]
+                    value1az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1az = unpack("<f", f.read(4))[0]
+                    vx2az = unpack("<f", f.read(4))[0]
+                    vy2az = unpack("<f", f.read(4))[0]
+                    vz2az = unpack("<f", f.read(4))[0]
+                    type2az = unpack("B", f.read(1))[0]
+                    value2az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2az = unpack("<f", f.read(4))[0]
+                    vx3az = unpack("<f", f.read(4))[0]
+                    vy3az = unpack("<f", f.read(4))[0]
+                    vz3az = unpack("<f", f.read(4))[0]
+                    type3az = unpack("B", f.read(1))[0]
+                    value3az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3az = unpack("<f", f.read(4))[0]
+                    vx4az = unpack("<f", f.read(4))[0]
+                    vy4az = unpack("<f", f.read(4))[0]
+                    vz4az = unpack("<f", f.read(4))[0]
+                    type4az = unpack("B", f.read(1))[0]
+                    value4az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4az = unpack("<f", f.read(4))[0]
+                    vx5az = unpack("<f", f.read(4))[0]
+                    vy5az = unpack("<f", f.read(4))[0]
+                    vz5az = unpack("<f", f.read(4))[0]
+                    type5az = unpack("B", f.read(1))[0]
+                    value5az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5az = unpack("<f", f.read(4))[0]
+                    vx6az = unpack("<f", f.read(4))[0]
+                    vy6az = unpack("<f", f.read(4))[0]
+                    vz6az = unpack("<f", f.read(4))[0]
+                    type6az = unpack("B", f.read(1))[0]
+                    value6az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6az = unpack("<f", f.read(4))[0]
+                    vx7az = unpack("<f", f.read(4))[0]
+                    vy7az = unpack("<f", f.read(4))[0]
+                    vz7az = unpack("<f", f.read(4))[0]
+                    type7az = unpack("B", f.read(1))[0]
+                    value7az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7az = unpack("<f", f.read(4))[0]
+                    vx8az = unpack("<f", f.read(4))[0]
+                    vy8az = unpack("<f", f.read(4))[0]
+                    vz8az = unpack("<f", f.read(4))[0]
+                    type8az = unpack("B", f.read(1))[0]
+                    value8az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8az = unpack("<f", f.read(4))[0]
+                    vx9az = unpack("<f", f.read(4))[0]
+                    vy9az = unpack("<f", f.read(4))[0]
+                    vz9az = unpack("<f", f.read(4))[0]
+                    type9az = unpack("B", f.read(1))[0]
+                    value9az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9az = unpack("<f", f.read(4))[0]
+                    vx10az = unpack("<f", f.read(4))[0]
+                    vy10az = unpack("<f", f.read(4))[0]
+                    vz10az = unpack("<f", f.read(4))[0]
+                    type10az = unpack("B", f.read(1))[0]
+                    value10az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10az = unpack("<f", f.read(4))[0]
+                    vx11az = unpack("<f", f.read(4))[0]
+                    vy11az = unpack("<f", f.read(4))[0]
+                    vz11az = unpack("<f", f.read(4))[0]
+                    type11az = unpack("B", f.read(1))[0]
+                    value11az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11az = unpack("<f", f.read(4))[0]
+                    vx12az = unpack("<f", f.read(4))[0]
+                    vy12az = unpack("<f", f.read(4))[0]
+                    vz12az = unpack("<f", f.read(4))[0]
+                    type12az = unpack("B", f.read(1))[0]
+                    value12az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12az = unpack("<f", f.read(4))[0]
+                    vx13az = unpack("<f", f.read(4))[0]
+                    vy13az = unpack("<f", f.read(4))[0]
+                    vz13az = unpack("<f", f.read(4))[0]
+                    type13az = unpack("B", f.read(1))[0]
+                    value13az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13az = unpack("<f", f.read(4))[0]
+                    vx14az = unpack("<f", f.read(4))[0]
+                    vy14az = unpack("<f", f.read(4))[0]
+                    vz14az = unpack("<f", f.read(4))[0]
+                    type14az = unpack("B", f.read(1))[0]
+                    value14az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14az = unpack("<f", f.read(4))[0]
+                    vx15az = unpack("<f", f.read(4))[0]
+                    vy15az = unpack("<f", f.read(4))[0]
+                    vz15az = unpack("<f", f.read(4))[0]
+                    type15az = unpack("B", f.read(1))[0]
+                    value15az = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15az = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1ba = unpack("<f", f.read(4))[0]
+                    vy1ba = unpack("<f", f.read(4))[0]
+                    vz1ba = unpack("<f", f.read(4))[0]
+                    type1ba = unpack("B", f.read(1))[0]
+                    value1ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1ba = unpack("<f", f.read(4))[0]
+                    vx2ba = unpack("<f", f.read(4))[0]
+                    vy2ba = unpack("<f", f.read(4))[0]
+                    vz2ba = unpack("<f", f.read(4))[0]
+                    type2ba = unpack("B", f.read(1))[0]
+                    value2ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2ba = unpack("<f", f.read(4))[0]
+                    vx3ba = unpack("<f", f.read(4))[0]
+                    vy3ba = unpack("<f", f.read(4))[0]
+                    vz3ba = unpack("<f", f.read(4))[0]
+                    type3ba = unpack("B", f.read(1))[0]
+                    value3ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3ba = unpack("<f", f.read(4))[0]
+                    vx4ba = unpack("<f", f.read(4))[0]
+                    vy4ba = unpack("<f", f.read(4))[0]
+                    vz4ba = unpack("<f", f.read(4))[0]
+                    type4ba = unpack("B", f.read(1))[0]
+                    value4ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4ba = unpack("<f", f.read(4))[0]
+                    vx5ba = unpack("<f", f.read(4))[0]
+                    vy5ba = unpack("<f", f.read(4))[0]
+                    vz5ba = unpack("<f", f.read(4))[0]
+                    type5ba = unpack("B", f.read(1))[0]
+                    value5ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5ba = unpack("<f", f.read(4))[0]
+                    vx6ba = unpack("<f", f.read(4))[0]
+                    vy6ba = unpack("<f", f.read(4))[0]
+                    vz6ba = unpack("<f", f.read(4))[0]
+                    type6ba = unpack("B", f.read(1))[0]
+                    value6ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6ba = unpack("<f", f.read(4))[0]
+                    vx7ba = unpack("<f", f.read(4))[0]
+                    vy7ba = unpack("<f", f.read(4))[0]
+                    vz7ba = unpack("<f", f.read(4))[0]
+                    type7ba = unpack("B", f.read(1))[0]
+                    value7ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7ba = unpack("<f", f.read(4))[0]
+                    vx8ba = unpack("<f", f.read(4))[0]
+                    vy8ba = unpack("<f", f.read(4))[0]
+                    vz8ba = unpack("<f", f.read(4))[0]
+                    type8ba = unpack("B", f.read(1))[0]
+                    value8ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8ba = unpack("<f", f.read(4))[0]
+                    vx9ba = unpack("<f", f.read(4))[0]
+                    vy9ba = unpack("<f", f.read(4))[0]
+                    vz9ba = unpack("<f", f.read(4))[0]
+                    type9ba = unpack("B", f.read(1))[0]
+                    value9ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9ba = unpack("<f", f.read(4))[0]
+                    vx10ba = unpack("<f", f.read(4))[0]
+                    vy10ba = unpack("<f", f.read(4))[0]
+                    vz10ba = unpack("<f", f.read(4))[0]
+                    type10ba = unpack("B", f.read(1))[0]
+                    value10ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10ba = unpack("<f", f.read(4))[0]
+                    vx11ba = unpack("<f", f.read(4))[0]
+                    vy11ba = unpack("<f", f.read(4))[0]
+                    vz11ba = unpack("<f", f.read(4))[0]
+                    type11ba = unpack("B", f.read(1))[0]
+                    value11ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11ba = unpack("<f", f.read(4))[0]
+                    vx12ba = unpack("<f", f.read(4))[0]
+                    vy12ba = unpack("<f", f.read(4))[0]
+                    vz12ba = unpack("<f", f.read(4))[0]
+                    type12ba = unpack("B", f.read(1))[0]
+                    value12ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12ba = unpack("<f", f.read(4))[0]
+                    vx13ba = unpack("<f", f.read(4))[0]
+                    vy13ba = unpack("<f", f.read(4))[0]
+                    vz13ba = unpack("<f", f.read(4))[0]
+                    type13ba = unpack("B", f.read(1))[0]
+                    value13ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13ba = unpack("<f", f.read(4))[0]
+                    vx14ba = unpack("<f", f.read(4))[0]
+                    vy14ba = unpack("<f", f.read(4))[0]
+                    vz14ba = unpack("<f", f.read(4))[0]
+                    type14ba = unpack("B", f.read(1))[0]
+                    value14ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14ba = unpack("<f", f.read(4))[0]
+                    vx15ba = unpack("<f", f.read(4))[0]
+                    vy15ba = unpack("<f", f.read(4))[0]
+                    vz15ba = unpack("<f", f.read(4))[0]
+                    type15ba = unpack("B", f.read(1))[0]
+                    value15ba = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15ba = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1bb = unpack("<f", f.read(4))[0]
+                    vy1bb = unpack("<f", f.read(4))[0]
+                    vz1bb = unpack("<f", f.read(4))[0]
+                    type1bb = unpack("B", f.read(1))[0]
+                    value1bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1bb = unpack("<f", f.read(4))[0]
+                    vx2bb = unpack("<f", f.read(4))[0]
+                    vy2bb = unpack("<f", f.read(4))[0]
+                    vz2bb = unpack("<f", f.read(4))[0]
+                    type2bb = unpack("B", f.read(1))[0]
+                    value2bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2bb = unpack("<f", f.read(4))[0]
+                    vx3bb = unpack("<f", f.read(4))[0]
+                    vy3bb = unpack("<f", f.read(4))[0]
+                    vz3bb = unpack("<f", f.read(4))[0]
+                    type3bb = unpack("B", f.read(1))[0]
+                    value3bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3bb = unpack("<f", f.read(4))[0]
+                    vx4bb = unpack("<f", f.read(4))[0]
+                    vy4bb = unpack("<f", f.read(4))[0]
+                    vz4bb = unpack("<f", f.read(4))[0]
+                    type4bb = unpack("B", f.read(1))[0]
+                    value4bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4bb = unpack("<f", f.read(4))[0]
+                    vx5bb = unpack("<f", f.read(4))[0]
+                    vy5bb = unpack("<f", f.read(4))[0]
+                    vz5bb = unpack("<f", f.read(4))[0]
+                    type5bb = unpack("B", f.read(1))[0]
+                    value5bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5bb = unpack("<f", f.read(4))[0]
+                    vx6bb = unpack("<f", f.read(4))[0]
+                    vy6bb = unpack("<f", f.read(4))[0]
+                    vz6bb = unpack("<f", f.read(4))[0]
+                    type6bb = unpack("B", f.read(1))[0]
+                    value6bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6bb = unpack("<f", f.read(4))[0]
+                    vx7bb = unpack("<f", f.read(4))[0]
+                    vy7bb = unpack("<f", f.read(4))[0]
+                    vz7bb = unpack("<f", f.read(4))[0]
+                    type7bb = unpack("B", f.read(1))[0]
+                    value7bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7bb = unpack("<f", f.read(4))[0]
+                    vx8bb = unpack("<f", f.read(4))[0]
+                    vy8bb = unpack("<f", f.read(4))[0]
+                    vz8bb = unpack("<f", f.read(4))[0]
+                    type8bb = unpack("B", f.read(1))[0]
+                    value8bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8bb = unpack("<f", f.read(4))[0]
+                    vx9bb = unpack("<f", f.read(4))[0]
+                    vy9bb = unpack("<f", f.read(4))[0]
+                    vz9bb = unpack("<f", f.read(4))[0]
+                    type9bb = unpack("B", f.read(1))[0]
+                    value9bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9bb = unpack("<f", f.read(4))[0]
+                    vx10bb = unpack("<f", f.read(4))[0]
+                    vy10bb = unpack("<f", f.read(4))[0]
+                    vz10bb = unpack("<f", f.read(4))[0]
+                    type10bb = unpack("B", f.read(1))[0]
+                    value10bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10bb = unpack("<f", f.read(4))[0]
+                    vx11bb = unpack("<f", f.read(4))[0]
+                    vy11bb = unpack("<f", f.read(4))[0]
+                    vz11bb = unpack("<f", f.read(4))[0]
+                    type11bb = unpack("B", f.read(1))[0]
+                    value11bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11bb = unpack("<f", f.read(4))[0]
+                    vx12bb = unpack("<f", f.read(4))[0]
+                    vy12bb = unpack("<f", f.read(4))[0]
+                    vz12bb = unpack("<f", f.read(4))[0]
+                    type12bb = unpack("B", f.read(1))[0]
+                    value12bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12bb = unpack("<f", f.read(4))[0]
+                    vx13bb = unpack("<f", f.read(4))[0]
+                    vy13bb = unpack("<f", f.read(4))[0]
+                    vz13bb = unpack("<f", f.read(4))[0]
+                    type13bb = unpack("B", f.read(1))[0]
+                    value13bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13bb = unpack("<f", f.read(4))[0]
+                    vx14bb = unpack("<f", f.read(4))[0]
+                    vy14bb = unpack("<f", f.read(4))[0]
+                    vz14bb = unpack("<f", f.read(4))[0]
+                    type14bb = unpack("B", f.read(1))[0]
+                    value14bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14bb = unpack("<f", f.read(4))[0]
+                    vx15bb = unpack("<f", f.read(4))[0]
+                    vy15bb = unpack("<f", f.read(4))[0]
+                    vz15bb = unpack("<f", f.read(4))[0]
+                    type15bb = unpack("B", f.read(1))[0]
+                    value15bb = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15bb = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1bc = unpack("<f", f.read(4))[0]
+                    vy1bc = unpack("<f", f.read(4))[0]
+                    vz1bc = unpack("<f", f.read(4))[0]
+                    type1bc = unpack("B", f.read(1))[0]
+                    value1bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1bc = unpack("<f", f.read(4))[0]
+                    vx2bc = unpack("<f", f.read(4))[0]
+                    vy2bc = unpack("<f", f.read(4))[0]
+                    vz2bc = unpack("<f", f.read(4))[0]
+                    type2bc = unpack("B", f.read(1))[0]
+                    value2bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2bc = unpack("<f", f.read(4))[0]
+                    vx3bc = unpack("<f", f.read(4))[0]
+                    vy3bc = unpack("<f", f.read(4))[0]
+                    vz3bc = unpack("<f", f.read(4))[0]
+                    type3bc = unpack("B", f.read(1))[0]
+                    value3bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3bc = unpack("<f", f.read(4))[0]
+                    vx4bc = unpack("<f", f.read(4))[0]
+                    vy4bc = unpack("<f", f.read(4))[0]
+                    vz4bc = unpack("<f", f.read(4))[0]
+                    type4bc = unpack("B", f.read(1))[0]
+                    value4bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4bc = unpack("<f", f.read(4))[0]
+                    vx5bc = unpack("<f", f.read(4))[0]
+                    vy5bc = unpack("<f", f.read(4))[0]
+                    vz5bc = unpack("<f", f.read(4))[0]
+                    type5bc = unpack("B", f.read(1))[0]
+                    value5bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5bc = unpack("<f", f.read(4))[0]
+                    vx6bc = unpack("<f", f.read(4))[0]
+                    vy6bc = unpack("<f", f.read(4))[0]
+                    vz6bc = unpack("<f", f.read(4))[0]
+                    type6bc = unpack("B", f.read(1))[0]
+                    value6bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6bc = unpack("<f", f.read(4))[0]
+                    vx7bc = unpack("<f", f.read(4))[0]
+                    vy7bc = unpack("<f", f.read(4))[0]
+                    vz7bc = unpack("<f", f.read(4))[0]
+                    type7bc = unpack("B", f.read(1))[0]
+                    value7bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7bc = unpack("<f", f.read(4))[0]
+                    vx8bc = unpack("<f", f.read(4))[0]
+                    vy8bc = unpack("<f", f.read(4))[0]
+                    vz8bc = unpack("<f", f.read(4))[0]
+                    type8bc = unpack("B", f.read(1))[0]
+                    value8bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8bc = unpack("<f", f.read(4))[0]
+                    vx9bc = unpack("<f", f.read(4))[0]
+                    vy9bc = unpack("<f", f.read(4))[0]
+                    vz9bc = unpack("<f", f.read(4))[0]
+                    type9bc = unpack("B", f.read(1))[0]
+                    value9bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9bc = unpack("<f", f.read(4))[0]
+                    vx10bc = unpack("<f", f.read(4))[0]
+                    vy10bc = unpack("<f", f.read(4))[0]
+                    vz10bc = unpack("<f", f.read(4))[0]
+                    type10bc = unpack("B", f.read(1))[0]
+                    value10bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10bc = unpack("<f", f.read(4))[0]
+                    vx11bc = unpack("<f", f.read(4))[0]
+                    vy11bc = unpack("<f", f.read(4))[0]
+                    vz11bc = unpack("<f", f.read(4))[0]
+                    type11bc = unpack("B", f.read(1))[0]
+                    value11bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11bc = unpack("<f", f.read(4))[0]
+                    vx12bc = unpack("<f", f.read(4))[0]
+                    vy12bc = unpack("<f", f.read(4))[0]
+                    vz12bc = unpack("<f", f.read(4))[0]
+                    type12bc = unpack("B", f.read(1))[0]
+                    value12bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12bc = unpack("<f", f.read(4))[0]
+                    vx13bc = unpack("<f", f.read(4))[0]
+                    vy13bc = unpack("<f", f.read(4))[0]
+                    vz13bc = unpack("<f", f.read(4))[0]
+                    type13bc = unpack("B", f.read(1))[0]
+                    value13bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13bc = unpack("<f", f.read(4))[0]
+                    vx14bc = unpack("<f", f.read(4))[0]
+                    vy14bc = unpack("<f", f.read(4))[0]
+                    vz14bc = unpack("<f", f.read(4))[0]
+                    type14bc = unpack("B", f.read(1))[0]
+                    value14bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14bc = unpack("<f", f.read(4))[0]
+                    vx15bc = unpack("<f", f.read(4))[0]
+                    vy15bc = unpack("<f", f.read(4))[0]
+                    vz15bc = unpack("<f", f.read(4))[0]
+                    type15bc = unpack("B", f.read(1))[0]
+                    value15bc = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15bc = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1bd = unpack("<f", f.read(4))[0]
+                    vy1bd = unpack("<f", f.read(4))[0]
+                    vz1bd = unpack("<f", f.read(4))[0]
+                    type1bd = unpack("B", f.read(1))[0]
+                    value1bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1bd = unpack("<f", f.read(4))[0]
+                    vx2bd = unpack("<f", f.read(4))[0]
+                    vy2bd = unpack("<f", f.read(4))[0]
+                    vz2bd = unpack("<f", f.read(4))[0]
+                    type2bd = unpack("B", f.read(1))[0]
+                    value2bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2bd = unpack("<f", f.read(4))[0]
+                    vx3bd = unpack("<f", f.read(4))[0]
+                    vy3bd = unpack("<f", f.read(4))[0]
+                    vz3bd = unpack("<f", f.read(4))[0]
+                    type3bd = unpack("B", f.read(1))[0]
+                    value3bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3bd = unpack("<f", f.read(4))[0]
+                    vx4bd = unpack("<f", f.read(4))[0]
+                    vy4bd = unpack("<f", f.read(4))[0]
+                    vz4bd = unpack("<f", f.read(4))[0]
+                    type4bd = unpack("B", f.read(1))[0]
+                    value4bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4bd = unpack("<f", f.read(4))[0]
+                    vx5bd = unpack("<f", f.read(4))[0]
+                    vy5bd = unpack("<f", f.read(4))[0]
+                    vz5bd = unpack("<f", f.read(4))[0]
+                    type5bd = unpack("B", f.read(1))[0]
+                    value5bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5bd = unpack("<f", f.read(4))[0]
+                    vx6bd = unpack("<f", f.read(4))[0]
+                    vy6bd = unpack("<f", f.read(4))[0]
+                    vz6bd = unpack("<f", f.read(4))[0]
+                    type6bd = unpack("B", f.read(1))[0]
+                    value6bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6bd = unpack("<f", f.read(4))[0]
+                    vx7bd = unpack("<f", f.read(4))[0]
+                    vy7bd = unpack("<f", f.read(4))[0]
+                    vz7bd = unpack("<f", f.read(4))[0]
+                    type7bd = unpack("B", f.read(1))[0]
+                    value7bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7bd = unpack("<f", f.read(4))[0]
+                    vx8bd = unpack("<f", f.read(4))[0]
+                    vy8bd = unpack("<f", f.read(4))[0]
+                    vz8bd = unpack("<f", f.read(4))[0]
+                    type8bd = unpack("B", f.read(1))[0]
+                    value8bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8bd = unpack("<f", f.read(4))[0]
+                    vx9bd = unpack("<f", f.read(4))[0]
+                    vy9bd = unpack("<f", f.read(4))[0]
+                    vz9bd = unpack("<f", f.read(4))[0]
+                    type9bd = unpack("B", f.read(1))[0]
+                    value9bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9bd = unpack("<f", f.read(4))[0]
+                    vx10bd = unpack("<f", f.read(4))[0]
+                    vy10bd = unpack("<f", f.read(4))[0]
+                    vz10bd = unpack("<f", f.read(4))[0]
+                    type10bd = unpack("B", f.read(1))[0]
+                    value10bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10bd = unpack("<f", f.read(4))[0]
+                    vx11bd = unpack("<f", f.read(4))[0]
+                    vy11bd = unpack("<f", f.read(4))[0]
+                    vz11bd = unpack("<f", f.read(4))[0]
+                    type11bd = unpack("B", f.read(1))[0]
+                    value11bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11bd = unpack("<f", f.read(4))[0]
+                    vx12bd = unpack("<f", f.read(4))[0]
+                    vy12bd = unpack("<f", f.read(4))[0]
+                    vz12bd = unpack("<f", f.read(4))[0]
+                    type12bd = unpack("B", f.read(1))[0]
+                    value12bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12bd = unpack("<f", f.read(4))[0]
+                    vx13bd = unpack("<f", f.read(4))[0]
+                    vy13bd = unpack("<f", f.read(4))[0]
+                    vz13bd = unpack("<f", f.read(4))[0]
+                    type13bd = unpack("B", f.read(1))[0]
+                    value13bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13bd = unpack("<f", f.read(4))[0]
+                    vx14bd = unpack("<f", f.read(4))[0]
+                    vy14bd = unpack("<f", f.read(4))[0]
+                    vz14bd = unpack("<f", f.read(4))[0]
+                    type14bd = unpack("B", f.read(1))[0]
+                    value14bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14bd = unpack("<f", f.read(4))[0]
+                    vx15bd = unpack("<f", f.read(4))[0]
+                    vy15bd = unpack("<f", f.read(4))[0]
+                    vz15bd = unpack("<f", f.read(4))[0]
+                    type15bd = unpack("B", f.read(1))[0]
+                    value15bd = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15bd = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1be = unpack("<f", f.read(4))[0]
+                    vy1be = unpack("<f", f.read(4))[0]
+                    vz1be = unpack("<f", f.read(4))[0]
+                    type1be = unpack("B", f.read(1))[0]
+                    value1be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1be = unpack("<f", f.read(4))[0]
+                    vx2be = unpack("<f", f.read(4))[0]
+                    vy2be = unpack("<f", f.read(4))[0]
+                    vz2be = unpack("<f", f.read(4))[0]
+                    type2be = unpack("B", f.read(1))[0]
+                    value2be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2be = unpack("<f", f.read(4))[0]
+                    vx3be = unpack("<f", f.read(4))[0]
+                    vy3be = unpack("<f", f.read(4))[0]
+                    vz3be = unpack("<f", f.read(4))[0]
+                    type3be = unpack("B", f.read(1))[0]
+                    value3be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3be = unpack("<f", f.read(4))[0]
+                    vx4be = unpack("<f", f.read(4))[0]
+                    vy4be = unpack("<f", f.read(4))[0]
+                    vz4be = unpack("<f", f.read(4))[0]
+                    type4be = unpack("B", f.read(1))[0]
+                    value4be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4be = unpack("<f", f.read(4))[0]
+                    vx5be = unpack("<f", f.read(4))[0]
+                    vy5be = unpack("<f", f.read(4))[0]
+                    vz5be = unpack("<f", f.read(4))[0]
+                    type5be = unpack("B", f.read(1))[0]
+                    value5be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5be = unpack("<f", f.read(4))[0]
+                    vx6be = unpack("<f", f.read(4))[0]
+                    vy6be = unpack("<f", f.read(4))[0]
+                    vz6be = unpack("<f", f.read(4))[0]
+                    type6be = unpack("B", f.read(1))[0]
+                    value6be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6be = unpack("<f", f.read(4))[0]
+                    vx7be = unpack("<f", f.read(4))[0]
+                    vy7be = unpack("<f", f.read(4))[0]
+                    vz7be = unpack("<f", f.read(4))[0]
+                    type7be = unpack("B", f.read(1))[0]
+                    value7be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7be = unpack("<f", f.read(4))[0]
+                    vx8be = unpack("<f", f.read(4))[0]
+                    vy8be = unpack("<f", f.read(4))[0]
+                    vz8be = unpack("<f", f.read(4))[0]
+                    type8be = unpack("B", f.read(1))[0]
+                    value8be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8be = unpack("<f", f.read(4))[0]
+                    vx9be = unpack("<f", f.read(4))[0]
+                    vy9be = unpack("<f", f.read(4))[0]
+                    vz9be = unpack("<f", f.read(4))[0]
+                    type9be = unpack("B", f.read(1))[0]
+                    value9be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9be = unpack("<f", f.read(4))[0]
+                    vx10be = unpack("<f", f.read(4))[0]
+                    vy10be = unpack("<f", f.read(4))[0]
+                    vz10be = unpack("<f", f.read(4))[0]
+                    type10be = unpack("B", f.read(1))[0]
+                    value10be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10be = unpack("<f", f.read(4))[0]
+                    vx11be = unpack("<f", f.read(4))[0]
+                    vy11be = unpack("<f", f.read(4))[0]
+                    vz11be = unpack("<f", f.read(4))[0]
+                    type11be = unpack("B", f.read(1))[0]
+                    value11be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11be = unpack("<f", f.read(4))[0]
+                    vx12be = unpack("<f", f.read(4))[0]
+                    vy12be = unpack("<f", f.read(4))[0]
+                    vz12be = unpack("<f", f.read(4))[0]
+                    type12be = unpack("B", f.read(1))[0]
+                    value12be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12be = unpack("<f", f.read(4))[0]
+                    vx13be = unpack("<f", f.read(4))[0]
+                    vy13be = unpack("<f", f.read(4))[0]
+                    vz13be = unpack("<f", f.read(4))[0]
+                    type13be = unpack("B", f.read(1))[0]
+                    value13be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13be = unpack("<f", f.read(4))[0]
+                    vx14be = unpack("<f", f.read(4))[0]
+                    vy14be = unpack("<f", f.read(4))[0]
+                    vz14be = unpack("<f", f.read(4))[0]
+                    type14be = unpack("B", f.read(1))[0]
+                    value14be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14be = unpack("<f", f.read(4))[0]
+                    vx15be = unpack("<f", f.read(4))[0]
+                    vy15be = unpack("<f", f.read(4))[0]
+                    vz15be = unpack("<f", f.read(4))[0]
+                    type15be = unpack("B", f.read(1))[0]
+                    value15be = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15be = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1bf = unpack("<f", f.read(4))[0]
+                    vy1bf = unpack("<f", f.read(4))[0]
+                    vz1bf = unpack("<f", f.read(4))[0]
+                    type1bf = unpack("B", f.read(1))[0]
+                    value1bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1bf = unpack("<f", f.read(4))[0]
+                    vx2bf = unpack("<f", f.read(4))[0]
+                    vy2bf = unpack("<f", f.read(4))[0]
+                    vz2bf = unpack("<f", f.read(4))[0]
+                    type2bf = unpack("B", f.read(1))[0]
+                    value2bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2bf = unpack("<f", f.read(4))[0]
+                    vx3bf = unpack("<f", f.read(4))[0]
+                    vy3bf = unpack("<f", f.read(4))[0]
+                    vz3bf = unpack("<f", f.read(4))[0]
+                    type3bf = unpack("B", f.read(1))[0]
+                    value3bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3bf = unpack("<f", f.read(4))[0]
+                    vx4bf = unpack("<f", f.read(4))[0]
+                    vy4bf = unpack("<f", f.read(4))[0]
+                    vz4bf = unpack("<f", f.read(4))[0]
+                    type4bf = unpack("B", f.read(1))[0]
+                    value4bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4bf = unpack("<f", f.read(4))[0]
+                    vx5bf = unpack("<f", f.read(4))[0]
+                    vy5bf = unpack("<f", f.read(4))[0]
+                    vz5bf = unpack("<f", f.read(4))[0]
+                    type5bf = unpack("B", f.read(1))[0]
+                    value5bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5bf = unpack("<f", f.read(4))[0]
+                    vx6bf = unpack("<f", f.read(4))[0]
+                    vy6bf = unpack("<f", f.read(4))[0]
+                    vz6bf = unpack("<f", f.read(4))[0]
+                    type6bf = unpack("B", f.read(1))[0]
+                    value6bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6bf = unpack("<f", f.read(4))[0]
+                    vx7bf = unpack("<f", f.read(4))[0]
+                    vy7bf = unpack("<f", f.read(4))[0]
+                    vz7bf = unpack("<f", f.read(4))[0]
+                    type7bf = unpack("B", f.read(1))[0]
+                    value7bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7bf = unpack("<f", f.read(4))[0]
+                    vx8bf = unpack("<f", f.read(4))[0]
+                    vy8bf = unpack("<f", f.read(4))[0]
+                    vz8bf = unpack("<f", f.read(4))[0]
+                    type8bf = unpack("B", f.read(1))[0]
+                    value8bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8bf = unpack("<f", f.read(4))[0]
+                    vx9bf = unpack("<f", f.read(4))[0]
+                    vy9bf = unpack("<f", f.read(4))[0]
+                    vz9bf = unpack("<f", f.read(4))[0]
+                    type9bf = unpack("B", f.read(1))[0]
+                    value9bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9bf = unpack("<f", f.read(4))[0]
+                    vx10bf = unpack("<f", f.read(4))[0]
+                    vy10bf = unpack("<f", f.read(4))[0]
+                    vz10bf = unpack("<f", f.read(4))[0]
+                    type10bf = unpack("B", f.read(1))[0]
+                    value10bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10bf = unpack("<f", f.read(4))[0]
+                    vx11bf = unpack("<f", f.read(4))[0]
+                    vy11bf = unpack("<f", f.read(4))[0]
+                    vz11bf = unpack("<f", f.read(4))[0]
+                    type11bf = unpack("B", f.read(1))[0]
+                    value11bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11bf = unpack("<f", f.read(4))[0]
+                    vx12bf = unpack("<f", f.read(4))[0]
+                    vy12bf = unpack("<f", f.read(4))[0]
+                    vz12bf = unpack("<f", f.read(4))[0]
+                    type12bf = unpack("B", f.read(1))[0]
+                    value12bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12bf = unpack("<f", f.read(4))[0]
+                    vx13bf = unpack("<f", f.read(4))[0]
+                    vy13bf = unpack("<f", f.read(4))[0]
+                    vz13bf = unpack("<f", f.read(4))[0]
+                    type13bf = unpack("B", f.read(1))[0]
+                    value13bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13bf = unpack("<f", f.read(4))[0]
+                    vx14bf = unpack("<f", f.read(4))[0]
+                    vy14bf = unpack("<f", f.read(4))[0]
+                    vz14bf = unpack("<f", f.read(4))[0]
+                    type14bf = unpack("B", f.read(1))[0]
+                    value14bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14bf = unpack("<f", f.read(4))[0]
+                    vx15bf = unpack("<f", f.read(4))[0]
+                    vy15bf = unpack("<f", f.read(4))[0]
+                    vz15bf = unpack("<f", f.read(4))[0]
+                    type15bf = unpack("B", f.read(1))[0]
+                    value15bf = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15bf = unpack("<f", f.read(4))[0]
+
+                    f.seek(-240,1)
+
+                    vx1bg = unpack("<f", f.read(4))[0]
+                    vy1bg = unpack("<f", f.read(4))[0]
+                    vz1bg = unpack("<f", f.read(4))[0]
+                    type1bg = unpack("B", f.read(1))[0]
+                    value1bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw1bg = unpack("<f", f.read(4))[0]
+                    vx2bg = unpack("<f", f.read(4))[0]
+                    vy2bg = unpack("<f", f.read(4))[0]
+                    vz2bg = unpack("<f", f.read(4))[0]
+                    type2bg = unpack("B", f.read(1))[0]
+                    value2bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw2bg = unpack("<f", f.read(4))[0]
+                    vx3bg = unpack("<f", f.read(4))[0]
+                    vy3bg = unpack("<f", f.read(4))[0]
+                    vz3bg = unpack("<f", f.read(4))[0]
+                    type3bg = unpack("B", f.read(1))[0]
+                    value3bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw3bg = unpack("<f", f.read(4))[0]
+                    vx4bg = unpack("<f", f.read(4))[0]
+                    vy4bg = unpack("<f", f.read(4))[0]
+                    vz4bg = unpack("<f", f.read(4))[0]
+                    type4bg = unpack("B", f.read(1))[0]
+                    value4bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw4bg = unpack("<f", f.read(4))[0]
+                    vx5bg = unpack("<f", f.read(4))[0]
+                    vy5bg = unpack("<f", f.read(4))[0]
+                    vz5bg = unpack("<f", f.read(4))[0]
+                    type5bg = unpack("B", f.read(1))[0]
+                    value5bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw5bg = unpack("<f", f.read(4))[0]
+                    vx6bg = unpack("<f", f.read(4))[0]
+                    vy6bg = unpack("<f", f.read(4))[0]
+                    vz6bg = unpack("<f", f.read(4))[0]
+                    type6bg = unpack("B", f.read(1))[0]
+                    value6bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw6bg = unpack("<f", f.read(4))[0]
+                    vx7bg = unpack("<f", f.read(4))[0]
+                    vy7bg = unpack("<f", f.read(4))[0]
+                    vz7bg = unpack("<f", f.read(4))[0]
+                    type7bg = unpack("B", f.read(1))[0]
+                    value7bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw7bg = unpack("<f", f.read(4))[0]
+                    vx8bg = unpack("<f", f.read(4))[0]
+                    vy8bg = unpack("<f", f.read(4))[0]
+                    vz8bg = unpack("<f", f.read(4))[0]
+                    type8bg = unpack("B", f.read(1))[0]
+                    value8bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw8bg = unpack("<f", f.read(4))[0]
+                    vx9bg = unpack("<f", f.read(4))[0]
+                    vy9bg = unpack("<f", f.read(4))[0]
+                    vz9bg = unpack("<f", f.read(4))[0]
+                    type9bg = unpack("B", f.read(1))[0]
+                    value9bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw9bg = unpack("<f", f.read(4))[0]
+                    vx10bg = unpack("<f", f.read(4))[0]
+                    vy10bg = unpack("<f", f.read(4))[0]
+                    vz10bg = unpack("<f", f.read(4))[0]
+                    type10bg = unpack("B", f.read(1))[0]
+                    value10bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw10bg = unpack("<f", f.read(4))[0]
+                    vx11bg = unpack("<f", f.read(4))[0]
+                    vy11bg = unpack("<f", f.read(4))[0]
+                    vz11bg = unpack("<f", f.read(4))[0]
+                    type11bg = unpack("B", f.read(1))[0]
+                    value11bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw11bg = unpack("<f", f.read(4))[0]
+                    vx12bg = unpack("<f", f.read(4))[0]
+                    vy12bg = unpack("<f", f.read(4))[0]
+                    vz12bg = unpack("<f", f.read(4))[0]
+                    type12bg = unpack("B", f.read(1))[0]
+                    value12bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw12bg = unpack("<f", f.read(4))[0]
+                    vx13bg = unpack("<f", f.read(4))[0]
+                    vy13bg = unpack("<f", f.read(4))[0]
+                    vz13bg = unpack("<f", f.read(4))[0]
+                    type13bg = unpack("B", f.read(1))[0]
+                    value13bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw13bg = unpack("<f", f.read(4))[0]
+                    vx14bg = unpack("<f", f.read(4))[0]
+                    vy14bg = unpack("<f", f.read(4))[0]
+                    vz14bg = unpack("<f", f.read(4))[0]
+                    type14bg = unpack("B", f.read(1))[0]
+                    value14bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw14bg = unpack("<f", f.read(4))[0]
+                    vx15bg = unpack("<f", f.read(4))[0]
+                    vy15bg = unpack("<f", f.read(4))[0]
+                    vz15bg = unpack("<f", f.read(4))[0]
+                    type15bg = unpack("B", f.read(1))[0]
+                    value15bg = unpack("B", f.read(1))[0]
+                    f.seek(-2,1)
+                    vw15bg = unpack("<f", f.read(4))[0]
+
+                    
+
+                    
+
+                    
+
+                    fa1 = bm_1k.verts.new([-vx1,-vy1,-vz1]) # 0
+                    fb1 = bm_1k.verts.new([-vx2,-vy2,-vz2]) # 1
+                    fc1 = bm_1k.verts.new([-vx3,-vy3,-vz3]) # 2
+                    fd1 = bm_1k.verts.new([-vx4,-vy4,-vz4]) # 3
+                    fe1 = bm_1k.verts.new([-vx5,-vy5,-vz5]) # 4
+                    ff1 = bm_1k.verts.new([-vx6,-vy6,-vz6]) # 5
+                    fg1 = bm_1k.verts.new([-vx7,-vy7,-vz7]) # 6
+                    fh1 = bm_1k.verts.new([-vx8,-vy8,-vz8]) # 7
+                    fi1 = bm_1k.verts.new([-vx9,-vy9,-vz9]) # 8
+                    fj1 = bm_1k.verts.new([-vx10,-vy10,-vz10]) # 9
+                    fk1 = bm_1k.verts.new([-vx11,-vy11,-vz11]) # 10
+                    fl1 = bm_1k.verts.new([-vx12,-vy12,-vz12]) # 11
+                    fm1 = bm_1k.verts.new([-vx13,-vy13,-vz13]) # 12
+                    fn1 = bm_1k.verts.new([-vx14,-vy14,-vz14]) # 13
+                    fo1 = bm_1k.verts.new([-vx15,-vy15,-vz15]) # 14
+
+                    fa1a = bm_1kk.verts.new([-vx1a,-vy1a,-vz1a]) # 0
+                    fb1a = bm_1kk.verts.new([-vx2a,-vy2a,-vz2a]) # 1
+                    fc1a = bm_1kk.verts.new([-vx3a,-vy3a,-vz3a]) # 2
+                    fd1a = bm_1kk.verts.new([-vx4a,-vy4a,-vz4a]) # 3
+                    fe1a = bm_1kk.verts.new([-vx5a,-vy5a,-vz5a]) # 4
+                    ff1a = bm_1kk.verts.new([-vx6a,-vy6a,-vz6a]) # 5
+                    fg1a = bm_1kk.verts.new([-vx7a,-vy7a,-vz7a]) # 6
+                    fh1a = bm_1kk.verts.new([-vx8a,-vy8a,-vz8a]) # 7
+                    fi1a = bm_1kk.verts.new([-vx9a,-vy9a,-vz9a]) # 8
+                    fj1a = bm_1kk.verts.new([-vx10a,-vy10a,-vz10a]) # 9
+                    fk1a = bm_1kk.verts.new([-vx11a,-vy11a,-vz11a]) # 10
+                    fl1a = bm_1kk.verts.new([-vx12a,-vy12a,-vz12a]) # 11
+                    fm1a = bm_1kk.verts.new([-vx13a,-vy13a,-vz13a]) # 12
+                    fn1a = bm_1kk.verts.new([-vx14a,-vy14a,-vz14a]) # 13
+                    fo1a = bm_1kk.verts.new([-vx15a,-vy15a,-vz15a]) # 14
+
+                    fa1b = bm_1kkk.verts.new([-vx1b,-vy1b,-vz1b]) # 0
+                    fb1b = bm_1kkk.verts.new([-vx2b,-vy2b,-vz2b]) # 1
+                    fc1b = bm_1kkk.verts.new([-vx3b,-vy3b,-vz3b]) # 2
+                    fd1b = bm_1kkk.verts.new([-vx4b,-vy4b,-vz4b]) # 3
+                    fe1b = bm_1kkk.verts.new([-vx5b,-vy5b,-vz5b]) # 4
+                    ff1b = bm_1kkk.verts.new([-vx6b,-vy6b,-vz6b]) # 5
+                    fg1b = bm_1kkk.verts.new([-vx7b,-vy7b,-vz7b]) # 6
+                    fh1b = bm_1kkk.verts.new([-vx8b,-vy8b,-vz8b]) # 7
+                    fi1b = bm_1kkk.verts.new([-vx9b,-vy9b,-vz9b]) # 8
+                    fj1b = bm_1kkk.verts.new([-vx10b,-vy10b,-vz10b]) # 9
+                    fk1b = bm_1kkk.verts.new([-vx11b,-vy11b,-vz11b]) # 10
+                    fl1b = bm_1kkk.verts.new([-vx12b,-vy12b,-vz12b]) # 11
+                    fm1b = bm_1kkk.verts.new([-vx13b,-vy13b,-vz13b]) # 12
+                    fn1b = bm_1kkk.verts.new([-vx14b,-vy14b,-vz14b]) # 13
+                    fo1b = bm_1kkk.verts.new([-vx15b,-vy15b,-vz15b]) # 14
+
+                    fa1c = bm_1kkkk.verts.new([-vx1c,-vy1c,-vz1c]) # 0
+                    fb1c = bm_1kkkk.verts.new([-vx2c,-vy2c,-vz2c]) # 1
+                    fc1c = bm_1kkkk.verts.new([-vx3c,-vy3c,-vz3c]) # 2
+                    fd1c = bm_1kkkk.verts.new([-vx4c,-vy4c,-vz4c]) # 3
+                    fe1c = bm_1kkkk.verts.new([-vx5c,-vy5c,-vz5c]) # 4
+                    ff1c = bm_1kkkk.verts.new([-vx6c,-vy6c,-vz6c]) # 5
+                    fg1c = bm_1kkkk.verts.new([-vx7c,-vy7c,-vz7c]) # 6
+                    fh1c = bm_1kkkk.verts.new([-vx8c,-vy8c,-vz8c]) # 7
+                    fi1c = bm_1kkkk.verts.new([-vx9c,-vy9c,-vz9c]) # 8
+                    fj1c = bm_1kkkk.verts.new([-vx10c,-vy10c,-vz10c]) # 9
+                    fk1c = bm_1kkkk.verts.new([-vx11c,-vy11c,-vz11c]) # 10
+                    fl1c = bm_1kkkk.verts.new([-vx12c,-vy12c,-vz12c]) # 11
+                    fm1c = bm_1kkkk.verts.new([-vx13c,-vy13c,-vz13c]) # 12
+                    fn1c = bm_1kkkk.verts.new([-vx14c,-vy14c,-vz14c]) # 13
+                    fo1c = bm_1kkkk.verts.new([-vx15c,-vy15c,-vz15c]) # 14
+
+                    fa1d = bm_1kkkkk.verts.new([-vx1d,-vy1d,-vz1d]) # 0
+                    fb1d = bm_1kkkkk.verts.new([-vx2d,-vy2d,-vz2d]) # 1
+                    fc1d = bm_1kkkkk.verts.new([-vx3d,-vy3d,-vz3d]) # 2
+                    fd1d = bm_1kkkkk.verts.new([-vx4d,-vy4d,-vz4d]) # 3
+                    fe1d = bm_1kkkkk.verts.new([-vx5d,-vy5d,-vz5d]) # 4
+                    ff1d = bm_1kkkkk.verts.new([-vx6d,-vy6d,-vz6d]) # 5
+                    fg1d = bm_1kkkkk.verts.new([-vx7d,-vy7d,-vz7d]) # 6
+                    fh1d = bm_1kkkkk.verts.new([-vx8d,-vy8d,-vz8d]) # 7
+                    fi1d = bm_1kkkkk.verts.new([-vx9d,-vy9d,-vz9d]) # 8
+                    fj1d = bm_1kkkkk.verts.new([-vx10d,-vy10d,-vz10d]) # 9
+                    fk1d = bm_1kkkkk.verts.new([-vx11d,-vy11d,-vz11d]) # 10
+                    fl1d = bm_1kkkkk.verts.new([-vx12d,-vy12d,-vz12d]) # 11
+                    fm1d = bm_1kkkkk.verts.new([-vx13d,-vy13d,-vz13d]) # 12
+                    fn1d = bm_1kkkkk.verts.new([-vx14d,-vy14d,-vz14d]) # 13
+                    fo1d = bm_1kkkkk.verts.new([-vx15d,-vy15d,-vz15d]) # 14
+
+                    fa1e = bm_1kkkkkk.verts.new([-vx1e,-vy1e,-vz1e]) # 0
+                    fb1e = bm_1kkkkkk.verts.new([-vx2e,-vy2e,-vz2e]) # 1
+                    fc1e = bm_1kkkkkk.verts.new([-vx3e,-vy3e,-vz3e]) # 2
+                    fd1e = bm_1kkkkkk.verts.new([-vx4e,-vy4e,-vz4e]) # 3
+                    fe1e = bm_1kkkkkk.verts.new([-vx5e,-vy5e,-vz5e]) # 4
+                    ff1e = bm_1kkkkkk.verts.new([-vx6e,-vy6e,-vz6e]) # 5
+                    fg1e = bm_1kkkkkk.verts.new([-vx7e,-vy7e,-vz7e]) # 6
+                    fh1e = bm_1kkkkkk.verts.new([-vx8e,-vy8e,-vz8e]) # 7
+                    fi1e = bm_1kkkkkk.verts.new([-vx9e,-vy9e,-vz9e]) # 8
+                    fj1e = bm_1kkkkkk.verts.new([-vx10e,-vy10e,-vz10e]) # 9
+                    fk1e = bm_1kkkkkk.verts.new([-vx11e,-vy11e,-vz11e]) # 10
+                    fl1e = bm_1kkkkkk.verts.new([-vx12e,-vy12e,-vz12e]) # 11
+                    fm1e = bm_1kkkkkk.verts.new([-vx13e,-vy13e,-vz13e]) # 12
+                    fn1e = bm_1kkkkkk.verts.new([-vx14e,-vy14e,-vz14e]) # 13
+                    fo1e = bm_1kkkkkk.verts.new([-vx15e,-vy15e,-vz15e]) # 14
+
+                    fa1f = bm_1kkkkkkk.verts.new([-vx1f,-vy1f,-vz1f]) # 0
+                    fb1f = bm_1kkkkkkk.verts.new([-vx2f,-vy2f,-vz2f]) # 1
+                    fc1f = bm_1kkkkkkk.verts.new([-vx3f,-vy3f,-vz3f]) # 2
+                    fd1f = bm_1kkkkkkk.verts.new([-vx4f,-vy4f,-vz4f]) # 3
+                    fe1f = bm_1kkkkkkk.verts.new([-vx5f,-vy5f,-vz5f]) # 4
+                    ff1f = bm_1kkkkkkk.verts.new([-vx6f,-vy6f,-vz6f]) # 5
+                    fg1f = bm_1kkkkkkk.verts.new([-vx7f,-vy7f,-vz7f]) # 6
+                    fh1f = bm_1kkkkkkk.verts.new([-vx8f,-vy8f,-vz8f]) # 7
+                    fi1f = bm_1kkkkkkk.verts.new([-vx9f,-vy9f,-vz9f]) # 8
+                    fj1f = bm_1kkkkkkk.verts.new([-vx10f,-vy10f,-vz10f]) # 9
+                    fk1f = bm_1kkkkkkk.verts.new([-vx11f,-vy11f,-vz11f]) # 10
+                    fl1f = bm_1kkkkkkk.verts.new([-vx12f,-vy12f,-vz12f]) # 11
+                    fm1f = bm_1kkkkkkk.verts.new([-vx13f,-vy13f,-vz13f]) # 12
+                    fn1f = bm_1kkkkkkk.verts.new([-vx14f,-vy14f,-vz14f]) # 13
+                    fo1f = bm_1kkkkkkk.verts.new([-vx15f,-vy15f,-vz15f]) # 14
+
+                    fa1g = bm_1kkkkkkkk.verts.new([-vx1g,-vy1g,-vz1g]) # 0
+                    fb1g = bm_1kkkkkkkk.verts.new([-vx2g,-vy2g,-vz2g]) # 1
+                    fc1g = bm_1kkkkkkkk.verts.new([-vx3g,-vy3g,-vz3g]) # 2
+                    fd1g = bm_1kkkkkkkk.verts.new([-vx4g,-vy4g,-vz4g]) # 3
+                    fe1g = bm_1kkkkkkkk.verts.new([-vx5g,-vy5g,-vz5g]) # 4
+                    ff1g = bm_1kkkkkkkk.verts.new([-vx6g,-vy6g,-vz6g]) # 5
+                    fg1g = bm_1kkkkkkkk.verts.new([-vx7g,-vy7g,-vz7g]) # 6
+                    fh1g = bm_1kkkkkkkk.verts.new([-vx8g,-vy8g,-vz8g]) # 7
+                    fi1g = bm_1kkkkkkkk.verts.new([-vx9g,-vy9g,-vz9g]) # 8
+                    fj1g = bm_1kkkkkkkk.verts.new([-vx10g,-vy10g,-vz10g]) # 9
+                    fk1g = bm_1kkkkkkkk.verts.new([-vx11g,-vy11g,-vz11g]) # 10
+                    fl1g = bm_1kkkkkkkk.verts.new([-vx12g,-vy12g,-vz12g]) # 11
+                    fm1g = bm_1kkkkkkkk.verts.new([-vx13g,-vy13g,-vz13g]) # 12
+                    fn1g = bm_1kkkkkkkk.verts.new([-vx14g,-vy14g,-vz14g]) # 13
+                    fo1g = bm_1kkkkkkkk.verts.new([-vx15g,-vy15g,-vz15g]) # 14
+
+                    fa1h = bm_1kkkkkkkkk.verts.new([-vx1h,-vy1h,-vz1h]) # 0
+                    fb1h = bm_1kkkkkkkkk.verts.new([-vx2h,-vy2h,-vz2h]) # 1
+                    fc1h = bm_1kkkkkkkkk.verts.new([-vx3h,-vy3h,-vz3h]) # 2
+                    fd1h = bm_1kkkkkkkkk.verts.new([-vx4h,-vy4h,-vz4h]) # 3
+                    fe1h = bm_1kkkkkkkkk.verts.new([-vx5h,-vy5h,-vz5h]) # 4
+                    ff1h = bm_1kkkkkkkkk.verts.new([-vx6h,-vy6h,-vz6h]) # 5
+                    fg1h = bm_1kkkkkkkkk.verts.new([-vx7h,-vy7h,-vz7h]) # 6
+                    fh1h = bm_1kkkkkkkkk.verts.new([-vx8h,-vy8h,-vz8h]) # 7
+                    fi1h = bm_1kkkkkkkkk.verts.new([-vx9h,-vy9h,-vz9h]) # 8
+                    fj1h = bm_1kkkkkkkkk.verts.new([-vx10h,-vy10h,-vz10h]) # 9
+                    fk1h = bm_1kkkkkkkkk.verts.new([-vx11h,-vy11h,-vz11h]) # 10
+                    fl1h = bm_1kkkkkkkkk.verts.new([-vx12h,-vy12h,-vz12h]) # 11
+                    fm1h = bm_1kkkkkkkkk.verts.new([-vx13h,-vy13h,-vz13h]) # 12
+                    fn1h = bm_1kkkkkkkkk.verts.new([-vx14h,-vy14h,-vz14h]) # 13
+                    fo1h = bm_1kkkkkkkkk.verts.new([-vx15h,-vy15h,-vz15h]) # 14
+
+                    fa1i = bm_1kkkkkkkkkk.verts.new([-vx1i,-vy1i,-vz1i]) # 0
+                    fb1i = bm_1kkkkkkkkkk.verts.new([-vx2i,-vy2i,-vz2i]) # 1
+                    fc1i = bm_1kkkkkkkkkk.verts.new([-vx3i,-vy3i,-vz3i]) # 2
+                    fd1i = bm_1kkkkkkkkkk.verts.new([-vx4i,-vy4i,-vz4i]) # 3
+                    fe1i = bm_1kkkkkkkkkk.verts.new([-vx5i,-vy5i,-vz5i]) # 4
+                    ff1i = bm_1kkkkkkkkkk.verts.new([-vx6i,-vy6i,-vz6i]) # 5
+                    fg1i = bm_1kkkkkkkkkk.verts.new([-vx7i,-vy7i,-vz7i]) # 6
+                    fh1i = bm_1kkkkkkkkkk.verts.new([-vx8i,-vy8i,-vz8i]) # 7
+                    fi1i = bm_1kkkkkkkkkk.verts.new([-vx9i,-vy9i,-vz9i]) # 8
+                    fj1i = bm_1kkkkkkkkkk.verts.new([-vx10i,-vy10i,-vz10i]) # 9
+                    fk1i = bm_1kkkkkkkkkk.verts.new([-vx11i,-vy11i,-vz11i]) # 10
+                    fl1i = bm_1kkkkkkkkkk.verts.new([-vx12i,-vy12i,-vz12i]) # 11
+                    fm1i = bm_1kkkkkkkkkk.verts.new([-vx13i,-vy13i,-vz13i]) # 12
+                    fn1i = bm_1kkkkkkkkkk.verts.new([-vx14i,-vy14i,-vz14i]) # 13
+                    fo1i = bm_1kkkkkkkkkk.verts.new([-vx15i,-vy15i,-vz15i]) # 14
+
+                    fa1j = bm_1kkkkkkkkkkk.verts.new([-vx1j,-vy1j,-vz1j]) # 0
+                    fb1j = bm_1kkkkkkkkkkk.verts.new([-vx2j,-vy2j,-vz2j]) # 1
+                    fc1j = bm_1kkkkkkkkkkk.verts.new([-vx3j,-vy3j,-vz3j]) # 2
+                    fd1j = bm_1kkkkkkkkkkk.verts.new([-vx4j,-vy4j,-vz4j]) # 3
+                    fe1j = bm_1kkkkkkkkkkk.verts.new([-vx5j,-vy5j,-vz5j]) # 4
+                    ff1j = bm_1kkkkkkkkkkk.verts.new([-vx6j,-vy6j,-vz6j]) # 5
+                    fg1j = bm_1kkkkkkkkkkk.verts.new([-vx7j,-vy7j,-vz7j]) # 6
+                    fh1j = bm_1kkkkkkkkkkk.verts.new([-vx8j,-vy8j,-vz8j]) # 7
+                    fi1j = bm_1kkkkkkkkkkk.verts.new([-vx9j,-vy9j,-vz9j]) # 8
+                    fj1j = bm_1kkkkkkkkkkk.verts.new([-vx10j,-vy10j,-vz10j]) # 9
+                    fk1j = bm_1kkkkkkkkkkk.verts.new([-vx11j,-vy11j,-vz11j]) # 10
+                    fl1j = bm_1kkkkkkkkkkk.verts.new([-vx12j,-vy12j,-vz12j]) # 11
+                    fm1j = bm_1kkkkkkkkkkk.verts.new([-vx13j,-vy13j,-vz13j]) # 12
+                    fn1j = bm_1kkkkkkkkkkk.verts.new([-vx14j,-vy14j,-vz14j]) # 13
+                    fo1j = bm_1kkkkkkkkkkk.verts.new([-vx15j,-vy15j,-vz15j]) # 14
+
+                    fa1k = bm_1kkkkkkkkkkkk.verts.new([-vx1k,-vy1k,-vz1k]) # 0
+                    fb1k = bm_1kkkkkkkkkkkk.verts.new([-vx2k,-vy2k,-vz2k]) # 1
+                    fc1k = bm_1kkkkkkkkkkkk.verts.new([-vx3k,-vy3k,-vz3k]) # 2
+                    fd1k = bm_1kkkkkkkkkkkk.verts.new([-vx4k,-vy4k,-vz4k]) # 3
+                    fe1k = bm_1kkkkkkkkkkkk.verts.new([-vx5k,-vy5k,-vz5k]) # 4
+                    ff1k = bm_1kkkkkkkkkkkk.verts.new([-vx6k,-vy6k,-vz6k]) # 5
+                    fg1k = bm_1kkkkkkkkkkkk.verts.new([-vx7k,-vy7k,-vz7k]) # 6
+                    fh1k = bm_1kkkkkkkkkkkk.verts.new([-vx8k,-vy8k,-vz8k]) # 7
+                    fi1k = bm_1kkkkkkkkkkkk.verts.new([-vx9k,-vy9k,-vz9k]) # 8
+                    fj1k = bm_1kkkkkkkkkkkk.verts.new([-vx10k,-vy10k,-vz10k]) # 9
+                    fk1k = bm_1kkkkkkkkkkkk.verts.new([-vx11k,-vy11k,-vz11k]) # 10
+                    fl1k = bm_1kkkkkkkkkkkk.verts.new([-vx12k,-vy12k,-vz12k]) # 11
+                    fm1k = bm_1kkkkkkkkkkkk.verts.new([-vx13k,-vy13k,-vz13k]) # 12
+                    fn1k = bm_1kkkkkkkkkkkk.verts.new([-vx14k,-vy14k,-vz14k]) # 13
+                    fo1k = bm_1kkkkkkkkkkkk.verts.new([-vx15k,-vy15k,-vz15k]) # 14
+
+                    fa1l = bm_1kkkkkkkkkkkkk.verts.new([-vx1l,-vy1l,-vz1l]) # 0
+                    fb1l = bm_1kkkkkkkkkkkkk.verts.new([-vx2l,-vy2l,-vz2l]) # 1
+                    fc1l = bm_1kkkkkkkkkkkkk.verts.new([-vx3l,-vy3l,-vz3l]) # 2
+                    fd1l = bm_1kkkkkkkkkkkkk.verts.new([-vx4l,-vy4l,-vz4l]) # 3
+                    fe1l = bm_1kkkkkkkkkkkkk.verts.new([-vx5l,-vy5l,-vz5l]) # 4
+                    ff1l = bm_1kkkkkkkkkkkkk.verts.new([-vx6l,-vy6l,-vz6l]) # 5
+                    fg1l = bm_1kkkkkkkkkkkkk.verts.new([-vx7l,-vy7l,-vz7l]) # 6
+                    fh1l = bm_1kkkkkkkkkkkkk.verts.new([-vx8l,-vy8l,-vz8l]) # 7
+                    fi1l = bm_1kkkkkkkkkkkkk.verts.new([-vx9l,-vy9l,-vz9l]) # 8
+                    fj1l = bm_1kkkkkkkkkkkkk.verts.new([-vx10l,-vy10l,-vz10l]) # 9
+                    fk1l = bm_1kkkkkkkkkkkkk.verts.new([-vx11l,-vy11l,-vz11l]) # 10
+                    fl1l = bm_1kkkkkkkkkkkkk.verts.new([-vx12l,-vy12l,-vz12l]) # 11
+                    fm1l = bm_1kkkkkkkkkkkkk.verts.new([-vx13l,-vy13l,-vz13l]) # 12
+                    fn1l = bm_1kkkkkkkkkkkkk.verts.new([-vx14l,-vy14l,-vz14l]) # 13
+                    fo1l = bm_1kkkkkkkkkkkkk.verts.new([-vx15l,-vy15l,-vz15l]) # 14
+
+                    fa1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx1m,-vy1m,-vz1m]) # 0
+                    fb1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx2m,-vy2m,-vz2m]) # 1
+                    fc1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx3m,-vy3m,-vz3m]) # 2
+                    fd1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx4m,-vy4m,-vz4m]) # 3
+                    fe1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx5m,-vy5m,-vz5m]) # 4
+                    ff1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx6m,-vy6m,-vz6m]) # 5
+                    fg1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx7m,-vy7m,-vz7m]) # 6
+                    fh1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx8m,-vy8m,-vz8m]) # 7
+                    fi1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx9m,-vy9m,-vz9m]) # 8
+                    fj1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx10m,-vy10m,-vz10m]) # 9
+                    fk1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx11m,-vy11m,-vz11m]) # 10
+                    fl1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx12m,-vy12m,-vz12m]) # 11
+                    fm1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx13m,-vy13m,-vz13m]) # 12
+                    fn1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx14m,-vy14m,-vz14m]) # 13
+                    fo1m = bm_1kkkkkkkkkkkkkk.verts.new([-vx15m,-vy15m,-vz15m]) # 14
+
+                    fa1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx1n,-vy1n,-vz1n]) # 0
+                    fb1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx2n,-vy2n,-vz2n]) # 1
+                    fc1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx3n,-vy3n,-vz3n]) # 2
+                    fd1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx4n,-vy4n,-vz4n]) # 3
+                    fe1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx5n,-vy5n,-vz5n]) # 4
+                    ff1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx6n,-vy6n,-vz6n]) # 5
+                    fg1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx7n,-vy7n,-vz7n]) # 6
+                    fh1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx8n,-vy8n,-vz8n]) # 7
+                    fi1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx9n,-vy9n,-vz9n]) # 8
+                    fj1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx10n,-vy10n,-vz10n]) # 9
+                    fk1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx11n,-vy11n,-vz11n]) # 10
+                    fl1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx12n,-vy12n,-vz12n]) # 11
+                    fm1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx13n,-vy13n,-vz13n]) # 12
+                    fn1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx14n,-vy14n,-vz14n]) # 13
+                    fo1n = bm_1kkkkkkkkkkkkkkk.verts.new([-vx15n,-vy15n,-vz15n]) # 14
+
+                    fa1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx1o,-vy1o,-vz1o]) # 0
+                    fb1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx2o,-vy2o,-vz2o]) # 1
+                    fc1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx3o,-vy3o,-vz3o]) # 2
+                    fd1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx4o,-vy4o,-vz4o]) # 3
+                    fe1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx5o,-vy5o,-vz5o]) # 4
+                    ff1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx6o,-vy6o,-vz6o]) # 5
+                    fg1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx7o,-vy7o,-vz7o]) # 6
+                    fh1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx8o,-vy8o,-vz8o]) # 7
+                    fi1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx9o,-vy9o,-vz9o]) # 8
+                    fj1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx10o,-vy10o,-vz10o]) # 9
+                    fk1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx11o,-vy11o,-vz11o]) # 10
+                    fl1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx12o,-vy12o,-vz12o]) # 11
+                    fm1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx13o,-vy13o,-vz13o]) # 12
+                    fn1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx14o,-vy14o,-vz14o]) # 13
+                    fo1o = bm_1kkkkkkkkkkkkkkkk.verts.new([-vx15o,-vy15o,-vz15o]) # 14
+
+                    fa1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx1p,-vy1p,-vz1p]) # 0
+                    fb1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx2p,-vy2p,-vz2p]) # 1
+                    fc1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx3p,-vy3p,-vz3p]) # 2
+                    fd1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx4p,-vy4p,-vz4p]) # 3
+                    fe1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx5p,-vy5p,-vz5p]) # 4
+                    ff1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx6p,-vy6p,-vz6p]) # 5
+                    fg1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx7p,-vy7p,-vz7p]) # 6
+                    fh1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx8p,-vy8p,-vz8p]) # 7
+                    fi1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx9p,-vy9p,-vz9p]) # 8
+                    fj1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx10p,-vy10p,-vz10p]) # 9
+                    fk1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx11p,-vy11p,-vz11p]) # 10
+                    fl1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx12p,-vy12p,-vz12p]) # 11
+                    fm1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx13p,-vy13p,-vz13p]) # 12
+                    fn1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx14p,-vy14p,-vz14p]) # 13
+                    fo1p = bm_1kkkkkkkkkkkkkkkkk.verts.new([-vx15p,-vy15p,-vz15p]) # 14
+
+                    fa1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx1q,-vy1q,-vz1q]) # 0
+                    fb1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx2q,-vy2q,-vz2q]) # 1
+                    fc1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx3q,-vy3q,-vz3q]) # 2
+                    fd1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx4q,-vy4q,-vz4q]) # 3
+                    fe1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx5q,-vy5q,-vz5q]) # 4
+                    ff1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx6q,-vy6q,-vz6q]) # 5
+                    fg1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx7q,-vy7q,-vz7q]) # 6
+                    fh1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx8q,-vy8q,-vz8q]) # 7
+                    fi1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx9q,-vy9q,-vz9q]) # 8
+                    fj1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx10q,-vy10q,-vz10q]) # 9
+                    fk1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx11q,-vy11q,-vz11q]) # 10
+                    fl1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx12q,-vy12q,-vz12q]) # 11
+                    fm1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx13q,-vy13q,-vz13q]) # 12
+                    fn1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx14q,-vy14q,-vz14q]) # 13
+                    fo1q = bm_1kkkkkkkkkkkkkkkkkk.verts.new([-vx15q,-vy15q,-vz15q]) # 14
+
+                    fa1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx1r,-vy1r,-vz1r]) # 0
+                    fb1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx2r,-vy2r,-vz2r]) # 1
+                    fc1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx3r,-vy3r,-vz3r]) # 2
+                    fd1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx4r,-vy4r,-vz4r]) # 3
+                    fe1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx5r,-vy5r,-vz5r]) # 4
+                    ff1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx6r,-vy6r,-vz6r]) # 5
+                    fg1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx7r,-vy7r,-vz7r]) # 6
+                    fh1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx8r,-vy8r,-vz8r]) # 7
+                    fi1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx9r,-vy9r,-vz9r]) # 8
+                    fj1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx10r,-vy10r,-vz10r]) # 9
+                    fk1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx11r,-vy11r,-vz11r]) # 10
+                    fl1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx12r,-vy12r,-vz12r]) # 11
+                    fm1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx13r,-vy13r,-vz13r]) # 12
+                    fn1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx14r,-vy14r,-vz14r]) # 13
+                    fo1r = bm_1kkkkkkkkkkkkkkkkkkk.verts.new([-vx15r,-vy15r,-vz15r]) # 14
+
+                    fa1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx1s,-vy1s,-vz1s]) # 0
+                    fb1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx2s,-vy2s,-vz2s]) # 1
+                    fc1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx3s,-vy3s,-vz3s]) # 2
+                    fd1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx4s,-vy4s,-vz4s]) # 3
+                    fe1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx5s,-vy5s,-vz5s]) # 4
+                    ff1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx6s,-vy6s,-vz6s]) # 5
+                    fg1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx7s,-vy7s,-vz7s]) # 6
+                    fh1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx8s,-vy8s,-vz8s]) # 7
+                    fi1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx9s,-vy9s,-vz9s]) # 8
+                    fj1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx10s,-vy10s,-vz10s]) # 9
+                    fk1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx11s,-vy11s,-vz11s]) # 10
+                    fl1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx12s,-vy12s,-vz12s]) # 11
+                    fm1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx13s,-vy13s,-vz13s]) # 12
+                    fn1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx14s,-vy14s,-vz14s]) # 13
+                    fo1s = bm_1kkkkkkkkkkkkkkkkkkkk.verts.new([-vx15s,-vy15s,-vz15s]) # 14
+
+                    fa1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1t,-vy1t,-vz1t]) # 0
+                    fb1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2t,-vy2t,-vz2t]) # 1
+                    fc1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3t,-vy3t,-vz3t]) # 2
+                    fd1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4t,-vy4t,-vz4t]) # 3
+                    fe1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5t,-vy5t,-vz5t]) # 4
+                    ff1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6t,-vy6t,-vz6t]) # 5
+                    fg1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7t,-vy7t,-vz7t]) # 6
+                    fh1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8t,-vy8t,-vz8t]) # 7
+                    fi1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9t,-vy9t,-vz9t]) # 8
+                    fj1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10t,-vy10t,-vz10t]) # 9
+                    fk1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11t,-vy11t,-vz11t]) # 10
+                    fl1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12t,-vy12t,-vz12t]) # 11
+                    fm1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13t,-vy13t,-vz13t]) # 12
+                    fn1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14t,-vy14t,-vz14t]) # 13
+                    fo1t = bm_1kkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15t,-vy15t,-vz15t]) # 14
+
+                    fa1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1u,-vy1u,-vz1u]) # 0
+                    fb1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2u,-vy2u,-vz2u]) # 1
+                    fc1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3u,-vy3u,-vz3u]) # 2
+                    fd1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4u,-vy4u,-vz4u]) # 3
+                    fe1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5u,-vy5u,-vz5u]) # 4
+                    ff1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6u,-vy6u,-vz6u]) # 5
+                    fg1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7u,-vy7u,-vz7u]) # 6
+                    fh1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8u,-vy8u,-vz8u]) # 7
+                    fi1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9u,-vy9u,-vz9u]) # 8
+                    fj1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10u,-vy10u,-vz10u]) # 9
+                    fk1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11u,-vy11u,-vz11u]) # 10
+                    fl1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12u,-vy12u,-vz12u]) # 11
+                    fm1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13u,-vy13u,-vz13u]) # 12
+                    fn1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14u,-vy14u,-vz14u]) # 13
+                    fo1u = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15u,-vy15u,-vz15u]) # 14
+
+                    fa1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1v,-vy1v,-vz1v]) # 0
+                    fb1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2v,-vy2v,-vz2v]) # 1
+                    fc1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3v,-vy3v,-vz3v]) # 2
+                    fd1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4v,-vy4v,-vz4v]) # 3
+                    fe1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5v,-vy5v,-vz5v]) # 4
+                    ff1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6v,-vy6v,-vz6v]) # 5
+                    fg1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7v,-vy7v,-vz7v]) # 6
+                    fh1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8v,-vy8v,-vz8v]) # 7
+                    fi1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9v,-vy9v,-vz9v]) # 8
+                    fj1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10v,-vy10v,-vz10v]) # 9
+                    fk1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11v,-vy11v,-vz11v]) # 10
+                    fl1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12v,-vy12v,-vz12v]) # 11
+                    fm1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13v,-vy13v,-vz13v]) # 12
+                    fn1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14v,-vy14v,-vz14v]) # 13
+                    fo1v = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15v,-vy15v,-vz15v]) # 14
+
+                    fa1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1w,-vy1w,-vz1w]) # 0
+                    fb1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2w,-vy2w,-vz2w]) # 1
+                    fc1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3w,-vy3w,-vz3w]) # 2
+                    fd1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4w,-vy4w,-vz4w]) # 3
+                    fe1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5w,-vy5w,-vz5w]) # 4
+                    ff1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6w,-vy6w,-vz6w]) # 5
+                    fg1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7w,-vy7w,-vz7w]) # 6
+                    fh1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8w,-vy8w,-vz8w]) # 7
+                    fi1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9w,-vy9w,-vz9w]) # 8
+                    fj1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10w,-vy10w,-vz10w]) # 9
+                    fk1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11w,-vy11w,-vz11w]) # 10
+                    fl1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12w,-vy12w,-vz12w]) # 11
+                    fm1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13w,-vy13w,-vz13w]) # 12
+                    fn1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14w,-vy14w,-vz14w]) # 13
+                    fo1w = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15w,-vy15w,-vz15w]) # 14
+
+                    fa1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1x,-vy1x,-vz1x]) # 0
+                    fb1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2x,-vy2x,-vz2x]) # 1
+                    fc1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3x,-vy3x,-vz3x]) # 2
+                    fd1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4x,-vy4x,-vz4x]) # 3
+                    fe1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5x,-vy5x,-vz5x]) # 4
+                    ff1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6x,-vy6x,-vz6x]) # 5
+                    fg1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7x,-vy7x,-vz7x]) # 6
+                    fh1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8x,-vy8x,-vz8x]) # 7
+                    fi1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9x,-vy9x,-vz9x]) # 8
+                    fj1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10x,-vy10x,-vz10x]) # 9
+                    fk1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11x,-vy11x,-vz11x]) # 10
+                    fl1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12x,-vy12x,-vz12x]) # 11
+                    fm1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13x,-vy13x,-vz13x]) # 12
+                    fn1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14x,-vy14x,-vz14x]) # 13
+                    fo1x = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15x,-vy15x,-vz15x]) # 14
+
+                    fa1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1y,-vy1y,-vz1y]) # 0
+                    fb1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2y,-vy2y,-vz2y]) # 1
+                    fc1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3y,-vy3y,-vz3y]) # 2
+                    fd1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4y,-vy4y,-vz4y]) # 3
+                    fe1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5y,-vy5y,-vz5y]) # 4
+                    ff1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6y,-vy6y,-vz6y]) # 5
+                    fg1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7y,-vy7y,-vz7y]) # 6
+                    fh1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8y,-vy8y,-vz8y]) # 7
+                    fi1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9y,-vy9y,-vz9y]) # 8
+                    fj1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10y,-vy10y,-vz10y]) # 9
+                    fk1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11y,-vy11y,-vz11y]) # 10
+                    fl1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12y,-vy12y,-vz12y]) # 11
+                    fm1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13y,-vy13y,-vz13y]) # 12
+                    fn1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14y,-vy14y,-vz14y]) # 13
+                    fo1y = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15y,-vy15y,-vz15y]) # 14
+
+                    fa1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1z,-vy1z,-vz1z]) # 0
+                    fb1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2z,-vy2z,-vz2z]) # 1
+                    fc1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3z,-vy3z,-vz3z]) # 2
+                    fd1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4z,-vy4z,-vz4z]) # 3
+                    fe1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5z,-vy5z,-vz5z]) # 4
+                    ff1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6z,-vy6z,-vz6z]) # 5
+                    fg1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7z,-vy7z,-vz7z]) # 6
+                    fh1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8z,-vy8z,-vz8z]) # 7
+                    fi1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9z,-vy9z,-vz9z]) # 8
+                    fj1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10z,-vy10z,-vz10z]) # 9
+                    fk1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11z,-vy11z,-vz11z]) # 10
+                    fl1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12z,-vy12z,-vz12z]) # 11
+                    fm1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13z,-vy13z,-vz13z]) # 12
+                    fn1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14z,-vy14z,-vz14z]) # 13
+                    fo1z = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15z,-vy15z,-vz15z]) # 14
+
+                    fa1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1aa,-vy1aa,-vz1aa]) # 0
+                    fb1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2aa,-vy2aa,-vz2aa]) # 1
+                    fc1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3aa,-vy3aa,-vz3aa]) # 2
+                    fd1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4aa,-vy4aa,-vz4aa]) # 3
+                    fe1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5aa,-vy5aa,-vz5aa]) # 4
+                    ff1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6aa,-vy6aa,-vz6aa]) # 5
+                    fg1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7aa,-vy7aa,-vz7aa]) # 6
+                    fh1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8aa,-vy8aa,-vz8aa]) # 7
+                    fi1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9aa,-vy9aa,-vz9aa]) # 8
+                    fj1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10aa,-vy10aa,-vz10aa]) # 9
+                    fk1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11aa,-vy11aa,-vz11aa]) # 10
+                    fl1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12aa,-vy12aa,-vz12aa]) # 11
+                    fm1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13aa,-vy13aa,-vz13aa]) # 12
+                    fn1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14aa,-vy14aa,-vz14aa]) # 13
+                    fo1aa = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15aa,-vy15aa,-vz15aa]) # 14
+
+                    fa1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ab,-vy1ab,-vz1ab]) # 0
+                    fb1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ab,-vy2ab,-vz2ab]) # 1
+                    fc1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ab,-vy3ab,-vz3ab]) # 2
+                    fd1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ab,-vy4ab,-vz4ab]) # 3
+                    fe1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ab,-vy5ab,-vz5ab]) # 4
+                    ff1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ab,-vy6ab,-vz6ab]) # 5
+                    fg1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ab,-vy7ab,-vz7ab]) # 6
+                    fh1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ab,-vy8ab,-vz8ab]) # 7
+                    fi1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ab,-vy9ab,-vz9ab]) # 8
+                    fj1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ab,-vy10ab,-vz10ab]) # 9
+                    fk1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ab,-vy11ab,-vz11ab]) # 10
+                    fl1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ab,-vy12ab,-vz12ab]) # 11
+                    fm1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ab,-vy13ab,-vz13ab]) # 12
+                    fn1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ab,-vy14ab,-vz14ab]) # 13
+                    fo1ab = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ab,-vy15ab,-vz15ab]) # 14
+
+                    fa1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ac,-vy1ac,-vz1ac]) # 0
+                    fb1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ac,-vy2ac,-vz2ac]) # 1
+                    fc1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ac,-vy3ac,-vz3ac]) # 2
+                    fd1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ac,-vy4ac,-vz4ac]) # 3
+                    fe1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ac,-vy5ac,-vz5ac]) # 4
+                    ff1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ac,-vy6ac,-vz6ac]) # 5
+                    fg1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ac,-vy7ac,-vz7ac]) # 6
+                    fh1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ac,-vy8ac,-vz8ac]) # 7
+                    fi1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ac,-vy9ac,-vz9ac]) # 8
+                    fj1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ac,-vy10ac,-vz10ac]) # 9
+                    fk1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ac,-vy11ac,-vz11ac]) # 10
+                    fl1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ac,-vy12ac,-vz12ac]) # 11
+                    fm1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ac,-vy13ac,-vz13ac]) # 12
+                    fn1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ac,-vy14ac,-vz14ac]) # 13
+                    fo1ac = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ac,-vy15ac,-vz15ac]) # 14
+
+                    fa1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ad,-vy1ad,-vz1ad]) # 0
+                    fb1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ad,-vy2ad,-vz2ad]) # 1
+                    fc1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ad,-vy3ad,-vz3ad]) # 2
+                    fd1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ad,-vy4ad,-vz4ad]) # 3
+                    fe1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ad,-vy5ad,-vz5ad]) # 4
+                    ff1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ad,-vy6ad,-vz6ad]) # 5
+                    fg1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ad,-vy7ad,-vz7ad]) # 6
+                    fh1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ad,-vy8ad,-vz8ad]) # 7
+                    fi1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ad,-vy9ad,-vz9ad]) # 8
+                    fj1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ad,-vy10ad,-vz10ad]) # 9
+                    fk1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ad,-vy11ad,-vz11ad]) # 10
+                    fl1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ad,-vy12ad,-vz12ad]) # 11
+                    fm1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ad,-vy13ad,-vz13ad]) # 12
+                    fn1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ad,-vy14ad,-vz14ad]) # 13
+                    fo1ad = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ad,-vy15ad,-vz15ad]) # 14
+
+                    fa1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ae,-vy1ae,-vz1ae]) # 0
+                    fb1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ae,-vy2ae,-vz2ae]) # 1
+                    fc1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ae,-vy3ae,-vz3ae]) # 2
+                    fd1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ae,-vy4ae,-vz4ae]) # 3
+                    fe1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ae,-vy5ae,-vz5ae]) # 4
+                    ff1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ae,-vy6ae,-vz6ae]) # 5
+                    fg1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ae,-vy7ae,-vz7ae]) # 6
+                    fh1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ae,-vy8ae,-vz8ae]) # 7
+                    fi1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ae,-vy9ae,-vz9ae]) # 8
+                    fj1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ae,-vy10ae,-vz10ae]) # 9
+                    fk1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ae,-vy11ae,-vz11ae]) # 10
+                    fl1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ae,-vy12ae,-vz12ae]) # 11
+                    fm1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ae,-vy13ae,-vz13ae]) # 12
+                    fn1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ae,-vy14ae,-vz14ae]) # 13
+                    fo1ae = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ae,-vy15ae,-vz15ae]) # 14
+
+                    fa1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1af,-vy1af,-vz1af]) # 0
+                    fb1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2af,-vy2af,-vz2af]) # 1
+                    fc1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3af,-vy3af,-vz3af]) # 2
+                    fd1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4af,-vy4af,-vz4af]) # 3
+                    fe1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5af,-vy5af,-vz5af]) # 4
+                    ff1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6af,-vy6af,-vz6af]) # 5
+                    fg1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7af,-vy7af,-vz7af]) # 6
+                    fh1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8af,-vy8af,-vz8af]) # 7
+                    fi1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9af,-vy9af,-vz9af]) # 8
+                    fj1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10af,-vy10af,-vz10af]) # 9
+                    fk1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11af,-vy11af,-vz11af]) # 10
+                    fl1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12af,-vy12af,-vz12af]) # 11
+                    fm1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13af,-vy13af,-vz13af]) # 12
+                    fn1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14af,-vy14af,-vz14af]) # 13
+                    fo1af = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15af,-vy15af,-vz15af]) # 14
+
+                    fa1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ag,-vy1ag,-vz1ag]) # 0
+                    fb1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ag,-vy2ag,-vz2ag]) # 1
+                    fc1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ag,-vy3ag,-vz3ag]) # 2
+                    fd1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ag,-vy4ag,-vz4ag]) # 3
+                    fe1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ag,-vy5ag,-vz5ag]) # 4
+                    ff1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ag,-vy6ag,-vz6ag]) # 5
+                    fg1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ag,-vy7ag,-vz7ag]) # 6
+                    fh1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ag,-vy8ag,-vz8ag]) # 7
+                    fi1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ag,-vy9ag,-vz9ag]) # 8
+                    fj1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ag,-vy10ag,-vz10ag]) # 9
+                    fk1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ag,-vy11ag,-vz11ag]) # 10
+                    fl1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ag,-vy12ag,-vz12ag]) # 11
+                    fm1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ag,-vy13ag,-vz13ag]) # 12
+                    fn1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ag,-vy14ag,-vz14ag]) # 13
+                    fo1ag = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ag,-vy15ag,-vz15ag]) # 14
+
+                    fa1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ah,-vy1ah,-vz1ah]) # 0
+                    fb1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ah,-vy2ah,-vz2ah]) # 1
+                    fc1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ah,-vy3ah,-vz3ah]) # 2
+                    fd1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ah,-vy4ah,-vz4ah]) # 3
+                    fe1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ah,-vy5ah,-vz5ah]) # 4
+                    ff1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ah,-vy6ah,-vz6ah]) # 5
+                    fg1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ah,-vy7ah,-vz7ah]) # 6
+                    fh1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ah,-vy8ah,-vz8ah]) # 7
+                    fi1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ah,-vy9ah,-vz9ah]) # 8
+                    fj1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ah,-vy10ah,-vz10ah]) # 9
+                    fk1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ah,-vy11ah,-vz11ah]) # 10
+                    fl1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ah,-vy12ah,-vz12ah]) # 11
+                    fm1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ah,-vy13ah,-vz13ah]) # 12
+                    fn1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ah,-vy14ah,-vz14ah]) # 13
+                    fo1ah = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ah,-vy15ah,-vz15ah]) # 14
+
+                    fa1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ai,-vy1ai,-vz1ai]) # 0
+                    fb1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ai,-vy2ai,-vz2ai]) # 1
+                    fc1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ai,-vy3ai,-vz3ai]) # 2
+                    fd1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ai,-vy4ai,-vz4ai]) # 3
+                    fe1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ai,-vy5ai,-vz5ai]) # 4
+                    ff1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ai,-vy6ai,-vz6ai]) # 5
+                    fg1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ai,-vy7ai,-vz7ai]) # 6
+                    fh1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ai,-vy8ai,-vz8ai]) # 7
+                    fi1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ai,-vy9ai,-vz9ai]) # 8
+                    fj1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ai,-vy10ai,-vz10ai]) # 9
+                    fk1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ai,-vy11ai,-vz11ai]) # 10
+                    fl1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ai,-vy12ai,-vz12ai]) # 11
+                    fm1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ai,-vy13ai,-vz13ai]) # 12
+                    fn1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ai,-vy14ai,-vz14ai]) # 13
+                    fo1ai = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ai,-vy15ai,-vz15ai]) # 14
+
+                    fa1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1aj,-vy1aj,-vz1aj]) # 0
+                    fb1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2aj,-vy2aj,-vz2aj]) # 1
+                    fc1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3aj,-vy3aj,-vz3aj]) # 2
+                    fd1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4aj,-vy4aj,-vz4aj]) # 3
+                    fe1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5aj,-vy5aj,-vz5aj]) # 4
+                    ff1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6aj,-vy6aj,-vz6aj]) # 5
+                    fg1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7aj,-vy7aj,-vz7aj]) # 6
+                    fh1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8aj,-vy8aj,-vz8aj]) # 7
+                    fi1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9aj,-vy9aj,-vz9aj]) # 8
+                    fj1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10aj,-vy10aj,-vz10aj]) # 9
+                    fk1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11aj,-vy11aj,-vz11aj]) # 10
+                    fl1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12aj,-vy12aj,-vz12aj]) # 11
+                    fm1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13aj,-vy13aj,-vz13aj]) # 12
+                    fn1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14aj,-vy14aj,-vz14aj]) # 13
+                    fo1aj = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15aj,-vy15aj,-vz15aj]) # 14
+
+                    fa1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ak,-vy1ak,-vz1ak]) # 0
+                    fb1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ak,-vy2ak,-vz2ak]) # 1
+                    fc1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ak,-vy3ak,-vz3ak]) # 2
+                    fd1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ak,-vy4ak,-vz4ak]) # 3
+                    fe1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ak,-vy5ak,-vz5ak]) # 4
+                    ff1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ak,-vy6ak,-vz6ak]) # 5
+                    fg1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ak,-vy7ak,-vz7ak]) # 6
+                    fh1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ak,-vy8ak,-vz8ak]) # 7
+                    fi1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ak,-vy9ak,-vz9ak]) # 8
+                    fj1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ak,-vy10ak,-vz10ak]) # 9
+                    fk1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ak,-vy11ak,-vz11ak]) # 10
+                    fl1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ak,-vy12ak,-vz12ak]) # 11
+                    fm1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ak,-vy13ak,-vz13ak]) # 12
+                    fn1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ak,-vy14ak,-vz14ak]) # 13
+                    fo1ak = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ak,-vy15ak,-vz15ak]) # 14
+
+                    fa1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1al,-vy1al,-vz1al]) # 0
+                    fb1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2al,-vy2al,-vz2al]) # 1
+                    fc1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3al,-vy3al,-vz3al]) # 2
+                    fd1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4al,-vy4al,-vz4al]) # 3
+                    fe1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5al,-vy5al,-vz5al]) # 4
+                    ff1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6al,-vy6al,-vz6al]) # 5
+                    fg1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7al,-vy7al,-vz7al]) # 6
+                    fh1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8al,-vy8al,-vz8al]) # 7
+                    fi1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9al,-vy9al,-vz9al]) # 8
+                    fj1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10al,-vy10al,-vz10al]) # 9
+                    fk1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11al,-vy11al,-vz11al]) # 10
+                    fl1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12al,-vy12al,-vz12al]) # 11
+                    fm1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13al,-vy13al,-vz13al]) # 12
+                    fn1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14al,-vy14al,-vz14al]) # 13
+                    fo1al = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15al,-vy15al,-vz15al]) # 14
+
+                    fa1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1am,-vy1am,-vz1am]) # 0
+                    fb1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2am,-vy2am,-vz2am]) # 1
+                    fc1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3am,-vy3am,-vz3am]) # 2
+                    fd1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4am,-vy4am,-vz4am]) # 3
+                    fe1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5am,-vy5am,-vz5am]) # 4
+                    ff1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6am,-vy6am,-vz6am]) # 5
+                    fg1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7am,-vy7am,-vz7am]) # 6
+                    fh1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8am,-vy8am,-vz8am]) # 7
+                    fi1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9am,-vy9am,-vz9am]) # 8
+                    fj1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10am,-vy10am,-vz10am]) # 9
+                    fk1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11am,-vy11am,-vz11am]) # 10
+                    fl1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12am,-vy12am,-vz12am]) # 11
+                    fm1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13am,-vy13am,-vz13am]) # 12
+                    fn1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14am,-vy14am,-vz14am]) # 13
+                    fo1am = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15am,-vy15am,-vz15am]) # 14
+
+                    fa1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1an,-vy1an,-vz1an]) # 0
+                    fb1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2an,-vy2an,-vz2an]) # 1
+                    fc1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3an,-vy3an,-vz3an]) # 2
+                    fd1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4an,-vy4an,-vz4an]) # 3
+                    fe1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5an,-vy5an,-vz5an]) # 4
+                    ff1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6an,-vy6an,-vz6an]) # 5
+                    fg1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7an,-vy7an,-vz7an]) # 6
+                    fh1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8an,-vy8an,-vz8an]) # 7
+                    fi1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9an,-vy9an,-vz9an]) # 8
+                    fj1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10an,-vy10an,-vz10an]) # 9
+                    fk1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11an,-vy11an,-vz11an]) # 10
+                    fl1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12an,-vy12an,-vz12an]) # 11
+                    fm1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13an,-vy13an,-vz13an]) # 12
+                    fn1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14an,-vy14an,-vz14an]) # 13
+                    fo1an = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15an,-vy15an,-vz15an]) # 14
+
+                    fa1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ao,-vy1ao,-vz1ao]) # 0
+                    fb1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ao,-vy2ao,-vz2ao]) # 1
+                    fc1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ao,-vy3ao,-vz3ao]) # 2
+                    fd1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ao,-vy4ao,-vz4ao]) # 3
+                    fe1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ao,-vy5ao,-vz5ao]) # 4
+                    ff1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ao,-vy6ao,-vz6ao]) # 5
+                    fg1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ao,-vy7ao,-vz7ao]) # 6
+                    fh1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ao,-vy8ao,-vz8ao]) # 7
+                    fi1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ao,-vy9ao,-vz9ao]) # 8
+                    fj1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ao,-vy10ao,-vz10ao]) # 9
+                    fk1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ao,-vy11ao,-vz11ao]) # 10
+                    fl1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ao,-vy12ao,-vz12ao]) # 11
+                    fm1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ao,-vy13ao,-vz13ao]) # 12
+                    fn1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ao,-vy14ao,-vz14ao]) # 13
+                    fo1ao = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ao,-vy15ao,-vz15ao]) # 14
+
+                    fa1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ap,-vy1ap,-vz1ap]) # 0
+                    fb1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ap,-vy2ap,-vz2ap]) # 1
+                    fc1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ap,-vy3ap,-vz3ap]) # 2
+                    fd1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ap,-vy4ap,-vz4ap]) # 3
+                    fe1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ap,-vy5ap,-vz5ap]) # 4
+                    ff1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ap,-vy6ap,-vz6ap]) # 5
+                    fg1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ap,-vy7ap,-vz7ap]) # 6
+                    fh1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ap,-vy8ap,-vz8ap]) # 7
+                    fi1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ap,-vy9ap,-vz9ap]) # 8
+                    fj1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ap,-vy10ap,-vz10ap]) # 9
+                    fk1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ap,-vy11ap,-vz11ap]) # 10
+                    fl1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ap,-vy12ap,-vz12ap]) # 11
+                    fm1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ap,-vy13ap,-vz13ap]) # 12
+                    fn1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ap,-vy14ap,-vz14ap]) # 13
+                    fo1ap = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ap,-vy15ap,-vz15ap]) # 14
+
+                    fa1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1aq,-vy1aq,-vz1aq]) # 0
+                    fb1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2aq,-vy2aq,-vz2aq]) # 1
+                    fc1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3aq,-vy3aq,-vz3aq]) # 2
+                    fd1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4aq,-vy4aq,-vz4aq]) # 3
+                    fe1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5aq,-vy5aq,-vz5aq]) # 4
+                    ff1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6aq,-vy6aq,-vz6aq]) # 5
+                    fg1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7aq,-vy7aq,-vz7aq]) # 6
+                    fh1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8aq,-vy8aq,-vz8aq]) # 7
+                    fi1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9aq,-vy9aq,-vz9aq]) # 8
+                    fj1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10aq,-vy10aq,-vz10aq]) # 9
+                    fk1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11aq,-vy11aq,-vz11aq]) # 10
+                    fl1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12aq,-vy12aq,-vz12aq]) # 11
+                    fm1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13aq,-vy13aq,-vz13aq]) # 12
+                    fn1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14aq,-vy14aq,-vz14aq]) # 13
+                    fo1aq = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15aq,-vy15aq,-vz15aq]) # 14
+
+                    fa1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ar,-vy1ar,-vz1ar]) # 0
+                    fb1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ar,-vy2ar,-vz2ar]) # 1
+                    fc1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ar,-vy3ar,-vz3ar]) # 2
+                    fd1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ar,-vy4ar,-vz4ar]) # 3
+                    fe1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ar,-vy5ar,-vz5ar]) # 4
+                    ff1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ar,-vy6ar,-vz6ar]) # 5
+                    fg1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ar,-vy7ar,-vz7ar]) # 6
+                    fh1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ar,-vy8ar,-vz8ar]) # 7
+                    fi1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ar,-vy9ar,-vz9ar]) # 8
+                    fj1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ar,-vy10ar,-vz10ar]) # 9
+                    fk1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ar,-vy11ar,-vz11ar]) # 10
+                    fl1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ar,-vy12ar,-vz12ar]) # 11
+                    fm1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ar,-vy13ar,-vz13ar]) # 12
+                    fn1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ar,-vy14ar,-vz14ar]) # 13
+                    fo1ar = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ar,-vy15ar,-vz15ar]) # 14
+
+                    fa1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1as,-vy1as,-vz1as]) # 0
+                    fb1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2as,-vy2as,-vz2as]) # 1
+                    fc1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3as,-vy3as,-vz3as]) # 2
+                    fd1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4as,-vy4as,-vz4as]) # 3
+                    fe1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5as,-vy5as,-vz5as]) # 4
+                    ff1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6as,-vy6as,-vz6as]) # 5
+                    fg1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7as,-vy7as,-vz7as]) # 6
+                    fh1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8as,-vy8as,-vz8as]) # 7
+                    fi1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9as,-vy9as,-vz9as]) # 8
+                    fj1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10as,-vy10as,-vz10as]) # 9
+                    fk1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11as,-vy11as,-vz11as]) # 10
+                    fl1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12as,-vy12as,-vz12as]) # 11
+                    fm1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13as,-vy13as,-vz13as]) # 12
+                    fn1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14as,-vy14as,-vz14as]) # 13
+                    fo1as = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15as,-vy15as,-vz15as]) # 14
+
+                    fa1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1at,-vy1at,-vz1at]) # 0
+                    fb1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2at,-vy2at,-vz2at]) # 1
+                    fc1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3at,-vy3at,-vz3at]) # 2
+                    fd1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4at,-vy4at,-vz4at]) # 3
+                    fe1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5at,-vy5at,-vz5at]) # 4
+                    ff1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6at,-vy6at,-vz6at]) # 5
+                    fg1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7at,-vy7at,-vz7at]) # 6
+                    fh1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8at,-vy8at,-vz8at]) # 7
+                    fi1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9at,-vy9at,-vz9at]) # 8
+                    fj1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10at,-vy10at,-vz10at]) # 9
+                    fk1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11at,-vy11at,-vz11at]) # 10
+                    fl1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12at,-vy12at,-vz12at]) # 11
+                    fm1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13at,-vy13at,-vz13at]) # 12
+                    fn1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14at,-vy14at,-vz14at]) # 13
+                    fo1at = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15at,-vy15at,-vz15at]) # 14
+
+                    fa1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1au,-vy1au,-vz1au]) # 0
+                    fb1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2au,-vy2au,-vz2au]) # 1
+                    fc1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3au,-vy3au,-vz3au]) # 2
+                    fd1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4au,-vy4au,-vz4au]) # 3
+                    fe1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5au,-vy5au,-vz5au]) # 4
+                    ff1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6au,-vy6au,-vz6au]) # 5
+                    fg1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7au,-vy7au,-vz7au]) # 6
+                    fh1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8au,-vy8au,-vz8au]) # 7
+                    fi1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9au,-vy9au,-vz9au]) # 8
+                    fj1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10au,-vy10au,-vz10au]) # 9
+                    fk1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11au,-vy11au,-vz11au]) # 10
+                    fl1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12au,-vy12au,-vz12au]) # 11
+                    fm1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13au,-vy13au,-vz13au]) # 12
+                    fn1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14au,-vy14au,-vz14au]) # 13
+                    fo1au = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15au,-vy15au,-vz15au]) # 14
+
+                    fa1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1av,-vy1av,-vz1av]) # 0
+                    fb1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2av,-vy2av,-vz2av]) # 1
+                    fc1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3av,-vy3av,-vz3av]) # 2
+                    fd1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4av,-vy4av,-vz4av]) # 3
+                    fe1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5av,-vy5av,-vz5av]) # 4
+                    ff1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6av,-vy6av,-vz6av]) # 5
+                    fg1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7av,-vy7av,-vz7av]) # 6
+                    fh1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8av,-vy8av,-vz8av]) # 7
+                    fi1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9av,-vy9av,-vz9av]) # 8
+                    fj1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10av,-vy10av,-vz10av]) # 9
+                    fk1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11av,-vy11av,-vz11av]) # 10
+                    fl1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12av,-vy12av,-vz12av]) # 11
+                    fm1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13av,-vy13av,-vz13av]) # 12
+                    fn1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14av,-vy14av,-vz14av]) # 13
+                    fo1av = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15av,-vy15av,-vz15av]) # 14
+
+                    fa1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1aw,-vy1aw,-vz1aw]) # 0
+                    fb1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2aw,-vy2aw,-vz2aw]) # 1
+                    fc1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3aw,-vy3aw,-vz3aw]) # 2
+                    fd1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4aw,-vy4aw,-vz4aw]) # 3
+                    fe1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5aw,-vy5aw,-vz5aw]) # 4
+                    ff1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6aw,-vy6aw,-vz6aw]) # 5
+                    fg1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7aw,-vy7aw,-vz7aw]) # 6
+                    fh1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8aw,-vy8aw,-vz8aw]) # 7
+                    fi1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9aw,-vy9aw,-vz9aw]) # 8
+                    fj1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10aw,-vy10aw,-vz10aw]) # 9
+                    fk1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11aw,-vy11aw,-vz11aw]) # 10
+                    fl1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12aw,-vy12aw,-vz12aw]) # 11
+                    fm1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13aw,-vy13aw,-vz13aw]) # 12
+                    fn1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14aw,-vy14aw,-vz14aw]) # 13
+                    fo1aw = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15aw,-vy15aw,-vz15aw]) # 14
+
+                    fa1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ax,-vy1ax,-vz1ax]) # 0
+                    fb1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ax,-vy2ax,-vz2ax]) # 1
+                    fc1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ax,-vy3ax,-vz3ax]) # 2
+                    fd1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ax,-vy4ax,-vz4ax]) # 3
+                    fe1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ax,-vy5ax,-vz5ax]) # 4
+                    ff1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ax,-vy6ax,-vz6ax]) # 5
+                    fg1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ax,-vy7ax,-vz7ax]) # 6
+                    fh1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ax,-vy8ax,-vz8ax]) # 7
+                    fi1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ax,-vy9ax,-vz9ax]) # 8
+                    fj1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ax,-vy10ax,-vz10ax]) # 9
+                    fk1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ax,-vy11ax,-vz11ax]) # 10
+                    fl1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ax,-vy12ax,-vz12ax]) # 11
+                    fm1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ax,-vy13ax,-vz13ax]) # 12
+                    fn1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ax,-vy14ax,-vz14ax]) # 13
+                    fo1ax = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ax,-vy15ax,-vz15ax]) # 14
+
+                    fa1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ay,-vy1ay,-vz1ay]) # 0
+                    fb1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ay,-vy2ay,-vz2ay]) # 1
+                    fc1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ay,-vy3ay,-vz3ay]) # 2
+                    fd1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ay,-vy4ay,-vz4ay]) # 3
+                    fe1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ay,-vy5ay,-vz5ay]) # 4
+                    ff1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ay,-vy6ay,-vz6ay]) # 5
+                    fg1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ay,-vy7ay,-vz7ay]) # 6
+                    fh1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ay,-vy8ay,-vz8ay]) # 7
+                    fi1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ay,-vy9ay,-vz9ay]) # 8
+                    fj1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ay,-vy10ay,-vz10ay]) # 9
+                    fk1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ay,-vy11ay,-vz11ay]) # 10
+                    fl1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ay,-vy12ay,-vz12ay]) # 11
+                    fm1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ay,-vy13ay,-vz13ay]) # 12
+                    fn1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ay,-vy14ay,-vz14ay]) # 13
+                    fo1ay = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ay,-vy15ay,-vz15ay]) # 14
+
+                    fa1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1az,-vy1az,-vz1az]) # 0
+                    fb1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2az,-vy2az,-vz2az]) # 1
+                    fc1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3az,-vy3az,-vz3az]) # 2
+                    fd1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4az,-vy4az,-vz4az]) # 3
+                    fe1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5az,-vy5az,-vz5az]) # 4
+                    ff1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6az,-vy6az,-vz6az]) # 5
+                    fg1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7az,-vy7az,-vz7az]) # 6
+                    fh1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8az,-vy8az,-vz8az]) # 7
+                    fi1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9az,-vy9az,-vz9az]) # 8
+                    fj1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10az,-vy10az,-vz10az]) # 9
+                    fk1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11az,-vy11az,-vz11az]) # 10
+                    fl1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12az,-vy12az,-vz12az]) # 11
+                    fm1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13az,-vy13az,-vz13az]) # 12
+                    fn1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14az,-vy14az,-vz14az]) # 13
+                    fo1az = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15az,-vy15az,-vz15az]) # 14
+
+                    fa1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1ba,-vy1ba,-vz1ba]) # 0
+                    fb1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2ba,-vy2ba,-vz2ba]) # 1
+                    fc1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3ba,-vy3ba,-vz3ba]) # 2
+                    fd1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4ba,-vy4ba,-vz4ba]) # 3
+                    fe1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5ba,-vy5ba,-vz5ba]) # 4
+                    ff1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6ba,-vy6ba,-vz6ba]) # 5
+                    fg1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7ba,-vy7ba,-vz7ba]) # 6
+                    fh1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8ba,-vy8ba,-vz8ba]) # 7
+                    fi1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9ba,-vy9ba,-vz9ba]) # 8
+                    fj1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10ba,-vy10ba,-vz10ba]) # 9
+                    fk1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11ba,-vy11ba,-vz11ba]) # 10
+                    fl1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12ba,-vy12ba,-vz12ba]) # 11
+                    fm1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13ba,-vy13ba,-vz13ba]) # 12
+                    fn1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14ba,-vy14ba,-vz14ba]) # 13
+                    fo1ba = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15ba,-vy15ba,-vz15ba]) # 14
+
+                    fa1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1bb,-vy1bb,-vz1bb]) # 0
+                    fb1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2bb,-vy2bb,-vz2bb]) # 1
+                    fc1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3bb,-vy3bb,-vz3bb]) # 2
+                    fd1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4bb,-vy4bb,-vz4bb]) # 3
+                    fe1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5bb,-vy5bb,-vz5bb]) # 4
+                    ff1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6bb,-vy6bb,-vz6bb]) # 5
+                    fg1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7bb,-vy7bb,-vz7bb]) # 6
+                    fh1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8bb,-vy8bb,-vz8bb]) # 7
+                    fi1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9bb,-vy9bb,-vz9bb]) # 8
+                    fj1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10bb,-vy10bb,-vz10bb]) # 9
+                    fk1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11bb,-vy11bb,-vz11bb]) # 10
+                    fl1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12bb,-vy12bb,-vz12bb]) # 11
+                    fm1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13bb,-vy13bb,-vz13bb]) # 12
+                    fn1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14bb,-vy14bb,-vz14bb]) # 13
+                    fo1bb = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15bb,-vy15bb,-vz15bb]) # 14
+
+                    fa1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1bc,-vy1bc,-vz1bc]) # 0
+                    fb1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2bc,-vy2bc,-vz2bc]) # 1
+                    fc1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3bc,-vy3bc,-vz3bc]) # 2
+                    fd1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4bc,-vy4bc,-vz4bc]) # 3
+                    fe1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5bc,-vy5bc,-vz5bc]) # 4
+                    ff1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6bc,-vy6bc,-vz6bc]) # 5
+                    fg1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7bc,-vy7bc,-vz7bc]) # 6
+                    fh1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8bc,-vy8bc,-vz8bc]) # 7
+                    fi1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9bc,-vy9bc,-vz9bc]) # 8
+                    fj1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10bc,-vy10bc,-vz10bc]) # 9
+                    fk1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11bc,-vy11bc,-vz11bc]) # 10
+                    fl1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12bc,-vy12bc,-vz12bc]) # 11
+                    fm1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13bc,-vy13bc,-vz13bc]) # 12
+                    fn1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14bc,-vy14bc,-vz14bc]) # 13
+                    fo1bc = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15bc,-vy15bc,-vz15bc]) # 14
+
+                    fa1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1bd,-vy1bd,-vz1bd]) # 0
+                    fb1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2bd,-vy2bd,-vz2bd]) # 1
+                    fc1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3bd,-vy3bd,-vz3bd]) # 2
+                    fd1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4bd,-vy4bd,-vz4bd]) # 3
+                    fe1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5bd,-vy5bd,-vz5bd]) # 4
+                    ff1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6bd,-vy6bd,-vz6bd]) # 5
+                    fg1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7bd,-vy7bd,-vz7bd]) # 6
+                    fh1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8bd,-vy8bd,-vz8bd]) # 7
+                    fi1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9bd,-vy9bd,-vz9bd]) # 8
+                    fj1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10bd,-vy10bd,-vz10bd]) # 9
+                    fk1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11bd,-vy11bd,-vz11bd]) # 10
+                    fl1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12bd,-vy12bd,-vz12bd]) # 11
+                    fm1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13bd,-vy13bd,-vz13bd]) # 12
+                    fn1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14bd,-vy14bd,-vz14bd]) # 13
+                    fo1bd = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15bd,-vy15bd,-vz15bd]) # 14
+
+                    fa1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1be,-vy1be,-vz1be]) # 0
+                    fb1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2be,-vy2be,-vz2be]) # 1
+                    fc1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3be,-vy3be,-vz3be]) # 2
+                    fd1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4be,-vy4be,-vz4be]) # 3
+                    fe1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5be,-vy5be,-vz5be]) # 4
+                    ff1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6be,-vy6be,-vz6be]) # 5
+                    fg1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7be,-vy7be,-vz7be]) # 6
+                    fh1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8be,-vy8be,-vz8be]) # 7
+                    fi1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9be,-vy9be,-vz9be]) # 8
+                    fj1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10be,-vy10be,-vz10be]) # 9
+                    fk1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11be,-vy11be,-vz11be]) # 10
+                    fl1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12be,-vy12be,-vz12be]) # 11
+                    fm1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13be,-vy13be,-vz13be]) # 12
+                    fn1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14be,-vy14be,-vz14be]) # 13
+                    fo1be = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15be,-vy15be,-vz15be]) # 14
+
+                    fa1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1bf,-vy1bf,-vz1bf]) # 0
+                    fb1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2bf,-vy2bf,-vz2bf]) # 1
+                    fc1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3bf,-vy3bf,-vz3bf]) # 2
+                    fd1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4bf,-vy4bf,-vz4bf]) # 3
+                    fe1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5bf,-vy5bf,-vz5bf]) # 4
+                    ff1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6bf,-vy6bf,-vz6bf]) # 5
+                    fg1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7bf,-vy7bf,-vz7bf]) # 6
+                    fh1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8bf,-vy8bf,-vz8bf]) # 7
+                    fi1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9bf,-vy9bf,-vz9bf]) # 8
+                    fj1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10bf,-vy10bf,-vz10bf]) # 9
+                    fk1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11bf,-vy11bf,-vz11bf]) # 10
+                    fl1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12bf,-vy12bf,-vz12bf]) # 11
+                    fm1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13bf,-vy13bf,-vz13bf]) # 12
+                    fn1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14bf,-vy14bf,-vz14bf]) # 13
+                    fo1bf = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15bf,-vy15bf,-vz15bf]) # 14
+
+                    fa1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx1bg,-vy1bg,-vz1bg]) # 0
+                    fb1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx2bg,-vy2bg,-vz2bg]) # 1
+                    fc1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx3bg,-vy3bg,-vz3bg]) # 2
+                    fd1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx4bg,-vy4bg,-vz4bg]) # 3
+                    fe1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx5bg,-vy5bg,-vz5bg]) # 4
+                    ff1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx6bg,-vy6bg,-vz6bg]) # 5
+                    fg1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx7bg,-vy7bg,-vz7bg]) # 6
+                    fh1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx8bg,-vy8bg,-vz8bg]) # 7
+                    fi1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx9bg,-vy9bg,-vz9bg]) # 8
+                    fj1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx10bg,-vy10bg,-vz10bg]) # 9
+                    fk1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx11bg,-vy11bg,-vz11bg]) # 10
+                    fl1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx12bg,-vy12bg,-vz12bg]) # 11
+                    fm1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx13bg,-vy13bg,-vz13bg]) # 12
+                    fn1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx14bg,-vy14bg,-vz14bg]) # 13
+                    fo1bg = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts.new([-vx15bg,-vy15bg,-vz15bg]) # 14
+
+                    if type1bg == 1:
+                        if type2bg == 1:
+                            if type3bg == 0:
+                                if type4bg == 1:
+                                    if type5bg == 1:
+                                        if type6bg == 0:
+                                            if type7bg == 1:
+                                                if type8bg == 1:
+                                                    if type9bg == 0:
+                                                        if type10bg == 1:
+                                                            if type11bg == 1:
+                                                                if type12bg == 0:
+                                                                    if type13bg == 1:
+                                                                        if type14bg == 1:
+                                                                            if type15bg == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1bg,fb1bg,fc1bg])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1bg,fe1bg,ff1bg])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1bg,fh1bg,fi1bg])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1bg,fk1bg,fl1bg])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1bg,fn1bg,fo1bg])
+
+                    if type1bf == 1:
+                        if type2bf == 1:
+                            if type3bf == 0:
+                                if type4bf == 0:
+                                    if type5bf == 0:
+                                        if type6bf == 0:
+                                            if type7bf == 1:
+                                                if type8bf == 1:
+                                                    if type9bf == 0:
+                                                        if type10bf == 1:
+                                                            if type11bf == 1:
+                                                                if type12bf == 0:
+                                                                    if type13bf == 1:
+                                                                        if type14bf == 1:
+                                                                            if type15bf == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1bf,fb1bf,fc1bf])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1bf,fc1bf,fd1bf])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1bf,fd1bf,fe1bf])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1bf,fe1bf,ff1bf])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1bf,fh1bf,fi1bf])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1bf,fk1bf,fl1bf])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1bf,fn1bf,fo1bf])
+
+                    if type1be == 1:
+                        if type2be == 1:
+                            if type3be == 0:
+                                if type4be == 0:
+                                    if type5be == 0:
+                                        if type6be == 1:
+                                            if type7be == 1:
+                                                if type8be == 0:
+                                                    if type9be == 0:
+                                                        if type10be == 1:
+                                                            if type11be == 1:
+                                                                if type12be == 0:
+                                                                    if type13be == 1:
+                                                                        if type14be == 1:
+                                                                            if type15be == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1be,fb1be,fc1be])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1be,fc1be,fd1be])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1be,fd1be,fe1be])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1be,fg1be,fh1be])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1be,fh1be,fi1be])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1be,fk1be,fl1be])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1be,fn1be,fo1be])
+
+                    if type1bd == 1:
+                        if type2bd == 1:
+                            if type3bd == 0:
+                                if type4bd == 0:
+                                    if type5bd == 0:
+                                        if type6bd == 1:
+                                            if type7bd == 1:
+                                                if type8bd == 0:
+                                                    if type9bd == 1:
+                                                        if type10bd == 1:
+                                                            if type11bd == 0:
+                                                                if type12bd == 0:
+                                                                    if type13bd == 1:
+                                                                        if type14bd == 1:
+                                                                            if type15bd == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1bd,fb1bd,fc1bd])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1bd,fc1bd,fd1bd])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1bd,fd1bd,fe1bd])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1bd,fg1bd,fh1bd])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1bd,fj1bd,fk1bd])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1bd,fk1bd,fl1bd])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1bd,fn1bd,fo1bd])
+
+                    if type1bc == 1:
+                        if type2bc == 1:
+                            if type3bc == 0:
+                                if type4bc == 0:
+                                    if type5bc == 0:
+                                        if type6bc == 1:
+                                            if type7bc == 1:
+                                                if type8bc == 0:
+                                                    if type9bc == 1:
+                                                        if type10bc == 1:
+                                                            if type11bc == 0:
+                                                                if type12bc == 1:
+                                                                    if type13bc == 1:
+                                                                        if type14bc == 0:
+                                                                            if type15bc == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1bc,fb1bc,fc1bc])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1bc,fc1bc,fd1bc])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1bc,fd1bc,fe1bc])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1bc,fg1bc,fh1bc])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1bc,fj1bc,fk1bc])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1bc,fm1bc,fn1bc])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1bc,fn1bc,fo1bc])
+
+                    if type1bb == 1:
+                        if type2bb == 1:
+                            if type3bb == 0:
+                                if type4bb == 0:
+                                    if type5bb == 1:
+                                        if type6bb == 1:
+                                            if type7bb == 0:
+                                                if type8bb == 0:
+                                                    if type9bb == 0:
+                                                        if type10bb == 1:
+                                                            if type11bb == 1:
+                                                                if type12bb == 0:
+                                                                    if type13bb == 1:
+                                                                        if type14bb == 1:
+                                                                            if type15bb == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1bb,fb1bb,fc1bb])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1bb,fc1bb,fd1bb])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1bb,ff1bb,fg1bb])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1bb,fg1bb,fh1bb])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1bb,fh1bb,fi1bb])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1bb,fk1bb,fl1bb])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1bb,fn1bb,fo1bb])
+
+                    if type1ba == 1:
+                        if type2ba == 1:
+                            if type3ba == 0:
+                                if type4ba == 0:
+                                    if type5ba == 1:
+                                        if type6ba == 1:
+                                            if type7ba == 0:
+                                                if type8ba == 0:
+                                                    if type9ba == 1:
+                                                        if type10ba == 1:
+                                                            if type11ba == 0:
+                                                                if type12ba == 0:
+                                                                    if type13ba == 1:
+                                                                        if type14ba == 1:
+                                                                            if type15ba == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ba,fb1ba,fc1ba])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ba,fc1ba,fd1ba])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1ba,ff1ba,fg1ba])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1ba,fg1ba,fh1ba])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ba,fj1ba,fk1ba])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1ba,fk1ba,fl1ba])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ba,fn1ba,fo1ba])
+
+                    if type1az == 1:
+                        if type2az == 1:
+                            if type3az == 0:
+                                if type4az == 0:
+                                    if type5az == 1:
+                                        if type6az == 1:
+                                            if type7az == 0:
+                                                if type8az == 0:
+                                                    if type9az == 1:
+                                                        if type10az == 1:
+                                                            if type11az == 0:
+                                                                if type12az == 1:
+                                                                    if type13az == 1:
+                                                                        if type14az == 0:
+                                                                            if type15az == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1az,fb1az,fc1az])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1az,fc1az,fd1az])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1az,ff1az,fg1az])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1az,fg1az,fh1az])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1az,fj1az,fk1az])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1az,fm1az,fn1az])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1az,fn1az,fo1az])
+
+                    if type1ay == 1:
+                        if type2ay == 1:
+                            if type3ay == 0:
+                                if type4ay == 0:
+                                    if type5ay == 1:
+                                        if type6ay == 1:
+                                            if type7ay == 0:
+                                                if type8ay == 1:
+                                                    if type9ay == 1:
+                                                        if type10ay == 0:
+                                                            if type11ay == 0:
+                                                                if type12ay == 0:
+                                                                    if type13ay == 1:
+                                                                        if type14ay == 1:
+                                                                            if type15ay == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ay,fb1ay,fc1ay])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ay,fc1ay,fd1ay])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1ay,ff1ay,fg1ay])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ay,fi1ay,fj1ay])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ay,fj1ay,fk1ay])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1ay,fk1ay,fl1ay])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ay,fn1ay,fo1ay])
+
+                    if type1ax == 1:
+                        if type2ax == 1:
+                            if type3ax == 0:
+                                if type4ax == 0:
+                                    if type5ax == 1:
+                                        if type6ax == 1:
+                                            if type7ax == 0:
+                                                if type8ax == 1:
+                                                    if type9ax == 1:
+                                                        if type10ax == 0:
+                                                            if type11ax == 0:
+                                                                if type12ax == 1:
+                                                                    if type13ax == 1:
+                                                                        if type14ax == 0:
+                                                                            if type15ax == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ax,fb1ax,fc1ax])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ax,fc1ax,fd1ax])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1ax,ff1ax,fg1ax])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ax,fi1ax,fj1ax])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ax,fj1ax,fk1ax])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1ax,fm1ax,fn1ax])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ax,fn1ax,fo1ax])
+
+                    if type1aw == 1:
+                        if type2aw == 1:
+                            if type3aw == 0:
+                                if type4aw == 0:
+                                    if type5aw == 1:
+                                        if type6aw == 1:
+                                            if type7aw == 0:
+                                                if type8aw == 1:
+                                                    if type9aw == 1:
+                                                        if type10aw == 0:
+                                                            if type11aw == 1:
+                                                                if type12aw == 1:
+                                                                    if type13aw == 0:
+                                                                        if type14aw == 0:
+                                                                            if type15aw == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1aw,fb1aw,fc1aw])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1aw,fc1aw,fd1aw])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1aw,ff1aw,fg1aw])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1aw,fi1aw,fj1aw])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1aw,fl1aw,fm1aw])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1aw,fm1aw,fn1aw])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1aw,fn1aw,fo1aw])
+
+                    if type1av == 1:
+                        if type2av == 1:
+                            if type3av == 0:
+                                if type4av == 1:
+                                    if type5av == 1:
+                                        if type6av == 0:
+                                            if type7av == 0:
+                                                if type8av == 0:
+                                                    if type9av == 0:
+                                                        if type10av == 1:
+                                                            if type11av == 1:
+                                                                if type12av == 0:
+                                                                    if type13av == 1:
+                                                                        if type14av == 1:
+                                                                            if type15av == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1av,fb1av,fc1av])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1av,fe1av,ff1av])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1av,ff1av,fg1av])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1av,fg1av,fh1av])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1av,fh1av,fi1av])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1av,fk1av,fl1av])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1av,fn1av,fo1av])
+
+                    if type1au == 1:
+                        if type2au == 1:
+                            if type3au == 0:
+                                if type4au == 1:
+                                    if type5au == 1:
+                                        if type6au == 0:
+                                            if type7au == 0:
+                                                if type8au == 0:
+                                                    if type9au == 1:
+                                                        if type10au == 1:
+                                                            if type11au == 0:
+                                                                if type12au == 0:
+                                                                    if type13au == 1:
+                                                                        if type14au == 1:
+                                                                            if type15au == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1au,fb1au,fc1au])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1au,fe1au,ff1au])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1au,ff1au,fg1au])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1au,fg1au,fh1au])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1au,fj1au,fk1au])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1au,fk1au,fl1au])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1au,fn1au,fo1au])
+
+                    if type1at == 1:
+                        if type2at == 1:
+                            if type3at == 0:
+                                if type4at == 1:
+                                    if type5at == 1:
+                                        if type6at == 0:
+                                            if type7at == 0:
+                                                if type8at == 0:
+                                                    if type9at == 1:
+                                                        if type10at == 1:
+                                                            if type11at == 0:
+                                                                if type12at == 1:
+                                                                    if type13at == 1:
+                                                                        if type14at == 0:
+                                                                            if type15at == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1at,fb1at,fc1at])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1at,fe1at,ff1at])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1at,ff1at,fg1at])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1at,fg1at,fh1at])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1at,fj1at,fk1at])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1at,fm1at,fn1at])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1at,fn1at,fo1at])
+
+                    if type1as == 1:
+                        if type2as == 1:
+                            if type3as == 0:
+                                if type4as == 1:
+                                    if type5as == 1:
+                                        if type6as == 0:
+                                            if type7as == 0:
+                                                if type8as == 1:
+                                                    if type9as == 1:
+                                                        if type10as == 0:
+                                                            if type11as == 0:
+                                                                if type12as == 0:
+                                                                    if type13as == 1:
+                                                                        if type14as == 1:
+                                                                            if type15as == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1as,fb1as,fc1as])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1as,fe1as,ff1as])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1as,ff1as,fg1as])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1as,fi1as,fj1as])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1as,fj1as,fk1as])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1as,fk1as,fl1as])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1as,fn1as,fo1as])
+
+                    if type1ar == 1:
+                        if type2ar == 1:
+                            if type3ar == 0:
+                                if type4ar == 1:
+                                    if type5ar == 1:
+                                        if type6ar == 0:
+                                            if type7ar == 0:
+                                                if type8ar == 1:
+                                                    if type9ar == 1:
+                                                        if type10ar == 0:
+                                                            if type11ar == 0:
+                                                                if type12ar == 1:
+                                                                    if type13ar == 1:
+                                                                        if type14ar == 0:
+                                                                            if type15ar == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ar,fb1ar,fc1ar])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ar,fe1ar,ff1ar])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1ar,ff1ar,fg1ar])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ar,fi1ar,fj1ar])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ar,fj1ar,fk1ar])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1ar,fm1ar,fn1ar])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ar,fn1ar,fo1ar])
+
+                    if type1aq == 1:
+                        if type2aq == 1:
+                            if type3aq == 0:
+                                if type4aq == 1:
+                                    if type5aq == 1:
+                                        if type6aq == 0:
+                                            if type7aq == 0:
+                                                if type8aq == 1:
+                                                    if type9aq == 1:
+                                                        if type10aq == 0:
+                                                            if type11aq == 1:
+                                                                if type12aq == 1:
+                                                                    if type13aq == 0:
+                                                                        if type14aq == 0:
+                                                                            if type15aq == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1aq,fb1aq,fc1aq])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1aq,fe1aq,ff1aq])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1aq,ff1aq,fg1aq])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1aq,fi1aq,fj1aq])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1aq,fl1aq,fm1aq])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1aq,fm1aq,fn1aq])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1aq,fn1aq,fo1aq])
+
+                    if type1ap == 1:
+                        if type2ap == 1:
+                            if type3ap == 0:
+                                if type4ap == 1:
+                                    if type5ap == 1:
+                                        if type6ap == 0:
+                                            if type7ap == 1:
+                                                if type8ap == 1:
+                                                    if type9ap == 0:
+                                                        if type10ap == 0:
+                                                            if type11ap == 0:
+                                                                if type12ap == 0:
+                                                                    if type13ap == 1:
+                                                                        if type14ap == 1:
+                                                                            if type15ap == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ap,fb1ap,fc1ap])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ap,fe1ap,ff1ap])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1ap,fh1ap,fi1ap])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ap,fi1ap,fj1ap])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ap,fj1ap,fk1ap])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1ap,fk1ap,fl1ap])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ap,fn1ap,fo1ap])
+
+                    if type1ao == 1:
+                        if type2ao == 1:
+                            if type3ao == 0:
+                                if type4ao == 1:
+                                    if type5ao == 1:
+                                        if type6ao == 0:
+                                            if type7ao == 1:
+                                                if type8ao == 1:
+                                                    if type9ao == 0:
+                                                        if type10ao == 0:
+                                                            if type11ao == 0:
+                                                                if type12ao == 1:
+                                                                    if type13ao == 1:
+                                                                        if type14ao == 0:
+                                                                            if type15ao == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ao,fb1ao,fc1ao])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ao,fe1ao,ff1ao])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1ao,fh1ao,fi1ao])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ao,fi1ao,fj1ao])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ao,fj1ao,fk1ao])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1ao,fm1ao,fn1ao])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ao,fn1ao,fo1ao])
+
+                    if type1an == 1:
+                        if type2an == 1:
+                            if type3an == 0:
+                                if type4an == 1:
+                                    if type5an == 1:
+                                        if type6an == 0:
+                                            if type7an == 1:
+                                                if type8an == 1:
+                                                    if type9an == 0:
+                                                        if type10an == 0:
+                                                            if type11an == 1:
+                                                                if type12an == 1:
+                                                                    if type13an == 0:
+                                                                        if type14an == 0:
+                                                                            if type15an == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1an,fb1an,fc1an])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1an,fe1an,ff1an])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1an,fh1an,fi1an])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1an,fi1an,fj1an])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1an,fl1an,fm1an])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1an,fm1an,fn1an])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1an,fn1an,fo1an])
+
+                    if type1am == 1:
+                        if type2am == 1:
+                            if type3am == 0:
+                                if type4am == 1:
+                                    if type5am == 1:
+                                        if type6am == 0:
+                                            if type7am == 1:
+                                                if type8am == 1:
+                                                    if type9am == 0:
+                                                        if type10am == 1:
+                                                            if type11am == 1:
+                                                                if type12am == 0:
+                                                                    if type13am == 0:
+                                                                        if type14am == 0:
+                                                                            if type15am == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1am,fb1am,fc1am])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1am,fe1am,ff1am])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1am,fh1am,fi1am])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1am,fk1am,fl1am])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1am,fl1am,fm1am])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1am,fm1am,fn1am])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1am,fn1am,fo1am])
+
+                    if type1al == 1:
+                        if type2al == 1:
+                            if type3al == 0:
+                                if type4al == 0:
+                                    if type5al == 0:
+                                        if type6al == 0:
+                                            if type7al == 0:
+                                                if type8al == 0:
+                                                    if type9al == 0:
+                                                        if type10al == 1:
+                                                            if type11al == 1:
+                                                                if type12al == 0:
+                                                                    if type13al == 1:
+                                                                        if type14al == 1:
+                                                                            if type15al == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1al,fb1al,fc1al])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1al,fc1al,fd1al])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1al,fd1al,fe1al])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1al,fe1al,ff1al])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1al,ff1al,fg1al])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1al,fg1al,fh1al])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1al,fh1al,fi1al])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1al,fk1al,fl1al])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1al,fn1al,fo1al])
+
+                    if type1ak == 1:
+                        if type2ak == 1:
+                            if type3ak == 0:
+                                if type4ak == 0:
+                                    if type5ak == 0:
+                                        if type6ak == 0:
+                                            if type7ak == 0:
+                                                if type8ak == 0:
+                                                    if type9ak == 1:
+                                                        if type10ak == 1:
+                                                            if type11ak == 0:
+                                                                if type12ak == 0:
+                                                                    if type13ak == 1:
+                                                                        if type14ak == 1:
+                                                                            if type15ak == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ak,fb1ak,fc1ak])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ak,fc1ak,fd1ak])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1ak,fd1ak,fe1ak])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ak,fe1ak,ff1ak])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1ak,ff1ak,fg1ak])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1ak,fg1ak,fh1ak])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ak,fj1ak,fk1ak])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1ak,fk1ak,fl1ak])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ak,fn1ak,fo1ak])
+
+                    if type1aj == 1:
+                        if type2aj == 1:
+                            if type3aj == 0:
+                                if type4aj == 0:
+                                    if type5aj == 0:
+                                        if type6aj == 0:
+                                            if type7aj == 0:
+                                                if type8aj == 0:
+                                                    if type9aj == 1:
+                                                        if type10aj == 1:
+                                                            if type11aj == 0:
+                                                                if type12aj == 1:
+                                                                    if type13aj == 1:
+                                                                        if type14aj == 0:
+                                                                            if type15aj == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1aj,fb1aj,fc1aj])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1aj,fc1aj,fd1aj])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1aj,fd1aj,fe1aj])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1aj,fe1aj,ff1aj])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1aj,ff1aj,fg1aj])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1aj,fg1aj,fh1aj])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1aj,fj1aj,fk1aj])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1aj,fm1aj,fn1aj])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1aj,fn1aj,fo1aj])
+
+                    if type1ai == 1:
+                        if type2ai == 1:
+                            if type3ai == 0:
+                                if type4ai == 0:
+                                    if type5ai == 0:
+                                        if type6ai == 0:
+                                            if type7ai == 0:
+                                                if type8ai == 1:
+                                                    if type9ai == 1:
+                                                        if type10ai == 0:
+                                                            if type11ai == 0:
+                                                                if type12ai == 0:
+                                                                    if type13ai == 1:
+                                                                        if type14ai == 1:
+                                                                            if type15ai == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ai,fb1ai,fc1ai])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ai,fc1ai,fd1ai])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1ai,fd1ai,fe1ai])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ai,fe1ai,ff1ai])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1ai,ff1ai,fg1ai])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ai,fi1ai,fj1ai])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ai,fj1ai,fk1ai])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1ai,fk1ai,fl1ai])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ai,fn1ai,fo1ai])
+
+                    if type1ah == 1:
+                        if type2ah == 1:
+                            if type3ah == 0:
+                                if type4ah == 0:
+                                    if type5ah == 0:
+                                        if type6ah == 0:
+                                            if type7ah == 0:
+                                                if type8ah == 1:
+                                                    if type9ah == 1:
+                                                        if type10ah == 0:
+                                                            if type11ah == 0:
+                                                                if type12ah == 1:
+                                                                    if type13ah == 1:
+                                                                        if type14ah == 0:
+                                                                            if type15ah == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ah,fb1ah,fc1ah])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ah,fc1ah,fd1ah])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1ah,fd1ah,fe1ah])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ah,fe1ah,ff1ah])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1ah,ff1ah,fg1ah])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ah,fi1ah,fj1ah])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ah,fj1ah,fk1ah])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1ah,fm1ah,fn1ah])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ah,fn1ah,fo1ah])
+
+                    if type1ag == 1:
+                        if type2ag == 1:
+                            if type3ag == 0:
+                                if type4ag == 0:
+                                    if type5ag == 0:
+                                        if type6ag == 0:
+                                            if type7ag == 0:
+                                                if type8ag == 1:
+                                                    if type9ag == 1:
+                                                        if type10ag == 0:
+                                                            if type11ag == 1:
+                                                                if type12ag == 1:
+                                                                    if type13ag == 0:
+                                                                        if type14ag == 0:
+                                                                            if type15ag == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ag,fb1ag,fc1ag])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ag,fc1ag,fd1ag])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1ag,fd1ag,fe1ag])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ag,fe1ag,ff1ag])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1ag,ff1ag,fg1ag])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ag,fi1ag,fj1ag])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1ag,fl1ag,fm1ag])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1ag,fm1ag,fn1ag])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ag,fn1ag,fo1ag])
+
+                    if type1af == 1:
+                        if type2af == 1:
+                            if type3af == 0:
+                                if type4af == 0:
+                                    if type5af == 0:
+                                        if type6af == 0:
+                                            if type7af == 1:
+                                                if type8af == 1:
+                                                    if type9af == 0:
+                                                        if type10af == 0:
+                                                            if type11af == 0:
+                                                                if type12af == 0:
+                                                                    if type13af == 1:
+                                                                        if type14af == 1:
+                                                                            if type15af == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1af,fb1af,fc1af])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1af,fc1af,fd1af])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1af,fd1af,fe1af])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1af,fe1af,ff1af])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1af,fh1af,fi1af])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1af,fi1af,fj1af])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1af,fj1af,fk1af])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1af,fk1af,fl1af])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1af,fn1af,fo1af])
+
+                    if type1ae == 1:
+                        if type2ae == 1:
+                            if type3ae == 0:
+                                if type4ae == 0:
+                                    if type5ae == 0:
+                                        if type6ae == 0:
+                                            if type7ae == 1:
+                                                if type8ae == 1:
+                                                    if type9ae == 0:
+                                                        if type10ae == 0:
+                                                            if type11ae == 0:
+                                                                if type12ae == 1:
+                                                                    if type13ae == 1:
+                                                                        if type14ae == 0:
+                                                                            if type15ae == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ae,fb1ae,fc1ae])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ae,fc1ae,fd1ae])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1ae,fd1ae,fe1ae])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ae,fe1ae,ff1ae])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1ae,fh1ae,fi1ae])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ae,fi1ae,fj1ae])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ae,fj1ae,fk1ae])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1ae,fm1ae,fn1ae])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ae,fn1ae,fo1ae])
+
+                    if type1ad == 1:
+                        if type2ad == 1:
+                            if type3ad == 0:
+                                if type4ad == 0:
+                                    if type5ad == 0:
+                                        if type6ad == 0:
+                                            if type7ad == 1:
+                                                if type8ad == 1:
+                                                    if type9ad == 0:
+                                                        if type10ad == 0:
+                                                            if type11ad == 1:
+                                                                if type12ad == 1:
+                                                                    if type13ad == 0:
+                                                                        if type14ad == 0:
+                                                                            if type15ad == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ad,fb1ad,fc1ad])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ad,fc1ad,fd1ad])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1ad,fd1ad,fe1ad])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ad,fe1ad,ff1ad])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1ad,fh1ad,fi1ad])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ad,fi1ad,fj1ad])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1ad,fl1ad,fm1ad])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1ad,fm1ad,fn1ad])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ad,fn1ad,fo1ad])
+
+                    if type1ac == 1:
+                        if type2ac == 1:
+                            if type3ac == 0:
+                                if type4ac == 0:
+                                    if type5ac == 0:
+                                        if type6ac == 0:
+                                            if type7ac == 1:
+                                                if type8ac == 1:
+                                                    if type9ac == 0:
+                                                        if type10ac == 1:
+                                                            if type11ac == 1:
+                                                                if type12ac == 0:
+                                                                    if type13ac == 0:
+                                                                        if type14ac == 0:
+                                                                            if type15ac == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ac,fb1ac,fc1ac])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ac,fc1ac,fd1ac])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1ac,fd1ac,fe1ac])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fd1ac,fe1ac,ff1ac])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1ac,fh1ac,fi1ac])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1ac,fk1ac,fl1ac])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1ac,fl1ac,fm1ac])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1ac,fm1ac,fn1ac])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ac,fn1ac,fo1ac])
+
+                    if type1ab == 1:
+                        if type2ab == 1:
+                            if type3ab == 0:
+                                if type4ab == 0:
+                                    if type5ab == 0:
+                                        if type6ab == 1:
+                                            if type7ab == 1:
+                                                if type8ab == 0:
+                                                    if type9ab == 0:
+                                                        if type10ab == 0:
+                                                            if type11ab == 0:
+                                                                if type12ab == 0:
+                                                                    if type13ab == 1:
+                                                                        if type14ab == 1:
+                                                                            if type15ab == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1ab,fb1ab,fc1ab])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1ab,fc1ab,fd1ab])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1ab,fd1ab,fe1ab])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1ab,fg1ab,fh1ab])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1ab,fh1ab,fi1ab])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1ab,fi1ab,fj1ab])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1ab,fj1ab,fk1ab])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1ab,fk1ab,fl1ab])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1ab,fn1ab,fo1ab])
+
+                    if type1aa == 1:
+                        if type2aa == 1:
+                            if type3aa == 0:
+                                if type4aa == 0:
+                                    if type5aa == 0:
+                                        if type6aa == 1:
+                                            if type7aa == 1:
+                                                if type8aa == 0:
+                                                    if type9aa == 0:
+                                                        if type10aa == 0:
+                                                            if type11aa == 0:
+                                                                if type12aa == 1:
+                                                                    if type13aa == 1:
+                                                                        if type14aa == 0:
+                                                                            if type15aa == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1aa,fb1aa,fc1aa])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1aa,fc1aa,fd1aa])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1aa,fd1aa,fe1aa])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1aa,fg1aa,fh1aa])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1aa,fh1aa,fi1aa])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1aa,fi1aa,fj1aa])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1aa,fj1aa,fk1aa])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1aa,fm1aa,fn1aa])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1aa,fn1aa,fo1aa])
+
+
+                    if type1z == 1:
+                        if type2z == 1:
+                            if type3z == 0:
+                                if type4z == 0:
+                                    if type5z == 0:
+                                        if type6z == 1:
+                                            if type7z == 1:
+                                                if type8z == 0:
+                                                    if type9z == 0:
+                                                        if type10z == 0:
+                                                            if type11z == 1:
+                                                                if type12z == 1:
+                                                                    if type13z == 0:
+                                                                        if type14z == 0:
+                                                                            if type15z == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1z,fb1z,fc1z])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1z,fc1z,fd1z])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1z,fd1z,fe1z])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1z,fg1z,fh1z])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1z,fh1z,fi1z])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1z,fi1z,fj1z])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1z,fl1z,fm1z])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1z,fm1z,fn1z])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1z,fn1z,fo1z])
+
+                    if type1y == 1:
+                        if type2y == 1:
+                            if type3y == 0:
+                                if type4y == 0:
+                                    if type5y == 0:
+                                        if type6y == 1:
+                                            if type7y == 1:
+                                                if type8y == 0:
+                                                    if type9y == 0:
+                                                        if type10y == 1:
+                                                            if type11y == 1:
+                                                                if type12y == 0:
+                                                                    if type13y == 0:
+                                                                        if type14y == 0:
+                                                                            if type15y == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1y,fb1y,fc1y])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1y,fc1y,fd1y])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1y,fd1y,fe1y])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1y,fg1y,fh1y])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1y,fh1y,fi1y])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1y,fk1y,fl1y])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1y,fl1y,fm1y])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1y,fm1y,fn1y])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1y,fn1y,fo1y])
+
+                    if type1x == 1:
+                        if type2x == 1:
+                            if type3x == 0:
+                                if type4x == 0:
+                                    if type5x == 0:
+                                        if type6x == 1:
+                                            if type7x == 1:
+                                                if type8x == 0:
+                                                    if type9x == 1:
+                                                        if type10x == 1:
+                                                            if type11x == 0:
+                                                                if type12x == 0:
+                                                                    if type13x == 0:
+                                                                        if type14x == 0:
+                                                                            if type15x == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1x,fb1x,fc1x])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1x,fc1x,fd1x])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fc1x,fd1x,fe1x])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1x,fg1x,fh1x])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1x,fj1x,fk1x])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1x,fk1x,fl1x])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1x,fl1x,fm1x])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1x,fm1x,fn1x])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1x,fn1x,fo1x])
+
+                    if type1w == 1:
+                        if type2w == 1:
+                            if type3w == 0:
+                                if type4w == 0:
+                                    if type5w == 1:
+                                        if type6w == 1:
+                                            if type7w == 0:
+                                                if type8w == 0:
+                                                    if type9w == 0:
+                                                        if type10w == 0:
+                                                            if type11w == 0:
+                                                                if type12w == 0:
+                                                                    if type13w == 1:
+                                                                        if type14w == 1:
+                                                                            if type15w == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1w,fb1w,fc1w])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1w,fc1w,fd1w])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1w,ff1w,fg1w])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1w,fg1w,fh1w])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1w,fh1w,fi1w])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1w,fi1w,fj1w])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1w,fj1w,fk1w])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fj1w,fk1w,fl1w])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1w,fn1w,fo1w])
+
+                    if type1v == 1:
+                        if type2v == 1:
+                            if type3v == 0:
+                                if type4v == 0:
+                                    if type5v == 1:
+                                        if type6v == 1:
+                                            if type7v == 0:
+                                                if type8v == 0:
+                                                    if type9v == 0:
+                                                        if type10v == 0:
+                                                            if type11v == 0:
+                                                                if type12v == 1:
+                                                                    if type13v == 1:
+                                                                        if type14v == 0:
+                                                                            if type15v == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1v,fb1v,fc1v])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1v,fc1v,fd1v])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1v,ff1v,fg1v])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1v,fg1v,fh1v])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1v,fh1v,fi1v])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1v,fi1v,fj1v])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([fi1v,fj1v,fk1v])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1v,fm1v,fn1v])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1v,fn1v,fo1v])
+
+                    if type1u == 1:
+                        if type2u == 1:
+                            if type3u == 0:
+                                if type4u == 0:
+                                    if type5u == 1:
+                                        if type6u == 1:
+                                            if type7u == 0:
+                                                if type8u == 0:
+                                                    if type9u == 0:
+                                                        if type10u == 0:
+                                                            if type11u == 1:
+                                                                if type12u == 1:
+                                                                    if type13u == 0:
+                                                                        if type14u == 0:
+                                                                            if type15u == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([fa1u,fb1u,fc1u])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([fb1u,fc1u,fd1u])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([fe1u,ff1u,fg1u])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([ff1u,fg1u,fh1u])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([fg1u,fh1u,fi1u])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([fh1u,fi1u,fj1u])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([fk1u,fl1u,fm1u])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([fl1u,fm1u,fn1u])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkkk.faces.new([fm1u,fn1u,fo1u])
+
+                    if type1t == 1:
+                        if type2t == 1:
+                            if type3t == 0:
+                                if type4t == 0:
+                                    if type5t == 1:
+                                        if type6t == 1:
+                                            if type7t == 0:
+                                                if type8t == 0:
+                                                    if type9t == 0:
+                                                        if type10t == 1:
+                                                            if type11t == 1:
+                                                                if type12t == 0:
+                                                                    if type13t == 0:
+                                                                        if type14t == 0:
+                                                                            if type15t == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([fa1t,fb1t,fc1t])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([fb1t,fc1t,fd1t])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([fe1t,ff1t,fg1t])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([ff1t,fg1t,fh1t])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([fg1t,fh1t,fi1t])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([fj1t,fk1t,fl1t])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([fk1t,fl1t,fm1t])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([fl1t,fm1t,fn1t])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkkk.faces.new([fm1t,fn1t,fo1t])
+
+                    if type1s == 1:
+                        if type2s == 1:
+                            if type3s == 0:
+                                if type4s == 0:
+                                    if type5s == 1:
+                                        if type6s == 1:
+                                            if type7s == 0:
+                                                if type8s == 0:
+                                                    if type9s == 1:
+                                                        if type10s == 1:
+                                                            if type11s == 0:
+                                                                if type12s == 0:
+                                                                    if type13s == 0:
+                                                                        if type14s == 0:
+                                                                            if type15s == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([fa1s,fb1s,fc1s])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([fb1s,fc1s,fd1s])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([fe1s,ff1s,fg1s])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([ff1s,fg1s,fh1s])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([fi1s,fj1s,fk1s])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([fj1s,fk1s,fl1s])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([fk1s,fl1s,fm1s])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([fl1s,fm1s,fn1s])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkkk.faces.new([fm1s,fn1s,fo1s])
+
+                    if type1r == 1:
+                        if type2r == 1:
+                            if type3r == 0:
+                                if type4r == 0:
+                                    if type5r == 1:
+                                        if type6r == 1:
+                                            if type7r == 0:
+                                                if type8r == 1:
+                                                    if type9r == 1:
+                                                        if type10r == 0:
+                                                            if type11r == 0:
+                                                                if type12r == 0:
+                                                                    if type13r == 0:
+                                                                        if type14r == 0:
+                                                                            if type15r == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fa1r,fb1r,fc1r])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fb1r,fc1r,fd1r])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fe1r,ff1r,fg1r])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fh1r,fi1r,fj1r])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fi1r,fj1r,fk1r])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fj1r,fk1r,fl1r])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fk1r,fl1r,fm1r])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fl1r,fm1r,fn1r])
+                                                                                bm_1kkkkkkkkkkkkkkkkkkk.faces.new([fm1r,fn1r,fo1r])
+
+                    if type1q == 1:
+                        if type2q == 1:
+                            if type3q == 0:
+                                if type4q == 1:
+                                    if type5q == 1:
+                                        if type6q == 0:
+                                            if type7q == 0:
+                                                if type8q == 0:
+                                                    if type9q == 0:
+                                                        if type10q == 0:
+                                                            if type11q == 0:
+                                                                if type12q == 0:
+                                                                    if type13q == 1:
+                                                                        if type14q == 1:
+                                                                            if type15q == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([fa1q,fb1q,fc1q])
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([fd1q,fe1q,ff1q])
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([fe1q,ff1q,fg1q])
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([ff1q,fg1q,fh1q])
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([fg1q,fh1q,fi1q])
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([fh1q,fi1q,fj1q])
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([fi1q,fj1q,fk1q])
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([fj1q,fk1q,fl1q])
+                                                                                bm_1kkkkkkkkkkkkkkkkkk.faces.new([fm1q,fn1q,fo1q])
+
+                    if type1p == 1:
+                        if type2p == 1:
+                            if type3p == 0:
+                                if type4p == 1:
+                                    if type5p == 1:
+                                        if type6p == 0:
+                                            if type7p == 0:
+                                                if type8p == 0:
+                                                    if type9p == 0:
+                                                        if type10p == 0:
+                                                            if type11p == 0:
+                                                                if type12p == 1:
+                                                                    if type13p == 1:
+                                                                        if type14p == 0:
+                                                                            if type15p == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([fa1p,fb1p,fc1p])
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([fd1p,fe1p,ff1p])
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([fe1p,ff1p,fg1p])
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([ff1p,fg1p,fh1p])
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([fg1p,fh1p,fi1p])
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([fh1p,fi1p,fj1p])
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([fi1p,fj1p,fk1p])
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([fl1p,fm1p,fn1p])
+                                                                                bm_1kkkkkkkkkkkkkkkkk.faces.new([fm1p,fn1p,fo1p])
+
+                    if type1o == 1:
+                        if type2o == 1:
+                            if type3o == 0:
+                                if type4o == 1:
+                                    if type5o == 1:
+                                        if type6o == 0:
+                                            if type7o == 0:
+                                                if type8o == 0:
+                                                    if type9o == 0:
+                                                        if type10o == 0:
+                                                            if type11o == 1:
+                                                                if type12o == 1:
+                                                                    if type13o == 0:
+                                                                        if type14o == 0:
+                                                                            if type15o == 0:
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([fa1o,fb1o,fc1o])
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([fd1o,fe1o,ff1o])
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([fe1o,ff1o,fg1o])
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([ff1o,fg1o,fh1o])
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([fg1o,fh1o,fi1o])
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([fh1o,fi1o,fj1o])
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([fk1o,fl1o,fm1o])
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([fl1o,fm1o,fn1o])
+                                                                                bm_1kkkkkkkkkkkkkkkk.faces.new([fm1o,fn1o,fo1o])
+
+                    if type1n == 1:
+                        if type2n == 1:
+                            if type3n == 0:
+                                if type4n == 1:
+                                    if type5n == 1:
+                                        if type6n == 0:
+                                            if type7n == 0:
+                                                if type8n == 0:
+                                                    if type9n == 0:
+                                                        if type10n == 1:
+                                                            if type11n == 1:
+                                                                if type12n == 0:
+                                                                    if type13n == 0:
+                                                                        if type14n == 0:
+                                                                            if type15n == 0:
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([fa1n,fb1n,fc1n])
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([fd1n,fe1n,ff1n])
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([fe1n,ff1n,fg1n])
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([ff1n,fg1n,fh1n])
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([fg1n,fh1n,fi1n])
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([fj1n,fk1n,fl1n])
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([fk1n,fl1n,fm1n])
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([fl1n,fm1n,fn1n])
+                                                                                bm_1kkkkkkkkkkkkkkk.faces.new([fm1n,fn1n,fo1n])
+
+                    if type1m == 1:
+                        if type2m == 1:
+                            if type3m == 0:
+                                if type4m == 1:
+                                    if type5m == 1:
+                                        if type6m == 0:
+                                            if type7m == 0:
+                                                if type8m == 0:
+                                                    if type9m == 1:
+                                                        if type10m == 1:
+                                                            if type11m == 0:
+                                                                if type12m == 0:
+                                                                    if type13m == 0:
+                                                                        if type14m == 0:
+                                                                            if type15m == 0:
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([fa1m,fb1m,fc1m])
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([fd1m,fe1m,ff1m])
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([fe1m,ff1m,fg1m])
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([ff1m,fg1m,fh1m])
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([fi1m,fj1m,fk1m])
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([fj1m,fk1m,fl1m])
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([fk1m,fl1m,fm1m])
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([fl1m,fm1m,fn1m])
+                                                                                bm_1kkkkkkkkkkkkkk.faces.new([fm1m,fn1m,fo1m])
+
+                    if type1l == 1:
+                        if type2l == 1:
+                            if type3l == 0:
+                                if type4l == 1:
+                                    if type5l == 1:
+                                        if type6l == 0:
+                                            if type7l == 0:
+                                                if type8l == 1:
+                                                    if type9l == 1:
+                                                        if type10l == 0:
+                                                            if type11l == 0:
+                                                                if type12l == 0:
+                                                                    if type13l == 0:
+                                                                        if type14l == 0:
+                                                                            if type15l == 0:
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fa1l,fb1l,fc1l])
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fd1l,fe1l,ff1l])
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fe1l,ff1l,fg1l])
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fh1l,fi1l,fj1l])
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fi1l,fj1l,fk1l])
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fj1l,fk1l,fl1l])
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fk1l,fl1l,fm1l])
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fl1l,fm1l,fn1l])
+                                                                                bm_1kkkkkkkkkkkkk.faces.new([fm1l,fn1l,fo1l])
+
+                    if type1k == 1:
+                        if type2k == 1:
+                            if type3k == 0:
+                                if type4k == 1:
+                                    if type5k == 1:
+                                        if type6k == 0:
+                                            if type7k == 1:
+                                                if type8k == 1:
+                                                    if type9k == 0:
+                                                        if type10k == 0:
+                                                            if type11k == 0:
+                                                                if type12k == 0:
+                                                                    if type13k == 0:
+                                                                        if type14k == 0:
+                                                                            if type15k == 0:
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fa1k,fb1k,fc1k])
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fd1k,fe1k,ff1k])
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fg1k,fh1k,fi1k])
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fh1k,fi1k,fj1k])
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fi1k,fj1k,fk1k])
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fj1k,fk1k,fl1k])
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fk1k,fl1k,fm1k])
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fl1k,fm1k,fn1k])
+                                                                                bm_1kkkkkkkkkkkk.faces.new([fm1k,fn1k,fo1k])
+
+                    if type1j == 1:
+                        if type2j == 1:
+                            if type3j == 0:
+                                if type4j == 0:
+                                    if type5j == 0:
+                                        if type6j == 0:
+                                            if type7j == 0:
+                                                if type8j == 0:
+                                                    if type9j == 0:
+                                                        if type10j == 0:
+                                                            if type11j == 0:
+                                                                if type12j == 0:
+                                                                    if type13j == 1:
+                                                                        if type14j == 1:
+                                                                            if type15j == 0:
+                                                                                bm_1kkkkkkkkkkk.faces.new([fa1j,fb1j,fc1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fb1j,fc1j,fd1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fc1j,fd1j,fe1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fd1j,fe1j,ff1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fe1j,ff1j,fg1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([ff1j,fg1j,fh1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fg1j,fh1j,fi1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fh1j,fi1j,fj1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fi1j,fj1j,fk1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fj1j,fk1j,fl1j])
+                                                                                bm_1kkkkkkkkkkk.faces.new([fm1j,fn1j,fo1j])
+
+                    if type1i == 1:
+                        if type2i == 1:
+                            if type3i == 0:
+                                if type4i == 0:
+                                    if type5i == 0:
+                                        if type6i == 0:
+                                            if type7i == 0:
+                                                if type8i == 0:
+                                                    if type9i == 0:
+                                                        if type10i == 0:
+                                                            if type11i == 0:
+                                                                if type12i == 1:
+                                                                    if type13i == 1:
+                                                                        if type14i == 0:
+                                                                            if type15i == 0:
+                                                                                bm_1kkkkkkkkkk.faces.new([fa1i,fb1i,fc1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fb1i,fc1i,fd1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fc1i,fd1i,fe1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fd1i,fe1i,ff1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fe1i,ff1i,fg1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([ff1i,fg1i,fh1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fg1i,fh1i,fi1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fh1i,fi1i,fj1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fi1i,fj1i,fk1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fl1i,fm1i,fn1i])
+                                                                                bm_1kkkkkkkkkk.faces.new([fm1i,fn1i,fo1i])
+
+                    if type1h == 1:
+                        if type2h == 1:
+                            if type3h == 0:
+                                if type4h == 0:
+                                    if type5h == 0:
+                                        if type6h == 0:
+                                            if type7h == 0:
+                                                if type8h == 0:
+                                                    if type9h == 0:
+                                                        if type10h == 0:
+                                                            if type11h == 1:
+                                                                if type12h == 1:
+                                                                    if type13h == 0:
+                                                                        if type14h == 0:
+                                                                            if type15h == 0:
+                                                                                bm_1kkkkkkkkk.faces.new([fa1h,fb1h,fc1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fb1h,fc1h,fd1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fc1h,fd1h,fe1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fd1h,fe1h,ff1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fe1h,ff1h,fg1h])
+                                                                                bm_1kkkkkkkkk.faces.new([ff1h,fg1h,fh1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fg1h,fh1h,fi1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fh1h,fi1h,fj1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fk1h,fl1h,fm1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fl1h,fm1h,fn1h])
+                                                                                bm_1kkkkkkkkk.faces.new([fm1h,fn1h,fo1h])
+
+                    if type1g == 1:
+                        if type2g == 1:
+                            if type3g == 0:
+                                if type4g == 0:
+                                    if type5g == 0:
+                                        if type6g == 0:
+                                            if type7g == 0:
+                                                if type8g == 0:
+                                                    if type9g == 0:
+                                                        if type10g == 1:
+                                                            if type11g == 1:
+                                                                if type12g == 0:
+                                                                    if type13g == 0:
+                                                                        if type14g == 0:
+                                                                            if type15g == 0:
+                                                                                bm_1kkkkkkkk.faces.new([fa1g,fb1g,fc1g])
+                                                                                bm_1kkkkkkkk.faces.new([fb1g,fc1g,fd1g])
+                                                                                bm_1kkkkkkkk.faces.new([fc1g,fd1g,fe1g])
+                                                                                bm_1kkkkkkkk.faces.new([fd1g,fe1g,ff1g])
+                                                                                bm_1kkkkkkkk.faces.new([fe1g,ff1g,fg1g])
+                                                                                bm_1kkkkkkkk.faces.new([ff1g,fg1g,fh1g])
+                                                                                bm_1kkkkkkkk.faces.new([fg1g,fh1g,fi1g])
+                                                                                bm_1kkkkkkkk.faces.new([fj1g,fk1g,fl1g])
+                                                                                bm_1kkkkkkkk.faces.new([fk1g,fl1g,fm1g])
+                                                                                bm_1kkkkkkkk.faces.new([fl1g,fm1g,fn1g])
+                                                                                bm_1kkkkkkkk.faces.new([fm1g,fn1g,fo1g])
+
+                    if type1f == 1:
+                        if type2f == 1:
+                            if type3f == 0:
+                                if type4f == 0:
+                                    if type5f == 0:
+                                        if type6f == 0:
+                                            if type7f == 0:
+                                                if type8f == 0:
+                                                    if type9f == 1:
+                                                        if type10f == 1:
+                                                            if type11f == 0:
+                                                                if type12f == 0:
+                                                                    if type13f == 0:
+                                                                        if type14f == 0:
+                                                                            if type15f == 0:
+                                                                                bm_1kkkkkkk.faces.new([fa1f,fb1f,fc1f])
+                                                                                bm_1kkkkkkk.faces.new([fb1f,fc1f,fd1f])
+                                                                                bm_1kkkkkkk.faces.new([fc1f,fd1f,fe1f])
+                                                                                bm_1kkkkkkk.faces.new([fd1f,fe1f,ff1f])
+                                                                                bm_1kkkkkkk.faces.new([fe1f,ff1f,fg1f])
+                                                                                bm_1kkkkkkk.faces.new([ff1f,fg1f,fh1f])
+                                                                                bm_1kkkkkkk.faces.new([fi1f,fj1f,fk1f])
+                                                                                bm_1kkkkkkk.faces.new([fj1f,fk1f,fl1f])
+                                                                                bm_1kkkkkkk.faces.new([fk1f,fl1f,fm1f])
+                                                                                bm_1kkkkkkk.faces.new([fl1f,fm1f,fn1f])
+                                                                                bm_1kkkkkkk.faces.new([fm1f,fn1f,fo1f])
+
+                    if type1e == 1:
+                        if type2e == 1:
+                            if type3e == 0:
+                                if type4e == 0:
+                                    if type5e == 0:
+                                        if type6e == 0:
+                                            if type7e == 0:
+                                                if type8e == 1:
+                                                    if type9e == 1:
+                                                        if type10e == 0:
+                                                            if type11e == 0:
+                                                                if type12e == 0:
+                                                                    if type13e == 0:
+                                                                        if type14e == 0:
+                                                                            if type15e == 0:
+                                                                                bm_1kkkkkk.faces.new([fa1e,fb1e,fc1e])
+                                                                                bm_1kkkkkk.faces.new([fb1e,fc1e,fd1e])
+                                                                                bm_1kkkkkk.faces.new([fc1e,fd1e,fe1e])
+                                                                                bm_1kkkkkk.faces.new([fd1e,fe1e,ff1e])
+                                                                                bm_1kkkkkk.faces.new([fe1e,ff1e,fg1e])
+                                                                                bm_1kkkkkk.faces.new([fh1e,fi1e,fj1e])
+                                                                                bm_1kkkkkk.faces.new([fi1e,fj1e,fk1e])
+                                                                                bm_1kkkkkk.faces.new([fj1e,fk1e,fl1e])
+                                                                                bm_1kkkkkk.faces.new([fk1e,fl1e,fm1e])
+                                                                                bm_1kkkkkk.faces.new([fl1e,fm1e,fn1e])
+                                                                                bm_1kkkkkk.faces.new([fm1e,fn1e,fo1e])
+
+                    if type1d == 1:
+                        if type2d == 1:
+                            if type3d == 0:
+                                if type4d == 0:
+                                    if type5d == 0:
+                                        if type6d == 0:
+                                            if type7d == 1:
+                                                if type8d == 1:
+                                                    if type9d == 0:
+                                                        if type10d == 0:
+                                                            if type11d == 0:
+                                                                if type12d == 0:
+                                                                    if type13d == 0:
+                                                                        if type14d == 0:
+                                                                            if type15d == 0:
+                                                                                bm_1kkkkk.faces.new([fa1d,fb1d,fc1d])
+                                                                                bm_1kkkkk.faces.new([fb1d,fc1d,fd1d])
+                                                                                bm_1kkkkk.faces.new([fc1d,fd1d,fe1d])
+                                                                                bm_1kkkkk.faces.new([fd1d,fe1d,ff1d])
+                                                                                bm_1kkkkk.faces.new([fg1d,fh1d,fi1d])
+                                                                                bm_1kkkkk.faces.new([fh1d,fi1d,fj1d])
+                                                                                bm_1kkkkk.faces.new([fi1d,fj1d,fk1d])
+                                                                                bm_1kkkkk.faces.new([fj1d,fk1d,fl1d])
+                                                                                bm_1kkkkk.faces.new([fk1d,fl1d,fm1d])
+                                                                                bm_1kkkkk.faces.new([fl1d,fm1d,fn1d])
+                                                                                bm_1kkkkk.faces.new([fm1d,fn1d,fo1d])
+
+                    if type1c == 1:
+                        if type2c == 1:
+                            if type3c == 0:
+                                if type4c == 0:
+                                    if type5c == 0:
+                                        if type6c == 1:
+                                            if type7c == 1:
+                                                if type8c == 0:
+                                                    if type9c == 0:
+                                                        if type10c == 0:
+                                                            if type11c == 0:
+                                                                if type12c == 0:
+                                                                    if type13c == 0:
+                                                                        if type14c == 0:
+                                                                            if type15c == 0:
+                                                                                bm_1kkkk.faces.new([fa1c,fb1c,fc1c])
+                                                                                bm_1kkkk.faces.new([fb1c,fc1c,fd1c])
+                                                                                bm_1kkkk.faces.new([fc1c,fd1c,fe1c])
+                                                                                bm_1kkkk.faces.new([ff1c,fg1c,fh1c])
+                                                                                bm_1kkkk.faces.new([fg1c,fh1c,fi1c])
+                                                                                bm_1kkkk.faces.new([fh1c,fi1c,fj1c])
+                                                                                bm_1kkkk.faces.new([fi1c,fj1c,fk1c])
+                                                                                bm_1kkkk.faces.new([fj1c,fk1c,fl1c])
+                                                                                bm_1kkkk.faces.new([fk1c,fl1c,fm1c])
+                                                                                bm_1kkkk.faces.new([fl1c,fm1c,fn1c])
+                                                                                bm_1kkkk.faces.new([fm1c,fn1c,fo1c])
+
+                    if type1b == 1:
+                        if type2b == 1:
+                            if type3b == 0:
+                                if type4b == 0:
+                                    if type5b == 1:
+                                        if type6b == 1:
+                                            if type7b == 0:
+                                                if type8b == 0:
+                                                    if type9b == 0:
+                                                        if type10b == 0:
+                                                            if type11b == 0:
+                                                                if type12b == 0:
+                                                                    if type13b == 0:
+                                                                        if type14b == 0:
+                                                                            if type15b == 0:
+                                                                                bm_1kkk.faces.new([fa1b,fb1b,fc1b])
+                                                                                bm_1kkk.faces.new([fb1b,fc1b,fd1b])
+                                                                                bm_1kkk.faces.new([fe1b,ff1b,fg1b])
+                                                                                bm_1kkk.faces.new([ff1b,fg1b,fh1b])
+                                                                                bm_1kkk.faces.new([fg1b,fh1b,fi1b])
+                                                                                bm_1kkk.faces.new([fh1b,fi1b,fj1b])
+                                                                                bm_1kkk.faces.new([fi1b,fj1b,fk1b])
+                                                                                bm_1kkk.faces.new([fj1b,fk1b,fl1b])
+                                                                                bm_1kkk.faces.new([fk1b,fl1b,fm1b])
+                                                                                bm_1kkk.faces.new([fl1b,fm1b,fn1b])
+                                                                                bm_1kkk.faces.new([fm1b,fn1b,fo1b])
+
+                    if type1a == 1:
+                        if type2a == 1:
+                            if type3a == 0:
+                                if type4a == 1:
+                                    if type5a == 1:
+                                        if type6a == 0:
+                                            if type7a == 0:
+                                                if type8a == 0:
+                                                    if type9a == 0:
+                                                        if type10a == 0:
+                                                            if type11a == 0:
+                                                                if type12a == 0:
+                                                                    if type13a == 0:
+                                                                        if type14a == 0:
+                                                                            if type15a == 0:
+                                                                                bm_1kk.faces.new([fa1a,fb1a,fc1a])
+                                                                                bm_1kk.faces.new([fd1a,fe1a,ff1a])
+                                                                                bm_1kk.faces.new([fe1a,ff1a,fg1a])
+                                                                                bm_1kk.faces.new([ff1a,fg1a,fh1a])
+                                                                                bm_1kk.faces.new([fg1a,fh1a,fi1a])
+                                                                                bm_1kk.faces.new([fh1a,fi1a,fj1a])
+                                                                                bm_1kk.faces.new([fi1a,fj1a,fk1a])
+                                                                                bm_1kk.faces.new([fj1a,fk1a,fl1a])
+                                                                                bm_1kk.faces.new([fk1a,fl1a,fm1a])
+                                                                                bm_1kk.faces.new([fl1a,fm1a,fn1a])
+                                                                                bm_1kk.faces.new([fm1a,fn1a,fo1a])
+
+                    
+
+                    if type1 == 1:
+                        if type2 == 1:
+                            if type3 == 0:
+                                if type4 == 0:
+                                    if type5 == 0:
+                                        if type6 == 0:
+                                            if type7 == 0:
+                                                if type8 == 0:
+                                                    if type9 == 0:
+                                                        if type10 == 0:
+                                                            if type11 == 0:
+                                                                if type12 == 0:
+                                                                    if type13 == 0:
+                                                                        if type14 == 0:
+                                                                            if type15 == 0:
+                                                                                bm_1k.faces.new([fa1,fb1,fc1])
+                                                                                bm_1k.faces.new([fb1,fc1,fd1])
+                                                                                bm_1k.faces.new([fc1,fd1,fe1])
+                                                                                bm_1k.faces.new([fd1,fe1,ff1])
+                                                                                bm_1k.faces.new([fe1,ff1,fg1])
+                                                                                bm_1k.faces.new([ff1,fg1,fh1])
+                                                                                bm_1k.faces.new([fg1,fh1,fi1])
+                                                                                bm_1k.faces.new([fh1,fi1,fj1])
+                                                                                bm_1k.faces.new([fi1,fj1,fk1])
+                                                                                bm_1k.faces.new([fj1,fk1,fl1])
+                                                                                bm_1k.faces.new([fk1,fl1,fm1])
+                                                                                bm_1k.faces.new([fl1,fm1,fn1])
+                                                                                bm_1k.faces.new([fm1,fn1,fo1])
                     
                     
                                                                     
@@ -13735,33 +23805,3327 @@ def GHG_mesh(f, filepath):
                 
         elif Chunks == b"\x03\x02\x00\x01":
             flag1 = unpack("B", f.read(1))[0]
-            f.seek(1,1)
+            value1 = unpack("B", f.read(1))[0]
             vertexCount = unpack("B", f.read(1))[0] // 2
             flag2 = unpack("B", f.read(1))[0]
-            for i in range(vertexCount):
+            if vertexCount == 3:
+                
+                for i in range(vertexCount//3):
                     
-                vx2 = unpack("<h", f.read(2))[0] / 4096
-                vy2 = unpack("<h", f.read(2))[0] / 4096
-                vz2 = unpack("<h", f.read(2))[0] / 4096
-                vw2 = unpack("<h", f.read(2))[0] / 4096
-                f.seek(8,1)
-                f_1 = bm2.verts.new([-vx2,-vy2,-vz2])
+                    vx1 = unpack("<h", f.read(2))[0] / 4096
+                    vy1 = unpack("<h", f.read(2))[0] / 4096
+                    vz1 = unpack("<h", f.read(2))[0] / 4096
+                    type1 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx2 = unpack("<h", f.read(2))[0] / 4096
+                    vy2 = unpack("<h", f.read(2))[0] / 4096
+                    vz2 = unpack("<h", f.read(2))[0] / 4096
+                    type2 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx3 = unpack("<h", f.read(2))[0] / 4096
+                    vy3 = unpack("<h", f.read(2))[0] / 4096
+                    vz3 = unpack("<h", f.read(2))[0] / 4096
+                    type3 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    fa1 = bm2.verts.new([-vx1,-vy1,-vz1])
+                    fb1 = bm2.verts.new([-vx2,-vy2,-vz2])
+                    fc1 = bm2.verts.new([-vx3,-vy3,-vz3])
+                    bm2.faces.new([fa1,fb1,fc1])
+            elif vertexCount == 4:
+                
+                for i in range(vertexCount//4):
+                    
+                    vx1 = unpack("<h", f.read(2))[0] / 4096
+                    vy1 = unpack("<h", f.read(2))[0] / 4096
+                    vz1 = unpack("<h", f.read(2))[0] / 4096
+                    type1 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx2 = unpack("<h", f.read(2))[0] / 4096
+                    vy2 = unpack("<h", f.read(2))[0] / 4096
+                    vz2 = unpack("<h", f.read(2))[0] / 4096
+                    type2 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx3 = unpack("<h", f.read(2))[0] / 4096
+                    vy3 = unpack("<h", f.read(2))[0] / 4096
+                    vz3 = unpack("<h", f.read(2))[0] / 4096
+                    type3 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx4 = unpack("<h", f.read(2))[0] / 4096
+                    vy4 = unpack("<h", f.read(2))[0] / 4096
+                    vz4 = unpack("<h", f.read(2))[0] / 4096
+                    type4 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    f_1a = bm2a.verts.new([-vx1,-vy1,-vz1])
+                    f_2a = bm2a.verts.new([-vx2,-vy2,-vz2])
+                    f_3a = bm2a.verts.new([-vx3,-vy3,-vz3])
+                    f_4a = bm2a.verts.new([-vx3,-vy3,-vz3])
+                    bm2a.faces.new([f_1a,f_2a,f_3a])
+                    bm2a.faces.new([f_2a,f_3a,f_4a])
+
+            elif vertexCount == 5:
+                
+                for i in range(vertexCount//5):
+                    
+                    vx1 = unpack("<h", f.read(2))[0] / 4096
+                    vy1 = unpack("<h", f.read(2))[0] / 4096
+                    vz1 = unpack("<h", f.read(2))[0] / 4096
+                    type1 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx2 = unpack("<h", f.read(2))[0] / 4096
+                    vy2 = unpack("<h", f.read(2))[0] / 4096
+                    vz2 = unpack("<h", f.read(2))[0] / 4096
+                    type2 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx3 = unpack("<h", f.read(2))[0] / 4096
+                    vy3 = unpack("<h", f.read(2))[0] / 4096
+                    vz3 = unpack("<h", f.read(2))[0] / 4096
+                    type3 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx4 = unpack("<h", f.read(2))[0] / 4096
+                    vy4 = unpack("<h", f.read(2))[0] / 4096
+                    vz4 = unpack("<h", f.read(2))[0] / 4096
+                    type4 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    vx5 = unpack("<h", f.read(2))[0] / 4096
+                    vy5 = unpack("<h", f.read(2))[0] / 4096
+                    vz5 = unpack("<h", f.read(2))[0] / 4096
+                    type5 = unpack("B", f.read(1))[0]
+                    f.seek(1,1)
+                    f.seek(8,1)
+                    f_1b = bm2b.verts.new([-vx1,-vy1,-vz1])
+                    f_2b = bm2b.verts.new([-vx2,-vy2,-vz2])
+                    f_3b = bm2b.verts.new([-vx3,-vy3,-vz3])
+                    f_4b = bm2b.verts.new([-vx4,-vy4,-vz4])
+                    f_5b = bm2b.verts.new([-vx5,-vy5,-vz5])
+                    bm2b.faces.new([f_1b,f_2b,f_3b])
+                    bm2b.faces.new([f_2b,f_3b,f_4b])
+                    bm2b.faces.new([f_3b,f_4b,f_5b])
         elif Chunks == b"\x04\x02\x00\x01":
             flag1 = unpack("B", f.read(1))[0]
-            f.seek(1,1)
+            value1 = unpack("B", f.read(1))[0]
             vertexCount = unpack("B", f.read(1))[0] // 2
             flag2 = unpack("B", f.read(1))[0]
-            for i in range(vertexCount):
+            if vertexCount == 3:
+                for i in range(vertexCount//3):
+                    vx1 = unpack("<f", f.read(4))[0]
+                    vy1 = unpack("<f", f.read(4))[0]
+                    vz1 = unpack("<f", f.read(4))[0]
+                    vw1 = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1a = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2 = unpack("<f", f.read(4))[0]
+                    vy2 = unpack("<f", f.read(4))[0]
+                    vz2 = unpack("<f", f.read(4))[0]
+                    vw2 = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2a = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3 = unpack("<f", f.read(4))[0]
+                    vy3 = unpack("<f", f.read(4))[0]
+                    vz3 = unpack("<f", f.read(4))[0]
+                    vw3 = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3a = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    fa1 = bm_3a.verts.new([-vx1,-vy1,-vz1])
+                    fb1 = bm_3a.verts.new([-vx2,-vy2,-vz2])
+                    fc1 = bm_3a.verts.new([-vx3,-vy3,-vz3])
+                    if type1a == 1:
+                        if type2a == 1:
+                            if type3a == 0:
+                                bm_3a.faces.new([fa1,fb1,fc1])
+            elif vertexCount == 4:
+                for i in range(vertexCount//4):
+                    vx1b = unpack("<f", f.read(4))[0]
+                    vy1b = unpack("<f", f.read(4))[0]
+                    vz1b = unpack("<f", f.read(4))[0]
+                    vw1b = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1b = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2b = unpack("<f", f.read(4))[0]
+                    vy2b = unpack("<f", f.read(4))[0]
+                    vz2b = unpack("<f", f.read(4))[0]
+                    vw2b = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2b = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3b = unpack("<f", f.read(4))[0]
+                    vy3b = unpack("<f", f.read(4))[0]
+                    vz3b = unpack("<f", f.read(4))[0]
+                    vw3b = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3b = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4b = unpack("<f", f.read(4))[0]
+                    vy4b = unpack("<f", f.read(4))[0]
+                    vz4b = unpack("<f", f.read(4))[0]
+                    vw4b = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4b = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    fa1a = bm_3b.verts.new([-vx1b,-vy1b,-vz1b])
+                    fb1a = bm_3b.verts.new([-vx2b,-vy2b,-vz2b])
+                    fc1a = bm_3b.verts.new([-vx3b,-vy3b,-vz3b])
+                    fd1a = bm_3b.verts.new([-vx4b,-vy4b,-vz4b])
+                    if type1b == 1:
+                        if type2b == 1:
+                            if type3b == 0:
+                                if type4b == 0:
+                                    bm_3b.faces.new([fa1a,fb1a,fc1a])
+                                    bm_3b.faces.new([fb1a,fc1a,fd1a])
+
+            elif vertexCount == 5:
+                for i in range(vertexCount//5):
+                    vx1c = unpack("<f", f.read(4))[0]
+                    vy1c = unpack("<f", f.read(4))[0]
+                    vz1c = unpack("<f", f.read(4))[0]
+                    vw1c = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1c = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2c = unpack("<f", f.read(4))[0]
+                    vy2c = unpack("<f", f.read(4))[0]
+                    vz2c = unpack("<f", f.read(4))[0]
+                    vw2c = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2c = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3c = unpack("<f", f.read(4))[0]
+                    vy3c = unpack("<f", f.read(4))[0]
+                    vz3c = unpack("<f", f.read(4))[0]
+                    vw3c = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3c = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4c = unpack("<f", f.read(4))[0]
+                    vy4c = unpack("<f", f.read(4))[0]
+                    vz4c = unpack("<f", f.read(4))[0]
+                    vw4c = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4c = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5c = unpack("<f", f.read(4))[0]
+                    vy5c = unpack("<f", f.read(4))[0]
+                    vz5c = unpack("<f", f.read(4))[0]
+                    vw5c = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5c = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    f.seek(-160,1)
+                    vx1cc = unpack("<f", f.read(4))[0]
+                    vy1cc = unpack("<f", f.read(4))[0]
+                    vz1cc = unpack("<f", f.read(4))[0]
+                    vw1cc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1cc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2cc = unpack("<f", f.read(4))[0]
+                    vy2cc = unpack("<f", f.read(4))[0]
+                    vz2cc = unpack("<f", f.read(4))[0]
+                    vw2cc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2cc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3cc = unpack("<f", f.read(4))[0]
+                    vy3cc = unpack("<f", f.read(4))[0]
+                    vz3cc = unpack("<f", f.read(4))[0]
+                    vw3cc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3cc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4cc = unpack("<f", f.read(4))[0]
+                    vy4cc = unpack("<f", f.read(4))[0]
+                    vz4cc = unpack("<f", f.read(4))[0]
+                    vw4cc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4cc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5cc = unpack("<f", f.read(4))[0]
+                    vy5cc = unpack("<f", f.read(4))[0]
+                    vz5cc = unpack("<f", f.read(4))[0]
+                    vw5cc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5cc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    f.seek(-160,1)
+                    vx1ccc = unpack("<f", f.read(4))[0]
+                    vy1ccc = unpack("<f", f.read(4))[0]
+                    vz1ccc = unpack("<f", f.read(4))[0]
+                    vw1ccc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1ccc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2ccc = unpack("<f", f.read(4))[0]
+                    vy2ccc = unpack("<f", f.read(4))[0]
+                    vz2ccc = unpack("<f", f.read(4))[0]
+                    vw2ccc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2ccc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3ccc = unpack("<f", f.read(4))[0]
+                    vy3ccc = unpack("<f", f.read(4))[0]
+                    vz3ccc = unpack("<f", f.read(4))[0]
+                    vw3ccc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3ccc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4ccc = unpack("<f", f.read(4))[0]
+                    vy4ccc = unpack("<f", f.read(4))[0]
+                    vz4ccc = unpack("<f", f.read(4))[0]
+                    vw4ccc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4ccc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5ccc = unpack("<f", f.read(4))[0]
+                    vy5ccc = unpack("<f", f.read(4))[0]
+                    vz5ccc = unpack("<f", f.read(4))[0]
+                    vw5ccc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5ccc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    fa2 = bm_3c.verts.new([-vx1c,-vy1c,-vz1c])
+                    fb2 = bm_3c.verts.new([-vx2c,-vy2c,-vz2c])
+                    fc2 = bm_3c.verts.new([-vx3c,-vy3c,-vz3c])
+                    fd2 = bm_3c.verts.new([-vx4c,-vy4c,-vz4c])
+                    fe2 = bm_3c.verts.new([-vx5c,-vy5c,-vz5c])
+
+                    fa3 = bm_3ca.verts.new([-vx1cc,-vy1cc,-vz1cc])
+                    fb3 = bm_3ca.verts.new([-vx2cc,-vy2cc,-vz2cc])
+                    fc3 = bm_3ca.verts.new([-vx3cc,-vy3cc,-vz3cc])
+                    fd3 = bm_3ca.verts.new([-vx4cc,-vy4cc,-vz4cc])
+                    fe3 = bm_3ca.verts.new([-vx5cc,-vy5cc,-vz5cc])
+
+                    fa3_ = bm_3cb.verts.new([-vx1ccc,-vy1ccc,-vz1ccc])
+                    fb3_ = bm_3cb.verts.new([-vx2ccc,-vy2ccc,-vz2ccc])
+                    fc3_ = bm_3cb.verts.new([-vx3ccc,-vy3ccc,-vz3ccc])
+                    fd3_ = bm_3cb.verts.new([-vx4ccc,-vy4ccc,-vz4ccc])
+                    fe3_ = bm_3cb.verts.new([-vx5ccc,-vy5ccc,-vz5ccc])
+
+                    if type1c == 1:
+                        if type2c == 1:
+                            if type3c == 0:
+                                if type4c == 0:
+                                    if type5c == 0:
+                                        bm_3c.faces.new([fa2,fb2,fc2])
+                                        bm_3c.faces.new([fb2,fc2,fd2])
+                                        bm_3c.faces.new([fc2,fd2,fe2])
+                    if type1cc == 1:
+                        if type2cc == 1:
+                            if type3cc == 0:
+                                if type4cc == 0:
+                                    if type5cc == 1:
+                                        bm_3ca.faces.new([fa3,fb3,fc3])
+                                        bm_3ca.faces.new([fb3,fc3,fd3])
+                                        bm_3ca.faces.new([fb3,fd3,fe3])
+
+                    if type1ccc == 1:
+                        if type2ccc == 1:
+                            if type3ccc == 0:
+                                if type4ccc == 1:
+                                    if type5ccc == 1:
+                                        bm_3cb.faces.new([fa3_,fb3_,fc3_])
+                                        bm_3cb.faces.new([fb3_,fd3_,fe3_])
+
+            elif vertexCount == 6:
+                for i in range(vertexCount//6):
+                    vx1d = unpack("<f", f.read(4))[0]
+                    vy1d = unpack("<f", f.read(4))[0]
+                    vz1d = unpack("<f", f.read(4))[0]
+                    vw1d = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1d = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2d = unpack("<f", f.read(4))[0]
+                    vy2d = unpack("<f", f.read(4))[0]
+                    vz2d = unpack("<f", f.read(4))[0]
+                    vw2d = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2d = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3d = unpack("<f", f.read(4))[0]
+                    vy3d = unpack("<f", f.read(4))[0]
+                    vz3d = unpack("<f", f.read(4))[0]
+                    vw3d = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3d = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4d = unpack("<f", f.read(4))[0]
+                    vy4d = unpack("<f", f.read(4))[0]
+                    vz4d = unpack("<f", f.read(4))[0]
+                    vw4d = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4d = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5d = unpack("<f", f.read(4))[0]
+                    vy5d = unpack("<f", f.read(4))[0]
+                    vz5d = unpack("<f", f.read(4))[0]
+                    vw5d = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5d = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6d = unpack("<f", f.read(4))[0]
+                    vy6d = unpack("<f", f.read(4))[0]
+                    vz6d = unpack("<f", f.read(4))[0]
+                    vw6d = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6d = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    f.seek(-192,1)
+                    vx1da = unpack("<f", f.read(4))[0]
+                    vy1da = unpack("<f", f.read(4))[0]
+                    vz1da = unpack("<f", f.read(4))[0]
+                    vw1da = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1da = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2da = unpack("<f", f.read(4))[0]
+                    vy2da = unpack("<f", f.read(4))[0]
+                    vz2da = unpack("<f", f.read(4))[0]
+                    vw2da = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2da = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3da = unpack("<f", f.read(4))[0]
+                    vy3da = unpack("<f", f.read(4))[0]
+                    vz3da = unpack("<f", f.read(4))[0]
+                    vw3da = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3da = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4da = unpack("<f", f.read(4))[0]
+                    vy4da = unpack("<f", f.read(4))[0]
+                    vz4da = unpack("<f", f.read(4))[0]
+                    vw4da = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4da = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5da = unpack("<f", f.read(4))[0]
+                    vy5da = unpack("<f", f.read(4))[0]
+                    vz5da = unpack("<f", f.read(4))[0]
+                    vw5da = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5da = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6da = unpack("<f", f.read(4))[0]
+                    vy6da = unpack("<f", f.read(4))[0]
+                    vz6da = unpack("<f", f.read(4))[0]
+                    vw6da = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6da = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    f.seek(-192,1)
+                    vx1db = unpack("<f", f.read(4))[0]
+                    vy1db = unpack("<f", f.read(4))[0]
+                    vz1db = unpack("<f", f.read(4))[0]
+                    vw1db = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1db = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2db = unpack("<f", f.read(4))[0]
+                    vy2db = unpack("<f", f.read(4))[0]
+                    vz2db = unpack("<f", f.read(4))[0]
+                    vw2db = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2db = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3db = unpack("<f", f.read(4))[0]
+                    vy3db = unpack("<f", f.read(4))[0]
+                    vz3db = unpack("<f", f.read(4))[0]
+                    vw3db = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3db = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4db = unpack("<f", f.read(4))[0]
+                    vy4db = unpack("<f", f.read(4))[0]
+                    vz4db = unpack("<f", f.read(4))[0]
+                    vw4db = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4db = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5db = unpack("<f", f.read(4))[0]
+                    vy5db = unpack("<f", f.read(4))[0]
+                    vz5db = unpack("<f", f.read(4))[0]
+                    vw5db = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5db = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6db = unpack("<f", f.read(4))[0]
+                    vy6db = unpack("<f", f.read(4))[0]
+                    vz6db = unpack("<f", f.read(4))[0]
+                    vw6db = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6db = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    f.seek(-192,1)
+                    vx1dc = unpack("<f", f.read(4))[0]
+                    vy1dc = unpack("<f", f.read(4))[0]
+                    vz1dc = unpack("<f", f.read(4))[0]
+                    vw1dc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1dc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2dc = unpack("<f", f.read(4))[0]
+                    vy2dc = unpack("<f", f.read(4))[0]
+                    vz2dc = unpack("<f", f.read(4))[0]
+                    vw2dc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2dc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3dc = unpack("<f", f.read(4))[0]
+                    vy3dc = unpack("<f", f.read(4))[0]
+                    vz3dc = unpack("<f", f.read(4))[0]
+                    vw3dc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3dc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4dc = unpack("<f", f.read(4))[0]
+                    vy4dc = unpack("<f", f.read(4))[0]
+                    vz4dc = unpack("<f", f.read(4))[0]
+                    vw4dc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4dc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5dc = unpack("<f", f.read(4))[0]
+                    vy5dc = unpack("<f", f.read(4))[0]
+                    vz5dc = unpack("<f", f.read(4))[0]
+                    vw5dc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5dc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6dc = unpack("<f", f.read(4))[0]
+                    vy6dc = unpack("<f", f.read(4))[0]
+                    vz6dc = unpack("<f", f.read(4))[0]
+                    vw6dc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6dc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
                     
-                vx3 = unpack("<f", f.read(4))[0]
-                vy3 = unpack("<f", f.read(4))[0]
-                vz3 = unpack("<f", f.read(4))[0]
-                vw3 = unpack("<f", f.read(4))[0]
-                f.seek(16,1)
-                f__ = bm3.verts.new([-vx3,-vy3,-vz3])
-                                
-                        
-                        
+
+                    fa4 = bm_3d.verts.new([-vx1d,-vy1d,-vz1d])
+                    fb4 = bm_3d.verts.new([-vx2d,-vy2d,-vz2d])
+                    fc4 = bm_3d.verts.new([-vx3d,-vy3d,-vz3d])
+                    fd4 = bm_3d.verts.new([-vx4d,-vy4d,-vz4d])
+                    fe4 = bm_3d.verts.new([-vx5d,-vy5d,-vz5d])
+                    ff4 = bm_3d.verts.new([-vx6d,-vy6d,-vz6d])
+
+                    fa5 = bm_3da.verts.new([-vx1da,-vy1da,-vz1da])
+                    fb5 = bm_3da.verts.new([-vx2da,-vy2da,-vz2da])
+                    fc5 = bm_3da.verts.new([-vx3da,-vy3da,-vz3da])
+                    fd5 = bm_3da.verts.new([-vx4da,-vy4da,-vz4da])
+                    fe5 = bm_3da.verts.new([-vx5da,-vy5da,-vz5da])
+                    ff5 = bm_3da.verts.new([-vx6da,-vy6da,-vz6da])
+
+                    fa6 = bm_3db.verts.new([-vx1db,-vy1db,-vz1db])
+                    fb6 = bm_3db.verts.new([-vx2db,-vy2db,-vz2db])
+                    fc6 = bm_3db.verts.new([-vx3db,-vy3db,-vz3db])
+                    fd6 = bm_3db.verts.new([-vx4db,-vy4db,-vz4db])
+                    fe6 = bm_3db.verts.new([-vx5db,-vy5db,-vz5db])
+                    ff6 = bm_3db.verts.new([-vx6db,-vy6db,-vz6db])
+
+                    fa7 = bm_3dc.verts.new([-vx1dc,-vy1dc,-vz1dc])
+                    fb7 = bm_3dc.verts.new([-vx2dc,-vy2dc,-vz2dc])
+                    fc7 = bm_3dc.verts.new([-vx3dc,-vy3dc,-vz3dc])
+                    fd7 = bm_3dc.verts.new([-vx4dc,-vy4dc,-vz4dc])
+                    fe7 = bm_3dc.verts.new([-vx5dc,-vy5dc,-vz5dc])
+                    ff7 = bm_3dc.verts.new([-vx6dc,-vy6dc,-vz6dc])
+
+                    if type1d == 1:
+                        if type2d == 1:
+                            if type3d == 0:
+                                if type4d == 0:
+                                    if type5d == 0:
+                                        if type6d == 0:
+                                            bm_3d.faces.new([fa4,fb4,fc4])
+                                            bm_3d.faces.new([fb4,fc4,fd4])
+                                            bm_3d.faces.new([fc4,fd4,fe4])
+                                            bm_3d.faces.new([fd4,fe4,ff4])
+
+                    if type1da == 1:
+                        if type2da == 1:
+                            if type3da == 0:
+                                if type4da == 0:
+                                    if type5da == 1:
+                                        if type6da == 1:
+                                            bm_3da.faces.new([fa5,fb5,fc5])
+                                            bm_3da.faces.new([fb5,fc5,fd5])
+                                            bm_3da.faces.new([fb5,fd5,fe5])
+                                            bm_3da.faces.new([fd5,fe5,ff5])
+
+                    if type1db == 1:
+                        if type2db == 1:
+                            if type3db == 0:
+                                if type4db == 1:
+                                    if type5db == 1:
+                                        if type6db == 0:
+                                            bm_3db.faces.new([fa6,fb6,fc6])
+                                            bm_3db.faces.new([fd6,fe6,ff6])
+
+                    if type1dc == 1:
+                        if type2dc == 1:
+                            if type3dc == 0:
+                                if type4dc == 0:
+                                    if type5dc == 0:
+                                        if type6dc == 1:
+                                            bm_3dc.faces.new([fa7,fb7,fc7])
+                                            bm_3dc.faces.new([fb7,fc7,fd7])
+                                            bm_3dc.faces.new([fc7,fd7,fe7])
+                                            bm_3dc.faces.new([fc7,fe7,ff7])
+
+            elif vertexCount == 7:
+                for i in range(vertexCount//7):
+                    vx1e = unpack("<f", f.read(4))[0]
+                    vy1e = unpack("<f", f.read(4))[0]
+                    vz1e = unpack("<f", f.read(4))[0]
+                    vw1e = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1e = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2e = unpack("<f", f.read(4))[0]
+                    vy2e = unpack("<f", f.read(4))[0]
+                    vz2e = unpack("<f", f.read(4))[0]
+                    vw2e = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2e = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3e = unpack("<f", f.read(4))[0]
+                    vy3e = unpack("<f", f.read(4))[0]
+                    vz3e = unpack("<f", f.read(4))[0]
+                    vw3e = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3e = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4e = unpack("<f", f.read(4))[0]
+                    vy4e = unpack("<f", f.read(4))[0]
+                    vz4e = unpack("<f", f.read(4))[0]
+                    vw4e = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4e = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5e = unpack("<f", f.read(4))[0]
+                    vy5e = unpack("<f", f.read(4))[0]
+                    vz5e = unpack("<f", f.read(4))[0]
+                    vw5e = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5e = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6e = unpack("<f", f.read(4))[0]
+                    vy6e = unpack("<f", f.read(4))[0]
+                    vz6e = unpack("<f", f.read(4))[0]
+                    vw6e = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6e = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7e = unpack("<f", f.read(4))[0]
+                    vy7e = unpack("<f", f.read(4))[0]
+                    vz7e = unpack("<f", f.read(4))[0]
+                    vw7e = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7e = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    f.seek(-224,1)
+                    
+                    vx1ea = unpack("<f", f.read(4))[0]
+                    vy1ea = unpack("<f", f.read(4))[0]
+                    vz1ea = unpack("<f", f.read(4))[0]
+                    vw1ea = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1ea = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2ea = unpack("<f", f.read(4))[0]
+                    vy2ea = unpack("<f", f.read(4))[0]
+                    vz2ea = unpack("<f", f.read(4))[0]
+                    vw2ea = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2ea = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3ea = unpack("<f", f.read(4))[0]
+                    vy3ea = unpack("<f", f.read(4))[0]
+                    vz3ea = unpack("<f", f.read(4))[0]
+                    vw3ea = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3ea = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4ea = unpack("<f", f.read(4))[0]
+                    vy4ea = unpack("<f", f.read(4))[0]
+                    vz4ea = unpack("<f", f.read(4))[0]
+                    vw4ea = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4ea = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5ea = unpack("<f", f.read(4))[0]
+                    vy5ea = unpack("<f", f.read(4))[0]
+                    vz5ea = unpack("<f", f.read(4))[0]
+                    vw5ea = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5ea = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6ea = unpack("<f", f.read(4))[0]
+                    vy6ea = unpack("<f", f.read(4))[0]
+                    vz6ea = unpack("<f", f.read(4))[0]
+                    vw6ea = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6ea = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7ea = unpack("<f", f.read(4))[0]
+                    vy7ea = unpack("<f", f.read(4))[0]
+                    vz7ea = unpack("<f", f.read(4))[0]
+                    vw7ea = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7ea = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-224,1)
+
+                    vx1eb = unpack("<f", f.read(4))[0]
+                    vy1eb = unpack("<f", f.read(4))[0]
+                    vz1eb = unpack("<f", f.read(4))[0]
+                    vw1eb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1eb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2eb = unpack("<f", f.read(4))[0]
+                    vy2eb = unpack("<f", f.read(4))[0]
+                    vz2eb = unpack("<f", f.read(4))[0]
+                    vw2eb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2eb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3eb = unpack("<f", f.read(4))[0]
+                    vy3eb = unpack("<f", f.read(4))[0]
+                    vz3eb = unpack("<f", f.read(4))[0]
+                    vw3eb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3eb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4eb = unpack("<f", f.read(4))[0]
+                    vy4eb = unpack("<f", f.read(4))[0]
+                    vz4eb = unpack("<f", f.read(4))[0]
+                    vw4eb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4eb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5eb = unpack("<f", f.read(4))[0]
+                    vy5eb = unpack("<f", f.read(4))[0]
+                    vz5eb = unpack("<f", f.read(4))[0]
+                    vw5eb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5eb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6eb = unpack("<f", f.read(4))[0]
+                    vy6eb = unpack("<f", f.read(4))[0]
+                    vz6eb = unpack("<f", f.read(4))[0]
+                    vw6eb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6eb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7eb = unpack("<f", f.read(4))[0]
+                    vy7eb = unpack("<f", f.read(4))[0]
+                    vz7eb = unpack("<f", f.read(4))[0]
+                    vw7eb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7eb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-224,1)
+
+                    vx1ec = unpack("<f", f.read(4))[0]
+                    vy1ec = unpack("<f", f.read(4))[0]
+                    vz1ec = unpack("<f", f.read(4))[0]
+                    vw1ec = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1ec = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2ec = unpack("<f", f.read(4))[0]
+                    vy2ec = unpack("<f", f.read(4))[0]
+                    vz2ec = unpack("<f", f.read(4))[0]
+                    vw2ec = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2ec = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3ec = unpack("<f", f.read(4))[0]
+                    vy3ec = unpack("<f", f.read(4))[0]
+                    vz3ec = unpack("<f", f.read(4))[0]
+                    vw3ec = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3ec = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4ec = unpack("<f", f.read(4))[0]
+                    vy4ec = unpack("<f", f.read(4))[0]
+                    vz4ec = unpack("<f", f.read(4))[0]
+                    vw4ec = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4ec = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5ec = unpack("<f", f.read(4))[0]
+                    vy5ec = unpack("<f", f.read(4))[0]
+                    vz5ec = unpack("<f", f.read(4))[0]
+                    vw5ec = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5ec = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6ec = unpack("<f", f.read(4))[0]
+                    vy6ec = unpack("<f", f.read(4))[0]
+                    vz6ec = unpack("<f", f.read(4))[0]
+                    vw6ec = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6ec = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7ec = unpack("<f", f.read(4))[0]
+                    vy7ec = unpack("<f", f.read(4))[0]
+                    vz7ec = unpack("<f", f.read(4))[0]
+                    vw7ec = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7ec = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-224,1)
+
+                    vx1ed = unpack("<f", f.read(4))[0]
+                    vy1ed = unpack("<f", f.read(4))[0]
+                    vz1ed = unpack("<f", f.read(4))[0]
+                    vw1ed = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1ed = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2ed = unpack("<f", f.read(4))[0]
+                    vy2ed = unpack("<f", f.read(4))[0]
+                    vz2ed = unpack("<f", f.read(4))[0]
+                    vw2ed = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2ed = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3ed = unpack("<f", f.read(4))[0]
+                    vy3ed = unpack("<f", f.read(4))[0]
+                    vz3ed = unpack("<f", f.read(4))[0]
+                    vw3ec = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3ed = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4ed = unpack("<f", f.read(4))[0]
+                    vy4ed = unpack("<f", f.read(4))[0]
+                    vz4ed = unpack("<f", f.read(4))[0]
+                    vw4ed = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4ed = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5ed = unpack("<f", f.read(4))[0]
+                    vy5ed = unpack("<f", f.read(4))[0]
+                    vz5ed = unpack("<f", f.read(4))[0]
+                    vw5ed = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5ed = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6ed = unpack("<f", f.read(4))[0]
+                    vy6ed = unpack("<f", f.read(4))[0]
+                    vz6ed = unpack("<f", f.read(4))[0]
+                    vw6ed = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6ed = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7ed = unpack("<f", f.read(4))[0]
+                    vy7ed = unpack("<f", f.read(4))[0]
+                    vz7ed = unpack("<f", f.read(4))[0]
+                    vw7ed = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7ed = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    fa8 = bm_3e.verts.new([-vx1e,-vy1e,-vz1e])
+                    fb8 = bm_3e.verts.new([-vx2e,-vy2e,-vz2e])
+                    fc8 = bm_3e.verts.new([-vx3e,-vy3e,-vz3e])
+                    fd8 = bm_3e.verts.new([-vx4e,-vy4e,-vz4e])
+                    fe8 = bm_3e.verts.new([-vx5e,-vy5e,-vz5e])
+                    ff8 = bm_3e.verts.new([-vx6e,-vy6e,-vz6e])
+                    fg8 = bm_3e.verts.new([-vx7e,-vy7e,-vz7e])
+
+                    fa9 = bm_3ea.verts.new([-vx1ea,-vy1ea,-vz1ea])
+                    fb9 = bm_3ea.verts.new([-vx2ea,-vy2ea,-vz2ea])
+                    fc9 = bm_3ea.verts.new([-vx3ea,-vy3ea,-vz3ea])
+                    fd9 = bm_3ea.verts.new([-vx4ea,-vy4ea,-vz4ea])
+                    fe9 = bm_3ea.verts.new([-vx5ea,-vy5ea,-vz5ea])
+                    ff9 = bm_3ea.verts.new([-vx6ea,-vy6ea,-vz6ea])
+                    fg9 = bm_3ea.verts.new([-vx7ea,-vy7ea,-vz7ea])
+
+                    fa10 = bm_3eb.verts.new([-vx1eb,-vy1eb,-vz1eb])
+                    fb10 = bm_3eb.verts.new([-vx2eb,-vy2eb,-vz2eb])
+                    fc10 = bm_3eb.verts.new([-vx3eb,-vy3eb,-vz3eb])
+                    fd10 = bm_3eb.verts.new([-vx4eb,-vy4eb,-vz4eb])
+                    fe10 = bm_3eb.verts.new([-vx5eb,-vy5eb,-vz5eb])
+                    ff10 = bm_3eb.verts.new([-vx6eb,-vy6eb,-vz6eb])
+                    fg10 = bm_3eb.verts.new([-vx7eb,-vy7eb,-vz7eb])
+
+                    fa11 = bm_3ec.verts.new([-vx1ec,-vy1ec,-vz1ec])
+                    fb11 = bm_3ec.verts.new([-vx2ec,-vy2ec,-vz2ec])
+                    fc11 = bm_3ec.verts.new([-vx3ec,-vy3ec,-vz3ec])
+                    fd11 = bm_3ec.verts.new([-vx4ec,-vy4ec,-vz4ec])
+                    fe11 = bm_3ec.verts.new([-vx5ec,-vy5ec,-vz5ec])
+                    ff11 = bm_3ec.verts.new([-vx6ec,-vy6ec,-vz6ec])
+                    fg11 = bm_3ec.verts.new([-vx7ec,-vy7ec,-vz7ec])
+
+                    fa12 = bm_3ed.verts.new([-vx1ed,-vy1ed,-vz1ed])
+                    fb12 = bm_3ed.verts.new([-vx2ed,-vy2ed,-vz2ed])
+                    fc12 = bm_3ed.verts.new([-vx3ed,-vy3ed,-vz3ed])
+                    fd12 = bm_3ed.verts.new([-vx4ed,-vy4ed,-vz4ed])
+                    fe12 = bm_3ed.verts.new([-vx5ed,-vy5ed,-vz5ed])
+                    ff12 = bm_3ed.verts.new([-vx6ed,-vy6ed,-vz6ed])
+                    fg12 = bm_3ed.verts.new([-vx7ed,-vy7ed,-vz7ed])
+
+                    if type1ed == 1:
+                        if type2ed == 1:
+                            if type3ed == 0:
+                                if type4ed == 0:
+                                    if type5ed == 0:
+                                        if type6ed == 1:
+                                            if type7ed == 1:
+                                                bm_3ed.faces.new([fa12,fb12,fc12])
+                                                bm_3ed.faces.new([fb12,fc12,fd12])
+                                                bm_3ed.faces.new([fc12,fd12,fe12])
+                                                bm_3ed.faces.new([fc12,fe12,ff12])
+                                                bm_3ed.faces.new([fe12,ff12,fg12])
+
+                    if type1ec == 1:
+                        if type2ec == 1:
+                            if type3ec == 0:
+                                if type4ec == 1:
+                                    if type5ec == 1:
+                                        if type6ec == 0:
+                                            if type7ec == 1:
+                                                bm_3ec.faces.new([fa11,fb11,fc11])
+                                                bm_3ec.faces.new([fd11,fe11,ff11])
+                                                bm_3ec.faces.new([fd11,ff11,fg11])
+                            
+
+                    if type1eb == 1:
+                        if type2eb == 1:
+                            if type3eb == 0:
+                                if type4eb == 0:
+                                    if type5eb == 0:
+                                        if type6eb == 0:
+                                            if type7eb == 1:
+                                                bm_3eb.faces.new([fa10,fb10,fc10])
+                                                bm_3eb.faces.new([fb10,fc10,fd10])
+                                                bm_3eb.faces.new([fc10,fd10,fe10])
+                                                bm_3eb.faces.new([fd10,fe10,ff10])
+                                                bm_3eb.faces.new([fd10,ff10,fg10])
+
+                    if type1ea == 1:
+                        if type2ea == 1:
+                            if type3ea == 0:
+                                if type4ea == 0:
+                                    if type5ea == 1:
+                                        if type6ea == 1:
+                                            if type7ea == 0:
+                                                bm_3ea.faces.new([fa9,fb9,fc9])
+                                                bm_3ea.faces.new([fb9,fc9,fd9])
+                                                bm_3ea.faces.new([fe9,ff9,fg9])
+                                        
+
+                    if type1e == 1:
+                        if type2e == 1:
+                            if type3e == 0:
+                                if type4e == 0:
+                                    if type5e == 0:
+                                        if type6e == 0:
+                                            if type7e == 0:
+                                                bm_3e.faces.new([fa8,fb8,fc8])
+                                                bm_3e.faces.new([fb8,fc8,fd8])
+                                                bm_3e.faces.new([fc8,fd8,fe8])
+                                                bm_3e.faces.new([fd8,fe8,ff8])
+                                                bm_3e.faces.new([fe8,ff8,fg8])
+
+            elif vertexCount == 8:
+                for i in range(vertexCount//8):
+                    vx1f = unpack("<f", f.read(4))[0]
+                    vy1f = unpack("<f", f.read(4))[0]
+                    vz1f = unpack("<f", f.read(4))[0]
+                    vw1f = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1f = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2f = unpack("<f", f.read(4))[0]
+                    vy2f = unpack("<f", f.read(4))[0]
+                    vz2f = unpack("<f", f.read(4))[0]
+                    vw2f = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2f = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3f = unpack("<f", f.read(4))[0]
+                    vy3f = unpack("<f", f.read(4))[0]
+                    vz3f = unpack("<f", f.read(4))[0]
+                    vw3f = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3f = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4f = unpack("<f", f.read(4))[0]
+                    vy4f = unpack("<f", f.read(4))[0]
+                    vz4f = unpack("<f", f.read(4))[0]
+                    vw4f = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4f = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5f = unpack("<f", f.read(4))[0]
+                    vy5f = unpack("<f", f.read(4))[0]
+                    vz5f = unpack("<f", f.read(4))[0]
+                    vw5f = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5f = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6f = unpack("<f", f.read(4))[0]
+                    vy6f = unpack("<f", f.read(4))[0]
+                    vz6f = unpack("<f", f.read(4))[0]
+                    vw6f = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6f = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7f = unpack("<f", f.read(4))[0]
+                    vy7f = unpack("<f", f.read(4))[0]
+                    vz7f = unpack("<f", f.read(4))[0]
+                    vw7f = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7f = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8f = unpack("<f", f.read(4))[0]
+                    vy8f = unpack("<f", f.read(4))[0]
+                    vz8f = unpack("<f", f.read(4))[0]
+                    vw8f = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8f = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-256,1)
+
+                    vx1fa = unpack("<f", f.read(4))[0]
+                    vy1fa = unpack("<f", f.read(4))[0]
+                    vz1fa = unpack("<f", f.read(4))[0]
+                    vw1fa = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1fa = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2fa = unpack("<f", f.read(4))[0]
+                    vy2fa = unpack("<f", f.read(4))[0]
+                    vz2fa = unpack("<f", f.read(4))[0]
+                    vw2fa = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2fa = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3fa = unpack("<f", f.read(4))[0]
+                    vy3fa = unpack("<f", f.read(4))[0]
+                    vz3fa = unpack("<f", f.read(4))[0]
+                    vw3fa = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3fa = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4fa = unpack("<f", f.read(4))[0]
+                    vy4fa = unpack("<f", f.read(4))[0]
+                    vz4fa = unpack("<f", f.read(4))[0]
+                    vw4fa = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4fa = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5fa = unpack("<f", f.read(4))[0]
+                    vy5fa = unpack("<f", f.read(4))[0]
+                    vz5fa = unpack("<f", f.read(4))[0]
+                    vw5fa = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5fa = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6fa = unpack("<f", f.read(4))[0]
+                    vy6fa = unpack("<f", f.read(4))[0]
+                    vz6fa = unpack("<f", f.read(4))[0]
+                    vw6fa = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6fa = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7fa = unpack("<f", f.read(4))[0]
+                    vy7fa = unpack("<f", f.read(4))[0]
+                    vz7fa = unpack("<f", f.read(4))[0]
+                    vw7fa = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7fa = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8fa = unpack("<f", f.read(4))[0]
+                    vy8fa = unpack("<f", f.read(4))[0]
+                    vz8fa = unpack("<f", f.read(4))[0]
+                    vw8fa = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8fa = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-256,1)
+
+                    vx1fb = unpack("<f", f.read(4))[0]
+                    vy1fb = unpack("<f", f.read(4))[0]
+                    vz1fb = unpack("<f", f.read(4))[0]
+                    vw1fb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1fb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2fb = unpack("<f", f.read(4))[0]
+                    vy2fb = unpack("<f", f.read(4))[0]
+                    vz2fb = unpack("<f", f.read(4))[0]
+                    vw2fb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2fb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3fb = unpack("<f", f.read(4))[0]
+                    vy3fb = unpack("<f", f.read(4))[0]
+                    vz3fb = unpack("<f", f.read(4))[0]
+                    vw3fb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3fb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4fb = unpack("<f", f.read(4))[0]
+                    vy4fb = unpack("<f", f.read(4))[0]
+                    vz4fb = unpack("<f", f.read(4))[0]
+                    vw4fb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4fb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5fb = unpack("<f", f.read(4))[0]
+                    vy5fb = unpack("<f", f.read(4))[0]
+                    vz5fb = unpack("<f", f.read(4))[0]
+                    vw5fb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5fb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6fb = unpack("<f", f.read(4))[0]
+                    vy6fb = unpack("<f", f.read(4))[0]
+                    vz6fb = unpack("<f", f.read(4))[0]
+                    vw6fb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6fb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7fb = unpack("<f", f.read(4))[0]
+                    vy7fb = unpack("<f", f.read(4))[0]
+                    vz7fb = unpack("<f", f.read(4))[0]
+                    vw7fb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7fb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8fb = unpack("<f", f.read(4))[0]
+                    vy8fb = unpack("<f", f.read(4))[0]
+                    vz8fb = unpack("<f", f.read(4))[0]
+                    vw8fb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8fb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-256,1)
+
+                    vx1fc = unpack("<f", f.read(4))[0]
+                    vy1fc = unpack("<f", f.read(4))[0]
+                    vz1fc = unpack("<f", f.read(4))[0]
+                    vw1fc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1fc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2fc = unpack("<f", f.read(4))[0]
+                    vy2fc = unpack("<f", f.read(4))[0]
+                    vz2fc = unpack("<f", f.read(4))[0]
+                    vw2fc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2fc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3fc = unpack("<f", f.read(4))[0]
+                    vy3fc = unpack("<f", f.read(4))[0]
+                    vz3fc = unpack("<f", f.read(4))[0]
+                    vw3fc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3fc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4fc = unpack("<f", f.read(4))[0]
+                    vy4fc = unpack("<f", f.read(4))[0]
+                    vz4fc = unpack("<f", f.read(4))[0]
+                    vw4fc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4fc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5fc = unpack("<f", f.read(4))[0]
+                    vy5fc = unpack("<f", f.read(4))[0]
+                    vz5fc = unpack("<f", f.read(4))[0]
+                    vw5fc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5fc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6fc = unpack("<f", f.read(4))[0]
+                    vy6fc = unpack("<f", f.read(4))[0]
+                    vz6fc = unpack("<f", f.read(4))[0]
+                    vw6fc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6fc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7fc = unpack("<f", f.read(4))[0]
+                    vy7fc = unpack("<f", f.read(4))[0]
+                    vz7fc = unpack("<f", f.read(4))[0]
+                    vw7fc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7fc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8fc = unpack("<f", f.read(4))[0]
+                    vy8fc = unpack("<f", f.read(4))[0]
+                    vz8fc = unpack("<f", f.read(4))[0]
+                    vw8fc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8fc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-256,1)
+
+                    vx1fd = unpack("<f", f.read(4))[0]
+                    vy1fd = unpack("<f", f.read(4))[0]
+                    vz1fd = unpack("<f", f.read(4))[0]
+                    vw1fd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1fd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2fd = unpack("<f", f.read(4))[0]
+                    vy2fd = unpack("<f", f.read(4))[0]
+                    vz2fd = unpack("<f", f.read(4))[0]
+                    vw2fd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2fd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3fd = unpack("<f", f.read(4))[0]
+                    vy3fd = unpack("<f", f.read(4))[0]
+                    vz3fd = unpack("<f", f.read(4))[0]
+                    vw3fd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3fd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4fd = unpack("<f", f.read(4))[0]
+                    vy4fd = unpack("<f", f.read(4))[0]
+                    vz4fd = unpack("<f", f.read(4))[0]
+                    vw4fd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4fd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5fd = unpack("<f", f.read(4))[0]
+                    vy5fd = unpack("<f", f.read(4))[0]
+                    vz5fd = unpack("<f", f.read(4))[0]
+                    vw5fd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5fd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6fd = unpack("<f", f.read(4))[0]
+                    vy6fd = unpack("<f", f.read(4))[0]
+                    vz6fd = unpack("<f", f.read(4))[0]
+                    vw6fd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6fd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7fd = unpack("<f", f.read(4))[0]
+                    vy7fd = unpack("<f", f.read(4))[0]
+                    vz7fd = unpack("<f", f.read(4))[0]
+                    vw7fd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7fd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8fd = unpack("<f", f.read(4))[0]
+                    vy8fd = unpack("<f", f.read(4))[0]
+                    vz8fd = unpack("<f", f.read(4))[0]
+                    vw8fd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8fd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    fa13 = bm_3f.verts.new([-vx1f,-vy1f,-vz1f])
+                    fb13 = bm_3f.verts.new([-vx2f,-vy2f,-vz2f])
+                    fc13 = bm_3f.verts.new([-vx3f,-vy3f,-vz3f])
+                    fd13 = bm_3f.verts.new([-vx4f,-vy4f,-vz4f])
+                    fe13 = bm_3f.verts.new([-vx5f,-vy5f,-vz5f])
+                    ff13 = bm_3f.verts.new([-vx6f,-vy6f,-vz6f])
+                    fg13 = bm_3f.verts.new([-vx7f,-vy7f,-vz7f])
+                    fh13 = bm_3f.verts.new([-vx8f,-vy8f,-vz8f])
+
+                    fa14 = bm_3fa.verts.new([-vx1fa,-vy1fa,-vz1fa])
+                    fb14 = bm_3fa.verts.new([-vx2fa,-vy2fa,-vz2fa])
+                    fc14 = bm_3fa.verts.new([-vx3fa,-vy3fa,-vz3fa])
+                    fd14 = bm_3fa.verts.new([-vx4fa,-vy4fa,-vz4fa])
+                    fe14 = bm_3fa.verts.new([-vx5fa,-vy5fa,-vz5fa])
+                    ff14 = bm_3fa.verts.new([-vx6fa,-vy6fa,-vz6fa])
+                    fg14 = bm_3fa.verts.new([-vx7fa,-vy7fa,-vz7fa])
+                    fh14 = bm_3fa.verts.new([-vx8fa,-vy8fa,-vz8fa])
+
+                    fa15 = bm_3fb.verts.new([-vx1fb,-vy1fb,-vz1fb])
+                    fb15 = bm_3fb.verts.new([-vx2fb,-vy2fb,-vz2fb])
+                    fc15 = bm_3fb.verts.new([-vx3fb,-vy3fb,-vz3fb])
+                    fd15 = bm_3fb.verts.new([-vx4fb,-vy4fb,-vz4fb])
+                    fe15 = bm_3fb.verts.new([-vx5fb,-vy5fb,-vz5fb])
+                    ff15 = bm_3fb.verts.new([-vx6fb,-vy6fb,-vz6fb])
+                    fg15 = bm_3fb.verts.new([-vx7fb,-vy7fb,-vz7fb])
+                    fh15 = bm_3fb.verts.new([-vx8fb,-vy8fb,-vz8fb])
+
+                    fa16 = bm_3fc.verts.new([-vx1fc,-vy1fc,-vz1fc])
+                    fb16 = bm_3fc.verts.new([-vx2fc,-vy2fc,-vz2fc])
+                    fc16 = bm_3fc.verts.new([-vx3fc,-vy3fc,-vz3fc])
+                    fd16 = bm_3fc.verts.new([-vx4fc,-vy4fc,-vz4fc])
+                    fe16 = bm_3fc.verts.new([-vx5fc,-vy5fc,-vz5fc])
+                    ff16 = bm_3fc.verts.new([-vx6fc,-vy6fc,-vz6fc])
+                    fg16 = bm_3fc.verts.new([-vx7fc,-vy7fc,-vz7fc])
+                    fh16 = bm_3fc.verts.new([-vx8fc,-vy8fc,-vz8fc])
+
+                    fa17 = bm_3fd.verts.new([-vx1fd,-vy1fd,-vz1fd])
+                    fb17 = bm_3fd.verts.new([-vx2fd,-vy2fd,-vz2fd])
+                    fc17 = bm_3fd.verts.new([-vx3fd,-vy3fd,-vz3fd])
+                    fd17 = bm_3fd.verts.new([-vx4fd,-vy4fd,-vz4fd])
+                    fe17 = bm_3fd.verts.new([-vx5fd,-vy5fd,-vz5fd])
+                    ff17 = bm_3fd.verts.new([-vx6fd,-vy6fd,-vz6fd])
+                    fg17 = bm_3fd.verts.new([-vx7fd,-vy7fd,-vz7fd])
+                    fh17 = bm_3fd.verts.new([-vx8fd,-vy8fd,-vz8fd])
+
+                    if type1fd == 1:
+                        if type2fd == 1:
+                            if type3fd == 0:
+                                if type4fd == 0:
+                                    if type5fd == 0:
+                                        if type6fd == 0:
+                                            if type7fd == 1:
+                                                if type8fd == 1:
+                                                    bm_3fd.faces.new([fa17,fb17,fc17])
+                                                    bm_3fd.faces.new([fb17,fc17,fd17])
+                                                    bm_3fd.faces.new([fc17,fd17,fe17])
+                                                    bm_3fd.faces.new([fd17,fe17,ff17])
+                                                    bm_3fd.faces.new([fd17,ff17,fg17])
+                                                    bm_3fd.faces.new([ff17,fg17,fh17])
+
+                    if type1fc == 1:
+                        if type2fc == 1:
+                            if type3fc == 0:
+                                if type4fc == 0:
+                                    if type5fc == 0:
+                                        if type6fc == 1:
+                                            if type7fc == 1:
+                                                if type8fc == 0:
+                                                    bm_3fc.faces.new([fa16,fb16,fc16])
+                                                    bm_3fc.faces.new([fb16,fc16,fd16])
+                                                    bm_3fc.faces.new([fc16,fd16,fe16])
+                                                    bm_3fc.faces.new([ff16,fg16,fh16])
+
+                    if type1fb == 1:
+                        if type2fb == 1:
+                            if type3fb == 0:
+                                if type4fb == 0:
+                                    if type5fb == 0:
+                                        if type6fb == 0:
+                                            if type7fb == 0:
+                                                if type8fb == 1:
+                                                    bm_3fb.faces.new([fa15,fb15,fc15])
+                                                    bm_3fb.faces.new([fb15,fc15,fd15])
+                                                    bm_3fb.faces.new([fc15,fd15,fe15])
+                                                    bm_3fb.faces.new([fd15,fe15,ff15])
+                                                    bm_3fb.faces.new([fe15,ff15,fg15])
+                                                    bm_3fb.faces.new([fe15,fg15,fh15])
+
+                    if type1fa == 1:
+                        if type2fa == 1:
+                            if type3fa == 0:
+                                if type4fa == 0:
+                                    if type5fa == 1:
+                                        if type6fa == 1:
+                                            if type7fa == 0:
+                                                if type8fa == 0:
+                                                    bm_3fa.faces.new([fa14,fb14,fc14])
+                                                    bm_3fa.faces.new([fb14,fc14,fd14])
+                                                    bm_3fa.faces.new([fe14,ff14,fg14])
+                                                    bm_3fa.faces.new([ff14,fg14,fh14])
+
+                    if type1f == 1:
+                        if type2f == 1:
+                            if type3f == 0:
+                                if type4f == 0:
+                                    if type5f == 0:
+                                        if type6f == 0:
+                                            if type7f == 0:
+                                                if type8f == 0:
+                                                    bm_3f.faces.new([fa13,fb13,fc13])
+                                                    bm_3f.faces.new([fb13,fc13,fd13])
+                                                    bm_3f.faces.new([fc13,fd13,fe13])
+                                                    bm_3f.faces.new([fd13,fe13,ff13])
+                                                    bm_3f.faces.new([fe13,ff13,fg13])
+                                                    bm_3f.faces.new([ff13,fg13,fh13])
+
+            elif vertexCount == 9:
+                for i in range(vertexCount//9):
+                    vx1g = unpack("<f", f.read(4))[0]
+                    vy1g = unpack("<f", f.read(4))[0]
+                    vz1g = unpack("<f", f.read(4))[0]
+                    vw1g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2g = unpack("<f", f.read(4))[0]
+                    vy2g = unpack("<f", f.read(4))[0]
+                    vz2g = unpack("<f", f.read(4))[0]
+                    vw2g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3g = unpack("<f", f.read(4))[0]
+                    vy3g = unpack("<f", f.read(4))[0]
+                    vz3g = unpack("<f", f.read(4))[0]
+                    vw3g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4g = unpack("<f", f.read(4))[0]
+                    vy4g = unpack("<f", f.read(4))[0]
+                    vz4g = unpack("<f", f.read(4))[0]
+                    vw4g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5g = unpack("<f", f.read(4))[0]
+                    vy5g = unpack("<f", f.read(4))[0]
+                    vz5g = unpack("<f", f.read(4))[0]
+                    vw5g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6g = unpack("<f", f.read(4))[0]
+                    vy6g = unpack("<f", f.read(4))[0]
+                    vz6g = unpack("<f", f.read(4))[0]
+                    vw6g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7g = unpack("<f", f.read(4))[0]
+                    vy7g = unpack("<f", f.read(4))[0]
+                    vz7g = unpack("<f", f.read(4))[0]
+                    vw7g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8g = unpack("<f", f.read(4))[0]
+                    vy8g = unpack("<f", f.read(4))[0]
+                    vz8g = unpack("<f", f.read(4))[0]
+                    vw8g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9g = unpack("<f", f.read(4))[0]
+                    vy9g = unpack("<f", f.read(4))[0]
+                    vz9g = unpack("<f", f.read(4))[0]
+                    vw9g = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9g = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-288,1)
+
+                    vx1ga = unpack("<f", f.read(4))[0]
+                    vy1ga = unpack("<f", f.read(4))[0]
+                    vz1ga = unpack("<f", f.read(4))[0]
+                    vw1ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2ga = unpack("<f", f.read(4))[0]
+                    vy2ga = unpack("<f", f.read(4))[0]
+                    vz2ga = unpack("<f", f.read(4))[0]
+                    vw2ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3ga = unpack("<f", f.read(4))[0]
+                    vy3ga = unpack("<f", f.read(4))[0]
+                    vz3ga = unpack("<f", f.read(4))[0]
+                    vw3ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4ga = unpack("<f", f.read(4))[0]
+                    vy4ga = unpack("<f", f.read(4))[0]
+                    vz4ga = unpack("<f", f.read(4))[0]
+                    vw4ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5ga = unpack("<f", f.read(4))[0]
+                    vy5ga = unpack("<f", f.read(4))[0]
+                    vz5ga = unpack("<f", f.read(4))[0]
+                    vw5ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6ga = unpack("<f", f.read(4))[0]
+                    vy6ga = unpack("<f", f.read(4))[0]
+                    vz6ga = unpack("<f", f.read(4))[0]
+                    vw6ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7ga = unpack("<f", f.read(4))[0]
+                    vy7ga = unpack("<f", f.read(4))[0]
+                    vz7ga = unpack("<f", f.read(4))[0]
+                    vw7ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8ga = unpack("<f", f.read(4))[0]
+                    vy8ga = unpack("<f", f.read(4))[0]
+                    vz8ga = unpack("<f", f.read(4))[0]
+                    vw8ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9ga = unpack("<f", f.read(4))[0]
+                    vy9ga = unpack("<f", f.read(4))[0]
+                    vz9ga = unpack("<f", f.read(4))[0]
+                    vw9ga = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9ga = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-288,1)
+
+                    vx1gb = unpack("<f", f.read(4))[0]
+                    vy1gb = unpack("<f", f.read(4))[0]
+                    vz1gb = unpack("<f", f.read(4))[0]
+                    vw1gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2gb = unpack("<f", f.read(4))[0]
+                    vy2gb = unpack("<f", f.read(4))[0]
+                    vz2gb = unpack("<f", f.read(4))[0]
+                    vw2gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3gb = unpack("<f", f.read(4))[0]
+                    vy3gb = unpack("<f", f.read(4))[0]
+                    vz3gb = unpack("<f", f.read(4))[0]
+                    vw3gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4gb = unpack("<f", f.read(4))[0]
+                    vy4gb = unpack("<f", f.read(4))[0]
+                    vz4gb = unpack("<f", f.read(4))[0]
+                    vw4gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5gb = unpack("<f", f.read(4))[0]
+                    vy5gb = unpack("<f", f.read(4))[0]
+                    vz5gb = unpack("<f", f.read(4))[0]
+                    vw5gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6gb = unpack("<f", f.read(4))[0]
+                    vy6gb = unpack("<f", f.read(4))[0]
+                    vz6gb = unpack("<f", f.read(4))[0]
+                    vw6gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7gb = unpack("<f", f.read(4))[0]
+                    vy7gb = unpack("<f", f.read(4))[0]
+                    vz7gb = unpack("<f", f.read(4))[0]
+                    vw7gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8gb = unpack("<f", f.read(4))[0]
+                    vy8gb = unpack("<f", f.read(4))[0]
+                    vz8gb = unpack("<f", f.read(4))[0]
+                    vw8gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9gb = unpack("<f", f.read(4))[0]
+                    vy9gb = unpack("<f", f.read(4))[0]
+                    vz9gb = unpack("<f", f.read(4))[0]
+                    vw9gb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9gb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-288,1)
+
+                    vx1gc = unpack("<f", f.read(4))[0]
+                    vy1gc = unpack("<f", f.read(4))[0]
+                    vz1gc = unpack("<f", f.read(4))[0]
+                    vw1gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2gc = unpack("<f", f.read(4))[0]
+                    vy2gc = unpack("<f", f.read(4))[0]
+                    vz2gc = unpack("<f", f.read(4))[0]
+                    vw2gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3gc = unpack("<f", f.read(4))[0]
+                    vy3gc = unpack("<f", f.read(4))[0]
+                    vz3gc = unpack("<f", f.read(4))[0]
+                    vw3gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4gc = unpack("<f", f.read(4))[0]
+                    vy4gc = unpack("<f", f.read(4))[0]
+                    vz4gc = unpack("<f", f.read(4))[0]
+                    vw4gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5gc = unpack("<f", f.read(4))[0]
+                    vy5gc = unpack("<f", f.read(4))[0]
+                    vz5gc = unpack("<f", f.read(4))[0]
+                    vw5gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6gc = unpack("<f", f.read(4))[0]
+                    vy6gc = unpack("<f", f.read(4))[0]
+                    vz6gc = unpack("<f", f.read(4))[0]
+                    vw6gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7gc = unpack("<f", f.read(4))[0]
+                    vy7gc = unpack("<f", f.read(4))[0]
+                    vz7gc = unpack("<f", f.read(4))[0]
+                    vw7gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8gc = unpack("<f", f.read(4))[0]
+                    vy8gc = unpack("<f", f.read(4))[0]
+                    vz8gc = unpack("<f", f.read(4))[0]
+                    vw8gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9gc = unpack("<f", f.read(4))[0]
+                    vy9gc = unpack("<f", f.read(4))[0]
+                    vz9gc = unpack("<f", f.read(4))[0]
+                    vw9gc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9gc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-288,1)
+
+                    vx1gd = unpack("<f", f.read(4))[0]
+                    vy1gd = unpack("<f", f.read(4))[0]
+                    vz1gd = unpack("<f", f.read(4))[0]
+                    vw1gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2gd = unpack("<f", f.read(4))[0]
+                    vy2gd = unpack("<f", f.read(4))[0]
+                    vz2gd = unpack("<f", f.read(4))[0]
+                    vw2gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3gd = unpack("<f", f.read(4))[0]
+                    vy3gd = unpack("<f", f.read(4))[0]
+                    vz3gd = unpack("<f", f.read(4))[0]
+                    vw3gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4gd = unpack("<f", f.read(4))[0]
+                    vy4gd = unpack("<f", f.read(4))[0]
+                    vz4gd = unpack("<f", f.read(4))[0]
+                    vw4gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5gd = unpack("<f", f.read(4))[0]
+                    vy5gd = unpack("<f", f.read(4))[0]
+                    vz5gd = unpack("<f", f.read(4))[0]
+                    vw5gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6gd = unpack("<f", f.read(4))[0]
+                    vy6gd = unpack("<f", f.read(4))[0]
+                    vz6gd = unpack("<f", f.read(4))[0]
+                    vw6gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7gd = unpack("<f", f.read(4))[0]
+                    vy7gd = unpack("<f", f.read(4))[0]
+                    vz7gd = unpack("<f", f.read(4))[0]
+                    vw7gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8gd = unpack("<f", f.read(4))[0]
+                    vy8gd = unpack("<f", f.read(4))[0]
+                    vz8gd = unpack("<f", f.read(4))[0]
+                    vw8gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9gd = unpack("<f", f.read(4))[0]
+                    vy9gd = unpack("<f", f.read(4))[0]
+                    vz9gd = unpack("<f", f.read(4))[0]
+                    vw9gd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9gd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-288,1)
+
+                    vx1ge = unpack("<f", f.read(4))[0]
+                    vy1ge = unpack("<f", f.read(4))[0]
+                    vz1ge = unpack("<f", f.read(4))[0]
+                    vw1ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2ge = unpack("<f", f.read(4))[0]
+                    vy2ge = unpack("<f", f.read(4))[0]
+                    vz2ge = unpack("<f", f.read(4))[0]
+                    vw2ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3ge = unpack("<f", f.read(4))[0]
+                    vy3ge = unpack("<f", f.read(4))[0]
+                    vz3ge = unpack("<f", f.read(4))[0]
+                    vw3ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4ge = unpack("<f", f.read(4))[0]
+                    vy4ge = unpack("<f", f.read(4))[0]
+                    vz4ge = unpack("<f", f.read(4))[0]
+                    vw4ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5ge = unpack("<f", f.read(4))[0]
+                    vy5ge = unpack("<f", f.read(4))[0]
+                    vz5ge = unpack("<f", f.read(4))[0]
+                    vw5ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6ge = unpack("<f", f.read(4))[0]
+                    vy6ge = unpack("<f", f.read(4))[0]
+                    vz6ge = unpack("<f", f.read(4))[0]
+                    vw6ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7ge = unpack("<f", f.read(4))[0]
+                    vy7ge = unpack("<f", f.read(4))[0]
+                    vz7ge = unpack("<f", f.read(4))[0]
+                    vw7ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8ge = unpack("<f", f.read(4))[0]
+                    vy8ge = unpack("<f", f.read(4))[0]
+                    vz8ge = unpack("<f", f.read(4))[0]
+                    vw8ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9ge = unpack("<f", f.read(4))[0]
+                    vy9ge = unpack("<f", f.read(4))[0]
+                    vz9ge = unpack("<f", f.read(4))[0]
+                    vw9ge = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9ge = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-288,1)
+
+                    vx1gf = unpack("<f", f.read(4))[0]
+                    vy1gf = unpack("<f", f.read(4))[0]
+                    vz1gf = unpack("<f", f.read(4))[0]
+                    vw1gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2gf = unpack("<f", f.read(4))[0]
+                    vy2gf = unpack("<f", f.read(4))[0]
+                    vz2gf = unpack("<f", f.read(4))[0]
+                    vw2gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3gf = unpack("<f", f.read(4))[0]
+                    vy3gf = unpack("<f", f.read(4))[0]
+                    vz3gf = unpack("<f", f.read(4))[0]
+                    vw3gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4gf = unpack("<f", f.read(4))[0]
+                    vy4gf = unpack("<f", f.read(4))[0]
+                    vz4gf = unpack("<f", f.read(4))[0]
+                    vw4gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5gf = unpack("<f", f.read(4))[0]
+                    vy5gf = unpack("<f", f.read(4))[0]
+                    vz5gf = unpack("<f", f.read(4))[0]
+                    vw5gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6gf = unpack("<f", f.read(4))[0]
+                    vy6gf = unpack("<f", f.read(4))[0]
+                    vz6gf = unpack("<f", f.read(4))[0]
+                    vw6gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7gf = unpack("<f", f.read(4))[0]
+                    vy7gf = unpack("<f", f.read(4))[0]
+                    vz7gf = unpack("<f", f.read(4))[0]
+                    vw7gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8gf = unpack("<f", f.read(4))[0]
+                    vy8gf = unpack("<f", f.read(4))[0]
+                    vz8gf = unpack("<f", f.read(4))[0]
+                    vw8gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9gf = unpack("<f", f.read(4))[0]
+                    vy9gf = unpack("<f", f.read(4))[0]
+                    vz9gf = unpack("<f", f.read(4))[0]
+                    vw9gf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9gf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-288,1)
+
+                    vx1gg = unpack("<f", f.read(4))[0]
+                    vy1gg = unpack("<f", f.read(4))[0]
+                    vz1gg = unpack("<f", f.read(4))[0]
+                    vw1gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2gg = unpack("<f", f.read(4))[0]
+                    vy2gg = unpack("<f", f.read(4))[0]
+                    vz2gg = unpack("<f", f.read(4))[0]
+                    vw2gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3gg = unpack("<f", f.read(4))[0]
+                    vy3gg = unpack("<f", f.read(4))[0]
+                    vz3gg = unpack("<f", f.read(4))[0]
+                    vw3gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4gg = unpack("<f", f.read(4))[0]
+                    vy4gg = unpack("<f", f.read(4))[0]
+                    vz4gg = unpack("<f", f.read(4))[0]
+                    vw4gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5gg = unpack("<f", f.read(4))[0]
+                    vy5gg = unpack("<f", f.read(4))[0]
+                    vz5gg = unpack("<f", f.read(4))[0]
+                    vw5gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6gg = unpack("<f", f.read(4))[0]
+                    vy6gg = unpack("<f", f.read(4))[0]
+                    vz6gg = unpack("<f", f.read(4))[0]
+                    vw6gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7gg = unpack("<f", f.read(4))[0]
+                    vy7gg = unpack("<f", f.read(4))[0]
+                    vz7gg = unpack("<f", f.read(4))[0]
+                    vw7gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8gg = unpack("<f", f.read(4))[0]
+                    vy8gg = unpack("<f", f.read(4))[0]
+                    vz8gg = unpack("<f", f.read(4))[0]
+                    vw8gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9gg = unpack("<f", f.read(4))[0]
+                    vy9gg = unpack("<f", f.read(4))[0]
+                    vz9gg = unpack("<f", f.read(4))[0]
+                    vw9gg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9gg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-288,1)
+
+                    vx1gh = unpack("<f", f.read(4))[0]
+                    vy1gh = unpack("<f", f.read(4))[0]
+                    vz1gh = unpack("<f", f.read(4))[0]
+                    vw1gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2gh = unpack("<f", f.read(4))[0]
+                    vy2gh = unpack("<f", f.read(4))[0]
+                    vz2gh = unpack("<f", f.read(4))[0]
+                    vw2gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3gh = unpack("<f", f.read(4))[0]
+                    vy3gh = unpack("<f", f.read(4))[0]
+                    vz3gh = unpack("<f", f.read(4))[0]
+                    vw3gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4gh = unpack("<f", f.read(4))[0]
+                    vy4gh = unpack("<f", f.read(4))[0]
+                    vz4gh = unpack("<f", f.read(4))[0]
+                    vw4gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5gh = unpack("<f", f.read(4))[0]
+                    vy5gh = unpack("<f", f.read(4))[0]
+                    vz5gh = unpack("<f", f.read(4))[0]
+                    vw5gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6gh = unpack("<f", f.read(4))[0]
+                    vy6gh = unpack("<f", f.read(4))[0]
+                    vz6gh = unpack("<f", f.read(4))[0]
+                    vw6gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7gh = unpack("<f", f.read(4))[0]
+                    vy7gh = unpack("<f", f.read(4))[0]
+                    vz7gh = unpack("<f", f.read(4))[0]
+                    vw7gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8gh = unpack("<f", f.read(4))[0]
+                    vy8gh = unpack("<f", f.read(4))[0]
+                    vz8gh = unpack("<f", f.read(4))[0]
+                    vw8gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9gh = unpack("<f", f.read(4))[0]
+                    vy9gh = unpack("<f", f.read(4))[0]
+                    vz9gh = unpack("<f", f.read(4))[0]
+                    vw9gh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9gh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    
+
+                    fa18 = bm_3g.verts.new([-vx1g,-vy1g,-vz1g])
+                    fb18 = bm_3g.verts.new([-vx2g,-vy2g,-vz2g])
+                    fc18 = bm_3g.verts.new([-vx3g,-vy3g,-vz3g])
+                    fd18 = bm_3g.verts.new([-vx4g,-vy4g,-vz4g])
+                    fe18 = bm_3g.verts.new([-vx5g,-vy5g,-vz5g])
+                    ff18 = bm_3g.verts.new([-vx6g,-vy6g,-vz6g])
+                    fg18 = bm_3g.verts.new([-vx7g,-vy7g,-vz7g])
+                    fh18 = bm_3g.verts.new([-vx8g,-vy8g,-vz8g])
+                    fi18 = bm_3g.verts.new([-vx9g,-vy9g,-vz9g])
+
+                    fa19 = bm_3ga.verts.new([-vx1ga,-vy1ga,-vz1ga])
+                    fb19 = bm_3ga.verts.new([-vx2ga,-vy2ga,-vz2ga])
+                    fc19 = bm_3ga.verts.new([-vx3ga,-vy3ga,-vz3ga])
+                    fd19 = bm_3ga.verts.new([-vx4ga,-vy4ga,-vz4ga])
+                    fe19 = bm_3ga.verts.new([-vx5ga,-vy5ga,-vz5ga])
+                    ff19 = bm_3ga.verts.new([-vx6ga,-vy6ga,-vz6ga])
+                    fg19 = bm_3ga.verts.new([-vx7ga,-vy7ga,-vz7ga])
+                    fh19 = bm_3ga.verts.new([-vx8ga,-vy8ga,-vz8ga])
+                    fi19 = bm_3ga.verts.new([-vx9ga,-vy9ga,-vz9ga])
+
+                    fa20 = bm_3gb.verts.new([-vx1gb,-vy1gb,-vz1gb])
+                    fb20 = bm_3gb.verts.new([-vx2gb,-vy2gb,-vz2gb])
+                    fc20 = bm_3gb.verts.new([-vx3gb,-vy3gb,-vz3gb])
+                    fd20 = bm_3gb.verts.new([-vx4gb,-vy4gb,-vz4gb])
+                    fe20 = bm_3gb.verts.new([-vx5gb,-vy5gb,-vz5gb])
+                    ff20 = bm_3gb.verts.new([-vx6gb,-vy6gb,-vz6gb])
+                    fg20 = bm_3gb.verts.new([-vx7gb,-vy7gb,-vz7gb])
+                    fh20 = bm_3gb.verts.new([-vx8gb,-vy8gb,-vz8gb])
+                    fi20 = bm_3gb.verts.new([-vx9gb,-vy9gb,-vz9gb])
+
+                    fa21 = bm_3gc.verts.new([-vx1gc,-vy1gc,-vz1gc])
+                    fb21 = bm_3gc.verts.new([-vx2gc,-vy2gc,-vz2gc])
+                    fc21 = bm_3gc.verts.new([-vx3gc,-vy3gc,-vz3gc])
+                    fd21 = bm_3gc.verts.new([-vx4gc,-vy4gc,-vz4gc])
+                    fe21 = bm_3gc.verts.new([-vx5gc,-vy5gc,-vz5gc])
+                    ff21 = bm_3gc.verts.new([-vx6gc,-vy6gc,-vz6gc])
+                    fg21 = bm_3gc.verts.new([-vx7gc,-vy7gc,-vz7gc])
+                    fh21 = bm_3gc.verts.new([-vx8gc,-vy8gc,-vz8gc])
+                    fi21 = bm_3gc.verts.new([-vx9gc,-vy9gc,-vz9gc])
+
+                    fa22 = bm_3gd.verts.new([-vx1gd,-vy1gd,-vz1gd])
+                    fb22 = bm_3gd.verts.new([-vx2gd,-vy2gd,-vz2gd])
+                    fc22 = bm_3gd.verts.new([-vx3gd,-vy3gd,-vz3gd])
+                    fd22 = bm_3gd.verts.new([-vx4gd,-vy4gd,-vz4gd])
+                    fe22 = bm_3gd.verts.new([-vx5gd,-vy5gd,-vz5gd])
+                    ff22 = bm_3gd.verts.new([-vx6gd,-vy6gd,-vz6gd])
+                    fg22 = bm_3gd.verts.new([-vx7gd,-vy7gd,-vz7gd])
+                    fh22 = bm_3gd.verts.new([-vx8gd,-vy8gd,-vz8gd])
+                    fi22 = bm_3gd.verts.new([-vx9gd,-vy9gd,-vz9gd])
+
+                    fa23 = bm_3ge.verts.new([-vx1ge,-vy1ge,-vz1ge])
+                    fb23 = bm_3ge.verts.new([-vx2ge,-vy2ge,-vz2ge])
+                    fc23 = bm_3ge.verts.new([-vx3ge,-vy3ge,-vz3ge])
+                    fd23 = bm_3ge.verts.new([-vx4ge,-vy4ge,-vz4ge])
+                    fe23 = bm_3ge.verts.new([-vx5ge,-vy5ge,-vz5ge])
+                    ff23 = bm_3ge.verts.new([-vx6ge,-vy6ge,-vz6ge])
+                    fg23 = bm_3ge.verts.new([-vx7ge,-vy7ge,-vz7ge])
+                    fh23 = bm_3ge.verts.new([-vx8ge,-vy8ge,-vz8ge])
+                    fi23 = bm_3ge.verts.new([-vx9ge,-vy9ge,-vz9ge])
+
+                    fa24 = bm_3gf.verts.new([-vx1gf,-vy1gf,-vz1gf])
+                    fb24 = bm_3gf.verts.new([-vx2gf,-vy2gf,-vz2gf])
+                    fc24 = bm_3gf.verts.new([-vx3gf,-vy3gf,-vz3gf])
+                    fd24 = bm_3gf.verts.new([-vx4gf,-vy4gf,-vz4gf])
+                    fe24 = bm_3gf.verts.new([-vx5gf,-vy5gf,-vz5gf])
+                    ff24 = bm_3gf.verts.new([-vx6gf,-vy6gf,-vz6gf])
+                    fg24 = bm_3gf.verts.new([-vx7gf,-vy7gf,-vz7gf])
+                    fh24 = bm_3gf.verts.new([-vx8gf,-vy8gf,-vz8gf])
+                    fi24 = bm_3gf.verts.new([-vx9gf,-vy9gf,-vz9gf])
+
+                    fa24a = bm_3gg.verts.new([-vx1gg,-vy1gg,-vz1gg])
+                    fb24a = bm_3gg.verts.new([-vx2gg,-vy2gg,-vz2gg])
+                    fc24a = bm_3gg.verts.new([-vx3gg,-vy3gg,-vz3gg])
+                    fd24a = bm_3gg.verts.new([-vx4gg,-vy4gg,-vz4gg])
+                    fe24a = bm_3gg.verts.new([-vx5gg,-vy5gg,-vz5gg])
+                    ff24a = bm_3gg.verts.new([-vx6gg,-vy6gg,-vz6gg])
+                    fg24a = bm_3gg.verts.new([-vx7gg,-vy7gg,-vz7gg])
+                    fh24a = bm_3gg.verts.new([-vx8gg,-vy8gg,-vz8gg])
+                    fi24a = bm_3gg.verts.new([-vx9gg,-vy9gg,-vz9gg])
+
+                    fa24b = bm_3gh.verts.new([-vx1gh,-vy1gh,-vz1gh])
+                    fb24b = bm_3gh.verts.new([-vx2gh,-vy2gh,-vz2gh])
+                    fc24b = bm_3gh.verts.new([-vx3gh,-vy3gh,-vz3gh])
+                    fd24b = bm_3gh.verts.new([-vx4gh,-vy4gh,-vz4gh])
+                    fe24b = bm_3gh.verts.new([-vx5gh,-vy5gh,-vz5gh])
+                    ff24b = bm_3gh.verts.new([-vx6gh,-vy6gh,-vz6gh])
+                    fg24b = bm_3gh.verts.new([-vx7gh,-vy7gh,-vz7gh])
+                    fh24b = bm_3gh.verts.new([-vx8gh,-vy8gh,-vz8gh])
+                    fi24b = bm_3gh.verts.new([-vx9gh,-vy9gh,-vz9gh])
+
+                    if type1gh == 1:
+                        if type2gh == 1:
+                            if type3gh == 0:
+                                if type4gh == 0:
+                                    if type5gh == 1:
+                                        if type6gh == 1:
+                                            if type7gh == 0:
+                                                if type8gh == 1:
+                                                    if type9gh == 1:
+                                                        bm_3gh.faces.new([fa24b,fb24b,fc24b])
+                                                        bm_3gh.faces.new([fb24b,fc24b,fd24b])
+                                                        bm_3gh.faces.new([fe24b,ff24b,fg24b])
+                                                        bm_3gh.faces.new([ff24b,fh24b,fi24b])
+
+                    if type1gg == 1:
+                        if type2gg == 1:
+                            if type3gg == 0:
+                                if type4gg == 0:
+                                    if type5gg == 0:
+                                        if type6gg == 0:
+                                            if type7gg == 0:
+                                                if type8gg == 1:
+                                                    if type9gg == 1:
+                                                        bm_3gg.faces.new([fa24a,fb24a,fc24a])
+                                                        bm_3gg.faces.new([fb24a,fc24a,fd24a])
+                                                        bm_3gg.faces.new([fc24a,fd24a,fe24a])
+                                                        bm_3gg.faces.new([fd24a,fe24a,ff24a])
+                                                        bm_3gg.faces.new([fe24a,ff24a,fg24a])
+                                                        bm_3gg.faces.new([fe24a,fg24a,fi24a])
+
+                    if type1gf == 1:
+                        if type2gf == 1:
+                            if type3gf == 0:
+                                if type4gf == 0:
+                                    if type5gf == 0:
+                                        if type6gf == 0:
+                                            if type7gf == 1:
+                                                if type8gf == 1:
+                                                    if type9gf == 0:
+                                                        bm_3gf.faces.new([fa24,fb24,fc24])
+                                                        bm_3gf.faces.new([fb24,fc24,fd24])
+                                                        bm_3gf.faces.new([fc24,fd24,fe24])
+                                                        bm_3gf.faces.new([fd24,fe24,ff24])
+                                                        bm_3gf.faces.new([fg24,fh24,fi24])
+
+                    if type1ge == 1:
+                        if type2ge == 1:
+                            if type3ge == 0:
+                                if type4ge == 1:
+                                    if type5ge == 1:
+                                        if type6ge == 0:
+                                            if type7ge == 1:
+                                                if type8ge == 1:
+                                                    if type9ge == 0:
+                                                        bm_3ge.faces.new([fa23,fb23,fc23])
+                                                        bm_3ge.faces.new([fd23,fe23,ff23])
+                                                        bm_3ge.faces.new([fg23,fh23,fi23])
+
+                    if type1gd == 1:
+                        if type2gd == 1:
+                            if type3gd == 0:
+                                if type4gd == 0:
+                                    if type5gd == 0:
+                                        if type6gd == 0:
+                                            if type7gd == 0:
+                                                if type8gd == 0:
+                                                    if type9gd == 1:
+                                                        bm_3gd.faces.new([fa22,fb22,fc22])
+                                                        bm_3gd.faces.new([fb22,fc22,fd22])
+                                                        bm_3gd.faces.new([fc22,fd22,fe22])
+                                                        bm_3gd.faces.new([fd22,fe22,ff22])
+                                                        bm_3gd.faces.new([fe22,ff22,fg22])
+                                                        bm_3gd.faces.new([ff22,fg22,fh22])
+                                                        bm_3gd.faces.new([ff22,fh22,fi22])
+
+                    if type1gc == 1:
+                        if type2gc == 1:
+                            if type3gc == 0:
+                                if type4gc == 0:
+                                    if type5gc == 1:
+                                        if type6gc == 1:
+                                            if type7gc == 0:
+                                                if type8gc == 0:
+                                                    if type9gc == 0:
+                                                        bm_3gc.faces.new([fa21,fb21,fc21])
+                                                        bm_3gc.faces.new([fb21,fc21,fd21])
+                                                        bm_3gc.faces.new([fe21,ff21,fg21])
+                                                        bm_3gc.faces.new([ff21,fg21,fh21])
+                                                        bm_3gc.faces.new([fg21,fh21,fi21])
+
+                    if type1gb == 1:
+                        if type2gb == 1:
+                            if type3gb == 0:
+                                if type4gb == 0:
+                                    if type5gb == 1:
+                                        if type6gb == 1:
+                                            if type7gb == 0:
+                                                if type8gb == 0:
+                                                    if type9gb == 1:
+                                                        bm_3gb.faces.new([fa20,fb20,fc20])
+                                                        bm_3gb.faces.new([fb20,fc20,fd20])
+                                                        bm_3gb.faces.new([fe20,ff20,fg20])
+                                                        bm_3gb.faces.new([ff20,fg20,fh20])
+                                                        bm_3gb.faces.new([ff20,fh20,fi20])
+
+                    if type1ga == 1:
+                        if type2ga == 1:
+                            if type3ga == 0:
+                                if type4ga == 0:
+                                    if type5ga == 0:
+                                        if type6ga == 1:
+                                            if type7ga == 1:
+                                                if type8ga == 0:
+                                                    if type9ga == 0:
+                                                        bm_3ga.faces.new([fa19,fb19,fc19])
+                                                        bm_3ga.faces.new([fb19,fc19,fd19])
+                                                        bm_3ga.faces.new([fc19,fd19,fe19])
+                                                        bm_3ga.faces.new([ff19,fg19,fh19])
+                                                        bm_3ga.faces.new([fg19,fh19,fi19])
+
+                    if type1g == 1:
+                        if type2g == 1:
+                            if type3g == 0:
+                                if type4g == 0:
+                                    if type5g == 0:
+                                        if type6g == 0:
+                                            if type7g == 0:
+                                                if type8g == 0:
+                                                    if type9g == 0:
+                                                        bm_3g.faces.new([fa18,fb18,fc18])
+                                                        bm_3g.faces.new([fb18,fc18,fd18])
+                                                        bm_3g.faces.new([fc18,fd18,fe18])
+                                                        bm_3g.faces.new([fd18,fe18,ff18])
+                                                        bm_3g.faces.new([fe18,ff18,fg18])
+                                                        bm_3g.faces.new([ff18,fg18,fh18])
+                                                        bm_3g.faces.new([fg18,fh18,fi18])
+                
+        
+                    
+            elif vertexCount == 10:
+                for i in range(vertexCount//10):
+                    vx1h = unpack("<f", f.read(4))[0]
+                    vy1h = unpack("<f", f.read(4))[0]
+                    vz1h = unpack("<f", f.read(4))[0]
+                    vw1h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2h = unpack("<f", f.read(4))[0]
+                    vy2h = unpack("<f", f.read(4))[0]
+                    vz2h = unpack("<f", f.read(4))[0]
+                    vw2h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3h = unpack("<f", f.read(4))[0]
+                    vy3h = unpack("<f", f.read(4))[0]
+                    vz3h = unpack("<f", f.read(4))[0]
+                    vw3h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4h = unpack("<f", f.read(4))[0]
+                    vy4h = unpack("<f", f.read(4))[0]
+                    vz4h = unpack("<f", f.read(4))[0]
+                    vw4h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5h = unpack("<f", f.read(4))[0]
+                    vy5h = unpack("<f", f.read(4))[0]
+                    vz5h = unpack("<f", f.read(4))[0]
+                    vw5h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6h = unpack("<f", f.read(4))[0]
+                    vy6h = unpack("<f", f.read(4))[0]
+                    vz6h = unpack("<f", f.read(4))[0]
+                    vw6h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7h = unpack("<f", f.read(4))[0]
+                    vy7h = unpack("<f", f.read(4))[0]
+                    vz7h = unpack("<f", f.read(4))[0]
+                    vw7h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8h = unpack("<f", f.read(4))[0]
+                    vy8h = unpack("<f", f.read(4))[0]
+                    vz8h = unpack("<f", f.read(4))[0]
+                    vw8h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9h = unpack("<f", f.read(4))[0]
+                    vy9h = unpack("<f", f.read(4))[0]
+                    vz9h = unpack("<f", f.read(4))[0]
+                    vw9h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10h = unpack("<f", f.read(4))[0]
+                    vy10h = unpack("<f", f.read(4))[0]
+                    vz10h = unpack("<f", f.read(4))[0]
+                    vw10h = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10h = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-320,1)
+
+                    vx1ha = unpack("<f", f.read(4))[0]
+                    vy1ha = unpack("<f", f.read(4))[0]
+                    vz1ha = unpack("<f", f.read(4))[0]
+                    vw1ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2ha = unpack("<f", f.read(4))[0]
+                    vy2ha = unpack("<f", f.read(4))[0]
+                    vz2ha = unpack("<f", f.read(4))[0]
+                    vw2ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3ha = unpack("<f", f.read(4))[0]
+                    vy3ha = unpack("<f", f.read(4))[0]
+                    vz3ha = unpack("<f", f.read(4))[0]
+                    vw3ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4ha = unpack("<f", f.read(4))[0]
+                    vy4ha = unpack("<f", f.read(4))[0]
+                    vz4ha = unpack("<f", f.read(4))[0]
+                    vw4ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5ha = unpack("<f", f.read(4))[0]
+                    vy5ha = unpack("<f", f.read(4))[0]
+                    vz5ha = unpack("<f", f.read(4))[0]
+                    vw5ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6ha = unpack("<f", f.read(4))[0]
+                    vy6ha = unpack("<f", f.read(4))[0]
+                    vz6ha = unpack("<f", f.read(4))[0]
+                    vw6ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7ha = unpack("<f", f.read(4))[0]
+                    vy7ha = unpack("<f", f.read(4))[0]
+                    vz7ha = unpack("<f", f.read(4))[0]
+                    vw7ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8ha = unpack("<f", f.read(4))[0]
+                    vy8ha = unpack("<f", f.read(4))[0]
+                    vz8ha = unpack("<f", f.read(4))[0]
+                    vw8ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9ha = unpack("<f", f.read(4))[0]
+                    vy9ha = unpack("<f", f.read(4))[0]
+                    vz9ha = unpack("<f", f.read(4))[0]
+                    vw9ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10ha = unpack("<f", f.read(4))[0]
+                    vy10ha = unpack("<f", f.read(4))[0]
+                    vz10ha = unpack("<f", f.read(4))[0]
+                    vw10ha = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10ha = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-320,1)
+
+                    vx1hb = unpack("<f", f.read(4))[0]
+                    vy1hb = unpack("<f", f.read(4))[0]
+                    vz1hb = unpack("<f", f.read(4))[0]
+                    vw1hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2hb = unpack("<f", f.read(4))[0]
+                    vy2hb = unpack("<f", f.read(4))[0]
+                    vz2hb = unpack("<f", f.read(4))[0]
+                    vw2hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3hb = unpack("<f", f.read(4))[0]
+                    vy3hb = unpack("<f", f.read(4))[0]
+                    vz3hb = unpack("<f", f.read(4))[0]
+                    vw3hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4hb = unpack("<f", f.read(4))[0]
+                    vy4hb = unpack("<f", f.read(4))[0]
+                    vz4hb = unpack("<f", f.read(4))[0]
+                    vw4hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5hb = unpack("<f", f.read(4))[0]
+                    vy5hb = unpack("<f", f.read(4))[0]
+                    vz5hb = unpack("<f", f.read(4))[0]
+                    vw5hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6hb = unpack("<f", f.read(4))[0]
+                    vy6hb = unpack("<f", f.read(4))[0]
+                    vz6hb = unpack("<f", f.read(4))[0]
+                    vw6hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7hb = unpack("<f", f.read(4))[0]
+                    vy7hb = unpack("<f", f.read(4))[0]
+                    vz7hb = unpack("<f", f.read(4))[0]
+                    vw7hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8hb = unpack("<f", f.read(4))[0]
+                    vy8hb = unpack("<f", f.read(4))[0]
+                    vz8hb = unpack("<f", f.read(4))[0]
+                    vw8hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9hb = unpack("<f", f.read(4))[0]
+                    vy9hb = unpack("<f", f.read(4))[0]
+                    vz9hb = unpack("<f", f.read(4))[0]
+                    vw9hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10hb = unpack("<f", f.read(4))[0]
+                    vy10hb = unpack("<f", f.read(4))[0]
+                    vz10hb = unpack("<f", f.read(4))[0]
+                    vw10hb = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10hb = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-320,1)
+
+                    vx1hc = unpack("<f", f.read(4))[0]
+                    vy1hc = unpack("<f", f.read(4))[0]
+                    vz1hc = unpack("<f", f.read(4))[0]
+                    vw1hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2hc = unpack("<f", f.read(4))[0]
+                    vy2hc = unpack("<f", f.read(4))[0]
+                    vz2hc = unpack("<f", f.read(4))[0]
+                    vw2hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3hc = unpack("<f", f.read(4))[0]
+                    vy3hc = unpack("<f", f.read(4))[0]
+                    vz3hc = unpack("<f", f.read(4))[0]
+                    vw3hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4hc = unpack("<f", f.read(4))[0]
+                    vy4hc = unpack("<f", f.read(4))[0]
+                    vz4hc = unpack("<f", f.read(4))[0]
+                    vw4hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5hc = unpack("<f", f.read(4))[0]
+                    vy5hc = unpack("<f", f.read(4))[0]
+                    vz5hc = unpack("<f", f.read(4))[0]
+                    vw5hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6hc = unpack("<f", f.read(4))[0]
+                    vy6hc = unpack("<f", f.read(4))[0]
+                    vz6hc = unpack("<f", f.read(4))[0]
+                    vw6hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7hc = unpack("<f", f.read(4))[0]
+                    vy7hc = unpack("<f", f.read(4))[0]
+                    vz7hc = unpack("<f", f.read(4))[0]
+                    vw7hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8hc = unpack("<f", f.read(4))[0]
+                    vy8hc = unpack("<f", f.read(4))[0]
+                    vz8hc = unpack("<f", f.read(4))[0]
+                    vw8hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9hc = unpack("<f", f.read(4))[0]
+                    vy9hc = unpack("<f", f.read(4))[0]
+                    vz9hc = unpack("<f", f.read(4))[0]
+                    vw9hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10hc = unpack("<f", f.read(4))[0]
+                    vy10hc = unpack("<f", f.read(4))[0]
+                    vz10hc = unpack("<f", f.read(4))[0]
+                    vw10hc = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10hc = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-320,1)
+
+                    vx1hd = unpack("<f", f.read(4))[0]
+                    vy1hd = unpack("<f", f.read(4))[0]
+                    vz1hd = unpack("<f", f.read(4))[0]
+                    vw1hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2hd = unpack("<f", f.read(4))[0]
+                    vy2hd = unpack("<f", f.read(4))[0]
+                    vz2hd = unpack("<f", f.read(4))[0]
+                    vw2hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3hd = unpack("<f", f.read(4))[0]
+                    vy3hd = unpack("<f", f.read(4))[0]
+                    vz3hd = unpack("<f", f.read(4))[0]
+                    vw3hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4hd = unpack("<f", f.read(4))[0]
+                    vy4hd = unpack("<f", f.read(4))[0]
+                    vz4hd = unpack("<f", f.read(4))[0]
+                    vw4hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5hd = unpack("<f", f.read(4))[0]
+                    vy5hd = unpack("<f", f.read(4))[0]
+                    vz5hd = unpack("<f", f.read(4))[0]
+                    vw5hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6hd = unpack("<f", f.read(4))[0]
+                    vy6hd = unpack("<f", f.read(4))[0]
+                    vz6hd = unpack("<f", f.read(4))[0]
+                    vw6hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7hd = unpack("<f", f.read(4))[0]
+                    vy7hd = unpack("<f", f.read(4))[0]
+                    vz7hd = unpack("<f", f.read(4))[0]
+                    vw7hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8hd = unpack("<f", f.read(4))[0]
+                    vy8hd = unpack("<f", f.read(4))[0]
+                    vz8hd = unpack("<f", f.read(4))[0]
+                    vw8hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9hd = unpack("<f", f.read(4))[0]
+                    vy9hd = unpack("<f", f.read(4))[0]
+                    vz9hd = unpack("<f", f.read(4))[0]
+                    vw9hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10hd = unpack("<f", f.read(4))[0]
+                    vy10hd = unpack("<f", f.read(4))[0]
+                    vz10hd = unpack("<f", f.read(4))[0]
+                    vw10hd = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10hd = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-320,1)
+
+                    vx1he = unpack("<f", f.read(4))[0]
+                    vy1he = unpack("<f", f.read(4))[0]
+                    vz1he = unpack("<f", f.read(4))[0]
+                    vw1he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2he = unpack("<f", f.read(4))[0]
+                    vy2he = unpack("<f", f.read(4))[0]
+                    vz2he = unpack("<f", f.read(4))[0]
+                    vw2he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3he = unpack("<f", f.read(4))[0]
+                    vy3he = unpack("<f", f.read(4))[0]
+                    vz3he = unpack("<f", f.read(4))[0]
+                    vw3he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4he = unpack("<f", f.read(4))[0]
+                    vy4he = unpack("<f", f.read(4))[0]
+                    vz4he = unpack("<f", f.read(4))[0]
+                    vw4he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5he = unpack("<f", f.read(4))[0]
+                    vy5he = unpack("<f", f.read(4))[0]
+                    vz5he = unpack("<f", f.read(4))[0]
+                    vw5he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6he = unpack("<f", f.read(4))[0]
+                    vy6he = unpack("<f", f.read(4))[0]
+                    vz6he = unpack("<f", f.read(4))[0]
+                    vw6he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7he = unpack("<f", f.read(4))[0]
+                    vy7he = unpack("<f", f.read(4))[0]
+                    vz7he = unpack("<f", f.read(4))[0]
+                    vw7he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8he = unpack("<f", f.read(4))[0]
+                    vy8he = unpack("<f", f.read(4))[0]
+                    vz8he = unpack("<f", f.read(4))[0]
+                    vw8he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9he = unpack("<f", f.read(4))[0]
+                    vy9he = unpack("<f", f.read(4))[0]
+                    vz9he = unpack("<f", f.read(4))[0]
+                    vw9he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10he = unpack("<f", f.read(4))[0]
+                    vy10he = unpack("<f", f.read(4))[0]
+                    vz10he = unpack("<f", f.read(4))[0]
+                    vw10he = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10he = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-320,1)
+
+                    vx1hf = unpack("<f", f.read(4))[0]
+                    vy1hf = unpack("<f", f.read(4))[0]
+                    vz1hf = unpack("<f", f.read(4))[0]
+                    vw1hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2hf = unpack("<f", f.read(4))[0]
+                    vy2hf = unpack("<f", f.read(4))[0]
+                    vz2hf = unpack("<f", f.read(4))[0]
+                    vw2hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3hf = unpack("<f", f.read(4))[0]
+                    vy3hf = unpack("<f", f.read(4))[0]
+                    vz3hf = unpack("<f", f.read(4))[0]
+                    vw3hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4hf = unpack("<f", f.read(4))[0]
+                    vy4hf = unpack("<f", f.read(4))[0]
+                    vz4hf = unpack("<f", f.read(4))[0]
+                    vw4hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5hf = unpack("<f", f.read(4))[0]
+                    vy5hf = unpack("<f", f.read(4))[0]
+                    vz5hf = unpack("<f", f.read(4))[0]
+                    vw5hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6hf = unpack("<f", f.read(4))[0]
+                    vy6hf = unpack("<f", f.read(4))[0]
+                    vz6hf = unpack("<f", f.read(4))[0]
+                    vw6hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7hf = unpack("<f", f.read(4))[0]
+                    vy7hf = unpack("<f", f.read(4))[0]
+                    vz7hf = unpack("<f", f.read(4))[0]
+                    vw7hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8hf = unpack("<f", f.read(4))[0]
+                    vy8hf = unpack("<f", f.read(4))[0]
+                    vz8hf = unpack("<f", f.read(4))[0]
+                    vw8hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9hf = unpack("<f", f.read(4))[0]
+                    vy9hf = unpack("<f", f.read(4))[0]
+                    vz9hf = unpack("<f", f.read(4))[0]
+                    vw9hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10hf = unpack("<f", f.read(4))[0]
+                    vy10hf = unpack("<f", f.read(4))[0]
+                    vz10hf = unpack("<f", f.read(4))[0]
+                    vw10hf = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10hf = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-320,1)
+
+                    vx1hg = unpack("<f", f.read(4))[0]
+                    vy1hg = unpack("<f", f.read(4))[0]
+                    vz1hg = unpack("<f", f.read(4))[0]
+                    vw1hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2hg = unpack("<f", f.read(4))[0]
+                    vy2hg = unpack("<f", f.read(4))[0]
+                    vz2hg = unpack("<f", f.read(4))[0]
+                    vw2hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3hg = unpack("<f", f.read(4))[0]
+                    vy3hg = unpack("<f", f.read(4))[0]
+                    vz3hg = unpack("<f", f.read(4))[0]
+                    vw3hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4hg = unpack("<f", f.read(4))[0]
+                    vy4hg = unpack("<f", f.read(4))[0]
+                    vz4hg = unpack("<f", f.read(4))[0]
+                    vw4hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5hg = unpack("<f", f.read(4))[0]
+                    vy5hg = unpack("<f", f.read(4))[0]
+                    vz5hg = unpack("<f", f.read(4))[0]
+                    vw5hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6hg = unpack("<f", f.read(4))[0]
+                    vy6hg = unpack("<f", f.read(4))[0]
+                    vz6hg = unpack("<f", f.read(4))[0]
+                    vw6hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7hg = unpack("<f", f.read(4))[0]
+                    vy7hg = unpack("<f", f.read(4))[0]
+                    vz7hg = unpack("<f", f.read(4))[0]
+                    vw7hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8hg = unpack("<f", f.read(4))[0]
+                    vy8hg = unpack("<f", f.read(4))[0]
+                    vz8hg = unpack("<f", f.read(4))[0]
+                    vw8hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9hg = unpack("<f", f.read(4))[0]
+                    vy9hg = unpack("<f", f.read(4))[0]
+                    vz9hg = unpack("<f", f.read(4))[0]
+                    vw9hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10hg = unpack("<f", f.read(4))[0]
+                    vy10hg = unpack("<f", f.read(4))[0]
+                    vz10hg = unpack("<f", f.read(4))[0]
+                    vw10hg = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10hg = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-320,1)
+
+                    vx1hh = unpack("<f", f.read(4))[0]
+                    vy1hh = unpack("<f", f.read(4))[0]
+                    vz1hh = unpack("<f", f.read(4))[0]
+                    vw1hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2hh = unpack("<f", f.read(4))[0]
+                    vy2hh = unpack("<f", f.read(4))[0]
+                    vz2hh = unpack("<f", f.read(4))[0]
+                    vw2hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3hh = unpack("<f", f.read(4))[0]
+                    vy3hh = unpack("<f", f.read(4))[0]
+                    vz3hh = unpack("<f", f.read(4))[0]
+                    vw3hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4hh = unpack("<f", f.read(4))[0]
+                    vy4hh = unpack("<f", f.read(4))[0]
+                    vz4hh = unpack("<f", f.read(4))[0]
+                    vw4hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5hh = unpack("<f", f.read(4))[0]
+                    vy5hh = unpack("<f", f.read(4))[0]
+                    vz5hh = unpack("<f", f.read(4))[0]
+                    vw5hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6hh = unpack("<f", f.read(4))[0]
+                    vy6hh = unpack("<f", f.read(4))[0]
+                    vz6hh = unpack("<f", f.read(4))[0]
+                    vw6hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7hh = unpack("<f", f.read(4))[0]
+                    vy7hh = unpack("<f", f.read(4))[0]
+                    vz7hh = unpack("<f", f.read(4))[0]
+                    vw7hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8hh = unpack("<f", f.read(4))[0]
+                    vy8hh = unpack("<f", f.read(4))[0]
+                    vz8hh = unpack("<f", f.read(4))[0]
+                    vw8hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9hh = unpack("<f", f.read(4))[0]
+                    vy9hh = unpack("<f", f.read(4))[0]
+                    vz9hh = unpack("<f", f.read(4))[0]
+                    vw9hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10hh = unpack("<f", f.read(4))[0]
+                    vy10hh = unpack("<f", f.read(4))[0]
+                    vz10hh = unpack("<f", f.read(4))[0]
+                    vw10hh = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10hh = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    fa25 = bm_3h.verts.new([-vx1h,-vy1h,-vz1h])
+                    fb25 = bm_3h.verts.new([-vx2h,-vy2h,-vz2h])
+                    fc25 = bm_3h.verts.new([-vx3h,-vy3h,-vz3h])
+                    fd25 = bm_3h.verts.new([-vx4h,-vy4h,-vz4h])
+                    fe25 = bm_3h.verts.new([-vx5h,-vy5h,-vz5h])
+                    ff25 = bm_3h.verts.new([-vx6h,-vy6h,-vz6h])
+                    fg25 = bm_3h.verts.new([-vx7h,-vy7h,-vz7h])
+                    fh25 = bm_3h.verts.new([-vx8h,-vy8h,-vz8h])
+                    fi25 = bm_3h.verts.new([-vx9h,-vy9h,-vz9h])
+                    fj25 = bm_3h.verts.new([-vx10h,-vy10h,-vz10h])
+
+                    fa26 = bm_3ha.verts.new([-vx1ha,-vy1ha,-vz1ha])
+                    fb26 = bm_3ha.verts.new([-vx2ha,-vy2ha,-vz2ha])
+                    fc26 = bm_3ha.verts.new([-vx3ha,-vy3ha,-vz3ha])
+                    fd26 = bm_3ha.verts.new([-vx4ha,-vy4ha,-vz4ha])
+                    fe26 = bm_3ha.verts.new([-vx5ha,-vy5ha,-vz5ha])
+                    ff26 = bm_3ha.verts.new([-vx6ha,-vy6ha,-vz6ha])
+                    fg26 = bm_3ha.verts.new([-vx7ha,-vy7ha,-vz7ha])
+                    fh26 = bm_3ha.verts.new([-vx8ha,-vy8ha,-vz8ha])
+                    fi26 = bm_3ha.verts.new([-vx9ha,-vy9ha,-vz9ha])
+                    fj26 = bm_3ha.verts.new([-vx10ha,-vy10ha,-vz10ha])
+
+                    fa27 = bm_3hb.verts.new([-vx1hb,-vy1hb,-vz1hb])
+                    fb27 = bm_3hb.verts.new([-vx2hb,-vy2hb,-vz2hb])
+                    fc27 = bm_3hb.verts.new([-vx3hb,-vy3hb,-vz3hb])
+                    fd27 = bm_3hb.verts.new([-vx4hb,-vy4hb,-vz4hb])
+                    fe27 = bm_3hb.verts.new([-vx5hb,-vy5hb,-vz5hb])
+                    ff27 = bm_3hb.verts.new([-vx6hb,-vy6hb,-vz6hb])
+                    fg27 = bm_3hb.verts.new([-vx7hb,-vy7hb,-vz7hb])
+                    fh27 = bm_3hb.verts.new([-vx8hb,-vy8hb,-vz8hb])
+                    fi27 = bm_3hb.verts.new([-vx9hb,-vy9hb,-vz9hb])
+                    fj27 = bm_3hb.verts.new([-vx10hb,-vy10hb,-vz10hb])
+
+                    fa28 = bm_3hc.verts.new([-vx1hc,-vy1hc,-vz1hc])
+                    fb28 = bm_3hc.verts.new([-vx2hc,-vy2hc,-vz2hc])
+                    fc28 = bm_3hc.verts.new([-vx3hc,-vy3hc,-vz3hc])
+                    fd28 = bm_3hc.verts.new([-vx4hc,-vy4hc,-vz4hc])
+                    fe28 = bm_3hc.verts.new([-vx5hc,-vy5hc,-vz5hc])
+                    ff28 = bm_3hc.verts.new([-vx6hc,-vy6hc,-vz6hc])
+                    fg28 = bm_3hc.verts.new([-vx7hc,-vy7hc,-vz7hc])
+                    fh28 = bm_3hc.verts.new([-vx8hc,-vy8hc,-vz8hc])
+                    fi28 = bm_3hc.verts.new([-vx9hc,-vy9hc,-vz9hc])
+                    fj28 = bm_3hc.verts.new([-vx10hc,-vy10hc,-vz10hc])
+
+                    fa29 = bm_3hd.verts.new([-vx1hd,-vy1hd,-vz1hd])
+                    fb29 = bm_3hd.verts.new([-vx2hd,-vy2hd,-vz2hd])
+                    fc29 = bm_3hd.verts.new([-vx3hd,-vy3hd,-vz3hd])
+                    fd29 = bm_3hd.verts.new([-vx4hd,-vy4hd,-vz4hd])
+                    fe29 = bm_3hd.verts.new([-vx5hd,-vy5hd,-vz5hd])
+                    ff29 = bm_3hd.verts.new([-vx6hd,-vy6hd,-vz6hd])
+                    fg29 = bm_3hd.verts.new([-vx7hd,-vy7hd,-vz7hd])
+                    fh29 = bm_3hd.verts.new([-vx8hd,-vy8hd,-vz8hd])
+                    fi29 = bm_3hd.verts.new([-vx9hd,-vy9hd,-vz9hd])
+                    fj29 = bm_3hd.verts.new([-vx10hd,-vy10hd,-vz10hd])
+
+                    fa30 = bm_3he.verts.new([-vx1he,-vy1he,-vz1he])
+                    fb30 = bm_3he.verts.new([-vx2he,-vy2he,-vz2he])
+                    fc30 = bm_3he.verts.new([-vx3he,-vy3he,-vz3he])
+                    fd30 = bm_3he.verts.new([-vx4he,-vy4he,-vz4he])
+                    fe30 = bm_3he.verts.new([-vx5he,-vy5he,-vz5he])
+                    ff30 = bm_3he.verts.new([-vx6he,-vy6he,-vz6he])
+                    fg30 = bm_3he.verts.new([-vx7he,-vy7he,-vz7he])
+                    fh30 = bm_3he.verts.new([-vx8he,-vy8he,-vz8he])
+                    fi30 = bm_3he.verts.new([-vx9he,-vy9he,-vz9he])
+                    fj30 = bm_3he.verts.new([-vx10he,-vy10he,-vz10he])
+
+                    fa31 = bm_3hf.verts.new([-vx1hf,-vy1hf,-vz1hf])
+                    fb31 = bm_3hf.verts.new([-vx2hf,-vy2hf,-vz2hf])
+                    fc31 = bm_3hf.verts.new([-vx3hf,-vy3hf,-vz3hf])
+                    fd31 = bm_3hf.verts.new([-vx4hf,-vy4hf,-vz4hf])
+                    fe31 = bm_3hf.verts.new([-vx5hf,-vy5hf,-vz5hf])
+                    ff31 = bm_3hf.verts.new([-vx6hf,-vy6hf,-vz6hf])
+                    fg31 = bm_3hf.verts.new([-vx7hf,-vy7hf,-vz7hf])
+                    fh31 = bm_3hf.verts.new([-vx8hf,-vy8hf,-vz8hf])
+                    fi31 = bm_3hf.verts.new([-vx9hf,-vy9hf,-vz9hf])
+                    fj31 = bm_3hf.verts.new([-vx10hf,-vy10hf,-vz10hf])
+
+                    fa32 = bm_3hg.verts.new([-vx1hg,-vy1hg,-vz1hg])
+                    fb32 = bm_3hg.verts.new([-vx2hg,-vy2hg,-vz2hg])
+                    fc32 = bm_3hg.verts.new([-vx3hg,-vy3hg,-vz3hg])
+                    fd32 = bm_3hg.verts.new([-vx4hg,-vy4hg,-vz4hg])
+                    fe32 = bm_3hg.verts.new([-vx5hg,-vy5hg,-vz5hg])
+                    ff32 = bm_3hg.verts.new([-vx6hg,-vy6hg,-vz6hg])
+                    fg32 = bm_3hg.verts.new([-vx7hg,-vy7hg,-vz7hg])
+                    fh32 = bm_3hg.verts.new([-vx8hg,-vy8hg,-vz8hg])
+                    fi32 = bm_3hg.verts.new([-vx9hg,-vy9hg,-vz9hg])
+                    fj32 = bm_3hg.verts.new([-vx10hg,-vy10hg,-vz10hg])
+
+                    fa33 = bm_3hh.verts.new([-vx1hh,-vy1hh,-vz1hh])
+                    fb33 = bm_3hh.verts.new([-vx2hh,-vy2hh,-vz2hh])
+                    fc33 = bm_3hh.verts.new([-vx3hh,-vy3hh,-vz3hh])
+                    fd33 = bm_3hh.verts.new([-vx4hh,-vy4hh,-vz4hh])
+                    fe33 = bm_3hh.verts.new([-vx5hh,-vy5hh,-vz5hh])
+                    ff33 = bm_3hh.verts.new([-vx6hh,-vy6hh,-vz6hh])
+                    fg33 = bm_3hh.verts.new([-vx7hh,-vy7hh,-vz7hh])
+                    fh33 = bm_3hh.verts.new([-vx8hh,-vy8hh,-vz8hh])
+                    fi33 = bm_3hh.verts.new([-vx9hh,-vy9hh,-vz9hh])
+                    fj33 = bm_3hh.verts.new([-vx10hh,-vy10hh,-vz10hh])
+
+                    if type1hh == 1:
+                        if type2hh == 1:
+                            if type3hh == 0:
+                                if type4hh == 0:
+                                    if type5hh == 0:
+                                        if type6hh == 1:
+                                            if type7hh == 1:
+                                                if type8hh == 0:
+                                                    if type9hh == 0:
+                                                        if type10hh == 0:
+                                                            bm_3hh.faces.new([fa33,fb33,fc33])
+                                                            bm_3hh.faces.new([fb33,fc33,fd33])
+                                                            bm_3hh.faces.new([fc33,fd33,fe33])
+                                                            bm_3hh.faces.new([ff33,fg33,fh33])
+                                                            bm_3hh.faces.new([fg33,fh33,fi33])
+                                                            bm_3hh.faces.new([fh33,fi33,fj33])
+
+                    if type1hg == 1:
+                        if type2hg == 1:
+                            if type3hg == 0:
+                                if type4hg == 0:
+                                    if type5hg == 0:
+                                        if type6hg == 0:
+                                            if type7hg == 0:
+                                                if type8hg == 1:
+                                                    if type9hg == 1:
+                                                        if type10hg == 0:
+                                                            bm_3hg.faces.new([fa32,fb32,fc32])
+                                                            bm_3hg.faces.new([fb32,fc32,fd32])
+                                                            bm_3hg.faces.new([fc32,fd32,fe32])
+                                                            bm_3hg.faces.new([fd32,fe32,ff32])
+                                                            bm_3hg.faces.new([fe32,ff32,fg32])
+                                                            bm_3hg.faces.new([fh32,fi32,fj32])
+
+                    if type1hf == 1:
+                        if type2hf == 1:
+                            if type3hf == 0:
+                                if type4hf == 0:
+                                    if type5hf == 1:
+                                        if type6hf == 1:
+                                            if type7hf == 0:
+                                                if type8hf == 0:
+                                                    if type9hf == 1:
+                                                        if type10hf == 1:
+                                                            bm_3hf.faces.new([fa31,fb31,fc31])
+                                                            bm_3hf.faces.new([fb31,fc31,fd31])
+                                                            bm_3hf.faces.new([fe31,ff31,fg31])
+                                                            bm_3hf.faces.new([ff31,fg31,fh31])
+                                                            bm_3hf.faces.new([ff31,fh31,fi31])
+                                                            bm_3hf.faces.new([fh31,fi31,fj31])
+
+                    if type1he == 1:
+                        if type2he == 1:
+                            if type3he == 0:
+                                if type4he == 0:
+                                    if type5he == 1:
+                                        if type6he == 1:
+                                            if type7he == 0:
+                                                if type8he == 0:
+                                                    if type9he == 0:
+                                                        if type10he == 0:
+                                                            bm_3he.faces.new([fa30,fb30,fc30])
+                                                            bm_3he.faces.new([fb30,fc30,fd30])
+                                                            bm_3he.faces.new([fe30,ff30,fg30])
+                                                            bm_3he.faces.new([ff30,fg30,fh30])
+                                                            bm_3he.faces.new([fg30,fh30,fi30])
+                                                            bm_3he.faces.new([fh30,fi30,fj30])
+
+                    if type1hd == 1:
+                        if type2hd == 1:
+                            if type3hd == 0:
+                                if type4hd == 0:
+                                    if type5hd == 0:
+                                        if type6hd == 0:
+                                            if type7hd == 0:
+                                                if type8hd == 0:
+                                                    if type9hd == 1:
+                                                        if type10hd == 1:
+                                                            bm_3hd.faces.new([fa29,fb29,fc29])
+                                                            bm_3hd.faces.new([fb29,fc29,fd29])
+                                                            bm_3hd.faces.new([fc29,fd29,fe29])
+                                                            bm_3hd.faces.new([fd29,fe29,ff29])
+                                                            bm_3hd.faces.new([fe29,ff29,fg29])
+                                                            bm_3hd.faces.new([ff29,fg29,fh29])
+                                                            bm_3hd.faces.new([ff29,fh29,fi29])
+                                                            bm_3hd.faces.new([fh29,fi29,fj29])
+
+                    if type1hc == 1:
+                        if type2hc == 1:
+                            if type3hc == 0:
+                                if type4hc == 0:
+                                    if type5hc == 0:
+                                        if type6hc == 0:
+                                            if type7hc == 1:
+                                                if type8hc == 1:
+                                                    if type9hc == 0:
+                                                        if type10hc == 0:
+                                                            bm_3hc.faces.new([fa28,fb28,fc28])
+                                                            bm_3hc.faces.new([fb28,fc28,fd28])
+                                                            bm_3hc.faces.new([fc28,fd28,fe28])
+                                                            bm_3hc.faces.new([fd28,fe28,ff28])
+                                                            bm_3hc.faces.new([fg28,fh28,fi28])
+                                                            bm_3hc.faces.new([fh28,fi28,fj28])
+
+                    if type1hb == 1:
+                        if type2hb == 1:
+                            if type3hb == 0:
+                                if type4hb == 0:
+                                    if type5hb == 0:
+                                        if type6hb == 0:
+                                            if type7hb == 0:
+                                                if type8hb == 0:
+                                                    if type9hb == 0:
+                                                        if type10hb == 0:
+                                                            bm_3hb.faces.new([fa27,fb27,fc27])
+                                                            bm_3hb.faces.new([fb27,fc27,fd27])
+                                                            bm_3hb.faces.new([fc27,fd27,fe27])
+                                                            bm_3hb.faces.new([fd27,fe27,ff27])
+                                                            bm_3hb.faces.new([fe27,ff27,fg27])
+                                                            bm_3hb.faces.new([ff27,fg27,fh27])
+                                                            bm_3hb.faces.new([fg27,fh27,fi27])
+                                                            bm_3hb.faces.new([fh27,fi27,fj27])
+
+                    
+
+                    if type1ha == 1:
+                        if type2ha == 1:
+                            if type3ha == 0:
+                                if type4ha == 0:
+                                    if type5ha == 0:
+                                        if type6ha == 1:
+                                            if type7ha == 1:
+                                                if type8ha == 0:
+                                                    if type9ha == 0:
+                                                        if type10ha == 1:
+                                                            bm_3ha.faces.new([fa26,fb26,fc26])
+                                                            bm_3ha.faces.new([fb26,fc26,fd26])
+                                                            bm_3ha.faces.new([fc26,fd26,fe26])
+                                                            bm_3ha.faces.new([ff26,fg26,fh26])
+                                                            bm_3ha.faces.new([fg26,fh26,fi26])
+                                                            bm_3ha.faces.new([fg26,fi26,fj26])
+
+                    if type1h == 1:
+                        if type2h == 1:
+                            if type3h == 0:
+                                if type4h == 0:
+                                    if type5h == 0:
+                                        if type6h == 0:
+                                            if type7h == 0:
+                                                if type8h == 0:
+                                                    if type9h == 0:
+                                                        if type10h == 1:
+                                                            bm_3h.faces.new([fa25,fb25,fc25])
+                                                            bm_3h.faces.new([fb25,fc25,fd25])
+                                                            bm_3h.faces.new([fc25,fd25,fe25])
+                                                            bm_3h.faces.new([fd25,fe25,ff25])
+                                                            bm_3h.faces.new([fe25,ff25,fg25])
+                                                            bm_3h.faces.new([ff25,fg25,fh25])
+                                                            bm_3h.faces.new([fg25,fh25,fi25])
+                                                            bm_3h.faces.new([fg25,fi25,fj25])
+
+            elif vertexCount == 11:
+                for i in range(vertexCount//11):
+                    vx1i = unpack("<f", f.read(4))[0]
+                    vy1i = unpack("<f", f.read(4))[0]
+                    vz1i = unpack("<f", f.read(4))[0]
+                    vw1i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2i = unpack("<f", f.read(4))[0]
+                    vy2i = unpack("<f", f.read(4))[0]
+                    vz2i = unpack("<f", f.read(4))[0]
+                    vw2i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3i = unpack("<f", f.read(4))[0]
+                    vy3i = unpack("<f", f.read(4))[0]
+                    vz3i = unpack("<f", f.read(4))[0]
+                    vw3i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4i = unpack("<f", f.read(4))[0]
+                    vy4i = unpack("<f", f.read(4))[0]
+                    vz4i = unpack("<f", f.read(4))[0]
+                    vw4i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5i = unpack("<f", f.read(4))[0]
+                    vy5i = unpack("<f", f.read(4))[0]
+                    vz5i = unpack("<f", f.read(4))[0]
+                    vw5i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6i = unpack("<f", f.read(4))[0]
+                    vy6i = unpack("<f", f.read(4))[0]
+                    vz6i = unpack("<f", f.read(4))[0]
+                    vw6i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7i = unpack("<f", f.read(4))[0]
+                    vy7i = unpack("<f", f.read(4))[0]
+                    vz7i = unpack("<f", f.read(4))[0]
+                    vw7i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8i = unpack("<f", f.read(4))[0]
+                    vy8i = unpack("<f", f.read(4))[0]
+                    vz8i = unpack("<f", f.read(4))[0]
+                    vw8i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9i = unpack("<f", f.read(4))[0]
+                    vy9i = unpack("<f", f.read(4))[0]
+                    vz9i = unpack("<f", f.read(4))[0]
+                    vw9i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10i = unpack("<f", f.read(4))[0]
+                    vy10i = unpack("<f", f.read(4))[0]
+                    vz10i = unpack("<f", f.read(4))[0]
+                    vw10i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx11i = unpack("<f", f.read(4))[0]
+                    vy11i = unpack("<f", f.read(4))[0]
+                    vz11i = unpack("<f", f.read(4))[0]
+                    vw11i = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type11i = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    f.seek(-352,1)
+
+                    vx1ia = unpack("<f", f.read(4))[0]
+                    vy1ia = unpack("<f", f.read(4))[0]
+                    vz1ia = unpack("<f", f.read(4))[0]
+                    vw1ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type1ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx2ia = unpack("<f", f.read(4))[0]
+                    vy2ia = unpack("<f", f.read(4))[0]
+                    vz2ia = unpack("<f", f.read(4))[0]
+                    vw2ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type2ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx3ia = unpack("<f", f.read(4))[0]
+                    vy3ia = unpack("<f", f.read(4))[0]
+                    vz3ia = unpack("<f", f.read(4))[0]
+                    vw3ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type3ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx4ia = unpack("<f", f.read(4))[0]
+                    vy4ia = unpack("<f", f.read(4))[0]
+                    vz4ia = unpack("<f", f.read(4))[0]
+                    vw4ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type4ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx5ia = unpack("<f", f.read(4))[0]
+                    vy5ia = unpack("<f", f.read(4))[0]
+                    vz5ia = unpack("<f", f.read(4))[0]
+                    vw5ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type5ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx6ia = unpack("<f", f.read(4))[0]
+                    vy6ia = unpack("<f", f.read(4))[0]
+                    vz6ia = unpack("<f", f.read(4))[0]
+                    vw6ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type6ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx7ia = unpack("<f", f.read(4))[0]
+                    vy7ia = unpack("<f", f.read(4))[0]
+                    vz7ia = unpack("<f", f.read(4))[0]
+                    vw7ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type7ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx8ia = unpack("<f", f.read(4))[0]
+                    vy8ia = unpack("<f", f.read(4))[0]
+                    vz8ia = unpack("<f", f.read(4))[0]
+                    vw8ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type8ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx9ia = unpack("<f", f.read(4))[0]
+                    vy9ia = unpack("<f", f.read(4))[0]
+                    vz9ia = unpack("<f", f.read(4))[0]
+                    vw9ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type9ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx10ia = unpack("<f", f.read(4))[0]
+                    vy10ia = unpack("<f", f.read(4))[0]
+                    vz10ia = unpack("<f", f.read(4))[0]
+                    vw10ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type10ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+                    vx11ia = unpack("<f", f.read(4))[0]
+                    vy11ia = unpack("<f", f.read(4))[0]
+                    vz11ia = unpack("<f", f.read(4))[0]
+                    vw11ia = unpack("<f", f.read(4))[0]
+                    f.seek(12,1)
+                    type11ia = unpack("B", f.read(1))[0]
+                    f.seek(3,1)
+
+                    
+
+                    fa34 = bm_3i.verts.new([-vx1i,-vy1i,-vz1i])
+                    fb34 = bm_3i.verts.new([-vx2i,-vy2i,-vz2i])
+                    fc34 = bm_3i.verts.new([-vx3i,-vy3i,-vz3i])
+                    fd34 = bm_3i.verts.new([-vx4i,-vy4i,-vz4i])
+                    fe34 = bm_3i.verts.new([-vx5i,-vy5i,-vz5i])
+                    ff34 = bm_3i.verts.new([-vx6i,-vy6i,-vz6i])
+                    fg34 = bm_3i.verts.new([-vx7i,-vy7i,-vz7i])
+                    fh34 = bm_3i.verts.new([-vx8i,-vy8i,-vz8i])
+                    fi34 = bm_3i.verts.new([-vx9i,-vy9i,-vz9i])
+                    fj34 = bm_3i.verts.new([-vx10i,-vy10i,-vz10i])
+                    fk34 = bm_3i.verts.new([-vx11i,-vy11i,-vz11i])
+
+                    fa35 = bm_3ia.verts.new([-vx1ia,-vy1ia,-vz1ia])
+                    fb35 = bm_3ia.verts.new([-vx2ia,-vy2ia,-vz2ia])
+                    fc35 = bm_3ia.verts.new([-vx3ia,-vy3ia,-vz3ia])
+                    fd35 = bm_3ia.verts.new([-vx4ia,-vy4ia,-vz4ia])
+                    fe35 = bm_3ia.verts.new([-vx5ia,-vy5ia,-vz5ia])
+                    ff35 = bm_3ia.verts.new([-vx6ia,-vy6ia,-vz6ia])
+                    fg35 = bm_3ia.verts.new([-vx7ia,-vy7ia,-vz7ia])
+                    fh35 = bm_3ia.verts.new([-vx8ia,-vy8ia,-vz8ia])
+                    fi35 = bm_3ia.verts.new([-vx9ia,-vy9ia,-vz9ia])
+                    fj35 = bm_3ia.verts.new([-vx10ia,-vy10ia,-vz10ia])
+                    fk35 = bm_3ia.verts.new([-vx11ia,-vy11ia,-vz11ia])
+
+                    if type1ia == 1:
+                        if type2ia == 1:
+                            if type3ia == 0:
+                                if type4ia == 0:
+                                    if type5ia == 0:
+                                        if type6ia == 0:
+                                            if type7ia == 0:
+                                                if type8ia == 0:
+                                                    if type9ia == 1:
+                                                        if type10ia == 1:
+                                                            if type11ia == 0:
+                                                                bm_3ia.faces.new([fa35,fb35,fc35])
+                                                                bm_3ia.faces.new([fb35,fc35,fd35])
+                                                                bm_3ia.faces.new([fc35,fd35,fe35])
+                                                                bm_3ia.faces.new([fd35,fe35,ff35])
+                                                                bm_3ia.faces.new([fe35,ff35,fg35])
+                                                                bm_3ia.faces.new([fi35,fj35,fk35])
+
+                    if type1i == 1:
+                        if type2i == 1:
+                            if type3i == 0:
+                                if type4i == 0:
+                                    if type5i == 0:
+                                        if type6i == 0:
+                                            if type7i == 0:
+                                                if type8i == 0:
+                                                    if type9i == 0:
+                                                        if type10i == 0:
+                                                            if type11i == 0:
+                                                                bm_3i.faces.new([fa34,fb34,fc34])
+                                                                bm_3i.faces.new([fb34,fc34,fd34])
+                                                                bm_3i.faces.new([fc34,fd34,fe34])
+                                                                bm_3i.faces.new([fd34,fe34,ff34])
+                                                                bm_3i.faces.new([fe34,ff34,fg34])
+                                                                bm_3i.faces.new([ff34,fg34,fh34])
+                                                                bm_3i.faces.new([fg34,fh34,fi34])
+                                                                bm_3i.faces.new([fh34,fi34,fj34])
+                                                                bm_3i.faces.new([fi34,fj34,fk34])
+                    
+    f.seek(0) # todo overwrite the file                       
     collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
     bpy.context.scene.collection.children.link(collection)
     mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
@@ -13997,6 +27361,32 @@ def GHG_mesh(f, filepath):
 
     vgroups1eeee_ = [objects1eeee_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
 
+    mesh__6aaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1eeeee.from_mesh(mesh__6aaaa)
+    objects1eeeee_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__6aaaa)
+    collection.objects.link(objects1eeeee_)
+    bmesh.ops.remove_doubles(bm_1eeeee, verts = bm_1eeeee.verts, dist = 0.0001)
+    bm_1eeeee.to_mesh(mesh__6aaaa)
+
+    objects1eeeee_.parent = arma
+    armamodifier1eeeee_ = objects1eeeee_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1eeeee_.object = arma
+
+    vgroups1eeeee_ = [objects1eeeee_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__6aaaaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1eeeeeee.from_mesh(mesh__6aaaaaa)
+    objects1eeeeeee_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__6aaaaaa)
+    collection.objects.link(objects1eeeeeee_)
+    bmesh.ops.remove_doubles(bm_1eeeeeee, verts = bm_1eeeeeee.verts, dist = 0.0001)
+    bm_1eeeeeee.to_mesh(mesh__6aaaaaa)
+
+    objects1eeeeeee_.parent = arma
+    armamodifier1eeeeeee_ = objects1eeeeeee_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1eeeeeee_.object = arma
+
+    vgroups1eeeeeee_ = [objects1eeeeeee_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
     ###########################################################################################
     ###########################################################################################
 
@@ -14038,6 +27428,84 @@ def GHG_mesh(f, filepath):
     armamodifier1fff_.object = arma
 
     vgroups1fff_ = [objects1fff_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__7aaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1ffff.from_mesh(mesh__7aaa)
+    objects1ffff_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__7aaa)
+    collection.objects.link(objects1ffff_)
+    bmesh.ops.remove_doubles(bm_1ffff, verts = bm_1ffff.verts, dist = 0.0001)
+    bm_1ffff.to_mesh(mesh__7aaa)
+
+    objects1ffff_.parent = arma
+    armamodifier1ffff_ = objects1ffff_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1ffff_.object = arma
+
+    vgroups1ffff_ = [objects1ffff_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__7aaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1fffff.from_mesh(mesh__7aaaa)
+    objects1fffff_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__7aaaa)
+    collection.objects.link(objects1fffff_)
+    bmesh.ops.remove_doubles(bm_1fffff, verts = bm_1fffff.verts, dist = 0.0001)
+    bm_1fffff.to_mesh(mesh__7aaaa)
+
+    objects1fffff_.parent = arma
+    armamodifier1fffff_ = objects1fffff_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1fffff_.object = arma
+
+    vgroups1fffff_ = [objects1fffff_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__7aaaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1ffffff.from_mesh(mesh__7aaaaa)
+    objects1ffffff_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__7aaaaa)
+    collection.objects.link(objects1ffffff_)
+    bmesh.ops.remove_doubles(bm_1ffffff, verts = bm_1ffffff.verts, dist = 0.0001)
+    bm_1ffffff.to_mesh(mesh__7aaaaa)
+
+    objects1ffffff_.parent = arma
+    armamodifier1ffffff_ = objects1ffffff_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1ffffff_.object = arma
+
+    vgroups1ffffff_ = [objects1ffffff_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__7aaaaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1fffffff.from_mesh(mesh__7aaaaaa)
+    objects1fffffff_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__7aaaaaa)
+    collection.objects.link(objects1fffffff_)
+    bmesh.ops.remove_doubles(bm_1fffffff, verts = bm_1fffffff.verts, dist = 0.0001)
+    bm_1fffffff.to_mesh(mesh__7aaaaaa)
+
+    objects1fffffff_.parent = arma
+    armamodifier1fffffff_ = objects1fffffff_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1fffffff_.object = arma
+
+    vgroups1fffffff_ = [objects1fffffff_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__7aaaaaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1ffffffff.from_mesh(mesh__7aaaaaaa)
+    objects1ffffffff_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__7aaaaaaa)
+    collection.objects.link(objects1ffffffff_)
+    bmesh.ops.remove_doubles(bm_1ffffffff, verts = bm_1ffffffff.verts, dist = 0.0001)
+    bm_1ffffffff.to_mesh(mesh__7aaaaaaa)
+
+    objects1ffffffff_.parent = arma
+    armamodifier1ffffffff_ = objects1ffffffff_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1ffffffff_.object = arma
+
+    vgroups1ffffffff_ = [objects1ffffffff_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__7aaaaaaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1fffffffff.from_mesh(mesh__7aaaaaaaa)
+    objects1fffffffff_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__7aaaaaaaa)
+    collection.objects.link(objects1fffffffff_)
+    bmesh.ops.remove_doubles(bm_1fffffffff, verts = bm_1fffffffff.verts, dist = 0.0001)
+    bm_1fffffffff.to_mesh(mesh__7aaaaaaaa)
+
+    objects1fffffffff_.parent = arma
+    armamodifier1fffffffff_ = objects1fffffffff_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1fffffffff_.object = arma
+
+    vgroups1fffffffff_ = [objects1fffffffff_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
 
     
 
@@ -14183,6 +27651,32 @@ def GHG_mesh(f, filepath):
     armamodifier1gggggggggg_.object = arma
 
     vgroups1gggggggggg_ = [objects1gggggggggg_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__8aaaaaaaaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1ggggggggggg.from_mesh(mesh__8aaaaaaaaaa)
+    objects1ggggggggggg_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__8aaaaaaaaaa)
+    collection.objects.link(objects1ggggggggggg_)
+    bmesh.ops.remove_doubles(bm_1ggggggggggg, verts = bm_1ggggggggggg.verts, dist = 0.0001)
+    bm_1ggggggggggg.to_mesh(mesh__8aaaaaaaaaa)
+
+    objects1ggggggggggg_.parent = arma
+    armamodifier1ggggggggggg_ = objects1ggggggggggg_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1ggggggggggg_.object = arma
+
+    vgroups1ggggggggggg_ = [objects1ggggggggggg_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__8aaaaaaaaaaa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1gggggggggggg.from_mesh(mesh__8aaaaaaaaaaa)
+    objects1gggggggggggg_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__8aaaaaaaaaaa)
+    collection.objects.link(objects1gggggggggggg_)
+    bmesh.ops.remove_doubles(bm_1gggggggggggg, verts = bm_1gggggggggggg.verts, dist = 0.0001)
+    bm_1gggggggggggg.to_mesh(mesh__8aaaaaaaaaaa)
+
+    objects1gggggggggggg_.parent = arma
+    armamodifier1gggggggggggg_ = objects1gggggggggggg_.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1gggggggggggg_.object = arma
+
+    vgroups1gggggggggggg_ = [objects1gggggggggggg_.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
     
     ###############################################################
 
@@ -15351,9 +28845,828 @@ def GHG_mesh(f, filepath):
 
     vgroups1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj_ = [objects1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
 
-    
+    ###########################################################################################################
+
+    mesh__12a1 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a1)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a1)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a1)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    #############################################################
+
+    mesh__12a2 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a2)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a2)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a2)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    ##############################################################
+
+    mesh__12a3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a3)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a3)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a3)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+
+    ##############################################################
+
+    mesh__12a4 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a4)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a4)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a4)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+
+    ###############################################################
+
+    mesh__12a5 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a5)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a5)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a5)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    ################################################################
+
+    mesh__12a6 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a6)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a6)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a6)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
 
     
+    ##################################################################
+
+    mesh__12a7 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a7)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a7)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a7)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    ###################################################################
+
+    mesh__12a8 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a8)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a8)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a8)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    ##############################################################
+
+    mesh__12a9 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a9)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a9)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a9)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    ################################################################
+
+    mesh__12a10 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a10)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a10)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a10)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a11 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a11)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a11)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a11)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a12 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a12)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a12)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a12)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a13 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a13)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a13)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a13)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a14 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a14)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a14)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a14)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a15 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a15)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a15)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a15)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a16 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a16)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a16)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a16)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    ############################################################################################################
+
+    mesh__12a17 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a17)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a17)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a17)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a18 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a18)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a18)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a18)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    ############################################################
+
+    mesh__12a19 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a19)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a19)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a19)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a20 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a20)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a20)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a20)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a21 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a21)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a21)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a21)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a22 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a22)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a22)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a22)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a23 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a23)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a23)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a23)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a24 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a24)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a24)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a24)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a25 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a25)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a25)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a25)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a26 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a26)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a26)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a26)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a27 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a27)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a27)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a27)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a28 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a28)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a28)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a28)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a29 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a29)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a29)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a29)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a30 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a30)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a30)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a30)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a31 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a31)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a31)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a31)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a32 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a32)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a32)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a32)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a33 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a33)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a33)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a33)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a34 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a34)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a34)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a34)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a35 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a35)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a35)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a35)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a36 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a36)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a36)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a36)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a37 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a37)
+    objects1kkkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a37)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a37)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a38 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a38)
+    objects1kkkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a38)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a38)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a39 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a39)
+    objects1kkkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a39)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a39)
+
+    objects1kkkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a40 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a40)
+    objects1kkkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a40)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a40)
+
+    objects1kkkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a41 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a41)
+    objects1kkkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a41)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a41)
+
+    objects1kkkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a42 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a42)
+    objects1kkkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a42)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a42)
+
+    objects1kkkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a43 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkkk.from_mesh(mesh__12a43)
+    objects1kkkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a43)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkkk.to_mesh(mesh__12a43)
+
+    objects1kkkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a44 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkkk.from_mesh(mesh__12a44)
+    objects1kkkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a44)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkkk.to_mesh(mesh__12a44)
+
+    objects1kkkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a45 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkkk.from_mesh(mesh__12a45)
+    objects1kkkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a45)
+    collection.objects.link(objects1kkkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkkk.to_mesh(mesh__12a45)
+
+    objects1kkkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a46 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkkk.from_mesh(mesh__12a46)
+    objects1kkkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a46)
+    collection.objects.link(objects1kkkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkkk.to_mesh(mesh__12a46)
+
+    objects1kkkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a47 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkkk.from_mesh(mesh__12a47)
+    objects1kkkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a47)
+    collection.objects.link(objects1kkkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkkk.to_mesh(mesh__12a47)
+
+    objects1kkkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a48 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkkk.from_mesh(mesh__12a48)
+    objects1kkkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a48)
+    collection.objects.link(objects1kkkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkkk.to_mesh(mesh__12a48)
+
+    objects1kkkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkkk_ = objects1kkkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkkk_ = [objects1kkkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a49 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkkk.from_mesh(mesh__12a49)
+    objects1kkkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a49)
+    collection.objects.link(objects1kkkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkkk, verts = bm_1kkkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkkk.to_mesh(mesh__12a49)
+
+    objects1kkkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkkk_ = objects1kkkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkkk_ = [objects1kkkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a50 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkkk.from_mesh(mesh__12a50)
+    objects1kkkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a50)
+    collection.objects.link(objects1kkkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkkk, verts = bm_1kkkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkkk.to_mesh(mesh__12a50)
+
+    objects1kkkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkkk_ = objects1kkkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkkk_ = [objects1kkkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a51 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkkk.from_mesh(mesh__12a51)
+    objects1kkkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a51)
+    collection.objects.link(objects1kkkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkkk, verts = bm_1kkkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkkk.to_mesh(mesh__12a51)
+
+    objects1kkkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkkk_ = objects1kkkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkkk_ = [objects1kkkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a52 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkkk.from_mesh(mesh__12a52)
+    objects1kkkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a52)
+    collection.objects.link(objects1kkkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkkk, verts = bm_1kkkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkkk.to_mesh(mesh__12a52)
+
+    objects1kkkkkkkkk.parent = arma
+    armamodifier1kkkkkkkkk_ = objects1kkkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkkk_ = [objects1kkkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a53 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkkk.from_mesh(mesh__12a53)
+    objects1kkkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a53)
+    collection.objects.link(objects1kkkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkkk, verts = bm_1kkkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkkk.to_mesh(mesh__12a53)
+
+    objects1kkkkkkkk.parent = arma
+    armamodifier1kkkkkkkk_ = objects1kkkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkkk_.object = arma
+
+    vgroups1kkkkkkkk_ = [objects1kkkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a54 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkkk.from_mesh(mesh__12a54)
+    objects1kkkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a54)
+    collection.objects.link(objects1kkkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkkk, verts = bm_1kkkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkkk.to_mesh(mesh__12a54)
+
+    objects1kkkkkkk.parent = arma
+    armamodifier1kkkkkkk_ = objects1kkkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkkk_.object = arma
+
+    vgroups1kkkkkkk_ = [objects1kkkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a55 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkkk.from_mesh(mesh__12a55)
+    objects1kkkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a55)
+    collection.objects.link(objects1kkkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkkk, verts = bm_1kkkkkk.verts, dist = 0.0001)
+    bm_1kkkkkk.to_mesh(mesh__12a55)
+
+    objects1kkkkkk.parent = arma
+    armamodifier1kkkkkk_ = objects1kkkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkkk_.object = arma
+
+    vgroups1kkkkkk_ = [objects1kkkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a56 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkkk.from_mesh(mesh__12a56)
+    objects1kkkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a56)
+    collection.objects.link(objects1kkkkk)
+    bmesh.ops.remove_doubles(bm_1kkkkk, verts = bm_1kkkkk.verts, dist = 0.0001)
+    bm_1kkkkk.to_mesh(mesh__12a56)
+
+    objects1kkkkk.parent = arma
+    armamodifier1kkkkk_ = objects1kkkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkkk_.object = arma
+
+    vgroups1kkkkk_ = [objects1kkkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a57 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkkk.from_mesh(mesh__12a57)
+    objects1kkkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a57)
+    collection.objects.link(objects1kkkk)
+    bmesh.ops.remove_doubles(bm_1kkkk, verts = bm_1kkkk.verts, dist = 0.0001)
+    bm_1kkkk.to_mesh(mesh__12a57)
+
+    objects1kkkk.parent = arma
+    armamodifier1kkkk_ = objects1kkkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkkk_.object = arma
+
+    vgroups1kkkk_ = [objects1kkkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a58 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kkk.from_mesh(mesh__12a58)
+    objects1kkk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a58)
+    collection.objects.link(objects1kkk)
+    bmesh.ops.remove_doubles(bm_1kkk, verts = bm_1kkk.verts, dist = 0.0001)
+    bm_1kkk.to_mesh(mesh__12a58)
+
+    objects1kkk.parent = arma
+    armamodifier1kkk_ = objects1kkk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kkk_.object = arma
+
+    vgroups1kkk_ = [objects1kkk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a59 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1kk.from_mesh(mesh__12a59)
+    objects1kk = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a59)
+    collection.objects.link(objects1kk)
+    bmesh.ops.remove_doubles(bm_1kk, verts = bm_1kk.verts, dist = 0.0001)
+    bm_1kk.to_mesh(mesh__12a59)
+
+    objects1kk.parent = arma
+    armamodifier1kk_ = objects1kk.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1kk_.object = arma
+
+    vgroups1kk_ = [objects1kk.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh__12a60 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_1k.from_mesh(mesh__12a60)
+    objects1k = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh__12a60)
+    collection.objects.link(objects1k)
+    bmesh.ops.remove_doubles(bm_1k, verts = bm_1k.verts, dist = 0.0001)
+    bm_1k.to_mesh(mesh__12a60)
+
+    objects1k.parent = arma
+    armamodifier1k_ = objects1k.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier1k_.object = arma
+
+    vgroups1k_ = [objects1k.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
 
 
 
@@ -15374,18 +29687,551 @@ def GHG_mesh(f, filepath):
 
     vgroups2 = [objects2.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
 
-    mesh3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    bm3.from_mesh(mesh3)
-    objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
-    collection.objects.link(objects3)
-    bmesh.ops.remove_doubles(bm3, verts = bm3.verts, dist = 0.0001)
-    bm3.to_mesh(mesh3)
+    mesh2a = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm2a.from_mesh(mesh2a)
+    objects2a = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2a)
+    collection.objects.link(objects2a)
+    bmesh.ops.remove_doubles(bm2a, verts = bm2a.verts, dist = 0.0001)
+    bm2a.to_mesh(mesh2a)
 
-    objects3.parent = arma
-    armamodifier3 = objects3.modifiers.new("GHG Armature Modifier", "ARMATURE")
-    armamodifier3.object = arma
+    objects2a.parent = arma
+    armamodifier2a = objects2a.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier2a.object = arma
 
-    vgroups3 = [objects3.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+    vgroups2a = [objects2a.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh2b = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm2b.from_mesh(mesh2b)
+    objects2b = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2b)
+    collection.objects.link(objects2b)
+    bmesh.ops.remove_doubles(bm2b, verts = bm2b.verts, dist = 0.0001)
+    bm2b.to_mesh(mesh2b)
+
+    objects2b.parent = arma
+    armamodifier2b = objects2b.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier2b.object = arma
+
+    vgroups2b = [objects2b.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    #####################################################################################
+
+    mesh3ccc = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3cb.from_mesh(mesh3ccc)
+    objects3ccc = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3ccc)
+    collection.objects.link(objects3ccc)
+    bmesh.ops.remove_doubles(bm_3cb, verts = bm_3cb.verts, dist = 0.0001)
+    bm_3cb.to_mesh(mesh3ccc)
+
+    objects3ccc.parent = arma
+    armamodifier3ccc = objects3ccc.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3ccc.object = arma
+
+    vgroups3ccc = [objects3ccc.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fj = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3g.from_mesh(mesh3fj)
+    objects3fj = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fj)
+    collection.objects.link(objects3fj)
+    bmesh.ops.remove_doubles(bm_3g, verts = bm_3g.verts, dist = 0.0001)
+    bm_3g.to_mesh(mesh3fj)
+
+    objects3fj.parent = arma
+    armamodifier3fj = objects3fj.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fj.object = arma
+
+    vgroups3fj = [objects3fj.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjj = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3ga.from_mesh(mesh3fjj)
+    objects3fjj = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjj)
+    collection.objects.link(objects3fjj)
+    bmesh.ops.remove_doubles(bm_3ga, verts = bm_3ga.verts, dist = 0.0001)
+    bm_3ga.to_mesh(mesh3fjj)
+
+    objects3fjj.parent = arma
+    armamodifier3fjj = objects3fjj.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjj.object = arma
+
+    vgroups3fjj = [objects3fjj.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjj = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3gb.from_mesh(mesh3fjjj)
+    objects3fjjj = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjj)
+    collection.objects.link(objects3fjjj)
+    bmesh.ops.remove_doubles(bm_3gb, verts = bm_3gb.verts, dist = 0.0001)
+    bm_3gb.to_mesh(mesh3fjjj)
+
+    objects3fjjj.parent = arma
+    armamodifier3fjjj = objects3fjjj.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjj.object = arma
+
+    vgroups3fjjj = [objects3fjjj.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjja = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3gc.from_mesh(mesh3fjjja)
+    objects3fjjja = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjja)
+    collection.objects.link(objects3fjjja)
+    bmesh.ops.remove_doubles(bm_3gc, verts = bm_3gc.verts, dist = 0.0001)
+    bm_3gc.to_mesh(mesh3fjjja)
+
+    objects3fjjja.parent = arma
+    armamodifier3fjjja = objects3fjjja.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjja.object = arma
+
+    vgroups3fjjja = [objects3fjjja.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjb = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3gd.from_mesh(mesh3fjjjb)
+    objects3fjjjb = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjb)
+    collection.objects.link(objects3fjjjb)
+    bmesh.ops.remove_doubles(bm_3gd, verts = bm_3gd.verts, dist = 0.0001)
+    bm_3gd.to_mesh(mesh3fjjjb)
+
+    objects3fjjjb.parent = arma
+    armamodifier3fjjjb = objects3fjjjb.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjb.object = arma
+
+    vgroups3fjjjb = [objects3fjjjb.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjc = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3ge.from_mesh(mesh3fjjjc)
+    objects3fjjjc = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjc)
+    collection.objects.link(objects3fjjjc)
+    bmesh.ops.remove_doubles(bm_3ge, verts = bm_3ge.verts, dist = 0.0001)
+    bm_3ge.to_mesh(mesh3fjjjc)
+
+    objects3fjjjc.parent = arma
+    armamodifier3fjjjc = objects3fjjjc.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjc.object = arma
+
+    vgroups3fjjjc = [objects3fjjjc.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjd = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3gf.from_mesh(mesh3fjjjd)
+    objects3fjjjd = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjd)
+    collection.objects.link(objects3fjjjd)
+    bmesh.ops.remove_doubles(bm_3gf, verts = bm_3gf.verts, dist = 0.0001)
+    bm_3gf.to_mesh(mesh3fjjjd)
+
+    objects3fjjjd.parent = arma
+    armamodifier3fjjjd = objects3fjjjd.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjd.object = arma
+
+    vgroups3fjjjd = [objects3fjjjd.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjdd = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3gg.from_mesh(mesh3fjjjdd)
+    objects3fjjjdd = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjdd)
+    collection.objects.link(objects3fjjjdd)
+    bmesh.ops.remove_doubles(bm_3gg, verts = bm_3gg.verts, dist = 0.0001)
+    bm_3gg.to_mesh(mesh3fjjjdd)
+
+    objects3fjjjdd.parent = arma
+    armamodifier3fjjjdd = objects3fjjjdd.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjdd.object = arma
+
+    vgroups3fjjjdd = [objects3fjjjdd.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjdda = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3gh.from_mesh(mesh3fjjjdda)
+    objects3fjjjdda = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjdda)
+    collection.objects.link(objects3fjjjdda)
+    bmesh.ops.remove_doubles(bm_3gh, verts = bm_3gh.verts, dist = 0.0001)
+    bm_3gh.to_mesh(mesh3fjjjdda)
+
+    objects3fjjjdda.parent = arma
+    armamodifier3fjjjdda = objects3fjjjdda.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjdda.object = arma
+
+    vgroups3fjjjdda = [objects3fjjjdda.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+    
+
+    mesh3fjjje = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3h.from_mesh(mesh3fjjje)
+    objects3fjjje = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjje)
+    collection.objects.link(objects3fjjje)
+    bmesh.ops.remove_doubles(bm_3h, verts = bm_3h.verts, dist = 0.0001)
+    bm_3h.to_mesh(mesh3fjjje)
+
+    objects3fjjje.parent = arma
+    armamodifier3fjjje = objects3fjjje.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjje.object = arma
+
+    vgroups3fjjje = [objects3fjjje.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjf = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3ha.from_mesh(mesh3fjjjf)
+    objects3fjjjf = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjf)
+    collection.objects.link(objects3fjjjf)
+    bmesh.ops.remove_doubles(bm_3ha, verts = bm_3ha.verts, dist = 0.0001)
+    bm_3ha.to_mesh(mesh3fjjjf)
+
+    objects3fjjjf.parent = arma
+    armamodifier3fjjjf = objects3fjjjf.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjf.object = arma
+
+    vgroups3fjjjf = [objects3fjjjf.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjg = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3hb.from_mesh(mesh3fjjjg)
+    objects3fjjjg = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjg)
+    collection.objects.link(objects3fjjjg)
+    bmesh.ops.remove_doubles(bm_3hb, verts = bm_3hb.verts, dist = 0.0001)
+    bm_3hb.to_mesh(mesh3fjjjg)
+
+    objects3fjjjg.parent = arma
+    armamodifier3fjjjg = objects3fjjjg.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjg.object = arma
+
+    vgroups3fjjjg = [objects3fjjjg.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjgg = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3hc.from_mesh(mesh3fjjjgg)
+    objects3fjjjgg = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjgg)
+    collection.objects.link(objects3fjjjgg)
+    bmesh.ops.remove_doubles(bm_3hc, verts = bm_3hc.verts, dist = 0.0001)
+    bm_3hc.to_mesh(mesh3fjjjgg)
+
+    objects3fjjjgg.parent = arma
+    armamodifier3fjjjgg = objects3fjjjgg.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjgg.object = arma
+
+    vgroups3fjjjgg = [objects3fjjjgg.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjggg = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3hd.from_mesh(mesh3fjjjggg)
+    objects3fjjjggg = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjggg)
+    collection.objects.link(objects3fjjjggg)
+    bmesh.ops.remove_doubles(bm_3hd, verts = bm_3hd.verts, dist = 0.0001)
+    bm_3hd.to_mesh(mesh3fjjjggg)
+
+    objects3fjjjggg.parent = arma
+    armamodifier3fjjjggg = objects3fjjjggg.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjggg.object = arma
+
+    vgroups3fjjjggg = [objects3fjjjggg.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjggga = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3he.from_mesh(mesh3fjjjggga)
+    objects3fjjjggga = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjggga)
+    collection.objects.link(objects3fjjjggga)
+    bmesh.ops.remove_doubles(bm_3he, verts = bm_3he.verts, dist = 0.0001)
+    bm_3he.to_mesh(mesh3fjjjggga)
+
+    objects3fjjjggga.parent = arma
+    armamodifier3fjjjggga = objects3fjjjggga.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjggga.object = arma
+
+    vgroups3fjjjggga = [objects3fjjjggga.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjgggag = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3hf.from_mesh(mesh3fjjjgggag)
+    objects3fjjjgggag = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjgggag)
+    collection.objects.link(objects3fjjjgggag)
+    bmesh.ops.remove_doubles(bm_3hf, verts = bm_3hf.verts, dist = 0.0001)
+    bm_3hf.to_mesh(mesh3fjjjgggag)
+
+    objects3fjjjgggag.parent = arma
+    armamodifier3fjjjgggag = objects3fjjjgggag.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjgggag.object = arma
+
+    vgroups3fjjjgggag = [objects3fjjjgggag.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjgggagb = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3hg.from_mesh(mesh3fjjjgggagb)
+    objects3fjjjgggagb = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjgggagb)
+    collection.objects.link(objects3fjjjgggagb)
+    bmesh.ops.remove_doubles(bm_3hg, verts = bm_3hg.verts, dist = 0.0001)
+    bm_3hg.to_mesh(mesh3fjjjgggagb)
+
+    objects3fjjjgggagb.parent = arma
+    armamodifier3fjjjgggagb = objects3fjjjgggagb.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjgggagb.object = arma
+
+    vgroups3fjjjgggagb = [objects3fjjjgggagb.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjgggagbc = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3hh.from_mesh(mesh3fjjjgggagbc)
+    objects3fjjjgggagbc = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjgggagbc)
+    collection.objects.link(objects3fjjjgggagbc)
+    bmesh.ops.remove_doubles(bm_3hh, verts = bm_3hh.verts, dist = 0.0001)
+    bm_3hh.to_mesh(mesh3fjjjgggagbc)
+
+    objects3fjjjgggagbc.parent = arma
+    armamodifier3fjjjgggagbc = objects3fjjjgggagbc.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjgggagbc.object = arma
+
+    vgroups3fjjjgggagbc = [objects3fjjjgggagbc.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjgggagbd = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3i.from_mesh(mesh3fjjjgggagbd)
+    objects3fjjjgggagbd = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjgggagbd)
+    collection.objects.link(objects3fjjjgggagbd)
+    bmesh.ops.remove_doubles(bm_3i, verts = bm_3i.verts, dist = 0.0001)
+    bm_3i.to_mesh(mesh3fjjjgggagbd)
+
+    objects3fjjjgggagbd.parent = arma
+    armamodifier3fjjjgggagbd = objects3fjjjgggagbd.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjgggagbd.object = arma
+
+    vgroups3fjjjgggagbd = [objects3fjjjgggagbd.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fjjjgggagbe = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3ia.from_mesh(mesh3fjjjgggagbe)
+    objects3fjjjgggagbe = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fjjjgggagbe)
+    collection.objects.link(objects3fjjjgggagbe)
+    bmesh.ops.remove_doubles(bm_3ia, verts = bm_3ia.verts, dist = 0.0001)
+    bm_3ia.to_mesh(mesh3fjjjgggagbe)
+
+    objects3fjjjgggagbe.parent = arma
+    armamodifier3fjjjgggagbe = objects3fjjjgggagbe.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fjjjgggagbe.object = arma
+
+    vgroups3fjjjgggagbe = [objects3fjjjgggagbe.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+
+    #####################################################################################
+
+    mesh3fi = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3fd.from_mesh(mesh3fi)
+    objects3fi = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fi)
+    collection.objects.link(objects3fi)
+    bmesh.ops.remove_doubles(bm_3fd, verts = bm_3fd.verts, dist = 0.0001)
+    bm_3fd.to_mesh(mesh3fi)
+
+    objects3fi.parent = arma
+    armamodifier3fi = objects3fi.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fi.object = arma
+
+    vgroups3fi = [objects3fi.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3fc.from_mesh(mesh3fh)
+    objects3fh = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fh)
+    collection.objects.link(objects3fh)
+    bmesh.ops.remove_doubles(bm_3fc, verts = bm_3fc.verts, dist = 0.0001)
+    bm_3fc.to_mesh(mesh3fh)
+
+    objects3fh.parent = arma
+    armamodifier3fh = objects3fh.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fh.object = arma
+
+    vgroups3fh = [objects3fh.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fg = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3fb.from_mesh(mesh3fg)
+    objects3fg = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fg)
+    collection.objects.link(objects3fg)
+    bmesh.ops.remove_doubles(bm_3fb, verts = bm_3fb.verts, dist = 0.0001)
+    bm_3fb.to_mesh(mesh3fg)
+
+    objects3fg.parent = arma
+    armamodifier3fg = objects3fg.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fg.object = arma
+
+    vgroups3fg = [objects3fg.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3ff = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3fa.from_mesh(mesh3ff)
+    objects3ff = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3ff)
+    collection.objects.link(objects3ff)
+    bmesh.ops.remove_doubles(bm_3fa, verts = bm_3fa.verts, dist = 0.0001)
+    bm_3fa.to_mesh(mesh3ff)
+
+    objects3ff.parent = arma
+    armamodifier3ff = objects3ff.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3ff.object = arma
+
+    vgroups3ff = [objects3ff.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    
+
+    mesh3fe = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3f.from_mesh(mesh3fe)
+    objects3fe = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fe)
+    collection.objects.link(objects3fe)
+    bmesh.ops.remove_doubles(bm_3f, verts = bm_3f.verts, dist = 0.0001)
+    bm_3f.to_mesh(mesh3fe)
+
+    objects3fe.parent = arma
+    armamodifier3fe = objects3fe.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fe.object = arma
+
+    vgroups3fe = [objects3fe.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fd = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3ed.from_mesh(mesh3fd)
+    objects3fd = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fd)
+    collection.objects.link(objects3fd)
+    bmesh.ops.remove_doubles(bm_3ed, verts = bm_3ed.verts, dist = 0.0001)
+    bm_3ed.to_mesh(mesh3fd)
+
+    objects3fd.parent = arma
+    armamodifier3fd = objects3fd.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fd.object = arma
+
+    vgroups3fd = [objects3fd.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fc = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3ec.from_mesh(mesh3fc)
+    objects3fc = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fc)
+    collection.objects.link(objects3fc)
+    bmesh.ops.remove_doubles(bm_3ec, verts = bm_3ec.verts, dist = 0.0001)
+    bm_3ec.to_mesh(mesh3fc)
+
+    objects3fc.parent = arma
+    armamodifier3fc = objects3fc.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fc.object = arma
+
+    vgroups3fc = [objects3fc.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fb = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3eb.from_mesh(mesh3fb)
+    objects3fb = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fb)
+    collection.objects.link(objects3fb)
+    bmesh.ops.remove_doubles(bm_3eb, verts = bm_3eb.verts, dist = 0.0001)
+    bm_3eb.to_mesh(mesh3fb)
+
+    objects3fb.parent = arma
+    armamodifier3fb = objects3fb.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fb.object = arma
+
+    vgroups3fb = [objects3fb.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3fa = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3ea.from_mesh(mesh3fa)
+    objects3fa = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3fa)
+    collection.objects.link(objects3fa)
+    bmesh.ops.remove_doubles(bm_3ea, verts = bm_3ea.verts, dist = 0.0001)
+    bm_3ea.to_mesh(mesh3fa)
+
+    objects3fa.parent = arma
+    armamodifier3fa = objects3fa.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3fa.object = arma
+
+    vgroups3fa = [objects3fa.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3f = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3e.from_mesh(mesh3f)
+    objects3f = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3f)
+    collection.objects.link(objects3f)
+    bmesh.ops.remove_doubles(bm_3e, verts = bm_3e.verts, dist = 0.0001)
+    bm_3e.to_mesh(mesh3f)
+
+    objects3f.parent = arma
+    armamodifier3f = objects3f.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3f.object = arma
+
+    vgroups3f = [objects3f.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3e = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3da.from_mesh(mesh3e)
+    objects3e = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3e)
+    collection.objects.link(objects3e)
+    bmesh.ops.remove_doubles(bm_3da, verts = bm_3da.verts, dist = 0.0001)
+    bm_3da.to_mesh(mesh3e)
+
+    objects3e.parent = arma
+    armamodifier3e = objects3e.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3e.object = arma
+
+    vgroups3e = [objects3e.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3d = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3d.from_mesh(mesh3d)
+    objects3d = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3d)
+    collection.objects.link(objects3d)
+    bmesh.ops.remove_doubles(bm_3d, verts = bm_3d.verts, dist = 0.0001)
+    bm_3d.to_mesh(mesh3d)
+
+    objects3d.parent = arma
+    armamodifier3d = objects3d.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3d.object = arma
+
+    vgroups3d = [objects3d.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    ###############################################
+
+    mesh3dbbb = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3db.from_mesh(mesh3dbbb)
+    objects3dbbb = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3dbbb)
+    collection.objects.link(objects3dbbb)
+    bmesh.ops.remove_doubles(bm_3db, verts = bm_3db.verts, dist = 0.0001)
+    bm_3db.to_mesh(mesh3dbbb)
+
+    objects3dbbb.parent = arma
+    armamodifier3dbbb = objects3dbbb.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3dbbb.object = arma
+
+    vgroups3dbbb = [objects3dbbb.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3dbbc = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3dc.from_mesh(mesh3dbbc)
+    objects3dbbc = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3dbbc)
+    collection.objects.link(objects3dbbc)
+    bmesh.ops.remove_doubles(bm_3dc, verts = bm_3dc.verts, dist = 0.0001)
+    bm_3dc.to_mesh(mesh3dbbc)
+
+    objects3dbbc.parent = arma
+    armamodifier3dbbc = objects3dbbc.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3dbbc.object = arma
+
+    vgroups3dbbc = [objects3dbbc.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+
+    ###############################################
+
+    mesh3c = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3c.from_mesh(mesh3c)
+    objects3c = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3c)
+    collection.objects.link(objects3c)
+    bmesh.ops.remove_doubles(bm_3c, verts = bm_3c.verts, dist = 0.0001)
+    bm_3c.to_mesh(mesh3c)
+
+    objects3c.parent = arma
+    armamodifier3c = objects3c.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3c.object = arma
+
+    vgroups3c = [objects3c.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3cc = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3ca.from_mesh(mesh3cc)
+    objects3cc = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3cc)
+    collection.objects.link(objects3cc)
+    bmesh.ops.remove_doubles(bm_3ca, verts = bm_3ca.verts, dist = 0.0001)
+    bm_3ca.to_mesh(mesh3cc)
+
+    objects3cc.parent = arma
+    armamodifier3cc = objects3cc.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3cc.object = arma
+
+    vgroups3cc = [objects3cc.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3b = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3b.from_mesh(mesh3b)
+    objects3b = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3b)
+    collection.objects.link(objects3b)
+    bmesh.ops.remove_doubles(bm_3b, verts = bm_3b.verts, dist = 0.0001)
+    bm_3b.to_mesh(mesh3b)
+
+    objects3b.parent = arma
+    armamodifier3b = objects3b.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3b.object = arma
+
+    vgroups3b = [objects3b.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+
+    mesh3a = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    bm_3a.from_mesh(mesh3a)
+    objects3a = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3a)
+    collection.objects.link(objects3a)
+    bmesh.ops.remove_doubles(bm_3a, verts = bm_3a.verts, dist = 0.0001)
+    bm_3a.to_mesh(mesh3a)
+
+    objects3a.parent = arma
+    armamodifier3a = objects3a.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3a.object = arma
+
+    vgroups3a = [objects3a.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
 
     
                         
