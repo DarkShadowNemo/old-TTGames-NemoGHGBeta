@@ -1,7 +1,7 @@
 bl_info = {
         'name'			: 'Finding Nemo GHG Character Non Chunk Importer',
 	'author'		: 'DarkShadow Nemo',
-	'version'		: (0, 5, 4),
+	'version'		: (0, 2, 6),
 	'blender'		: (3, 0, 0),
 	'location'		: 'File > Import',
 	'description'           : 'Import GHG mesh chunk',
@@ -13,9 +13,7 @@ import importlib
 from bpy.props import CollectionProperty, StringProperty, BoolProperty, EnumProperty, FloatProperty, IntProperty
 from bpy_extras.io_utils import ImportHelper, ExportHelper
 
-from.import ghg_non_chunk_importer, ghg_non_chunk_exporter
-
-#deprecated - ghg_non_chunk_exporter
+from.import GHG_import, GHG_export
 
 class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         bl_idname  = 'import_non_chunk.ghg'
@@ -30,51 +28,63 @@ class ImportNonChunkGHG(bpy.types.Operator, ImportHelper):
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
 
-        #GHG_Meshes : IntProperty(name="offset Meshes", description="choose the correct ghg offset")
+        offset_on_off : BoolProperty(name="offset on or off", description="turn on or turn off offset") 
 
-        GHG_Bones : IntProperty(name="Bones", description="imports bones")
+        offsets : StringProperty(name="offsets", description="all offsets may contain issues on most models but may work on custom only")
 
-        GHG_Name : StringProperty(name="GHG name", description="insert your exact input name")
+        input_on_off : BoolProperty(name="input on or off", description="turn on or off input names")
 
-        """GHG_Triangle_Strips_with_uvs_and_rgba : IntProperty(name="Mesh Type", description="choose one with uvs and vertex colors")
+        input_name : StringProperty(name="Input name", description="must be the exact name as the folder by its file")
 
-        GHG_Triangles : BoolProperty(name="imports Triangles", description="imports GHG Triangles")
+        #################################################
 
-        SingleMesh : IntProperty(name="Single Mesh", description="imports ghg with no uvs and vertex colors")
+        bsa_on_off : BoolProperty(name="Blend Shapes", description="bsa on to true and bsa off to false")
 
-        UV_Type : IntProperty(name="UV Type", description="Imports uvs and assign to the ghg mesh")
+        ghg_tex_utility : BoolProperty(name="GHG Tex On or off", description="turn on or off textures")
 
-        VertexColor_Type : IntProperty(name="VertexColor Type", description="Imports uvs and assign to the ghg mesh")"""
-        
+        seek_pallete : IntProperty(name="seek texture", description="seek where is the pallete")
+
+        pallete_offsets : IntProperty(name="pallete offset", description="choose a pallete offset")
         def execute(self, context):
                 paths = [os.path.join(self.directory, name.name) for name in self.files]
                 if not paths: paths.append(self.filepath)
-                importlib.reload(ghg_non_chunk_importer)
-                for path in paths: ghg_non_chunk_importer.NonParseGHG(path, GHG_Bones = self.GHG_Bones, GHG_Name = self.GHG_Name)
+                importlib.reload(GHG_import)
+                for path in paths: GHG_import.ghg_open(path, offset_on_off = self.offset_on_off, offsets = self.offsets, input_on_off = self.input_on_off, input_name = self.input_name, bsa_on_off = self.bsa_on_off, ghg_tex_utility = self.ghg_tex_utility, pallete_offsets = self.pallete_offsets, seek_pallete = self.seek_pallete)
                 return {'FINISHED'}
 
 class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
-        bl_idname  = 'export_non_chunk.ghg'
-        bl_label   = 'Export Non Chunk GHG'
-        bl_options = {'UNDO'}
-        filename_ext = '.ghg'
+        bl_idname = "export_non_chunk.ghg"
+        bl_label = "Export Non Chunk GHG"
+        bl_options = {"UNDO"}
+        filename_ext = ".ghg"
         files: CollectionProperty(
-                name	    = 'File path',
+                name = "File path",
                 description = 'File path used for finding the GHG file without chunks.',
                 type	    = bpy.types.OperatorFileListElement
         )
-
-        #appendGHG : BoolProperty(name="append 0x030100010380")
-
-        #noappendGHG : BoolProperty(name="no append 0x030100010380")
-
+        STRIP_SMOOTHS: BoolProperty(
+                name = "SMOOTH STRIPS ONLY",
+                description = "turns smooth in one material only multiply by 3 by flag 96",
+        )
+        offset_0x030100010380XX6C : IntProperty(
+                name = "0x030100010380XX6C",
+                description = "1 on 0x03010001"
+        )
+        offset_0x030200010380XX6D : IntProperty(
+                name = "0x030200010380XX6D",
+                description = "2 on 0x03020001"
+        )
+        offset_0x040200010380XX6C : IntProperty(
+                name = "0x040200010380XX6C",
+                description = "3 on 0x04020001"
+        )
         directory: StringProperty()
         filter_glob: StringProperty(default = '*.ghg', options = {'HIDDEN'})
-
         def execute(self, context):
-            importlib.reload(ghg_non_chunk_exporter)
-            ghg_non_chunk_exporter.WritingEditGHG(self.filepath)
+            importlib.reload(GHG_export)
+            GHG_export.ghg_save(self.filepath, STRIP_SMOOTHS = self.STRIP_SMOOTHS, offset_0x030100010380XX6C = self.offset_0x030100010380XX6C, offset_0x030200010380XX6D = self.offset_0x030200010380XX6D, offset_0x040200010380XX6C = self.offset_0x040200010380XX6C)
             return {"FINISHED"}
+                
 
         
         
@@ -83,7 +93,6 @@ class ExportNonChunkGHG(bpy.types.Operator, ExportHelper):
 	
 def menu_func_import(self, context):
         self.layout.operator(ImportNonChunkGHG.bl_idname, text='GHG Non Chunk Importer (.ghg)')
-
 def menu_func_export(self, context):
         self.layout.operator(ExportNonChunkGHG.bl_idname, text='GHG Non Chunk Exporter (.ghg)')
 def register():
