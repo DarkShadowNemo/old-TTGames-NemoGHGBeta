@@ -30,246 +30,6 @@ for obj in bpy.context.scene.objects:
     if obj.name.startswith("pad"):
         obj.select_set(True)"""
 
-def GHG_Texture_Utility_0x81_only(f, filepath, seek_=0):
-    #32x32 width and height
-    f.seek(seek_,1)
-    w = unpack("<H", f.read(2))[0]
-    f.seek(2,1)
-    h = unpack("<H", f.read(2))[0]
-    f.seek(26,1)
-    size = unpack("<I", f.read(4))[0]
-    f.seek(size,1)
-    f.seek(48,1)
-    compression_width = unpack("<I", f.read(4))[0]
-    compression_height = unpack("<I", f.read(4))[0]
-    f.seek(24,1)
-    pallete_offsetss = unpack("<H", f.read(2))[0]
-    f.seek(14,1)
-    image_test = bpy.data.images.new(name="GHG Image", width=w, height=h, alpha=True)
-    num_Pixels = len(image_test.pixels)
-    def grid(x,y):
-        return x + w*y
-    def drawPixel(x,y, R,G,B,A):
-
-        pixelNumber = grid(x,y) * 4
-            
-
-
-        image_test.pixels[pixelNumber] = R
-        image_test.pixels[pixelNumber+1] = G
-        image_test.pixels[pixelNumber+2] = B
-        image_test.pixels[pixelNumber+3] = A
-                
-                
-            
-    for i in range(compression_width):
-        for k in range(compression_height):
-            r = unpack("B", f.read(1))[0]/255
-            g = unpack("B", f.read(1))[0]/255
-            b = unpack("B", f.read(1))[0]/255
-            a = unpack("B", f.read(1))[0]/127
-            drawPixel(i,k,r,g,b,a)
-
-def GHG_Texture_Utility_0x83_only(f, filepath, seek_=0):
-    #64x64 width and height without alpha
-    f.seek(seek_,1)
-    w = unpack("<H", f.read(2))[0]
-    f.seek(2,1)
-    h = unpack("<H", f.read(2))[0]
-    f.seek(26,1)
-    size = unpack("<I", f.read(4))[0]
-    f.seek(size,1)
-    f.seek(48,1)
-    compression_width = unpack("<I", f.read(4))[0]
-    compression_height = unpack("<I", f.read(4))[0]
-    f.seek(24,1)
-    pallete_offsetss = unpack("<H", f.read(2))[0]
-    f.seek(14,1)
-    image_test = bpy.data.images.new(name="GHG Image", width=w, height=h, alpha=True)
-    num_Pixels = len(image_test.pixels)
-    def grid(x,y):
-        return x + w*y
-    def drawPixel(x,y, R,G,B):
-
-        pixelNumber = grid(x,y) * 4
-            
-
-
-        image_test.pixels[pixelNumber] = R
-        image_test.pixels[pixelNumber+1] = G
-        image_test.pixels[pixelNumber+2] = B
-        image_test.pixels[pixelNumber+3]
-                
-                
-            
-    for i in range(compression_width):
-        for k in range(compression_height):
-            r = unpack("B", f.read(1))[0]/255
-            g = unpack("B", f.read(1))[0]/255
-            b = unpack("B", f.read(1))[0]/255
-            drawPixel(i,k,r,g,b)
-
-def GHG_Texture_Utility_0x84_only(f, filepath, seek_=0):
-    #64x64 width and height
-    f.seek(seek_,1)
-    w = unpack("<H", f.read(2))[0]
-    f.seek(2,1)
-    h = unpack("<H", f.read(2))[0]
-    f.seek(26,1)
-    size = unpack("<I", f.read(4))[0]
-    f.seek(size,1)
-    f.seek(48,1)
-    compression_width = unpack("<I", f.read(4))[0]
-    compression_height = unpack("<I", f.read(4))[0]
-    f.seek(24,1)
-    pallete_offsetss = unpack("<H", f.read(2))[0]
-    f.seek(14,1)
-    image_test = bpy.data.images.new(name="GHG Image", width=w, height=h, alpha=True)
-    num_Pixels = len(image_test.pixels)
-    def grid(x,y):
-        return x + w*y
-    def drawPixel(x,y, R,G,B,A):
-
-        pixelNumber = grid(x,y) * 4
-            
-
-
-        image_test.pixels[pixelNumber] = R
-        image_test.pixels[pixelNumber+1] = G
-        image_test.pixels[pixelNumber+2] = B
-        image_test.pixels[pixelNumber+3] = A
-                
-                
-            
-    for i in range(compression_width):
-        for k in range(compression_height):
-            r = unpack("B", f.read(1))[0]/255
-            g = unpack("B", f.read(1))[0]/255
-            b = unpack("B", f.read(1))[0]/255
-            a = unpack("B", f.read(1))[0]/127
-            drawPixel(i,k,r,g,b,a)
-
-def GHG_Texture_Utility_0x90_only(f, filepath, seek_=0):
-    #256x64 width floor division by 4 and height multiply by 4
-    f.seek(seek_,1)
-    w = unpack("<H", f.read(2))[0]//4
-    f.seek(2,1)
-    h = unpack("<H", f.read(2))[0]*4
-    f.seek(26,1)
-    size = unpack("<I", f.read(4))[0]
-    f.seek(size,1)
-    f.seek(48,1)
-    compression_width = unpack("<I", f.read(4))[0]
-    compression_height = unpack("<I", f.read(4))[0]
-    f.seek(24,1)
-    pallete_offsetss = unpack("<H", f.read(2))[0]
-    f.seek(14,1)
-    image_test = bpy.data.images.new(name="GHG Image", width=w, height=h, alpha=True)
-    num_Pixels = len(image_test.pixels)
-    def grid(x,y):
-        return x + w*y
-    def drawPixel(x,y, R,G,B,A):
-
-        pixelNumber = grid(x,y) * 4
-            
-
-
-        image_test.pixels[pixelNumber] = R
-        image_test.pixels[pixelNumber+1] = G
-        image_test.pixels[pixelNumber+2] = B
-        image_test.pixels[pixelNumber+3] = A
-                
-                
-            
-    for i in range(compression_width//4):
-        for k in range(compression_height*4):
-            r = unpack("B", f.read(1))[0]/255
-            g = unpack("B", f.read(1))[0]/255
-            b = unpack("B", f.read(1))[0]/255
-            a = unpack("B", f.read(1))[0]/127
-            drawPixel(i,k,r,g,b,a)
-
-def GHG_Texture_Utility_0xA0_only(f, filepath, seek_=0):
-    #256 divide 2 and 128 multiply
-    f.seek(seek_,1)
-    w = unpack("<H", f.read(2))[0]//2
-    f.seek(2,1)
-    h = unpack("<H", f.read(2))[0]*2
-    f.seek(26,1)
-    size = unpack("<I", f.read(4))[0]
-    f.seek(size,1)
-    f.seek(48,1)
-    compression_width = unpack("<I", f.read(4))[0]
-    compression_height = unpack("<I", f.read(4))[0]
-    f.seek(24,1)
-    pallete_offsetss = unpack("<H", f.read(2))[0]
-    f.seek(14,1)
-    image_test = bpy.data.images.new(name="GHG Image", width=w, height=h, alpha=True)
-    num_Pixels = len(image_test.pixels)
-    def grid(x,y):
-        return x + w*y
-    def drawPixel(x,y, R,G,B,A):
-
-        pixelNumber = grid(x,y) * 4
-            
-
-
-        image_test.pixels[pixelNumber] = R
-        image_test.pixels[pixelNumber+1] = G
-        image_test.pixels[pixelNumber+2] = B
-        image_test.pixels[pixelNumber+3] = A
-                
-                
-            
-    for i in range(compression_width//2):
-        for k in range(compression_height*2):
-            r = unpack("B", f.read(1))[0]/255
-            g = unpack("B", f.read(1))[0]/255
-            b = unpack("B", f.read(1))[0]/255
-            a = unpack("B", f.read(1))[0]/127
-            drawPixel(i,k,r,g,b,a)
-
-def GHG_Texture_Utility_0xC0_only(f, filepath, seek_=0):
-    #found on the xbox
-    #256x256 width and height only
-    f.seek(seek_,1)
-    w = unpack("<H", f.read(2))[0]
-    f.seek(2,1)
-    h = unpack("<H", f.read(2))[0]
-    f.seek(26,1)
-    size = unpack("<I", f.read(4))[0]
-    f.seek(size,1)
-    f.seek(48,1)
-    compression_width = unpack("<I", f.read(4))[0]
-    compression_height = unpack("<I", f.read(4))[0]
-    f.seek(24,1)
-    pallete_offsetss = unpack("<H", f.read(2))[0]
-    f.seek(14,1)
-    image_test = bpy.data.images.new(name="GHG Image", width=w, height=h, alpha=True)
-    num_Pixels = len(image_test.pixels)
-    def grid(x,y):
-        return x + w*y
-    def drawPixel(x,y, R,G,B,A):
-
-        pixelNumber = grid(x,y) * 4
-            
-
-
-        image_test.pixels[pixelNumber] = R
-        image_test.pixels[pixelNumber+1] = G
-        image_test.pixels[pixelNumber+2] = B
-        image_test.pixels[pixelNumber+3] = A
-                
-                
-            
-    for i in range(compression_width):
-        for k in range(compression_height):
-            r = unpack("B", f.read(1))[0]/255
-            g = unpack("B", f.read(1))[0]/255
-            b = unpack("B", f.read(1))[0]/255
-            a = unpack("B", f.read(1))[0]/127
-            drawPixel(i,k,r,g,b,a)
-
 def get_size_from_sub_hdr(f, is_pallete):
     size_ = unpack("<H", f.read(2))[0]
     f.seek(14,1)
@@ -3559,7 +3319,184 @@ def GHG_mesh(f, filepath):
                 ssize2 = unpack("<I", f.read(4))[0]
                 type2 = unpack("<I", f.read(4))[0]
                 type3 = unpack("<I", f.read(4))[0]
-                if type3 == 0:
+                if type3 != 0:
+                    padsize1 = unpack("<I", f.read(4))[0]
+                    f.seek(padsize1,1)
+                    
+                    textureRumble1 = unpack("B", f.read(1))[0]
+                    textureBrightness1 = unpack("B", f.read(1))[0]
+                    textureZero1 = unpack("B", f.read(1))[0]
+                    textureFlag1 = unpack("B", f.read(1))[0]
+
+                    zero1a = unpack("<I", f.read(4))[0]
+                    zero2a = unpack("<I", f.read(4))[0]
+
+                    textureRumble1 = unpack("B", f.read(1))[0]
+                    textureBrightness1 = unpack("B", f.read(1))[0]
+                    textureZero1 = unpack("B", f.read(1))[0]
+                    textureFlag1 = unpack("B", f.read(1))[0]
+                    type4 = unpack("B", f.read(1))[0]
+                    val01 = unpack("B", f.read(1))[0]
+                    zero3a = unpack("<H", f.read(2))[0]
+                    depth01 = unpack(">I", f.read(4))[0]
+                    
+                    flg01 = unpack("<I", f.read(4))[0]
+                    zero1aa = unpack("<I", f.read(4))[0]
+                    zero2aa = unpack("<I", f.read(4))[0]
+                    zero3aa = unpack("<I", f.read(4))[0]
+                    flg02 = unpack("<I", f.read(4))[0]
+                    zero4aa = unpack("<I", f.read(4))[0]
+                    comprW = unpack("<I", f.read(4))[0]
+                    comprH = unpack("<I", f.read(4))[0]
+                    flg03 = unpack("<I", f.read(4))[0]
+                    zero5aa = unpack("<I", f.read(4))[0]
+                    zero6aa = unpack("<I", f.read(4))[0]
+                    zero7aa = unpack("<I", f.read(4))[0]
+                    flg04 = unpack("<I", f.read(4))[0]
+                    zero8aa = unpack("<I", f.read(4))[0]
+                    
+                    palleteOffset = unpack("<H", f.read(2))[0]
+                    zero9aa = unpack("<H", f.read(2))[0]
+                    zero10aa = unpack("<H", f.read(2))[0]
+                    palletelen = unpack("<I", f.read(4))[0]
+                    zero11aa = unpack("<H", f.read(2))[0]
+                    zero12aa = unpack("<H", f.read(2))[0]
+                    zero13aa = unpack("<H", f.read(2))[0]
+                    if palleteOffset == 0x8300:
+                        image_test = bpy.data.images.new(name="GHG Image", width=64, height=64, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 64*y
+                        def drawPixel(x,y, R,G,B):
+                            pixelNumber = grid(x,y) * 4
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                        for x in range(64):
+                            for y in range(64):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                drawPixel(-x,y,r,g,b)
+                    elif palleteOffset == 0x8400:
+                        image_test = bpy.data.images.new(name="GHG Image", width=64, height=64, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 64*y
+                        def drawPixel(x,y, R,G,B,A):
+                            pixelNumber = grid(x,y) * 4
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                            image_test.pixels[pixelNumber+3] = A
+                        for x in range(64):
+                            for y in range(64):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                a = unpack("B", f.read(1))[0]/127
+                                drawPixel(-x,y,r,g,b,a)
+
+                    elif palleteOffset == 0x9000:
+                        image_test = bpy.data.images.new(name="GHG Image", width=64, height=256, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 64*y
+                        def drawPixel(x,y, R,G,B,A):
+                            pixelNumber = grid(x,y) * 4
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                            image_test.pixels[pixelNumber+3] = A
+                        for x in range(64):
+                            for y in range(256):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                a = unpack("B", f.read(1))[0]/127
+                                drawPixel(-x,-y,r,g,b,a)
+
+                    elif palleteOffset == 0xA000:
+                        image_test = bpy.data.images.new(name="GHG Image", width=128, height=256, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 128*y
+                        def drawPixel(x,y, R,G,B,A):
+
+                            pixelNumber = grid(x,y) * 4
+                                
+
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                            image_test.pixels[pixelNumber+3] = A
+                
+                
+            
+                        for x in range(128):
+                            for y in range(256):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                a = unpack("B", f.read(1))[0]/127
+                                drawPixel(-x,-y,r,g,b,a)
+
+                    elif palleteOffset == 0xC000:
+                        image_test = bpy.data.images.new(name="GHG Image", width=256, height=256, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 256*y
+                        def drawPixel(x,y, R,G,B,A):
+
+                            pixelNumber = grid(x,y) * 4
+                                
+
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                            image_test.pixels[pixelNumber+3] = A
+                
+                
+            
+                        for x in range(256):
+                            for y in range(256):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                a = unpack("B", f.read(1))[0]/127
+                                drawPixel(-x,y,r,g,b,a)
+
+                    elif palleteOffset == 0x8100:
+                        image_test = bpy.data.images.new(name="GHG Image", width=32, height=32, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 32*y
+                        def drawPixel(x,y, R,G,B,A):
+
+                            pixelNumber = grid(x,y) * 4
+                                
+
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                            image_test.pixels[pixelNumber+3] = A
+                                    
+                                    
+                                
+                        for x in range(32):
+                            for y in range(32):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                a = unpack("B", f.read(1))[0]/127
+                                drawPixel(-x,y,r,g,b,a)
+                elif type3 == 0:
                     textureRumble1 = unpack("B", f.read(1))[0]
                     textureBrightness1 = unpack("B", f.read(1))[0]
                     textureZero1 = unpack("B", f.read(1))[0]
@@ -3640,9 +3577,6 @@ def GHG_mesh(f, filepath):
 
                                 texttures.append([r,g,b,a])
 
-                                if idxA_== 0:
-                                    drawPixel(y,x,r1,g1,b1,a1)
-
                         for i in range(32):
                             cdpad01 = unpack("B", f.read(1))[0]
 
@@ -3693,16 +3627,15 @@ def GHG_mesh(f, filepath):
                             zero11aaa = unpack("<H", f.read(2))[0]
                             zero12aaa = unpack("<H", f.read(2))[0]
                             zero13aaa = unpack("<H", f.read(2))[0]
-                            if idxOffset == 0x8400:
-                                idxA_+=1
-                                for xi in range(comprWa):
-                                    for yi in range(comprHa):
-                                        iidx = unpack("B", f.read(1))[0]
-                                        iidx2 = iidx
-                                        if idxA_ == 1:
-                                            if iidx == 1:
-                                                iidx2+=254
-                                            drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,1)
+                            for xi in range(comprWa):
+                                for yi in range(comprHa):
+                                    iidx = unpack("B", f.read(1))[0]
+                                    iidx2 = iidx
+                                    if iidx == 1:
+                                        iidx2+=254
+                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,1)
+                            for i in range(80):
+                                cddddpad01 = unpack("B", f.read(1))[0]
                                             
                         elif type6 == 0:
                             textureRumble2 = unpack("B", f.read(1))[0]
@@ -3746,53 +3679,18 @@ def GHG_mesh(f, filepath):
                             zero12aaa = unpack("<H", f.read(2))[0]
                             zero13aaa = unpack("<H", f.read(2))[0]
 
-                            if idxOffset == 0x8400:
-                                idxA_+=1
+                            for xi in range(comprWa):
+                                for yi in range(comprHa):
+                                    iidx = unpack("B", f.read(1))[0]
+                                    iidx2 = iidx
+                                    if iidx == 1:
+                                        iidx2+=254
+                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,1)
+                            for i in range(80):
+                                cddddpad01 = unpack("B", f.read(1))[0]
                     elif palleteOffset == 0x8008:
                         pass
-                elif type3 != 0:
-                    padsize1 = unpack("<I", f.read(4))[0]
-                    f.seek(padsize1,1)
-                    
-                    textureRumble1 = unpack("B", f.read(1))[0]
-                    textureBrightness1 = unpack("B", f.read(1))[0]
-                    textureZero1 = unpack("B", f.read(1))[0]
-                    textureFlag1 = unpack("B", f.read(1))[0]
-
-                    zero1a = unpack("<I", f.read(4))[0]
-                    zero2a = unpack("<I", f.read(4))[0]
-
-                    textureRumble1 = unpack("B", f.read(1))[0]
-                    textureBrightness1 = unpack("B", f.read(1))[0]
-                    textureZero1 = unpack("B", f.read(1))[0]
-                    textureFlag1 = unpack("B", f.read(1))[0]
-                    type4 = unpack("B", f.read(1))[0]
-                    val01 = unpack("B", f.read(1))[0]
-                    zero3a = unpack("<H", f.read(2))[0]
-                    depth01 = unpack(">I", f.read(4))[0]
-                    
-                    flg01 = unpack("<I", f.read(4))[0]
-                    zero1aa = unpack("<I", f.read(4))[0]
-                    zero2aa = unpack("<I", f.read(4))[0]
-                    zero3aa = unpack("<I", f.read(4))[0]
-                    flg02 = unpack("<I", f.read(4))[0]
-                    zero4aa = unpack("<I", f.read(4))[0]
-                    comprW = unpack("<I", f.read(4))[0]
-                    comprH = unpack("<I", f.read(4))[0]
-                    flg03 = unpack("<I", f.read(4))[0]
-                    zero5aa = unpack("<I", f.read(4))[0]
-                    zero6aa = unpack("<I", f.read(4))[0]
-                    zero7aa = unpack("<I", f.read(4))[0]
-                    flg04 = unpack("<I", f.read(4))[0]
-                    zero8aa = unpack("<I", f.read(4))[0]
-                    
-                    palleteOffset = unpack("<H", f.read(2))[0]
-                    zero9aa = unpack("<H", f.read(2))[0]
-                    zero10aa = unpack("<H", f.read(2))[0]
-                    palletelen = unpack("<I", f.read(4))[0]
-                    zero11aa = unpack("<H", f.read(2))[0]
-                    zero12aa = unpack("<H", f.read(2))[0]
-                    zero13aa = unpack("<H", f.read(2))[0]
+                        
 
             f.seek(0)
             f.seek(NamedtableEntrySize1,0)
@@ -9285,32 +9183,14 @@ def GHG_mesh_3(f, filepath):
     
             
 
-def ghg_open(filepath, offset_on_off=False, offsets="", input_on_off=False, input_name="", bsa_on_off=False, ghg_tex_utility=False,seek_pallete=0,pallete_offsets=0):
-    with open(filepath, "r+b") as f:
+def ghg_open(filepath, offset_on_off=False, bsa_on_off=False):
+    with open(filepath, "rb") as f:
         if offset_on_off:
             GHG_mesh(f, filepath)
             #GHG_mesha(f, filepath)
 
         if bsa_on_off:
             GHG_Blend_Object(f, filepath)
-
-        if input_on_off:
-            if input_name=="eel":
-                ghg_read_Eel(f, filepath)
-
-        if ghg_tex_utility:
-            if pallete_offsets == 33792:
-                GHG_Texture_Utility_0x84_only(f, filepath, seek_=seek_pallete)
-            if pallete_offsets == 49152:
-                GHG_Texture_Utility_0xC0_only(f, filepath, seek_=seek_pallete)
-            if pallete_offsets == 33536:
-                GHG_Texture_Utility_0x83_only(f, filepath, seek_=seek_pallete)
-            if pallete_offsets == 40960:
-                GHG_Texture_Utility_0xA0_only(f, filepath, seek_=seek_pallete)
-            if pallete_offsets == 33024:
-                GHG_Texture_Utility_0x81_only(f, filepath, seek_=seek_pallete)
-            if pallete_offsets == 36864:
-                GHG_Texture_Utility_0x90_only(f, filepath, seek_=seek_pallete)
             
             
                 
