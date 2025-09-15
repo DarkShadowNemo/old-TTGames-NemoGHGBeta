@@ -3417,7 +3417,7 @@ def GHG_mesh(f, filepath):
                                 g = unpack("B", f.read(1))[0]/255
                                 b = unpack("B", f.read(1))[0]/255
                                 a = unpack("B", f.read(1))[0]/127
-                                drawPixel(-x,-y,r,g,b,a)
+                                drawPixel(-x,y,r,g,b,a)
 
                     elif palleteOffset == 0xA000:
                         image_test = bpy.data.images.new(name="GHG Image", width=128, height=256, alpha=True)
@@ -3443,7 +3443,7 @@ def GHG_mesh(f, filepath):
                                 g = unpack("B", f.read(1))[0]/255
                                 b = unpack("B", f.read(1))[0]/255
                                 a = unpack("B", f.read(1))[0]/127
-                                drawPixel(-x,-y,r,g,b,a)
+                                drawPixel(-x,y,r,g,b,a)
 
                     elif palleteOffset == 0xC000:
                         image_test = bpy.data.images.new(name="GHG Image", width=256, height=256, alpha=True)
@@ -3496,6 +3496,106 @@ def GHG_mesh(f, filepath):
                                 b = unpack("B", f.read(1))[0]/255
                                 a = unpack("B", f.read(1))[0]/127
                                 drawPixel(-x,y,r,g,b,a)
+
+                    elif palleteOffset == 0x80C0:
+                        image_test = bpy.data.images.new(name="GHG Image", width=32, height=32, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 32*y
+                        def drawPixel(x,y, R,G,B):
+
+                            pixelNumber = grid(x,y) * 4
+                                
+
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                                    
+                                    
+                                
+                        for x in range(32):
+                            for y in range(32):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                drawPixel(-x,y,r,g,b)
+
+                    elif palleteOffset == 0x8800:
+                        image_test = bpy.data.images.new(name="GHG Image", width=64, height=128, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 64*y
+                        def drawPixel(x,y, R,G,B,A):
+
+                            pixelNumber = grid(x,y) * 4
+                                
+
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                            image_test.pixels[pixelNumber+3] = A
+                                    
+                                    
+                                
+                        for x in range(64):
+                            for y in range(128):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                a = unpack("B", f.read(1))[0]/127
+                                drawPixel(-x,y,r,g,b,a)
+
+                    elif palleteOffset == 0x9800:
+                        image_test = bpy.data.images.new(name="GHG Image", width=128, height=256, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 128*y
+                        def drawPixel(x,y, R,G,B):
+
+                            pixelNumber = grid(x,y) * 4
+                                
+
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                                    
+                                    
+                                
+                        for x in range(128):
+                            for y in range(256):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                drawPixel(-x,y,r,g,b)
+
+                    elif palleteOffset == 0x8600:
+                        image_test = bpy.data.images.new(name="GHG Image", width=128, height=64, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + 128*y
+                        def drawPixel(x,y, R,G,B):
+
+                            pixelNumber = grid(x,y) * 4
+                                
+
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                                    
+                                    
+                                
+                        for x in range(128):
+                            for y in range(64):
+                                r = unpack("B", f.read(1))[0]/255
+                                g = unpack("B", f.read(1))[0]/255
+                                b = unpack("B", f.read(1))[0]/255
+                                drawPixel(-x,y,r,g,b)
+                        
+                        
                 elif type3 == 0:
                     textureRumble1 = unpack("B", f.read(1))[0]
                     textureBrightness1 = unpack("B", f.read(1))[0]
