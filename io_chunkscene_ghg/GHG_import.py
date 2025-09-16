@@ -3228,6 +3228,8 @@ def GHG_mesh(f, filepath):
     fbd819=-2
     fcd819=-1
 
+    alp=[]
+
     #blend_vertices=[]
 
     #blend shape offset 0x13380001
@@ -3637,7 +3639,7 @@ def GHG_mesh(f, filepath):
                     zero12aa = unpack("<H", f.read(2))[0]
                     zero13aa = unpack("<H", f.read(2))[0]
                     if palleteOffset == 0x8080:
-                        image_test = bpy.data.images.new(name="GHG Image", width=width1, height=height1, alpha=True)
+                        image_test = bpy.data.images.new(name="GHG Image", width=height1, height=width1, alpha=True)
                         num_Pixels = len(image_test.pixels)
                         def grid(x,y):
                             return x + width1*y
@@ -3674,6 +3676,8 @@ def GHG_mesh(f, filepath):
                                 g1/=255
                                 b1/=255
                                 a1/=255
+
+                                alp,=[a]
 
                                 texttures.append([r,g,b,a])
 
@@ -3727,13 +3731,25 @@ def GHG_mesh(f, filepath):
                             zero11aaa = unpack("<H", f.read(2))[0]
                             zero12aaa = unpack("<H", f.read(2))[0]
                             zero13aaa = unpack("<H", f.read(2))[0]
+                                                     
                             for xi in range(comprWa):
                                 for yi in range(comprHa):
                                     iidx = unpack("B", f.read(1))[0]
                                     iidx2 = iidx
+                                    iidx3 = iidx
+                                    iidx4 = iidx
+                                    if alp == 127:
+                                        iidx3-=iidx3
+                                        iidx3+=127
+
+                                    elif alp:
+                                        iidx4-=iidx4
+                                        iidx4+=alph
+                                        
+                                        
                                     if iidx == 1:
                                         iidx2+=254
-                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,1)
+                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,iidx3/127+iidx4/127)
                             for i in range(80):
                                 cddddpad01 = unpack("B", f.read(1))[0]
                                             
@@ -3783,13 +3799,186 @@ def GHG_mesh(f, filepath):
                                 for yi in range(comprHa):
                                     iidx = unpack("B", f.read(1))[0]
                                     iidx2 = iidx
+                                    iidx3 = iidx
+                                    iidx4 = iidx
+                                    if alp == 127:
+                                        iidx3-=iidx3+127
+
+                                    elif alp != 127:
+                                        iidx4-=iidx4
+                                        
+                                    if iidx == 1:
+                                        iidx2+=254
+                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,iidx3/127+iidx4)
+                            for i in range(80):
+                                cddddpad01 = unpack("B", f.read(1))[0]
+                    elif palleteOffset == 0x8008:
+                        image_test = bpy.data.images.new(name="GHG Image", width=height1, height=width1, alpha=True)
+                        num_Pixels = len(image_test.pixels)
+                        def grid(x,y):
+                            return x + width1*y
+                        def drawPixel(x,y, R,G,B,A):
+                            pixelNumber = grid(x,y) * 4
+
+                            image_test.pixels[pixelNumber] = R
+                            image_test.pixels[pixelNumber+1] = G
+                            image_test.pixels[pixelNumber+2] = B
+                            image_test.pixels[pixelNumber+3] = A
+                        for x in range(8):
+                            for y in range(2):
+                                r = unpack("B", f.read(1))[0]
+                                g = unpack("B", f.read(1))[0]
+                                b = unpack("B", f.read(1))[0]
+                                a = unpack("B", f.read(1))[0]
+
+                                r1 = r
+                                g1 = g
+                                b1 = b
+                                a1 = a
+
+                                r1*=0
+                                g1*=0
+                                b1*=0
+                                a1*=0
+
+                                r1+=255
+                                g1+=255
+                                b1+=255
+                                a1+=255
+
+                                r1/=255
+                                g1/=255
+                                b1/=255
+                                a1/=255
+
+                                texttures.append([r,g,b,a])
+
+                        for i in range(32):
+                            cdpad01 = unpack("B", f.read(1))[0]
+
+                        sizze1aa = unpack("<I", f.read(4))[0]
+                        sizze2aa = unpack("<I", f.read(4))[0]
+                        type5aa = unpack("<I", f.read(4))[0]
+                        type6aa = unpack("<I", f.read(4))[0]
+
+                        if type6aa != 0:
+                            padssize01 = unpack("<I", f.read(4))[0]
+                            f.seek(padssize01,1)
+                            textureRumble2 = unpack("B", f.read(1))[0]
+                            textureBrightness2 = unpack("B", f.read(1))[0]
+                            textureZero2 = unpack("B", f.read(1))[0]
+                            textureFlag2 = unpack("B", f.read(1))[0]
+
+                            zero1aaa = unpack("<I", f.read(4))[0]
+                            zero2aaa = unpack("<I", f.read(4))[0]
+
+                            textureRumble2 = unpack("B", f.read(1))[0]
+                            textureBrightness2 = unpack("B", f.read(1))[0]
+                            textureZero2 = unpack("B", f.read(1))[0]
+                            textureFlag2 = unpack("B", f.read(1))[0]
+
+                            type4a = unpack("B", f.read(1))[0]
+                            val01a = unpack("B", f.read(1))[0]
+                            zero3aa = unpack("<H", f.read(2))[0]
+                            depth01a = unpack(">I", f.read(4))[0]
+                            
+                            flg01a = unpack("<I", f.read(4))[0]
+                            zero1aaa = unpack("<I", f.read(4))[0]
+                            zero2aaa = unpack("<I", f.read(4))[0]
+                            zero3aaa = unpack("<I", f.read(4))[0]
+                            flg02a = unpack("<I", f.read(4))[0]
+                            zero4aaa = unpack("<I", f.read(4))[0]
+                            comprWa = unpack("<I", f.read(4))[0]
+                            comprHa = unpack("<I", f.read(4))[0]
+                            flg03a = unpack("<I", f.read(4))[0]
+                            zero5aaa = unpack("<I", f.read(4))[0]
+                            zero6aaa = unpack("<I", f.read(4))[0]
+                            zero7aaa = unpack("<I", f.read(4))[0]
+                            flg04a = unpack("<I", f.read(4))[0]
+                            zero8aaa = unpack("<I", f.read(4))[0]
+
+                            idxOffset = unpack("<H", f.read(2))[0]
+                            zero9aaa = unpack("<H", f.read(2))[0]
+                            zero10aaa = unpack("<H", f.read(2))[0]
+                            idxlen = unpack("<I", f.read(4))[0]
+                            zero11aaa = unpack("<H", f.read(2))[0]
+                            zero12aaa = unpack("<H", f.read(2))[0]
+                            zero13aaa = unpack("<H", f.read(2))[0]
+                                                     
+                            for xi in range(comprWa):
+                                for yi in range(comprHa//2):
+                                    iidx = unpack("B", f.read(1))[0]
+                                    iidx2 = iidx
                                     if iidx == 1:
                                         iidx2+=254
                                     drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,1)
                             for i in range(80):
                                 cddddpad01 = unpack("B", f.read(1))[0]
-                    elif palleteOffset == 0x8008:
-                        pass
+
+                        elif type6aa == 0:
+                            textureRumble2 = unpack("B", f.read(1))[0]
+                            textureBrightness2 = unpack("B", f.read(1))[0]
+                            textureZero2 = unpack("B", f.read(1))[0]
+                            textureFlag2 = unpack("B", f.read(1))[0]
+
+                            zero1aaa = unpack("<I", f.read(4))[0]
+                            zero2aaa = unpack("<I", f.read(4))[0]
+
+                            textureRumble2 = unpack("B", f.read(1))[0]
+                            textureBrightness2 = unpack("B", f.read(1))[0]
+                            textureZero2 = unpack("B", f.read(1))[0]
+                            textureFlag2 = unpack("B", f.read(1))[0]
+
+                            type4a = unpack("B", f.read(1))[0]
+                            val01a = unpack("B", f.read(1))[0]
+                            zero3aa = unpack("<H", f.read(2))[0]
+                            depth01a = unpack(">I", f.read(4))[0]
+                            
+                            flg01a = unpack("<I", f.read(4))[0]
+                            zero1aaa = unpack("<I", f.read(4))[0]
+                            zero2aaa = unpack("<I", f.read(4))[0]
+                            zero3aaa = unpack("<I", f.read(4))[0]
+                            flg02a = unpack("<I", f.read(4))[0]
+                            zero4aaa = unpack("<I", f.read(4))[0]
+                            comprWa = unpack("<I", f.read(4))[0]
+                            comprHa = unpack("<I", f.read(4))[0]
+                            flg03a = unpack("<I", f.read(4))[0]
+                            zero5aaa = unpack("<I", f.read(4))[0]
+                            zero6aaa = unpack("<I", f.read(4))[0]
+                            zero7aaa = unpack("<I", f.read(4))[0]
+                            flg04a = unpack("<I", f.read(4))[0]
+                            zero8aaa = unpack("<I", f.read(4))[0]
+
+                            idxOffset = unpack("<H", f.read(2))[0]
+                            zero9aaa = unpack("<H", f.read(2))[0]
+                            zero10aaa = unpack("<H", f.read(2))[0]
+                            idxlen = unpack("<I", f.read(4))[0]
+                            zero11aaa = unpack("<H", f.read(2))[0]
+                            zero12aaa = unpack("<H", f.read(2))[0]
+                            zero13aaa = unpack("<H", f.read(2))[0]
+                                                     
+                            for xi in range(comprWa):
+                                for yi in range(comprHa//comprH):
+                                    iidx = unpack("B", f.read(1))[0]
+                                    iidx2 = iidx
+                                    if iidx == 1:
+                                        iidx2+=254
+                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,1)
+                            for i in range(80):
+                                cddddpad01 = unpack("B", f.read(1))[0]
+
+                        
+
+            f.seek(0)
+            f.seek(MaterialEntrySize1,0)
+            
+            for i in range(MaterialCount):
+                matentrysizelist1 = unpack("<I", f.read(4))[0]
+                matttListt.append([matentrysizelist1])
+            for i, mxxxxx in enumerate(matttListt):
+                f.seek(mxxxxx[0],0)
+                f.seek(288,1)
+                matFlg = unpack("<I", f.read(4))[0]
                         
 
             f.seek(0)
@@ -9291,8 +9480,3 @@ def ghg_open(filepath, offset_on_off=False, bsa_on_off=False):
 
         if bsa_on_off:
             GHG_Blend_Object(f, filepath)
-            
-            
-                
-            
-    
