@@ -30,6 +30,27 @@ for obj in bpy.context.scene.objects:
     if obj.name.startswith("pad"):
         obj.select_set(True)"""
 
+"""
+for obj in bpy.context.scene.objects:
+    if obj.type == 'MESH':
+        obj.select_set(True)
+        
+        bpy.context.view_layer.objects.active = obj
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+        
+        obj.data.vertices[0].select = True
+        obj.data.vertices[1].select = True
+        obj.data.vertices[2].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+"""
+
 def get_size_from_sub_hdr(f, is_pallete):
     size_ = unpack("<H", f.read(2))[0]
     f.seek(14,1)
@@ -114,6 +135,10 @@ def fetch_cstr(f: 'filelike') -> bytearray:
         
 
 def GHG_mesh(f, filepath):
+
+    voffsets=[]
+
+    skininfos={}
     f.seek(0)
 
     fad7_=-1
@@ -122,7 +147,7 @@ def GHG_mesh(f, filepath):
     fdd7_=2
     fed7_=3
     ffd7_=4
-    fgd7_=4
+    fgd7_=5
 
     vertices2=[]
     faces2=[]
@@ -247,6 +272,8 @@ def GHG_mesh(f, filepath):
 
     vertices3 = []
     faces3 = []
+
+    uv_coords = []
 
     vertices3AA = []
     faces3AA = []
@@ -440,6 +467,10 @@ def GHG_mesh(f, filepath):
     fa = -1
     fb = 0
     fc = 1
+
+    fau = -1
+    fbu = 0
+    fcu = 1
 
     #fad1 = -4
     #fbd1 = -3
@@ -3229,13 +3260,20 @@ def GHG_mesh(f, filepath):
     fcd819=-1
 
     alp=[]
+    alp2=[]
+
+    vertices=[]
+    faces=[]
+
+    vertices_=[]
+    faces_=[]
 
     #blend_vertices=[]
 
     #blend shape offset 0x13380001
 
     blendshapeinfos = {} # you don't have to use dictionarys if you want to it does work with lists
-    skininfos = {}
+    #skininfos = {}
 
     #########################################
     
@@ -3299,7 +3337,1727 @@ def GHG_mesh(f, filepath):
     float02 = unpack("<f", f.read(4))[0]
     type01 = unpack("<I", f.read(4))[0]
     typeSize1 = unpack("<I", f.read(4))[0]
-    if TextureCount != 0:
+    if TextureCount == 0:
+        if MaterialEntrySize1 == 144 or MaterialEntrySize1 == 148:
+            f.seek(MaterialEntrySize1,0)
+            for i in range(MaterialCount):
+                matentrysizelist1 = unpack("<I", f.read(4))[0]
+                matttListt.append([matentrysizelist1])
+            for i, mxxxxx in enumerate(matttListt):
+                f.seek(mxxxxx[0],0)
+                f.seek(288,1)
+                matFlg = unpack("<I", f.read(4))[0]
+                RNDRSTREAMrs = unpack("<I", f.read(4))[0]
+                f.seek(28,1)
+                AnimatedRed = unpack("<I", f.read(4))[0]
+                AnimatedGreen = unpack("<I", f.read(4))[0]
+                AnimatedBlue = unpack("<I", f.read(4))[0]
+                f.seek(4,1)
+                matFlg2 = unpack("<I", f.read(4))[0]
+                f.seek(4,1)
+                VARIPTR = unpack("<I", f.read(4))[0]
+                snext = unpack("<I", f.read(4))[0]
+                slast = unpack("<I", f.read(4))[0]
+                next1 = unpack("<I", f.read(4))[0]
+                attrib = unpack("<f", f.read(4))[0]
+                matFlg3 = unpack("<I", f.read(4))[0]
+                ambientR = unpack("<f", f.read(4))[0]
+                ambientG = unpack("<f", f.read(4))[0]
+                ambientB = unpack("<f", f.read(4))[0]
+                diffuseR = unpack("<f", f.read(4))[0]
+                diffuseG = unpack("<f", f.read(4))[0]
+                diffuseB = unpack("<f", f.read(4))[0]
+                fx1 = unpack("<f", f.read(4))[0]
+                fx2 = unpack("<f", f.read(4))[0]
+                fx3 = unpack("<f", f.read(4))[0]
+                fx4 = unpack("<f", f.read(4))[0]
+                power = unpack("<f", f.read(4))[0]
+                allpha = unpack("<f", f.read(4))[0]
+                tid = unpack("<I", f.read(4))[0]
+                mid = unpack("<I", f.read(4))[0]
+                k = unpack("<H", f.read(2))[0]
+                L = unpack("B", f.read(1))[0]
+                uvanmmode = unpack("B", f.read(1))[0]
+                du = unpack("<f", f.read(4))[0]
+                dv = unpack("<f", f.read(4))[0]
+                su = unpack("<f", f.read(4))[0]
+                sv = unpack("<f", f.read(4))[0]
+                multi_next = unpack("<I", f.read(4))[0]
+                contt = unpack("B", f.read(1))[0]
+                fxid = unpack("B", f.read(1))[0]
+                specialid = unpack("B", f.read(1))[0]
+                pad01 = unpack("B", f.read(1))[0]
+                pad02 = unpack("B", f.read(1))[0]
+                pad03 = unpack("B", f.read(1))[0]
+                pad04 = unpack("B", f.read(1))[0]
+                pad05 = unpack("B", f.read(1))[0]
+                pad06 = unpack("B", f.read(1))[0]
+                pad07 = unpack("B", f.read(1))[0]
+                pad08 = unpack("B", f.read(1))[0]
+                pad09 = unpack("B", f.read(1))[0]
+
+            f.seek(0)
+            f.seek(NamedtableEntrySize1,0)
+            ntbl_buffer = bio(f.read(NamedtableEntrySize1))
+            name_i = 0
+            while 1:
+                name = fetch_cstr(ntbl_buffer).decode('ascii')
+                if not name: break
+                name_i+=1
+            f.seek(0)
+            f.seek(RotSclBoneEntrySize1,0)
+            for i in range(BoneCount):
+                f.seek(64,1)
+                bdiv4_v00 = unpack("<f", f.read(4))[0]
+                bdiv4_v04 = unpack("<f", f.read(4))[0]
+                bdiv4_v08 = unpack("<f", f.read(4))[0]
+                f.seek(4,1)
+                bone_parent,=unpack("b", f.read(1))
+                bone_parentlist.append(bone_parent)
+                #ntbl_buffer.seek(name_offset - 1) or ntbl_buffer.seek(name_offset)
+                #bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
+                name_offset,=unpack("<L", f.read(4)) # WHAT doesnt work
+                f.seek(11,1)
+                try:
+                    ntbl_buffer.seek(name_offset)
+                except:
+                    ValueError
+
+            f.seek(0)
+            f.seek(PosBoneEntrySize1,0)
+            for i in range(BoneCount):
+                ScaleX = unpack("<f", f.read(4))[0]
+                rotationz = unpack("<f", f.read(4))[0]
+                rotationy = unpack("<f", f.read(4))[0]
+                null1 = unpack("<f", f.read(4))[0]
+                nrotationz = unpack("<f", f.read(4))[0]
+                ScaleY = unpack("<f", f.read(4))[0]
+                rotationx = unpack("<f", f.read(4))[0]
+                nrotationy = unpack("<f", f.read(4))[0]
+                null2 = unpack("<f", f.read(4))[0]
+                nrotationx = unpack("<f", f.read(4))[0]
+                ScaleZ = unpack("<f", f.read(4))[0]
+                null3 = unpack("<f", f.read(4))[0]
+                posx = -unpack("<f", f.read(4))[0]
+                posy = -unpack("<f", f.read(4))[0]
+                posz = -unpack("<f", f.read(4))[0]
+                ScaleW = unpack("<f", f.read(4))[0]
+                m1 = ([ScaleX,rotationz,rotationy,null1])
+                m2 = ([nrotationz,ScaleY,rotationx,nrotationy])
+                m3 = ([null2,nrotationx,ScaleZ,null3])
+                m4 = ([posx,posy,posz,ScaleW])
+
+                matrix = mathutils.Matrix([m1,m3,m2,m4]).inverted().to_3x3().transposed()
+                bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
+
+                bone = skel.edit_bones.new(bone_name)
+                
+                bone.tail = mathutils.Vector([0,0,0.03])
+                
+                bone.head = ([
+                    posx,
+                    posy,
+                    posz,
+                ])
+                
+                bone.length = -0.03
+                
+                bone.transform(matrix)
+            for bone_id, bone_parent in enumerate(bone_parentlist):
+                if bone_parent < 0: continue # root bone is set to -1
+                skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
+            bpy.ops.object.mode_set(mode = 'OBJECT')
+
+            if ObjectCount != 0:
+                if UnkCount1 == 0 and UnkCount2 == 0:
+                    f.seek(0)
+                    Chunk = f.read()
+                    f.seek(0)
+                    while f.tell() < len(Chunk):
+                        Chunks = f.read(4)
+                        if Chunks == b"\x03\x01\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0]
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        vx = unpack("<f", f.read(4))[0]
+                                        vy = unpack("<f", f.read(4))[0]
+                                        vz = unpack("<f", f.read(4))[0]
+                                        type4 = unpack("B", f.read(1))[0]==False
+                                        value1 = unpack("B", f.read(1))[0]
+                                        nz = unpack("<h", f.read(2))[0]
+                                        vertices.append([vx,vz,vy])
+                                        fa+=1
+                                        fb+=1
+                                        fc+=1
+                                        if type4 > 0:
+                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                        elif Chunks == b"\x03\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6D:
+                                if vertexCount == 3:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2.append([vxaa,vzaa,vyaa])
+                                    f.seek(78,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                            
+                                        fad//=3
+                                        fbd//=3
+                                        fcd//=3
+
+                                        fad+=1*len(vertices2)-3
+                                        fbd+=1*len(vertices2)-3
+                                        fcd+=1*len(vertices2)-3
+
+                                        faces2.append([fad,fbd,fcd])
+
+                                elif vertexCount == 4:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2a.append([vxaa,vzaa,vyaa])
+                                    f.seek(82,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+                                        pad03 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                        
+
+                                elif vertexCount == 5:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2b.append([vx,vz,vy])
+
+                                    f.seek(86,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100:
+                                            
+                                        
+                                            fad5//=3
+                                            fbd5//=3
+                                            fcd5//=3
+                                            fdd5//=3
+                                            fed5//=3
+                                            
+                                            fad5+=1*len(vertices2b)-5
+                                            fbd5+=1*len(vertices2b)-5
+                                            fcd5+=1*len(vertices2b)-5
+                                            fdd5+=1*len(vertices2b)-5
+                                            fed5+=1*len(vertices2b)-5
+                                            
+                                            faces2b.append([fad5,fbd5,fcd5])
+                                            faces2b.append([fbd5,fcd5,fdd5])
+                                            faces2b.append([fcd5,fdd5,fed5])
+
+                                elif vertexCount == 6:
+                                    for i in range(1):
+                                        vx = unpack("<h", f.read(2))[0]/4096
+                                        vy = unpack("<h", f.read(2))[0]/4096
+                                        vz = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx1 = unpack("<h", f.read(2))[0]/4096
+                                        vy1 = unpack("<h", f.read(2))[0]/4096
+                                        vz1 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx2 = unpack("<h", f.read(2))[0]/4096
+                                        vy2 = unpack("<h", f.read(2))[0]/4096
+                                        vz2 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx3 = unpack("<h", f.read(2))[0]/4096
+                                        vy3 = unpack("<h", f.read(2))[0]/4096
+                                        vz3 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx4 = unpack("<h", f.read(2))[0]/4096
+                                        vy4 = unpack("<h", f.read(2))[0]/4096
+                                        vz4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx6 = unpack("<h", f.read(2))[0]/4096
+                                        vy6 = unpack("<h", f.read(2))[0]/4096
+                                        vz6 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+                                        vertices2c.append([vx,vz,vy])
+                                        vertices2c.append([vx1,vz1,vy1])
+                                        vertices2c.append([vx2,vz2,vy2])
+                                        vertices2c.append([vx3,vz3,vy3])
+                                        vertices2c.append([vx4,vz4,vy4])
+                                        vertices2c.append([vx6,vz6,vy6])
+
+                                    f.seek(90,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsC = unpack("B", f.read(1))[0]
+                                    if flagsC == 0x6E:
+                                        if facecount == 2:
+                                            
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            if pad01 == 100:
+                                                
+                                            
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                            elif pad01 == 15:
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+
+                                        elif facecount == 3:
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
+
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            pad02 = unpack("B", f.read(1))[0]
+                                            pad03 = unpack("B", f.read(1))[0]
+
+                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                                fad6a//=3
+                                                fbd6a//=3
+                                                fcd6a//=3
+                                                fdd6a//=3
+                                                fed6a//=3
+                                                ffd6a//=3
+                                                fgd6a//=3
+                                                fhd6a//=3
+                                                
+                                                fad6a+=1*len(vertices2c)-6
+                                                fbd6a+=1*len(vertices2c)-6
+                                                fcd6a+=1*len(vertices2c)-6
+                                                fdd6a+=1*len(vertices2c)-6
+                                                fed6a+=1*len(vertices2c)-6
+                                                ffd6a+=1*len(vertices2c)-6
+                                                fgd6a+=1*len(vertices2c)-6
+                                                fhd6a+=1*len(vertices2c)-6
+
+                                                faces2c.append([fad6a,fbd6a,fcd6a])
+                                                faces2c.append([fbd6a,fcd6a,fdd6a])
+                                                faces2c.append([fcd6a,fdd6a,fed6a])
+                                                faces2c.append([fdd6a,fed6a,ffd6a])
+                                                faces2c.append([fed6a,ffd6a,fgd6a])
+                                                faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                                elif vertexCount:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        
+                                        vertices2d.append([vx,vz,vy])
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                
+                                    
+                                
+                        elif Chunks == b"\x04\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2 = unpack("B", f.read(1))[0]
+                            if flag2 == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        
+                                        vx0001__ = unpack("<f", f.read(4))[0]
+                                        vy0001__ = unpack("<f", f.read(4))[0]
+                                        vz0001__ = unpack("<f", f.read(4))[0]
+                                        brightness1__ = unpack("<f", f.read(4))[0]
+                                        uvx0001__ = unpack("<f", f.read(4))[0]
+                                        uvy0001__ = unpack("<f", f.read(4))[0]
+                                        f.seek(4,1)
+                                        type4 = unpack("B", f.read(1))[0]==0
+                                        f.seek(3,1)
+                                        vertices3.append([vx0001__,vz0001__,vy0001__])
+                                        uv_coords.append([uvx0001__,-uvy0001__])
+                                        fa2+=1
+                                        fb2+=1
+                                        fc2+=1
+                                        if type4 > 0:
+                                            faces3.append([j+j+type4-type4-1+fa2-j-j-1+j%2,j-j+type4-type4+1+fb2-2-1+j-j-j%2,j+type4-type4+fc2-j+2-4])
+                elif UnkCount1 != 0 and UnkCount2 != 0:
+                    f.seek(UnkCountEntrySize2,0)
+                    for i in range(UnkCount2):
+                        ScaleX = unpack("<f", f.read(4))[0]
+                        rotationz = unpack("<f", f.read(4))[0]
+                        rotationy = unpack("<f", f.read(4))[0]
+                        null1 = unpack("<f", f.read(4))[0]
+                        nrotationz = unpack("<f", f.read(4))[0]
+                        ScaleY = unpack("<f", f.read(4))[0]
+                        rotationx = unpack("<f", f.read(4))[0]
+                        nrotationy = unpack("<f", f.read(4))[0]
+                        null2 = unpack("<f", f.read(4))[0]
+                        nrotationx = unpack("<f", f.read(4))[0]
+                        ScaleZ = unpack("<f", f.read(4))[0]
+                        null3 = unpack("<f", f.read(4))[0]
+                        posx = unpack("<f", f.read(4))[0]
+                        posy = unpack("<f", f.read(4))[0]
+                        posz = unpack("<f", f.read(4))[0]
+                        ScaleW = unpack("<f", f.read(4))[0]
+                        objlen = unpack("<I", f.read(4))[0]
+                        objid = unpack("<I", f.read(4))[0]
+                        f.seek(8,1)
+                    f.seek(0)
+                    Chunk = f.read()
+                    f.seek(0)
+                    while f.tell() < len(Chunk):
+                        Chunks = f.read(4)
+                        if Chunks == b"\x03\x01\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0]
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        vx = unpack("<f", f.read(4))[0]
+                                        vy = unpack("<f", f.read(4))[0]
+                                        vz = unpack("<f", f.read(4))[0]
+                                        type4 = unpack("B", f.read(1))[0]==False
+                                        value1 = unpack("B", f.read(1))[0]
+                                        nz = unpack("<h", f.read(2))[0]
+                                        vertices.append([vx,vz,vy])
+                                        fa+=1
+                                        fb+=1
+                                        fc+=1
+                                        if type4 > 0:
+                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                        elif Chunks == b"\x03\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6D:
+                                if vertexCount == 3:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2.append([vxaa,vzaa,vyaa])
+                                    f.seek(78,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                            
+                                        fad//=3
+                                        fbd//=3
+                                        fcd//=3
+
+                                        fad+=1*len(vertices2)-3
+                                        fbd+=1*len(vertices2)-3
+                                        fcd+=1*len(vertices2)-3
+
+                                        faces2.append([fad,fbd,fcd])
+
+                                elif vertexCount == 4:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2a.append([vxaa,vzaa,vyaa])
+                                    f.seek(82,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+                                        pad03 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                        
+
+                                elif vertexCount == 5:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2b.append([vx,vz,vy])
+
+                                    f.seek(86,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100:
+                                            
+                                        
+                                            fad5//=3
+                                            fbd5//=3
+                                            fcd5//=3
+                                            fdd5//=3
+                                            fed5//=3
+                                            
+                                            fad5+=1*len(vertices2b)-5
+                                            fbd5+=1*len(vertices2b)-5
+                                            fcd5+=1*len(vertices2b)-5
+                                            fdd5+=1*len(vertices2b)-5
+                                            fed5+=1*len(vertices2b)-5
+                                            
+                                            faces2b.append([fad5,fbd5,fcd5])
+                                            faces2b.append([fbd5,fcd5,fdd5])
+                                            faces2b.append([fcd5,fdd5,fed5])
+
+                                elif vertexCount == 6:
+                                    for i in range(1):
+                                        vx = unpack("<h", f.read(2))[0]/4096
+                                        vy = unpack("<h", f.read(2))[0]/4096
+                                        vz = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx1 = unpack("<h", f.read(2))[0]/4096
+                                        vy1 = unpack("<h", f.read(2))[0]/4096
+                                        vz1 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx2 = unpack("<h", f.read(2))[0]/4096
+                                        vy2 = unpack("<h", f.read(2))[0]/4096
+                                        vz2 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx3 = unpack("<h", f.read(2))[0]/4096
+                                        vy3 = unpack("<h", f.read(2))[0]/4096
+                                        vz3 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx4 = unpack("<h", f.read(2))[0]/4096
+                                        vy4 = unpack("<h", f.read(2))[0]/4096
+                                        vz4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx6 = unpack("<h", f.read(2))[0]/4096
+                                        vy6 = unpack("<h", f.read(2))[0]/4096
+                                        vz6 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+                                        vertices2c.append([vx,vz,vy])
+                                        vertices2c.append([vx1,vz1,vy1])
+                                        vertices2c.append([vx2,vz2,vy2])
+                                        vertices2c.append([vx3,vz3,vy3])
+                                        vertices2c.append([vx4,vz4,vy4])
+                                        vertices2c.append([vx6,vz6,vy6])
+
+                                    f.seek(90,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsC = unpack("B", f.read(1))[0]
+                                    if flagsC == 0x6E:
+                                        if facecount == 2:
+                                            
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            if pad01 == 100:
+                                                
+                                            
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                            elif pad01 == 15:
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+
+                                        elif facecount == 3:
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
+
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            pad02 = unpack("B", f.read(1))[0]
+                                            pad03 = unpack("B", f.read(1))[0]
+
+                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                                fad6a//=3
+                                                fbd6a//=3
+                                                fcd6a//=3
+                                                fdd6a//=3
+                                                fed6a//=3
+                                                ffd6a//=3
+                                                fgd6a//=3
+                                                fhd6a//=3
+                                                
+                                                fad6a+=1*len(vertices2c)-6
+                                                fbd6a+=1*len(vertices2c)-6
+                                                fcd6a+=1*len(vertices2c)-6
+                                                fdd6a+=1*len(vertices2c)-6
+                                                fed6a+=1*len(vertices2c)-6
+                                                ffd6a+=1*len(vertices2c)-6
+                                                fgd6a+=1*len(vertices2c)-6
+                                                fhd6a+=1*len(vertices2c)-6
+
+                                                faces2c.append([fad6a,fbd6a,fcd6a])
+                                                faces2c.append([fbd6a,fcd6a,fdd6a])
+                                                faces2c.append([fcd6a,fdd6a,fed6a])
+                                                faces2c.append([fdd6a,fed6a,ffd6a])
+                                                faces2c.append([fed6a,ffd6a,fgd6a])
+                                                faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                                elif vertexCount:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        
+                                        vertices2d.append([vx,vz,vy])
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                
+                                    
+                                
+                        elif Chunks == b"\x04\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2 = unpack("B", f.read(1))[0]
+                            if flag2 == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        
+                                        vx0001__ = unpack("<f", f.read(4))[0]
+                                        vy0001__ = unpack("<f", f.read(4))[0]
+                                        vz0001__ = unpack("<f", f.read(4))[0]
+                                        brightness1__ = unpack("<f", f.read(4))[0]
+                                        uvx0001__ = unpack("<f", f.read(4))[0]
+                                        uvy0001__ = unpack("<f", f.read(4))[0]
+                                        f.seek(4,1)
+                                        type4 = unpack("B", f.read(1))[0]==0
+                                        f.seek(3,1)
+                                        vertices3.append([vx0001__,vz0001__,vy0001__])
+                                        fa2+=1
+                                        fb2+=1
+                                        fc2+=1
+                                        if type4 > 0:
+                                            faces3.append([j+j+type4-type4-1+fa2-j-j-1+j%2,j-j+type4-type4+1+fb2-2-1+j-j-j%2,j+type4-type4+fc2-j+2-4])
+
+            elif ObjectCount == 0:
+                if UnkCount1 != 0 and UnkCount2 != 0:
+                    f.seek(UnkCountEntrySize2,0)
+                    for i in range(UnkCount2):
+                        ScaleX = unpack("<f", f.read(4))[0]
+                        rotationz = unpack("<f", f.read(4))[0]
+                        rotationy = unpack("<f", f.read(4))[0]
+                        null1 = unpack("<f", f.read(4))[0]
+                        nrotationz = unpack("<f", f.read(4))[0]
+                        ScaleY = unpack("<f", f.read(4))[0]
+                        rotationx = unpack("<f", f.read(4))[0]
+                        nrotationy = unpack("<f", f.read(4))[0]
+                        null2 = unpack("<f", f.read(4))[0]
+                        nrotationx = unpack("<f", f.read(4))[0]
+                        ScaleZ = unpack("<f", f.read(4))[0]
+                        null3 = unpack("<f", f.read(4))[0]
+                        posx = unpack("<f", f.read(4))[0]
+                        posy = unpack("<f", f.read(4))[0]
+                        posz = unpack("<f", f.read(4))[0]
+                        ScaleW = unpack("<f", f.read(4))[0]
+                        objlen = unpack("<I", f.read(4))[0]
+                        objid = unpack("<I", f.read(4))[0]
+                        f.seek(8,1)
+                    f.seek(0)
+                    Chunk = f.read()
+                    f.seek(0)
+                    while f.tell() < len(Chunk):
+                        Chunks = f.read(4)
+                        if Chunks == b"\x03\x01\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0]
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        vx = unpack("<f", f.read(4))[0]
+                                        vy = unpack("<f", f.read(4))[0]
+                                        vz = unpack("<f", f.read(4))[0]
+                                        type4 = unpack("B", f.read(1))[0]==False
+                                        value1 = unpack("B", f.read(1))[0]
+                                        nz = unpack("<h", f.read(2))[0]
+                                        vertices.append([vx,vz,vy])
+                                        fa+=1
+                                        fb+=1
+                                        fc+=1
+                                        if type4 > 0:
+                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                        elif Chunks == b"\x03\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6D:
+                                if vertexCount == 3:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2.append([vxaa,vzaa,vyaa])
+                                    f.seek(78,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                            
+                                        fad//=3
+                                        fbd//=3
+                                        fcd//=3
+
+                                        fad+=1*len(vertices2)-3
+                                        fbd+=1*len(vertices2)-3
+                                        fcd+=1*len(vertices2)-3
+
+                                        faces2.append([fad,fbd,fcd])
+
+                                elif vertexCount == 4:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2a.append([vxaa,vzaa,vyaa])
+                                    f.seek(82,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+                                        pad03 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                        
+
+                                elif vertexCount == 5:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2b.append([vx,vz,vy])
+
+                                    f.seek(86,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100:
+                                            
+                                        
+                                            fad5//=3
+                                            fbd5//=3
+                                            fcd5//=3
+                                            fdd5//=3
+                                            fed5//=3
+                                            
+                                            fad5+=1*len(vertices2b)-5
+                                            fbd5+=1*len(vertices2b)-5
+                                            fcd5+=1*len(vertices2b)-5
+                                            fdd5+=1*len(vertices2b)-5
+                                            fed5+=1*len(vertices2b)-5
+                                            
+                                            faces2b.append([fad5,fbd5,fcd5])
+                                            faces2b.append([fbd5,fcd5,fdd5])
+                                            faces2b.append([fcd5,fdd5,fed5])
+
+                                elif vertexCount == 6:
+                                    for i in range(1):
+                                        vx = unpack("<h", f.read(2))[0]/4096
+                                        vy = unpack("<h", f.read(2))[0]/4096
+                                        vz = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx1 = unpack("<h", f.read(2))[0]/4096
+                                        vy1 = unpack("<h", f.read(2))[0]/4096
+                                        vz1 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx2 = unpack("<h", f.read(2))[0]/4096
+                                        vy2 = unpack("<h", f.read(2))[0]/4096
+                                        vz2 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx3 = unpack("<h", f.read(2))[0]/4096
+                                        vy3 = unpack("<h", f.read(2))[0]/4096
+                                        vz3 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx4 = unpack("<h", f.read(2))[0]/4096
+                                        vy4 = unpack("<h", f.read(2))[0]/4096
+                                        vz4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx6 = unpack("<h", f.read(2))[0]/4096
+                                        vy6 = unpack("<h", f.read(2))[0]/4096
+                                        vz6 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+                                        vertices2c.append([vx,vz,vy])
+                                        vertices2c.append([vx1,vz1,vy1])
+                                        vertices2c.append([vx2,vz2,vy2])
+                                        vertices2c.append([vx3,vz3,vy3])
+                                        vertices2c.append([vx4,vz4,vy4])
+                                        vertices2c.append([vx6,vz6,vy6])
+
+                                    f.seek(90,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsC = unpack("B", f.read(1))[0]
+                                    if flagsC == 0x6E:
+                                        if facecount == 2:
+                                            
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            if pad01 == 100:
+                                                
+                                            
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                            elif pad01 == 15:
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+
+                                        elif facecount == 3:
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
+
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            pad02 = unpack("B", f.read(1))[0]
+                                            pad03 = unpack("B", f.read(1))[0]
+
+                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                                fad6a//=3
+                                                fbd6a//=3
+                                                fcd6a//=3
+                                                fdd6a//=3
+                                                fed6a//=3
+                                                ffd6a//=3
+                                                fgd6a//=3
+                                                fhd6a//=3
+                                                
+                                                fad6a+=1*len(vertices2c)-6
+                                                fbd6a+=1*len(vertices2c)-6
+                                                fcd6a+=1*len(vertices2c)-6
+                                                fdd6a+=1*len(vertices2c)-6
+                                                fed6a+=1*len(vertices2c)-6
+                                                ffd6a+=1*len(vertices2c)-6
+                                                fgd6a+=1*len(vertices2c)-6
+                                                fhd6a+=1*len(vertices2c)-6
+
+                                                faces2c.append([fad6a,fbd6a,fcd6a])
+                                                faces2c.append([fbd6a,fcd6a,fdd6a])
+                                                faces2c.append([fcd6a,fdd6a,fed6a])
+                                                faces2c.append([fdd6a,fed6a,ffd6a])
+                                                faces2c.append([fed6a,ffd6a,fgd6a])
+                                                faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                                elif vertexCount:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        
+                                        vertices2d.append([vx,vz,vy])
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                
+                                    
+                                
+                        elif Chunks == b"\x04\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2 = unpack("B", f.read(1))[0]
+                            if flag2 == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        
+                                        vx0001__ = unpack("<f", f.read(4))[0]
+                                        vy0001__ = unpack("<f", f.read(4))[0]
+                                        vz0001__ = unpack("<f", f.read(4))[0]
+                                        brightness1__ = unpack("<f", f.read(4))[0]
+                                        uvx0001__ = unpack("<f", f.read(4))[0]
+                                        uvy0001__ = unpack("<f", f.read(4))[0]
+                                        f.seek(4,1)
+                                        type4 = unpack("B", f.read(1))[0]==0
+                                        f.seek(3,1)
+                                        vertices3.append([vx0001__,vz0001__,vy0001__])
+                                        uv_coords.append([uvx0001__,-uvy0001__])
+                                        fa2+=1
+                                        fb2+=1
+                                        fc2+=1
+                                        if type4 > 0:
+                                            faces3.append([j+j+type4-type4-1+fa2-j-j-1+j%2,j-j+type4-type4+1+fb2-2-1+j-j-j%2,j+type4-type4+fc2-j+2-4])
+                if UnkCount1 == 0 and UnkCount2 == 0:
+                    f.seek(0)
+                    Chunk = f.read()
+                    f.seek(0)
+                    while f.tell() < len(Chunk):
+                        Chunks = f.read(4)
+                        if Chunks == b"\x03\x01\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0]
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        vx = unpack("<f", f.read(4))[0]
+                                        vy = unpack("<f", f.read(4))[0]
+                                        vz = unpack("<f", f.read(4))[0]
+                                        type4 = unpack("B", f.read(1))[0]==False
+                                        value1 = unpack("B", f.read(1))[0]
+                                        nz = unpack("<h", f.read(2))[0]
+                                        vertices.append([vx,vz,vy])
+                                        fa+=1
+                                        fb+=1
+                                        fc+=1
+                                        if type4 > 0:
+                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                        elif Chunks == b"\x03\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6D:
+                                if vertexCount == 3:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2.append([vxaa,vzaa,vyaa])
+                                    f.seek(78,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                            
+                                        fad//=3
+                                        fbd//=3
+                                        fcd//=3
+
+                                        fad+=1*len(vertices2)-3
+                                        fbd+=1*len(vertices2)-3
+                                        fcd+=1*len(vertices2)-3
+
+                                        faces2.append([fad,fbd,fcd])
+
+                                elif vertexCount == 4:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2a.append([vxaa,vzaa,vyaa])
+                                    f.seek(82,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+                                        pad03 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                        
+
+                                elif vertexCount == 5:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2b.append([vx,vz,vy])
+
+                                    f.seek(86,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100:
+                                            
+                                        
+                                            fad5//=3
+                                            fbd5//=3
+                                            fcd5//=3
+                                            fdd5//=3
+                                            fed5//=3
+                                            
+                                            fad5+=1*len(vertices2b)-5
+                                            fbd5+=1*len(vertices2b)-5
+                                            fcd5+=1*len(vertices2b)-5
+                                            fdd5+=1*len(vertices2b)-5
+                                            fed5+=1*len(vertices2b)-5
+                                            
+                                            faces2b.append([fad5,fbd5,fcd5])
+                                            faces2b.append([fbd5,fcd5,fdd5])
+                                            faces2b.append([fcd5,fdd5,fed5])
+
+                                elif vertexCount == 6:
+                                    for i in range(1):
+                                        vx = unpack("<h", f.read(2))[0]/4096
+                                        vy = unpack("<h", f.read(2))[0]/4096
+                                        vz = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx1 = unpack("<h", f.read(2))[0]/4096
+                                        vy1 = unpack("<h", f.read(2))[0]/4096
+                                        vz1 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx2 = unpack("<h", f.read(2))[0]/4096
+                                        vy2 = unpack("<h", f.read(2))[0]/4096
+                                        vz2 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx3 = unpack("<h", f.read(2))[0]/4096
+                                        vy3 = unpack("<h", f.read(2))[0]/4096
+                                        vz3 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx4 = unpack("<h", f.read(2))[0]/4096
+                                        vy4 = unpack("<h", f.read(2))[0]/4096
+                                        vz4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx6 = unpack("<h", f.read(2))[0]/4096
+                                        vy6 = unpack("<h", f.read(2))[0]/4096
+                                        vz6 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+                                        vertices2c.append([vx,vz,vy])
+                                        vertices2c.append([vx1,vz1,vy1])
+                                        vertices2c.append([vx2,vz2,vy2])
+                                        vertices2c.append([vx3,vz3,vy3])
+                                        vertices2c.append([vx4,vz4,vy4])
+                                        vertices2c.append([vx6,vz6,vy6])
+
+                                    f.seek(90,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsC = unpack("B", f.read(1))[0]
+                                    if flagsC == 0x6E:
+                                        if facecount == 2:
+                                            
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            if pad01 == 100:
+                                                
+                                            
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                            elif pad01 == 15:
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+
+                                        elif facecount == 3:
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
+
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            pad02 = unpack("B", f.read(1))[0]
+                                            pad03 = unpack("B", f.read(1))[0]
+
+                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                                fad6a//=3
+                                                fbd6a//=3
+                                                fcd6a//=3
+                                                fdd6a//=3
+                                                fed6a//=3
+                                                ffd6a//=3
+                                                fgd6a//=3
+                                                fhd6a//=3
+                                                
+                                                fad6a+=1*len(vertices2c)-6
+                                                fbd6a+=1*len(vertices2c)-6
+                                                fcd6a+=1*len(vertices2c)-6
+                                                fdd6a+=1*len(vertices2c)-6
+                                                fed6a+=1*len(vertices2c)-6
+                                                ffd6a+=1*len(vertices2c)-6
+                                                fgd6a+=1*len(vertices2c)-6
+                                                fhd6a+=1*len(vertices2c)-6
+
+                                                faces2c.append([fad6a,fbd6a,fcd6a])
+                                                faces2c.append([fbd6a,fcd6a,fdd6a])
+                                                faces2c.append([fcd6a,fdd6a,fed6a])
+                                                faces2c.append([fdd6a,fed6a,ffd6a])
+                                                faces2c.append([fed6a,ffd6a,fgd6a])
+                                                faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                                elif vertexCount:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        
+                                        vertices2d.append([vx,vz,vy])
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                
+                                    
+                                
+                        elif Chunks == b"\x04\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2 = unpack("B", f.read(1))[0]
+                            if flag2 == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        
+                                        vx0001__ = unpack("<f", f.read(4))[0]
+                                        vy0001__ = unpack("<f", f.read(4))[0]
+                                        vz0001__ = unpack("<f", f.read(4))[0]
+                                        brightness1__ = unpack("<f", f.read(4))[0]
+                                        uvx0001__ = unpack("<f", f.read(4))[0]
+                                        uvy0001__ = unpack("<f", f.read(4))[0]
+                                        f.seek(4,1)
+                                        type4 = unpack("B", f.read(1))[0]==0
+                                        f.seek(3,1)
+                                        vertices3.append([vx0001__,vz0001__,vy0001__])
+                                        uv_coords.append([uvx0001__,-uvy0001__])
+                                        fa2+=1
+                                        fb2+=1
+                                        fc2+=1
+                                        if type4 > 0:
+                                            faces3.append([j+j+type4-type4-1+fa2-j-j-1+j%2,j-j+type4-type4+1+fb2-2-1+j-j-j%2,j+type4-type4+fc2-j+2-4])
+                
+    elif TextureCount != 0:
         if TextureEntrySize1 == 144 or TextureEntrySize1 == 148:
             idxA_=0
             f.seek(TextureEntrySize1,0)
@@ -3732,8 +5490,8 @@ def GHG_mesh(f, filepath):
                             zero12aaa = unpack("<H", f.read(2))[0]
                             zero13aaa = unpack("<H", f.read(2))[0]
                                                      
-                            for xi in range(comprWa):
-                                for yi in range(comprHa):
+                            for xi in range(comprHa):
+                                for yi in range(comprWa):
                                     iidx = unpack("B", f.read(1))[0]
                                     iidx2 = iidx
                                     iidx3 = iidx
@@ -3744,7 +5502,7 @@ def GHG_mesh(f, filepath):
 
                                     elif alp:
                                         iidx4-=iidx4
-                                        iidx4+=alph
+                                        iidx4+=alp
                                         
                                         
                                     if iidx == 1:
@@ -3795,21 +5553,24 @@ def GHG_mesh(f, filepath):
                             zero12aaa = unpack("<H", f.read(2))[0]
                             zero13aaa = unpack("<H", f.read(2))[0]
 
-                            for xi in range(comprWa):
-                                for yi in range(comprHa):
+                            for xi in range(comprHa):
+                                for yi in range(comprWa):
                                     iidx = unpack("B", f.read(1))[0]
                                     iidx2 = iidx
                                     iidx3 = iidx
                                     iidx4 = iidx
                                     if alp == 127:
-                                        iidx3-=iidx3+127
+                                        iidx3-=iidx3
+                                        iidx3+=127
 
-                                    elif alp != 127:
+                                    elif alp:
                                         iidx4-=iidx4
+                                        iidx4+=alp
+                                        
                                         
                                     if iidx == 1:
                                         iidx2+=254
-                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,iidx3/127+iidx4)
+                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,iidx3/127+iidx4/127)
                             for i in range(80):
                                 cddddpad01 = unpack("B", f.read(1))[0]
                     elif palleteOffset == 0x8008:
@@ -3850,6 +5611,8 @@ def GHG_mesh(f, filepath):
                                 g1/=255
                                 b1/=255
                                 a1/=255
+
+                                alp2,=[a]
 
                                 texttures.append([r,g,b,a])
 
@@ -3909,9 +5672,20 @@ def GHG_mesh(f, filepath):
                                 for yi in range(comprHa//2):
                                     iidx = unpack("B", f.read(1))[0]
                                     iidx2 = iidx
+                                    iidx3 = iidx
+                                    iidx4 = iidx
+                                    if alp2 == 127:
+                                        iidx3-=iidx3
+                                        iidx3+=127
+
+                                    elif alp2:
+                                        iidx4-=iidx4
+                                        iidx4+=alp2
+                                        
+                                        
                                     if iidx == 1:
                                         iidx2+=254
-                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,1)
+                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,iidx3/127+iidx4/127)
                             for i in range(80):
                                 cddddpad01 = unpack("B", f.read(1))[0]
 
@@ -3961,9 +5735,20 @@ def GHG_mesh(f, filepath):
                                 for yi in range(comprHa//comprH):
                                     iidx = unpack("B", f.read(1))[0]
                                     iidx2 = iidx
+                                    iidx3 = iidx
+                                    iidx4 = iidx
+                                    if alp2 == 127:
+                                        iidx3-=iidx3
+                                        iidx3+=127
+
+                                    elif alp2:
+                                        iidx4-=iidx4
+                                        iidx4+=alp2
+                                        
+                                        
                                     if iidx == 1:
                                         iidx2+=254
-                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,1)
+                                    drawPixel(yi,xi,iidx2/255,iidx2/255,iidx2/255,iidx3/127+iidx4/127)
                             for i in range(80):
                                 cddddpad01 = unpack("B", f.read(1))[0]
 
@@ -3979,6 +5764,61 @@ def GHG_mesh(f, filepath):
                 f.seek(mxxxxx[0],0)
                 f.seek(288,1)
                 matFlg = unpack("<I", f.read(4))[0]
+                RNDRSTREAMrs = unpack("<I", f.read(4))[0]
+                f.seek(28,1)
+                AnimatedRed = unpack("<I", f.read(4))[0]
+                AnimatedGreen = unpack("<I", f.read(4))[0]
+                AnimatedBlue = unpack("<I", f.read(4))[0]
+                f.seek(4,1)
+                matFlg2 = unpack("<I", f.read(4))[0]
+                f.seek(4,1)
+                VARIPTR = unpack("<I", f.read(4))[0]
+                snext = unpack("<I", f.read(4))[0]
+                slast = unpack("<I", f.read(4))[0]
+                next1 = unpack("<I", f.read(4))[0]
+                attrib = unpack("<f", f.read(4))[0]
+                matFlg3 = unpack("<I", f.read(4))[0]
+                ambientR = unpack("<f", f.read(4))[0]
+                ambientG = unpack("<f", f.read(4))[0]
+                ambientB = unpack("<f", f.read(4))[0]
+                diffuseR = unpack("<f", f.read(4))[0]
+                diffuseG = unpack("<f", f.read(4))[0]
+                diffuseB = unpack("<f", f.read(4))[0]
+                fx1 = unpack("<f", f.read(4))[0]
+                fx2 = unpack("<f", f.read(4))[0]
+                fx3 = unpack("<f", f.read(4))[0]
+                fx4 = unpack("<f", f.read(4))[0]
+                power = unpack("<f", f.read(4))[0]
+                allpha = unpack("<f", f.read(4))[0]
+                tid = unpack("<I", f.read(4))[0]
+                mid = unpack("<I", f.read(4))[0]
+                k = unpack("<H", f.read(2))[0]
+                L = unpack("B", f.read(1))[0]
+                uvanmmode = unpack("B", f.read(1))[0]
+                du = unpack("<f", f.read(4))[0]
+                dv = unpack("<f", f.read(4))[0]
+                su = unpack("<f", f.read(4))[0]
+                sv = unpack("<f", f.read(4))[0]
+                multi_next = unpack("<I", f.read(4))[0]
+                contt = unpack("B", f.read(1))[0]
+                fxid = unpack("B", f.read(1))[0]
+                specialid = unpack("B", f.read(1))[0]
+                pad01 = unpack("B", f.read(1))[0]
+                pad02 = unpack("B", f.read(1))[0]
+                pad03 = unpack("B", f.read(1))[0]
+                pad04 = unpack("B", f.read(1))[0]
+                pad05 = unpack("B", f.read(1))[0]
+                pad06 = unpack("B", f.read(1))[0]
+                pad07 = unpack("B", f.read(1))[0]
+                pad08 = unpack("B", f.read(1))[0]
+                pad09 = unpack("B", f.read(1))[0]
+                m = bpy.data.materials.new('GHG Material')
+                if tid >= 0:
+                    m.use_nodes = True
+                    m.blend_method = 'HASHED'
+                    targetnode = m.node_tree.nodes.get('Principled BSDF')
+                    assert targetnode, 'Failed to locate target node.'
+                    n = m.node_tree.nodes.new('ShaderNodeTexImage')
                         
 
             f.seek(0)
@@ -4053,4077 +5893,1604 @@ def GHG_mesh(f, filepath):
                 skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
             bpy.ops.object.mode_set(mode = 'OBJECT')
 
-            f.seek(0)
-            Chunk = f.read()
-            f.seek(0)
-            while f.tell() < len(Chunk):
-                Chunks = f.read(4)
-                if Chunks == b"\x03\x01\x00\x01":
-                    pass
-
-                elif Chunks == b"\x03\x02\x00\x01":
-                    f.seek(1,1)
-                    value1 = unpack("B", f.read(1))[0]
-                    vertexCount = unpack("B", f.read(1))[0] // 2
-                    flag2a = unpack("B", f.read(1))[0]
-                    if flag2a == 0x6D:
-                        if vertexCount == 3:
-                            for i in range(vertexCount):
-                                vxaa = unpack("<h", f.read(2))[0] / 4096
-                                vyaa = unpack("<h", f.read(2))[0] / 4096
-                                vzaa = unpack("<h", f.read(2))[0] / 4096
-                                vwaa = unpack("<h", f.read(2))[0] / 4096
-                                uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2.append([vxaa,vzaa,vyaa])
-                            f.seek(78,1)
-                            facecount = unpack("B", f.read(1))[0]
-                            flagsB = unpack("B", f.read(1))[0]
-                            if flagsB == 0x6E:
-                                id1 = unpack("B", f.read(1))[0]
-                                fad = unpack("B", f.read(1))[0] & 0x0F
-                                fbd = unpack("B", f.read(1))[0] & 0x0F
-                                fcd = unpack("B", f.read(1))[0] & 0x0F
-                                    
-                                fad//=3
-                                fbd//=3
-                                fcd//=3
-
-                                fad+=1*len(vertices2)-3
-                                fbd+=1*len(vertices2)-3
-                                fcd+=1*len(vertices2)-3
-
-                                faces2.append([fad,fbd,fcd])
-
-                        elif vertexCount == 4:
-                            for i in range(vertexCount):
-                                vxaa = unpack("<h", f.read(2))[0] / 4096
-                                vyaa = unpack("<h", f.read(2))[0] / 4096
-                                vzaa = unpack("<h", f.read(2))[0] / 4096
-                                vwaa = unpack("<h", f.read(2))[0] / 4096
-                                uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2a.append([vxaa,vzaa,vyaa])
-                            f.seek(82,1)
-                            facecount = unpack("B", f.read(1))[0]
-                            flagsB = unpack("B", f.read(1))[0]
-                            if flagsB == 0x6E:
-                                id1 = unpack("B", f.read(1))[0]
-                                fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                pad01 = unpack("B", f.read(1))[0]
-                                pad02 = unpack("B", f.read(1))[0]
-                                pad03 = unpack("B", f.read(1))[0]
-
-                                if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                    fad1abc//=3
-                                    fbd1abc//=3
-                                    fcd1abc//=3
-                                    fdd1abc//=3
-
-                                    fad1abc+=1*len(vertices2a)-4
-                                    fbd1abc+=1*len(vertices2a)-4
-                                    fcd1abc+=1*len(vertices2a)-4
-                                    fdd1abc+=1*len(vertices2a)-4
-
-                                    faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                    faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-                                
-
-                        elif vertexCount == 5:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2b.append([vx,vz,vy])
-
-                            f.seek(86,1)
-                            facecount = unpack("B", f.read(1))[0]
-                            flagsB = unpack("B", f.read(1))[0]
-                            if flagsB == 0x6E:
-                                id1 = unpack("B", f.read(1))[0]
-                                fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                pad01 = unpack("B", f.read(1))[0]
-                                pad02 = unpack("B", f.read(1))[0]
-
-                                if pad01 == 100 and pad02 == 100:
-                                    
-                                
-                                    fad5//=3
-                                    fbd5//=3
-                                    fcd5//=3
-                                    fdd5//=3
-                                    fed5//=3
-                                    
-                                    fad5+=1*len(vertices2b)-5
-                                    fbd5+=1*len(vertices2b)-5
-                                    fcd5+=1*len(vertices2b)-5
-                                    fdd5+=1*len(vertices2b)-5
-                                    fed5+=1*len(vertices2b)-5
-                                    
-                                    faces2b.append([fad5,fbd5,fcd5])
-                                    faces2b.append([fbd5,fcd5,fdd5])
-                                    faces2b.append([fcd5,fdd5,fed5])
-
-                        elif vertexCount == 6:
-                            for i in range(1):
-                                vx = unpack("<h", f.read(2))[0]/4096
-                                vy = unpack("<h", f.read(2))[0]/4096
-                                vz = unpack("<h", f.read(2))[0]/4096
-                                f.seek(2,1)
-                                uvx4 = unpack("<h", f.read(2))[0]/4096
-                                uvy4 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(4,1)
-
-                                vx1 = unpack("<h", f.read(2))[0]/4096
-                                vy1 = unpack("<h", f.read(2))[0]/4096
-                                vz1 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(2,1)
-                                uvx4 = unpack("<h", f.read(2))[0]/4096
-                                uvy4 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(4,1)
-
-                                vx2 = unpack("<h", f.read(2))[0]/4096
-                                vy2 = unpack("<h", f.read(2))[0]/4096
-                                vz2 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(2,1)
-                                uvx4 = unpack("<h", f.read(2))[0]/4096
-                                uvy4 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(4,1)
-
-                                vx3 = unpack("<h", f.read(2))[0]/4096
-                                vy3 = unpack("<h", f.read(2))[0]/4096
-                                vz3 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(2,1)
-                                uvx4 = unpack("<h", f.read(2))[0]/4096
-                                uvy4 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(4,1)
-
-                                vx4 = unpack("<h", f.read(2))[0]/4096
-                                vy4 = unpack("<h", f.read(2))[0]/4096
-                                vz4 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(2,1)
-                                uvx4 = unpack("<h", f.read(2))[0]/4096
-                                uvy4 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(4,1)
-
-                                vx6 = unpack("<h", f.read(2))[0]/4096
-                                vy6 = unpack("<h", f.read(2))[0]/4096
-                                vz6 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(2,1)
-                                uvx4 = unpack("<h", f.read(2))[0]/4096
-                                uvy4 = unpack("<h", f.read(2))[0]/4096
-                                f.seek(4,1)
-                                vertices2c.append([vx,vz,vy])
-                                vertices2c.append([vx1,vz1,vy1])
-                                vertices2c.append([vx2,vz2,vy2])
-                                vertices2c.append([vx3,vz3,vy3])
-                                vertices2c.append([vx4,vz4,vy4])
-                                vertices2c.append([vx6,vz6,vy6])
-
-                            f.seek(90,1)
-                            facecount = unpack("B", f.read(1))[0]
-                            flagsC = unpack("B", f.read(1))[0]
-                            if flagsC == 0x6E:
-                                if facecount == 2:
-                                    
-                                    id1 = unpack("B", f.read(1))[0]
-                                    fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                    fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                    fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                    fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                    fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                    ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                    pad01 = unpack("B", f.read(1))[0]
-                                    if pad01 == 100:
-                                        
-                                    
-                                        fad6//=3
-                                        fbd6//=3
-                                        fcd6//=3
-                                        fdd6//=3
-                                        fed6//=3
-                                        ffd6//=3
-                                        
-                                        fad6+=1*len(vertices2c)-6
-                                        fbd6+=1*len(vertices2c)-6
-                                        fcd6+=1*len(vertices2c)-6
-                                        fdd6+=1*len(vertices2c)-6
-                                        fed6+=1*len(vertices2c)-6
-                                        ffd6+=1*len(vertices2c)-6
-
-                                        if math.isclose(vy3,vy4) == True:
-                                            faces2c.append([fad6,fbd6,fcd6])
-                                            faces2c.append([fbd6,fcd6,fdd6])
-                                            faces2c.append([fcd6,fdd6,fed6])
-                                            faces2c.append([fdd6,fed6,ffd6])
-                                        faces2c.append([fad6,fbd6,fcd6])
-                                        faces2c.append([fdd6,fed6,ffd6])
-
-                                elif facecount == 3:
-                                    id1 = unpack("B", f.read(1))[0]
-                                    fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                    fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                    fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                    fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                    fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                    ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                    fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                    fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                    pad01 = unpack("B", f.read(1))[0]
-                                    pad02 = unpack("B", f.read(1))[0]
-                                    pad03 = unpack("B", f.read(1))[0]
-
-                                    if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                        fad6a//=3
-                                        fbd6a//=3
-                                        fcd6a//=3
-                                        fdd6a//=3
-                                        fed6a//=3
-                                        ffd6a//=3
-                                        fgd6a//=3
-                                        fhd6a//=3
-                                        
-                                        fad6a+=1*len(vertices2c)-6
-                                        fbd6a+=1*len(vertices2c)-6
-                                        fcd6a+=1*len(vertices2c)-6
-                                        fdd6a+=1*len(vertices2c)-6
-                                        fed6a+=1*len(vertices2c)-6
-                                        ffd6a+=1*len(vertices2c)-6
-                                        fgd6a+=1*len(vertices2c)-6
-                                        fhd6a+=1*len(vertices2c)-6
-
-                                        faces2c.append([fad6a,fbd6a,fcd6a])
-                                        faces2c.append([fbd6a,fcd6a,fdd6a])
-                                        faces2c.append([fcd6a,fdd6a,fed6a])
-                                        faces2c.append([fdd6a,fed6a,ffd6a])
-                                        faces2c.append([fed6a,ffd6a,fgd6a])
-                                        faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                        elif vertexCount == 7:
-                            for i in range(1):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                
-                                vx1 = unpack("<h", f.read(2))[0] / 4096
-                                vy1 = unpack("<h", f.read(2))[0] / 4096
-                                vz1 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-
-                                vx2 = unpack("<h", f.read(2))[0] / 4096
-                                vy2 = unpack("<h", f.read(2))[0] / 4096
-                                vz2 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-
-                                vx3 = unpack("<h", f.read(2))[0] / 4096
-                                vy3 = unpack("<h", f.read(2))[0] / 4096
-                                vz3 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-
-                                vx4 = unpack("<h", f.read(2))[0] / 4096
-                                vy4 = unpack("<h", f.read(2))[0] / 4096
-                                vz4 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-
-                                vx5 = unpack("<h", f.read(2))[0] / 4096
-                                vy5 = unpack("<h", f.read(2))[0] / 4096
-                                vz5 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-
-                                vx6 = unpack("<h", f.read(2))[0] / 4096
-                                vy6 = unpack("<h", f.read(2))[0] / 4096
-                                vz6 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                
-                                vertices2d.append([vx,vz,vy])
-                                vertices2d.append([vx1,vz1,vy1])
-                                vertices2d.append([vx2,vz2,vy2])
-                                vertices2d.append([vx3,vz3,vy3])
-                                vertices2d.append([vx4,vz4,vy4])
-                                vertices2d.append([vx5,vz5,vy5])
-                                vertices2d.append([vx6,vz6,vy6])
-                            f.seek(94,1)
-                            facecount1 = unpack("B", f.read(1))[0]
-                            flagsD = unpack("B", f.read(1))[0]
-                            if flagsD == 0x6E:
-                                if facecount1 == 3:
-                                    id1 = unpack("B", f.read(1))[0]
-                                    fad7 = unpack("B", f.read(1))[0]
-                                    fbd7 = unpack("B", f.read(1))[0]
-                                    fcd7 = unpack("B", f.read(1))[0]
-                                    fdd7 = unpack("B", f.read(1))[0]
-                                    fed7 = unpack("B", f.read(1))[0]
-                                    ffd7 = unpack("B", f.read(1))[0]
-                                    fgd7 = unpack("B", f.read(1))[0]
-                                    if id1 == 21 and fad7 == 146 and fbd7 == 128 and fcd7 == 3 and fdd7 == 6 and fed7 == 137 and ffd7 == 140 and fgd7 == 15:
-                                        f.seek(-8,1)
+            if ObjectCount != 0:
+                if UnkCount1 == 0 and UnkCount2 == 0:
+                    f.seek(0)
+                    Chunk = f.read()
+                    f.seek(0)
+                    while f.tell() < len(Chunk):
+                        Chunks = f.read(4)
+                        if Chunks == b"\x03\x01\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0]
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        vx = unpack("<f", f.read(4))[0]
+                                        vy = unpack("<f", f.read(4))[0]
+                                        vz = unpack("<f", f.read(4))[0]
+                                        type4 = unpack("B", f.read(1))[0]==False
+                                        value1 = unpack("B", f.read(1))[0]
+                                        nz = unpack("<h", f.read(2))[0]
+                                        vertices.append([vx,vz,vy])
+                                        fa+=1
+                                        fb+=1
+                                        fc+=1
+                                        if type4 > 0:
+                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                        elif Chunks == b"\x03\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6D:
+                                if vertexCount == 3:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2.append([vxaa,vzaa,vyaa])
+                                    f.seek(78,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
                                         id1 = unpack("B", f.read(1))[0]
-                                        fad7_ = unpack("B", f.read(1))[0] & 0x10
-                                        fbd7_ = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd7_ = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd7_ = unpack("B", f.read(1))[0] & 0x0F
-                                        fed7_ = unpack("B", f.read(1))[0] & 0x0F
-                                        ffd7_ = unpack("B", f.read(1))[0] & 0x0F
-                                        fgd7_ = unpack("B", f.read(1))[0] & 0x0F
+                                        fad = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                            
+                                        fad//=3
+                                        fbd//=3
+                                        fcd//=3
 
-                                        fad7_//=3+1
-                                        fbd7_//=3
-                                        fcd7_//=3
-                                        fdd7_//=3
-                                        fed7_//=3
-                                        ffd7_//=3
-                                        fgd7_//=3
+                                        fad+=1*len(vertices2)-3
+                                        fbd+=1*len(vertices2)-3
+                                        fcd+=1*len(vertices2)-3
 
-                                        fad7_+=1*len(vertices2d)-7
-                                        fbd7_+=1*len(vertices2d)-7
-                                        fcd7_+=1*len(vertices2d)-7
-                                        fdd7_+=1*len(vertices2d)-7
-                                        fed7_+=1*len(vertices2d)-7
-                                        ffd7_+=1*len(vertices2d)-7
-                                        fgd7_+=1*len(vertices2d)-7
+                                        faces2.append([fad,fbd,fcd])
 
-                                        faces2d.append([fad7_,fbd7_,fcd7_])
-                                        faces2d.append([fdd7_,fed7_,ffd7_])
-                        
+                                elif vertexCount == 4:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2a.append([vxaa,vzaa,vyaa])
+                                    f.seek(82,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+                                        pad03 = unpack("B", f.read(1))[0]
 
-                        """elif vertexCount == 8:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx6 = unpack("<h", f.read(2))[0] / 4096
-                                uvy6 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2e.append([vx,vz,vy])
-                                uvs2e.append([uvx6,-uvy6])
-                            for i in range(vertexCount-7):
-                                fad15+=1*8
-                                fbd15+=1*8
-                                fcd15+=1*8
-                                fad16+=1*8
-                                fbd16+=1*8
-                                fcd16+=1*8
-                                fad17+=1*8
-                                fbd17+=1*8
-                                fcd17+=1*8
-                                fad18+=1*8
-                                fbd18+=1*8
-                                fcd18+=1*8
-                                fad19+=1*8
-                                fbd19+=1*8
-                                fcd19+=1*8
-                                fad20+=1*8
-                                fbd20+=1*8
-                                fcd20+=1*8
-                                faces2e.append([fad15,fbd15,fcd15])
-                                faces2e.append([fad16,fbd16,fcd16])
-                                faces2e.append([fad17,fbd17,fcd17])
-                                faces2e.append([fad18,fbd18,fcd18])
-                                faces2e.append([fad19,fbd19,fcd19])
-                                faces2e.append([fad20,fbd20,fcd20])
+                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
 
-                        elif vertexCount == 9:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx7 = unpack("<h", f.read(2))[0] / 4096
-                                uvy7 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2f.append([vx,vz,vy])
-                                uvs2f.append([uvx7,-uvy7])
-                            for i in range(vertexCount-8):
-                                fad21+=1*9
-                                fbd21+=1*9
-                                fcd21+=1*9
-                                fad22+=1*9
-                                fbd22+=1*9
-                                fcd22+=1*9
-                                fad23+=1*9
-                                fbd23+=1*9
-                                fcd23+=1*9
-                                fad24+=1*9
-                                fbd24+=1*9
-                                fcd24+=1*9
-                                fad25+=1*9
-                                fbd25+=1*9
-                                fcd25+=1*9
-                                fad26+=1*9
-                                fbd26+=1*9
-                                fcd26+=1*9
-                                fad27+=1*9
-                                fbd27+=1*9
-                                fcd27+=1*9
-                                faces2f.append([fad21,fbd21,fcd21])
-                                faces2f.append([fad22,fbd22,fcd22])
-                                faces2f.append([fad23,fbd23,fcd23])
-                                faces2f.append([fad24,fbd24,fcd24])
-                                faces2f.append([fad25,fbd25,fcd25])
-                                faces2f.append([fad26,fbd26,fcd26])
-                                faces2f.append([fad27,fbd27,fcd27])
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
 
-                        elif vertexCount == 10:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx8 = unpack("<h", f.read(2))[0] / 4096
-                                uvy8 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2g.append([vx,vz,vy])
-                                uvs2g.append([uvx8,-uvy8])
-                            for i in range(vertexCount-9):
-                                fad28+=1*10
-                                fbd28+=1*10
-                                fcd28+=1*10
-                                fad29+=1*10
-                                fbd29+=1*10
-                                fcd29+=1*10
-                                fad30+=1*10
-                                fbd30+=1*10
-                                fcd30+=1*10
-                                fad31+=1*10
-                                fbd31+=1*10
-                                fcd31+=1*10
-                                fad32+=1*10
-                                fbd32+=1*10
-                                fcd32+=1*10
-                                fad33+=1*10
-                                fbd33+=1*10
-                                fcd33+=1*10
-                                fad34+=1*10
-                                fbd34+=1*10
-                                fcd34+=1*10
-                                fad35+=1*10
-                                fbd35+=1*10
-                                fcd35+=1*10
-                                faces2g.append([fad28,fbd28,fcd28])
-                                faces2g.append([fad29,fbd29,fcd29])
-                                faces2g.append([fad30,fbd30,fcd30])
-                                faces2g.append([fad31,fbd31,fcd31])
-                                faces2g.append([fad32,fbd32,fcd32])
-                                faces2g.append([fad33,fbd33,fcd33])
-                                faces2g.append([fad34,fbd34,fcd34])
-                                faces2g.append([fad35,fbd35,fcd35])
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
 
-                        elif vertexCount == 11:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx9 = unpack("<h", f.read(2))[0] / 4096
-                                uvy9 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2h.append([vx,vz,vy])
-                                uvs2h.append([uvx9,-uvy9])
-                            for i in range(vertexCount-10):
-                                fad36+=1*11
-                                fbd36+=1*11
-                                fcd36+=1*11
-                                fad37+=1*11
-                                fbd37+=1*11
-                                fcd37+=1*11
-                                fad38+=1*11
-                                fbd38+=1*11
-                                fcd38+=1*11
-                                fad39+=1*11
-                                fbd39+=1*11
-                                fcd39+=1*11
-                                fad40+=1*11
-                                fbd40+=1*11
-                                fcd40+=1*11
-                                fad41+=1*11
-                                fbd41+=1*11
-                                fcd41+=1*11
-                                fad42+=1*11
-                                fbd42+=1*11
-                                fcd42+=1*11
-                                fad43+=1*11
-                                fbd43+=1*11
-                                fcd43+=1*11
-                                fad44+=1*11
-                                fbd44+=1*11
-                                fcd44+=1*11
-                                faces2h.append([fad36,fbd36,fcd36])
-                                faces2h.append([fad37,fbd37,fcd37])
-                                faces2h.append([fad38,fbd38,fcd38])
-                                faces2h.append([fad39,fbd39,fcd39])
-                                faces2h.append([fad40,fbd40,fcd40])
-                                faces2h.append([fad41,fbd41,fcd41])
-                                faces2h.append([fad42,fbd42,fcd42])
-                                faces2h.append([fad43,fbd43,fcd43])
-                                faces2h.append([fad44,fbd44,fcd44])
+                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
 
-                        elif vertexCount == 12:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx10 = unpack("<h", f.read(2))[0] / 4096
-                                uvy10 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2i.append([vx,vz,vy])
-                                uvs2i.append([uvx10,-uvy10])
-                            for i in range(vertexCount-11):
-                                fad45+=1*12
-                                fbd45+=1*12
-                                fcd45+=1*12
-                                fad46+=1*12
-                                fbd46+=1*12
-                                fcd46+=1*12
-                                fad47+=1*12
-                                fbd47+=1*12
-                                fcd47+=1*12
-                                fad48+=1*12
-                                fbd48+=1*12
-                                fcd48+=1*12
-                                fad49+=1*12
-                                fbd49+=1*12
-                                fcd49+=1*12
-                                fad50+=1*12
-                                fbd50+=1*12
-                                fcd50+=1*12
-                                fad51+=1*12
-                                fbd51+=1*12
-                                fcd51+=1*12
-                                fad52+=1*12
-                                fbd52+=1*12
-                                fcd52+=1*12
-                                fad53+=1*12
-                                fbd53+=1*12
-                                fcd53+=1*12
-                                fad54+=1*12
-                                fbd54+=1*12
-                                fcd54+=1*12
-                                faces2i.append([fad45,fbd45,fcd45])
-                                faces2i.append([fad46,fbd46,fcd46])
-                                faces2i.append([fad47,fbd47,fcd47])
-                                faces2i.append([fad48,fbd48,fcd48])
-                                faces2i.append([fad49,fbd49,fcd49])
-                                faces2i.append([fad50,fbd50,fcd50])
-                                faces2i.append([fad51,fbd51,fcd51])
-                                faces2i.append([fad52,fbd52,fcd52])
-                                faces2i.append([fad53,fbd53,fcd53])
-                                faces2i.append([fad54,fbd54,fcd54])
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
 
-                        elif vertexCount == 13:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx11 = unpack("<h", f.read(2))[0] / 4096
-                                uvy11 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2j.append([vx,vz,vy])
-                                uvs2j.append([uvx11,-uvy11])
-                            for i in range(vertexCount-12):
-                                fad55+=1*13
-                                fbd55+=1*13
-                                fcd55+=1*13
-                                fad56+=1*13
-                                fbd56+=1*13
-                                fcd56+=1*13
-                                fad57+=1*13
-                                fbd57+=1*13
-                                fcd57+=1*13
-                                fad58+=1*13
-                                fbd58+=1*13
-                                fcd58+=1*13
-                                fad59+=1*13
-                                fbd59+=1*13
-                                fcd59+=1*13
-                                fad60+=1*13
-                                fbd60+=1*13
-                                fcd60+=1*13
-                                fad61+=1*13
-                                fbd61+=1*13
-                                fcd61+=1*13
-                                fad62+=1*13
-                                fbd62+=1*13
-                                fcd62+=1*13
-                                fad63+=1*13
-                                fbd63+=1*13
-                                fcd63+=1*13
-                                fad64+=1*13
-                                fbd64+=1*13
-                                fcd64+=1*13
-                                fad65+=1*13
-                                fbd65+=1*13
-                                fcd65+=1*13
-                                faces2j.append([fad55,fbd55,fcd55])
-                                faces2j.append([fad56,fbd56,fcd56])
-                                faces2j.append([fad57,fbd57,fcd57])
-                                faces2j.append([fad58,fbd58,fcd58])
-                                faces2j.append([fad59,fbd59,fcd59])
-                                faces2j.append([fad60,fbd60,fcd60])
-                                faces2j.append([fad61,fbd61,fcd61])
-                                faces2j.append([fad62,fbd62,fcd62])
-                                faces2j.append([fad63,fbd63,fcd63])
-                                faces2j.append([fad64,fbd64,fcd64])
-                                faces2j.append([fad65,fbd65,fcd65])
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
 
-                        elif vertexCount == 14:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx12 = unpack("<h", f.read(2))[0] / 4096
-                                uvy12 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2k.append([vx,vz,vy])
-                                uvs2k.append([uvx12,-uvy12])
-                            for i in range(vertexCount-13):
-                                fad66+=1*14
-                                fbd66+=1*14
-                                fcd66+=1*14
-                                fad67+=1*14
-                                fbd67+=1*14
-                                fcd67+=1*14
-                                fad68+=1*14
-                                fbd68+=1*14
-                                fcd68+=1*14
-                                fad69+=1*14
-                                fbd69+=1*14
-                                fcd69+=1*14
-                                fad70+=1*14
-                                fbd70+=1*14
-                                fcd70+=1*14
-                                fad71+=1*14
-                                fbd71+=1*14
-                                fcd71+=1*14
-                                fad72+=1*14
-                                fbd72+=1*14
-                                fcd72+=1*14
-                                fad73+=1*14
-                                fbd73+=1*14
-                                fcd73+=1*14
-                                fad74+=1*14
-                                fbd74+=1*14
-                                fcd74+=1*14
-                                fad75+=1*14
-                                fbd75+=1*14
-                                fcd75+=1*14
-                                fad76+=1*14
-                                fbd76+=1*14
-                                fcd76+=1*14
-                                fad77+=1*14
-                                fbd77+=1*14
-                                fcd77+=1*14
-                                faces2k.append([fad66,fbd66,fcd66])
-                                faces2k.append([fad67,fbd67,fcd67])
-                                faces2k.append([fad68,fbd68,fcd68])
-                                faces2k.append([fad69,fbd69,fcd69])
-                                faces2k.append([fad70,fbd70,fcd70])
-                                faces2k.append([fad71,fbd71,fcd71])
-                                faces2k.append([fad72,fbd72,fcd72])
-                                faces2k.append([fad73,fbd73,fcd73])
-                                faces2k.append([fad74,fbd74,fcd74])
-                                faces2k.append([fad75,fbd75,fcd75])
-                                faces2k.append([fad76,fbd76,fcd76])
-                                faces2k.append([fad77,fbd77,fcd77])
+                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
 
-                        elif vertexCount == 15:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx13 = unpack("<h", f.read(2))[0] / 4096
-                                uvy13 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2l.append([vx,vz,vy])
-                                uvs2l.append([uvx13,-uvy13])
-                            for i in range(vertexCount-14):
-                                fad78+=1*15
-                                fbd78+=1*15
-                                fcd78+=1*15
-                                fad79+=1*15
-                                fbd79+=1*15
-                                fcd79+=1*15
-                                fad80+=1*15
-                                fbd80+=1*15
-                                fcd80+=1*15
-                                fad81+=1*15
-                                fbd81+=1*15
-                                fcd81+=1*15
-                                fad82+=1*15
-                                fbd82+=1*15
-                                fcd82+=1*15
-                                fad83+=1*15
-                                fbd83+=1*15
-                                fcd83+=1*15
-                                fad84+=1*15
-                                fbd84+=1*15
-                                fcd84+=1*15
-                                fad85+=1*15
-                                fbd85+=1*15
-                                fcd85+=1*15
-                                fad86+=1*15
-                                fbd86+=1*15
-                                fcd86+=1*15
-                                fad87+=1*15
-                                fbd87+=1*15
-                                fcd87+=1*15
-                                fad88+=1*15
-                                fbd88+=1*15
-                                fcd88+=1*15
-                                fad89+=1*15
-                                fbd89+=1*15
-                                fcd89+=1*15
-                                fad90+=1*15
-                                fbd90+=1*15
-                                fcd90+=1*15
-                                faces2l.append([fad78,fbd78,fcd78])
-                                faces2l.append([fad79,fbd79,fcd79])
-                                faces2l.append([fad80,fbd80,fcd80])
-                                faces2l.append([fad81,fbd81,fcd81])
-                                faces2l.append([fad82,fbd82,fcd82])
-                                faces2l.append([fad83,fbd83,fcd83])
-                                faces2l.append([fad84,fbd84,fcd84])
-                                faces2l.append([fad85,fbd85,fcd85])
-                                faces2l.append([fad86,fbd86,fcd86])
-                                faces2l.append([fad87,fbd87,fcd87])
-                                faces2l.append([fad88,fbd88,fcd88])
-                                faces2l.append([fad89,fbd89,fcd89])
-                                faces2l.append([fad90,fbd90,fcd90])
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
 
-                        elif vertexCount == 16:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx14 = unpack("<h", f.read(2))[0] / 4096
-                                uvy14 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2m.append([vx,vz,vy])
-                                uvs2m.append([uvx14,-uvy14])
-                            for i in range(vertexCount-15):
-                                fad91+=1*16
-                                fbd91+=1*16
-                                fcd91+=1*16
-                                fad92+=1*16
-                                fbd92+=1*16
-                                fcd92+=1*16
-                                fad93+=1*16
-                                fbd93+=1*16
-                                fcd93+=1*16
-                                fad94+=1*16
-                                fbd94+=1*16
-                                fcd94+=1*16
-                                fad95+=1*16
-                                fbd95+=1*16
-                                fcd95+=1*16
-                                fad96+=1*16
-                                fbd96+=1*16
-                                fcd96+=1*16
-                                fad97+=1*16
-                                fbd97+=1*16
-                                fcd97+=1*16
-                                fad98+=1*16
-                                fbd98+=1*16
-                                fcd98+=1*16
-                                fad99+=1*16
-                                fbd99+=1*16
-                                fcd99+=1*16
-                                fad100+=1*16
-                                fbd100+=1*16
-                                fcd100+=1*16
-                                fad101+=1*16
-                                fbd101+=1*16
-                                fcd101+=1*16
-                                fad102+=1*16
-                                fbd102+=1*16
-                                fcd102+=1*16
-                                fad103+=1*16
-                                fbd103+=1*16
-                                fcd103+=1*16
-                                fad104+=1*16
-                                fbd104+=1*16
-                                fcd104+=1*16
-                                faces2m.append([fad91,fbd91,fcd91])
-                                faces2m.append([fad92,fbd92,fcd92])
-                                faces2m.append([fad93,fbd93,fcd93])
-                                faces2m.append([fad94,fbd94,fcd94])
-                                faces2m.append([fad95,fbd95,fcd95])
-                                faces2m.append([fad96,fbd96,fcd96])
-                                faces2m.append([fad97,fbd97,fcd97])
-                                faces2m.append([fad98,fbd98,fcd98])
-                                faces2m.append([fad99,fbd99,fcd99])
-                                faces2m.append([fad100,fbd100,fcd100])
-                                faces2m.append([fad101,fbd101,fcd101])
-                                faces2m.append([fad102,fbd102,fcd102])
-                                faces2m.append([fad103,fbd103,fcd103])
-                                faces2m.append([fad104,fbd104,fcd104])
-
-                        elif vertexCount == 17:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx15 = unpack("<h", f.read(2))[0] / 4096
-                                uvy15 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2n.append([vx,vz,vy])
-                                uvs2n.append([uvx15,-uvy15])
-                            for i in range(vertexCount-16):
-                                fad105+=1*17
-                                fbd105+=1*17
-                                fcd105+=1*17
-                                fad106+=1*17
-                                fbd106+=1*17
-                                fcd106+=1*17
-                                fad107+=1*17
-                                fbd107+=1*17
-                                fcd107+=1*17
-                                fad108+=1*17
-                                fbd108+=1*17
-                                fcd108+=1*17
-                                fad109+=1*17
-                                fbd109+=1*17
-                                fcd109+=1*17
-                                fad110+=1*17
-                                fbd110+=1*17
-                                fcd110+=1*17
-                                fad111+=1*17
-                                fbd111+=1*17
-                                fcd111+=1*17
-                                fad112+=1*17
-                                fbd112+=1*17
-                                fcd112+=1*17
-                                fad113+=1*17
-                                fbd113+=1*17
-                                fcd113+=1*17
-                                fad114+=1*17
-                                fbd114+=1*17
-                                fcd114+=1*17
-                                fad115+=1*17
-                                fbd115+=1*17
-                                fcd115+=1*17
-                                fad116+=1*17
-                                fbd116+=1*17
-                                fcd116+=1*17
-                                fad117+=1*17
-                                fbd117+=1*17
-                                fcd117+=1*17
-                                fad118+=1*17
-                                fbd118+=1*17
-                                fcd118+=1*17
-                                fad119+=1*17
-                                fbd119+=1*17
-                                fcd119+=1*17
-                                faces2n.append([fad105,fbd105,fcd105])
-                                faces2n.append([fad106,fbd106,fcd106])
-                                faces2n.append([fad107,fbd107,fcd107])
-                                faces2n.append([fad108,fbd108,fcd108])
-                                faces2n.append([fad109,fbd109,fcd109])
-                                faces2n.append([fad110,fbd110,fcd110])
-                                faces2n.append([fad111,fbd111,fcd111])
-                                faces2n.append([fad112,fbd112,fcd112])
-                                faces2n.append([fad113,fbd113,fcd113])
-                                faces2n.append([fad114,fbd114,fcd114])
-                                faces2n.append([fad115,fbd115,fcd115])
-                                faces2n.append([fad116,fbd116,fcd116])
-                                faces2n.append([fad117,fbd117,fcd117])
-                                faces2n.append([fad118,fbd118,fcd118])
-                                faces2n.append([fad119,fbd119,fcd119])
-
-                        elif vertexCount == 18:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx16 = unpack("<h", f.read(2))[0] / 4096
-                                uvy16 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2o.append([vx,vz,vy])
-                                uvs2o.append([uvx16,-uvy16])
-                            for i in range(vertexCount-17):
-                                fad120+=1*18
-                                fbd120+=1*18
-                                fcd120+=1*18
-                                fad121+=1*18
-                                fbd121+=1*18
-                                fcd121+=1*18
-                                fad122+=1*18
-                                fbd122+=1*18
-                                fcd122+=1*18
-                                fad123+=1*18
-                                fbd123+=1*18
-                                fcd123+=1*18
-                                fad124+=1*18
-                                fbd124+=1*18
-                                fcd124+=1*18
-                                fad125+=1*18
-                                fbd125+=1*18
-                                fcd125+=1*18
-                                fad126+=1*18
-                                fbd126+=1*18
-                                fcd126+=1*18
-                                fad127+=1*18
-                                fbd127+=1*18
-                                fcd127+=1*18
-                                fad128+=1*18
-                                fbd128+=1*18
-                                fcd128+=1*18
-                                fad129+=1*18
-                                fbd129+=1*18
-                                fcd129+=1*18
-                                fad130+=1*18
-                                fbd130+=1*18
-                                fcd130+=1*18
-                                fad131+=1*18
-                                fbd131+=1*18
-                                fcd131+=1*18
-                                fad132+=1*18
-                                fbd132+=1*18
-                                fcd132+=1*18
-                                fad133+=1*18
-                                fbd133+=1*18
-                                fcd133+=1*18
-                                fad134+=1*18
-                                fbd134+=1*18
-                                fcd134+=1*18
-                                fad135+=1*18
-                                fbd135+=1*18
-                                fcd135+=1*18
-                                faces2o.append([fad120,fbd120,fcd120])
-                                faces2o.append([fad121,fbd121,fcd121])
-                                faces2o.append([fad122,fbd122,fcd122])
-                                faces2o.append([fad123,fbd123,fcd123])
-                                faces2o.append([fad124,fbd124,fcd124])
-                                faces2o.append([fad125,fbd125,fcd125])
-                                faces2o.append([fad126,fbd126,fcd126])
-                                faces2o.append([fad127,fbd127,fcd127])
-                                faces2o.append([fad128,fbd128,fcd128])
-                                faces2o.append([fad129,fbd129,fcd129])
-                                faces2o.append([fad130,fbd130,fcd130])
-                                faces2o.append([fad131,fbd131,fcd131])
-                                faces2o.append([fad132,fbd132,fcd132])
-                                faces2o.append([fad133,fbd133,fcd133])
-                                faces2o.append([fad134,fbd134,fcd134])
-                                faces2o.append([fad135,fbd135,fcd135])
-
-                        elif vertexCount == 19:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx17 = unpack("<h", f.read(2))[0] / 4096
-                                uvy17 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2p.append([vx,vz,vy])
-                                uvs2p.append([uvx17,-uvy17])
-                            for i in range(vertexCount-18):
-                                fad136+=1*19
-                                fbd136+=1*19
-                                fcd136+=1*19
-                                fad137+=1*19
-                                fbd137+=1*19
-                                fcd137+=1*19
-                                fad138+=1*19
-                                fbd138+=1*19
-                                fcd138+=1*19
-                                fad139+=1*19
-                                fbd139+=1*19
-                                fcd139+=1*19
-                                fad140+=1*19
-                                fbd140+=1*19
-                                fcd140+=1*19
-                                fad141+=1*19
-                                fbd141+=1*19
-                                fcd141+=1*19
-                                fad142+=1*19
-                                fbd142+=1*19
-                                fcd142+=1*19
-                                fad143+=1*19
-                                fbd143+=1*19
-                                fcd143+=1*19
-                                fad144+=1*19
-                                fbd144+=1*19
-                                fcd144+=1*19
-                                fad145+=1*19
-                                fbd145+=1*19
-                                fcd145+=1*19
-                                fad146+=1*19
-                                fbd146+=1*19
-                                fcd146+=1*19
-                                fad147+=1*19
-                                fbd147+=1*19
-                                fcd147+=1*19
-                                fad148+=1*19
-                                fbd148+=1*19
-                                fcd148+=1*19
-                                fad149+=1*19
-                                fbd149+=1*19
-                                fcd149+=1*19
-                                fad150+=1*19
-                                fbd150+=1*19
-                                fcd150+=1*19
-                                fad151+=1*19
-                                fbd151+=1*19
-                                fcd151+=1*19
-                                fad152+=1*19
-                                fbd152+=1*19
-                                fcd152+=1*19
-                                faces2p.append([fad136,fbd136,fcd136])
-                                faces2p.append([fad137,fbd137,fcd137])
-                                faces2p.append([fad138,fbd138,fcd138])
-                                faces2p.append([fad139,fbd139,fcd139])
-                                faces2p.append([fad140,fbd140,fcd140])
-                                faces2p.append([fad141,fbd141,fcd141])
-                                faces2p.append([fad142,fbd142,fcd142])
-                                faces2p.append([fad143,fbd143,fcd143])
-                                faces2p.append([fad144,fbd144,fcd144])
-                                faces2p.append([fad145,fbd145,fcd145])
-                                faces2p.append([fad146,fbd146,fcd146])
-                                faces2p.append([fad147,fbd147,fcd147])
-                                faces2p.append([fad148,fbd148,fcd148])
-                                faces2p.append([fad149,fbd149,fcd139])
-                                faces2p.append([fad150,fbd150,fcd150])
-                                faces2p.append([fad151,fbd151,fcd151])
-                                faces2p.append([fad152,fbd152,fcd152])
-
-                        elif vertexCount == 20:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx18 = unpack("<h", f.read(2))[0] / 4096
-                                uvy18 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2q.append([vx,vz,vy])
-                                uvs2q.append([uvx18,-uvy18])
-                            for i in range(vertexCount-19):
-                                fad153+=1*20
-                                fbd153+=1*20
-                                fcd153+=1*20
-                                fad154+=1*20
-                                fbd154+=1*20
-                                fcd154+=1*20
-                                fad155+=1*20
-                                fbd155+=1*20
-                                fcd155+=1*20
-                                fad156+=1*20
-                                fbd156+=1*20
-                                fcd156+=1*20
-                                fad157+=1*20
-                                fbd157+=1*20
-                                fcd157+=1*20
-                                fad158+=1*20
-                                fbd158+=1*20
-                                fcd158+=1*20
-                                fad159+=1*20
-                                fbd159+=1*20
-                                fcd159+=1*20
-                                fad160+=1*20
-                                fbd160+=1*20
-                                fcd160+=1*20
-                                fad161+=1*20
-                                fbd161+=1*20
-                                fcd161+=1*20
-                                fad162+=1*20
-                                fbd162+=1*20
-                                fcd162+=1*20
-                                fad163+=1*20
-                                fbd163+=1*20
-                                fcd163+=1*20
-                                fad164+=1*20
-                                fbd164+=1*20
-                                fcd164+=1*20
-                                fad165+=1*20
-                                fbd165+=1*20
-                                fcd165+=1*20
-                                fad166+=1*20
-                                fbd166+=1*20
-                                fcd166+=1*20
-                                fad167+=1*20
-                                fbd167+=1*20
-                                fcd167+=1*20
-                                fad168+=1*20
-                                fbd168+=1*20
-                                fcd168+=1*20
-                                fad169+=1*20
-                                fbd169+=1*20
-                                fcd169+=1*20
-                                fad170+=1*20
-                                fbd170+=1*20
-                                fcd170+=1*20
-                                faces2q.append([fad153,fbd153,fcd153])
-                                faces2q.append([fad154,fbd154,fcd154])
-                                faces2q.append([fad155,fbd155,fcd155])
-                                faces2q.append([fad156,fbd156,fcd156])
-                                faces2q.append([fad157,fbd157,fcd157])
-                                faces2q.append([fad158,fbd158,fcd158])
-                                faces2q.append([fad159,fbd159,fcd159])
-                                faces2q.append([fad160,fbd160,fcd160])
-                                faces2q.append([fad161,fbd161,fcd161])
-                                faces2q.append([fad162,fbd162,fcd162])
-                                faces2q.append([fad163,fbd163,fcd163])
-                                faces2q.append([fad164,fbd164,fcd164])
-                                faces2q.append([fad165,fbd165,fcd165])
-                                faces2q.append([fad166,fbd166,fcd166])
-                                faces2q.append([fad167,fbd167,fcd167])
-                                faces2q.append([fad168,fbd168,fcd168])
-                                faces2q.append([fad169,fbd169,fcd169])
-                                faces2q.append([fad170,fbd170,fcd170])
-
-                        elif vertexCount == 21:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx19 = unpack("<h", f.read(2))[0] / 4096
-                                uvy19 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2r.append([vx,vz,vy])
-                                uvs2r.append([uvx19,-uvy19])
-                            for i in range(vertexCount-20):
-                                fad171+=1*21
-                                fbd171+=1*21
-                                fcd171+=1*21
-                                fad172+=1*21
-                                fbd172+=1*21
-                                fcd172+=1*21
-                                fad173+=1*21
-                                fbd173+=1*21
-                                fcd173+=1*21
-                                fad174+=1*21
-                                fbd174+=1*21
-                                fcd174+=1*21
-                                fad175+=1*21
-                                fbd175+=1*21
-                                fcd175+=1*21
-                                fad176+=1*21
-                                fbd176+=1*21
-                                fcd176+=1*21
-                                fad177+=1*21
-                                fbd177+=1*21
-                                fcd177+=1*21
-                                fad178+=1*21
-                                fbd178+=1*21
-                                fcd178+=1*21
-                                fad179+=1*21
-                                fbd179+=1*21
-                                fcd179+=1*21
-                                fad180+=1*21
-                                fbd180+=1*21
-                                fcd180+=1*21
-                                fad181+=1*21
-                                fbd181+=1*21
-                                fcd181+=1*21
-                                fad182+=1*21
-                                fbd182+=1*21
-                                fcd182+=1*21
-                                fad183+=1*21
-                                fbd183+=1*21
-                                fcd183+=1*21
-                                fad184+=1*21
-                                fbd184+=1*21
-                                fcd184+=1*21
-                                fad185+=1*21
-                                fbd185+=1*21
-                                fcd185+=1*21
-                                fad186+=1*21
-                                fbd186+=1*21
-                                fcd186+=1*21
-                                fad187+=1*21
-                                fbd187+=1*21
-                                fcd187+=1*21
-                                fad188+=1*21
-                                fbd188+=1*21
-                                fcd188+=1*21
-                                fad189+=1*21
-                                fbd189+=1*21
-                                fcd189+=1*21
-                                faces2r.append([fad171,fbd171,fcd171])
-                                faces2r.append([fad172,fbd172,fcd172])
-                                faces2r.append([fad173,fbd173,fcd173])
-                                faces2r.append([fad174,fbd174,fcd174])
-                                faces2r.append([fad175,fbd175,fcd175])
-                                faces2r.append([fad176,fbd176,fcd176])
-                                faces2r.append([fad177,fbd177,fcd177])
-                                faces2r.append([fad178,fbd178,fcd178])
-                                faces2r.append([fad179,fbd179,fcd179])
-                                faces2r.append([fad180,fbd180,fcd180])
-                                faces2r.append([fad181,fbd181,fcd181])
-                                faces2r.append([fad182,fbd182,fcd182])
-                                faces2r.append([fad183,fbd183,fcd183])
-                                faces2r.append([fad184,fbd184,fcd184])
-                                faces2r.append([fad185,fbd185,fcd185])
-                                faces2r.append([fad186,fbd186,fcd186])
-                                faces2r.append([fad187,fbd187,fcd187])
-                                faces2r.append([fad188,fbd188,fcd188])
-                                faces2r.append([fad189,fbd189,fcd189])
-
-                        elif vertexCount == 22:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx20 = unpack("<h", f.read(2))[0] / 4096
-                                uvy20 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2s.append([vx,vz,vy])
-                                uvs2s.append([uvx20,-uvy20])
-                            for i in range(vertexCount-21):
-                                fad190+=1*22
-                                fbd190+=1*22
-                                fcd190+=1*22
-                                fad191+=1*22
-                                fbd191+=1*22
-                                fcd191+=1*22
-                                fad192+=1*22
-                                fbd192+=1*22
-                                fcd192+=1*22
-                                fad193+=1*22
-                                fbd193+=1*22
-                                fcd193+=1*22
-                                fad194+=1*22
-                                fbd194+=1*22
-                                fcd194+=1*22
-                                fad195+=1*22
-                                fbd195+=1*22
-                                fcd195+=1*22
-                                fad196+=1*22
-                                fbd196+=1*22
-                                fcd196+=1*22
-                                fad197+=1*22
-                                fbd197+=1*22
-                                fcd197+=1*22
-                                fad198+=1*22
-                                fbd198+=1*22
-                                fcd198+=1*22
-                                fad199+=1*22
-                                fbd199+=1*22
-                                fcd199+=1*22
-                                fad200+=1*22
-                                fbd200+=1*22
-                                fcd200+=1*22
-                                fad201+=1*22
-                                fbd201+=1*22
-                                fcd201+=1*22
-                                fad202+=1*22
-                                fbd202+=1*22
-                                fcd202+=1*22
-                                fad203+=1*22
-                                fbd203+=1*22
-                                fcd203+=1*22
-                                fad204+=1*22
-                                fbd204+=1*22
-                                fcd204+=1*22
-                                fad205+=1*22
-                                fbd205+=1*22
-                                fcd205+=1*22
-                                fad206+=1*22
-                                fbd206+=1*22
-                                fcd206+=1*22
-                                fad207+=1*22
-                                fbd207+=1*22
-                                fcd207+=1*22
-                                fad208+=1*22
-                                fbd208+=1*22
-                                fcd208+=1*22
-                                fad209+=1*22
-                                fbd209+=1*22
-                                fcd209+=1*22
-                                faces2s.append([fad190,fbd190,fcd190])
-                                faces2s.append([fad191,fbd191,fcd191])
-                                faces2s.append([fad192,fbd192,fcd192])
-                                faces2s.append([fad193,fbd193,fcd193])
-                                faces2s.append([fad194,fbd194,fcd194])
-                                faces2s.append([fad195,fbd195,fcd195])
-                                faces2s.append([fad196,fbd196,fcd196])
-                                faces2s.append([fad197,fbd197,fcd197])
-                                faces2s.append([fad198,fbd198,fcd198])
-                                faces2s.append([fad199,fbd199,fcd199])
-                                faces2s.append([fad200,fbd200,fcd200])
-                                faces2s.append([fad201,fbd201,fcd201])
-                                faces2s.append([fad202,fbd202,fcd202])
-                                faces2s.append([fad203,fbd203,fcd203])
-                                faces2s.append([fad204,fbd204,fcd204])
-                                faces2s.append([fad205,fbd205,fcd205])
-                                faces2s.append([fad206,fbd206,fcd206])
-                                faces2s.append([fad207,fbd207,fcd207])
-                                faces2s.append([fad208,fbd208,fcd208])
-                                faces2s.append([fad209,fbd209,fcd209])
-
-                        elif vertexCount == 23:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx21 = unpack("<h", f.read(2))[0] / 4096
-                                uvy21 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2t.append([vx,vz,vy])
-                                uvs2t.append([uvx21,-uvy21])
-                            for i in range(vertexCount-22):
-                                fad210+=1*23
-                                fbd210+=1*23
-                                fcd210+=1*23
-                                fad211+=1*23
-                                fbd211+=1*23
-                                fcd211+=1*23
-                                fad212+=1*23
-                                fbd212+=1*23
-                                fcd212+=1*23
-                                fad213+=1*23
-                                fbd213+=1*23
-                                fcd213+=1*23
-                                fad214+=1*23
-                                fbd214+=1*23
-                                fcd214+=1*23
-                                fad215+=1*23
-                                fbd215+=1*23
-                                fcd215+=1*23
-                                fad216+=1*23
-                                fbd216+=1*23
-                                fcd216+=1*23
-                                fad217+=1*23
-                                fbd217+=1*23
-                                fcd217+=1*23
-                                fad218+=1*23
-                                fbd218+=1*23
-                                fcd218+=1*23
-                                fad219+=1*23
-                                fbd219+=1*23
-                                fcd219+=1*23
-                                fad220+=1*23
-                                fbd220+=1*23
-                                fcd220+=1*23
-                                fad221+=1*23
-                                fbd221+=1*23
-                                fcd221+=1*23
-                                fad222+=1*23
-                                fbd222+=1*23
-                                fcd222+=1*23
-                                fad223+=1*23
-                                fbd223+=1*23
-                                fcd223+=1*23
-                                fad224+=1*23
-                                fbd224+=1*23
-                                fcd224+=1*23
-                                fad225+=1*23
-                                fbd225+=1*23
-                                fcd225+=1*23
-                                fad226+=1*23
-                                fbd226+=1*23
-                                fcd226+=1*23
-                                fad227+=1*23
-                                fbd227+=1*23
-                                fcd227+=1*23
-                                fad228+=1*23
-                                fbd228+=1*23
-                                fcd228+=1*23
-                                fad229+=1*23
-                                fbd229+=1*23
-                                fcd229+=1*23
-                                fad230+=1*23
-                                fbd230+=1*23
-                                fcd230+=1*23
-                                faces2t.append([fad210,fbd210,fcd210])
-                                faces2t.append([fad211,fbd211,fcd211])
-                                faces2t.append([fad212,fbd212,fcd212])
-                                faces2t.append([fad213,fbd213,fcd213])
-                                faces2t.append([fad214,fbd214,fcd214])
-                                faces2t.append([fad215,fbd215,fcd215])
-                                faces2t.append([fad216,fbd216,fcd216])
-                                faces2t.append([fad217,fbd217,fcd217])
-                                faces2t.append([fad218,fbd218,fcd218])
-                                faces2t.append([fad219,fbd219,fcd219])
-                                faces2t.append([fad220,fbd220,fcd220])
-                                faces2t.append([fad221,fbd221,fcd221])
-                                faces2t.append([fad222,fbd222,fcd222])
-                                faces2t.append([fad223,fbd223,fcd223])
-                                faces2t.append([fad224,fbd224,fcd224])
-                                faces2t.append([fad225,fbd225,fcd225])
-                                faces2t.append([fad226,fbd226,fcd226])
-                                faces2t.append([fad227,fbd227,fcd227])
-                                faces2t.append([fad228,fbd228,fcd228])
-                                faces2t.append([fad229,fbd229,fcd229])
-                                faces2t.append([fad230,fbd230,fcd230])
-
-                        elif vertexCount == 24:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx22 = unpack("<h", f.read(2))[0] / 4096
-                                uvy22 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2u.append([vx,vz,vy])
-                                uvs2u.append([uvx22,-uvy22])
-                            for i in range(vertexCount-23):
-                                fad231+=1*24
-                                fbd231+=1*24
-                                fcd231+=1*24
-                                fad232+=1*24
-                                fbd232+=1*24
-                                fcd232+=1*24
-                                fad233+=1*24
-                                fbd233+=1*24
-                                fcd233+=1*24
-                                fad234+=1*24
-                                fbd234+=1*24
-                                fcd234+=1*24
-                                fad235+=1*24
-                                fbd235+=1*24
-                                fcd235+=1*24
-                                fad236+=1*24
-                                fbd236+=1*24
-                                fcd236+=1*24
-                                fad237+=1*24
-                                fbd237+=1*24
-                                fcd237+=1*24
-                                fad238+=1*24
-                                fbd238+=1*24
-                                fcd238+=1*24
-                                fad239+=1*24
-                                fbd239+=1*24
-                                fcd239+=1*24
-                                fad240+=1*24
-                                fbd240+=1*24
-                                fcd240+=1*24
-                                fad241+=1*24
-                                fbd241+=1*24
-                                fcd241+=1*24
-                                fad242+=1*24
-                                fbd242+=1*24
-                                fcd242+=1*24
-                                fad243+=1*24
-                                fbd243+=1*24
-                                fcd243+=1*24
-                                fad244+=1*24
-                                fbd244+=1*24
-                                fcd244+=1*24
-                                fad245+=1*24
-                                fbd245+=1*24
-                                fcd245+=1*24
-                                fad246+=1*24
-                                fbd246+=1*24
-                                fcd246+=1*24
-                                fad247+=1*24
-                                fbd247+=1*24
-                                fcd247+=1*24
-                                fad248+=1*24
-                                fbd248+=1*24
-                                fcd248+=1*24
-                                fad249+=1*24
-                                fbd249+=1*24
-                                fcd249+=1*24
-                                fad250+=1*24
-                                fbd250+=1*24
-                                fcd250+=1*24
-                                fad251+=1*24
-                                fbd251+=1*24
-                                fcd251+=1*24
-                                fad252+=1*24
-                                fbd252+=1*24
-                                fcd252+=1*24
-                                faces2u.append([fad231,fbd231,fcd231])
-                                faces2u.append([fad232,fbd232,fcd232])
-                                faces2u.append([fad233,fbd233,fcd233])
-                                faces2u.append([fad234,fbd234,fcd234])
-                                faces2u.append([fad235,fbd235,fcd235])
-                                faces2u.append([fad236,fbd236,fcd236])
-                                faces2u.append([fad237,fbd237,fcd237])
-                                faces2u.append([fad238,fbd238,fcd238])
-                                faces2u.append([fad239,fbd239,fcd239])
-                                faces2u.append([fad240,fbd240,fcd240])
-                                faces2u.append([fad241,fbd241,fcd241])
-                                faces2u.append([fad242,fbd242,fcd242])
-                                faces2u.append([fad243,fbd243,fcd243])
-                                faces2u.append([fad244,fbd244,fcd244])
-                                faces2u.append([fad245,fbd245,fcd245])
-                                faces2u.append([fad246,fbd246,fcd246])
-                                faces2u.append([fad247,fbd247,fcd247])
-                                faces2u.append([fad248,fbd248,fcd248])
-                                faces2u.append([fad249,fbd249,fcd249])
-                                faces2u.append([fad250,fbd250,fcd250])
-                                faces2u.append([fad251,fbd251,fcd251])
-                                faces2u.append([fad252,fbd252,fcd252])
-
-                        elif vertexCount == 25:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx23 = unpack("<h", f.read(2))[0] / 4096
-                                uvy23 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2v.append([vx,vz,vy])
-                                uvs2v.append([uvx23,-uvy23])
-                            for i in range(vertexCount-24):
-                                fad253+=1*25
-                                fbd253+=1*25
-                                fcd253+=1*25
-                                fad254+=1*25
-                                fbd254+=1*25
-                                fcd254+=1*25
-                                fad255+=1*25
-                                fbd255+=1*25
-                                fcd255+=1*25
-                                fad256+=1*25
-                                fbd256+=1*25
-                                fcd256+=1*25
-                                fad257+=1*25
-                                fbd257+=1*25
-                                fcd257+=1*25
-                                fad258+=1*25
-                                fbd258+=1*25
-                                fcd258+=1*25
-                                fad259+=1*25
-                                fbd259+=1*25
-                                fcd259+=1*25
-                                fad260+=1*25
-                                fbd260+=1*25
-                                fcd260+=1*25
-                                fad261+=1*25
-                                fbd261+=1*25
-                                fcd261+=1*25
-                                fad262+=1*25
-                                fbd262+=1*25
-                                fcd262+=1*25
-                                fad263+=1*25
-                                fbd263+=1*25
-                                fcd263+=1*25
-                                fad264+=1*25
-                                fbd264+=1*25
-                                fcd264+=1*25
-                                fad265+=1*25
-                                fbd265+=1*25
-                                fcd265+=1*25
-                                fad266+=1*25
-                                fbd266+=1*25
-                                fcd266+=1*25
-                                fad267+=1*25
-                                fbd267+=1*25
-                                fcd267+=1*25
-                                fad268+=1*25
-                                fbd268+=1*25
-                                fcd268+=1*25
-                                fad269+=1*25
-                                fbd269+=1*25
-                                fcd269+=1*25
-                                fad270+=1*25
-                                fbd270+=1*25
-                                fcd270+=1*25
-                                fad271+=1*25
-                                fbd271+=1*25
-                                fcd271+=1*25
-                                fad272+=1*25
-                                fbd272+=1*25
-                                fcd272+=1*25
-                                fad273+=1*25
-                                fbd273+=1*25
-                                fcd273+=1*25
-                                fad274+=1*25
-                                fbd274+=1*25
-                                fcd274+=1*25
-                                fad275+=1*25
-                                fbd275+=1*25
-                                fcd275+=1*25
-                                faces2v.append([fad253,fbd253,fcd253])
-                                faces2v.append([fad254,fbd254,fcd254])
-                                faces2v.append([fad255,fbd255,fcd255])
-                                faces2v.append([fad256,fbd256,fcd256])
-                                faces2v.append([fad257,fbd257,fcd257])
-                                faces2v.append([fad258,fbd258,fcd258])
-                                faces2v.append([fad259,fbd259,fcd259])
-                                faces2v.append([fad260,fbd260,fcd260])
-                                faces2v.append([fad261,fbd261,fcd261])
-                                faces2v.append([fad262,fbd262,fcd262])
-                                faces2v.append([fad263,fbd263,fcd263])
-                                faces2v.append([fad264,fbd264,fcd264])
-                                faces2v.append([fad265,fbd265,fcd265])
-                                faces2v.append([fad266,fbd266,fcd266])
-                                faces2v.append([fad267,fbd267,fcd267])
-                                faces2v.append([fad268,fbd268,fcd268])
-                                faces2v.append([fad269,fbd269,fcd269])
-                                faces2v.append([fad270,fbd270,fcd270])
-                                faces2v.append([fad271,fbd271,fcd271])
-                                faces2v.append([fad272,fbd272,fcd272])
-                                faces2v.append([fad273,fbd273,fcd273])
-                                faces2v.append([fad274,fbd274,fcd274])
-                                faces2v.append([fad275,fbd275,fcd275])
-                        elif vertexCount == 26:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx24 = unpack("<h", f.read(2))[0] / 4096
-                                uvy24 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2w.append([vx,vz,vy])
-                                uvs2w.append([uvx24,-uvy24])
-                            for i in range(vertexCount-25):
-                                fad276+=1*26
-                                fbd276+=1*26
-                                fcd276+=1*26
-                                fad277+=1*26
-                                fbd277+=1*26
-                                fcd277+=1*26
-                                fad278+=1*26
-                                fbd278+=1*26
-                                fcd278+=1*26
-                                fad279+=1*26
-                                fbd279+=1*26
-                                fcd279+=1*26
-                                fad280+=1*26
-                                fbd280+=1*26
-                                fcd280+=1*26
-                                fad281+=1*26
-                                fbd281+=1*26
-                                fcd281+=1*26
-                                fad282+=1*26
-                                fbd282+=1*26
-                                fcd282+=1*26
-                                fad283+=1*26
-                                fbd283+=1*26
-                                fcd283+=1*26
-                                fad284+=1*26
-                                fbd284+=1*26
-                                fcd284+=1*26
-                                fad285+=1*26
-                                fbd285+=1*26
-                                fcd285+=1*26
-                                fad286+=1*26
-                                fbd286+=1*26
-                                fcd286+=1*26
-                                fad287+=1*26
-                                fbd287+=1*26
-                                fcd287+=1*26
-                                fad288+=1*26
-                                fbd288+=1*26
-                                fcd288+=1*26
-                                fad289+=1*26
-                                fbd289+=1*26
-                                fcd289+=1*26
-                                fad290+=1*26
-                                fbd290+=1*26
-                                fcd290+=1*26
-                                fad291+=1*26
-                                fbd291+=1*26
-                                fcd291+=1*26
-                                fad292+=1*26
-                                fbd292+=1*26
-                                fcd292+=1*26
-                                fad293+=1*26
-                                fbd293+=1*26
-                                fcd293+=1*26
-                                fad294+=1*26
-                                fbd294+=1*26
-                                fcd294+=1*26
-                                fad295+=1*26
-                                fbd295+=1*26
-                                fcd295+=1*26
-                                fad296+=1*26
-                                fbd296+=1*26
-                                fcd296+=1*26
-                                fad297+=1*26
-                                fbd297+=1*26
-                                fcd297+=1*26
-                                fad298+=1*26
-                                fbd298+=1*26
-                                fcd298+=1*26
-                                fad299+=1*26
-                                fbd299+=1*26
-                                fcd299+=1*26
-                                faces2w.append([fad276,fbd276,fcd276])
-                                faces2w.append([fad277,fbd277,fcd277])
-                                faces2w.append([fad278,fbd278,fcd278])
-                                faces2w.append([fad279,fbd279,fcd279])
-                                faces2w.append([fad280,fbd280,fcd280])
-                                faces2w.append([fad281,fbd281,fcd281])
-                                faces2w.append([fad282,fbd282,fcd282])
-                                faces2w.append([fad283,fbd283,fcd283])
-                                faces2w.append([fad284,fbd284,fcd284])
-                                faces2w.append([fad285,fbd285,fcd285])
-                                faces2w.append([fad286,fbd286,fcd286])
-                                faces2w.append([fad287,fbd287,fcd287])
-                                faces2w.append([fad288,fbd288,fcd288])
-                                faces2w.append([fad289,fbd289,fcd289])
-                                faces2w.append([fad290,fbd290,fcd290])
-                                faces2w.append([fad291,fbd291,fcd291])
-                                faces2w.append([fad292,fbd292,fcd292])
-                                faces2w.append([fad293,fbd293,fcd293])
-                                faces2w.append([fad294,fbd294,fcd294])
-                                faces2w.append([fad295,fbd295,fcd295])
-                                faces2w.append([fad296,fbd296,fcd296])
-                                faces2w.append([fad297,fbd297,fcd297])
-                                faces2w.append([fad298,fbd298,fcd298])
-                                faces2w.append([fad299,fbd299,fcd299])
-                        elif vertexCount == 27:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx25 = unpack("<h", f.read(2))[0] / 4096
-                                uvy25 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2x.append([vx,vz,vy])
-                                uvs2x.append([uvx25,-uvy25])
-                            for i in range(vertexCount-26):
-                                fad300+=1*27
-                                fbd300+=1*27
-                                fcd300+=1*27
-                                fad301+=1*27
-                                fbd301+=1*27
-                                fcd301+=1*27
-                                fad302+=1*27
-                                fbd302+=1*27
-                                fcd302+=1*27
-                                fad303+=1*27
-                                fbd303+=1*27
-                                fcd303+=1*27
-                                fad304+=1*27
-                                fbd304+=1*27
-                                fcd304+=1*27
-                                fad305+=1*27
-                                fbd305+=1*27
-                                fcd305+=1*27
-                                fad306+=1*27
-                                fbd306+=1*27
-                                fcd306+=1*27
-                                fad307+=1*27
-                                fbd307+=1*27
-                                fcd307+=1*27
-                                fad308+=1*27
-                                fbd308+=1*27
-                                fcd308+=1*27
-                                fad309+=1*27
-                                fbd309+=1*27
-                                fcd309+=1*27
-                                fad310+=1*27
-                                fbd310+=1*27
-                                fcd310+=1*27
-                                fad311+=1*27
-                                fbd311+=1*27
-                                fcd311+=1*27
-                                fad312+=1*27
-                                fbd312+=1*27
-                                fcd312+=1*27
-                                fad313+=1*27
-                                fbd313+=1*27
-                                fcd313+=1*27
-                                fad314+=1*27
-                                fbd314+=1*27
-                                fcd314+=1*27
-                                fad315+=1*27
-                                fbd315+=1*27
-                                fcd315+=1*27
-                                fad316+=1*27
-                                fbd316+=1*27
-                                fcd316+=1*27
-                                fad317+=1*27
-                                fbd317+=1*27
-                                fcd317+=1*27
-                                fad318+=1*27
-                                fbd318+=1*27
-                                fcd318+=1*27
-                                fad319+=1*27
-                                fbd319+=1*27
-                                fcd319+=1*27
-                                fad320+=1*27
-                                fbd320+=1*27
-                                fcd320+=1*27
-                                fad321+=1*27
-                                fbd321+=1*27
-                                fcd321+=1*27
-                                fad322+=1*27
-                                fbd322+=1*27
-                                fcd322+=1*27
-                                fad323+=1*27
-                                fbd323+=1*27
-                                fcd323+=1*27
-                                fad324+=1*27
-                                fbd324+=1*27
-                                fcd324+=1*27
-                                faces2x.append([fad300,fbd300,fcd300])
-                                faces2x.append([fad301,fbd301,fcd301])
-                                faces2x.append([fad302,fbd302,fcd302])
-                                faces2x.append([fad303,fbd303,fcd303])
-                                faces2x.append([fad304,fbd304,fcd304])
-                                faces2x.append([fad305,fbd305,fcd305])
-                                faces2x.append([fad306,fbd306,fcd306])
-                                faces2x.append([fad307,fbd307,fcd307])
-                                faces2x.append([fad308,fbd308,fcd308])
-                                faces2x.append([fad309,fbd309,fcd309])
-                                faces2x.append([fad310,fbd310,fcd310])
-                                faces2x.append([fad311,fbd311,fcd311])
-                                faces2x.append([fad312,fbd312,fcd312])
-                                faces2x.append([fad313,fbd313,fcd313])
-                                faces2x.append([fad314,fbd314,fcd314])
-                                faces2x.append([fad315,fbd315,fcd315])
-                                faces2x.append([fad316,fbd316,fcd316])
-                                faces2x.append([fad317,fbd317,fcd317])
-                                faces2x.append([fad318,fbd318,fcd318])
-                                faces2x.append([fad319,fbd319,fcd319])
-                                faces2x.append([fad320,fbd320,fcd320])
-                                faces2x.append([fad321,fbd321,fcd321])
-                                faces2x.append([fad322,fbd322,fcd322])
-                                faces2x.append([fad323,fbd323,fcd323])
-                                faces2x.append([fad324,fbd324,fcd324])
-                        elif vertexCount == 28:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx26 = unpack("<h", f.read(2))[0] / 4096
-                                uvy26 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2y.append([vx,vz,vy])
-                                uvs2y.append([uvx26,-uvy26])
-                            for i in range(vertexCount-27):
-                                fad325+=1*28
-                                fbd325+=1*28
-                                fcd325+=1*28
-                                fad326+=1*28
-                                fbd326+=1*28
-                                fcd326+=1*28
-                                fad327+=1*28
-                                fbd327+=1*28
-                                fcd327+=1*28
-                                fad328+=1*28
-                                fbd328+=1*28
-                                fcd328+=1*28
-                                fad329+=1*28
-                                fbd329+=1*28
-                                fcd329+=1*28
-                                fad330+=1*28
-                                fbd330+=1*28
-                                fcd330+=1*28
-                                fad331+=1*28
-                                fbd331+=1*28
-                                fcd331+=1*28
-                                fad332+=1*28
-                                fbd332+=1*28
-                                fcd332+=1*28
-                                fad333+=1*28
-                                fbd333+=1*28
-                                fcd333+=1*28
-                                fad334+=1*28
-                                fbd334+=1*28
-                                fcd334+=1*28
-                                fad335+=1*28
-                                fbd335+=1*28
-                                fcd335+=1*28
-                                fad336+=1*28
-                                fbd336+=1*28
-                                fcd336+=1*28
-                                fad337+=1*28
-                                fbd337+=1*28
-                                fcd337+=1*28
-                                fad338+=1*28
-                                fbd338+=1*28
-                                fcd338+=1*28
-                                fad339+=1*28
-                                fbd339+=1*28
-                                fcd339+=1*28
-                                fad340+=1*28
-                                fbd340+=1*28
-                                fcd340+=1*28
-                                fad341+=1*28
-                                fbd341+=1*28
-                                fcd341+=1*28
-                                fad342+=1*28
-                                fbd342+=1*28
-                                fcd342+=1*28
-                                fad343+=1*28
-                                fbd343+=1*28
-                                fcd343+=1*28
-                                fad344+=1*28
-                                fbd344+=1*28
-                                fcd344+=1*28
-                                fad345+=1*28
-                                fbd345+=1*28
-                                fcd345+=1*28
-                                fad346+=1*28
-                                fbd346+=1*28
-                                fcd346+=1*28
-                                fad347+=1*28
-                                fbd347+=1*28
-                                fcd347+=1*28
-                                fad348+=1*28
-                                fbd348+=1*28
-                                fcd348+=1*28
-                                fad349+=1*28
-                                fbd349+=1*28
-                                fcd349+=1*28
-                                fad350+=1*28
-                                fbd350+=1*28
-                                fcd350+=1*28
-                                faces2y.append([fad325,fbd325,fcd325])
-                                faces2y.append([fad326,fbd326,fcd326])
-                                faces2y.append([fad327,fbd327,fcd327])
-                                faces2y.append([fad328,fbd328,fcd328])
-                                faces2y.append([fad329,fbd329,fcd329])
-                                faces2y.append([fad330,fbd330,fcd330])
-                                faces2y.append([fad331,fbd331,fcd331])
-                                faces2y.append([fad332,fbd332,fcd332])
-                                faces2y.append([fad333,fbd333,fcd333])
-                                faces2y.append([fad334,fbd334,fcd334])
-                                faces2y.append([fad335,fbd335,fcd335])
-                                faces2y.append([fad336,fbd336,fcd336])
-                                faces2y.append([fad337,fbd337,fcd337])
-                                faces2y.append([fad338,fbd338,fcd338])
-                                faces2y.append([fad339,fbd339,fcd339])
-                                faces2y.append([fad340,fbd340,fcd340])
-                                faces2y.append([fad341,fbd341,fcd341])
-                                faces2y.append([fad342,fbd342,fcd342])
-                                faces2y.append([fad343,fbd343,fcd343])
-                                faces2y.append([fad344,fbd344,fcd344])
-                                faces2y.append([fad345,fbd345,fcd345])
-                                faces2y.append([fad346,fbd346,fcd346])
-                                faces2y.append([fad347,fbd347,fcd347])
-                                faces2y.append([fad348,fbd348,fcd348])
-                                faces2y.append([fad349,fbd349,fcd349])
-                                faces2y.append([fad350,fbd350,fcd350])
-                        elif vertexCount == 29:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx27 = unpack("<h", f.read(2))[0] / 4096
-                                uvy27 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2z.append([vx,vz,vy])
-                                uvs2z.append([uvx27,-uvy27])
-                            for i in range(vertexCount-28):
-                                fad351+=1*29
-                                fbd351+=1*29
-                                fcd351+=1*29
-                                fad352+=1*29
-                                fbd352+=1*29
-                                fcd352+=1*29
-                                fad353+=1*29
-                                fbd353+=1*29
-                                fcd353+=1*29
-                                fad354+=1*29
-                                fbd354+=1*29
-                                fcd354+=1*29
-                                fad355+=1*29
-                                fbd355+=1*29
-                                fcd355+=1*29
-                                fad356+=1*29
-                                fbd356+=1*29
-                                fcd356+=1*29
-                                fad357+=1*29
-                                fbd357+=1*29
-                                fcd357+=1*29
-                                fad358+=1*29
-                                fbd358+=1*29
-                                fcd358+=1*29
-                                fad359+=1*29
-                                fbd359+=1*29
-                                fcd359+=1*29
-                                fad360+=1*29
-                                fbd360+=1*29
-                                fcd360+=1*29
-                                fad361+=1*29
-                                fbd361+=1*29
-                                fcd361+=1*29
-                                fad362+=1*29
-                                fbd362+=1*29
-                                fcd362+=1*29
-                                fad363+=1*29
-                                fbd363+=1*29
-                                fcd363+=1*29
-                                fad364+=1*29
-                                fbd364+=1*29
-                                fcd364+=1*29
-                                fad365+=1*29
-                                fbd365+=1*29
-                                fcd365+=1*29
-                                fad366+=1*29
-                                fbd366+=1*29
-                                fcd366+=1*29
-                                fad367+=1*29
-                                fbd367+=1*29
-                                fcd367+=1*29
-                                fad368+=1*29
-                                fbd368+=1*29
-                                fcd368+=1*29
-                                fad369+=1*29
-                                fbd369+=1*29
-                                fcd369+=1*29
-                                fad370+=1*29
-                                fbd370+=1*29
-                                fcd370+=1*29
-                                fad371+=1*29
-                                fbd371+=1*29
-                                fcd371+=1*29
-                                fad372+=1*29
-                                fbd372+=1*29
-                                fcd372+=1*29
-                                fad373+=1*29
-                                fbd373+=1*29
-                                fcd373+=1*29
-                                fad374+=1*29
-                                fbd374+=1*29
-                                fcd374+=1*29
-                                fad375+=1*29
-                                fbd375+=1*29
-                                fcd375+=1*29
-                                fad376+=1*29
-                                fbd376+=1*29
-                                fcd376+=1*29
-                                fad377+=1*29
-                                fbd377+=1*29
-                                fcd377+=1*29
-                                faces2z.append([fad351,fbd351,fcd351])
-                                faces2z.append([fad352,fbd352,fcd352])
-                                faces2z.append([fad353,fbd353,fcd353])
-                                faces2z.append([fad354,fbd354,fcd354])
-                                faces2z.append([fad355,fbd355,fcd355])
-                                faces2z.append([fad356,fbd356,fcd356])
-                                faces2z.append([fad357,fbd357,fcd357])
-                                faces2z.append([fad358,fbd358,fcd358])
-                                faces2z.append([fad359,fbd359,fcd359])
-                                faces2z.append([fad360,fbd360,fcd360])
-                                faces2z.append([fad361,fbd361,fcd361])
-                                faces2z.append([fad362,fbd362,fcd362])
-                                faces2z.append([fad363,fbd363,fcd363])
-                                faces2z.append([fad364,fbd364,fcd364])
-                                faces2z.append([fad365,fbd365,fcd365])
-                                faces2z.append([fad366,fbd366,fcd366])
-                                faces2z.append([fad367,fbd367,fcd367])
-                                faces2z.append([fad368,fbd368,fcd368])
-                                faces2z.append([fad369,fbd369,fcd369])
-                                faces2z.append([fad370,fbd370,fcd370])
-                                faces2z.append([fad371,fbd371,fcd371])
-                                faces2z.append([fad372,fbd372,fcd372])
-                                faces2z.append([fad373,fbd373,fcd373])
-                                faces2z.append([fad374,fbd374,fcd374])
-                                faces2z.append([fad375,fbd375,fcd375])
-                                faces2z.append([fad376,fbd376,fcd376])
-                                faces2z.append([fad377,fbd377,fcd377])
-                        elif vertexCount == 30:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx28 = unpack("<h", f.read(2))[0] / 4096
-                                uvy28 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zz.append([vx,vz,vy])
-                                uvs2zz.append([uvx28,-uvy28])
-                            for i in range(vertexCount-29):
-                                fad378+=1*30
-                                fbd378+=1*30
-                                fcd378+=1*30
-                                fad379+=1*30
-                                fbd379+=1*30
-                                fcd379+=1*30
-                                fad380+=1*30
-                                fbd380+=1*30
-                                fcd380+=1*30
-                                fad381+=1*30
-                                fbd381+=1*30
-                                fcd381+=1*30
-                                fad382+=1*30
-                                fbd382+=1*30
-                                fcd382+=1*30
-                                fad383+=1*30
-                                fbd383+=1*30
-                                fcd383+=1*30
-                                fad384+=1*30
-                                fbd384+=1*30
-                                fcd384+=1*30
-                                fad385+=1*30
-                                fbd385+=1*30
-                                fcd385+=1*30
-                                fad386+=1*30
-                                fbd386+=1*30
-                                fcd386+=1*30
-                                fad387+=1*30
-                                fbd387+=1*30
-                                fcd387+=1*30
-                                fad388+=1*30
-                                fbd388+=1*30
-                                fcd388+=1*30
-                                fad389+=1*30
-                                fbd389+=1*30
-                                fcd389+=1*30
-                                fad390+=1*30
-                                fbd390+=1*30
-                                fcd390+=1*30
-                                fad391+=1*30
-                                fbd391+=1*30
-                                fcd391+=1*30
-                                fad392+=1*30
-                                fbd392+=1*30
-                                fcd392+=1*30
-                                fad393+=1*30
-                                fbd393+=1*30
-                                fcd393+=1*30
-                                fad394+=1*30
-                                fbd394+=1*30
-                                fcd394+=1*30
-                                fad395+=1*30
-                                fbd395+=1*30
-                                fcd395+=1*30
-                                fad396+=1*30
-                                fbd396+=1*30
-                                fcd396+=1*30
-                                fad397+=1*30
-                                fbd397+=1*30
-                                fcd397+=1*30
-                                fad398+=1*30
-                                fbd398+=1*30
-                                fcd398+=1*30
-                                fad399+=1*30
-                                fbd399+=1*30
-                                fcd399+=1*30
-                                fad400+=1*30
-                                fbd400+=1*30
-                                fcd400+=1*30
-                                fad401+=1*30
-                                fbd401+=1*30
-                                fcd401+=1*30
-                                fad402+=1*30
-                                fbd402+=1*30
-                                fcd402+=1*30
-                                fad403+=1*30
-                                fbd403+=1*30
-                                fcd403+=1*30
-                                fad404+=1*30
-                                fbd404+=1*30
-                                fcd404+=1*30
-                                fad405+=1*30
-                                fbd405+=1*30
-                                fcd405+=1*30
-                                faces2zz.append([fad378,fbd378,fcd378])
-                                faces2zz.append([fad379,fbd379,fcd379])
-                                faces2zz.append([fad380,fbd380,fcd380])
-                                faces2zz.append([fad381,fbd381,fcd381])
-                                faces2zz.append([fad382,fbd382,fcd382])
-                                faces2zz.append([fad383,fbd383,fcd383])
-                                faces2zz.append([fad384,fbd384,fcd384])
-                                faces2zz.append([fad385,fbd385,fcd385])
-                                faces2zz.append([fad386,fbd386,fcd386])
-                                faces2zz.append([fad387,fbd387,fcd387])
-                                faces2zz.append([fad388,fbd388,fcd388])
-                                faces2zz.append([fad389,fbd389,fcd389])
-                                faces2zz.append([fad390,fbd390,fcd390])
-                                faces2zz.append([fad391,fbd391,fcd391])
-                                faces2zz.append([fad392,fbd392,fcd392])
-                                faces2zz.append([fad393,fbd393,fcd393])
-                                faces2zz.append([fad394,fbd394,fcd394])
-                                faces2zz.append([fad395,fbd395,fcd395])
-                                faces2zz.append([fad396,fbd396,fcd396])
-                                faces2zz.append([fad397,fbd397,fcd397])
-                                faces2zz.append([fad398,fbd398,fcd398])
-                                faces2zz.append([fad399,fbd399,fcd399])
-                                faces2zz.append([fad400,fbd400,fcd400])
-                                faces2zz.append([fad401,fbd401,fcd401])
-                                faces2zz.append([fad402,fbd402,fcd402])
-                                faces2zz.append([fad403,fbd403,fcd403])
-                                faces2zz.append([fad404,fbd404,fcd404])
-                                faces2zz.append([fad405,fbd405,fcd405])
-                        elif vertexCount == 31:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx29 = unpack("<h", f.read(2))[0] / 4096
-                                uvy29 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzz.append([vx,vz,vy])
-                                uvs2zzz.append([uvx29,-uvy29])
-                            for i in range(vertexCount-30):
-                                fad406+=1*31
-                                fbd406+=1*31
-                                fcd406+=1*31
-                                fad407+=1*31
-                                fbd407+=1*31
-                                fcd407+=1*31
-                                fad408+=1*31
-                                fbd408+=1*31
-                                fcd408+=1*31
-                                fad409+=1*31
-                                fbd409+=1*31
-                                fcd409+=1*31
-                                fad410+=1*31
-                                fbd410+=1*31
-                                fcd410+=1*31
-                                fad411+=1*31
-                                fbd411+=1*31
-                                fcd411+=1*31
-                                fad412+=1*31
-                                fbd412+=1*31
-                                fcd412+=1*31
-                                fad413+=1*31
-                                fbd413+=1*31
-                                fcd413+=1*31
-                                fad414+=1*31
-                                fbd414+=1*31
-                                fcd414+=1*31
-                                fad415+=1*31
-                                fbd415+=1*31
-                                fcd415+=1*31
-                                fad416+=1*31
-                                fbd416+=1*31
-                                fcd416+=1*31
-                                fad417+=1*31
-                                fbd417+=1*31
-                                fcd417+=1*31
-                                fad418+=1*31
-                                fbd418+=1*31
-                                fcd418+=1*31
-                                fad419+=1*31
-                                fbd419+=1*31
-                                fcd419+=1*31
-                                fad420+=1*31
-                                fbd420+=1*31
-                                fcd420+=1*31
-                                fad421+=1*31
-                                fbd421+=1*31
-                                fcd421+=1*31
-                                fad422+=1*31
-                                fbd422+=1*31
-                                fcd422+=1*31
-                                fad423+=1*31
-                                fbd423+=1*31
-                                fcd423+=1*31
-                                fad424+=1*31
-                                fbd424+=1*31
-                                fcd424+=1*31
-                                fad425+=1*31
-                                fbd425+=1*31
-                                fcd425+=1*31
-                                fad426+=1*31
-                                fbd426+=1*31
-                                fcd426+=1*31
-                                fad427+=1*31
-                                fbd427+=1*31
-                                fcd427+=1*31
-                                fad428+=1*31
-                                fbd428+=1*31
-                                fcd428+=1*31
-                                fad429+=1*31
-                                fbd429+=1*31
-                                fcd429+=1*31
-                                fad430+=1*31
-                                fbd430+=1*31
-                                fcd430+=1*31
-                                fad431+=1*31
-                                fbd431+=1*31
-                                fcd431+=1*31
-                                fad432+=1*31
-                                fbd432+=1*31
-                                fcd432+=1*31
-                                fad433+=1*31
-                                fbd433+=1*31
-                                fcd433+=1*31
-                                fad434+=1*31
-                                fbd434+=1*31
-                                fcd434+=1*31
-                                faces2zzz.append([fad406,fbd406,fcd406])
-                                faces2zzz.append([fad407,fbd407,fcd407])
-                                faces2zzz.append([fad408,fbd408,fcd408])
-                                faces2zzz.append([fad409,fbd409,fcd409])
-                                faces2zzz.append([fad410,fbd410,fcd410])
-                                faces2zzz.append([fad411,fbd411,fcd411])
-                                faces2zzz.append([fad412,fbd412,fcd412])
-                                faces2zzz.append([fad413,fbd413,fcd413])
-                                faces2zzz.append([fad414,fbd414,fcd414])
-                                faces2zzz.append([fad415,fbd415,fcd415])
-                                faces2zzz.append([fad416,fbd416,fcd416])
-                                faces2zzz.append([fad417,fbd417,fcd417])
-                                faces2zzz.append([fad418,fbd418,fcd418])
-                                faces2zzz.append([fad419,fbd419,fcd419])
-                                faces2zzz.append([fad420,fbd420,fcd420])
-                                faces2zzz.append([fad421,fbd421,fcd421])
-                                faces2zzz.append([fad422,fbd422,fcd422])
-                                faces2zzz.append([fad423,fbd423,fcd423])
-                                faces2zzz.append([fad424,fbd424,fcd424])
-                                faces2zzz.append([fad425,fbd425,fcd425])
-                                faces2zzz.append([fad426,fbd426,fcd426])
-                                faces2zzz.append([fad427,fbd427,fcd427])
-                                faces2zzz.append([fad428,fbd428,fcd428])
-                                faces2zzz.append([fad429,fbd429,fcd429])
-                                faces2zzz.append([fad430,fbd430,fcd430])
-                                faces2zzz.append([fad431,fbd431,fcd431])
-                                faces2zzz.append([fad432,fbd432,fcd432])
-                                faces2zzz.append([fad433,fbd433,fcd433])
-                                faces2zzz.append([fad434,fbd434,fcd434])
-                        elif vertexCount == 32:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx30 = unpack("<h", f.read(2))[0] / 4096
-                                uvy30 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzz.append([vx,vz,vy])
-                                uvs2zzzz.append([uvx30,-uvy30])
-                            for i in range(vertexCount-31):
-                                fad435+=1*32
-                                fbd435+=1*32
-                                fcd435+=1*32
-                                fad436+=1*32
-                                fbd436+=1*32
-                                fcd436+=1*32
-                                fad437+=1*32
-                                fbd437+=1*32
-                                fcd437+=1*32
-                                fad438+=1*32
-                                fbd438+=1*32
-                                fcd438+=1*32
-                                fad439+=1*32
-                                fbd439+=1*32
-                                fcd439+=1*32
-                                fad440+=1*32
-                                fbd440+=1*32
-                                fcd440+=1*32
-                                fad441+=1*32
-                                fbd441+=1*32
-                                fcd441+=1*32
-                                fad442+=1*32
-                                fbd442+=1*32
-                                fcd442+=1*32
-                                fad443+=1*32
-                                fbd443+=1*32
-                                fcd443+=1*32
-                                fad444+=1*32
-                                fbd444+=1*32
-                                fcd444+=1*32
-                                fad445+=1*32
-                                fbd445+=1*32
-                                fcd445+=1*32
-                                fad446+=1*32
-                                fbd446+=1*32
-                                fcd446+=1*32
-                                fad447+=1*32
-                                fbd447+=1*32
-                                fcd447+=1*32
-                                fad448+=1*32
-                                fbd448+=1*32
-                                fcd448+=1*32
-                                fad449+=1*32
-                                fbd449+=1*32
-                                fcd449+=1*32
-                                fad450+=1*32
-                                fbd450+=1*32
-                                fcd450+=1*32
-                                fad451+=1*32
-                                fbd451+=1*32
-                                fcd451+=1*32
-                                fad452+=1*32
-                                fbd452+=1*32
-                                fcd452+=1*32
-                                fad453+=1*32
-                                fbd453+=1*32
-                                fcd453+=1*32
-                                fad454+=1*32
-                                fbd454+=1*32
-                                fcd454+=1*32
-                                fad455+=1*32
-                                fbd455+=1*32
-                                fcd455+=1*32
-                                fad456+=1*32
-                                fbd456+=1*32
-                                fcd456+=1*32
-                                fad457+=1*32
-                                fbd457+=1*32
-                                fcd457+=1*32
-                                fad458+=1*32
-                                fbd458+=1*32
-                                fcd458+=1*32
-                                fad459+=1*32
-                                fbd459+=1*32
-                                fcd459+=1*32
-                                fad460+=1*32
-                                fbd460+=1*32
-                                fcd460+=1*32
-                                fad461+=1*32
-                                fbd461+=1*32
-                                fcd461+=1*32
-                                fad462+=1*32
-                                fbd462+=1*32
-                                fcd462+=1*32
-                                fad463+=1*32
-                                fbd463+=1*32
-                                fcd463+=1*32
-                                fad464+=1*32
-                                fbd464+=1*32
-                                fcd464+=1*32
-                                faces2zzzz.append([fad435,fbd435,fcd435])
-                                faces2zzzz.append([fad436,fbd436,fcd436])
-                                faces2zzzz.append([fad437,fbd437,fcd437])
-                                faces2zzzz.append([fad438,fbd438,fcd438])
-                                faces2zzzz.append([fad439,fbd439,fcd439])
-                                faces2zzzz.append([fad440,fbd440,fcd440])
-                                faces2zzzz.append([fad441,fbd441,fcd441])
-                                faces2zzzz.append([fad442,fbd442,fcd442])
-                                faces2zzzz.append([fad443,fbd443,fcd443])
-                                faces2zzzz.append([fad444,fbd444,fcd444])
-                                faces2zzzz.append([fad445,fbd445,fcd445])
-                                faces2zzzz.append([fad446,fbd446,fcd446])
-                                faces2zzzz.append([fad447,fbd447,fcd447])
-                                faces2zzzz.append([fad448,fbd448,fcd448])
-                                faces2zzzz.append([fad449,fbd449,fcd449])
-                                faces2zzzz.append([fad450,fbd450,fcd450])
-                                faces2zzzz.append([fad451,fbd451,fcd451])
-                                faces2zzzz.append([fad452,fbd452,fcd452])
-                                faces2zzzz.append([fad453,fbd453,fcd453])
-                                faces2zzzz.append([fad454,fbd454,fcd454])
-                                faces2zzzz.append([fad455,fbd455,fcd455])
-                                faces2zzzz.append([fad456,fbd456,fcd456])
-                                faces2zzzz.append([fad457,fbd457,fcd457])
-                                faces2zzzz.append([fad458,fbd458,fcd458])
-                                faces2zzzz.append([fad459,fbd459,fcd459])
-                                faces2zzzz.append([fad460,fbd460,fcd460])
-                                faces2zzzz.append([fad461,fbd461,fcd461])
-                                faces2zzzz.append([fad462,fbd462,fcd462])
-                                faces2zzzz.append([fad463,fbd463,fcd463])
-                                faces2zzzz.append([fad464,fbd464,fcd464])
-
-                        elif vertexCount == 33:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx31 = unpack("<h", f.read(2))[0] / 4096
-                                uvy31 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzz.append([vx,vz,vy])
-                                uvs2zzzzz.append([uvx31,-uvy31])
-                            for i in range(vertexCount-32):
-                                fad465+=1*33
-                                fbd465+=1*33
-                                fcd465+=1*33
-                                fad466+=1*33
-                                fbd466+=1*33
-                                fcd466+=1*33
-                                fad467+=1*33
-                                fbd467+=1*33
-                                fcd467+=1*33
-                                fad468+=1*33
-                                fbd468+=1*33
-                                fcd468+=1*33
-                                fad469+=1*33
-                                fbd469+=1*33
-                                fcd469+=1*33
-                                fad470+=1*33
-                                fbd470+=1*33
-                                fcd470+=1*33
-                                fad471+=1*33
-                                fbd471+=1*33
-                                fcd471+=1*33
-                                fad472+=1*33
-                                fbd472+=1*33
-                                fcd472+=1*33
-                                fad473+=1*33
-                                fbd473+=1*33
-                                fcd473+=1*33
-                                fad474+=1*33
-                                fbd474+=1*33
-                                fcd474+=1*33
-                                fad475+=1*33
-                                fbd475+=1*33
-                                fcd475+=1*33
-                                fad476+=1*33
-                                fbd476+=1*33
-                                fcd476+=1*33
-                                fad477+=1*33
-                                fbd477+=1*33
-                                fcd477+=1*33
-                                fad478+=1*33
-                                fbd478+=1*33
-                                fcd478+=1*33
-                                fad479+=1*33
-                                fbd479+=1*33
-                                fcd479+=1*33
-                                fad480+=1*33
-                                fbd480+=1*33
-                                fcd480+=1*33
-                                fad481+=1*33
-                                fbd481+=1*33
-                                fcd481+=1*33
-                                fad482+=1*33
-                                fbd482+=1*33
-                                fcd482+=1*33
-                                fad483+=1*33
-                                fbd483+=1*33
-                                fcd483+=1*33
-                                fad484+=1*33
-                                fbd484+=1*33
-                                fcd484+=1*33
-                                fad485+=1*33
-                                fbd485+=1*33
-                                fcd485+=1*33
-                                fad486+=1*33
-                                fbd486+=1*33
-                                fcd486+=1*33
-                                fad487+=1*33
-                                fbd487+=1*33
-                                fcd487+=1*33
-                                fad488+=1*33
-                                fbd488+=1*33
-                                fcd488+=1*33
-                                fad489+=1*33
-                                fbd489+=1*33
-                                fcd489+=1*33
-                                fad490+=1*33
-                                fbd490+=1*33
-                                fcd490+=1*33
-                                fad491+=1*33
-                                fbd491+=1*33
-                                fcd491+=1*33
-                                fad492+=1*33
-                                fbd492+=1*33
-                                fcd492+=1*33
-                                fad493+=1*33
-                                fbd493+=1*33
-                                fcd493+=1*33
-                                fad494+=1*33
-                                fbd494+=1*33
-                                fcd494+=1*33
-                                fad495+=1*33
-                                fbd495+=1*33
-                                fcd495+=1*33
-                                faces2zzzzz.append([fad465,fbd465,fcd465])
-                                faces2zzzzz.append([fad466,fbd466,fcd466])
-                                faces2zzzzz.append([fad467,fbd467,fcd467])
-                                faces2zzzzz.append([fad468,fbd468,fcd468])
-                                faces2zzzzz.append([fad469,fbd469,fcd469])
-                                faces2zzzzz.append([fad470,fbd470,fcd470])
-                                faces2zzzzz.append([fad471,fbd471,fcd471])
-                                faces2zzzzz.append([fad472,fbd472,fcd472])
-                                faces2zzzzz.append([fad473,fbd473,fcd473])
-                                faces2zzzzz.append([fad474,fbd474,fcd474])
-                                faces2zzzzz.append([fad475,fbd475,fcd475])
-                                faces2zzzzz.append([fad476,fbd476,fcd476])
-                                faces2zzzzz.append([fad477,fbd477,fcd477])
-                                faces2zzzzz.append([fad478,fbd478,fcd478])
-                                faces2zzzzz.append([fad479,fbd479,fcd479])
-                                faces2zzzzz.append([fad480,fbd480,fcd480])
-                                faces2zzzzz.append([fad481,fbd481,fcd481])
-                                faces2zzzzz.append([fad482,fbd482,fcd482])
-                                faces2zzzzz.append([fad483,fbd483,fcd483])
-                                faces2zzzzz.append([fad484,fbd484,fcd484])
-                                faces2zzzzz.append([fad485,fbd485,fcd485])
-                                faces2zzzzz.append([fad486,fbd486,fcd486])
-                                faces2zzzzz.append([fad487,fbd487,fcd487])
-                                faces2zzzzz.append([fad488,fbd488,fcd488])
-                                faces2zzzzz.append([fad489,fbd489,fcd489])
-                                faces2zzzzz.append([fad490,fbd490,fcd490])
-                                faces2zzzzz.append([fad491,fbd491,fcd491])
-                                faces2zzzzz.append([fad492,fbd492,fcd492])
-                                faces2zzzzz.append([fad493,fbd493,fcd493])
-                                faces2zzzzz.append([fad494,fbd494,fcd494])
-                                faces2zzzzz.append([fad495,fbd495,fcd495])
-
-                        elif vertexCount == 34:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx32 = unpack("<h", f.read(2))[0] / 4096
-                                uvy32 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzz.append([uvx32,-uvy32])
-                            for i in range(vertexCount-33):
-                                fad496+=1*34
-                                fbd496+=1*34
-                                fcd496+=1*34
-                                fad497+=1*34
-                                fbd497+=1*34
-                                fcd497+=1*34
-                                fad498+=1*34
-                                fbd498+=1*34
-                                fcd498+=1*34
-                                fad499+=1*34
-                                fbd499+=1*34
-                                fcd499+=1*34
-                                fad500+=1*34
-                                fbd500+=1*34
-                                fcd500+=1*34
-                                fad501+=1*34
-                                fbd501+=1*34
-                                fcd501+=1*34
-                                fad502+=1*34
-                                fbd502+=1*34
-                                fcd502+=1*34
-                                fad503+=1*34
-                                fbd503+=1*34
-                                fcd503+=1*34
-                                fad504+=1*34
-                                fbd504+=1*34
-                                fcd504+=1*34
-                                fad505+=1*34
-                                fbd505+=1*34
-                                fcd505+=1*34
-                                fad506+=1*34
-                                fbd506+=1*34
-                                fcd506+=1*34
-                                fad507+=1*34
-                                fbd507+=1*34
-                                fcd507+=1*34
-                                fad508+=1*34
-                                fbd508+=1*34
-                                fcd508+=1*34
-                                fad509+=1*34
-                                fbd509+=1*34
-                                fcd509+=1*34
-                                fad510+=1*34
-                                fbd510+=1*34
-                                fcd510+=1*34
-                                fad511+=1*34
-                                fbd511+=1*34
-                                fcd511+=1*34
-                                fad512+=1*34
-                                fbd512+=1*34
-                                fcd512+=1*34
-                                fad513+=1*34
-                                fbd513+=1*34
-                                fcd513+=1*34
-                                fad514+=1*34
-                                fbd514+=1*34
-                                fcd514+=1*34
-                                fad515+=1*34
-                                fbd515+=1*34
-                                fcd515+=1*34
-                                fad516+=1*34
-                                fbd516+=1*34
-                                fcd516+=1*34
-                                fad517+=1*34
-                                fbd517+=1*34
-                                fcd517+=1*34
-                                fad518+=1*34
-                                fbd518+=1*34
-                                fcd518+=1*34
-                                fad519+=1*34
-                                fbd519+=1*34
-                                fcd519+=1*34
-                                fad520+=1*34
-                                fbd520+=1*34
-                                fcd520+=1*34
-                                fad521+=1*34
-                                fbd521+=1*34
-                                fcd521+=1*34
-                                fad522+=1*34
-                                fbd522+=1*34
-                                fcd522+=1*34
-                                fad523+=1*34
-                                fbd523+=1*34
-                                fcd523+=1*34
-                                fad524+=1*34
-                                fbd524+=1*34
-                                fcd524+=1*34
-                                fad525+=1*34
-                                fbd525+=1*34
-                                fcd525+=1*34
-                                fad526+=1*34
-                                fbd526+=1*34
-                                fcd526+=1*34
-                                fad527+=1*34
-                                fbd527+=1*34
-                                fcd527+=1*34
-                                faces2zzzzzz.append([fad496,fbd496,fcd496])
-                                faces2zzzzzz.append([fad497,fbd497,fcd497])
-                                faces2zzzzzz.append([fad498,fbd498,fcd498])
-                                faces2zzzzzz.append([fad499,fbd499,fcd499])
-                                faces2zzzzzz.append([fad500,fbd500,fcd500])
-                                faces2zzzzzz.append([fad501,fbd501,fcd501])
-                                faces2zzzzzz.append([fad502,fbd502,fcd502])
-                                faces2zzzzzz.append([fad503,fbd503,fcd503])
-                                faces2zzzzzz.append([fad504,fbd504,fcd504])
-                                faces2zzzzzz.append([fad505,fbd505,fcd505])
-                                faces2zzzzzz.append([fad506,fbd506,fcd506])
-                                faces2zzzzzz.append([fad507,fbd507,fcd507])
-                                faces2zzzzzz.append([fad508,fbd508,fcd508])
-                                faces2zzzzzz.append([fad509,fbd509,fcd509])
-                                faces2zzzzzz.append([fad510,fbd510,fcd510])
-                                faces2zzzzzz.append([fad511,fbd511,fcd511])
-                                faces2zzzzzz.append([fad512,fbd512,fcd512])
-                                faces2zzzzzz.append([fad513,fbd513,fcd513])
-                                faces2zzzzzz.append([fad514,fbd514,fcd514])
-                                faces2zzzzzz.append([fad515,fbd515,fcd515])
-                                faces2zzzzzz.append([fad516,fbd516,fcd516])
-                                faces2zzzzzz.append([fad517,fbd517,fcd517])
-                                faces2zzzzzz.append([fad518,fbd518,fcd518])
-                                faces2zzzzzz.append([fad519,fbd519,fcd519])
-                                faces2zzzzzz.append([fad520,fbd520,fcd520])
-                                faces2zzzzzz.append([fad521,fbd521,fcd521])
-                                faces2zzzzzz.append([fad522,fbd522,fcd522])
-                                faces2zzzzzz.append([fad523,fbd523,fcd523])
-                                faces2zzzzzz.append([fad524,fbd524,fcd524])
-                                faces2zzzzzz.append([fad525,fbd525,fcd525])
-                                faces2zzzzzz.append([fad526,fbd526,fcd526])
-                                faces2zzzzzz.append([fad527,fbd527,fcd527])
-
-                        elif vertexCount == 35:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx33 = unpack("<h", f.read(2))[0] / 4096
-                                uvy33 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzzz.append([uvx33,-uvy33])
-                            for i in range(vertexCount-34):
-                                fad528+=1*35
-                                fbd528+=1*35
-                                fcd528+=1*35
-                                fad529+=1*35
-                                fbd529+=1*35
-                                fcd529+=1*35
-                                fad530+=1*35
-                                fbd530+=1*35
-                                fcd530+=1*35
-                                fad531+=1*35
-                                fbd531+=1*35
-                                fcd531+=1*35
-                                fad532+=1*35
-                                fbd532+=1*35
-                                fcd532+=1*35
-                                fad533+=1*35
-                                fbd533+=1*35
-                                fcd533+=1*35
-                                fad534+=1*35
-                                fbd534+=1*35
-                                fcd534+=1*35
-                                fad535+=1*35
-                                fbd535+=1*35
-                                fcd535+=1*35
-                                fad536+=1*35
-                                fbd536+=1*35
-                                fcd536+=1*35
-                                fad537+=1*35
-                                fbd537+=1*35
-                                fcd537+=1*35
-                                fad538+=1*35
-                                fbd538+=1*35
-                                fcd538+=1*35
-                                fad539+=1*35
-                                fbd539+=1*35
-                                fcd539+=1*35
-                                fad540+=1*35
-                                fbd540+=1*35
-                                fcd540+=1*35
-                                fad541+=1*35
-                                fbd541+=1*35
-                                fcd541+=1*35
-                                fad542+=1*35
-                                fbd542+=1*35
-                                fcd542+=1*35
-                                fad543+=1*35
-                                fbd543+=1*35
-                                fcd543+=1*35
-                                fad544+=1*35
-                                fbd544+=1*35
-                                fcd544+=1*35
-                                fad545+=1*35
-                                fbd545+=1*35
-                                fcd545+=1*35
-                                fad546+=1*35
-                                fbd546+=1*35
-                                fcd546+=1*35
-                                fad547+=1*35
-                                fbd547+=1*35
-                                fcd547+=1*35
-                                fad548+=1*35
-                                fbd548+=1*35
-                                fcd548+=1*35
-                                fad549+=1*35
-                                fbd549+=1*35
-                                fcd549+=1*35
-                                fad550+=1*35
-                                fbd550+=1*35
-                                fcd550+=1*35
-                                fad551+=1*35
-                                fbd551+=1*35
-                                fcd551+=1*35
-                                fad552+=1*35
-                                fbd552+=1*35
-                                fcd552+=1*35
-                                fad553+=1*35
-                                fbd553+=1*35
-                                fcd553+=1*35
-                                fad554+=1*35
-                                fbd554+=1*35
-                                fcd554+=1*35
-                                fad555+=1*35
-                                fbd555+=1*35
-                                fcd555+=1*35
-                                fad556+=1*35
-                                fbd556+=1*35
-                                fcd556+=1*35
-                                fad557+=1*35
-                                fbd557+=1*35
-                                fcd557+=1*35
-                                fad558+=1*35
-                                fbd558+=1*35
-                                fcd558+=1*35
-                                fad559+=1*35
-                                fbd559+=1*35
-                                fcd559+=1*35
-                                fad560+=1*35
-                                fbd560+=1*35
-                                fcd560+=1*35
-                                faces2zzzzzzz.append([fad528,fbd528,fcd528])
-                                faces2zzzzzzz.append([fad529,fbd529,fcd529])
-                                faces2zzzzzzz.append([fad530,fbd530,fcd530])
-                                faces2zzzzzzz.append([fad531,fbd531,fcd531])
-                                faces2zzzzzzz.append([fad532,fbd532,fcd532])
-                                faces2zzzzzzz.append([fad533,fbd533,fcd533])
-                                faces2zzzzzzz.append([fad534,fbd534,fcd534])
-                                faces2zzzzzzz.append([fad535,fbd535,fcd535])
-                                faces2zzzzzzz.append([fad536,fbd536,fcd536])
-                                faces2zzzzzzz.append([fad537,fbd537,fcd537])
-                                faces2zzzzzzz.append([fad538,fbd538,fcd538])
-                                faces2zzzzzzz.append([fad539,fbd539,fcd539])
-                                faces2zzzzzzz.append([fad540,fbd540,fcd540])
-                                faces2zzzzzzz.append([fad541,fbd541,fcd541])
-                                faces2zzzzzzz.append([fad542,fbd542,fcd542])
-                                faces2zzzzzzz.append([fad543,fbd543,fcd543])
-                                faces2zzzzzzz.append([fad544,fbd544,fcd544])
-                                faces2zzzzzzz.append([fad545,fbd545,fcd545])
-                                faces2zzzzzzz.append([fad546,fbd546,fcd546])
-                                faces2zzzzzzz.append([fad547,fbd547,fcd547])
-                                faces2zzzzzzz.append([fad548,fbd548,fcd548])
-                                faces2zzzzzzz.append([fad549,fbd549,fcd549])
-                                faces2zzzzzzz.append([fad550,fbd550,fcd550])
-                                faces2zzzzzzz.append([fad551,fbd551,fcd551])
-                                faces2zzzzzzz.append([fad552,fbd552,fcd552])
-                                faces2zzzzzzz.append([fad553,fbd553,fcd553])
-                                faces2zzzzzzz.append([fad554,fbd554,fcd554])
-                                faces2zzzzzzz.append([fad555,fbd555,fcd555])
-                                faces2zzzzzzz.append([fad556,fbd556,fcd556])
-                                faces2zzzzzzz.append([fad557,fbd557,fcd557])
-                                faces2zzzzzzz.append([fad558,fbd558,fcd558])
-                                faces2zzzzzzz.append([fad559,fbd559,fcd559])
-                                faces2zzzzzzz.append([fad560,fbd560,fcd560])
-
-                        elif vertexCount == 36:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx34 = unpack("<h", f.read(2))[0] / 4096
-                                uvy34 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzzzz.append([uvx34,-uvy34])
-                            for i in range(vertexCount-35):
-                                fad561+=1*36
-                                fbd561+=1*36
-                                fcd561+=1*36
-                                fad562+=1*36
-                                fbd562+=1*36
-                                fcd562+=1*36
-                                fad563+=1*36
-                                fbd563+=1*36
-                                fcd563+=1*36
-                                fad564+=1*36
-                                fbd564+=1*36
-                                fcd564+=1*36
-                                fad565+=1*36
-                                fbd565+=1*36
-                                fcd565+=1*36
-                                fad566+=1*36
-                                fbd566+=1*36
-                                fcd566+=1*36
-                                fad567+=1*36
-                                fbd567+=1*36
-                                fcd567+=1*36
-                                fad568+=1*36
-                                fbd568+=1*36
-                                fcd568+=1*36
-                                fad569+=1*36
-                                fbd569+=1*36
-                                fcd569+=1*36
-                                fad570+=1*36
-                                fbd570+=1*36
-                                fcd570+=1*36
-                                fad571+=1*36
-                                fbd571+=1*36
-                                fcd571+=1*36
-                                fad572+=1*36
-                                fbd572+=1*36
-                                fcd572+=1*36
-                                fad573+=1*36
-                                fbd573+=1*36
-                                fcd573+=1*36
-                                fad574+=1*36
-                                fbd574+=1*36
-                                fcd574+=1*36
-                                fad575+=1*36
-                                fbd575+=1*36
-                                fcd575+=1*36
-                                fad576+=1*36
-                                fbd576+=1*36
-                                fcd576+=1*36
-                                fad577+=1*36
-                                fbd577+=1*36
-                                fcd577+=1*36
-                                fad578+=1*36
-                                fbd578+=1*36
-                                fcd578+=1*36
-                                fad579+=1*36
-                                fbd579+=1*36
-                                fcd579+=1*36
-                                fad580+=1*36
-                                fbd580+=1*36
-                                fcd580+=1*36
-                                fad581+=1*36
-                                fbd581+=1*36
-                                fcd581+=1*36
-                                fad582+=1*36
-                                fbd582+=1*36
-                                fcd582+=1*36
-                                fad583+=1*36
-                                fbd583+=1*36
-                                fcd583+=1*36
-                                fad584+=1*36
-                                fbd584+=1*36
-                                fcd584+=1*36
-                                fad585+=1*36
-                                fbd585+=1*36
-                                fcd585+=1*36
-                                fad586+=1*36
-                                fbd586+=1*36
-                                fcd586+=1*36
-                                fad587+=1*36
-                                fbd587+=1*36
-                                fcd587+=1*36
-                                fad588+=1*36
-                                fbd588+=1*36
-                                fcd588+=1*36
-                                fad589+=1*36
-                                fbd589+=1*36
-                                fcd589+=1*36
-                                fad590+=1*36
-                                fbd590+=1*36
-                                fcd590+=1*36
-                                fad591+=1*36
-                                fbd591+=1*36
-                                fcd591+=1*36
-                                fad592+=1*36
-                                fbd592+=1*36
-                                fcd592+=1*36
-                                fad593+=1*36
-                                fbd593+=1*36
-                                fcd593+=1*36
-                                fad594+=1*36
-                                fbd594+=1*36
-                                fcd594+=1*36
-                                faces2zzzzzzzz.append([fad561,fbd561,fcd561])
-                                faces2zzzzzzzz.append([fad562,fbd562,fcd562])
-                                faces2zzzzzzzz.append([fad563,fbd563,fcd563])
-                                faces2zzzzzzzz.append([fad564,fbd564,fcd564])
-                                faces2zzzzzzzz.append([fad565,fbd565,fcd565])
-                                faces2zzzzzzzz.append([fad566,fbd566,fcd566])
-                                faces2zzzzzzzz.append([fad567,fbd567,fcd567])
-                                faces2zzzzzzzz.append([fad568,fbd568,fcd568])
-                                faces2zzzzzzzz.append([fad569,fbd569,fcd569])
-                                faces2zzzzzzzz.append([fad570,fbd570,fcd570])
-                                faces2zzzzzzzz.append([fad571,fbd571,fcd571])
-                                faces2zzzzzzzz.append([fad572,fbd572,fcd572])
-                                faces2zzzzzzzz.append([fad573,fbd573,fcd573])
-                                faces2zzzzzzzz.append([fad574,fbd574,fcd574])
-                                faces2zzzzzzzz.append([fad575,fbd575,fcd575])
-                                faces2zzzzzzzz.append([fad576,fbd576,fcd576])
-                                faces2zzzzzzzz.append([fad577,fbd577,fcd577])
-                                faces2zzzzzzzz.append([fad578,fbd578,fcd578])
-                                faces2zzzzzzzz.append([fad579,fbd579,fcd579])
-                                faces2zzzzzzzz.append([fad580,fbd580,fcd580])
-                                faces2zzzzzzzz.append([fad581,fbd581,fcd581])
-                                faces2zzzzzzzz.append([fad582,fbd582,fcd582])
-                                faces2zzzzzzzz.append([fad583,fbd583,fcd583])
-                                faces2zzzzzzzz.append([fad584,fbd584,fcd584])
-                                faces2zzzzzzzz.append([fad585,fbd585,fcd585])
-                                faces2zzzzzzzz.append([fad586,fbd586,fcd586])
-                                faces2zzzzzzzz.append([fad587,fbd587,fcd587])
-                                faces2zzzzzzzz.append([fad588,fbd588,fcd588])
-                                faces2zzzzzzzz.append([fad589,fbd589,fcd589])
-                                faces2zzzzzzzz.append([fad590,fbd590,fcd590])
-                                faces2zzzzzzzz.append([fad591,fbd591,fcd591])
-                                faces2zzzzzzzz.append([fad592,fbd592,fcd592])
-                                faces2zzzzzzzz.append([fad593,fbd593,fcd593])
-                                faces2zzzzzzzz.append([fad594,fbd594,fcd594])
-
-                        elif vertexCount == 37:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx35 = unpack("<h", f.read(2))[0] / 4096
-                                uvy35 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzzzzz.append([uvx35,-uvy35])
-                            for i in range(vertexCount-36):
-                                fad595+=1*37
-                                fbd595+=1*37
-                                fcd595+=1*37
-                                fad596+=1*37
-                                fbd596+=1*37
-                                fcd596+=1*37
-                                fad597+=1*37
-                                fbd597+=1*37
-                                fcd597+=1*37
-                                fad598+=1*37
-                                fbd598+=1*37
-                                fcd598+=1*37
-                                fad599+=1*37
-                                fbd599+=1*37
-                                fcd599+=1*37
-                                fad600+=1*37
-                                fbd600+=1*37
-                                fcd600+=1*37
-                                fad601+=1*37
-                                fbd601+=1*37
-                                fcd601+=1*37
-                                fad602+=1*37
-                                fbd602+=1*37
-                                fcd602+=1*37
-                                fad603+=1*37
-                                fbd603+=1*37
-                                fcd603+=1*37
-                                fad604+=1*37
-                                fbd604+=1*37
-                                fcd604+=1*37
-                                fad605+=1*37
-                                fbd605+=1*37
-                                fcd605+=1*37
-                                fad606+=1*37
-                                fbd606+=1*37
-                                fcd606+=1*37
-                                fad607+=1*37
-                                fbd607+=1*37
-                                fcd607+=1*37
-                                fad608+=1*37
-                                fbd608+=1*37
-                                fcd608+=1*37
-                                fad609+=1*37
-                                fbd609+=1*37
-                                fcd609+=1*37
-                                fad610+=1*37
-                                fbd610+=1*37
-                                fcd610+=1*37
-                                fad611+=1*37
-                                fbd611+=1*37
-                                fcd611+=1*37
-                                fad612+=1*37
-                                fbd612+=1*37
-                                fcd612+=1*37
-                                fad613+=1*37
-                                fbd613+=1*37
-                                fcd613+=1*37
-                                fad614+=1*37
-                                fbd614+=1*37
-                                fcd614+=1*37
-                                fad615+=1*37
-                                fbd615+=1*37
-                                fcd615+=1*37
-                                fad616+=1*37
-                                fbd616+=1*37
-                                fcd616+=1*37
-                                fad617+=1*37
-                                fbd617+=1*37
-                                fcd617+=1*37
-                                fad618+=1*37
-                                fbd618+=1*37
-                                fcd618+=1*37
-                                fad619+=1*37
-                                fbd619+=1*37
-                                fcd619+=1*37
-                                fad620+=1*37
-                                fbd620+=1*37
-                                fcd620+=1*37
-                                fad621+=1*37
-                                fbd621+=1*37
-                                fcd621+=1*37
-                                fad622+=1*37
-                                fbd622+=1*37
-                                fcd622+=1*37
-                                fad623+=1*37
-                                fbd623+=1*37
-                                fcd623+=1*37
-                                fad624+=1*37
-                                fbd624+=1*37
-                                fcd624+=1*37
-                                fad625+=1*37
-                                fbd625+=1*37
-                                fcd625+=1*37
-                                fad626+=1*37
-                                fbd626+=1*37
-                                fcd626+=1*37
-                                fad627+=1*37
-                                fbd627+=1*37
-                                fcd627+=1*37
-                                fad628+=1*37
-                                fbd628+=1*37
-                                fcd628+=1*37
-                                fad629+=1*37
-                                fbd629+=1*37
-                                fcd629+=1*37
-                                faces2zzzzzzzzz.append([fad595,fbd595,fcd595])
-                                faces2zzzzzzzzz.append([fad596,fbd596,fcd596])
-                                faces2zzzzzzzzz.append([fad597,fbd597,fcd597])
-                                faces2zzzzzzzzz.append([fad598,fbd598,fcd598])
-                                faces2zzzzzzzzz.append([fad599,fbd599,fcd599])
-                                faces2zzzzzzzzz.append([fad600,fbd600,fcd600])
-                                faces2zzzzzzzzz.append([fad601,fbd601,fcd601])
-                                faces2zzzzzzzzz.append([fad602,fbd602,fcd602])
-                                faces2zzzzzzzzz.append([fad603,fbd603,fcd603])
-                                faces2zzzzzzzzz.append([fad604,fbd604,fcd604])
-                                faces2zzzzzzzzz.append([fad605,fbd605,fcd605])
-                                faces2zzzzzzzzz.append([fad606,fbd606,fcd606])
-                                faces2zzzzzzzzz.append([fad607,fbd607,fcd607])
-                                faces2zzzzzzzzz.append([fad608,fbd608,fcd608])
-                                faces2zzzzzzzzz.append([fad609,fbd609,fcd609])
-                                faces2zzzzzzzzz.append([fad610,fbd610,fcd610])
-                                faces2zzzzzzzzz.append([fad611,fbd611,fcd611])
-                                faces2zzzzzzzzz.append([fad612,fbd612,fcd612])
-                                faces2zzzzzzzzz.append([fad613,fbd613,fcd613])
-                                faces2zzzzzzzzz.append([fad614,fbd614,fcd614])
-                                faces2zzzzzzzzz.append([fad615,fbd615,fcd615])
-                                faces2zzzzzzzzz.append([fad616,fbd616,fcd616])
-                                faces2zzzzzzzzz.append([fad617,fbd617,fcd617])
-                                faces2zzzzzzzzz.append([fad618,fbd618,fcd618])
-                                faces2zzzzzzzzz.append([fad619,fbd619,fcd619])
-                                faces2zzzzzzzzz.append([fad620,fbd620,fcd620])
-                                faces2zzzzzzzzz.append([fad621,fbd621,fcd621])
-                                faces2zzzzzzzzz.append([fad622,fbd622,fcd622])
-                                faces2zzzzzzzzz.append([fad623,fbd623,fcd623])
-                                faces2zzzzzzzzz.append([fad624,fbd624,fcd624])
-                                faces2zzzzzzzzz.append([fad625,fbd625,fcd625])
-                                faces2zzzzzzzzz.append([fad626,fbd626,fcd626])
-                                faces2zzzzzzzzz.append([fad627,fbd627,fcd627])
-                                faces2zzzzzzzzz.append([fad628,fbd628,fcd628])
-                                faces2zzzzzzzzz.append([fad629,fbd629,fcd629])
-
-                        elif vertexCount == 38:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx36 = unpack("<h", f.read(2))[0] / 4096
-                                uvy36 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzzzzzz.append([uvx36,-uvy36])
-                            for i in range(vertexCount-37):
-                                fad630+=1*38
-                                fbd630+=1*38
-                                fcd630+=1*38
-                                fad631+=1*38
-                                fbd631+=1*38
-                                fcd631+=1*38
-                                fad632+=1*38
-                                fbd632+=1*38
-                                fcd632+=1*38
-                                fad633+=1*38
-                                fbd633+=1*38
-                                fcd633+=1*38
-                                fad634+=1*38
-                                fbd634+=1*38
-                                fcd634+=1*38
-                                fad635+=1*38
-                                fbd635+=1*38
-                                fcd635+=1*38
-                                fad636+=1*38
-                                fbd636+=1*38
-                                fcd636+=1*38
-                                fad637+=1*38
-                                fbd637+=1*38
-                                fcd637+=1*38
-                                fad638+=1*38
-                                fbd638+=1*38
-                                fcd638+=1*38
-                                fad639+=1*38
-                                fbd639+=1*38
-                                fcd639+=1*38
-                                fad640+=1*38
-                                fbd640+=1*38
-                                fcd640+=1*38
-                                fad641+=1*38
-                                fbd641+=1*38
-                                fcd641+=1*38
-                                fad642+=1*38
-                                fbd642+=1*38
-                                fcd642+=1*38
-                                fad643+=1*38
-                                fbd643+=1*38
-                                fcd643+=1*38
-                                fad644+=1*38
-                                fbd644+=1*38
-                                fcd644+=1*38
-                                fad645+=1*38
-                                fbd645+=1*38
-                                fcd645+=1*38
-                                fad646+=1*38
-                                fbd646+=1*38
-                                fcd646+=1*38
-                                fad647+=1*38
-                                fbd647+=1*38
-                                fcd647+=1*38
-                                fad648+=1*38
-                                fbd648+=1*38
-                                fcd648+=1*38
-                                fad649+=1*38
-                                fbd649+=1*38
-                                fcd649+=1*38
-                                fad650+=1*38
-                                fbd650+=1*38
-                                fcd650+=1*38
-                                fad651+=1*38
-                                fbd651+=1*38
-                                fcd651+=1*38
-                                fad652+=1*38
-                                fbd652+=1*38
-                                fcd652+=1*38
-                                fad653+=1*38
-                                fbd653+=1*38
-                                fcd653+=1*38
-                                fad654+=1*38
-                                fbd654+=1*38
-                                fcd654+=1*38
-                                fad655+=1*38
-                                fbd655+=1*38
-                                fcd655+=1*38
-                                fad656+=1*38
-                                fbd656+=1*38
-                                fcd656+=1*38
-                                fad657+=1*38
-                                fbd657+=1*38
-                                fcd657+=1*38
-                                fad658+=1*38
-                                fbd658+=1*38
-                                fcd658+=1*38
-                                fad659+=1*38
-                                fbd659+=1*38
-                                fcd659+=1*38
-                                fad660+=1*38
-                                fbd660+=1*38
-                                fcd660+=1*38
-                                fad661+=1*38
-                                fbd661+=1*38
-                                fcd661+=1*38
-                                fad662+=1*38
-                                fbd662+=1*38
-                                fcd662+=1*38
-                                fad663+=1*38
-                                fbd663+=1*38
-                                fcd663+=1*38
-                                fad664+=1*38
-                                fbd664+=1*38
-                                fcd664+=1*38
-                                fad665+=1*38
-                                fbd665+=1*38
-                                fcd665+=1*38
-                                faces2zzzzzzzzzz.append([fad630,fbd630,fcd630])
-                                faces2zzzzzzzzzz.append([fad631,fbd631,fcd631])
-                                faces2zzzzzzzzzz.append([fad632,fbd632,fcd632])
-                                faces2zzzzzzzzzz.append([fad633,fbd633,fcd633])
-                                faces2zzzzzzzzzz.append([fad634,fbd634,fcd634])
-                                faces2zzzzzzzzzz.append([fad635,fbd635,fcd635])
-                                faces2zzzzzzzzzz.append([fad636,fbd636,fcd636])
-                                faces2zzzzzzzzzz.append([fad637,fbd637,fcd637])
-                                faces2zzzzzzzzzz.append([fad638,fbd638,fcd638])
-                                faces2zzzzzzzzzz.append([fad639,fbd639,fcd639])
-                                faces2zzzzzzzzzz.append([fad640,fbd640,fcd640])
-                                faces2zzzzzzzzzz.append([fad641,fbd641,fcd641])
-                                faces2zzzzzzzzzz.append([fad642,fbd642,fcd642])
-                                faces2zzzzzzzzzz.append([fad643,fbd643,fcd643])
-                                faces2zzzzzzzzzz.append([fad644,fbd644,fcd644])
-                                faces2zzzzzzzzzz.append([fad645,fbd645,fcd645])
-                                faces2zzzzzzzzzz.append([fad646,fbd646,fcd646])
-                                faces2zzzzzzzzzz.append([fad647,fbd647,fcd647])
-                                faces2zzzzzzzzzz.append([fad648,fbd648,fcd648])
-                                faces2zzzzzzzzzz.append([fad649,fbd649,fcd649])
-                                faces2zzzzzzzzzz.append([fad650,fbd650,fcd650])
-                                faces2zzzzzzzzzz.append([fad651,fbd651,fcd651])
-                                faces2zzzzzzzzzz.append([fad652,fbd652,fcd652])
-                                faces2zzzzzzzzzz.append([fad653,fbd653,fcd653])
-                                faces2zzzzzzzzzz.append([fad654,fbd654,fcd654])
-                                faces2zzzzzzzzzz.append([fad655,fbd655,fcd655])
-                                faces2zzzzzzzzzz.append([fad656,fbd656,fcd656])
-                                faces2zzzzzzzzzz.append([fad657,fbd657,fcd657])
-                                faces2zzzzzzzzzz.append([fad658,fbd658,fcd658])
-                                faces2zzzzzzzzzz.append([fad659,fbd659,fcd659])
-                                faces2zzzzzzzzzz.append([fad660,fbd660,fcd660])
-                                faces2zzzzzzzzzz.append([fad661,fbd661,fcd661])
-                                faces2zzzzzzzzzz.append([fad662,fbd662,fcd662])
-                                faces2zzzzzzzzzz.append([fad663,fbd663,fcd663])
-                                faces2zzzzzzzzzz.append([fad664,fbd664,fcd664])
-                                faces2zzzzzzzzzz.append([fad665,fbd665,fcd665])
-                        elif vertexCount == 39:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx37 = unpack("<h", f.read(2))[0] / 4096
-                                uvy37 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzzzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzzzzzzz.append([uvx37,-uvy37])
-                            for i in range(vertexCount-38):
-                                fad666+=1*39
-                                fbd666+=1*39
-                                fcd666+=1*39
-                                fad667+=1*39
-                                fbd667+=1*39
-                                fcd667+=1*39
-                                fad668+=1*39
-                                fbd668+=1*39
-                                fcd668+=1*39
-                                fad669+=1*39
-                                fbd669+=1*39
-                                fcd669+=1*39
-                                fad670+=1*39
-                                fbd670+=1*39
-                                fcd670+=1*39
-                                fad671+=1*39
-                                fbd671+=1*39
-                                fcd671+=1*39
-                                fad672+=1*39
-                                fbd672+=1*39
-                                fcd672+=1*39
-                                fad673+=1*39
-                                fbd673+=1*39
-                                fcd673+=1*39
-                                fad674+=1*39
-                                fbd674+=1*39
-                                fcd674+=1*39
-                                fad675+=1*39
-                                fbd675+=1*39
-                                fcd675+=1*39
-                                fad676+=1*39
-                                fbd676+=1*39
-                                fcd676+=1*39
-                                fad677+=1*39
-                                fbd677+=1*39
-                                fcd677+=1*39
-                                fad678+=1*39
-                                fbd678+=1*39
-                                fcd678+=1*39
-                                fad679+=1*39
-                                fbd679+=1*39
-                                fcd679+=1*39
-                                fad680+=1*39
-                                fbd680+=1*39
-                                fcd680+=1*39
-                                fad681+=1*39
-                                fbd681+=1*39
-                                fcd681+=1*39
-                                fad682+=1*39
-                                fbd682+=1*39
-                                fcd682+=1*39
-                                fad683+=1*39
-                                fbd683+=1*39
-                                fcd683+=1*39
-                                fad684+=1*39
-                                fbd684+=1*39
-                                fcd684+=1*39
-                                fad685+=1*39
-                                fbd685+=1*39
-                                fcd685+=1*39
-                                fad686+=1*39
-                                fbd686+=1*39
-                                fcd686+=1*39
-                                fad687+=1*39
-                                fbd687+=1*39
-                                fcd687+=1*39
-                                fad688+=1*39
-                                fbd688+=1*39
-                                fcd688+=1*39
-                                fad689+=1*39
-                                fbd689+=1*39
-                                fcd689+=1*39
-                                fad690+=1*39
-                                fbd690+=1*39
-                                fcd690+=1*39
-                                fad691+=1*39
-                                fbd691+=1*39
-                                fcd691+=1*39
-                                fad692+=1*39
-                                fbd692+=1*39
-                                fcd692+=1*39
-                                fad693+=1*39
-                                fbd693+=1*39
-                                fcd693+=1*39
-                                fad694+=1*39
-                                fbd694+=1*39
-                                fcd694+=1*39
-                                fad695+=1*39
-                                fbd695+=1*39
-                                fcd695+=1*39
-                                fad696+=1*39
-                                fbd696+=1*39
-                                fcd696+=1*39
-                                fad697+=1*39
-                                fbd697+=1*39
-                                fcd697+=1*39
-                                fad698+=1*39
-                                fbd698+=1*39
-                                fcd698+=1*39
-                                fad699+=1*39
-                                fbd699+=1*39
-                                fcd699+=1*39
-                                fad700+=1*39
-                                fbd700+=1*39
-                                fcd700+=1*39
-                                fad701+=1*39
-                                fbd701+=1*39
-                                fcd701+=1*39
-                                fad702+=1*39
-                                fbd702+=1*39
-                                fcd702+=1*39
-                                faces2zzzzzzzzzzz.append([fad666,fbd666,fcd666])
-                                faces2zzzzzzzzzzz.append([fad667,fbd667,fcd667])
-                                faces2zzzzzzzzzzz.append([fad668,fbd668,fcd668])
-                                faces2zzzzzzzzzzz.append([fad669,fbd669,fcd669])
-                                faces2zzzzzzzzzzz.append([fad670,fbd670,fcd670])
-                                faces2zzzzzzzzzzz.append([fad671,fbd671,fcd671])
-                                faces2zzzzzzzzzzz.append([fad672,fbd672,fcd672])
-                                faces2zzzzzzzzzzz.append([fad673,fbd673,fcd673])
-                                faces2zzzzzzzzzzz.append([fad674,fbd674,fcd674])
-                                faces2zzzzzzzzzzz.append([fad675,fbd675,fcd675])
-                                faces2zzzzzzzzzzz.append([fad676,fbd676,fcd676])
-                                faces2zzzzzzzzzzz.append([fad677,fbd677,fcd677])
-                                faces2zzzzzzzzzzz.append([fad678,fbd678,fcd678])
-                                faces2zzzzzzzzzzz.append([fad679,fbd679,fcd679])
-                                faces2zzzzzzzzzzz.append([fad680,fbd680,fcd680])
-                                faces2zzzzzzzzzzz.append([fad681,fbd681,fcd681])
-                                faces2zzzzzzzzzzz.append([fad682,fbd682,fcd682])
-                                faces2zzzzzzzzzzz.append([fad683,fbd683,fcd683])
-                                faces2zzzzzzzzzzz.append([fad684,fbd684,fcd684])
-                                faces2zzzzzzzzzzz.append([fad685,fbd685,fcd685])
-                                faces2zzzzzzzzzzz.append([fad686,fbd686,fcd686])
-                                faces2zzzzzzzzzzz.append([fad687,fbd687,fcd687])
-                                faces2zzzzzzzzzzz.append([fad688,fbd688,fcd688])
-                                faces2zzzzzzzzzzz.append([fad689,fbd689,fcd689])
-                                faces2zzzzzzzzzzz.append([fad690,fbd690,fcd690])
-                                faces2zzzzzzzzzzz.append([fad691,fbd691,fcd691])
-                                faces2zzzzzzzzzzz.append([fad692,fbd692,fcd692])
-                                faces2zzzzzzzzzzz.append([fad693,fbd693,fcd693])
-                                faces2zzzzzzzzzzz.append([fad694,fbd694,fcd694])
-                                faces2zzzzzzzzzzz.append([fad695,fbd695,fcd695])
-                                faces2zzzzzzzzzzz.append([fad696,fbd696,fcd696])
-                                faces2zzzzzzzzzzz.append([fad697,fbd697,fcd697])
-                                faces2zzzzzzzzzzz.append([fad698,fbd698,fcd698])
-                                faces2zzzzzzzzzzz.append([fad699,fbd699,fcd699])
-                                faces2zzzzzzzzzzz.append([fad700,fbd700,fcd700])
-                                faces2zzzzzzzzzzz.append([fad701,fbd701,fcd701])
-                                faces2zzzzzzzzzzz.append([fad702,fbd702,fcd702])
-                        elif vertexCount == 40:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx38 = unpack("<h", f.read(2))[0] / 4096
-                                uvy38 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzzzzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzzzzzzzz.append([uvx38,-uvy38])
-                            for i in range(vertexCount-39):
-                                fad703+=1*40
-                                fbd703+=1*40
-                                fcd703+=1*40
-                                fad704+=1*40
-                                fbd704+=1*40
-                                fcd704+=1*40
-                                fad705+=1*40
-                                fbd705+=1*40
-                                fcd705+=1*40
-                                fad706+=1*40
-                                fbd706+=1*40
-                                fcd706+=1*40
-                                fad707+=1*40
-                                fbd707+=1*40
-                                fcd707+=1*40
-                                fad708+=1*40
-                                fbd708+=1*40
-                                fcd708+=1*40
-                                fad709+=1*40
-                                fbd709+=1*40
-                                fcd709+=1*40
-                                fad710+=1*40
-                                fbd710+=1*40
-                                fcd710+=1*40
-                                fad711+=1*40
-                                fbd711+=1*40
-                                fcd711+=1*40
-                                fad712+=1*40
-                                fbd712+=1*40
-                                fcd712+=1*40
-                                fad713+=1*40
-                                fbd713+=1*40
-                                fcd713+=1*40
-                                fad714+=1*40
-                                fbd714+=1*40
-                                fcd714+=1*40
-                                fad715+=1*40
-                                fbd715+=1*40
-                                fcd715+=1*40
-                                fad716+=1*40
-                                fbd716+=1*40
-                                fcd716+=1*40
-                                fad717+=1*40
-                                fbd717+=1*40
-                                fcd717+=1*40
-                                fad718+=1*40
-                                fbd718+=1*40
-                                fcd718+=1*40
-                                fad719+=1*40
-                                fbd719+=1*40
-                                fcd719+=1*40
-                                fad720+=1*40
-                                fbd720+=1*40
-                                fcd720+=1*40
-                                fad721+=1*40
-                                fbd721+=1*40
-                                fcd721+=1*40
-                                fad722+=1*40
-                                fbd722+=1*40
-                                fcd722+=1*40
-                                fad723+=1*40
-                                fbd723+=1*40
-                                fcd723+=1*40
-                                fad724+=1*40
-                                fbd724+=1*40
-                                fcd724+=1*40
-                                fad725+=1*40
-                                fbd725+=1*40
-                                fcd725+=1*40
-                                fad726+=1*40
-                                fbd726+=1*40
-                                fcd726+=1*40
-                                fad727+=1*40
-                                fbd727+=1*40
-                                fcd727+=1*40
-                                fad728+=1*40
-                                fbd728+=1*40
-                                fcd728+=1*40
-                                fad729+=1*40
-                                fbd729+=1*40
-                                fcd729+=1*40
-                                fad730+=1*40
-                                fbd730+=1*40
-                                fcd730+=1*40
-                                fad731+=1*40
-                                fbd731+=1*40
-                                fcd731+=1*40
-                                fad732+=1*40
-                                fbd732+=1*40
-                                fcd732+=1*40
-                                fad733+=1*40
-                                fbd733+=1*40
-                                fcd733+=1*40
-                                fad734+=1*40
-                                fbd734+=1*40
-                                fcd734+=1*40
-                                fad735+=1*40
-                                fbd735+=1*40
-                                fcd735+=1*40
-                                fad736+=1*40
-                                fbd736+=1*40
-                                fcd736+=1*40
-                                fad737+=1*40
-                                fbd737+=1*40
-                                fcd737+=1*40
-                                fad738+=1*40
-                                fbd738+=1*40
-                                fcd738+=1*40
-                                fad739+=1*40
-                                fbd739+=1*40
-                                fcd739+=1*40
-                                fad740+=1*40
-                                fbd740+=1*40
-                                fcd740+=1*40
-                                faces2zzzzzzzzzzzz.append([fad703,fbd703,fcd703])
-                                faces2zzzzzzzzzzzz.append([fad704,fbd704,fcd704])
-                                faces2zzzzzzzzzzzz.append([fad705,fbd705,fcd705])
-                                faces2zzzzzzzzzzzz.append([fad706,fbd706,fcd706])
-                                faces2zzzzzzzzzzzz.append([fad707,fbd707,fcd707])
-                                faces2zzzzzzzzzzzz.append([fad708,fbd708,fcd708])
-                                faces2zzzzzzzzzzzz.append([fad709,fbd709,fcd709])
-                                faces2zzzzzzzzzzzz.append([fad710,fbd710,fcd710])
-                                faces2zzzzzzzzzzzz.append([fad711,fbd711,fcd711])
-                                faces2zzzzzzzzzzzz.append([fad712,fbd712,fcd712])
-                                faces2zzzzzzzzzzzz.append([fad713,fbd713,fcd713])
-                                faces2zzzzzzzzzzzz.append([fad714,fbd714,fcd714])
-                                faces2zzzzzzzzzzzz.append([fad715,fbd715,fcd715])
-                                faces2zzzzzzzzzzzz.append([fad716,fbd716,fcd716])
-                                faces2zzzzzzzzzzzz.append([fad717,fbd717,fcd717])
-                                faces2zzzzzzzzzzzz.append([fad718,fbd718,fcd718])
-                                faces2zzzzzzzzzzzz.append([fad719,fbd719,fcd719])
-                                faces2zzzzzzzzzzzz.append([fad720,fbd720,fcd720])
-                                faces2zzzzzzzzzzzz.append([fad721,fbd721,fcd721])
-                                faces2zzzzzzzzzzzz.append([fad722,fbd722,fcd722])
-                                faces2zzzzzzzzzzzz.append([fad723,fbd723,fcd723])
-                                faces2zzzzzzzzzzzz.append([fad724,fbd724,fcd724])
-                                faces2zzzzzzzzzzzz.append([fad725,fbd725,fcd725])
-                                faces2zzzzzzzzzzzz.append([fad726,fbd726,fcd726])
-                                faces2zzzzzzzzzzzz.append([fad727,fbd727,fcd727])
-                                faces2zzzzzzzzzzzz.append([fad728,fbd728,fcd728])
-                                faces2zzzzzzzzzzzz.append([fad729,fbd729,fcd729])
-                                faces2zzzzzzzzzzzz.append([fad730,fbd730,fcd730])
-                                faces2zzzzzzzzzzzz.append([fad731,fbd731,fcd731])
-                                faces2zzzzzzzzzzzz.append([fad732,fbd732,fcd732])
-                                faces2zzzzzzzzzzzz.append([fad733,fbd733,fcd733])
-                                faces2zzzzzzzzzzzz.append([fad734,fbd734,fcd734])
-                                faces2zzzzzzzzzzzz.append([fad735,fbd735,fcd735])
-                                faces2zzzzzzzzzzzz.append([fad736,fbd736,fcd736])
-                                faces2zzzzzzzzzzzz.append([fad737,fbd737,fcd737])
-                                faces2zzzzzzzzzzzz.append([fad738,fbd738,fcd738])
-                                faces2zzzzzzzzzzzz.append([fad739,fbd739,fcd739])
-                                faces2zzzzzzzzzzzz.append([fad740,fbd740,fcd740])
-
-                        elif vertexCount == 41:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx39 = unpack("<h", f.read(2))[0] / 4096
-                                uvy39 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzzzzzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzzzzzzzzz.append([uvx39,-uvy39])
-                            for i in range(vertexCount-40):
-                                fad741+=1*41
-                                fbd741+=1*41
-                                fcd741+=1*41
-                                fad742+=1*41
-                                fbd742+=1*41
-                                fcd742+=1*41
-                                fad743+=1*41
-                                fbd743+=1*41
-                                fcd743+=1*41
-                                fad744+=1*41
-                                fbd744+=1*41
-                                fcd744+=1*41
-                                fad745+=1*41
-                                fbd745+=1*41
-                                fcd745+=1*41
-                                fad746+=1*41
-                                fbd746+=1*41
-                                fcd746+=1*41
-                                fad747+=1*41
-                                fbd747+=1*41
-                                fcd747+=1*41
-                                fad748+=1*41
-                                fbd748+=1*41
-                                fcd748+=1*41
-                                fad749+=1*41
-                                fbd749+=1*41
-                                fcd749+=1*41
-                                fad750+=1*41
-                                fbd750+=1*41
-                                fcd750+=1*41
-                                fad751+=1*41
-                                fbd751+=1*41
-                                fcd751+=1*41
-                                fad752+=1*41
-                                fbd752+=1*41
-                                fcd752+=1*41
-                                fad753+=1*41
-                                fbd753+=1*41
-                                fcd753+=1*41
-                                fad754+=1*41
-                                fbd754+=1*41
-                                fcd754+=1*41
-                                fad755+=1*41
-                                fbd755+=1*41
-                                fcd755+=1*41
-                                fad756+=1*41
-                                fbd756+=1*41
-                                fcd756+=1*41
-                                fad757+=1*41
-                                fbd757+=1*41
-                                fcd757+=1*41
-                                fad758+=1*41
-                                fbd758+=1*41
-                                fcd758+=1*41
-                                fad759+=1*41
-                                fbd759+=1*41
-                                fcd759+=1*41
-                                fad760+=1*41
-                                fbd760+=1*41
-                                fcd760+=1*41
-                                fad761+=1*41
-                                fbd761+=1*41
-                                fcd761+=1*41
-                                fad762+=1*41
-                                fbd762+=1*41
-                                fcd762+=1*41
-                                fad763+=1*41
-                                fbd763+=1*41
-                                fcd763+=1*41
-                                fad764+=1*41
-                                fbd764+=1*41
-                                fcd764+=1*41
-                                fad765+=1*41
-                                fbd765+=1*41
-                                fcd765+=1*41
-                                fad766+=1*41
-                                fbd766+=1*41
-                                fcd766+=1*41
-                                fad767+=1*41
-                                fbd767+=1*41
-                                fcd767+=1*41
-                                fad768+=1*41
-                                fbd768+=1*41
-                                fcd768+=1*41
-                                fad769+=1*41
-                                fbd769+=1*41
-                                fcd769+=1*41
-                                fad770+=1*41
-                                fbd770+=1*41
-                                fcd770+=1*41
-                                fad771+=1*41
-                                fbd771+=1*41
-                                fcd771+=1*41
-                                fad772+=1*41
-                                fbd772+=1*41
-                                fcd772+=1*41
-                                fad773+=1*41
-                                fbd773+=1*41
-                                fcd773+=1*41
-                                fad774+=1*41
-                                fbd774+=1*41
-                                fcd774+=1*41
-                                fad775+=1*41
-                                fbd775+=1*41
-                                fcd775+=1*41
-                                fad776+=1*41
-                                fbd776+=1*41
-                                fcd776+=1*41
-                                fad777+=1*41
-                                fbd777+=1*41
-                                fcd777+=1*41
-                                fad778+=1*41
-                                fbd778+=1*41
-                                fcd778+=1*41
-                                fad779+=1*41
-                                fbd779+=1*41
-                                fcd779+=1*41
-                                faces2zzzzzzzzzzzzz.append([fad741,fbd741,fcd741])
-                                faces2zzzzzzzzzzzzz.append([fad742,fbd742,fcd742])
-                                faces2zzzzzzzzzzzzz.append([fad743,fbd743,fcd743])
-                                faces2zzzzzzzzzzzzz.append([fad744,fbd744,fcd744])
-                                faces2zzzzzzzzzzzzz.append([fad745,fbd745,fcd745])
-                                faces2zzzzzzzzzzzzz.append([fad746,fbd746,fcd746])
-                                faces2zzzzzzzzzzzzz.append([fad747,fbd747,fcd747])
-                                faces2zzzzzzzzzzzzz.append([fad748,fbd748,fcd748])
-                                faces2zzzzzzzzzzzzz.append([fad749,fbd749,fcd749])
-                                faces2zzzzzzzzzzzzz.append([fad750,fbd750,fcd750])
-                                faces2zzzzzzzzzzzzz.append([fad751,fbd751,fcd751])
-                                faces2zzzzzzzzzzzzz.append([fad752,fbd752,fcd752])
-                                faces2zzzzzzzzzzzzz.append([fad753,fbd753,fcd753])
-                                faces2zzzzzzzzzzzzz.append([fad754,fbd754,fcd754])
-                                faces2zzzzzzzzzzzzz.append([fad755,fbd755,fcd755])
-                                faces2zzzzzzzzzzzzz.append([fad756,fbd756,fcd756])
-                                faces2zzzzzzzzzzzzz.append([fad757,fbd757,fcd757])
-                                faces2zzzzzzzzzzzzz.append([fad758,fbd758,fcd758])
-                                faces2zzzzzzzzzzzzz.append([fad759,fbd759,fcd759])
-                                faces2zzzzzzzzzzzzz.append([fad760,fbd760,fcd760])
-                                faces2zzzzzzzzzzzzz.append([fad761,fbd761,fcd761])
-                                faces2zzzzzzzzzzzzz.append([fad762,fbd762,fcd762])
-                                faces2zzzzzzzzzzzzz.append([fad763,fbd763,fcd763])
-                                faces2zzzzzzzzzzzzz.append([fad764,fbd764,fcd764])
-                                faces2zzzzzzzzzzzzz.append([fad765,fbd765,fcd765])
-                                faces2zzzzzzzzzzzzz.append([fad766,fbd766,fcd766])
-                                faces2zzzzzzzzzzzzz.append([fad767,fbd767,fcd767])
-                                faces2zzzzzzzzzzzzz.append([fad768,fbd768,fcd768])
-                                faces2zzzzzzzzzzzzz.append([fad769,fbd769,fcd769])
-                                faces2zzzzzzzzzzzzz.append([fad770,fbd770,fcd770])
-                                faces2zzzzzzzzzzzzz.append([fad771,fbd771,fcd771])
-                                faces2zzzzzzzzzzzzz.append([fad772,fbd772,fcd772])
-                                faces2zzzzzzzzzzzzz.append([fad773,fbd773,fcd773])
-                                faces2zzzzzzzzzzzzz.append([fad774,fbd774,fcd774])
-                                faces2zzzzzzzzzzzzz.append([fad775,fbd775,fcd775])
-                                faces2zzzzzzzzzzzzz.append([fad776,fbd776,fcd776])
-                                faces2zzzzzzzzzzzzz.append([fad777,fbd777,fcd777])
-                                faces2zzzzzzzzzzzzz.append([fad778,fbd778,fcd778])
-                                faces2zzzzzzzzzzzzz.append([fad779,fbd779,fcd779])
-
-                        elif vertexCount == 42:
-                            for i in range(vertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(2,1)
-                                uvx40 = unpack("<h", f.read(2))[0] / 4096
-                                uvy40 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2zzzzzzzzzzzzzz.append([vx,vz,vy])
-                                uvs2zzzzzzzzzzzzzz.append([uvx40,-uvy40])
-                            for i in range(vertexCount-41):
-                                fad780+=1*42
-                                fbd780+=1*42
-                                fcd780+=1*42
-                                fad781+=1*42
-                                fbd781+=1*42
-                                fcd781+=1*42
-                                fad782+=1*42
-                                fbd782+=1*42
-                                fcd782+=1*42
-                                fad783+=1*42
-                                fbd783+=1*42
-                                fcd783+=1*42
-                                fad784+=1*42
-                                fbd784+=1*42
-                                fcd784+=1*42
-                                fad785+=1*42
-                                fbd785+=1*42
-                                fcd785+=1*42
-                                fad786+=1*42
-                                fbd786+=1*42
-                                fcd786+=1*42
-                                fad787+=1*42
-                                fbd787+=1*42
-                                fcd787+=1*42
-                                fad788+=1*42
-                                fbd788+=1*42
-                                fcd788+=1*42
-                                fad789+=1*42
-                                fbd789+=1*42
-                                fcd789+=1*42
-                                fad790+=1*42
-                                fbd790+=1*42
-                                fcd790+=1*42
-                                fad791+=1*42
-                                fbd791+=1*42
-                                fcd791+=1*42
-                                fad792+=1*42
-                                fbd792+=1*42
-                                fcd792+=1*42
-                                fad793+=1*42
-                                fbd793+=1*42
-                                fcd793+=1*42
-                                fad794+=1*42
-                                fbd794+=1*42
-                                fcd794+=1*42
-                                fad795+=1*42
-                                fbd795+=1*42
-                                fcd795+=1*42
-                                fad796+=1*42
-                                fbd796+=1*42
-                                fcd796+=1*42
-                                fad797+=1*42
-                                fbd797+=1*42
-                                fcd797+=1*42
-                                fad798+=1*42
-                                fbd798+=1*42
-                                fcd798+=1*42
-                                fad799+=1*42
-                                fbd799+=1*42
-                                fcd799+=1*42
-                                fad800+=1*42
-                                fbd800+=1*42
-                                fcd800+=1*42
-                                fad801+=1*42
-                                fbd801+=1*42
-                                fcd801+=1*42
-                                fad802+=1*42
-                                fbd802+=1*42
-                                fcd802+=1*42
-                                fad803+=1*42
-                                fbd803+=1*42
-                                fcd803+=1*42
-                                fad804+=1*42
-                                fbd804+=1*42
-                                fcd804+=1*42
-                                fad805+=1*42
-                                fbd805+=1*42
-                                fcd805+=1*42
-                                fad806+=1*42
-                                fbd806+=1*42
-                                fcd806+=1*42
-                                fad807+=1*42
-                                fbd807+=1*42
-                                fcd807+=1*42
-                                fad808+=1*42
-                                fbd808+=1*42
-                                fcd808+=1*42
-                                fad809+=1*42
-                                fbd809+=1*42
-                                fcd809+=1*42
-                                fad810+=1*42
-                                fbd810+=1*42
-                                fcd810+=1*42
-                                fad811+=1*42
-                                fbd811+=1*42
-                                fcd811+=1*42
-                                fad812+=1*42
-                                fbd812+=1*42
-                                fcd812+=1*42
-                                fad813+=1*42
-                                fbd813+=1*42
-                                fcd813+=1*42
-                                fad814+=1*42
-                                fbd814+=1*42
-                                fcd814+=1*42
-                                fad815+=1*42
-                                fbd815+=1*42
-                                fcd815+=1*42
-                                fad816+=1*42
-                                fbd816+=1*42
-                                fcd816+=1*42
-                                fad817+=1*42
-                                fbd817+=1*42
-                                fcd817+=1*42
-                                fad818+=1*42
-                                fbd818+=1*42
-                                fcd818+=1*42
-                                fad819+=1*42
-                                fbd819+=1*42
-                                fcd819+=1*42
-                                faces2zzzzzzzzzzzzzz.append([fad780,fbd780,fcd780])
-                                faces2zzzzzzzzzzzzzz.append([fad781,fbd781,fcd781])
-                                faces2zzzzzzzzzzzzzz.append([fad782,fbd782,fcd782])
-                                faces2zzzzzzzzzzzzzz.append([fad783,fbd783,fcd783])
-                                faces2zzzzzzzzzzzzzz.append([fad784,fbd784,fcd784])
-                                faces2zzzzzzzzzzzzzz.append([fad785,fbd785,fcd785])
-                                faces2zzzzzzzzzzzzzz.append([fad786,fbd786,fcd786])
-                                faces2zzzzzzzzzzzzzz.append([fad787,fbd787,fcd787])
-                                faces2zzzzzzzzzzzzzz.append([fad788,fbd788,fcd788])
-                                faces2zzzzzzzzzzzzzz.append([fad789,fbd789,fcd789])
-                                faces2zzzzzzzzzzzzzz.append([fad790,fbd790,fcd790])
-                                faces2zzzzzzzzzzzzzz.append([fad791,fbd791,fcd791])
-                                faces2zzzzzzzzzzzzzz.append([fad792,fbd792,fcd792])
-                                faces2zzzzzzzzzzzzzz.append([fad793,fbd793,fcd793])
-                                faces2zzzzzzzzzzzzzz.append([fad794,fbd794,fcd794])
-                                faces2zzzzzzzzzzzzzz.append([fad795,fbd795,fcd795])
-                                faces2zzzzzzzzzzzzzz.append([fad796,fbd796,fcd796])
-                                faces2zzzzzzzzzzzzzz.append([fad797,fbd797,fcd797])
-                                faces2zzzzzzzzzzzzzz.append([fad798,fbd798,fcd798])
-                                faces2zzzzzzzzzzzzzz.append([fad799,fbd799,fcd799])
-                                faces2zzzzzzzzzzzzzz.append([fad800,fbd800,fcd800])
-                                faces2zzzzzzzzzzzzzz.append([fad801,fbd801,fcd801])
-                                faces2zzzzzzzzzzzzzz.append([fad802,fbd802,fcd802])
-                                faces2zzzzzzzzzzzzzz.append([fad803,fbd803,fcd803])
-                                faces2zzzzzzzzzzzzzz.append([fad804,fbd804,fcd804])
-                                faces2zzzzzzzzzzzzzz.append([fad805,fbd805,fcd805])
-                                faces2zzzzzzzzzzzzzz.append([fad806,fbd806,fcd806])
-                                faces2zzzzzzzzzzzzzz.append([fad807,fbd807,fcd807])
-                                faces2zzzzzzzzzzzzzz.append([fad808,fbd808,fcd808])
-                                faces2zzzzzzzzzzzzzz.append([fad809,fbd809,fcd809])
-                                faces2zzzzzzzzzzzzzz.append([fad810,fbd810,fcd810])
-                                faces2zzzzzzzzzzzzzz.append([fad811,fbd811,fcd811])
-                                faces2zzzzzzzzzzzzzz.append([fad812,fbd812,fcd812])
-                                faces2zzzzzzzzzzzzzz.append([fad813,fbd813,fcd813])
-                                faces2zzzzzzzzzzzzzz.append([fad814,fbd814,fcd814])
-                                faces2zzzzzzzzzzzzzz.append([fad815,fbd815,fcd815])
-                                faces2zzzzzzzzzzzzzz.append([fad816,fbd816,fcd816])
-                                faces2zzzzzzzzzzzzzz.append([fad817,fbd817,fcd817])
-                                faces2zzzzzzzzzzzzzz.append([fad818,fbd818,fcd818])
-                                faces2zzzzzzzzzzzzzz.append([fad819,fbd819,fcd819])"""
-                            
-                            
-                            
-                            
-                            
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
                                         
-                            
-                        
-                """elif Chunks == b"\x04\x02\x00\x01":
-                    f.seek(1,1)
-                    value1 = unpack("B", f.read(1))[0]
-                    vertexCount = unpack("B", f.read(1))[0] // 2
-                    flag2 = unpack("B", f.read(1))[0]
-                    if flag2 == 0x6C:
-                        if vertexCount:
-                            for j in range(vertexCount):
+
+                                elif vertexCount == 5:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2b.append([vx,vz,vy])
+
+                                    f.seek(86,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100:
+                                            
+                                        
+                                            fad5//=3
+                                            fbd5//=3
+                                            fcd5//=3
+                                            fdd5//=3
+                                            fed5//=3
+                                            
+                                            fad5+=1*len(vertices2b)-5
+                                            fbd5+=1*len(vertices2b)-5
+                                            fcd5+=1*len(vertices2b)-5
+                                            fdd5+=1*len(vertices2b)-5
+                                            fed5+=1*len(vertices2b)-5
+                                            
+                                            faces2b.append([fad5,fbd5,fcd5])
+                                            faces2b.append([fbd5,fcd5,fdd5])
+                                            faces2b.append([fcd5,fdd5,fed5])
+
+                                elif vertexCount == 6:
+                                    for i in range(1):
+                                        vx = unpack("<h", f.read(2))[0]/4096
+                                        vy = unpack("<h", f.read(2))[0]/4096
+                                        vz = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx1 = unpack("<h", f.read(2))[0]/4096
+                                        vy1 = unpack("<h", f.read(2))[0]/4096
+                                        vz1 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx2 = unpack("<h", f.read(2))[0]/4096
+                                        vy2 = unpack("<h", f.read(2))[0]/4096
+                                        vz2 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx3 = unpack("<h", f.read(2))[0]/4096
+                                        vy3 = unpack("<h", f.read(2))[0]/4096
+                                        vz3 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx4 = unpack("<h", f.read(2))[0]/4096
+                                        vy4 = unpack("<h", f.read(2))[0]/4096
+                                        vz4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx6 = unpack("<h", f.read(2))[0]/4096
+                                        vy6 = unpack("<h", f.read(2))[0]/4096
+                                        vz6 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+                                        vertices2c.append([vx,vz,vy])
+                                        vertices2c.append([vx1,vz1,vy1])
+                                        vertices2c.append([vx2,vz2,vy2])
+                                        vertices2c.append([vx3,vz3,vy3])
+                                        vertices2c.append([vx4,vz4,vy4])
+                                        vertices2c.append([vx6,vz6,vy6])
+
+                                    f.seek(90,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsC = unpack("B", f.read(1))[0]
+                                    if flagsC == 0x6E:
+                                        if facecount == 2:
+                                            
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            if pad01 == 100:
+                                                
+                                            
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                            elif pad01 == 15:
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+
+                                        elif facecount == 3:
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
+
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            pad02 = unpack("B", f.read(1))[0]
+                                            pad03 = unpack("B", f.read(1))[0]
+
+                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                                fad6a//=3
+                                                fbd6a//=3
+                                                fcd6a//=3
+                                                fdd6a//=3
+                                                fed6a//=3
+                                                ffd6a//=3
+                                                fgd6a//=3
+                                                fhd6a//=3
+                                                
+                                                fad6a+=1*len(vertices2c)-6
+                                                fbd6a+=1*len(vertices2c)-6
+                                                fcd6a+=1*len(vertices2c)-6
+                                                fdd6a+=1*len(vertices2c)-6
+                                                fed6a+=1*len(vertices2c)-6
+                                                ffd6a+=1*len(vertices2c)-6
+                                                fgd6a+=1*len(vertices2c)-6
+                                                fhd6a+=1*len(vertices2c)-6
+
+                                                faces2c.append([fad6a,fbd6a,fcd6a])
+                                                faces2c.append([fbd6a,fcd6a,fdd6a])
+                                                faces2c.append([fcd6a,fdd6a,fed6a])
+                                                faces2c.append([fdd6a,fed6a,ffd6a])
+                                                faces2c.append([fed6a,ffd6a,fgd6a])
+                                                faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                                elif vertexCount:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        
+                                        vertices2d.append([vx,vz,vy])
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                
+                                    
                                 
-                                vx0001__ = unpack("<f", f.read(4))[0]
-                                vy0001__ = unpack("<f", f.read(4))[0]
-                                vz0001__ = unpack("<f", f.read(4))[0]
-                                brightness1__ = unpack("<f", f.read(4))[0]
-                                uvx0001__ = unpack("<f", f.read(4))[0]
-                                uvy0001__ = unpack("<f", f.read(4))[0]
-                                f.seek(4,1)
-                                type4 = unpack("B", f.read(1))[0]==0
-                                f.seek(3,1)
-                                vertices3.append([vx0001__,vz0001__,vy0001__])
-                                fa2+=1
-                                fb2+=1
-                                fc2+=1
-                                if type4 > 0:
-                                    faces3.append([j+j+type4-type4-1+fa2-j-j-1,j-j+type4-type4+1+fb2-2-1,j+type4-type4+fc2-j+2-4])"""
+                        elif Chunks == b"\x04\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2 = unpack("B", f.read(1))[0]
+                            if flag2 == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        
+                                        vx0001__ = unpack("<f", f.read(4))[0]
+                                        vy0001__ = unpack("<f", f.read(4))[0]
+                                        vz0001__ = unpack("<f", f.read(4))[0]
+                                        brightness1__ = unpack("<f", f.read(4))[0]
+                                        uvx0001__ = unpack("<f", f.read(4))[0]
+                                        uvy0001__ = unpack("<f", f.read(4))[0]
+                                        f.seek(4,1)
+                                        type4 = unpack("B", f.read(1))[0]==0
+                                        f.seek(3,1)
+                                        vertices3.append([vx0001__,vz0001__,vy0001__])
+                                        uv_coords.append([uvx0001__,-uvy0001__])
+                                        fa2+=1
+                                        fb2+=1
+                                        fc2+=1
+                                        if type4 > 0:
+                                            faces3.append([j+j+type4-type4-1+fa2-j-j-1+j%2,j-j+type4-type4+1+fb2-2-1+j-j-j%2,j+type4-type4+fc2-j+2-4])
+                elif UnkCount1 != 0 and UnkCount2 != 0:
+                    f.seek(UnkCountEntrySize2,0)
+                    for i in range(UnkCount2):
+                        ScaleX = unpack("<f", f.read(4))[0]
+                        rotationz = unpack("<f", f.read(4))[0]
+                        rotationy = unpack("<f", f.read(4))[0]
+                        null1 = unpack("<f", f.read(4))[0]
+                        nrotationz = unpack("<f", f.read(4))[0]
+                        ScaleY = unpack("<f", f.read(4))[0]
+                        rotationx = unpack("<f", f.read(4))[0]
+                        nrotationy = unpack("<f", f.read(4))[0]
+                        null2 = unpack("<f", f.read(4))[0]
+                        nrotationx = unpack("<f", f.read(4))[0]
+                        ScaleZ = unpack("<f", f.read(4))[0]
+                        null3 = unpack("<f", f.read(4))[0]
+                        posx = unpack("<f", f.read(4))[0]
+                        posy = unpack("<f", f.read(4))[0]
+                        posz = unpack("<f", f.read(4))[0]
+                        ScaleW = unpack("<f", f.read(4))[0]
+                        objlen = unpack("<I", f.read(4))[0]
+                        objid = unpack("<I", f.read(4))[0]
+                        f.seek(8,1)
+                    f.seek(0)
+                    Chunk = f.read()
+                    f.seek(0)
+                    while f.tell() < len(Chunk):
+                        Chunks = f.read(4)
+                        if Chunks == b"\x03\x01\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0]
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        vx = unpack("<f", f.read(4))[0]
+                                        vy = unpack("<f", f.read(4))[0]
+                                        vz = unpack("<f", f.read(4))[0]
+                                        type4 = unpack("B", f.read(1))[0]==False
+                                        value1 = unpack("B", f.read(1))[0]
+                                        nz = unpack("<h", f.read(2))[0]
+                                        vertices.append([vx,vz,vy])
+                                        fa+=1
+                                        fb+=1
+                                        fc+=1
+                                        if type4 > 0:
+                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                        elif Chunks == b"\x03\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6D:
+                                if vertexCount == 3:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2.append([vxaa,vzaa,vyaa])
+                                    f.seek(78,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                            
+                                        fad//=3
+                                        fbd//=3
+                                        fcd//=3
+
+                                        fad+=1*len(vertices2)-3
+                                        fbd+=1*len(vertices2)-3
+                                        fcd+=1*len(vertices2)-3
+
+                                        faces2.append([fad,fbd,fcd])
+
+                                elif vertexCount == 4:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2a.append([vxaa,vzaa,vyaa])
+                                    f.seek(82,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+                                        pad03 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                        
+
+                                elif vertexCount == 5:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2b.append([vx,vz,vy])
+
+                                    f.seek(86,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100:
+                                            
+                                        
+                                            fad5//=3
+                                            fbd5//=3
+                                            fcd5//=3
+                                            fdd5//=3
+                                            fed5//=3
+                                            
+                                            fad5+=1*len(vertices2b)-5
+                                            fbd5+=1*len(vertices2b)-5
+                                            fcd5+=1*len(vertices2b)-5
+                                            fdd5+=1*len(vertices2b)-5
+                                            fed5+=1*len(vertices2b)-5
+                                            
+                                            faces2b.append([fad5,fbd5,fcd5])
+                                            faces2b.append([fbd5,fcd5,fdd5])
+                                            faces2b.append([fcd5,fdd5,fed5])
+
+                                elif vertexCount == 6:
+                                    for i in range(1):
+                                        vx = unpack("<h", f.read(2))[0]/4096
+                                        vy = unpack("<h", f.read(2))[0]/4096
+                                        vz = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx1 = unpack("<h", f.read(2))[0]/4096
+                                        vy1 = unpack("<h", f.read(2))[0]/4096
+                                        vz1 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx2 = unpack("<h", f.read(2))[0]/4096
+                                        vy2 = unpack("<h", f.read(2))[0]/4096
+                                        vz2 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx3 = unpack("<h", f.read(2))[0]/4096
+                                        vy3 = unpack("<h", f.read(2))[0]/4096
+                                        vz3 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx4 = unpack("<h", f.read(2))[0]/4096
+                                        vy4 = unpack("<h", f.read(2))[0]/4096
+                                        vz4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx6 = unpack("<h", f.read(2))[0]/4096
+                                        vy6 = unpack("<h", f.read(2))[0]/4096
+                                        vz6 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+                                        vertices2c.append([vx,vz,vy])
+                                        vertices2c.append([vx1,vz1,vy1])
+                                        vertices2c.append([vx2,vz2,vy2])
+                                        vertices2c.append([vx3,vz3,vy3])
+                                        vertices2c.append([vx4,vz4,vy4])
+                                        vertices2c.append([vx6,vz6,vy6])
+
+                                    f.seek(90,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsC = unpack("B", f.read(1))[0]
+                                    if flagsC == 0x6E:
+                                        if facecount == 2:
+                                            
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            if pad01 == 100:
+                                                
+                                            
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                            elif pad01 == 15:
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+
+                                        elif facecount == 3:
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
+
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            pad02 = unpack("B", f.read(1))[0]
+                                            pad03 = unpack("B", f.read(1))[0]
+
+                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                                fad6a//=3
+                                                fbd6a//=3
+                                                fcd6a//=3
+                                                fdd6a//=3
+                                                fed6a//=3
+                                                ffd6a//=3
+                                                fgd6a//=3
+                                                fhd6a//=3
+                                                
+                                                fad6a+=1*len(vertices2c)-6
+                                                fbd6a+=1*len(vertices2c)-6
+                                                fcd6a+=1*len(vertices2c)-6
+                                                fdd6a+=1*len(vertices2c)-6
+                                                fed6a+=1*len(vertices2c)-6
+                                                ffd6a+=1*len(vertices2c)-6
+                                                fgd6a+=1*len(vertices2c)-6
+                                                fhd6a+=1*len(vertices2c)-6
+
+                                                faces2c.append([fad6a,fbd6a,fcd6a])
+                                                faces2c.append([fbd6a,fcd6a,fdd6a])
+                                                faces2c.append([fcd6a,fdd6a,fed6a])
+                                                faces2c.append([fdd6a,fed6a,ffd6a])
+                                                faces2c.append([fed6a,ffd6a,fgd6a])
+                                                faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                                elif vertexCount:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        
+                                        vertices2d.append([vx,vz,vy])
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                
+                                    
+                                
+                        elif Chunks == b"\x04\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2 = unpack("B", f.read(1))[0]
+                            if flag2 == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        
+                                        vx0001__ = unpack("<f", f.read(4))[0]
+                                        vy0001__ = unpack("<f", f.read(4))[0]
+                                        vz0001__ = unpack("<f", f.read(4))[0]
+                                        brightness1__ = unpack("<f", f.read(4))[0]
+                                        uvx0001__ = unpack("<f", f.read(4))[0]
+                                        uvy0001__ = unpack("<f", f.read(4))[0]
+                                        f.seek(4,1)
+                                        type4 = unpack("B", f.read(1))[0]==0
+                                        f.seek(3,1)
+                                        vertices3.append([vx0001__,vz0001__,vy0001__])
+                                        fa2+=1
+                                        fb2+=1
+                                        fc2+=1
+                                        if type4 > 0:
+                                            faces3.append([j+j+type4-type4-1+fa2-j-j-1+j%2,j-j+type4-type4+1+fb2-2-1+j-j-j%2,j+type4-type4+fc2-j+2-4])
+
+            elif ObjectCount == 0:
+                if UnkCount1 != 0 and UnkCount2 != 0:
+                    f.seek(UnkCountEntrySize2,0)
+                    for i in range(UnkCount2):
+                        ScaleX = unpack("<f", f.read(4))[0]
+                        rotationz = unpack("<f", f.read(4))[0]
+                        rotationy = unpack("<f", f.read(4))[0]
+                        null1 = unpack("<f", f.read(4))[0]
+                        nrotationz = unpack("<f", f.read(4))[0]
+                        ScaleY = unpack("<f", f.read(4))[0]
+                        rotationx = unpack("<f", f.read(4))[0]
+                        nrotationy = unpack("<f", f.read(4))[0]
+                        null2 = unpack("<f", f.read(4))[0]
+                        nrotationx = unpack("<f", f.read(4))[0]
+                        ScaleZ = unpack("<f", f.read(4))[0]
+                        null3 = unpack("<f", f.read(4))[0]
+                        posx = unpack("<f", f.read(4))[0]
+                        posy = unpack("<f", f.read(4))[0]
+                        posz = unpack("<f", f.read(4))[0]
+                        ScaleW = unpack("<f", f.read(4))[0]
+                        objlen = unpack("<I", f.read(4))[0]
+                        objid = unpack("<I", f.read(4))[0]
+                        f.seek(8,1)
+                    f.seek(0)
+                    Chunk = f.read()
+                    f.seek(0)
+                    while f.tell() < len(Chunk):
+                        Chunks = f.read(4)
+                        if Chunks == b"\x03\x01\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0]
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        vx = unpack("<f", f.read(4))[0]
+                                        vy = unpack("<f", f.read(4))[0]
+                                        vz = unpack("<f", f.read(4))[0]
+                                        type4 = unpack("B", f.read(1))[0]==False
+                                        value1 = unpack("B", f.read(1))[0]
+                                        nz = unpack("<h", f.read(2))[0]
+                                        vertices.append([vx,vz,vy])
+                                        fa+=1
+                                        fb+=1
+                                        fc+=1
+                                        if type4 > 0:
+                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                        elif Chunks == b"\x03\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6D:
+                                if vertexCount == 3:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2.append([vxaa,vzaa,vyaa])
+                                    f.seek(78,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                            
+                                        fad//=3
+                                        fbd//=3
+                                        fcd//=3
+
+                                        fad+=1*len(vertices2)-3
+                                        fbd+=1*len(vertices2)-3
+                                        fcd+=1*len(vertices2)-3
+
+                                        faces2.append([fad,fbd,fcd])
+
+                                elif vertexCount == 4:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2a.append([vxaa,vzaa,vyaa])
+                                    f.seek(82,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+                                        pad03 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                        
+
+                                elif vertexCount == 5:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2b.append([vx,vz,vy])
+
+                                    f.seek(86,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100:
+                                            
+                                        
+                                            fad5//=3
+                                            fbd5//=3
+                                            fcd5//=3
+                                            fdd5//=3
+                                            fed5//=3
+                                            
+                                            fad5+=1*len(vertices2b)-5
+                                            fbd5+=1*len(vertices2b)-5
+                                            fcd5+=1*len(vertices2b)-5
+                                            fdd5+=1*len(vertices2b)-5
+                                            fed5+=1*len(vertices2b)-5
+                                            
+                                            faces2b.append([fad5,fbd5,fcd5])
+                                            faces2b.append([fbd5,fcd5,fdd5])
+                                            faces2b.append([fcd5,fdd5,fed5])
+
+                                elif vertexCount == 6:
+                                    for i in range(1):
+                                        vx = unpack("<h", f.read(2))[0]/4096
+                                        vy = unpack("<h", f.read(2))[0]/4096
+                                        vz = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx1 = unpack("<h", f.read(2))[0]/4096
+                                        vy1 = unpack("<h", f.read(2))[0]/4096
+                                        vz1 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx2 = unpack("<h", f.read(2))[0]/4096
+                                        vy2 = unpack("<h", f.read(2))[0]/4096
+                                        vz2 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx3 = unpack("<h", f.read(2))[0]/4096
+                                        vy3 = unpack("<h", f.read(2))[0]/4096
+                                        vz3 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx4 = unpack("<h", f.read(2))[0]/4096
+                                        vy4 = unpack("<h", f.read(2))[0]/4096
+                                        vz4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx6 = unpack("<h", f.read(2))[0]/4096
+                                        vy6 = unpack("<h", f.read(2))[0]/4096
+                                        vz6 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+                                        vertices2c.append([vx,vz,vy])
+                                        vertices2c.append([vx1,vz1,vy1])
+                                        vertices2c.append([vx2,vz2,vy2])
+                                        vertices2c.append([vx3,vz3,vy3])
+                                        vertices2c.append([vx4,vz4,vy4])
+                                        vertices2c.append([vx6,vz6,vy6])
+
+                                    f.seek(90,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsC = unpack("B", f.read(1))[0]
+                                    if flagsC == 0x6E:
+                                        if facecount == 2:
+                                            
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            if pad01 == 100:
+                                                
+                                            
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                            elif pad01 == 15:
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+
+                                        elif facecount == 3:
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
+
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            pad02 = unpack("B", f.read(1))[0]
+                                            pad03 = unpack("B", f.read(1))[0]
+
+                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                                fad6a//=3
+                                                fbd6a//=3
+                                                fcd6a//=3
+                                                fdd6a//=3
+                                                fed6a//=3
+                                                ffd6a//=3
+                                                fgd6a//=3
+                                                fhd6a//=3
+                                                
+                                                fad6a+=1*len(vertices2c)-6
+                                                fbd6a+=1*len(vertices2c)-6
+                                                fcd6a+=1*len(vertices2c)-6
+                                                fdd6a+=1*len(vertices2c)-6
+                                                fed6a+=1*len(vertices2c)-6
+                                                ffd6a+=1*len(vertices2c)-6
+                                                fgd6a+=1*len(vertices2c)-6
+                                                fhd6a+=1*len(vertices2c)-6
+
+                                                faces2c.append([fad6a,fbd6a,fcd6a])
+                                                faces2c.append([fbd6a,fcd6a,fdd6a])
+                                                faces2c.append([fcd6a,fdd6a,fed6a])
+                                                faces2c.append([fdd6a,fed6a,ffd6a])
+                                                faces2c.append([fed6a,ffd6a,fgd6a])
+                                                faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                                elif vertexCount:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        
+                                        vertices2d.append([vx,vz,vy])
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                
+                                    
+                                
+                        elif Chunks == b"\x04\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2 = unpack("B", f.read(1))[0]
+                            if flag2 == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        
+                                        vx0001__ = unpack("<f", f.read(4))[0]
+                                        vy0001__ = unpack("<f", f.read(4))[0]
+                                        vz0001__ = unpack("<f", f.read(4))[0]
+                                        brightness1__ = unpack("<f", f.read(4))[0]
+                                        uvx0001__ = unpack("<f", f.read(4))[0]
+                                        uvy0001__ = unpack("<f", f.read(4))[0]
+                                        f.seek(4,1)
+                                        type4 = unpack("B", f.read(1))[0]==0
+                                        f.seek(3,1)
+                                        vertices3.append([vx0001__,vz0001__,vy0001__])
+                                        uv_coords.append([uvx0001__,-uvy0001__])
+                                        fa2+=1
+                                        fb2+=1
+                                        fc2+=1
+                                        if type4 > 0:
+                                            faces3.append([j+j+type4-type4-1+fa2-j-j-1+j%2,j-j+type4-type4+1+fb2-2-1+j-j-j%2,j+type4-type4+fc2-j+2-4])
+                if UnkCount1 == 0 and UnkCount2 == 0:
+                    f.seek(0)
+                    Chunk = f.read()
+                    f.seek(0)
+                    while f.tell() < len(Chunk):
+                        Chunks = f.read(4)
+                        if Chunks == b"\x03\x01\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0]
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        vx = unpack("<f", f.read(4))[0]
+                                        vy = unpack("<f", f.read(4))[0]
+                                        vz = unpack("<f", f.read(4))[0]
+                                        type4 = unpack("B", f.read(1))[0]==False
+                                        value1 = unpack("B", f.read(1))[0]
+                                        nz = unpack("<h", f.read(2))[0]
+                                        vertices.append([vx,vz,vy])
+                                        fa+=1
+                                        fb+=1
+                                        fc+=1
+                                        if type4 > 0:
+                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                        elif Chunks == b"\x03\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2a = unpack("B", f.read(1))[0]
+                            if flag2a == 0x6D:
+                                if vertexCount == 3:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2.append([vxaa,vzaa,vyaa])
+                                    f.seek(78,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                            
+                                        fad//=3
+                                        fbd//=3
+                                        fcd//=3
+
+                                        fad+=1*len(vertices2)-3
+                                        fbd+=1*len(vertices2)-3
+                                        fcd+=1*len(vertices2)-3
+
+                                        faces2.append([fad,fbd,fcd])
+
+                                elif vertexCount == 4:
+                                    for i in range(vertexCount):
+                                        vxaa = unpack("<h", f.read(2))[0] / 4096
+                                        vyaa = unpack("<h", f.read(2))[0] / 4096
+                                        vzaa = unpack("<h", f.read(2))[0] / 4096
+                                        vwaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2a.append([vxaa,vzaa,vyaa])
+                                    f.seek(82,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+                                        pad03 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                            fad1abc//=3
+                                            fbd1abc//=3
+                                            fcd1abc//=3
+                                            fdd1abc//=3
+
+                                            fad1abc+=1*len(vertices2a)-4
+                                            fbd1abc+=1*len(vertices2a)-4
+                                            fcd1abc+=1*len(vertices2a)-4
+                                            fdd1abc+=1*len(vertices2a)-4
+
+                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                        
+
+                                elif vertexCount == 5:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        vertices2b.append([vx,vz,vy])
+
+                                    f.seek(86,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsB = unpack("B", f.read(1))[0]
+                                    if flagsB == 0x6E:
+                                        id1 = unpack("B", f.read(1))[0]
+                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                        pad01 = unpack("B", f.read(1))[0]
+                                        pad02 = unpack("B", f.read(1))[0]
+
+                                        if pad01 == 100 and pad02 == 100:
+                                            
+                                        
+                                            fad5//=3
+                                            fbd5//=3
+                                            fcd5//=3
+                                            fdd5//=3
+                                            fed5//=3
+                                            
+                                            fad5+=1*len(vertices2b)-5
+                                            fbd5+=1*len(vertices2b)-5
+                                            fcd5+=1*len(vertices2b)-5
+                                            fdd5+=1*len(vertices2b)-5
+                                            fed5+=1*len(vertices2b)-5
+                                            
+                                            faces2b.append([fad5,fbd5,fcd5])
+                                            faces2b.append([fbd5,fcd5,fdd5])
+                                            faces2b.append([fcd5,fdd5,fed5])
+
+                                elif vertexCount == 6:
+                                    for i in range(1):
+                                        vx = unpack("<h", f.read(2))[0]/4096
+                                        vy = unpack("<h", f.read(2))[0]/4096
+                                        vz = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx1 = unpack("<h", f.read(2))[0]/4096
+                                        vy1 = unpack("<h", f.read(2))[0]/4096
+                                        vz1 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx2 = unpack("<h", f.read(2))[0]/4096
+                                        vy2 = unpack("<h", f.read(2))[0]/4096
+                                        vz2 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx3 = unpack("<h", f.read(2))[0]/4096
+                                        vy3 = unpack("<h", f.read(2))[0]/4096
+                                        vz3 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx4 = unpack("<h", f.read(2))[0]/4096
+                                        vy4 = unpack("<h", f.read(2))[0]/4096
+                                        vz4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+
+                                        vx6 = unpack("<h", f.read(2))[0]/4096
+                                        vy6 = unpack("<h", f.read(2))[0]/4096
+                                        vz6 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(2,1)
+                                        uvx4 = unpack("<h", f.read(2))[0]/4096
+                                        uvy4 = unpack("<h", f.read(2))[0]/4096
+                                        f.seek(4,1)
+                                        vertices2c.append([vx,vz,vy])
+                                        vertices2c.append([vx1,vz1,vy1])
+                                        vertices2c.append([vx2,vz2,vy2])
+                                        vertices2c.append([vx3,vz3,vy3])
+                                        vertices2c.append([vx4,vz4,vy4])
+                                        vertices2c.append([vx6,vz6,vy6])
+
+                                    f.seek(90,1)
+                                    facecount = unpack("B", f.read(1))[0]
+                                    flagsC = unpack("B", f.read(1))[0]
+                                    if flagsC == 0x6E:
+                                        if facecount == 2:
+                                            
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            if pad01 == 100:
+                                                
+                                            
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                            elif pad01 == 15:
+                                                fad6//=3
+                                                fbd6//=3
+                                                fcd6//=3
+                                                fdd6//=3
+                                                fed6//=3
+                                                ffd6//=3
+                                                
+                                                fad6+=1*len(vertices2c)-6
+                                                fbd6+=1*len(vertices2c)-6
+                                                fcd6+=1*len(vertices2c)-6
+                                                fdd6+=1*len(vertices2c)-6
+                                                fed6+=1*len(vertices2c)-6
+                                                ffd6+=1*len(vertices2c)-6
+
+                                                if math.isclose(vy3,vy4) == True:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fbd6,fcd6,fdd6])
+                                                    faces2c.append([fcd6,fdd6,fed6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+                                                else:
+                                                    faces2c.append([fad6,fbd6,fcd6])
+                                                    faces2c.append([fdd6,fed6,ffd6])
+
+                                        elif facecount == 3:
+                                            id1 = unpack("B", f.read(1))[0]
+                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
+
+                                            pad01 = unpack("B", f.read(1))[0]
+                                            pad02 = unpack("B", f.read(1))[0]
+                                            pad03 = unpack("B", f.read(1))[0]
+
+                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                                fad6a//=3
+                                                fbd6a//=3
+                                                fcd6a//=3
+                                                fdd6a//=3
+                                                fed6a//=3
+                                                ffd6a//=3
+                                                fgd6a//=3
+                                                fhd6a//=3
+                                                
+                                                fad6a+=1*len(vertices2c)-6
+                                                fbd6a+=1*len(vertices2c)-6
+                                                fcd6a+=1*len(vertices2c)-6
+                                                fdd6a+=1*len(vertices2c)-6
+                                                fed6a+=1*len(vertices2c)-6
+                                                ffd6a+=1*len(vertices2c)-6
+                                                fgd6a+=1*len(vertices2c)-6
+                                                fhd6a+=1*len(vertices2c)-6
+
+                                                faces2c.append([fad6a,fbd6a,fcd6a])
+                                                faces2c.append([fbd6a,fcd6a,fdd6a])
+                                                faces2c.append([fcd6a,fdd6a,fed6a])
+                                                faces2c.append([fdd6a,fed6a,ffd6a])
+                                                faces2c.append([fed6a,ffd6a,fgd6a])
+                                                faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                                elif vertexCount:
+                                    for i in range(vertexCount):
+                                        vx = unpack("<h", f.read(2))[0] / 4096
+                                        vy = unpack("<h", f.read(2))[0] / 4096
+                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(2,1)
+                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                        f.seek(4,1)
+                                        
+                                        vertices2d.append([vx,vz,vy])
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                
+                                    
+                                
+                        elif Chunks == b"\x04\x02\x00\x01":
+                            f.seek(1,1)
+                            value1 = unpack("B", f.read(1))[0]
+                            vertexCount = unpack("B", f.read(1))[0] // 2
+                            flag2 = unpack("B", f.read(1))[0]
+                            if flag2 == 0x6C:
+                                if vertexCount == 0:
+                                    pass
+                                elif vertexCount == 1:
+                                    pass
+                                elif vertexCount == 2:
+                                    pass
+                                elif vertexCount:
+                                    for j in range(vertexCount):
+                                        
+                                        vx0001__ = unpack("<f", f.read(4))[0]
+                                        vy0001__ = unpack("<f", f.read(4))[0]
+                                        vz0001__ = unpack("<f", f.read(4))[0]
+                                        brightness1__ = unpack("<f", f.read(4))[0]
+                                        uvx0001__ = unpack("<f", f.read(4))[0]
+                                        uvy0001__ = unpack("<f", f.read(4))[0]
+                                        f.seek(4,1)
+                                        type4 = unpack("B", f.read(1))[0]==0
+                                        f.seek(3,1)
+                                        vertices3.append([vx0001__,vz0001__,vy0001__])
+                                        uv_coords.append([uvx0001__,-uvy0001__])
+                                        fa2+=1
+                                        fb2+=1
+                                        fc2+=1
+                                        if type4 > 0:
+                                            faces3.append([j+j+type4-type4-1+fa2-j-j-1+j%2,j-j+type4-type4+1+fb2-2-1+j-j-j%2,j+type4-type4+fc2-j+2-4])
 
     
     
     collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
     bpy.context.scene.collection.children.link(collection)
+
+    meshh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    meshh.from_pydata(vertices, [], faces)
+    objectsh = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), meshh)
+    collection.objects.link(objectsh)
 
     mesh3FF = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh3FF.from_pydata(vertices3FF, [], faces3FF)
@@ -8536,138 +7903,6 @@ def GHG_mesh(f, filepath):
         for li in vert_loops3ZZZ6[i]:
             uv_layer3ZZZ6[li].uv = coord
 
-    mesh3EE = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3EE.from_pydata(vertices3EE, [], faces3EE)
-    objects3EE = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3EE)
-    collection.objects.link(objects3EE)
-
-    uv_tex3EE = mesh3EE.uv_layers.new()
-    uv_layer3EE = mesh3EE.uv_layers[0].data
-    vert_loops3EE = {}
-    for l in mesh3EE.loops:
-        vert_loops3EE.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3EE):
-        for li in vert_loops3EE[i]:
-            uv_layer3EE[li].uv = coord
-
-    mesh3DD = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3DD.from_pydata(vertices3DD, [], faces3DD)
-    objects3DD = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3DD)
-    collection.objects.link(objects3DD)
-
-    uv_tex3DD = mesh3DD.uv_layers.new()
-    uv_layer3DD = mesh3DD.uv_layers[0].data
-    vert_loops3DD = {}
-    for l in mesh3DD.loops:
-        vert_loops3DD.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3DD):
-        for li in vert_loops3DD[i]:
-            uv_layer3DD[li].uv = coord
-
-    mesh3CC = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3CC.from_pydata(vertices3CC, [], faces3CC)
-    objects3CC = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3CC)
-    collection.objects.link(objects3CC)
-
-    uv_tex3CC = mesh3CC.uv_layers.new()
-    uv_layer3CC = mesh3CC.uv_layers[0].data
-    vert_loops3CC = {}
-    for l in mesh3CC.loops:
-        vert_loops3CC.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3CC):
-        for li in vert_loops3CC[i]:
-            uv_layer3CC[li].uv = coord
-
-    mesh3BB = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3BB.from_pydata(vertices3BB, [], faces3BB)
-    objects3BB = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3BB)
-    collection.objects.link(objects3BB)
-
-    uv_tex3BB = mesh3BB.uv_layers.new()
-    uv_layer3BB = mesh3BB.uv_layers[0].data
-    vert_loops3BB = {}
-    for l in mesh3BB.loops:
-        vert_loops3BB.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3BB):
-        for li in vert_loops3BB[i]:
-            uv_layer3BB[li].uv = coord
-
-    mesh3BBd = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3BBd.from_pydata(vertices3BBd, [], faces3BBd)
-    objects3BBd = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3BBd)
-    collection.objects.link(objects3BBd)
-
-    uv_tex3BBd = mesh3BBd.uv_layers.new()
-    uv_layer3BBd = mesh3BBd.uv_layers[0].data
-    vert_loops3BBd = {}
-    for l in mesh3BBd.loops:
-        vert_loops3BBd.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3BBd):
-        for li in vert_loops3BBd[i]:
-            uv_layer3BBd[li].uv = coord
-
-    mesh3AAx = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3AAx.from_pydata(vertices3AAx, [], faces3AAx)
-    objects3AAx = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3AAx)
-    collection.objects.link(objects3AAx)
-
-    mesh3AA = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3AA.from_pydata(vertices3AA, [], faces3AA)
-    objects3AA = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3AA)
-    collection.objects.link(objects3AA)
-
-    #brightt2
-
-    bpy.context.view_layer.objects.active = objects3AA
-
-    colname4 = "GHG_Brightess_strip"
-
-    colattr4 = objects3AA.data.color_attributes.new(
-        name=colname4,
-        type='FLOAT_COLOR',
-        domain='POINT',
-    )
-
-    for v_index in range(len(objects3AA.data.vertices)):
-        colattr4.data[v_index].color = brightt2[v_index]
-
-    uv_tex3AA = mesh3AA.uv_layers.new()
-    uv_layer3AA = mesh3AA.uv_layers[0].data
-    vert_loops3AA = {}
-    for l in mesh3AA.loops:
-        vert_loops3AA.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3AA):
-        for li in vert_loops3AA[i]:
-            uv_layer3AA[li].uv = coord
-
-    mesh3AApt2 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3AApt2.from_pydata(vertices3AApt2, [], faces3AApt2)
-    objects3AApt2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3AApt2)
-    collection.objects.link(objects3AApt2)
-
-    uv_tex3AApt2 = mesh3AApt2.uv_layers.new()
-    uv_layer3AApt2 = mesh3AApt2.uv_layers[0].data
-    vert_loops3AApt2 = {}
-    for l in mesh3AApt2.loops:
-        vert_loops3AApt2.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3AApt2):
-        for li in vert_loops3AApt2[i]:
-            uv_layer3AApt2[li].uv = coord
-
-    mesh3AApt3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3AApt3.from_pydata(vertices3AApt3, [], faces3AApt3)
-    objects3AApt3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3AApt3)
-    collection.objects.link(objects3AApt3)
-
-    uv_tex3AApt3 = mesh3AApt3.uv_layers.new()
-    uv_layer3AApt3 = mesh3AApt3.uv_layers[0].data
-    vert_loops3AApt3 = {}
-    for l in mesh3AApt3.loops:
-        vert_loops3AApt3.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3AApt3):
-        for li in vert_loops3AApt3[i]:
-            uv_layer3AApt3[li].uv = coord
-
 
     mesh3BBpt2 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh3BBpt2.from_pydata(vertices3BBpt2, [], faces3BBpt2)
@@ -8688,6 +7923,30 @@ def GHG_mesh(f, filepath):
     objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
     collection.objects.link(objects3)
 
+    """for obj in bpy.context.scene.objects:
+        if obj.name.startswith("nigel"):
+            obj.select_set(True)
+
+            bpy.ops.object.mode_set(mode='OBJECT')
+
+            mesh = obj.data
+    
+    # Example: Create a face by specifying vertex indices
+    # Ensure you have at least 3 vertices selected to form a polygon
+        new_face = (0, 1, 2, 3)  # Replace with your vertex indices
+        
+        # Add the face to the mesh
+        mesh.polygons.add(1)
+        mesh.polygons[-1].vertices = new_face
+        
+        # Update the mesh to reflect changes
+        mesh.update()
+        
+        # Switch back to edit mode
+        bpy.ops.object.mode_set(mode='EDIT')
+    else:
+        print("Please select a mesh object in edit mode.")"""
+
 
     objects3.parent = arma
     armamodifier3 = objects3.modifiers.new("GHG Armature Modifier", "ARMATURE")
@@ -8700,14 +7959,15 @@ def GHG_mesh(f, filepath):
     objects4 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh4)
     collection.objects.link(objects4)
 
-    uv_tex_ = mesh4.uv_layers.new()
-    uv_layer_ = mesh4.uv_layers[0].data
-    vert_loops_ = {}
-    for l in mesh4.loops:
-        vert_loops_.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs2):
-        for li in vert_loops_[i]:
-            uv_layer_[li].uv = coord
+    objects4.parent = arma
+    armamodifier4 = objects4.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier4.object = arma
+
+    vgroups4 = [objects4.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+            
+    """obj = bpy.context.object
+
+    obj.vertex_groups[0].add([0], 1, 'ADD')"""
 
     mesh4a = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh4a.from_pydata(vertices2a, [], faces2a)
@@ -9347,10 +8607,22 @@ def GHG_mesh(f, filepath):
     bpy.ops.object.parent_set(type='ARMATURE_AUTO')
 
     bpy.ops.object.mode_set(mode='EDIT')
-
-    bpy.ops.mesh.separate(type='LOOSE')
-
     bpy.ops.object.mode_set(mode='OBJECT')
+    bpy.ops.object.select_all(action='DESELECT')
+
+    obj_a2 = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = obj_a2
+    bpy.ops.object.select_all(action='SELECT')
+
+    #bpy.ops.object.select_all(action='SELECT')
+
+    #if obj and obj.type == 'MESH':
+    #mesh = obj.data
+
+    #bpy.ops.object.mode_set(mode='EDIT')
+    #bpy.ops.object.mode_set(mode='OBJECT')
+    #bpy.ops.object.mode_set(mode='EDIT')
+    #bpy.ops.mesh.select_mode(type="VERT")
 
     
                         
@@ -9464,6 +8736,120 @@ def GHG_mesh_3(f, filepath):
 
     for fac in mesh.polygons:
         fac.use_smooth = True
+
+def select3rdUVnoloop(f, uvs=[]):
+
+    f.seek(0)
+    uvfirstread = f.read()
+    uvfirstfind = uvfirstread.find(b"\x04\x02\x00\x01\x03\x80")
+    if uvfirstread != 0:
+        f.seek(uvfirstfind, 0)
+        f.seek(6, 1)
+        uvcount = unpack("B", f.read(1))[0] // 2
+        flag1a = unpack("B", f.read(1))[0]
+        if flag1a == 0x6C:
+            
+            for i in range(uvcount):
+                f.seek(16,1)
+                ux = unpack("<f", f.read(4))[0]
+                uy = unpack("<f", f.read(4))[0]
+                f.seek(8, 1)
+                uvs.append([+ux,-uy])
+        obdata = bpy.context.object.data
+        uv_tex = obdata.uv_layers.new()
+        uv_layer = obdata.uv_layers[0].data
+        vert_loops = {}
+        for l in obdata.loops:
+            vert_loops.setdefault(l.vertex_index, []).append(l.index)
+        for i, coord in enumerate(uvs):
+            for li in vert_loops[i]:
+                uv_layer[li].uv = coord
+
+def select3rdUVloop(f, uvs=[]):
+
+    f.seek(0)
+    uvfirstread = f.read()
+    f.seek(0)
+    while f.tell() < len(uvfirstread):
+        uvfirstfind = f.read(4)
+        if uvfirstfind == b"\x04\x02\x00\x01":
+            f.seek(2,1)
+            uvcount = unpack("B", f.read(1))[0] // 2
+            flag1a = unpack("B", f.read(1))[0]
+            if flag1a == 0x6C:
+                
+                for i in range(uvcount):
+                    f.seek(16,1)
+                    ux = unpack("<f", f.read(4))[0]
+                    uy = unpack("<f", f.read(4))[0]
+                    f.seek(8, 1)
+                    uvs.append([+ux,-uy])
+    obdata = bpy.context.object.data
+    uv_tex = obdata.uv_layers.new()
+    uv_layer = obdata.uv_layers[0].data
+    vert_loops = {}
+    for l in obdata.loops:
+        vert_loops.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs):
+        for li in vert_loops[i]:
+            uv_layer[li].uv = coord
+
+def select2ndUVnoloop(f, uvs=[]):
+
+    f.seek(0)
+    uvfirstread = f.read()
+    uvfirstfind = uvfirstread.find(b"\x03\x02\x00\x01\x03\x80")
+    if uvfirstread != 0:
+        f.seek(uvfirstfind, 0)
+        f.seek(6, 1)
+        uvcount = unpack("B", f.read(1))[0] // 2
+        flag1a = unpack("B", f.read(1))[0]
+        if flag1a == 0x6D:
+            
+            for i in range(uvcount):
+                f.seek(8,1)
+                ux = unpack("<h", f.read(2))[0]
+                uy = unpack("<h", f.read(2))[0]
+                f.seek(4, 1)
+                uvs.append([+ux,-uy])
+            obdata = bpy.context.object.data
+            uv_tex = obdata.uv_layers.new()
+            uv_layer = obdata.uv_layers[0].data
+            vert_loops = {}
+            for l in obdata.loops:
+                vert_loops.setdefault(l.vertex_index, []).append(l.index)
+            for i, coord in enumerate(uvs):
+                for li in vert_loops[i]:
+                    uv_layer[li].uv = coord
+
+def select2ndUVloop(f, uvs=[]):
+
+    f.seek(0)
+    uvfirstread = f.read()
+    f.seek(0)
+    while f.tell() < len(uvfirstread):
+        uvfirstfind = f.read(4)
+        if uvfirstfind == b"\x03\x02\x00\x01":
+            f.seek(2,1)
+            uvcount = unpack("B", f.read(1))[0] // 2
+            flag1a = unpack("B", f.read(1))[0]
+            if flag1a == 0x6D:
+                
+                for i in range(uvcount):
+                    f.seek(8,1)
+                    ux = unpack("<h", f.read(2))[0]
+                    uy = unpack("<h", f.read(2))[0]
+                    f.seek(4, 1)
+                    uvs.append([+ux,-uy])
+    obdata = bpy.context.object.data
+    uv_tex = obdata.uv_layers.new()
+    uv_layer = obdata.uv_layers[0].data
+    vert_loops = {}
+    for l in obdata.loops:
+        vert_loops.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs):
+        for li in vert_loops[i]:
+            uv_layer[li].uv = coord
     
 
     
@@ -9472,7 +8858,7 @@ def GHG_mesh_3(f, filepath):
     
             
 
-def ghg_open(filepath, offset_on_off=False, bsa_on_off=False):
+def ghg_open(filepath, offset_on_off=False, bsa_on_off=False, uv3rdnoloop=False, uv3rdloop=False,uv2ndnoloop=False, uv2ndloop=False):
     with open(filepath, "rb") as f:
         if offset_on_off:
             GHG_mesh(f, filepath)
@@ -9480,3 +8866,15 @@ def ghg_open(filepath, offset_on_off=False, bsa_on_off=False):
 
         if bsa_on_off:
             GHG_Blend_Object(f, filepath)
+
+        if uv3rdnoloop:
+            select3rdUVnoloop(f, uvs=[])
+
+        if uv3rdloop:
+            select3rdUVloop(f, uvs=[])
+
+        if uv2ndnoloop:
+            select2ndUVnoloop(f, uvs=[])
+
+        if uv2ndloop:
+            select2ndUVloop(f, uvs=[])
