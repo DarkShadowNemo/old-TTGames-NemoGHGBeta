@@ -275,6 +275,9 @@ def GHG_mesh(f, filepath):
 
     uv_coords = []
 
+    vertices3A = []
+    faces3A = []
+
     vertices3AA = []
     faces3AA = []
 
@@ -467,6 +470,15 @@ def GHG_mesh(f, filepath):
     fa = -1
     fb = 0
     fc = 1
+
+    fa2Ta_a=-5
+
+    fb2Ta_a=-4
+    fc2Ta_a=-3
+
+    fd2Ta_a=-2
+
+    fe2Ta_a=-1
 
     fau = -1
     fbu = 0
@@ -3836,7 +3848,7 @@ def GHG_mesh(f, filepath):
                                     pass
                                 elif vertexCount == 2:
                                     pass
-                                elif vertexCount:
+                                elif vertexCount == 3:
                                     for j in range(1):
                                         
                                         vx0001__ = unpack("<f", f.read(4))[0]
@@ -3902,10 +3914,26 @@ def GHG_mesh(f, filepath):
                                                     offsettB = unpack("<I", f.read(4))[0]
                                                     if offsettB == 16777473:
                                                         if type4F == 0:
-                                                            if type4G == 0:
-                                                                if type4H == 1:
+                                                            if type4G == 1:
+                                                                if type4H == 0:
                                                                     if type4I == 0:
-                                                                        pass
+                                                                        vertices3A.append([vx0001__,vz0001__,vy0001__])
+                                                                        vertices3A.append([vx0001__A,vz0001__A,vy0001__A])
+                                                                        vertices3A.append([vx0001__B,vz0001__B,vy0001__B])
+
+                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                        fa2Ta_a+=1*5
+                                                                        fb2Ta_a+=1*5
+                                                                        fc2Ta_a+=1*5
+                                                                        fd2Ta_a+=1*5
+                                                                        fe2Ta_a+=1*5
+
+                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
                                     if offsettA == 16777473:
                                         if type4 == 1:
                                             if type4A == 1:
@@ -4311,7 +4339,7 @@ def GHG_mesh(f, filepath):
                                     pass
                                 elif vertexCount == 2:
                                     pass
-                                elif vertexCount:
+                                elif vertexCount == 3:
                                     for j in range(1):
                                         
                                         vx0001__ = unpack("<f", f.read(4))[0]
@@ -4377,10 +4405,26 @@ def GHG_mesh(f, filepath):
                                                     offsettB = unpack("<I", f.read(4))[0]
                                                     if offsettB == 16777473:
                                                         if type4F == 0:
-                                                            if type4G == 0:
-                                                                if type4H == 1:
+                                                            if type4G == 1:
+                                                                if type4H == 0:
                                                                     if type4I == 0:
-                                                                        pass
+                                                                        vertices3A.append([vx0001__,vz0001__,vy0001__])
+                                                                        vertices3A.append([vx0001__A,vz0001__A,vy0001__A])
+                                                                        vertices3A.append([vx0001__B,vz0001__B,vy0001__B])
+
+                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                        fa2Ta_a+=1*5
+                                                                        fb2Ta_a+=1*5
+                                                                        fc2Ta_a+=1*5
+                                                                        fd2Ta_a+=1*5
+                                                                        fe2Ta_a+=1*5
+
+                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
                                     if offsettA == 16777473:
                                         if type4 == 1:
                                             if type4A == 1:
@@ -4788,7 +4832,7 @@ def GHG_mesh(f, filepath):
                                     pass
                                 elif vertexCount == 2:
                                     pass
-                                elif vertexCount:
+                                elif vertexCount == 3:
                                     for j in range(1):
                                         
                                         vx0001__ = unpack("<f", f.read(4))[0]
@@ -4854,10 +4898,26 @@ def GHG_mesh(f, filepath):
                                                     offsettB = unpack("<I", f.read(4))[0]
                                                     if offsettB == 16777473:
                                                         if type4F == 0:
-                                                            if type4G == 0:
-                                                                if type4H == 1:
+                                                            if type4G == 1:
+                                                                if type4H == 0:
                                                                     if type4I == 0:
-                                                                        pass
+                                                                        vertices3A.append([vx0001__,vz0001__,vy0001__])
+                                                                        vertices3A.append([vx0001__A,vz0001__A,vy0001__A])
+                                                                        vertices3A.append([vx0001__B,vz0001__B,vy0001__B])
+
+                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                        fa2Ta_a+=1*5
+                                                                        fb2Ta_a+=1*5
+                                                                        fc2Ta_a+=1*5
+                                                                        fd2Ta_a+=1*5
+                                                                        fe2Ta_a+=1*5
+
+                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
                                     if offsettA == 16777473:
                                         if type4 == 1:
                                             if type4A == 1:
@@ -5242,7 +5302,7 @@ def GHG_mesh(f, filepath):
                                     pass
                                 elif vertexCount == 2:
                                     pass
-                                elif vertexCount:
+                                elif vertexCount == 3:
                                     for j in range(1):
                                         
                                         vx0001__ = unpack("<f", f.read(4))[0]
@@ -5308,10 +5368,26 @@ def GHG_mesh(f, filepath):
                                                     offsettB = unpack("<I", f.read(4))[0]
                                                     if offsettB == 16777473:
                                                         if type4F == 0:
-                                                            if type4G == 0:
-                                                                if type4H == 1:
+                                                            if type4G == 1:
+                                                                if type4H == 0:
                                                                     if type4I == 0:
-                                                                        pass
+                                                                        vertices3A.append([vx0001__,vz0001__,vy0001__])
+                                                                        vertices3A.append([vx0001__A,vz0001__A,vy0001__A])
+                                                                        vertices3A.append([vx0001__B,vz0001__B,vy0001__B])
+
+                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                        fa2Ta_a+=1*5
+                                                                        fb2Ta_a+=1*5
+                                                                        fc2Ta_a+=1*5
+                                                                        fd2Ta_a+=1*5
+                                                                        fe2Ta_a+=1*5
+
+                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
                                     if offsettA == 16777473:
                                         if type4 == 1:
                                             if type4A == 1:
@@ -6534,7 +6610,7 @@ def GHG_mesh(f, filepath):
                                     pass
                                 elif vertexCount == 2:
                                     pass
-                                elif vertexCount:
+                                elif vertexCount == 3:
                                     for j in range(1):
                                         
                                         vx0001__ = unpack("<f", f.read(4))[0]
@@ -6600,10 +6676,26 @@ def GHG_mesh(f, filepath):
                                                     offsettB = unpack("<I", f.read(4))[0]
                                                     if offsettB == 16777473:
                                                         if type4F == 0:
-                                                            if type4G == 0:
-                                                                if type4H == 1:
+                                                            if type4G == 1:
+                                                                if type4H == 0:
                                                                     if type4I == 0:
-                                                                        pass
+                                                                        vertices3A.append([vx0001__,vz0001__,vy0001__])
+                                                                        vertices3A.append([vx0001__A,vz0001__A,vy0001__A])
+                                                                        vertices3A.append([vx0001__B,vz0001__B,vy0001__B])
+
+                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                        fa2Ta_a+=1*5
+                                                                        fb2Ta_a+=1*5
+                                                                        fc2Ta_a+=1*5
+                                                                        fd2Ta_a+=1*5
+                                                                        fe2Ta_a+=1*5
+
+                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
                                     if offsettA == 16777473:
                                         if type4 == 1:
                                             if type4A == 1:
@@ -7009,7 +7101,7 @@ def GHG_mesh(f, filepath):
                                     pass
                                 elif vertexCount == 2:
                                     pass
-                                elif vertexCount:
+                                elif vertexCount == 3:
                                     for j in range(1):
                                         
                                         vx0001__ = unpack("<f", f.read(4))[0]
@@ -7075,10 +7167,26 @@ def GHG_mesh(f, filepath):
                                                     offsettB = unpack("<I", f.read(4))[0]
                                                     if offsettB == 16777473:
                                                         if type4F == 0:
-                                                            if type4G == 0:
-                                                                if type4H == 1:
+                                                            if type4G == 1:
+                                                                if type4H == 0:
                                                                     if type4I == 0:
-                                                                        pass
+                                                                        vertices3A.append([vx0001__,vz0001__,vy0001__])
+                                                                        vertices3A.append([vx0001__A,vz0001__A,vy0001__A])
+                                                                        vertices3A.append([vx0001__B,vz0001__B,vy0001__B])
+
+                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                        fa2Ta_a+=1*5
+                                                                        fb2Ta_a+=1*5
+                                                                        fc2Ta_a+=1*5
+                                                                        fd2Ta_a+=1*5
+                                                                        fe2Ta_a+=1*5
+
+                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
                                     if offsettA == 16777473:
                                         if type4 == 1:
                                             if type4A == 1:
@@ -7552,10 +7660,26 @@ def GHG_mesh(f, filepath):
                                                     offsettB = unpack("<I", f.read(4))[0]
                                                     if offsettB == 16777473:
                                                         if type4F == 0:
-                                                            if type4G == 0:
-                                                                if type4H == 1:
+                                                            if type4G == 1:
+                                                                if type4H == 0:
                                                                     if type4I == 0:
-                                                                        pass
+                                                                        vertices3A.append([vx0001__,vz0001__,vy0001__])
+                                                                        vertices3A.append([vx0001__A,vz0001__A,vy0001__A])
+                                                                        vertices3A.append([vx0001__B,vz0001__B,vy0001__B])
+
+                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                        fa2Ta_a+=1*5
+                                                                        fb2Ta_a+=1*5
+                                                                        fc2Ta_a+=1*5
+                                                                        fd2Ta_a+=1*5
+                                                                        fe2Ta_a+=1*5
+
+                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
                                     if offsettA == 16777473:
                                         if type4 == 1:
                                             if type4A == 1:
@@ -8038,10 +8162,26 @@ def GHG_mesh(f, filepath):
                                                     offsettB = unpack("<I", f.read(4))[0]
                                                     if offsettB == 16777473:
                                                         if type4F == 0:
-                                                            if type4G == 0:
-                                                                if type4H == 1:
+                                                            if type4G == 1:
+                                                                if type4H == 0:
                                                                     if type4I == 0:
-                                                                        pass
+                                                                        vertices3A.append([vx0001__,vz0001__,vy0001__])
+                                                                        vertices3A.append([vx0001__A,vz0001__A,vy0001__A])
+                                                                        vertices3A.append([vx0001__B,vz0001__B,vy0001__B])
+
+                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                        fa2Ta_a+=1*5
+                                                                        fb2Ta_a+=1*5
+                                                                        fc2Ta_a+=1*5
+                                                                        fd2Ta_a+=1*5
+                                                                        fe2Ta_a+=1*5
+
+                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
                                     if offsettA == 16777473:
                                         if type4 == 1:
                                             if type4A == 1:
@@ -8500,6 +8640,11 @@ def GHG_mesh(f, filepath):
     mesh3.from_pydata(vertices3, [], faces3)
     objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
     collection.objects.link(objects3)
+
+    mesh3yyA = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3yyA.from_pydata(vertices3A, [], faces3A)
+    objects3yyA = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyA)
+    collection.objects.link(objects3yyA)
 
     """for obj in bpy.context.scene.objects:
         if obj.name.startswith("nigel"):
