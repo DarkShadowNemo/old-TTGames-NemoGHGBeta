@@ -512,14 +512,12 @@ def GHG_mesh(f, filepath):
     ff2Ta_c=-1
 
 
-    fa2Ta_d=-5
+    fa2Ta_d=-4
 
-    fb2Ta_d=-4
-    fc2Ta_d=-3
+    fb2Ta_d=-3
+    fc2Ta_d=-2
 
-    fd2Ta_d=-2
-
-    fe2Ta_d=-1
+    fd2Ta_d=-1
 
     fa2CAQ=-4
     fb2CAQ=-3
@@ -3526,2404 +3524,593 @@ def GHG_mesh(f, filepath):
                 skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
             bpy.ops.object.mode_set(mode = 'OBJECT')
 
-            if ObjectCount != 0:
-                if UnkCount1 == 0 and UnkCount2 == 0:
-                    f.seek(0)
-                    Chunk = f.read()
-                    f.seek(0)
-                    while f.tell() < len(Chunk):
-                        Chunks = f.read(4)
-                        if Chunks == b"\x03\x01\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0]
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount:
-                                    for j in range(vertexCount):
-                                        vx = unpack("<f", f.read(4))[0]
-                                        vy = unpack("<f", f.read(4))[0]
-                                        vz = unpack("<f", f.read(4))[0]
-                                        type4 = unpack("B", f.read(1))[0]==False
-                                        value1 = unpack("B", f.read(1))[0]
-                                        nz = unpack("<h", f.read(2))[0]
-                                        vertices.append([vx,vz,vy])
-                                        fa+=1
-                                        fb+=1
-                                        fc+=1
-                                        if type4 > 0:
-                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
-                        elif Chunks == b"\x03\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6D:
-                                if vertexCount == 3:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2.append([vxaa,vzaa,vyaa])
-                                    f.seek(78,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd = unpack("B", f.read(1))[0] & 0x0F
-                                            
-                                        fad//=3
-                                        fbd//=3
-                                        fcd//=3
-
-                                        fad+=1*len(vertices2)-3
-                                        fbd+=1*len(vertices2)-3
-                                        fcd+=1*len(vertices2)-3
-
-                                        faces2.append([fad,fbd,fcd])
-
-                                elif vertexCount == 4:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2a.append([vxaa,vzaa,vyaa])
-                                    f.seek(82,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-                                        pad03 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-                                        
-
-                                elif vertexCount == 5:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2b.append([vx,vz,vy])
-
-                                    f.seek(86,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100:
-                                            
-                                        
-                                            fad5//=3
-                                            fbd5//=3
-                                            fcd5//=3
-                                            fdd5//=3
-                                            fed5//=3
-                                            
-                                            fad5+=1*len(vertices2b)-5
-                                            fbd5+=1*len(vertices2b)-5
-                                            fcd5+=1*len(vertices2b)-5
-                                            fdd5+=1*len(vertices2b)-5
-                                            fed5+=1*len(vertices2b)-5
-                                            
-                                            faces2b.append([fad5,fbd5,fcd5])
-                                            faces2b.append([fbd5,fcd5,fdd5])
-                                            faces2b.append([fcd5,fdd5,fed5])
-
-                                elif vertexCount == 6:
-                                    for i in range(1):
-                                        vx = unpack("<h", f.read(2))[0]/4096
-                                        vy = unpack("<h", f.read(2))[0]/4096
-                                        vz = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx1 = unpack("<h", f.read(2))[0]/4096
-                                        vy1 = unpack("<h", f.read(2))[0]/4096
-                                        vz1 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx2 = unpack("<h", f.read(2))[0]/4096
-                                        vy2 = unpack("<h", f.read(2))[0]/4096
-                                        vz2 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx3 = unpack("<h", f.read(2))[0]/4096
-                                        vy3 = unpack("<h", f.read(2))[0]/4096
-                                        vz3 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx4 = unpack("<h", f.read(2))[0]/4096
-                                        vy4 = unpack("<h", f.read(2))[0]/4096
-                                        vz4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx6 = unpack("<h", f.read(2))[0]/4096
-                                        vy6 = unpack("<h", f.read(2))[0]/4096
-                                        vz6 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-                                        vertices2c.append([vx,vz,vy])
-                                        vertices2c.append([vx1,vz1,vy1])
-                                        vertices2c.append([vx2,vz2,vy2])
-                                        vertices2c.append([vx3,vz3,vy3])
-                                        vertices2c.append([vx4,vz4,vy4])
-                                        vertices2c.append([vx6,vz6,vy6])
-
-                                    f.seek(90,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsC = unpack("B", f.read(1))[0]
-                                    if flagsC == 0x6E:
-                                        if facecount == 2:
-                                            
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            if pad01 == 100:
-                                                
-                                            
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                            elif pad01 == 15:
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-
-                                        elif facecount == 3:
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            pad02 = unpack("B", f.read(1))[0]
-                                            pad03 = unpack("B", f.read(1))[0]
-
-                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                                fad6a//=3
-                                                fbd6a//=3
-                                                fcd6a//=3
-                                                fdd6a//=3
-                                                fed6a//=3
-                                                ffd6a//=3
-                                                fgd6a//=3
-                                                fhd6a//=3
-                                                
-                                                fad6a+=1*len(vertices2c)-6
-                                                fbd6a+=1*len(vertices2c)-6
-                                                fcd6a+=1*len(vertices2c)-6
-                                                fdd6a+=1*len(vertices2c)-6
-                                                fed6a+=1*len(vertices2c)-6
-                                                ffd6a+=1*len(vertices2c)-6
-                                                fgd6a+=1*len(vertices2c)-6
-                                                fhd6a+=1*len(vertices2c)-6
-
-                                                faces2c.append([fad6a,fbd6a,fcd6a])
-                                                faces2c.append([fbd6a,fcd6a,fdd6a])
-                                                faces2c.append([fcd6a,fdd6a,fed6a])
-                                                faces2c.append([fdd6a,fed6a,ffd6a])
-                                                faces2c.append([fed6a,ffd6a,fgd6a])
-                                                faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                                elif vertexCount == 7:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        
-                                        vertices2d.append([vx,vz,vy])
+            f.seek(0)
+            Chunk = f.read()
+            f.seek(0)
+            while f.tell() < len(Chunk):
+                Chunks = f.read(4)
+                if Chunks == b"\x03\x01\x00\x01":
+                    f.seek(1,1)
+                    value1 = unpack("B", f.read(1))[0]
+                    vertexCount = unpack("B", f.read(1))[0]
+                    flag2a = unpack("B", f.read(1))[0]
+                    if flag2a == 0x6C:
+                        if vertexCount == 0:
+                            pass
+                        elif vertexCount == 1:
+                            pass
+                        elif vertexCount == 2:
+                            pass
+                        elif vertexCount:
+                            for j in range(vertexCount):
+                                vx = unpack("<f", f.read(4))[0]
+                                vy = unpack("<f", f.read(4))[0]
+                                vz = unpack("<f", f.read(4))[0]
+                                type4 = unpack("B", f.read(1))[0]==False
+                                value1 = unpack("B", f.read(1))[0]
+                                nz = unpack("<h", f.read(2))[0]
+                                vertices.append([vx,vz,vy])
+                                fa+=1
+                                fb+=1
+                                fc+=1
+                                if type4 > 0:
+                                    faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                elif Chunks == b"\x03\x02\x00\x01":
+                    f.seek(1,1)
+                    value1 = unpack("B", f.read(1))[0]
+                    vertexCount = unpack("B", f.read(1))[0] // 2
+                    flag2a = unpack("B", f.read(1))[0]
+                    if flag2a == 0x6D:
+                        if vertexCount == 3:
+                            for i in range(vertexCount):
+                                vxaa = unpack("<h", f.read(2))[0] / 4096
+                                vyaa = unpack("<h", f.read(2))[0] / 4096
+                                vzaa = unpack("<h", f.read(2))[0] / 4096
+                                vwaa = unpack("<h", f.read(2))[0] / 4096
+                                uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                vertices2.append([vxaa,vzaa,vyaa])
+                            f.seek(78,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsB = unpack("B", f.read(1))[0]
+                            if flagsB == 0x6E:
+                                id1 = unpack("B", f.read(1))[0]
+                                fad = unpack("B", f.read(1))[0] & 0x0F
+                                fbd = unpack("B", f.read(1))[0] & 0x0F
+                                fcd = unpack("B", f.read(1))[0] & 0x0F
                                     
-                                    
-                                    
-                                    
-                                    
-                                                
+                                fad//=3
+                                fbd//=3
+                                fcd//=3
+
+                                fad+=1*len(vertices2)-3
+                                fbd+=1*len(vertices2)-3
+                                fcd+=1*len(vertices2)-3
+
+                                faces2.append([fad,fbd,fcd])
+
+                        elif vertexCount == 4:
+                            for i in range(vertexCount):
+                                vxaa = unpack("<h", f.read(2))[0] / 4096
+                                vyaa = unpack("<h", f.read(2))[0] / 4096
+                                vzaa = unpack("<h", f.read(2))[0] / 4096
+                                vwaa = unpack("<h", f.read(2))[0] / 4096
+                                uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                vertices2a.append([vxaa,vzaa,vyaa])
+                            f.seek(82,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsB = unpack("B", f.read(1))[0]
+                            if flagsB == 0x6E:
+                                id1 = unpack("B", f.read(1))[0]
+                                fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                pad01 = unpack("B", f.read(1))[0]
+                                pad02 = unpack("B", f.read(1))[0]
+                                pad03 = unpack("B", f.read(1))[0]
+
+                                if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                    fad1abc//=3
+                                    fbd1abc//=3
+                                    fcd1abc//=3
+                                    fdd1abc//=3
+
+                                    fad1abc+=1*len(vertices2a)-4
+                                    fbd1abc+=1*len(vertices2a)-4
+                                    fcd1abc+=1*len(vertices2a)-4
+                                    fdd1abc+=1*len(vertices2a)-4
+
+                                    faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                    faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                    fad1abc//=3
+                                    fbd1abc//=3
+                                    fcd1abc//=3
+                                    fdd1abc//=3
+
+                                    fad1abc+=1*len(vertices2a)-4
+                                    fbd1abc+=1*len(vertices2a)-4
+                                    fcd1abc+=1*len(vertices2a)-4
+                                    fdd1abc+=1*len(vertices2a)-4
+
+                                    faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                    faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                    fad1abc//=3
+                                    fbd1abc//=3
+                                    fcd1abc//=3
+                                    fdd1abc//=3
+
+                                    fad1abc+=1*len(vertices2a)-4
+                                    fbd1abc+=1*len(vertices2a)-4
+                                    fcd1abc+=1*len(vertices2a)-4
+                                    fdd1abc+=1*len(vertices2a)-4
+
+                                    faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                    faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                
+
+                        elif vertexCount == 5:
+                            for i in range(vertexCount):
+                                vx = unpack("<h", f.read(2))[0] / 4096
+                                vy = unpack("<h", f.read(2))[0] / 4096
+                                vz = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(2,1)
+                                uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                vertices2b.append([vx,vz,vy])
+
+                            f.seek(86,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsB = unpack("B", f.read(1))[0]
+                            if flagsB == 0x6E:
+                                id1 = unpack("B", f.read(1))[0]
+                                fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                pad01 = unpack("B", f.read(1))[0]
+                                pad02 = unpack("B", f.read(1))[0]
+
+                                if pad01 == 100 and pad02 == 100:
                                     
                                 
-                        elif Chunks == b"\x04\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2 = unpack("B", f.read(1))[0]
-                            if flag2 == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount == 3:
-                                    for j in range(1):
+                                    fad5//=3
+                                    fbd5//=3
+                                    fcd5//=3
+                                    fdd5//=3
+                                    fed5//=3
+                                    
+                                    fad5+=1*len(vertices2b)-5
+                                    fbd5+=1*len(vertices2b)-5
+                                    fcd5+=1*len(vertices2b)-5
+                                    fdd5+=1*len(vertices2b)-5
+                                    fed5+=1*len(vertices2b)-5
+                                    
+                                    faces2b.append([fad5,fbd5,fcd5])
+                                    faces2b.append([fbd5,fcd5,fdd5])
+                                    faces2b.append([fcd5,fdd5,fed5])
+
+                        elif vertexCount == 6:
+                            for i in range(1):
+                                vx = unpack("<h", f.read(2))[0]/4096
+                                vy = unpack("<h", f.read(2))[0]/4096
+                                vz = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx1 = unpack("<h", f.read(2))[0]/4096
+                                vy1 = unpack("<h", f.read(2))[0]/4096
+                                vz1 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx2 = unpack("<h", f.read(2))[0]/4096
+                                vy2 = unpack("<h", f.read(2))[0]/4096
+                                vz2 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx3 = unpack("<h", f.read(2))[0]/4096
+                                vy3 = unpack("<h", f.read(2))[0]/4096
+                                vz3 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx4 = unpack("<h", f.read(2))[0]/4096
+                                vy4 = unpack("<h", f.read(2))[0]/4096
+                                vz4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx6 = unpack("<h", f.read(2))[0]/4096
+                                vy6 = unpack("<h", f.read(2))[0]/4096
+                                vz6 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+                                vertices2c.append([vx,vz,vy])
+                                vertices2c.append([vx1,vz1,vy1])
+                                vertices2c.append([vx2,vz2,vy2])
+                                vertices2c.append([vx3,vz3,vy3])
+                                vertices2c.append([vx4,vz4,vy4])
+                                vertices2c.append([vx6,vz6,vy6])
+
+                            f.seek(90,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsC = unpack("B", f.read(1))[0]
+                            if flagsC == 0x6E:
+                                if facecount == 2:
+                                    
+                                    id1 = unpack("B", f.read(1))[0]
+                                    fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                    fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                    fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                    fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                    fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                    ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                    pad01 = unpack("B", f.read(1))[0]
+                                    if pad01 == 100:
                                         
-                                        vx0001__ = unpack("<f", f.read(4))[0]
-                                        vy0001__ = unpack("<f", f.read(4))[0]
-                                        vz0001__ = unpack("<f", f.read(4))[0]
-                                        brightness1__ = unpack("<f", f.read(4))[0]
-                                        uvx0001__ = unpack("<f", f.read(4))[0]
-                                        uvy0001__ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4 = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__A = unpack("<f", f.read(4))[0]
-                                        vy0001__A = unpack("<f", f.read(4))[0]
-                                        vz0001__A = unpack("<f", f.read(4))[0]
-                                        brightness1__A = unpack("<f", f.read(4))[0]
-                                        uvx0001__A = unpack("<f", f.read(4))[0]
-                                        uvy0001__A = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4A = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__B = unpack("<f", f.read(4))[0]
-                                        vy0001__B = unpack("<f", f.read(4))[0]
-                                        vz0001__B = unpack("<f", f.read(4))[0]
-                                        brightness1__B = unpack("<f", f.read(4))[0]
-                                        uvx0001__B = unpack("<f", f.read(4))[0]
-                                        uvy0001__B = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4B = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__C = unpack("<f", f.read(4))[0]
-                                        vy0001__C = unpack("<f", f.read(4))[0]
-                                        vz0001__C = unpack("<f", f.read(4))[0]
-                                        brightness1__C = unpack("<f", f.read(4))[0]
-                                        uvx0001__C = unpack("<f", f.read(4))[0]
-                                        uvy0001__C = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4C = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__D = unpack("<f", f.read(4))[0]
-                                        vy0001__D = unpack("<f", f.read(4))[0]
-                                        vz0001__D = unpack("<f", f.read(4))[0]
-                                        brightness1__D = unpack("<f", f.read(4))[0]
-                                        uvx0001__D = unpack("<f", f.read(4))[0]
-                                        uvy0001__D = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4D = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__E = unpack("<f", f.read(4))[0]
-                                        vy0001__E = unpack("<f", f.read(4))[0]
-                                        vz0001__E = unpack("<f", f.read(4))[0]
-                                        brightness1__E = unpack("<f", f.read(4))[0]
-                                        uvx0001__E = unpack("<f", f.read(4))[0]
-                                        uvy0001__E = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4E = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__N = unpack("<f", f.read(4))[0]
-                                        vy0001__N = unpack("<f", f.read(4))[0]
-                                        vz0001__N = unpack("<f", f.read(4))[0]
-                                        brightness1__N = unpack("<f", f.read(4))[0]
-                                        uvx0001__N = unpack("<f", f.read(4))[0]
-                                        uvy0001__N = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4N = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__O = unpack("<f", f.read(4))[0]
-                                        vy0001__O = unpack("<f", f.read(4))[0]
-                                        vz0001__O = unpack("<f", f.read(4))[0]
-                                        brightness1__O = unpack("<f", f.read(4))[0]
-                                        uvx0001__O = unpack("<f", f.read(4))[0]
-                                        uvy0001__O = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4O = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__P = unpack("<f", f.read(4))[0]
-                                        vy0001__P = unpack("<f", f.read(4))[0]
-                                        vz0001__P = unpack("<f", f.read(4))[0]
-                                        brightness1__P = unpack("<f", f.read(4))[0]
-                                        uvx0001__P = unpack("<f", f.read(4))[0]
-                                        uvy0001__P = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4P = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offsettA = unpack("<I", f.read(4))[0]
-                                    if offsettA == 1627553807:
-                                        offsetB = unpack("<I", f.read(4))[0]
-                                        if offsetB != 65538:
-                                            f.seek(-4,1)
-                                            offsetC = unpack("<I", f.read(4))[0]
-                                            if offsetC == 65539:
-                                                f.seek(2,1)
-                                                vcount2 = unpack("B", f.read(1))[0]
-                                                vflag2 = unpack("B", f.read(1))[0]
-                                                if vflag2 == 0x6C:
-                                                    #missing verts
-                                                    if vcount2 == 4:
-                                                        for i in range(1):
-                                                            vx0001__J = unpack("<f", f.read(4))[0]
-                                                            vy0001__J = unpack("<f", f.read(4))[0]
-                                                            vz0001__J = unpack("<f", f.read(4))[0]
-                                                            type4J = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__K = unpack("<f", f.read(4))[0]
-                                                            vy0001__K = unpack("<f", f.read(4))[0]
-                                                            vz0001__K = unpack("<f", f.read(4))[0]
-                                                            type4K = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__L = unpack("<f", f.read(4))[0]
-                                                            vy0001__L = unpack("<f", f.read(4))[0]
-                                                            vz0001__L = unpack("<f", f.read(4))[0]
-                                                            type4L = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__M = unpack("<f", f.read(4))[0]
-                                                            vy0001__M = unpack("<f", f.read(4))[0]
-                                                            vz0001__M = unpack("<f", f.read(4))[0]
-                                                            type4M = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                        offsettC = unpack("<I", f.read(4))[0]
-                                                        if offsettC == 16777473:
-                                                            if type4J == 0:
-                                                                if type4K == 1:
-                                                                    if type4L == 0:
-                                                                        if type4M == 0:
-                                                                            vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
-                                                                            vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
-                                                                            vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
-
-                                                                            vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
-                                                                            vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
-                                                                            vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
-
-                                                                            fa2Ta_b+=1*5
-                                                                            fb2Ta_b+=1*5
-                                                                            fc2Ta_b+=1*5
-                                                                            fd2Ta_b+=1*5
-                                                                            fe2Ta_b+=1*5
-
-                                                                            faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
-                                                                            faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
-                                                                            faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
-                                        elif offsetB == 65538:
-                                            f.seek(2,1)
-                                            vcount1 = unpack("B", f.read(1))[0]
-                                            vflag1 = unpack("B", f.read(1))[0]
-                                            if vflag1 == 0x6C:
-                                                #missing verts
-                                                if vcount1 == 4:
-                                                    for i in range(1):
-                                                        vx0001__F = unpack("<f", f.read(4))[0]
-                                                        vy0001__F = unpack("<f", f.read(4))[0]
-                                                        vz0001__F = unpack("<f", f.read(4))[0]
-                                                        type4F = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__G = unpack("<f", f.read(4))[0]
-                                                        vy0001__G = unpack("<f", f.read(4))[0]
-                                                        vz0001__G = unpack("<f", f.read(4))[0]
-                                                        type4G = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__H = unpack("<f", f.read(4))[0]
-                                                        vy0001__H = unpack("<f", f.read(4))[0]
-                                                        vz0001__H = unpack("<f", f.read(4))[0]
-                                                        type4H = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__I = unpack("<f", f.read(4))[0]
-                                                        vy0001__I = unpack("<f", f.read(4))[0]
-                                                        vz0001__I = unpack("<f", f.read(4))[0]
-                                                        type4I = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offsettB = unpack("<I", f.read(4))[0]
-                                                    if offsettB == 16777473:
-                                                        if type4F == 0:
-                                                            if type4G == 1:
-                                                                if type4H == 0:
-                                                                    if type4I == 0:
-                                                                        vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
-                                                                        vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
-                                                                        vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
-
-                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
-                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
-                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
-
-                                                                        fa2Ta_a+=1*5
-                                                                        fb2Ta_a+=1*5
-                                                                        fc2Ta_a+=1*5
-                                                                        fd2Ta_a+=1*5
-                                                                        fe2Ta_a+=1*5
-
-                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
-                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
-                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
-                                    elif offsettA == 16777473:
-                                        if type4 == 1:
-                                            if type4A == 1:
-                                                if type4B == 0:
-
-                                                    vertices3.append([vx0001__,vz0001__,vy0001__])
-                                                    vertices3.append([vx0001__A,vz0001__A,vy0001__A])
-                                                    vertices3.append([vx0001__B,vz0001__B,vy0001__B])
-                                                    uv_coords.append([uvx0001__,-uvy0001__])
-                                                    uv_coords.append([uvx0001__A,-uvy0001__A])
-                                                    uv_coords.append([uvx0001__B,-uvy0001__B])
-
-                                                    fa2+=1*3
-                                                    fb2+=1*3
-                                                    fc2+=1*3
-
-                                                    faces3.append([fa2,fb2,fc2])
-                elif UnkCount1 != 0 and UnkCount2 != 0:
-                    f.seek(UnkCountEntrySize2,0)
-                    for i in range(UnkCount2):
-                        ScaleX = unpack("<f", f.read(4))[0]
-                        rotationz = unpack("<f", f.read(4))[0]
-                        rotationy = unpack("<f", f.read(4))[0]
-                        null1 = unpack("<f", f.read(4))[0]
-                        nrotationz = unpack("<f", f.read(4))[0]
-                        ScaleY = unpack("<f", f.read(4))[0]
-                        rotationx = unpack("<f", f.read(4))[0]
-                        nrotationy = unpack("<f", f.read(4))[0]
-                        null2 = unpack("<f", f.read(4))[0]
-                        nrotationx = unpack("<f", f.read(4))[0]
-                        ScaleZ = unpack("<f", f.read(4))[0]
-                        null3 = unpack("<f", f.read(4))[0]
-                        posx = unpack("<f", f.read(4))[0]
-                        posy = unpack("<f", f.read(4))[0]
-                        posz = unpack("<f", f.read(4))[0]
-                        ScaleW = unpack("<f", f.read(4))[0]
-                        objlen = unpack("<I", f.read(4))[0]
-                        objid = unpack("<I", f.read(4))[0]
-                        f.seek(8,1)
-                    f.seek(0)
-                    Chunk = f.read()
-                    f.seek(0)
-                    while f.tell() < len(Chunk):
-                        Chunks = f.read(4)
-                        if Chunks == b"\x03\x01\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0]
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount:
-                                    for j in range(vertexCount):
-                                        vx = unpack("<f", f.read(4))[0]
-                                        vy = unpack("<f", f.read(4))[0]
-                                        vz = unpack("<f", f.read(4))[0]
-                                        type4 = unpack("B", f.read(1))[0]==False
-                                        value1 = unpack("B", f.read(1))[0]
-                                        nz = unpack("<h", f.read(2))[0]
-                                        vertices.append([vx,vz,vy])
-                                        fa+=1
-                                        fb+=1
-                                        fc+=1
-                                        if type4 > 0:
-                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
-                        elif Chunks == b"\x03\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6D:
-                                if vertexCount == 3:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2.append([vxaa,vzaa,vyaa])
-                                    f.seek(78,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd = unpack("B", f.read(1))[0] & 0x0F
-                                            
-                                        fad//=3
-                                        fbd//=3
-                                        fcd//=3
-
-                                        fad+=1*len(vertices2)-3
-                                        fbd+=1*len(vertices2)-3
-                                        fcd+=1*len(vertices2)-3
-
-                                        faces2.append([fad,fbd,fcd])
-
-                                elif vertexCount == 4:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2a.append([vxaa,vzaa,vyaa])
-                                    f.seek(82,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-                                        pad03 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                    
+                                        fad6//=3
+                                        fbd6//=3
+                                        fcd6//=3
+                                        fdd6//=3
+                                        fed6//=3
+                                        ffd6//=3
                                         
+                                        fad6+=1*len(vertices2c)-6
+                                        fbd6+=1*len(vertices2c)-6
+                                        fcd6+=1*len(vertices2c)-6
+                                        fdd6+=1*len(vertices2c)-6
+                                        fed6+=1*len(vertices2c)-6
+                                        ffd6+=1*len(vertices2c)-6
 
-                                elif vertexCount == 5:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2b.append([vx,vz,vy])
-
-                                    f.seek(86,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100:
-                                            
+                                        if math.isclose(vy3,vy4) == True:
+                                            faces2c.append([fad6,fbd6,fcd6])
+                                            faces2c.append([fbd6,fcd6,fdd6])
+                                            faces2c.append([fcd6,fdd6,fed6])
+                                            faces2c.append([fdd6,fed6,ffd6])
+                                        else:
+                                            faces2c.append([fad6,fbd6,fcd6])
+                                            faces2c.append([fdd6,fed6,ffd6])
+                                    elif pad01 == 15:
+                                        fad6//=3
+                                        fbd6//=3
+                                        fcd6//=3
+                                        fdd6//=3
+                                        fed6//=3
+                                        ffd6//=3
                                         
-                                            fad5//=3
-                                            fbd5//=3
-                                            fcd5//=3
-                                            fdd5//=3
-                                            fed5//=3
-                                            
-                                            fad5+=1*len(vertices2b)-5
-                                            fbd5+=1*len(vertices2b)-5
-                                            fcd5+=1*len(vertices2b)-5
-                                            fdd5+=1*len(vertices2b)-5
-                                            fed5+=1*len(vertices2b)-5
-                                            
-                                            faces2b.append([fad5,fbd5,fcd5])
-                                            faces2b.append([fbd5,fcd5,fdd5])
-                                            faces2b.append([fcd5,fdd5,fed5])
+                                        fad6+=1*len(vertices2c)-6
+                                        fbd6+=1*len(vertices2c)-6
+                                        fcd6+=1*len(vertices2c)-6
+                                        fdd6+=1*len(vertices2c)-6
+                                        fed6+=1*len(vertices2c)-6
+                                        ffd6+=1*len(vertices2c)-6
 
-                                elif vertexCount == 6:
-                                    for i in range(1):
-                                        vx = unpack("<h", f.read(2))[0]/4096
-                                        vy = unpack("<h", f.read(2))[0]/4096
-                                        vz = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
+                                        if math.isclose(vy3,vy4) == True:
+                                            faces2c.append([fad6,fbd6,fcd6])
+                                            faces2c.append([fbd6,fcd6,fdd6])
+                                            faces2c.append([fcd6,fdd6,fed6])
+                                            faces2c.append([fdd6,fed6,ffd6])
+                                        else:
+                                            faces2c.append([fad6,fbd6,fcd6])
+                                            faces2c.append([fdd6,fed6,ffd6])
 
-                                        vx1 = unpack("<h", f.read(2))[0]/4096
-                                        vy1 = unpack("<h", f.read(2))[0]/4096
-                                        vz1 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
+                                elif facecount == 3:
+                                    id1 = unpack("B", f.read(1))[0]
+                                    fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                    ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fhd6a = unpack("B", f.read(1))[0] & 0x0F
 
-                                        vx2 = unpack("<h", f.read(2))[0]/4096
-                                        vy2 = unpack("<h", f.read(2))[0]/4096
-                                        vz2 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
+                                    pad01 = unpack("B", f.read(1))[0]
+                                    pad02 = unpack("B", f.read(1))[0]
+                                    pad03 = unpack("B", f.read(1))[0]
 
-                                        vx3 = unpack("<h", f.read(2))[0]/4096
-                                        vy3 = unpack("<h", f.read(2))[0]/4096
-                                        vz3 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx4 = unpack("<h", f.read(2))[0]/4096
-                                        vy4 = unpack("<h", f.read(2))[0]/4096
-                                        vz4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx6 = unpack("<h", f.read(2))[0]/4096
-                                        vy6 = unpack("<h", f.read(2))[0]/4096
-                                        vz6 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-                                        vertices2c.append([vx,vz,vy])
-                                        vertices2c.append([vx1,vz1,vy1])
-                                        vertices2c.append([vx2,vz2,vy2])
-                                        vertices2c.append([vx3,vz3,vy3])
-                                        vertices2c.append([vx4,vz4,vy4])
-                                        vertices2c.append([vx6,vz6,vy6])
-
-                                    f.seek(90,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsC = unpack("B", f.read(1))[0]
-                                    if flagsC == 0x6E:
-                                        if facecount == 2:
-                                            
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            if pad01 == 100:
-                                                
-                                            
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                            elif pad01 == 15:
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-
-                                        elif facecount == 3:
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            pad02 = unpack("B", f.read(1))[0]
-                                            pad03 = unpack("B", f.read(1))[0]
-
-                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                                fad6a//=3
-                                                fbd6a//=3
-                                                fcd6a//=3
-                                                fdd6a//=3
-                                                fed6a//=3
-                                                ffd6a//=3
-                                                fgd6a//=3
-                                                fhd6a//=3
-                                                
-                                                fad6a+=1*len(vertices2c)-6
-                                                fbd6a+=1*len(vertices2c)-6
-                                                fcd6a+=1*len(vertices2c)-6
-                                                fdd6a+=1*len(vertices2c)-6
-                                                fed6a+=1*len(vertices2c)-6
-                                                ffd6a+=1*len(vertices2c)-6
-                                                fgd6a+=1*len(vertices2c)-6
-                                                fhd6a+=1*len(vertices2c)-6
-
-                                                faces2c.append([fad6a,fbd6a,fcd6a])
-                                                faces2c.append([fbd6a,fcd6a,fdd6a])
-                                                faces2c.append([fcd6a,fdd6a,fed6a])
-                                                faces2c.append([fdd6a,fed6a,ffd6a])
-                                                faces2c.append([fed6a,ffd6a,fgd6a])
-                                                faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                                elif vertexCount == 7:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
+                                    if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                        fad6a//=3
+                                        fbd6a//=3
+                                        fcd6a//=3
+                                        fdd6a//=3
+                                        fed6a//=3
+                                        ffd6a//=3
+                                        fgd6a//=3
+                                        fhd6a//=3
                                         
-                                        vertices2d.append([vx,vz,vy])
-                                    
-                                    
-                                    
-                                    
-                                    
-                                                
-                                    
+                                        fad6a+=1*len(vertices2c)-6
+                                        fbd6a+=1*len(vertices2c)-6
+                                        fcd6a+=1*len(vertices2c)-6
+                                        fdd6a+=1*len(vertices2c)-6
+                                        fed6a+=1*len(vertices2c)-6
+                                        ffd6a+=1*len(vertices2c)-6
+                                        fgd6a+=1*len(vertices2c)-6
+                                        fhd6a+=1*len(vertices2c)-6
+
+                                        faces2c.append([fad6a,fbd6a,fcd6a])
+                                        faces2c.append([fbd6a,fcd6a,fdd6a])
+                                        faces2c.append([fcd6a,fdd6a,fed6a])
+                                        faces2c.append([fdd6a,fed6a,ffd6a])
+                                        faces2c.append([fed6a,ffd6a,fgd6a])
+                                        faces2c.append([ffd6a,fgd6a,fhd6a])
+
+                        elif vertexCount == 7:
+                            for i in range(vertexCount):
+                                vx = unpack("<h", f.read(2))[0] / 4096
+                                vy = unpack("<h", f.read(2))[0] / 4096
+                                vz = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(2,1)
+                                uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
                                 
-                        elif Chunks == b"\x04\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2 = unpack("B", f.read(1))[0]
-                            if flag2 == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount == 3:
-                                    for j in range(1):
+                                vertices2d.append([vx,vz,vy])
+                            
+                            
+                            
+                            
+                            
                                         
-                                        vx0001__ = unpack("<f", f.read(4))[0]
-                                        vy0001__ = unpack("<f", f.read(4))[0]
-                                        vz0001__ = unpack("<f", f.read(4))[0]
-                                        brightness1__ = unpack("<f", f.read(4))[0]
-                                        uvx0001__ = unpack("<f", f.read(4))[0]
-                                        uvy0001__ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4 = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__A = unpack("<f", f.read(4))[0]
-                                        vy0001__A = unpack("<f", f.read(4))[0]
-                                        vz0001__A = unpack("<f", f.read(4))[0]
-                                        brightness1__A = unpack("<f", f.read(4))[0]
-                                        uvx0001__A = unpack("<f", f.read(4))[0]
-                                        uvy0001__A = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4A = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__B = unpack("<f", f.read(4))[0]
-                                        vy0001__B = unpack("<f", f.read(4))[0]
-                                        vz0001__B = unpack("<f", f.read(4))[0]
-                                        brightness1__B = unpack("<f", f.read(4))[0]
-                                        uvx0001__B = unpack("<f", f.read(4))[0]
-                                        uvy0001__B = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4B = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__C = unpack("<f", f.read(4))[0]
-                                        vy0001__C = unpack("<f", f.read(4))[0]
-                                        vz0001__C = unpack("<f", f.read(4))[0]
-                                        brightness1__C = unpack("<f", f.read(4))[0]
-                                        uvx0001__C = unpack("<f", f.read(4))[0]
-                                        uvy0001__C = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4C = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__D = unpack("<f", f.read(4))[0]
-                                        vy0001__D = unpack("<f", f.read(4))[0]
-                                        vz0001__D = unpack("<f", f.read(4))[0]
-                                        brightness1__D = unpack("<f", f.read(4))[0]
-                                        uvx0001__D = unpack("<f", f.read(4))[0]
-                                        uvy0001__D = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4D = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__E = unpack("<f", f.read(4))[0]
-                                        vy0001__E = unpack("<f", f.read(4))[0]
-                                        vz0001__E = unpack("<f", f.read(4))[0]
-                                        brightness1__E = unpack("<f", f.read(4))[0]
-                                        uvx0001__E = unpack("<f", f.read(4))[0]
-                                        uvy0001__E = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4E = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__N = unpack("<f", f.read(4))[0]
-                                        vy0001__N = unpack("<f", f.read(4))[0]
-                                        vz0001__N = unpack("<f", f.read(4))[0]
-                                        brightness1__N = unpack("<f", f.read(4))[0]
-                                        uvx0001__N = unpack("<f", f.read(4))[0]
-                                        uvy0001__N = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4N = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__O = unpack("<f", f.read(4))[0]
-                                        vy0001__O = unpack("<f", f.read(4))[0]
-                                        vz0001__O = unpack("<f", f.read(4))[0]
-                                        brightness1__O = unpack("<f", f.read(4))[0]
-                                        uvx0001__O = unpack("<f", f.read(4))[0]
-                                        uvy0001__O = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4O = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__P = unpack("<f", f.read(4))[0]
-                                        vy0001__P = unpack("<f", f.read(4))[0]
-                                        vz0001__P = unpack("<f", f.read(4))[0]
-                                        brightness1__P = unpack("<f", f.read(4))[0]
-                                        uvx0001__P = unpack("<f", f.read(4))[0]
-                                        uvy0001__P = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4P = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offsettA = unpack("<I", f.read(4))[0]
-                                    if offsettA == 1627553807:
-                                        offsetB = unpack("<I", f.read(4))[0]
-                                        if offsetB != 65538:
-                                            f.seek(-4,1)
-                                            offsetC = unpack("<I", f.read(4))[0]
-                                            if offsetC == 65539:
-                                                f.seek(2,1)
-                                                vcount2 = unpack("B", f.read(1))[0]
-                                                vflag2 = unpack("B", f.read(1))[0]
-                                                if vflag2 == 0x6C:
-                                                    #missing verts
-                                                    if vcount2 == 4:
-                                                        for i in range(1):
-                                                            vx0001__J = unpack("<f", f.read(4))[0]
-                                                            vy0001__J = unpack("<f", f.read(4))[0]
-                                                            vz0001__J = unpack("<f", f.read(4))[0]
-                                                            type4J = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__K = unpack("<f", f.read(4))[0]
-                                                            vy0001__K = unpack("<f", f.read(4))[0]
-                                                            vz0001__K = unpack("<f", f.read(4))[0]
-                                                            type4K = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__L = unpack("<f", f.read(4))[0]
-                                                            vy0001__L = unpack("<f", f.read(4))[0]
-                                                            vz0001__L = unpack("<f", f.read(4))[0]
-                                                            type4L = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__M = unpack("<f", f.read(4))[0]
-                                                            vy0001__M = unpack("<f", f.read(4))[0]
-                                                            vz0001__M = unpack("<f", f.read(4))[0]
-                                                            type4M = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                        offsettC = unpack("<I", f.read(4))[0]
-                                                        if offsettC == 16777473:
-                                                            if type4J == 0:
-                                                                if type4K == 1:
-                                                                    if type4L == 0:
-                                                                        if type4M == 0:
-                                                                            vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
-                                                                            vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
-                                                                            vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
-
-                                                                            vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
-                                                                            vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
-                                                                            vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
-
-                                                                            fa2Ta_b+=1*5
-                                                                            fb2Ta_b+=1*5
-                                                                            fc2Ta_b+=1*5
-                                                                            fd2Ta_b+=1*5
-                                                                            fe2Ta_b+=1*5
-
-                                                                            faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
-                                                                            faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
-                                                                            faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
-                                        elif offsetB == 65538:
-                                            f.seek(2,1)
-                                            vcount1 = unpack("B", f.read(1))[0]
-                                            vflag1 = unpack("B", f.read(1))[0]
-                                            if vflag1 == 0x6C:
-                                                #missing verts
-                                                if vcount1 == 4:
-                                                    for i in range(1):
-                                                        vx0001__F = unpack("<f", f.read(4))[0]
-                                                        vy0001__F = unpack("<f", f.read(4))[0]
-                                                        vz0001__F = unpack("<f", f.read(4))[0]
-                                                        type4F = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__G = unpack("<f", f.read(4))[0]
-                                                        vy0001__G = unpack("<f", f.read(4))[0]
-                                                        vz0001__G = unpack("<f", f.read(4))[0]
-                                                        type4G = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__H = unpack("<f", f.read(4))[0]
-                                                        vy0001__H = unpack("<f", f.read(4))[0]
-                                                        vz0001__H = unpack("<f", f.read(4))[0]
-                                                        type4H = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__I = unpack("<f", f.read(4))[0]
-                                                        vy0001__I = unpack("<f", f.read(4))[0]
-                                                        vz0001__I = unpack("<f", f.read(4))[0]
-                                                        type4I = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offsettB = unpack("<I", f.read(4))[0]
-                                                    if offsettB == 16777473:
-                                                        if type4F == 0:
-                                                            if type4G == 1:
-                                                                if type4H == 0:
-                                                                    if type4I == 0:
-                                                                        vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
-                                                                        vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
-                                                                        vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
-
-                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
-                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
-                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
-
-                                                                        fa2Ta_a+=1*5
-                                                                        fb2Ta_a+=1*5
-                                                                        fc2Ta_a+=1*5
-                                                                        fd2Ta_a+=1*5
-                                                                        fe2Ta_a+=1*5
-
-                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
-                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
-                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
-                                    elif offsettA == 16777473:
-                                        if type4 == 1:
-                                            if type4A == 1:
-                                                if type4B == 0:
-
-                                                    vertices3.append([vx0001__,vz0001__,vy0001__])
-                                                    vertices3.append([vx0001__A,vz0001__A,vy0001__A])
-                                                    vertices3.append([vx0001__B,vz0001__B,vy0001__B])
-                                                    uv_coords.append([uvx0001__,-uvy0001__])
-                                                    uv_coords.append([uvx0001__A,-uvy0001__A])
-                                                    uv_coords.append([uvx0001__B,-uvy0001__B])
-
-                                                    fa2+=1*3
-                                                    fb2+=1*3
-                                                    fc2+=1*3
-
-                                                    faces3.append([fa2,fb2,fc2])
-
-            elif ObjectCount == 0:
-                if UnkCount1 != 0 and UnkCount2 != 0:
-                    f.seek(UnkCountEntrySize2,0)
-                    for i in range(UnkCount2):
-                        ScaleX = unpack("<f", f.read(4))[0]
-                        rotationz = unpack("<f", f.read(4))[0]
-                        rotationy = unpack("<f", f.read(4))[0]
-                        null1 = unpack("<f", f.read(4))[0]
-                        nrotationz = unpack("<f", f.read(4))[0]
-                        ScaleY = unpack("<f", f.read(4))[0]
-                        rotationx = unpack("<f", f.read(4))[0]
-                        nrotationy = unpack("<f", f.read(4))[0]
-                        null2 = unpack("<f", f.read(4))[0]
-                        nrotationx = unpack("<f", f.read(4))[0]
-                        ScaleZ = unpack("<f", f.read(4))[0]
-                        null3 = unpack("<f", f.read(4))[0]
-                        posx = unpack("<f", f.read(4))[0]
-                        posy = unpack("<f", f.read(4))[0]
-                        posz = unpack("<f", f.read(4))[0]
-                        ScaleW = unpack("<f", f.read(4))[0]
-                        objlen = unpack("<I", f.read(4))[0]
-                        objid = unpack("<I", f.read(4))[0]
-                        f.seek(8,1)
-                    f.seek(0)
-                    Chunk = f.read()
-                    f.seek(0)
-                    while f.tell() < len(Chunk):
-                        Chunks = f.read(4)
-                        if Chunks == b"\x03\x01\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0]
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount:
-                                    for j in range(vertexCount):
-                                        vx = unpack("<f", f.read(4))[0]
-                                        vy = unpack("<f", f.read(4))[0]
-                                        vz = unpack("<f", f.read(4))[0]
-                                        type4 = unpack("B", f.read(1))[0]==False
-                                        value1 = unpack("B", f.read(1))[0]
-                                        nz = unpack("<h", f.read(2))[0]
-                                        vertices.append([vx,vz,vy])
-                                        fa+=1
-                                        fb+=1
-                                        fc+=1
-                                        if type4 > 0:
-                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
-                        elif Chunks == b"\x03\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6D:
-                                if vertexCount == 3:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2.append([vxaa,vzaa,vyaa])
-                                    f.seek(78,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd = unpack("B", f.read(1))[0] & 0x0F
-                                            
-                                        fad//=3
-                                        fbd//=3
-                                        fcd//=3
-
-                                        fad+=1*len(vertices2)-3
-                                        fbd+=1*len(vertices2)-3
-                                        fcd+=1*len(vertices2)-3
-
-                                        faces2.append([fad,fbd,fcd])
-
-                                elif vertexCount == 4:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2a.append([vxaa,vzaa,vyaa])
-                                    f.seek(82,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-                                        pad03 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-                                        
-
-                                elif vertexCount == 5:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2b.append([vx,vz,vy])
-
-                                    f.seek(86,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100:
-                                            
-                                        
-                                            fad5//=3
-                                            fbd5//=3
-                                            fcd5//=3
-                                            fdd5//=3
-                                            fed5//=3
-                                            
-                                            fad5+=1*len(vertices2b)-5
-                                            fbd5+=1*len(vertices2b)-5
-                                            fcd5+=1*len(vertices2b)-5
-                                            fdd5+=1*len(vertices2b)-5
-                                            fed5+=1*len(vertices2b)-5
-                                            
-                                            faces2b.append([fad5,fbd5,fcd5])
-                                            faces2b.append([fbd5,fcd5,fdd5])
-                                            faces2b.append([fcd5,fdd5,fed5])
-
-                                elif vertexCount == 6:
-                                    for i in range(1):
-                                        vx = unpack("<h", f.read(2))[0]/4096
-                                        vy = unpack("<h", f.read(2))[0]/4096
-                                        vz = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx1 = unpack("<h", f.read(2))[0]/4096
-                                        vy1 = unpack("<h", f.read(2))[0]/4096
-                                        vz1 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx2 = unpack("<h", f.read(2))[0]/4096
-                                        vy2 = unpack("<h", f.read(2))[0]/4096
-                                        vz2 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx3 = unpack("<h", f.read(2))[0]/4096
-                                        vy3 = unpack("<h", f.read(2))[0]/4096
-                                        vz3 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx4 = unpack("<h", f.read(2))[0]/4096
-                                        vy4 = unpack("<h", f.read(2))[0]/4096
-                                        vz4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx6 = unpack("<h", f.read(2))[0]/4096
-                                        vy6 = unpack("<h", f.read(2))[0]/4096
-                                        vz6 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-                                        vertices2c.append([vx,vz,vy])
-                                        vertices2c.append([vx1,vz1,vy1])
-                                        vertices2c.append([vx2,vz2,vy2])
-                                        vertices2c.append([vx3,vz3,vy3])
-                                        vertices2c.append([vx4,vz4,vy4])
-                                        vertices2c.append([vx6,vz6,vy6])
-
-                                    f.seek(90,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsC = unpack("B", f.read(1))[0]
-                                    if flagsC == 0x6E:
-                                        if facecount == 2:
-                                            
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            if pad01 == 100:
-                                                
-                                            
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                            elif pad01 == 15:
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-
-                                        elif facecount == 3:
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            pad02 = unpack("B", f.read(1))[0]
-                                            pad03 = unpack("B", f.read(1))[0]
-
-                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                                fad6a//=3
-                                                fbd6a//=3
-                                                fcd6a//=3
-                                                fdd6a//=3
-                                                fed6a//=3
-                                                ffd6a//=3
-                                                fgd6a//=3
-                                                fhd6a//=3
-                                                
-                                                fad6a+=1*len(vertices2c)-6
-                                                fbd6a+=1*len(vertices2c)-6
-                                                fcd6a+=1*len(vertices2c)-6
-                                                fdd6a+=1*len(vertices2c)-6
-                                                fed6a+=1*len(vertices2c)-6
-                                                ffd6a+=1*len(vertices2c)-6
-                                                fgd6a+=1*len(vertices2c)-6
-                                                fhd6a+=1*len(vertices2c)-6
-
-                                                faces2c.append([fad6a,fbd6a,fcd6a])
-                                                faces2c.append([fbd6a,fcd6a,fdd6a])
-                                                faces2c.append([fcd6a,fdd6a,fed6a])
-                                                faces2c.append([fdd6a,fed6a,ffd6a])
-                                                faces2c.append([fed6a,ffd6a,fgd6a])
-                                                faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                                elif vertexCount == 7:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        
-                                        vertices2d.append([vx,vz,vy])
-                                    
-                                    
-                                    
-                                    
-                                    
-                                                
-                                    
+                            
+                        
+                elif Chunks == b"\x04\x02\x00\x01":
+                    f.seek(1,1)
+                    value1 = unpack("B", f.read(1))[0]
+                    vertexCount = unpack("B", f.read(1))[0] // 2
+                    flag2 = unpack("B", f.read(1))[0]
+                    if flag2 == 0x6C:
+                        if vertexCount == 0:
+                            pass
+                        elif vertexCount == 1:
+                            pass
+                        elif vertexCount == 2:
+                            pass
+                        elif vertexCount == 3:
+                            for j in range(1):
                                 
-                        elif Chunks == b"\x04\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2 = unpack("B", f.read(1))[0]
-                            if flag2 == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount == 3:
-                                    for j in range(1):
-                                        
-                                        vx0001__ = unpack("<f", f.read(4))[0]
-                                        vy0001__ = unpack("<f", f.read(4))[0]
-                                        vz0001__ = unpack("<f", f.read(4))[0]
-                                        brightness1__ = unpack("<f", f.read(4))[0]
-                                        uvx0001__ = unpack("<f", f.read(4))[0]
-                                        uvy0001__ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4 = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                vx0001__ = unpack("<f", f.read(4))[0]
+                                vy0001__ = unpack("<f", f.read(4))[0]
+                                vz0001__ = unpack("<f", f.read(4))[0]
+                                brightness1__ = unpack("<f", f.read(4))[0]
+                                uvx0001__ = unpack("<f", f.read(4))[0]
+                                uvy0001__ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
 
-                                        vx0001__A = unpack("<f", f.read(4))[0]
-                                        vy0001__A = unpack("<f", f.read(4))[0]
-                                        vz0001__A = unpack("<f", f.read(4))[0]
-                                        brightness1__A = unpack("<f", f.read(4))[0]
-                                        uvx0001__A = unpack("<f", f.read(4))[0]
-                                        uvy0001__A = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4A = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                vx0001__A = unpack("<f", f.read(4))[0]
+                                vy0001__A = unpack("<f", f.read(4))[0]
+                                vz0001__A = unpack("<f", f.read(4))[0]
+                                brightness1__A = unpack("<f", f.read(4))[0]
+                                uvx0001__A = unpack("<f", f.read(4))[0]
+                                uvy0001__A = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4A = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
 
-                                        vx0001__B = unpack("<f", f.read(4))[0]
-                                        vy0001__B = unpack("<f", f.read(4))[0]
-                                        vz0001__B = unpack("<f", f.read(4))[0]
-                                        brightness1__B = unpack("<f", f.read(4))[0]
-                                        uvx0001__B = unpack("<f", f.read(4))[0]
-                                        uvy0001__B = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4B = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__C = unpack("<f", f.read(4))[0]
-                                        vy0001__C = unpack("<f", f.read(4))[0]
-                                        vz0001__C = unpack("<f", f.read(4))[0]
-                                        brightness1__C = unpack("<f", f.read(4))[0]
-                                        uvx0001__C = unpack("<f", f.read(4))[0]
-                                        uvy0001__C = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4C = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                vx0001__B = unpack("<f", f.read(4))[0]
+                                vy0001__B = unpack("<f", f.read(4))[0]
+                                vz0001__B = unpack("<f", f.read(4))[0]
+                                brightness1__B = unpack("<f", f.read(4))[0]
+                                uvx0001__B = unpack("<f", f.read(4))[0]
+                                uvy0001__B = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4B = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for i in range(1):
+                                vx0001__C = unpack("<f", f.read(4))[0]
+                                vy0001__C = unpack("<f", f.read(4))[0]
+                                vz0001__C = unpack("<f", f.read(4))[0]
+                                brightness1__C = unpack("<f", f.read(4))[0]
+                                uvx0001__C = unpack("<f", f.read(4))[0]
+                                uvy0001__C = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4C = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
 
-                                        vx0001__D = unpack("<f", f.read(4))[0]
-                                        vy0001__D = unpack("<f", f.read(4))[0]
-                                        vz0001__D = unpack("<f", f.read(4))[0]
-                                        brightness1__D = unpack("<f", f.read(4))[0]
-                                        uvx0001__D = unpack("<f", f.read(4))[0]
-                                        uvy0001__D = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4D = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                vx0001__D = unpack("<f", f.read(4))[0]
+                                vy0001__D = unpack("<f", f.read(4))[0]
+                                vz0001__D = unpack("<f", f.read(4))[0]
+                                brightness1__D = unpack("<f", f.read(4))[0]
+                                uvx0001__D = unpack("<f", f.read(4))[0]
+                                uvy0001__D = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4D = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
 
-                                        vx0001__E = unpack("<f", f.read(4))[0]
-                                        vy0001__E = unpack("<f", f.read(4))[0]
-                                        vz0001__E = unpack("<f", f.read(4))[0]
-                                        brightness1__E = unpack("<f", f.read(4))[0]
-                                        uvx0001__E = unpack("<f", f.read(4))[0]
-                                        uvy0001__E = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4E = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__N = unpack("<f", f.read(4))[0]
-                                        vy0001__N = unpack("<f", f.read(4))[0]
-                                        vz0001__N = unpack("<f", f.read(4))[0]
-                                        brightness1__N = unpack("<f", f.read(4))[0]
-                                        uvx0001__N = unpack("<f", f.read(4))[0]
-                                        uvy0001__N = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4N = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                vx0001__E = unpack("<f", f.read(4))[0]
+                                vy0001__E = unpack("<f", f.read(4))[0]
+                                vz0001__E = unpack("<f", f.read(4))[0]
+                                brightness1__E = unpack("<f", f.read(4))[0]
+                                uvx0001__E = unpack("<f", f.read(4))[0]
+                                uvy0001__E = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4E = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for i in range(1):
+                                vx0001__N = unpack("<f", f.read(4))[0]
+                                vy0001__N = unpack("<f", f.read(4))[0]
+                                vz0001__N = unpack("<f", f.read(4))[0]
+                                brightness1__N = unpack("<f", f.read(4))[0]
+                                uvx0001__N = unpack("<f", f.read(4))[0]
+                                uvy0001__N = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4N = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
 
-                                        vx0001__O = unpack("<f", f.read(4))[0]
-                                        vy0001__O = unpack("<f", f.read(4))[0]
-                                        vz0001__O = unpack("<f", f.read(4))[0]
-                                        brightness1__O = unpack("<f", f.read(4))[0]
-                                        uvx0001__O = unpack("<f", f.read(4))[0]
-                                        uvy0001__O = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4O = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                vx0001__O = unpack("<f", f.read(4))[0]
+                                vy0001__O = unpack("<f", f.read(4))[0]
+                                vz0001__O = unpack("<f", f.read(4))[0]
+                                brightness1__O = unpack("<f", f.read(4))[0]
+                                uvx0001__O = unpack("<f", f.read(4))[0]
+                                uvy0001__O = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4O = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
 
-                                        vx0001__P = unpack("<f", f.read(4))[0]
-                                        vy0001__P = unpack("<f", f.read(4))[0]
-                                        vz0001__P = unpack("<f", f.read(4))[0]
-                                        brightness1__P = unpack("<f", f.read(4))[0]
-                                        uvx0001__P = unpack("<f", f.read(4))[0]
-                                        uvy0001__P = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4P = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offsettA = unpack("<I", f.read(4))[0]
-                                    if offsettA == 1627553807:
-                                        offsetB = unpack("<I", f.read(4))[0]
-                                        if offsetB != 65538:
-                                            f.seek(-4,1)
-                                            offsetC = unpack("<I", f.read(4))[0]
-                                            if offsetC == 65539:
-                                                f.seek(2,1)
-                                                vcount2 = unpack("B", f.read(1))[0]
-                                                vflag2 = unpack("B", f.read(1))[0]
-                                                if vflag2 == 0x6C:
-                                                    #missing verts
-                                                    if vcount2 == 4:
-                                                        for i in range(1):
-                                                            vx0001__J = unpack("<f", f.read(4))[0]
-                                                            vy0001__J = unpack("<f", f.read(4))[0]
-                                                            vz0001__J = unpack("<f", f.read(4))[0]
-                                                            type4J = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__K = unpack("<f", f.read(4))[0]
-                                                            vy0001__K = unpack("<f", f.read(4))[0]
-                                                            vz0001__K = unpack("<f", f.read(4))[0]
-                                                            type4K = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__L = unpack("<f", f.read(4))[0]
-                                                            vy0001__L = unpack("<f", f.read(4))[0]
-                                                            vz0001__L = unpack("<f", f.read(4))[0]
-                                                            type4L = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__M = unpack("<f", f.read(4))[0]
-                                                            vy0001__M = unpack("<f", f.read(4))[0]
-                                                            vz0001__M = unpack("<f", f.read(4))[0]
-                                                            type4M = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                        offsettC = unpack("<I", f.read(4))[0]
-                                                        if offsettC == 16777473:
-                                                            if type4J == 0:
-                                                                if type4K == 1:
-                                                                    if type4L == 0:
-                                                                        if type4M == 0:
-                                                                            vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
-                                                                            vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
-                                                                            vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
-
-                                                                            vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
-                                                                            vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
-                                                                            vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
-
-                                                                            fa2Ta_b+=1*5
-                                                                            fb2Ta_b+=1*5
-                                                                            fc2Ta_b+=1*5
-                                                                            fd2Ta_b+=1*5
-                                                                            fe2Ta_b+=1*5
-
-                                                                            faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
-                                                                            faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
-                                                                            faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
-                                        elif offsetB == 65538:
-                                            f.seek(2,1)
-                                            vcount1 = unpack("B", f.read(1))[0]
-                                            vflag1 = unpack("B", f.read(1))[0]
-                                            if vflag1 == 0x6C:
-                                                #missing verts
-                                                if vcount1 == 4:
-                                                    for i in range(1):
-                                                        vx0001__F = unpack("<f", f.read(4))[0]
-                                                        vy0001__F = unpack("<f", f.read(4))[0]
-                                                        vz0001__F = unpack("<f", f.read(4))[0]
-                                                        type4F = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__G = unpack("<f", f.read(4))[0]
-                                                        vy0001__G = unpack("<f", f.read(4))[0]
-                                                        vz0001__G = unpack("<f", f.read(4))[0]
-                                                        type4G = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__H = unpack("<f", f.read(4))[0]
-                                                        vy0001__H = unpack("<f", f.read(4))[0]
-                                                        vz0001__H = unpack("<f", f.read(4))[0]
-                                                        type4H = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__I = unpack("<f", f.read(4))[0]
-                                                        vy0001__I = unpack("<f", f.read(4))[0]
-                                                        vz0001__I = unpack("<f", f.read(4))[0]
-                                                        type4I = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offsettB = unpack("<I", f.read(4))[0]
-                                                    if offsettB == 16777473:
-                                                        if type4F == 0:
-                                                            if type4G == 1:
-                                                                if type4H == 0:
-                                                                    if type4I == 0:
-                                                                        vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
-                                                                        vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
-                                                                        vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
-
-                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
-                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
-                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
-
-                                                                        fa2Ta_a+=1*5
-                                                                        fb2Ta_a+=1*5
-                                                                        fc2Ta_a+=1*5
-                                                                        fd2Ta_a+=1*5
-                                                                        fe2Ta_a+=1*5
-
-                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
-                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
-                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
-                                    elif offsettA == 16777473:
-                                        if type4 == 1:
-                                            if type4A == 1:
-                                                if type4B == 0:
-
-                                                    vertices3.append([vx0001__,vz0001__,vy0001__])
-                                                    vertices3.append([vx0001__A,vz0001__A,vy0001__A])
-                                                    vertices3.append([vx0001__B,vz0001__B,vy0001__B])
-                                                    uv_coords.append([uvx0001__,-uvy0001__])
-                                                    uv_coords.append([uvx0001__A,-uvy0001__A])
-                                                    uv_coords.append([uvx0001__B,-uvy0001__B])
-
-                                                    fa2+=1*3
-                                                    fb2+=1*3
-                                                    fc2+=1*3
-
-                                                    faces3.append([fa2,fb2,fc2])
-                if UnkCount1 == 0 and UnkCount2 == 0:
-                    f.seek(0)
-                    Chunk = f.read()
-                    f.seek(0)
-                    while f.tell() < len(Chunk):
-                        Chunks = f.read(4)
-                        if Chunks == b"\x03\x01\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0]
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount:
-                                    for j in range(vertexCount):
-                                        vx = unpack("<f", f.read(4))[0]
-                                        vy = unpack("<f", f.read(4))[0]
-                                        vz = unpack("<f", f.read(4))[0]
-                                        type4 = unpack("B", f.read(1))[0]==False
-                                        value1 = unpack("B", f.read(1))[0]
-                                        nz = unpack("<h", f.read(2))[0]
-                                        vertices.append([vx,vz,vy])
-                                        fa+=1
-                                        fb+=1
-                                        fc+=1
-                                        if type4 > 0:
-                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
-                        elif Chunks == b"\x03\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6D:
-                                if vertexCount == 3:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2.append([vxaa,vzaa,vyaa])
-                                    f.seek(78,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd = unpack("B", f.read(1))[0] & 0x0F
-                                            
-                                        fad//=3
-                                        fbd//=3
-                                        fcd//=3
-
-                                        fad+=1*len(vertices2)-3
-                                        fbd+=1*len(vertices2)-3
-                                        fcd+=1*len(vertices2)-3
-
-                                        faces2.append([fad,fbd,fcd])
-
-                                elif vertexCount == 4:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2a.append([vxaa,vzaa,vyaa])
-                                    f.seek(82,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-                                        pad03 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-                                        
-
-                                elif vertexCount == 5:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
+                                vx0001__P = unpack("<f", f.read(4))[0]
+                                vy0001__P = unpack("<f", f.read(4))[0]
+                                vz0001__P = unpack("<f", f.read(4))[0]
+                                brightness1__P = unpack("<f", f.read(4))[0]
+                                uvx0001__P = unpack("<f", f.read(4))[0]
+                                uvy0001__P = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4P = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                            offsettA = unpack("<I", f.read(4))[0]
+                            if offsettA == 1627553807:
+                                offsetB = unpack("<I", f.read(4))[0]
+                                if offsetB != 65538:
+                                    f.seek(-4,1)
+                                    offsetC = unpack("<I", f.read(4))[0]
+                                    if offsetC == 65539:
                                         f.seek(2,1)
-                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2b.append([vx,vz,vy])
+                                        vcount2 = unpack("B", f.read(1))[0]
+                                        vflag2 = unpack("B", f.read(1))[0]
+                                        if vflag2 == 0x6C:
+                                            #missing verts
+                                            if vcount2 == 4:
+                                                for i in range(1):
+                                                    vx0001__J = unpack("<f", f.read(4))[0]
+                                                    vy0001__J = unpack("<f", f.read(4))[0]
+                                                    vz0001__J = unpack("<f", f.read(4))[0]
+                                                    type4J = unpack("B", f.read(1))[0]
+                                                    f.seek(3,1)
+                                                    vx0001__K = unpack("<f", f.read(4))[0]
+                                                    vy0001__K = unpack("<f", f.read(4))[0]
+                                                    vz0001__K = unpack("<f", f.read(4))[0]
+                                                    type4K = unpack("B", f.read(1))[0]
+                                                    f.seek(3,1)
+                                                    vx0001__L = unpack("<f", f.read(4))[0]
+                                                    vy0001__L = unpack("<f", f.read(4))[0]
+                                                    vz0001__L = unpack("<f", f.read(4))[0]
+                                                    type4L = unpack("B", f.read(1))[0]
+                                                    f.seek(3,1)
+                                                    vx0001__M = unpack("<f", f.read(4))[0]
+                                                    vy0001__M = unpack("<f", f.read(4))[0]
+                                                    vz0001__M = unpack("<f", f.read(4))[0]
+                                                    type4M = unpack("B", f.read(1))[0]
+                                                    f.seek(3,1)
+                                                offsettC = unpack("<I", f.read(4))[0]
+                                                if offsettC == 16777473:
+                                                    if type4J == 0:
+                                                        if type4K == 1:
+                                                            if type4L == 0:
+                                                                if type4M == 0:
+                                                                    vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
+                                                                    vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
+                                                                    vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
 
-                                    f.seek(86,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
+                                                                    vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
+                                                                    vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
+                                                                    vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
 
-                                        if pad01 == 100 and pad02 == 100:
-                                            
-                                        
-                                            fad5//=3
-                                            fbd5//=3
-                                            fcd5//=3
-                                            fdd5//=3
-                                            fed5//=3
-                                            
-                                            fad5+=1*len(vertices2b)-5
-                                            fbd5+=1*len(vertices2b)-5
-                                            fcd5+=1*len(vertices2b)-5
-                                            fdd5+=1*len(vertices2b)-5
-                                            fed5+=1*len(vertices2b)-5
-                                            
-                                            faces2b.append([fad5,fbd5,fcd5])
-                                            faces2b.append([fbd5,fcd5,fdd5])
-                                            faces2b.append([fcd5,fdd5,fed5])
+                                                                    fa2Ta_b+=1*5
+                                                                    fb2Ta_b+=1*5
+                                                                    fc2Ta_b+=1*5
+                                                                    fd2Ta_b+=1*5
+                                                                    fe2Ta_b+=1*5
 
-                                elif vertexCount == 6:
-                                    for i in range(1):
-                                        vx = unpack("<h", f.read(2))[0]/4096
-                                        vy = unpack("<h", f.read(2))[0]/4096
-                                        vz = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
+                                                                    faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
+                                                                    faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
+                                                                    faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
+                                elif offsetB == 65538:
+                                    f.seek(2,1)
+                                    vcount1 = unpack("B", f.read(1))[0]
+                                    vflag1 = unpack("B", f.read(1))[0]
+                                    if vflag1 == 0x6C:
+                                        #missing verts
+                                        if vcount1 == 4:
+                                            for i in range(1):
+                                                vx0001__F = unpack("<f", f.read(4))[0]
+                                                vy0001__F = unpack("<f", f.read(4))[0]
+                                                vz0001__F = unpack("<f", f.read(4))[0]
+                                                type4F = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__G = unpack("<f", f.read(4))[0]
+                                                vy0001__G = unpack("<f", f.read(4))[0]
+                                                vz0001__G = unpack("<f", f.read(4))[0]
+                                                type4G = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__H = unpack("<f", f.read(4))[0]
+                                                vy0001__H = unpack("<f", f.read(4))[0]
+                                                vz0001__H = unpack("<f", f.read(4))[0]
+                                                type4H = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__I = unpack("<f", f.read(4))[0]
+                                                vy0001__I = unpack("<f", f.read(4))[0]
+                                                vz0001__I = unpack("<f", f.read(4))[0]
+                                                type4I = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                            offsettB = unpack("<I", f.read(4))[0]
+                                            if offsettB == 16777473:
+                                                if type4F == 0:
+                                                    if type4G == 1:
+                                                        if type4H == 0:
+                                                            if type4I == 0:
+                                                                vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
+                                                                vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
+                                                                vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
 
-                                        vx1 = unpack("<h", f.read(2))[0]/4096
-                                        vy1 = unpack("<h", f.read(2))[0]/4096
-                                        vz1 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
+                                                                vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
 
-                                        vx2 = unpack("<h", f.read(2))[0]/4096
-                                        vy2 = unpack("<h", f.read(2))[0]/4096
-                                        vz2 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
+                                                                fa2Ta_a+=1*5
+                                                                fb2Ta_a+=1*5
+                                                                fc2Ta_a+=1*5
+                                                                fd2Ta_a+=1*5
+                                                                fe2Ta_a+=1*5
 
-                                        vx3 = unpack("<h", f.read(2))[0]/4096
-                                        vy3 = unpack("<h", f.read(2))[0]/4096
-                                        vz3 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
+                                                                faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
+                            elif offsettA == 16777473:
+                                if type4 == 1:
+                                    if type4A == 1:
+                                        if type4B == 0:
 
-                                        vx4 = unpack("<h", f.read(2))[0]/4096
-                                        vy4 = unpack("<h", f.read(2))[0]/4096
-                                        vz4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
+                                            vertices3.append([vx0001__,vz0001__,vy0001__])
+                                            vertices3.append([vx0001__A,vz0001__A,vy0001__A])
+                                            vertices3.append([vx0001__B,vz0001__B,vy0001__B])
+                                            uv_coords.append([uvx0001__,-uvy0001__])
+                                            uv_coords.append([uvx0001__A,-uvy0001__A])
+                                            uv_coords.append([uvx0001__B,-uvy0001__B])
 
-                                        vx6 = unpack("<h", f.read(2))[0]/4096
-                                        vy6 = unpack("<h", f.read(2))[0]/4096
-                                        vz6 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-                                        vertices2c.append([vx,vz,vy])
-                                        vertices2c.append([vx1,vz1,vy1])
-                                        vertices2c.append([vx2,vz2,vy2])
-                                        vertices2c.append([vx3,vz3,vy3])
-                                        vertices2c.append([vx4,vz4,vy4])
-                                        vertices2c.append([vx6,vz6,vy6])
+                                            fa2+=1*3
+                                            fb2+=1*3
+                                            fc2+=1*3
 
-                                    f.seek(90,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsC = unpack("B", f.read(1))[0]
-                                    if flagsC == 0x6E:
-                                        if facecount == 2:
-                                            
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            if pad01 == 100:
-                                                
-                                            
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                            elif pad01 == 15:
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-
-                                        elif facecount == 3:
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            pad02 = unpack("B", f.read(1))[0]
-                                            pad03 = unpack("B", f.read(1))[0]
-
-                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                                fad6a//=3
-                                                fbd6a//=3
-                                                fcd6a//=3
-                                                fdd6a//=3
-                                                fed6a//=3
-                                                ffd6a//=3
-                                                fgd6a//=3
-                                                fhd6a//=3
-                                                
-                                                fad6a+=1*len(vertices2c)-6
-                                                fbd6a+=1*len(vertices2c)-6
-                                                fcd6a+=1*len(vertices2c)-6
-                                                fdd6a+=1*len(vertices2c)-6
-                                                fed6a+=1*len(vertices2c)-6
-                                                ffd6a+=1*len(vertices2c)-6
-                                                fgd6a+=1*len(vertices2c)-6
-                                                fhd6a+=1*len(vertices2c)-6
-
-                                                faces2c.append([fad6a,fbd6a,fcd6a])
-                                                faces2c.append([fbd6a,fcd6a,fdd6a])
-                                                faces2c.append([fcd6a,fdd6a,fed6a])
-                                                faces2c.append([fdd6a,fed6a,ffd6a])
-                                                faces2c.append([fed6a,ffd6a,fgd6a])
-                                                faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                                elif vertexCount == 7:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        
-                                        vertices2d.append([vx,vz,vy])
-                                    
-                                    
-                                    
-                                    
-                                    
-                                                
-                                    
-                                
-                        elif Chunks == b"\x04\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2 = unpack("B", f.read(1))[0]
-                            if flag2 == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount == 3:
-                                    for j in range(1):
-                                        
-                                        vx0001__ = unpack("<f", f.read(4))[0]
-                                        vy0001__ = unpack("<f", f.read(4))[0]
-                                        vz0001__ = unpack("<f", f.read(4))[0]
-                                        brightness1__ = unpack("<f", f.read(4))[0]
-                                        uvx0001__ = unpack("<f", f.read(4))[0]
-                                        uvy0001__ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4 = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__A = unpack("<f", f.read(4))[0]
-                                        vy0001__A = unpack("<f", f.read(4))[0]
-                                        vz0001__A = unpack("<f", f.read(4))[0]
-                                        brightness1__A = unpack("<f", f.read(4))[0]
-                                        uvx0001__A = unpack("<f", f.read(4))[0]
-                                        uvy0001__A = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4A = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__B = unpack("<f", f.read(4))[0]
-                                        vy0001__B = unpack("<f", f.read(4))[0]
-                                        vz0001__B = unpack("<f", f.read(4))[0]
-                                        brightness1__B = unpack("<f", f.read(4))[0]
-                                        uvx0001__B = unpack("<f", f.read(4))[0]
-                                        uvy0001__B = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4B = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__C = unpack("<f", f.read(4))[0]
-                                        vy0001__C = unpack("<f", f.read(4))[0]
-                                        vz0001__C = unpack("<f", f.read(4))[0]
-                                        brightness1__C = unpack("<f", f.read(4))[0]
-                                        uvx0001__C = unpack("<f", f.read(4))[0]
-                                        uvy0001__C = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4C = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__D = unpack("<f", f.read(4))[0]
-                                        vy0001__D = unpack("<f", f.read(4))[0]
-                                        vz0001__D = unpack("<f", f.read(4))[0]
-                                        brightness1__D = unpack("<f", f.read(4))[0]
-                                        uvx0001__D = unpack("<f", f.read(4))[0]
-                                        uvy0001__D = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4D = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__E = unpack("<f", f.read(4))[0]
-                                        vy0001__E = unpack("<f", f.read(4))[0]
-                                        vz0001__E = unpack("<f", f.read(4))[0]
-                                        brightness1__E = unpack("<f", f.read(4))[0]
-                                        uvx0001__E = unpack("<f", f.read(4))[0]
-                                        uvy0001__E = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4E = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__N = unpack("<f", f.read(4))[0]
-                                        vy0001__N = unpack("<f", f.read(4))[0]
-                                        vz0001__N = unpack("<f", f.read(4))[0]
-                                        brightness1__N = unpack("<f", f.read(4))[0]
-                                        uvx0001__N = unpack("<f", f.read(4))[0]
-                                        uvy0001__N = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4N = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__O = unpack("<f", f.read(4))[0]
-                                        vy0001__O = unpack("<f", f.read(4))[0]
-                                        vz0001__O = unpack("<f", f.read(4))[0]
-                                        brightness1__O = unpack("<f", f.read(4))[0]
-                                        uvx0001__O = unpack("<f", f.read(4))[0]
-                                        uvy0001__O = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4O = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__P = unpack("<f", f.read(4))[0]
-                                        vy0001__P = unpack("<f", f.read(4))[0]
-                                        vz0001__P = unpack("<f", f.read(4))[0]
-                                        brightness1__P = unpack("<f", f.read(4))[0]
-                                        uvx0001__P = unpack("<f", f.read(4))[0]
-                                        uvy0001__P = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4P = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offsettA = unpack("<I", f.read(4))[0]
-                                    if offsettA == 1627553807:
-                                        offsetB = unpack("<I", f.read(4))[0]
-                                        if offsetB != 65538:
-                                            f.seek(-4,1)
-                                            offsetC = unpack("<I", f.read(4))[0]
-                                            if offsetC == 65539:
-                                                f.seek(2,1)
-                                                vcount2 = unpack("B", f.read(1))[0]
-                                                vflag2 = unpack("B", f.read(1))[0]
-                                                if vflag2 == 0x6C:
-                                                    #missing verts
-                                                    if vcount2 == 4:
-                                                        for i in range(1):
-                                                            vx0001__J = unpack("<f", f.read(4))[0]
-                                                            vy0001__J = unpack("<f", f.read(4))[0]
-                                                            vz0001__J = unpack("<f", f.read(4))[0]
-                                                            type4J = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__K = unpack("<f", f.read(4))[0]
-                                                            vy0001__K = unpack("<f", f.read(4))[0]
-                                                            vz0001__K = unpack("<f", f.read(4))[0]
-                                                            type4K = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__L = unpack("<f", f.read(4))[0]
-                                                            vy0001__L = unpack("<f", f.read(4))[0]
-                                                            vz0001__L = unpack("<f", f.read(4))[0]
-                                                            type4L = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__M = unpack("<f", f.read(4))[0]
-                                                            vy0001__M = unpack("<f", f.read(4))[0]
-                                                            vz0001__M = unpack("<f", f.read(4))[0]
-                                                            type4M = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                        offsettC = unpack("<I", f.read(4))[0]
-                                                        if offsettC == 16777473:
-                                                            if type4J == 0:
-                                                                if type4K == 1:
-                                                                    if type4L == 0:
-                                                                        if type4M == 0:
-                                                                            vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
-                                                                            vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
-                                                                            vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
-
-                                                                            vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
-                                                                            vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
-                                                                            vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
-
-                                                                            fa2Ta_b+=1*5
-                                                                            fb2Ta_b+=1*5
-                                                                            fc2Ta_b+=1*5
-                                                                            fd2Ta_b+=1*5
-                                                                            fe2Ta_b+=1*5
-
-                                                                            faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
-                                                                            faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
-                                                                            faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
-                                        elif offsetB == 65538:
-                                            f.seek(2,1)
-                                            vcount1 = unpack("B", f.read(1))[0]
-                                            vflag1 = unpack("B", f.read(1))[0]
-                                            if vflag1 == 0x6C:
-                                                #missing verts
-                                                if vcount1 == 4:
-                                                    for i in range(1):
-                                                        vx0001__F = unpack("<f", f.read(4))[0]
-                                                        vy0001__F = unpack("<f", f.read(4))[0]
-                                                        vz0001__F = unpack("<f", f.read(4))[0]
-                                                        type4F = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__G = unpack("<f", f.read(4))[0]
-                                                        vy0001__G = unpack("<f", f.read(4))[0]
-                                                        vz0001__G = unpack("<f", f.read(4))[0]
-                                                        type4G = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__H = unpack("<f", f.read(4))[0]
-                                                        vy0001__H = unpack("<f", f.read(4))[0]
-                                                        vz0001__H = unpack("<f", f.read(4))[0]
-                                                        type4H = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__I = unpack("<f", f.read(4))[0]
-                                                        vy0001__I = unpack("<f", f.read(4))[0]
-                                                        vz0001__I = unpack("<f", f.read(4))[0]
-                                                        type4I = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offsettB = unpack("<I", f.read(4))[0]
-                                                    if offsettB == 16777473:
-                                                        if type4F == 0:
-                                                            if type4G == 1:
-                                                                if type4H == 0:
-                                                                    if type4I == 0:
-                                                                        vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
-                                                                        vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
-                                                                        vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
-
-                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
-                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
-                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
-
-                                                                        fa2Ta_a+=1*5
-                                                                        fb2Ta_a+=1*5
-                                                                        fc2Ta_a+=1*5
-                                                                        fd2Ta_a+=1*5
-                                                                        fe2Ta_a+=1*5
-
-                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
-                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
-                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
-                                    elif offsettA == 16777473:
-                                        if type4 == 1:
-                                            if type4A == 1:
-                                                if type4B == 0:
-
-                                                    vertices3.append([vx0001__,vz0001__,vy0001__])
-                                                    vertices3.append([vx0001__A,vz0001__A,vy0001__A])
-                                                    vertices3.append([vx0001__B,vz0001__B,vy0001__B])
-                                                    uv_coords.append([uvx0001__,-uvy0001__])
-                                                    uv_coords.append([uvx0001__A,-uvy0001__A])
-                                                    uv_coords.append([uvx0001__B,-uvy0001__B])
-
-                                                    fa2+=1*3
-                                                    fb2+=1*3
-                                                    fc2+=1*3
-
-                                                    faces3.append([fa2,fb2,fc2])
-                
+                                            faces3.append([fa2,fb2,fc2])                
     elif TextureCount != 0:
         if TextureEntrySize1 == 144 or TextureEntrySize1 == 148:
             idxA_=0
@@ -6760,3578 +4947,963 @@ def GHG_mesh(f, filepath):
                 skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
             bpy.ops.object.mode_set(mode = 'OBJECT')
 
-            if ObjectCount != 0:
-                if UnkCount1 == 0 and UnkCount2 == 0:
-                    f.seek(0)
-                    Chunk = f.read()
-                    f.seek(0)
-                    while f.tell() < len(Chunk):
-                        Chunks = f.read(4)
-                        if Chunks == b"\x03\x01\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0]
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount:
-                                    for j in range(vertexCount):
-                                        vx = unpack("<f", f.read(4))[0]
-                                        vy = unpack("<f", f.read(4))[0]
-                                        vz = unpack("<f", f.read(4))[0]
-                                        type4 = unpack("B", f.read(1))[0]==False
-                                        value1 = unpack("B", f.read(1))[0]
-                                        nz = unpack("<h", f.read(2))[0]
-                                        vertices.append([vx,vz,vy])
-                                        fa+=1
-                                        fb+=1
-                                        fc+=1
-                                        if type4 > 0:
-                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
-                        elif Chunks == b"\x03\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6D:
-                                if vertexCount == 3:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2.append([vxaa,vzaa,vyaa])
-                                    f.seek(78,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd = unpack("B", f.read(1))[0] & 0x0F
-                                            
-                                        fad//=3
-                                        fbd//=3
-                                        fcd//=3
-
-                                        fad+=1*len(vertices2)-3
-                                        fbd+=1*len(vertices2)-3
-                                        fcd+=1*len(vertices2)-3
-
-                                        faces2.append([fad,fbd,fcd])
-
-                                elif vertexCount == 4:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2a.append([vxaa,vzaa,vyaa])
-                                    f.seek(82,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-                                        pad03 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-                                        
-
-                                elif vertexCount == 5:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2b.append([vx,vz,vy])
-
-                                    f.seek(86,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100:
-                                            
-                                        
-                                            fad5//=3
-                                            fbd5//=3
-                                            fcd5//=3
-                                            fdd5//=3
-                                            fed5//=3
-                                            
-                                            fad5+=1*len(vertices2b)-5
-                                            fbd5+=1*len(vertices2b)-5
-                                            fcd5+=1*len(vertices2b)-5
-                                            fdd5+=1*len(vertices2b)-5
-                                            fed5+=1*len(vertices2b)-5
-                                            
-                                            faces2b.append([fad5,fbd5,fcd5])
-                                            faces2b.append([fbd5,fcd5,fdd5])
-                                            faces2b.append([fcd5,fdd5,fed5])
-
-                                elif vertexCount == 6:
-                                    for i in range(1):
-                                        vx = unpack("<h", f.read(2))[0]/4096
-                                        vy = unpack("<h", f.read(2))[0]/4096
-                                        vz = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx1 = unpack("<h", f.read(2))[0]/4096
-                                        vy1 = unpack("<h", f.read(2))[0]/4096
-                                        vz1 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx2 = unpack("<h", f.read(2))[0]/4096
-                                        vy2 = unpack("<h", f.read(2))[0]/4096
-                                        vz2 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx3 = unpack("<h", f.read(2))[0]/4096
-                                        vy3 = unpack("<h", f.read(2))[0]/4096
-                                        vz3 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx4 = unpack("<h", f.read(2))[0]/4096
-                                        vy4 = unpack("<h", f.read(2))[0]/4096
-                                        vz4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx6 = unpack("<h", f.read(2))[0]/4096
-                                        vy6 = unpack("<h", f.read(2))[0]/4096
-                                        vz6 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-                                        vertices2c.append([vx,vz,vy])
-                                        vertices2c.append([vx1,vz1,vy1])
-                                        vertices2c.append([vx2,vz2,vy2])
-                                        vertices2c.append([vx3,vz3,vy3])
-                                        vertices2c.append([vx4,vz4,vy4])
-                                        vertices2c.append([vx6,vz6,vy6])
-
-                                    f.seek(90,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsC = unpack("B", f.read(1))[0]
-                                    if flagsC == 0x6E:
-                                        if facecount == 2:
-                                            
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            if pad01 == 100:
-                                                
-                                            
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                            elif pad01 == 15:
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-
-                                        elif facecount == 3:
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            pad02 = unpack("B", f.read(1))[0]
-                                            pad03 = unpack("B", f.read(1))[0]
-
-                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                                fad6a//=3
-                                                fbd6a//=3
-                                                fcd6a//=3
-                                                fdd6a//=3
-                                                fed6a//=3
-                                                ffd6a//=3
-                                                fgd6a//=3
-                                                fhd6a//=3
-                                                
-                                                fad6a+=1*len(vertices2c)-6
-                                                fbd6a+=1*len(vertices2c)-6
-                                                fcd6a+=1*len(vertices2c)-6
-                                                fdd6a+=1*len(vertices2c)-6
-                                                fed6a+=1*len(vertices2c)-6
-                                                ffd6a+=1*len(vertices2c)-6
-                                                fgd6a+=1*len(vertices2c)-6
-                                                fhd6a+=1*len(vertices2c)-6
-
-                                                faces2c.append([fad6a,fbd6a,fcd6a])
-                                                faces2c.append([fbd6a,fcd6a,fdd6a])
-                                                faces2c.append([fcd6a,fdd6a,fed6a])
-                                                faces2c.append([fdd6a,fed6a,ffd6a])
-                                                faces2c.append([fed6a,ffd6a,fgd6a])
-                                                faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                                elif vertexCount == 7:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        
-                                        vertices2d.append([vx,vz,vy])
+            f.seek(0)
+            Chunk = f.read()
+            f.seek(0)
+            while f.tell() < len(Chunk):
+                Chunks = f.read(4)
+                if Chunks == b"\x03\x01\x00\x01":
+                    f.seek(1,1)
+                    value1 = unpack("B", f.read(1))[0]
+                    vertexCount = unpack("B", f.read(1))[0]
+                    flag2a = unpack("B", f.read(1))[0]
+                    if flag2a == 0x6C:
+                        if vertexCount == 0:
+                            pass
+                        elif vertexCount == 1:
+                            pass
+                        elif vertexCount == 2:
+                            pass
+                        elif vertexCount:
+                            for j in range(vertexCount):
+                                vx = unpack("<f", f.read(4))[0]
+                                vy = unpack("<f", f.read(4))[0]
+                                vz = unpack("<f", f.read(4))[0]
+                                type4 = unpack("B", f.read(1))[0]==False
+                                value1 = unpack("B", f.read(1))[0]
+                                nz = unpack("<h", f.read(2))[0]
+                                vertices.append([vx,vz,vy])
+                                fa+=1
+                                fb+=1
+                                fc+=1
+                                if type4 > 0:
+                                    faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                elif Chunks == b"\x03\x02\x00\x01":
+                    f.seek(1,1)
+                    value1 = unpack("B", f.read(1))[0]
+                    vertexCount = unpack("B", f.read(1))[0] // 2
+                    flag2a = unpack("B", f.read(1))[0]
+                    if flag2a == 0x6D:
+                        if vertexCount == 3:
+                            for i in range(vertexCount):
+                                vxaa = unpack("<h", f.read(2))[0] / 4096
+                                vyaa = unpack("<h", f.read(2))[0] / 4096
+                                vzaa = unpack("<h", f.read(2))[0] / 4096
+                                vwaa = unpack("<h", f.read(2))[0] / 4096
+                                uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                vertices2.append([vxaa,vzaa,vyaa])
+                            f.seek(78,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsB = unpack("B", f.read(1))[0]
+                            if flagsB == 0x6E:
+                                id1 = unpack("B", f.read(1))[0]
+                                fad = unpack("B", f.read(1))[0] & 0x0F
+                                fbd = unpack("B", f.read(1))[0] & 0x0F
+                                fcd = unpack("B", f.read(1))[0] & 0x0F
                                     
-                                    
-                                    
-                                    
-                                    
-                                                
+                                fad//=3
+                                fbd//=3
+                                fcd//=3
+
+                                fad+=1*len(vertices2)-3
+                                fbd+=1*len(vertices2)-3
+                                fcd+=1*len(vertices2)-3
+
+                                faces2.append([fad,fbd,fcd])
+
+                        elif vertexCount == 4:
+                            for i in range(vertexCount):
+                                vxaa = unpack("<h", f.read(2))[0] / 4096
+                                vyaa = unpack("<h", f.read(2))[0] / 4096
+                                vzaa = unpack("<h", f.read(2))[0] / 4096
+                                vwaa = unpack("<h", f.read(2))[0] / 4096
+                                uvxaa = unpack("<h", f.read(2))[0] / 4096
+                                uvyaa = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                vertices2a.append([vxaa,vzaa,vyaa])
+                            f.seek(82,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsB = unpack("B", f.read(1))[0]
+                            if flagsB == 0x6E:
+                                id1 = unpack("B", f.read(1))[0]
+                                fad1abc = unpack("B", f.read(1))[0] & 0x0F
+                                fbd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                fcd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                fdd1abc = unpack("B", f.read(1))[0] & 0x0F
+                                pad01 = unpack("B", f.read(1))[0]
+                                pad02 = unpack("B", f.read(1))[0]
+                                pad03 = unpack("B", f.read(1))[0]
+
+                                if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                    fad1abc//=3
+                                    fbd1abc//=3
+                                    fcd1abc//=3
+                                    fdd1abc//=3
+
+                                    fad1abc+=1*len(vertices2a)-4
+                                    fbd1abc+=1*len(vertices2a)-4
+                                    fcd1abc+=1*len(vertices2a)-4
+                                    fdd1abc+=1*len(vertices2a)-4
+
+                                    faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                    faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                elif pad01 == 12 and pad02 == 15 and pad03 == 18:
+                                    fad1abc//=3
+                                    fbd1abc//=3
+                                    fcd1abc//=3
+                                    fdd1abc//=3
+
+                                    fad1abc+=1*len(vertices2a)-4
+                                    fbd1abc+=1*len(vertices2a)-4
+                                    fcd1abc+=1*len(vertices2a)-4
+                                    fdd1abc+=1*len(vertices2a)-4
+
+                                    faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                    faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+
+                                elif pad01 == 60 and pad02 == 57 and pad03 == 54:
+                                    fad1abc//=3
+                                    fbd1abc//=3
+                                    fcd1abc//=3
+                                    fdd1abc//=3
+
+                                    fad1abc+=1*len(vertices2a)-4
+                                    fbd1abc+=1*len(vertices2a)-4
+                                    fcd1abc+=1*len(vertices2a)-4
+                                    fdd1abc+=1*len(vertices2a)-4
+
+                                    faces2a.append([fad1abc,fbd1abc,fcd1abc])
+                                    faces2a.append([fbd1abc,fcd1abc,fdd1abc])
+                                
+
+                        elif vertexCount == 5:
+                            for i in range(vertexCount):
+                                vx = unpack("<h", f.read(2))[0] / 4096
+                                vy = unpack("<h", f.read(2))[0] / 4096
+                                vz = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(2,1)
+                                uvx3 = unpack("<h", f.read(2))[0] / 4096
+                                uvy3 = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                vertices2b.append([vx,vz,vy])
+
+                            f.seek(86,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsB = unpack("B", f.read(1))[0]
+                            if flagsB == 0x6E:
+                                id1 = unpack("B", f.read(1))[0]
+                                fad5 = unpack("B", f.read(1))[0] & 0x0F
+                                fbd5 = unpack("B", f.read(1))[0] & 0x0F
+                                fcd5 = unpack("B", f.read(1))[0] & 0x0F
+                                fdd5 = unpack("B", f.read(1))[0] & 0x0F
+                                fed5 = unpack("B", f.read(1))[0] & 0x0F
+                                pad01 = unpack("B", f.read(1))[0]
+                                pad02 = unpack("B", f.read(1))[0]
+
+                                if pad01 == 100 and pad02 == 100:
                                     
                                 
-                        elif Chunks == b"\x04\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2 = unpack("B", f.read(1))[0]
-                            if flag2 == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount == 3:
-                                    for j in range(1):
+                                    fad5//=3
+                                    fbd5//=3
+                                    fcd5//=3
+                                    fdd5//=3
+                                    fed5//=3
+                                    
+                                    fad5+=1*len(vertices2b)-5
+                                    fbd5+=1*len(vertices2b)-5
+                                    fcd5+=1*len(vertices2b)-5
+                                    fdd5+=1*len(vertices2b)-5
+                                    fed5+=1*len(vertices2b)-5
+                                    
+                                    faces2b.append([fad5,fbd5,fcd5])
+                                    faces2b.append([fbd5,fcd5,fdd5])
+                                    faces2b.append([fcd5,fdd5,fed5])
+
+                        elif vertexCount == 6:
+                            for i in range(1):
+                                vx = unpack("<h", f.read(2))[0]/4096
+                                vy = unpack("<h", f.read(2))[0]/4096
+                                vz = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx1 = unpack("<h", f.read(2))[0]/4096
+                                vy1 = unpack("<h", f.read(2))[0]/4096
+                                vz1 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx2 = unpack("<h", f.read(2))[0]/4096
+                                vy2 = unpack("<h", f.read(2))[0]/4096
+                                vz2 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx3 = unpack("<h", f.read(2))[0]/4096
+                                vy3 = unpack("<h", f.read(2))[0]/4096
+                                vz3 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx4 = unpack("<h", f.read(2))[0]/4096
+                                vy4 = unpack("<h", f.read(2))[0]/4096
+                                vz4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+
+                                vx6 = unpack("<h", f.read(2))[0]/4096
+                                vy6 = unpack("<h", f.read(2))[0]/4096
+                                vz6 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(2,1)
+                                uvx4 = unpack("<h", f.read(2))[0]/4096
+                                uvy4 = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+                                vertices2c.append([vx,vz,vy])
+                                vertices2c.append([vx1,vz1,vy1])
+                                vertices2c.append([vx2,vz2,vy2])
+                                vertices2c.append([vx3,vz3,vy3])
+                                vertices2c.append([vx4,vz4,vy4])
+                                vertices2c.append([vx6,vz6,vy6])
+
+                            f.seek(90,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsC = unpack("B", f.read(1))[0]
+                            if flagsC == 0x6E:
+                                if facecount == 2:
+                                    
+                                    id1 = unpack("B", f.read(1))[0]
+                                    fad6 = unpack("B", f.read(1))[0] & 0x0F
+                                    fbd6 = unpack("B", f.read(1))[0] & 0x0F
+                                    fcd6 = unpack("B", f.read(1))[0] & 0x0F
+                                    fdd6 = unpack("B", f.read(1))[0] & 0x0F
+                                    fed6 = unpack("B", f.read(1))[0] & 0x0F
+                                    ffd6 = unpack("B", f.read(1))[0] & 0x0F
+                                    pad01 = unpack("B", f.read(1))[0]
+                                    if pad01 == 100:
                                         
-                                        vx0001__ = unpack("<f", f.read(4))[0]
-                                        vy0001__ = unpack("<f", f.read(4))[0]
-                                        vz0001__ = unpack("<f", f.read(4))[0]
-                                        brightness1__ = unpack("<f", f.read(4))[0]
-                                        uvx0001__ = unpack("<f", f.read(4))[0]
-                                        uvy0001__ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4 = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                    
+                                        fad6//=3
+                                        fbd6//=3
+                                        fcd6//=3
+                                        fdd6//=3
+                                        fed6//=3
+                                        ffd6//=3
+                                        
+                                        fad6+=1*len(vertices2c)-6
+                                        fbd6+=1*len(vertices2c)-6
+                                        fcd6+=1*len(vertices2c)-6
+                                        fdd6+=1*len(vertices2c)-6
+                                        fed6+=1*len(vertices2c)-6
+                                        ffd6+=1*len(vertices2c)-6
 
-                                        vx0001__A = unpack("<f", f.read(4))[0]
-                                        vy0001__A = unpack("<f", f.read(4))[0]
-                                        vz0001__A = unpack("<f", f.read(4))[0]
-                                        brightness1__A = unpack("<f", f.read(4))[0]
-                                        uvx0001__A = unpack("<f", f.read(4))[0]
-                                        uvy0001__A = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4A = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                        if math.isclose(vy3,vy4) == True:
+                                            faces2c.append([fad6,fbd6,fcd6])
+                                            faces2c.append([fbd6,fcd6,fdd6])
+                                            faces2c.append([fcd6,fdd6,fed6])
+                                            faces2c.append([fdd6,fed6,ffd6])
+                                        else:
+                                            faces2c.append([fad6,fbd6,fcd6])
+                                            faces2c.append([fdd6,fed6,ffd6])
+                                    elif pad01 == 15:
+                                        fad6//=3
+                                        fbd6//=3
+                                        fcd6//=3
+                                        fdd6//=3
+                                        fed6//=3
+                                        ffd6//=3
+                                        
+                                        fad6+=1*len(vertices2c)-6
+                                        fbd6+=1*len(vertices2c)-6
+                                        fcd6+=1*len(vertices2c)-6
+                                        fdd6+=1*len(vertices2c)-6
+                                        fed6+=1*len(vertices2c)-6
+                                        ffd6+=1*len(vertices2c)-6
 
-                                        vx0001__B = unpack("<f", f.read(4))[0]
-                                        vy0001__B = unpack("<f", f.read(4))[0]
-                                        vz0001__B = unpack("<f", f.read(4))[0]
-                                        brightness1__B = unpack("<f", f.read(4))[0]
-                                        uvx0001__B = unpack("<f", f.read(4))[0]
-                                        uvy0001__B = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4B = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__C = unpack("<f", f.read(4))[0]
-                                        vy0001__C = unpack("<f", f.read(4))[0]
-                                        vz0001__C = unpack("<f", f.read(4))[0]
-                                        brightness1__C = unpack("<f", f.read(4))[0]
-                                        uvx0001__C = unpack("<f", f.read(4))[0]
-                                        uvy0001__C = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4C = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                        if math.isclose(vy3,vy4) == True:
+                                            faces2c.append([fad6,fbd6,fcd6])
+                                            faces2c.append([fbd6,fcd6,fdd6])
+                                            faces2c.append([fcd6,fdd6,fed6])
+                                            faces2c.append([fdd6,fed6,ffd6])
+                                        else:
+                                            faces2c.append([fad6,fbd6,fcd6])
+                                            faces2c.append([fdd6,fed6,ffd6])
 
-                                        vx0001__D = unpack("<f", f.read(4))[0]
-                                        vy0001__D = unpack("<f", f.read(4))[0]
-                                        vz0001__D = unpack("<f", f.read(4))[0]
-                                        brightness1__D = unpack("<f", f.read(4))[0]
-                                        uvx0001__D = unpack("<f", f.read(4))[0]
-                                        uvy0001__D = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4D = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                elif facecount == 3:
+                                    id1 = unpack("B", f.read(1))[0]
+                                    fad6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fbd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fcd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fdd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fed6a = unpack("B", f.read(1))[0] & 0x0F
+                                    ffd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fgd6a = unpack("B", f.read(1))[0] & 0x0F
+                                    fhd6a = unpack("B", f.read(1))[0] & 0x0F
 
-                                        vx0001__E = unpack("<f", f.read(4))[0]
-                                        vy0001__E = unpack("<f", f.read(4))[0]
-                                        vz0001__E = unpack("<f", f.read(4))[0]
-                                        brightness1__E = unpack("<f", f.read(4))[0]
-                                        uvx0001__E = unpack("<f", f.read(4))[0]
-                                        uvy0001__E = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4E = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__N = unpack("<f", f.read(4))[0]
-                                        vy0001__N = unpack("<f", f.read(4))[0]
-                                        vz0001__N = unpack("<f", f.read(4))[0]
-                                        brightness1__N = unpack("<f", f.read(4))[0]
-                                        uvx0001__N = unpack("<f", f.read(4))[0]
-                                        uvy0001__N = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4N = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                    pad01 = unpack("B", f.read(1))[0]
+                                    pad02 = unpack("B", f.read(1))[0]
+                                    pad03 = unpack("B", f.read(1))[0]
 
-                                        vx0001__O = unpack("<f", f.read(4))[0]
-                                        vy0001__O = unpack("<f", f.read(4))[0]
-                                        vz0001__O = unpack("<f", f.read(4))[0]
-                                        brightness1__O = unpack("<f", f.read(4))[0]
-                                        uvx0001__O = unpack("<f", f.read(4))[0]
-                                        uvy0001__O = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4O = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
+                                    if pad01 == 100 and pad02 == 100 and pad03 == 100:
+                                        fad6a//=3
+                                        fbd6a//=3
+                                        fcd6a//=3
+                                        fdd6a//=3
+                                        fed6a//=3
+                                        ffd6a//=3
+                                        fgd6a//=3
+                                        fhd6a//=3
+                                        
+                                        fad6a+=1*len(vertices2c)-6
+                                        fbd6a+=1*len(vertices2c)-6
+                                        fcd6a+=1*len(vertices2c)-6
+                                        fdd6a+=1*len(vertices2c)-6
+                                        fed6a+=1*len(vertices2c)-6
+                                        ffd6a+=1*len(vertices2c)-6
+                                        fgd6a+=1*len(vertices2c)-6
+                                        fhd6a+=1*len(vertices2c)-6
 
-                                        vx0001__P = unpack("<f", f.read(4))[0]
-                                        vy0001__P = unpack("<f", f.read(4))[0]
-                                        vz0001__P = unpack("<f", f.read(4))[0]
-                                        brightness1__P = unpack("<f", f.read(4))[0]
-                                        uvx0001__P = unpack("<f", f.read(4))[0]
-                                        uvy0001__P = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4P = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offsettA = unpack("<I", f.read(4))[0]
-                                    if offsettA == 1627553807:
-                                        offsetB = unpack("<I", f.read(4))[0]
-                                        if offsetB != 65538:
-                                            f.seek(-4,1)
-                                            offsetC = unpack("<I", f.read(4))[0]
-                                            if offsetC == 65539:
-                                                f.seek(2,1)
-                                                vcount2 = unpack("B", f.read(1))[0]
-                                                vflag2 = unpack("B", f.read(1))[0]
-                                                if vflag2 == 0x6C:
-                                                    #missing verts
-                                                    if vcount2 == 4:
-                                                        for i in range(1):
-                                                            vx0001__J = unpack("<f", f.read(4))[0]
-                                                            vy0001__J = unpack("<f", f.read(4))[0]
-                                                            vz0001__J = unpack("<f", f.read(4))[0]
-                                                            type4J = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__K = unpack("<f", f.read(4))[0]
-                                                            vy0001__K = unpack("<f", f.read(4))[0]
-                                                            vz0001__K = unpack("<f", f.read(4))[0]
-                                                            type4K = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__L = unpack("<f", f.read(4))[0]
-                                                            vy0001__L = unpack("<f", f.read(4))[0]
-                                                            vz0001__L = unpack("<f", f.read(4))[0]
-                                                            type4L = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__M = unpack("<f", f.read(4))[0]
-                                                            vy0001__M = unpack("<f", f.read(4))[0]
-                                                            vz0001__M = unpack("<f", f.read(4))[0]
-                                                            type4M = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                        offsettC = unpack("<I", f.read(4))[0]
-                                                        if offsettC == 16777473:
-                                                            if type4J == 0:
-                                                                if type4K == 1:
-                                                                    if type4L == 0:
-                                                                        if type4M == 0:
-                                                                            vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
-                                                                            vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
-                                                                            vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
+                                        faces2c.append([fad6a,fbd6a,fcd6a])
+                                        faces2c.append([fbd6a,fcd6a,fdd6a])
+                                        faces2c.append([fcd6a,fdd6a,fed6a])
+                                        faces2c.append([fdd6a,fed6a,ffd6a])
+                                        faces2c.append([fed6a,ffd6a,fgd6a])
+                                        faces2c.append([ffd6a,fgd6a,fhd6a])
 
-                                                                            vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
-                                                                            vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
-                                                                            vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
+                        elif vertexCount == 7:
+                            for i in range(vertexCount):
+                                vx = unpack("<h", f.read(2))[0] / 4096
+                                vy = unpack("<h", f.read(2))[0] / 4096
+                                vz = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(2,1)
+                                uvx5 = unpack("<h", f.read(2))[0] / 4096
+                                uvy5 = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                
+                                vertices2d.append([vx,vz,vy])
+                            
+                            
+                            
+                            
+                            
+                                        
+                            
+                        
+                elif Chunks == b"\x04\x02\x00\x01":
+                    f.seek(1,1)
+                    value1 = unpack("B", f.read(1))[0]
+                    vertexCount = unpack("B", f.read(1))[0] // 2
+                    flag2 = unpack("B", f.read(1))[0]
+                    if flag2 == 0x6C:
+                        if vertexCount == 0:
+                            pass
+                        elif vertexCount == 1:
+                            pass
+                        elif vertexCount == 2:
+                            pass
+                        elif vertexCount == 3:
+                            for j in range(1):
+                                
+                                vx0001__ = unpack("<f", f.read(4))[0]
+                                vy0001__ = unpack("<f", f.read(4))[0]
+                                vz0001__ = unpack("<f", f.read(4))[0]
+                                brightness1__ = unpack("<f", f.read(4))[0]
+                                uvx0001__ = unpack("<f", f.read(4))[0]
+                                uvy0001__ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
 
-                                                                            fa2Ta_b+=1*5
-                                                                            fb2Ta_b+=1*5
-                                                                            fc2Ta_b+=1*5
-                                                                            fd2Ta_b+=1*5
-                                                                            fe2Ta_b+=1*5
+                                vx0001__A = unpack("<f", f.read(4))[0]
+                                vy0001__A = unpack("<f", f.read(4))[0]
+                                vz0001__A = unpack("<f", f.read(4))[0]
+                                brightness1__A = unpack("<f", f.read(4))[0]
+                                uvx0001__A = unpack("<f", f.read(4))[0]
+                                uvy0001__A = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4A = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
 
-                                                                            faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
-                                                                            faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
-                                                                            faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
-                                        elif offsetB == 65538:
+                                vx0001__B = unpack("<f", f.read(4))[0]
+                                vy0001__B = unpack("<f", f.read(4))[0]
+                                vz0001__B = unpack("<f", f.read(4))[0]
+                                brightness1__B = unpack("<f", f.read(4))[0]
+                                uvx0001__B = unpack("<f", f.read(4))[0]
+                                uvy0001__B = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4B = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for i in range(1):
+                                vx0001__C = unpack("<f", f.read(4))[0]
+                                vy0001__C = unpack("<f", f.read(4))[0]
+                                vz0001__C = unpack("<f", f.read(4))[0]
+                                brightness1__C = unpack("<f", f.read(4))[0]
+                                uvx0001__C = unpack("<f", f.read(4))[0]
+                                uvy0001__C = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4C = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__D = unpack("<f", f.read(4))[0]
+                                vy0001__D = unpack("<f", f.read(4))[0]
+                                vz0001__D = unpack("<f", f.read(4))[0]
+                                brightness1__D = unpack("<f", f.read(4))[0]
+                                uvx0001__D = unpack("<f", f.read(4))[0]
+                                uvy0001__D = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4D = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__E = unpack("<f", f.read(4))[0]
+                                vy0001__E = unpack("<f", f.read(4))[0]
+                                vz0001__E = unpack("<f", f.read(4))[0]
+                                brightness1__E = unpack("<f", f.read(4))[0]
+                                uvx0001__E = unpack("<f", f.read(4))[0]
+                                uvy0001__E = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4E = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for i in range(1):
+                                vx0001__N = unpack("<f", f.read(4))[0]
+                                vy0001__N = unpack("<f", f.read(4))[0]
+                                vz0001__N = unpack("<f", f.read(4))[0]
+                                brightness1__N = unpack("<f", f.read(4))[0]
+                                uvx0001__N = unpack("<f", f.read(4))[0]
+                                uvy0001__N = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4N = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__O = unpack("<f", f.read(4))[0]
+                                vy0001__O = unpack("<f", f.read(4))[0]
+                                vz0001__O = unpack("<f", f.read(4))[0]
+                                brightness1__O = unpack("<f", f.read(4))[0]
+                                uvx0001__O = unpack("<f", f.read(4))[0]
+                                uvy0001__O = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4O = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__P = unpack("<f", f.read(4))[0]
+                                vy0001__P = unpack("<f", f.read(4))[0]
+                                vz0001__P = unpack("<f", f.read(4))[0]
+                                brightness1__P = unpack("<f", f.read(4))[0]
+                                uvx0001__P = unpack("<f", f.read(4))[0]
+                                uvy0001__P = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4P = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                            offsettA = unpack("<I", f.read(4))[0]
+                            if offsettA == 1627553807:
+                                offsetB = unpack("<I", f.read(4))[0]
+                                if offsetB != 65538:
+                                    f.seek(-4,1)
+                                    offsetC = unpack("<I", f.read(4))[0]
+                                    if offsetC == 65539:
+                                        f.seek(2,1)
+                                        vcount2 = unpack("B", f.read(1))[0]
+                                        vflag2 = unpack("B", f.read(1))[0]
+                                        if vflag2 == 0x6C:
+                                            #missing verts
+                                            if vcount2 == 4:
+                                                for i in range(1):
+                                                    vx0001__J = unpack("<f", f.read(4))[0]
+                                                    vy0001__J = unpack("<f", f.read(4))[0]
+                                                    vz0001__J = unpack("<f", f.read(4))[0]
+                                                    type4J = unpack("B", f.read(1))[0]
+                                                    f.seek(3,1)
+                                                    vx0001__K = unpack("<f", f.read(4))[0]
+                                                    vy0001__K = unpack("<f", f.read(4))[0]
+                                                    vz0001__K = unpack("<f", f.read(4))[0]
+                                                    type4K = unpack("B", f.read(1))[0]
+                                                    f.seek(3,1)
+                                                    vx0001__L = unpack("<f", f.read(4))[0]
+                                                    vy0001__L = unpack("<f", f.read(4))[0]
+                                                    vz0001__L = unpack("<f", f.read(4))[0]
+                                                    type4L = unpack("B", f.read(1))[0]
+                                                    f.seek(3,1)
+                                                    vx0001__M = unpack("<f", f.read(4))[0]
+                                                    vy0001__M = unpack("<f", f.read(4))[0]
+                                                    vz0001__M = unpack("<f", f.read(4))[0]
+                                                    type4M = unpack("B", f.read(1))[0]
+                                                    f.seek(3,1)
+                                                offsettC = unpack("<I", f.read(4))[0]
+                                                if offsettC == 16777473:
+                                                    if type4J == 0:
+                                                        if type4K == 1:
+                                                            if type4L == 0:
+                                                                if type4M == 0:
+                                                                    vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
+                                                                    vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
+                                                                    vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
+
+                                                                    vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
+                                                                    vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
+                                                                    vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
+
+                                                                    fa2Ta_b+=1*5
+                                                                    fb2Ta_b+=1*5
+                                                                    fc2Ta_b+=1*5
+                                                                    fd2Ta_b+=1*5
+                                                                    fe2Ta_b+=1*5
+
+                                                                    faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
+                                                                    faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
+                                                                    faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
+                                elif offsetB == 65538:
+                                    f.seek(2,1)
+                                    vcount1 = unpack("B", f.read(1))[0]
+                                    vflag1 = unpack("B", f.read(1))[0]
+                                    if vflag1 == 0x6C:
+                                        #missing verts
+                                        if vcount1 == 4:
+                                            for i in range(1):
+                                                vx0001__F = unpack("<f", f.read(4))[0]
+                                                vy0001__F = unpack("<f", f.read(4))[0]
+                                                vz0001__F = unpack("<f", f.read(4))[0]
+                                                type4F = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__G = unpack("<f", f.read(4))[0]
+                                                vy0001__G = unpack("<f", f.read(4))[0]
+                                                vz0001__G = unpack("<f", f.read(4))[0]
+                                                type4G = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__H = unpack("<f", f.read(4))[0]
+                                                vy0001__H = unpack("<f", f.read(4))[0]
+                                                vz0001__H = unpack("<f", f.read(4))[0]
+                                                type4H = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__I = unpack("<f", f.read(4))[0]
+                                                vy0001__I = unpack("<f", f.read(4))[0]
+                                                vz0001__I = unpack("<f", f.read(4))[0]
+                                                type4I = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                            offsettB = unpack("<I", f.read(4))[0]
+                                            if offsettB == 16777473:
+                                                if type4F == 0:
+                                                    if type4G == 1:
+                                                        if type4H == 0:
+                                                            if type4I == 0:
+                                                                vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
+                                                                vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
+                                                                vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
+
+                                                                vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
+                                                                vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
+                                                                vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+
+                                                                fa2Ta_a+=1*5
+                                                                fb2Ta_a+=1*5
+                                                                fc2Ta_a+=1*5
+                                                                fd2Ta_a+=1*5
+                                                                fe2Ta_a+=1*5
+
+                                                                faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
+                                                                faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
+                                                                faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
+                            elif offsettA == 16777473:
+                                if type4 == 1:
+                                    if type4A == 1:
+                                        if type4B == 0:
+
+                                            vertices3.append([vx0001__,vz0001__,vy0001__])
+                                            vertices3.append([vx0001__A,vz0001__A,vy0001__A])
+                                            vertices3.append([vx0001__B,vz0001__B,vy0001__B])
+                                            uv_coords.append([uvx0001__,-uvy0001__])
+                                            uv_coords.append([uvx0001__A,-uvy0001__A])
+                                            uv_coords.append([uvx0001__B,-uvy0001__B])
+
+                                            fa2+=1*3
+                                            fb2+=1*3
+                                            fc2+=1*3
+
+                                            faces3.append([fa2,fb2,fc2])
+
+                        elif vertexCount == 4:
+                            for j in range(1):
+                                vx0001__AA = unpack("<f", f.read(4))[0]
+                                vy0001__AA = unpack("<f", f.read(4))[0]
+                                vz0001__AA = unpack("<f", f.read(4))[0]
+                                brightness1__AA = unpack("<f", f.read(4))[0]
+                                uvx0001__AA = unpack("<f", f.read(4))[0]
+                                uvy0001__AA = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AA = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AB = unpack("<f", f.read(4))[0]
+                                vy0001__AB = unpack("<f", f.read(4))[0]
+                                vz0001__AB = unpack("<f", f.read(4))[0]
+                                brightness1__AB = unpack("<f", f.read(4))[0]
+                                uvx0001__AB = unpack("<f", f.read(4))[0]
+                                uvy0001__AB = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AB = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AC = unpack("<f", f.read(4))[0]
+                                vy0001__AC = unpack("<f", f.read(4))[0]
+                                vz0001__AC = unpack("<f", f.read(4))[0]
+                                brightness1__AC = unpack("<f", f.read(4))[0]
+                                uvx0001__AC = unpack("<f", f.read(4))[0]
+                                uvy0001__AC = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AC = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AD = unpack("<f", f.read(4))[0]
+                                vy0001__AD = unpack("<f", f.read(4))[0]
+                                vz0001__AD = unpack("<f", f.read(4))[0]
+                                brightness1__AD = unpack("<f", f.read(4))[0]
+                                uvx0001__AD = unpack("<f", f.read(4))[0]
+                                uvy0001__AD = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AD = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for j in range(1):
+                                vx0001__AA_ = unpack("<f", f.read(4))[0]
+                                vy0001__AA_ = unpack("<f", f.read(4))[0]
+                                vz0001__AA_ = unpack("<f", f.read(4))[0]
+                                brightness1__AA_ = unpack("<f", f.read(4))[0]
+                                uvx0001__AA_ = unpack("<f", f.read(4))[0]
+                                uvy0001__AA_ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AA_ = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AB_ = unpack("<f", f.read(4))[0]
+                                vy0001__AB_ = unpack("<f", f.read(4))[0]
+                                vz0001__AB_ = unpack("<f", f.read(4))[0]
+                                brightness1__AB_ = unpack("<f", f.read(4))[0]
+                                uvx0001__AB_ = unpack("<f", f.read(4))[0]
+                                uvy0001__AB_ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AB_ = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AC_ = unpack("<f", f.read(4))[0]
+                                vy0001__AC_ = unpack("<f", f.read(4))[0]
+                                vz0001__AC_ = unpack("<f", f.read(4))[0]
+                                brightness1__AC_ = unpack("<f", f.read(4))[0]
+                                uvx0001__AC_ = unpack("<f", f.read(4))[0]
+                                uvy0001__AC_ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AC_ = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AD_ = unpack("<f", f.read(4))[0]
+                                vy0001__AD_ = unpack("<f", f.read(4))[0]
+                                vz0001__AD_ = unpack("<f", f.read(4))[0]
+                                brightness1__AD_ = unpack("<f", f.read(4))[0]
+                                uvx0001__AD_ = unpack("<f", f.read(4))[0]
+                                uvy0001__AD_ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AD_ = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                            offffsetA = unpack("<I", f.read(4))[0]
+                            if offffsetA == 16777473:
+                                if type4AA_ == 1:
+                                    if type4AB_ == 1:
+                                        if type4AC_ == 0:
+                                            if type4AD_ == 0:
+                                                vertices3Caq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
+                                                vertices3Caq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
+                                                vertices3Caq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
+                                                vertices3Caq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
+
+                                                fa2CAQ+=1*4
+                                                fb2CAQ+=1*4
+                                                fc2CAQ+=1*4
+
+                                                fa3CAQ+=1*4
+
+                                                faces3Caq.append([fa2CAQ,fb2CAQ,fc2CAQ])
+                                                faces3Caq.append([fb2CAQ,fc2CAQ,fa3CAQ])
+                            elif offffsetA == 1627553811:
+                                offffsetB = unpack("<I", f.read(4))[0]
+                                if offffsetB == 65540:
+                                    ofssetA = unpack("<I", f.read(4))[0]
+                                    if ofssetA == 1627553815:
+                                        ofssetB = unpack("<I", f.read(4))[0]
+                                        if ofssetB == 65538:
                                             f.seek(2,1)
-                                            vcount1 = unpack("B", f.read(1))[0]
-                                            vflag1 = unpack("B", f.read(1))[0]
-                                            if vflag1 == 0x6C:
-                                                #missing verts
-                                                if vcount1 == 4:
+                                            vvvcount1 = unpack("B", f.read(1))[0]
+                                            ffflag1 = unpack("B", f.read(1))[0]
+                                            if ffflag1 == 0x6C:
+                                                if vvvcount1 == 4:
                                                     for i in range(1):
-                                                        vx0001__F = unpack("<f", f.read(4))[0]
-                                                        vy0001__F = unpack("<f", f.read(4))[0]
-                                                        vz0001__F = unpack("<f", f.read(4))[0]
-                                                        type4F = unpack("B", f.read(1))[0]
+                                                        vx0001__AE_ = unpack("<f", f.read(4))[0]
+                                                        vy0001__AE_ = unpack("<f", f.read(4))[0]
+                                                        vz0001__AE_ = unpack("<f", f.read(4))[0]
+                                                        type1__AE_ = unpack("B", f.read(1))[0]
                                                         f.seek(3,1)
-                                                        vx0001__G = unpack("<f", f.read(4))[0]
-                                                        vy0001__G = unpack("<f", f.read(4))[0]
-                                                        vz0001__G = unpack("<f", f.read(4))[0]
-                                                        type4G = unpack("B", f.read(1))[0]
+                                                        vx0001__AF_ = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_ = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_ = unpack("<f", f.read(4))[0]
+                                                        type1__AF_ = unpack("B", f.read(1))[0]
                                                         f.seek(3,1)
-                                                        vx0001__H = unpack("<f", f.read(4))[0]
-                                                        vy0001__H = unpack("<f", f.read(4))[0]
-                                                        vz0001__H = unpack("<f", f.read(4))[0]
-                                                        type4H = unpack("B", f.read(1))[0]
+                                                        vx0001__AG_ = unpack("<f", f.read(4))[0]
+                                                        vy0001__AG_ = unpack("<f", f.read(4))[0]
+                                                        vz0001__AG_ = unpack("<f", f.read(4))[0]
+                                                        type1__AG_ = unpack("B", f.read(1))[0]
                                                         f.seek(3,1)
-                                                        vx0001__I = unpack("<f", f.read(4))[0]
-                                                        vy0001__I = unpack("<f", f.read(4))[0]
-                                                        vz0001__I = unpack("<f", f.read(4))[0]
-                                                        type4I = unpack("B", f.read(1))[0]
+                                                        vx0001__AH_ = unpack("<f", f.read(4))[0]
+                                                        vy0001__AH_ = unpack("<f", f.read(4))[0]
+                                                        vz0001__AH_ = unpack("<f", f.read(4))[0]
+                                                        type1__AH_ = unpack("B", f.read(1))[0]
                                                         f.seek(3,1)
-                                                    offsettB = unpack("<I", f.read(4))[0]
-                                                    if offsettB == 16777473:
-                                                        if type4F == 0:
-                                                            if type4G == 1:
-                                                                if type4H == 0:
-                                                                    if type4I == 0:
-                                                                        vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
-                                                                        vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
-                                                                        vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
+                                                    ofssetC = unpack("<I", f.read(4))[0]
+                                                    if ofssetC == 16777473:
+                                                        if type4AA_ == 1:
+                                                            if type4AB_ == 1:
+                                                                if type4AC_ == 0:
+                                                                    if type4AD_ == 0:
+                                                                        if type1__AE_ == 0:
+                                                                            if type1__AF_ == 0:
+                                                                                if type1__AG_ == 0:
+                                                                                    if type1__AH_ == 0:
+                                                                                        vertices3Daq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
+                                                                                        vertices3Daq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
+                                                                                        vertices3Daq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
+                                                                                        vertices3Daq.append([vx0001__AG_,vz0001__AG_,vy0001__AG_])
 
-                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
-                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
-                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
+                                                                                        fa2Ta_d+=1*4
+                                                                                        fb2Ta_d+=1*4
+                                                                                        fc2Ta_d+=1*4
+                                                                                        fd2Ta_d+=1*4
 
-                                                                        fa2Ta_a+=1*5
-                                                                        fb2Ta_a+=1*5
-                                                                        fc2Ta_a+=1*5
-                                                                        fd2Ta_a+=1*5
-                                                                        fe2Ta_a+=1*5
+                                                                                        faces3Daq.append([fa2Ta_d,fb2Ta_d,fc2Ta_d])
+                                                                                        faces3Daq.append([fa2Ta_d,fb2Ta_d,fd2Ta_d])
+                                elif offffsetB == 65537:
+                                    f.seek(2,1)
+                                    vvcount1 = unpack("B", f.read(1))[0]
+                                    fflag1 = unpack("B", f.read(1))[0]
+                                    if fflag1 == 0x6C:
+                                        if vvcount1 == 6:
+                                            for i in range(1):
+                                                vx0001__AE__ = unpack("<f", f.read(4))[0]
+                                                vy0001__AE__ = unpack("<f", f.read(4))[0]
+                                                vz0001__AE__ = unpack("<f", f.read(4))[0]
+                                                type1__AE__ = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__AF__ = unpack("<f", f.read(4))[0]
+                                                vy0001__AF__ = unpack("<f", f.read(4))[0]
+                                                vz0001__AF__ = unpack("<f", f.read(4))[0]
+                                                type1__AF__ = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__AG__ = unpack("<f", f.read(4))[0]
+                                                vy0001__AG__ = unpack("<f", f.read(4))[0]
+                                                vz0001__AG__ = unpack("<f", f.read(4))[0]
+                                                type1__AG__ = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__AH__ = unpack("<f", f.read(4))[0]
+                                                vy0001__AH__ = unpack("<f", f.read(4))[0]
+                                                vz0001__AH__ = unpack("<f", f.read(4))[0]
+                                                type1__AH__ = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
 
-                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
-                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
-                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
-                                    elif offsettA == 16777473:
-                                        if type4 == 1:
-                                            if type4A == 1:
-                                                if type4B == 0:
-
-                                                    vertices3.append([vx0001__,vz0001__,vy0001__])
-                                                    vertices3.append([vx0001__A,vz0001__A,vy0001__A])
-                                                    vertices3.append([vx0001__B,vz0001__B,vy0001__B])
-                                                    uv_coords.append([uvx0001__,-uvy0001__])
-                                                    uv_coords.append([uvx0001__A,-uvy0001__A])
-                                                    uv_coords.append([uvx0001__B,-uvy0001__B])
-
-                                                    fa2+=1*3
-                                                    fb2+=1*3
-                                                    fc2+=1*3
-
-                                                    faces3.append([fa2,fb2,fc2])
-
-                                elif vertexCount == 4:
-                                    for j in range(1):
-                                        vx0001__AA = unpack("<f", f.read(4))[0]
-                                        vy0001__AA = unpack("<f", f.read(4))[0]
-                                        vz0001__AA = unpack("<f", f.read(4))[0]
-                                        brightness1__AA = unpack("<f", f.read(4))[0]
-                                        uvx0001__AA = unpack("<f", f.read(4))[0]
-                                        uvy0001__AA = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AA = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AB = unpack("<f", f.read(4))[0]
-                                        vy0001__AB = unpack("<f", f.read(4))[0]
-                                        vz0001__AB = unpack("<f", f.read(4))[0]
-                                        brightness1__AB = unpack("<f", f.read(4))[0]
-                                        uvx0001__AB = unpack("<f", f.read(4))[0]
-                                        uvy0001__AB = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AB = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AC = unpack("<f", f.read(4))[0]
-                                        vy0001__AC = unpack("<f", f.read(4))[0]
-                                        vz0001__AC = unpack("<f", f.read(4))[0]
-                                        brightness1__AC = unpack("<f", f.read(4))[0]
-                                        uvx0001__AC = unpack("<f", f.read(4))[0]
-                                        uvy0001__AC = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AC = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AD = unpack("<f", f.read(4))[0]
-                                        vy0001__AD = unpack("<f", f.read(4))[0]
-                                        vz0001__AD = unpack("<f", f.read(4))[0]
-                                        brightness1__AD = unpack("<f", f.read(4))[0]
-                                        uvx0001__AD = unpack("<f", f.read(4))[0]
-                                        uvy0001__AD = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AD = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for j in range(1):
-                                        vx0001__AA_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AA_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AA_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AA_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AA_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AA_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AA_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AB_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AB_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AB_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AB_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AB_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AB_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AB_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AC_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AC_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AC_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AC_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AC_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AC_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AC_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AD_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AD_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AD_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AD_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AD_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AD_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AD_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offffsetA = unpack("<I", f.read(4))[0]
-                                    if offffsetA == 16777473:
-                                        if type4AA_ == 1:
-                                            if type4AB_ == 1:
-                                                if type4AC_ == 0:
-                                                    if type4AD_ == 0:
-                                                        vertices3Caq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
-                                                        vertices3Caq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
-                                                        vertices3Caq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
-                                                        vertices3Caq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
-
-                                                        fa2CAQ+=1*4
-                                                        fb2CAQ+=1*4
-                                                        fc2CAQ+=1*4
-
-                                                        fa3CAQ+=1*4
-
-                                                        faces3Caq.append([fa2CAQ,fb2CAQ,fc2CAQ])
-                                                        faces3Caq.append([fb2CAQ,fc2CAQ,fa3CAQ])
-                                    elif offffsetA == 1627553811:
-                                        offffsetB = unpack("<I", f.read(4))[0]
-                                        if offffsetB == 65540:
-                                            ofssetA = unpack("<I", f.read(4))[0]
-                                            if ofssetA == 1627553815:
-                                                ofssetB = unpack("<I", f.read(4))[0]
-                                                if ofssetB == 65538:
+                                                vx0001__AI__ = unpack("<f", f.read(4))[0]
+                                                vy0001__AI__ = unpack("<f", f.read(4))[0]
+                                                vz0001__AI__ = unpack("<f", f.read(4))[0]
+                                                type1__AI__ = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__AJ__ = unpack("<f", f.read(4))[0]
+                                                vy0001__AJ__ = unpack("<f", f.read(4))[0]
+                                                vz0001__AJ__ = unpack("<f", f.read(4))[0]
+                                                type1__AJ__ = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                            offffsetCC = unpack("<I", f.read(4))[0]
+                                            if offffsetCC == 1627553827:
+                                                offffsetDD = unpack("<I", f.read(4))[0]
+                                                if offffsetDD == 65542:
                                                     f.seek(2,1)
-                                                    vvvcount1 = unpack("B", f.read(1))[0]
-                                                    ffflag1 = unpack("B", f.read(1))[0]
-                                                    if ffflag1 == 0x6C:
-                                                        if vvvcount1 == 4:
+                                                    vvacount1 = unpack("B", f.read(1))[0]
+                                                    faflag1A = unpack("B", f.read(1))[0]
+                                                    if faflag1A == 0x6C:
+                                                        if vvacount1 == 2:
                                                             for i in range(1):
-                                                                vx0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                type1__AE_ = unpack("B", f.read(1))[0]
+                                                                vx0001__AK__ = unpack("<f", f.read(4))[0]
+                                                                vy0001__AK__ = unpack("<f", f.read(4))[0]
+                                                                vz0001__AK__ = unpack("<f", f.read(4))[0]
+                                                                type1__AK__ = unpack("B", f.read(1))[0]
                                                                 f.seek(3,1)
-                                                                vx0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                type1__AF_ = unpack("B", f.read(1))[0]
+                                                                vx0001__AL__ = unpack("<f", f.read(4))[0]
+                                                                vy0001__AL__ = unpack("<f", f.read(4))[0]
+                                                                vz0001__AL__ = unpack("<f", f.read(4))[0]
+                                                                type1__AL__ = unpack("B", f.read(1))[0]
                                                                 f.seek(3,1)
-                                                                vx0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                type1__AG_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                                vx0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                type1__AH_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                            ofssetC = unpack("<I", f.read(4))[0]
-                                                            if ofssetC == 16777473:
-                                                                if type4AA_ == 1:
-                                                                    if type4AB_ == 1:
-                                                                        if type4AC_ == 0:
-                                                                            if type4AD_ == 0:
-                                                                                if type1__AE_ == 0:
-                                                                                    if type1__AF_ == 0:
-                                                                                        if type1__AG_ == 0:
-                                                                                            if type1__AH_ == 0:
-                                                                                                vertices3Daq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
-                                                                                                vertices3Daq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
-                                                                                                vertices3Daq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
-                                                                                                vertices3Daq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
-                                                                                                vertices3Daq.append([vx0001__AG_,vz0001__AG_,vy0001__AG_])
-
-                                                                                                fa2Ta_d+=1*5
-                                                                                                fb2Ta_d+=1*5
-                                                                                                fc2Ta_d+=1*5
-                                                                                                fd2Ta_d+=1*5
-                                                                                                fe2Ta_d+=1*5
-
-                                                                                                faces3Daq.append([fa2Ta_d,fb2Ta_d,fc2Ta_d])
-                                                                                                faces3Daq.append([fb2Ta_d,fc2Ta_d,fd2Ta_d])
-                                                                                                faces3Daq.append([fb2Ta_d,fd2Ta_d,fe2Ta_d])
-                                        elif offffsetB == 65537:
-                                            f.seek(2,1)
-                                            vvcount1 = unpack("B", f.read(1))[0]
-                                            fflag1 = unpack("B", f.read(1))[0]
-                                            if fflag1 == 0x6C:
-                                                if vvcount1 == 2:
-                                                    
-                                                    for i in range(1):
-                                                        vx0001__AE = unpack("<f", f.read(4))[0]
-                                                        vy0001__AE = unpack("<f", f.read(4))[0]
-                                                        vz0001__AE = unpack("<f", f.read(4))[0]
-                                                        type1__AE = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__AF = unpack("<f", f.read(4))[0]
-                                                        vy0001__AF = unpack("<f", f.read(4))[0]
-                                                        vz0001__AF = unpack("<f", f.read(4))[0]
-                                                        type1__AF = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offffsetC = unpack("<I", f.read(4))[0]
-                                                    if offffsetC == 1627553819:
-                                                        offffsetD = unpack("<I", f.read(4))[0]
-                                                        if offffsetD == 2:
-                                                            f.seek(2,1)
-                                                            vvcount1A = unpack("B", f.read(1))[0]
-                                                            fflag1A = unpack("B", f.read(1))[0]
-                                                            if fflag1A == 0x6C:
-                                                                if vvcount1A == 4:
-                                                                    for i in range(1):
-                                                                        vx0001__AG = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AG = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AG = unpack("<f", f.read(4))[0]
-                                                                        type1__AG = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AH = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AH = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AH = unpack("<f", f.read(4))[0]
-                                                                        type1__AH = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AI = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AI = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AI = unpack("<f", f.read(4))[0]
-                                                                        type1__AI = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        type1__AJ = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-                                                                    offffsetE = unpack("<I", f.read(4))[0]
-                                                                    if offffsetE == 1627553831:
-                                                                        offffsetF = unpack("<I", f.read(4))[0]
-                                                                        if offffsetF == 65540:
-                                                                            f.seek(2,1)
-                                                                            vvcount1B = unpack("B", f.read(1))[0]
-                                                                            fflag1B = unpack("B", f.read(1))[0]
-                                                                            if fflag1B == 0x6C:
-                                                                                if vvcount1B == 2:
-                                                                                    for i in range(1):
-                                                                                        vx0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        type1__AK = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-
-                                                                                        vx0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        type1__AL = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-                                                                                    offffsetF = unpack("<I", f.read(4))[0]
-                                                                                    if offffsetF == 1627553839:
-                                                                                        offffsetG = unpack("<I", f.read(4))[0]
-                                                                                        if offffsetG == 2:
-                                                                                            f.seek(2,1)
-                                                                                            vvcount1C = unpack("B", f.read(1))[0]
-                                                                                            fflag1C = unpack("B", f.read(1))[0]
-                                                                                            if fflag1C == 0x6C:
-                                                                                                if vvcount1C == 2:
-                                                                                                    for i in range(1):
-                                                                                                        vx0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        vy0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        vz0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        type1__AM = unpack("B", f.read(1))[0]
-                                                                                                        f.seek(3,1)
-
-                                                                                                        vx0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        vy0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        vz0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        type1__AN = unpack("B", f.read(1))[0]
-                                                                                                        f.seek(3,1)
-                                                                                                    offffsetG = unpack("<I", f.read(4))[0]
-                                                                                                    if offffsetG == 1627553847:
-                                                                                                        offffsetH = unpack("<I", f.read(4))[0]
-                                                                                                        if offffsetH == 9:
-                                                                                                            offffsetI = unpack("<I", f.read(4))[0]
-                                                                                                            if offffsetI == 16777473:
-                                                                                                                if type4AA == 1:
-                                                                                                                    if type4AB == 1:
-                                                                                                                        if type4AC == 0:
-                                                                                                                            if type4AD == 0:
-                                                                                                                                if type1__AE == 0:
-                                                                                                                                    if type1__AF == 1:
-                                                                                                                                        if type1__AG == 0:
-                                                                                                                                            if type1__AH == 0:
-                                                                                                                                                if type1__AI == 0:
-                                                                                                                                                    if type1__AJ == 0:
-                                                                                                                                                        if type1__AK == 0:
-                                                                                                                                                            if type1__AL == 1:
-                                                                                                                                                                if type1__AM == 0:
-                                                                                                                                                                    if type1__AN == 0:
-                                                                                                                                                                        vertices3Baq.append([vx0001__AA,vz0001__AA,vy0001__AA])
-                                                                                                                                                                        vertices3Baq.append([vx0001__AB,vz0001__AB,vy0001__AB])
-                                                                                                                                                                        vertices3Baq.append([vx0001__AC,vz0001__AC,vy0001__AC])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AD,vz0001__AD,vy0001__AD])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AE,vz0001__AE,vy0001__AE])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AG,vz0001__AG,vy0001__AG])
-
-                                                                                                                                                                        fa2Ta_c+=1*6
-                                                                                                                                                                        fb2Ta_c+=1*6
-                                                                                                                                                                        fc2Ta_c+=1*6
-                                                                                                                                                                        fd2Ta_c+=1*6
-                                                                                                                                                                        fe2Ta_c+=1*6
-                                                                                                                                                                        ff2Ta_c+=1*6
-
-                                                                                                                                                                        faces3Baq.append([fa2Ta_c,fb2Ta_c,fc2Ta_c])
-                                                                                                                                                                        faces3Baq.append([fb2Ta_c,fc2Ta_c,fd2Ta_c])
-                elif UnkCount1 != 0 and UnkCount2 != 0:
-                    f.seek(UnkCountEntrySize2,0)
-                    for i in range(UnkCount2):
-                        ScaleX = unpack("<f", f.read(4))[0]
-                        rotationz = unpack("<f", f.read(4))[0]
-                        rotationy = unpack("<f", f.read(4))[0]
-                        null1 = unpack("<f", f.read(4))[0]
-                        nrotationz = unpack("<f", f.read(4))[0]
-                        ScaleY = unpack("<f", f.read(4))[0]
-                        rotationx = unpack("<f", f.read(4))[0]
-                        nrotationy = unpack("<f", f.read(4))[0]
-                        null2 = unpack("<f", f.read(4))[0]
-                        nrotationx = unpack("<f", f.read(4))[0]
-                        ScaleZ = unpack("<f", f.read(4))[0]
-                        null3 = unpack("<f", f.read(4))[0]
-                        posx = unpack("<f", f.read(4))[0]
-                        posy = unpack("<f", f.read(4))[0]
-                        posz = unpack("<f", f.read(4))[0]
-                        ScaleW = unpack("<f", f.read(4))[0]
-                        objlen = unpack("<I", f.read(4))[0]
-                        objid = unpack("<I", f.read(4))[0]
-                        f.seek(8,1)
-                    f.seek(0)
-                    Chunk = f.read()
-                    f.seek(0)
-                    while f.tell() < len(Chunk):
-                        Chunks = f.read(4)
-                        if Chunks == b"\x03\x01\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0]
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount:
-                                    for j in range(vertexCount):
-                                        vx = unpack("<f", f.read(4))[0]
-                                        vy = unpack("<f", f.read(4))[0]
-                                        vz = unpack("<f", f.read(4))[0]
-                                        type4 = unpack("B", f.read(1))[0]==False
-                                        value1 = unpack("B", f.read(1))[0]
-                                        nz = unpack("<h", f.read(2))[0]
-                                        vertices.append([vx,vz,vy])
-                                        fa+=1
-                                        fb+=1
-                                        fc+=1
-                                        if type4 > 0:
-                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
-                        elif Chunks == b"\x03\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6D:
-                                if vertexCount == 3:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2.append([vxaa,vzaa,vyaa])
-                                    f.seek(78,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd = unpack("B", f.read(1))[0] & 0x0F
+                                                            offffsetEE = unpack("<I", f.read(4))[0]
+                                                            if offffsetEE == 1627553835:
+                                                                offffsetFF = unpack("<I", f.read(4))[0]
+                                                                if offffsetFF == 8:
+                                                                    f.seek(2,1)
+                                                                    vvbcount1 = unpack("B", f.read(1))[0]
+                                                                    fbflag1A = unpack("B", f.read(1))[0]
+                                                                    if fbflag1A == 0x6C:
+                                                                        if vvbcount1 == 2:
+                                                                            for i in range(1):
+                                                                                vx0001__AM__ = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AM__ = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AM__ = unpack("<f", f.read(4))[0]
+                                                                                type1__AM__ = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+                                                                                vx0001__AN__ = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AN__ = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AN__ = unpack("<f", f.read(4))[0]
+                                                                                type1__AN__ = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+                                                                            offffsetGG = unpack("<I", f.read(4))[0]
+                                                                            if offffsetGG == 1627553843:
+                                                                                offffsetHH = unpack("<I", f.read(4))[0]
+                                                                                if offffsetHH == 65546:
+                                                                                    #0x25730
+                                                                                    f.seek(2,1)
                                             
-                                        fad//=3
-                                        fbd//=3
-                                        fcd//=3
-
-                                        fad+=1*len(vertices2)-3
-                                        fbd+=1*len(vertices2)-3
-                                        fcd+=1*len(vertices2)-3
-
-                                        faces2.append([fad,fbd,fcd])
-
-                                elif vertexCount == 4:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2a.append([vxaa,vzaa,vyaa])
-                                    f.seek(82,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-                                        pad03 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-                                        
-
-                                elif vertexCount == 5:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2b.append([vx,vz,vy])
-
-                                    f.seek(86,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100:
+                                        elif vvcount1 == 2:
                                             
-                                        
-                                            fad5//=3
-                                            fbd5//=3
-                                            fcd5//=3
-                                            fdd5//=3
-                                            fed5//=3
-                                            
-                                            fad5+=1*len(vertices2b)-5
-                                            fbd5+=1*len(vertices2b)-5
-                                            fcd5+=1*len(vertices2b)-5
-                                            fdd5+=1*len(vertices2b)-5
-                                            fed5+=1*len(vertices2b)-5
-                                            
-                                            faces2b.append([fad5,fbd5,fcd5])
-                                            faces2b.append([fbd5,fcd5,fdd5])
-                                            faces2b.append([fcd5,fdd5,fed5])
-
-                                elif vertexCount == 6:
-                                    for i in range(1):
-                                        vx = unpack("<h", f.read(2))[0]/4096
-                                        vy = unpack("<h", f.read(2))[0]/4096
-                                        vz = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx1 = unpack("<h", f.read(2))[0]/4096
-                                        vy1 = unpack("<h", f.read(2))[0]/4096
-                                        vz1 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx2 = unpack("<h", f.read(2))[0]/4096
-                                        vy2 = unpack("<h", f.read(2))[0]/4096
-                                        vz2 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx3 = unpack("<h", f.read(2))[0]/4096
-                                        vy3 = unpack("<h", f.read(2))[0]/4096
-                                        vz3 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx4 = unpack("<h", f.read(2))[0]/4096
-                                        vy4 = unpack("<h", f.read(2))[0]/4096
-                                        vz4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx6 = unpack("<h", f.read(2))[0]/4096
-                                        vy6 = unpack("<h", f.read(2))[0]/4096
-                                        vz6 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-                                        vertices2c.append([vx,vz,vy])
-                                        vertices2c.append([vx1,vz1,vy1])
-                                        vertices2c.append([vx2,vz2,vy2])
-                                        vertices2c.append([vx3,vz3,vy3])
-                                        vertices2c.append([vx4,vz4,vy4])
-                                        vertices2c.append([vx6,vz6,vy6])
-
-                                    f.seek(90,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsC = unpack("B", f.read(1))[0]
-                                    if flagsC == 0x6E:
-                                        if facecount == 2:
-                                            
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            if pad01 == 100:
-                                                
-                                            
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                            elif pad01 == 15:
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-
-                                        elif facecount == 3:
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            pad02 = unpack("B", f.read(1))[0]
-                                            pad03 = unpack("B", f.read(1))[0]
-
-                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                                fad6a//=3
-                                                fbd6a//=3
-                                                fcd6a//=3
-                                                fdd6a//=3
-                                                fed6a//=3
-                                                ffd6a//=3
-                                                fgd6a//=3
-                                                fhd6a//=3
-                                                
-                                                fad6a+=1*len(vertices2c)-6
-                                                fbd6a+=1*len(vertices2c)-6
-                                                fcd6a+=1*len(vertices2c)-6
-                                                fdd6a+=1*len(vertices2c)-6
-                                                fed6a+=1*len(vertices2c)-6
-                                                ffd6a+=1*len(vertices2c)-6
-                                                fgd6a+=1*len(vertices2c)-6
-                                                fhd6a+=1*len(vertices2c)-6
-
-                                                faces2c.append([fad6a,fbd6a,fcd6a])
-                                                faces2c.append([fbd6a,fcd6a,fdd6a])
-                                                faces2c.append([fcd6a,fdd6a,fed6a])
-                                                faces2c.append([fdd6a,fed6a,ffd6a])
-                                                faces2c.append([fed6a,ffd6a,fgd6a])
-                                                faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                                elif vertexCount == 7:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        
-                                        vertices2d.append([vx,vz,vy])
-                                    
-                                    
-                                    
-                                    
-                                    
-                                                
-                                    
-                                
-                        elif Chunks == b"\x04\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2 = unpack("B", f.read(1))[0]
-                            if flag2 == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount == 3:
-                                    for j in range(1):
-                                        
-                                        vx0001__ = unpack("<f", f.read(4))[0]
-                                        vy0001__ = unpack("<f", f.read(4))[0]
-                                        vz0001__ = unpack("<f", f.read(4))[0]
-                                        brightness1__ = unpack("<f", f.read(4))[0]
-                                        uvx0001__ = unpack("<f", f.read(4))[0]
-                                        uvy0001__ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4 = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__A = unpack("<f", f.read(4))[0]
-                                        vy0001__A = unpack("<f", f.read(4))[0]
-                                        vz0001__A = unpack("<f", f.read(4))[0]
-                                        brightness1__A = unpack("<f", f.read(4))[0]
-                                        uvx0001__A = unpack("<f", f.read(4))[0]
-                                        uvy0001__A = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4A = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__B = unpack("<f", f.read(4))[0]
-                                        vy0001__B = unpack("<f", f.read(4))[0]
-                                        vz0001__B = unpack("<f", f.read(4))[0]
-                                        brightness1__B = unpack("<f", f.read(4))[0]
-                                        uvx0001__B = unpack("<f", f.read(4))[0]
-                                        uvy0001__B = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4B = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__C = unpack("<f", f.read(4))[0]
-                                        vy0001__C = unpack("<f", f.read(4))[0]
-                                        vz0001__C = unpack("<f", f.read(4))[0]
-                                        brightness1__C = unpack("<f", f.read(4))[0]
-                                        uvx0001__C = unpack("<f", f.read(4))[0]
-                                        uvy0001__C = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4C = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__D = unpack("<f", f.read(4))[0]
-                                        vy0001__D = unpack("<f", f.read(4))[0]
-                                        vz0001__D = unpack("<f", f.read(4))[0]
-                                        brightness1__D = unpack("<f", f.read(4))[0]
-                                        uvx0001__D = unpack("<f", f.read(4))[0]
-                                        uvy0001__D = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4D = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__E = unpack("<f", f.read(4))[0]
-                                        vy0001__E = unpack("<f", f.read(4))[0]
-                                        vz0001__E = unpack("<f", f.read(4))[0]
-                                        brightness1__E = unpack("<f", f.read(4))[0]
-                                        uvx0001__E = unpack("<f", f.read(4))[0]
-                                        uvy0001__E = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4E = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__N = unpack("<f", f.read(4))[0]
-                                        vy0001__N = unpack("<f", f.read(4))[0]
-                                        vz0001__N = unpack("<f", f.read(4))[0]
-                                        brightness1__N = unpack("<f", f.read(4))[0]
-                                        uvx0001__N = unpack("<f", f.read(4))[0]
-                                        uvy0001__N = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4N = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__O = unpack("<f", f.read(4))[0]
-                                        vy0001__O = unpack("<f", f.read(4))[0]
-                                        vz0001__O = unpack("<f", f.read(4))[0]
-                                        brightness1__O = unpack("<f", f.read(4))[0]
-                                        uvx0001__O = unpack("<f", f.read(4))[0]
-                                        uvy0001__O = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4O = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__P = unpack("<f", f.read(4))[0]
-                                        vy0001__P = unpack("<f", f.read(4))[0]
-                                        vz0001__P = unpack("<f", f.read(4))[0]
-                                        brightness1__P = unpack("<f", f.read(4))[0]
-                                        uvx0001__P = unpack("<f", f.read(4))[0]
-                                        uvy0001__P = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4P = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offsettA = unpack("<I", f.read(4))[0]
-                                    if offsettA == 1627553807:
-                                        offsetB = unpack("<I", f.read(4))[0]
-                                        if offsetB != 65538:
-                                            f.seek(-4,1)
-                                            offsetC = unpack("<I", f.read(4))[0]
-                                            if offsetC == 65539:
-                                                f.seek(2,1)
-                                                vcount2 = unpack("B", f.read(1))[0]
-                                                vflag2 = unpack("B", f.read(1))[0]
-                                                if vflag2 == 0x6C:
-                                                    #missing verts
-                                                    if vcount2 == 4:
-                                                        for i in range(1):
-                                                            vx0001__J = unpack("<f", f.read(4))[0]
-                                                            vy0001__J = unpack("<f", f.read(4))[0]
-                                                            vz0001__J = unpack("<f", f.read(4))[0]
-                                                            type4J = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__K = unpack("<f", f.read(4))[0]
-                                                            vy0001__K = unpack("<f", f.read(4))[0]
-                                                            vz0001__K = unpack("<f", f.read(4))[0]
-                                                            type4K = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__L = unpack("<f", f.read(4))[0]
-                                                            vy0001__L = unpack("<f", f.read(4))[0]
-                                                            vz0001__L = unpack("<f", f.read(4))[0]
-                                                            type4L = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__M = unpack("<f", f.read(4))[0]
-                                                            vy0001__M = unpack("<f", f.read(4))[0]
-                                                            vz0001__M = unpack("<f", f.read(4))[0]
-                                                            type4M = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                        offsettC = unpack("<I", f.read(4))[0]
-                                                        if offsettC == 16777473:
-                                                            if type4J == 0:
-                                                                if type4K == 1:
-                                                                    if type4L == 0:
-                                                                        if type4M == 0:
-                                                                            vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
-                                                                            vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
-                                                                            vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
-
-                                                                            vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
-                                                                            vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
-                                                                            vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
-
-                                                                            fa2Ta_b+=1*5
-                                                                            fb2Ta_b+=1*5
-                                                                            fc2Ta_b+=1*5
-                                                                            fd2Ta_b+=1*5
-                                                                            fe2Ta_b+=1*5
-
-                                                                            faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
-                                                                            faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
-                                                                            faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
-                                        elif offsetB == 65538:
-                                            f.seek(2,1)
-                                            vcount1 = unpack("B", f.read(1))[0]
-                                            vflag1 = unpack("B", f.read(1))[0]
-                                            if vflag1 == 0x6C:
-                                                #missing verts
-                                                if vcount1 == 4:
-                                                    for i in range(1):
-                                                        vx0001__F = unpack("<f", f.read(4))[0]
-                                                        vy0001__F = unpack("<f", f.read(4))[0]
-                                                        vz0001__F = unpack("<f", f.read(4))[0]
-                                                        type4F = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__G = unpack("<f", f.read(4))[0]
-                                                        vy0001__G = unpack("<f", f.read(4))[0]
-                                                        vz0001__G = unpack("<f", f.read(4))[0]
-                                                        type4G = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__H = unpack("<f", f.read(4))[0]
-                                                        vy0001__H = unpack("<f", f.read(4))[0]
-                                                        vz0001__H = unpack("<f", f.read(4))[0]
-                                                        type4H = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__I = unpack("<f", f.read(4))[0]
-                                                        vy0001__I = unpack("<f", f.read(4))[0]
-                                                        vz0001__I = unpack("<f", f.read(4))[0]
-                                                        type4I = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offsettB = unpack("<I", f.read(4))[0]
-                                                    if offsettB == 16777473:
-                                                        if type4F == 0:
-                                                            if type4G == 1:
-                                                                if type4H == 0:
-                                                                    if type4I == 0:
-                                                                        vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
-                                                                        vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
-                                                                        vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
-
-                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
-                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
-                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
-
-                                                                        fa2Ta_a+=1*5
-                                                                        fb2Ta_a+=1*5
-                                                                        fc2Ta_a+=1*5
-                                                                        fd2Ta_a+=1*5
-                                                                        fe2Ta_a+=1*5
-
-                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
-                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
-                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
-                                    elif offsettA == 16777473:
-                                        if type4 == 1:
-                                            if type4A == 1:
-                                                if type4B == 0:
-
-                                                    vertices3.append([vx0001__,vz0001__,vy0001__])
-                                                    vertices3.append([vx0001__A,vz0001__A,vy0001__A])
-                                                    vertices3.append([vx0001__B,vz0001__B,vy0001__B])
-                                                    uv_coords.append([uvx0001__,-uvy0001__])
-                                                    uv_coords.append([uvx0001__A,-uvy0001__A])
-                                                    uv_coords.append([uvx0001__B,-uvy0001__B])
-
-                                                    fa2+=1*3
-                                                    fb2+=1*3
-                                                    fc2+=1*3
-
-                                                    faces3.append([fa2,fb2,fc2])
-
-                                elif vertexCount == 4:
-                                    for j in range(1):
-                                        vx0001__AA = unpack("<f", f.read(4))[0]
-                                        vy0001__AA = unpack("<f", f.read(4))[0]
-                                        vz0001__AA = unpack("<f", f.read(4))[0]
-                                        brightness1__AA = unpack("<f", f.read(4))[0]
-                                        uvx0001__AA = unpack("<f", f.read(4))[0]
-                                        uvy0001__AA = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AA = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AB = unpack("<f", f.read(4))[0]
-                                        vy0001__AB = unpack("<f", f.read(4))[0]
-                                        vz0001__AB = unpack("<f", f.read(4))[0]
-                                        brightness1__AB = unpack("<f", f.read(4))[0]
-                                        uvx0001__AB = unpack("<f", f.read(4))[0]
-                                        uvy0001__AB = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AB = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AC = unpack("<f", f.read(4))[0]
-                                        vy0001__AC = unpack("<f", f.read(4))[0]
-                                        vz0001__AC = unpack("<f", f.read(4))[0]
-                                        brightness1__AC = unpack("<f", f.read(4))[0]
-                                        uvx0001__AC = unpack("<f", f.read(4))[0]
-                                        uvy0001__AC = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AC = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AD = unpack("<f", f.read(4))[0]
-                                        vy0001__AD = unpack("<f", f.read(4))[0]
-                                        vz0001__AD = unpack("<f", f.read(4))[0]
-                                        brightness1__AD = unpack("<f", f.read(4))[0]
-                                        uvx0001__AD = unpack("<f", f.read(4))[0]
-                                        uvy0001__AD = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AD = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for j in range(1):
-                                        vx0001__AA_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AA_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AA_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AA_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AA_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AA_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AA_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AB_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AB_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AB_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AB_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AB_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AB_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AB_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AC_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AC_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AC_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AC_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AC_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AC_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AC_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AD_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AD_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AD_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AD_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AD_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AD_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AD_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offffsetA = unpack("<I", f.read(4))[0]
-                                    if offffsetA == 16777473:
-                                        if type4AA_ == 1:
-                                            if type4AB_ == 1:
-                                                if type4AC_ == 0:
-                                                    if type4AD_ == 0:
-                                                        vertices3Caq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
-                                                        vertices3Caq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
-                                                        vertices3Caq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
-                                                        vertices3Caq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
-
-                                                        fa2CAQ+=1*4
-                                                        fb2CAQ+=1*4
-                                                        fc2CAQ+=1*4
-
-                                                        fa3CAQ+=1*4
-
-                                                        faces3Caq.append([fa2CAQ,fb2CAQ,fc2CAQ])
-                                                        faces3Caq.append([fb2CAQ,fc2CAQ,fa3CAQ])
-                                    elif offffsetA == 1627553811:
-                                        offffsetB = unpack("<I", f.read(4))[0]
-                                        if offffsetB == 65540:
-                                            ofssetA = unpack("<I", f.read(4))[0]
-                                            if ofssetA == 1627553815:
-                                                ofssetB = unpack("<I", f.read(4))[0]
-                                                if ofssetB == 65538:
+                                            for i in range(1):
+                                                vx0001__AE = unpack("<f", f.read(4))[0]
+                                                vy0001__AE = unpack("<f", f.read(4))[0]
+                                                vz0001__AE = unpack("<f", f.read(4))[0]
+                                                type1__AE = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                                vx0001__AF = unpack("<f", f.read(4))[0]
+                                                vy0001__AF = unpack("<f", f.read(4))[0]
+                                                vz0001__AF = unpack("<f", f.read(4))[0]
+                                                type1__AF = unpack("B", f.read(1))[0]
+                                                f.seek(3,1)
+                                            offffsetC = unpack("<I", f.read(4))[0]
+                                            if offffsetC == 1627553819:
+                                                offffsetD = unpack("<I", f.read(4))[0]
+                                                if offffsetD == 2:
                                                     f.seek(2,1)
-                                                    vvvcount1 = unpack("B", f.read(1))[0]
-                                                    ffflag1 = unpack("B", f.read(1))[0]
-                                                    if ffflag1 == 0x6C:
-                                                        if vvvcount1 == 4:
+                                                    vvcount1A = unpack("B", f.read(1))[0]
+                                                    fflag1A = unpack("B", f.read(1))[0]
+                                                    if fflag1A == 0x6C:
+                                                        if vvcount1A == 4:
                                                             for i in range(1):
-                                                                vx0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                type1__AE_ = unpack("B", f.read(1))[0]
+                                                                vx0001__AG = unpack("<f", f.read(4))[0]
+                                                                vy0001__AG = unpack("<f", f.read(4))[0]
+                                                                vz0001__AG = unpack("<f", f.read(4))[0]
+                                                                type1__AG = unpack("B", f.read(1))[0]
                                                                 f.seek(3,1)
-                                                                vx0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                type1__AF_ = unpack("B", f.read(1))[0]
+
+                                                                vx0001__AH = unpack("<f", f.read(4))[0]
+                                                                vy0001__AH = unpack("<f", f.read(4))[0]
+                                                                vz0001__AH = unpack("<f", f.read(4))[0]
+                                                                type1__AH = unpack("B", f.read(1))[0]
                                                                 f.seek(3,1)
-                                                                vx0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                type1__AG_ = unpack("B", f.read(1))[0]
+
+                                                                vx0001__AI = unpack("<f", f.read(4))[0]
+                                                                vy0001__AI = unpack("<f", f.read(4))[0]
+                                                                vz0001__AI = unpack("<f", f.read(4))[0]
+                                                                type1__AI = unpack("B", f.read(1))[0]
                                                                 f.seek(3,1)
-                                                                vx0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                type1__AH_ = unpack("B", f.read(1))[0]
+
+                                                                vx0001__AJ = unpack("<f", f.read(4))[0]
+                                                                vy0001__AJ = unpack("<f", f.read(4))[0]
+                                                                vz0001__AJ = unpack("<f", f.read(4))[0]
+                                                                type1__AJ = unpack("B", f.read(1))[0]
                                                                 f.seek(3,1)
-                                                            ofssetC = unpack("<I", f.read(4))[0]
-                                                            if ofssetC == 16777473:
-                                                                if type4AA_ == 1:
-                                                                    if type4AB_ == 1:
-                                                                        if type4AC_ == 0:
-                                                                            if type4AD_ == 0:
-                                                                                if type1__AE_ == 0:
-                                                                                    if type1__AF_ == 0:
-                                                                                        if type1__AG_ == 0:
-                                                                                            if type1__AH_ == 0:
-                                                                                                vertices3Daq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
-                                                                                                vertices3Daq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
-                                                                                                vertices3Daq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
-                                                                                                vertices3Daq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
-                                                                                                vertices3Daq.append([vx0001__AG_,vz0001__AG_,vy0001__AG_])
-
-                                                                                                fa2Ta_d+=1*5
-                                                                                                fb2Ta_d+=1*5
-                                                                                                fc2Ta_d+=1*5
-                                                                                                fd2Ta_d+=1*5
-                                                                                                fe2Ta_d+=1*5
-
-                                                                                                faces3Daq.append([fa2Ta_d,fb2Ta_d,fc2Ta_d])
-                                                                                                faces3Daq.append([fb2Ta_d,fc2Ta_d,fd2Ta_d])
-                                                                                                faces3Daq.append([fb2Ta_d,fd2Ta_d,fe2Ta_d])
-
-                                                                                                
-                                        elif offffsetB == 65537:
-                                            f.seek(2,1)
-                                            vvcount1 = unpack("B", f.read(1))[0]
-                                            fflag1 = unpack("B", f.read(1))[0]
-                                            if fflag1 == 0x6C:
-                                                if vvcount1 == 2:
-                                                    
-                                                    for i in range(1):
-                                                        vx0001__AE = unpack("<f", f.read(4))[0]
-                                                        vy0001__AE = unpack("<f", f.read(4))[0]
-                                                        vz0001__AE = unpack("<f", f.read(4))[0]
-                                                        type1__AE = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__AF = unpack("<f", f.read(4))[0]
-                                                        vy0001__AF = unpack("<f", f.read(4))[0]
-                                                        vz0001__AF = unpack("<f", f.read(4))[0]
-                                                        type1__AF = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offffsetC = unpack("<I", f.read(4))[0]
-                                                    if offffsetC == 1627553819:
-                                                        offffsetD = unpack("<I", f.read(4))[0]
-                                                        if offffsetD == 2:
-                                                            f.seek(2,1)
-                                                            vvcount1A = unpack("B", f.read(1))[0]
-                                                            fflag1A = unpack("B", f.read(1))[0]
-                                                            if fflag1A == 0x6C:
-                                                                if vvcount1A == 4:
-                                                                    for i in range(1):
-                                                                        vx0001__AG = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AG = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AG = unpack("<f", f.read(4))[0]
-                                                                        type1__AG = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AH = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AH = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AH = unpack("<f", f.read(4))[0]
-                                                                        type1__AH = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AI = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AI = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AI = unpack("<f", f.read(4))[0]
-                                                                        type1__AI = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        type1__AJ = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-                                                                    offffsetE = unpack("<I", f.read(4))[0]
-                                                                    if offffsetE == 1627553831:
-                                                                        offffsetF = unpack("<I", f.read(4))[0]
-                                                                        if offffsetF == 65540:
-                                                                            f.seek(2,1)
-                                                                            vvcount1B = unpack("B", f.read(1))[0]
-                                                                            fflag1B = unpack("B", f.read(1))[0]
-                                                                            if fflag1B == 0x6C:
-                                                                                if vvcount1B == 2:
-                                                                                    for i in range(1):
-                                                                                        vx0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        type1__AK = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-
-                                                                                        vx0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        type1__AL = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-                                                                                    offffsetF = unpack("<I", f.read(4))[0]
-                                                                                    if offffsetF == 1627553839:
-                                                                                        offffsetG = unpack("<I", f.read(4))[0]
-                                                                                        if offffsetG == 2:
-                                                                                            f.seek(2,1)
-                                                                                            vvcount1C = unpack("B", f.read(1))[0]
-                                                                                            fflag1C = unpack("B", f.read(1))[0]
-                                                                                            if fflag1C == 0x6C:
-                                                                                                if vvcount1C == 2:
-                                                                                                    for i in range(1):
-                                                                                                        vx0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        vy0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        vz0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        type1__AM = unpack("B", f.read(1))[0]
-                                                                                                        f.seek(3,1)
-
-                                                                                                        vx0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        vy0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        vz0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        type1__AN = unpack("B", f.read(1))[0]
-                                                                                                        f.seek(3,1)
-                                                                                                    offffsetG = unpack("<I", f.read(4))[0]
-                                                                                                    if offffsetG == 1627553847:
-                                                                                                        offffsetH = unpack("<I", f.read(4))[0]
-                                                                                                        if offffsetH == 9:
-                                                                                                            offffsetI = unpack("<I", f.read(4))[0]
-                                                                                                            if offffsetI == 16777473:
-                                                                                                                if type4AA == 1:
-                                                                                                                    if type4AB == 1:
-                                                                                                                        if type4AC == 0:
-                                                                                                                            if type4AD == 0:
-                                                                                                                                if type1__AE == 0:
-                                                                                                                                    if type1__AF == 1:
-                                                                                                                                        if type1__AG == 0:
-                                                                                                                                            if type1__AH == 0:
-                                                                                                                                                if type1__AI == 0:
-                                                                                                                                                    if type1__AJ == 0:
-                                                                                                                                                        if type1__AK == 0:
-                                                                                                                                                            if type1__AL == 1:
-                                                                                                                                                                if type1__AM == 0:
-                                                                                                                                                                    if type1__AN == 0:
-                                                                                                                                                                        vertices3Baq.append([vx0001__AA,vz0001__AA,vy0001__AA])
-                                                                                                                                                                        vertices3Baq.append([vx0001__AB,vz0001__AB,vy0001__AB])
-                                                                                                                                                                        vertices3Baq.append([vx0001__AC,vz0001__AC,vy0001__AC])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AD,vz0001__AD,vy0001__AD])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AE,vz0001__AE,vy0001__AE])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AG,vz0001__AG,vy0001__AG])
-
-                                                                                                                                                                        fa2Ta_c+=1*6
-                                                                                                                                                                        fb2Ta_c+=1*6
-                                                                                                                                                                        fc2Ta_c+=1*6
-                                                                                                                                                                        fd2Ta_c+=1*6
-                                                                                                                                                                        fe2Ta_c+=1*6
-                                                                                                                                                                        ff2Ta_c+=1*6
-
-                                                                                                                                                                        faces3Baq.append([fa2Ta_c,fb2Ta_c,fc2Ta_c])
-                                                                                                                                                                        faces3Baq.append([fb2Ta_c,fc2Ta_c,fd2Ta_c])
-            elif ObjectCount == 0:
-                if UnkCount1 != 0 and UnkCount2 != 0:
-                    f.seek(UnkCountEntrySize2,0)
-                    for i in range(UnkCount2):
-                        ScaleX = unpack("<f", f.read(4))[0]
-                        rotationz = unpack("<f", f.read(4))[0]
-                        rotationy = unpack("<f", f.read(4))[0]
-                        null1 = unpack("<f", f.read(4))[0]
-                        nrotationz = unpack("<f", f.read(4))[0]
-                        ScaleY = unpack("<f", f.read(4))[0]
-                        rotationx = unpack("<f", f.read(4))[0]
-                        nrotationy = unpack("<f", f.read(4))[0]
-                        null2 = unpack("<f", f.read(4))[0]
-                        nrotationx = unpack("<f", f.read(4))[0]
-                        ScaleZ = unpack("<f", f.read(4))[0]
-                        null3 = unpack("<f", f.read(4))[0]
-                        posx = unpack("<f", f.read(4))[0]
-                        posy = unpack("<f", f.read(4))[0]
-                        posz = unpack("<f", f.read(4))[0]
-                        ScaleW = unpack("<f", f.read(4))[0]
-                        objlen = unpack("<I", f.read(4))[0]
-                        objid = unpack("<I", f.read(4))[0]
-                        f.seek(8,1)
-                    f.seek(0)
-                    Chunk = f.read()
-                    f.seek(0)
-                    while f.tell() < len(Chunk):
-                        Chunks = f.read(4)
-                        if Chunks == b"\x03\x01\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0]
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount:
-                                    for j in range(vertexCount):
-                                        vx = unpack("<f", f.read(4))[0]
-                                        vy = unpack("<f", f.read(4))[0]
-                                        vz = unpack("<f", f.read(4))[0]
-                                        type4 = unpack("B", f.read(1))[0]==False
-                                        value1 = unpack("B", f.read(1))[0]
-                                        nz = unpack("<h", f.read(2))[0]
-                                        vertices.append([vx,vz,vy])
-                                        fa+=1
-                                        fb+=1
-                                        fc+=1
-                                        if type4 > 0:
-                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
-                        elif Chunks == b"\x03\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6D:
-                                if vertexCount == 3:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2.append([vxaa,vzaa,vyaa])
-                                    f.seek(78,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd = unpack("B", f.read(1))[0] & 0x0F
-                                            
-                                        fad//=3
-                                        fbd//=3
-                                        fcd//=3
-
-                                        fad+=1*len(vertices2)-3
-                                        fbd+=1*len(vertices2)-3
-                                        fcd+=1*len(vertices2)-3
-
-                                        faces2.append([fad,fbd,fcd])
-
-                                elif vertexCount == 4:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2a.append([vxaa,vzaa,vyaa])
-                                    f.seek(82,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-                                        pad03 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-                                        
-
-                                elif vertexCount == 5:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2b.append([vx,vz,vy])
-
-                                    f.seek(86,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100:
-                                            
-                                        
-                                            fad5//=3
-                                            fbd5//=3
-                                            fcd5//=3
-                                            fdd5//=3
-                                            fed5//=3
-                                            
-                                            fad5+=1*len(vertices2b)-5
-                                            fbd5+=1*len(vertices2b)-5
-                                            fcd5+=1*len(vertices2b)-5
-                                            fdd5+=1*len(vertices2b)-5
-                                            fed5+=1*len(vertices2b)-5
-                                            
-                                            faces2b.append([fad5,fbd5,fcd5])
-                                            faces2b.append([fbd5,fcd5,fdd5])
-                                            faces2b.append([fcd5,fdd5,fed5])
-
-                                elif vertexCount == 6:
-                                    for i in range(1):
-                                        vx = unpack("<h", f.read(2))[0]/4096
-                                        vy = unpack("<h", f.read(2))[0]/4096
-                                        vz = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx1 = unpack("<h", f.read(2))[0]/4096
-                                        vy1 = unpack("<h", f.read(2))[0]/4096
-                                        vz1 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx2 = unpack("<h", f.read(2))[0]/4096
-                                        vy2 = unpack("<h", f.read(2))[0]/4096
-                                        vz2 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx3 = unpack("<h", f.read(2))[0]/4096
-                                        vy3 = unpack("<h", f.read(2))[0]/4096
-                                        vz3 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx4 = unpack("<h", f.read(2))[0]/4096
-                                        vy4 = unpack("<h", f.read(2))[0]/4096
-                                        vz4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx6 = unpack("<h", f.read(2))[0]/4096
-                                        vy6 = unpack("<h", f.read(2))[0]/4096
-                                        vz6 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-                                        vertices2c.append([vx,vz,vy])
-                                        vertices2c.append([vx1,vz1,vy1])
-                                        vertices2c.append([vx2,vz2,vy2])
-                                        vertices2c.append([vx3,vz3,vy3])
-                                        vertices2c.append([vx4,vz4,vy4])
-                                        vertices2c.append([vx6,vz6,vy6])
-
-                                    f.seek(90,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsC = unpack("B", f.read(1))[0]
-                                    if flagsC == 0x6E:
-                                        if facecount == 2:
-                                            
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            if pad01 == 100:
-                                                
-                                            
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                            elif pad01 == 15:
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-
-                                        elif facecount == 3:
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            pad02 = unpack("B", f.read(1))[0]
-                                            pad03 = unpack("B", f.read(1))[0]
-
-                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                                fad6a//=3
-                                                fbd6a//=3
-                                                fcd6a//=3
-                                                fdd6a//=3
-                                                fed6a//=3
-                                                ffd6a//=3
-                                                fgd6a//=3
-                                                fhd6a//=3
-                                                
-                                                fad6a+=1*len(vertices2c)-6
-                                                fbd6a+=1*len(vertices2c)-6
-                                                fcd6a+=1*len(vertices2c)-6
-                                                fdd6a+=1*len(vertices2c)-6
-                                                fed6a+=1*len(vertices2c)-6
-                                                ffd6a+=1*len(vertices2c)-6
-                                                fgd6a+=1*len(vertices2c)-6
-                                                fhd6a+=1*len(vertices2c)-6
-
-                                                faces2c.append([fad6a,fbd6a,fcd6a])
-                                                faces2c.append([fbd6a,fcd6a,fdd6a])
-                                                faces2c.append([fcd6a,fdd6a,fed6a])
-                                                faces2c.append([fdd6a,fed6a,ffd6a])
-                                                faces2c.append([fed6a,ffd6a,fgd6a])
-                                                faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                                elif vertexCount == 7:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        
-                                        vertices2d.append([vx,vz,vy])
-                                    
-                                    
-                                    
-                                    
-                                    
-                                                
-                                    
-                                
-                        elif Chunks == b"\x04\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2 = unpack("B", f.read(1))[0]
-                            if flag2 == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount == 3:
-                                    for j in range(1):
-                                        
-                                        vx0001__ = unpack("<f", f.read(4))[0]
-                                        vy0001__ = unpack("<f", f.read(4))[0]
-                                        vz0001__ = unpack("<f", f.read(4))[0]
-                                        brightness1__ = unpack("<f", f.read(4))[0]
-                                        uvx0001__ = unpack("<f", f.read(4))[0]
-                                        uvy0001__ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4 = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__A = unpack("<f", f.read(4))[0]
-                                        vy0001__A = unpack("<f", f.read(4))[0]
-                                        vz0001__A = unpack("<f", f.read(4))[0]
-                                        brightness1__A = unpack("<f", f.read(4))[0]
-                                        uvx0001__A = unpack("<f", f.read(4))[0]
-                                        uvy0001__A = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4A = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__B = unpack("<f", f.read(4))[0]
-                                        vy0001__B = unpack("<f", f.read(4))[0]
-                                        vz0001__B = unpack("<f", f.read(4))[0]
-                                        brightness1__B = unpack("<f", f.read(4))[0]
-                                        uvx0001__B = unpack("<f", f.read(4))[0]
-                                        uvy0001__B = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4B = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__C = unpack("<f", f.read(4))[0]
-                                        vy0001__C = unpack("<f", f.read(4))[0]
-                                        vz0001__C = unpack("<f", f.read(4))[0]
-                                        brightness1__C = unpack("<f", f.read(4))[0]
-                                        uvx0001__C = unpack("<f", f.read(4))[0]
-                                        uvy0001__C = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4C = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__D = unpack("<f", f.read(4))[0]
-                                        vy0001__D = unpack("<f", f.read(4))[0]
-                                        vz0001__D = unpack("<f", f.read(4))[0]
-                                        brightness1__D = unpack("<f", f.read(4))[0]
-                                        uvx0001__D = unpack("<f", f.read(4))[0]
-                                        uvy0001__D = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4D = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__E = unpack("<f", f.read(4))[0]
-                                        vy0001__E = unpack("<f", f.read(4))[0]
-                                        vz0001__E = unpack("<f", f.read(4))[0]
-                                        brightness1__E = unpack("<f", f.read(4))[0]
-                                        uvx0001__E = unpack("<f", f.read(4))[0]
-                                        uvy0001__E = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4E = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__N = unpack("<f", f.read(4))[0]
-                                        vy0001__N = unpack("<f", f.read(4))[0]
-                                        vz0001__N = unpack("<f", f.read(4))[0]
-                                        brightness1__N = unpack("<f", f.read(4))[0]
-                                        uvx0001__N = unpack("<f", f.read(4))[0]
-                                        uvy0001__N = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4N = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__O = unpack("<f", f.read(4))[0]
-                                        vy0001__O = unpack("<f", f.read(4))[0]
-                                        vz0001__O = unpack("<f", f.read(4))[0]
-                                        brightness1__O = unpack("<f", f.read(4))[0]
-                                        uvx0001__O = unpack("<f", f.read(4))[0]
-                                        uvy0001__O = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4O = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__P = unpack("<f", f.read(4))[0]
-                                        vy0001__P = unpack("<f", f.read(4))[0]
-                                        vz0001__P = unpack("<f", f.read(4))[0]
-                                        brightness1__P = unpack("<f", f.read(4))[0]
-                                        uvx0001__P = unpack("<f", f.read(4))[0]
-                                        uvy0001__P = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4P = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offsettA = unpack("<I", f.read(4))[0]
-                                    if offsettA == 1627553807:
-                                        offsetB = unpack("<I", f.read(4))[0]
-                                        if offsetB != 65538:
-                                            f.seek(-4,1)
-                                            offsetC = unpack("<I", f.read(4))[0]
-                                            if offsetC == 65539:
-                                                f.seek(2,1)
-                                                vcount2 = unpack("B", f.read(1))[0]
-                                                vflag2 = unpack("B", f.read(1))[0]
-                                                if vflag2 == 0x6C:
-                                                    #missing verts
-                                                    if vcount2 == 4:
-                                                        for i in range(1):
-                                                            vx0001__J = unpack("<f", f.read(4))[0]
-                                                            vy0001__J = unpack("<f", f.read(4))[0]
-                                                            vz0001__J = unpack("<f", f.read(4))[0]
-                                                            type4J = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__K = unpack("<f", f.read(4))[0]
-                                                            vy0001__K = unpack("<f", f.read(4))[0]
-                                                            vz0001__K = unpack("<f", f.read(4))[0]
-                                                            type4K = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__L = unpack("<f", f.read(4))[0]
-                                                            vy0001__L = unpack("<f", f.read(4))[0]
-                                                            vz0001__L = unpack("<f", f.read(4))[0]
-                                                            type4L = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__M = unpack("<f", f.read(4))[0]
-                                                            vy0001__M = unpack("<f", f.read(4))[0]
-                                                            vz0001__M = unpack("<f", f.read(4))[0]
-                                                            type4M = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                        offsettC = unpack("<I", f.read(4))[0]
-                                                        if offsettC == 16777473:
-                                                            if type4J == 0:
-                                                                if type4K == 1:
-                                                                    if type4L == 0:
-                                                                        if type4M == 0:
-                                                                            vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
-                                                                            vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
-                                                                            vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
-
-                                                                            vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
-                                                                            vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
-                                                                            vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
-
-                                                                            fa2Ta_b+=1*5
-                                                                            fb2Ta_b+=1*5
-                                                                            fc2Ta_b+=1*5
-                                                                            fd2Ta_b+=1*5
-                                                                            fe2Ta_b+=1*5
-
-                                                                            faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
-                                                                            faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
-                                                                            faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
-                                        elif offsetB == 65538:
-                                            f.seek(2,1)
-                                            vcount1 = unpack("B", f.read(1))[0]
-                                            vflag1 = unpack("B", f.read(1))[0]
-                                            if vflag1 == 0x6C:
-                                                #missing verts
-                                                if vcount1 == 4:
-                                                    for i in range(1):
-                                                        vx0001__F = unpack("<f", f.read(4))[0]
-                                                        vy0001__F = unpack("<f", f.read(4))[0]
-                                                        vz0001__F = unpack("<f", f.read(4))[0]
-                                                        type4F = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__G = unpack("<f", f.read(4))[0]
-                                                        vy0001__G = unpack("<f", f.read(4))[0]
-                                                        vz0001__G = unpack("<f", f.read(4))[0]
-                                                        type4G = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__H = unpack("<f", f.read(4))[0]
-                                                        vy0001__H = unpack("<f", f.read(4))[0]
-                                                        vz0001__H = unpack("<f", f.read(4))[0]
-                                                        type4H = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__I = unpack("<f", f.read(4))[0]
-                                                        vy0001__I = unpack("<f", f.read(4))[0]
-                                                        vz0001__I = unpack("<f", f.read(4))[0]
-                                                        type4I = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offsettB = unpack("<I", f.read(4))[0]
-                                                    if offsettB == 16777473:
-                                                        if type4F == 0:
-                                                            if type4G == 1:
-                                                                if type4H == 0:
-                                                                    if type4I == 0:
-                                                                        vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
-                                                                        vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
-                                                                        vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
-
-                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
-                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
-                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
-
-                                                                        fa2Ta_a+=1*5
-                                                                        fb2Ta_a+=1*5
-                                                                        fc2Ta_a+=1*5
-                                                                        fd2Ta_a+=1*5
-                                                                        fe2Ta_a+=1*5
-
-                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
-                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
-                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
-                                    elif offsettA == 16777473:
-                                        if type4 == 1:
-                                            if type4A == 1:
-                                                if type4B == 0:
-
-                                                    vertices3.append([vx0001__,vz0001__,vy0001__])
-                                                    vertices3.append([vx0001__A,vz0001__A,vy0001__A])
-                                                    vertices3.append([vx0001__B,vz0001__B,vy0001__B])
-                                                    uv_coords.append([uvx0001__,-uvy0001__])
-                                                    uv_coords.append([uvx0001__A,-uvy0001__A])
-                                                    uv_coords.append([uvx0001__B,-uvy0001__B])
-
-                                                    fa2+=1*3
-                                                    fb2+=1*3
-                                                    fc2+=1*3
-
-                                                    faces3.append([fa2,fb2,fc2])
-
-                                elif vertexCount == 4:
-                                    for j in range(1):
-                                        vx0001__AA = unpack("<f", f.read(4))[0]
-                                        vy0001__AA = unpack("<f", f.read(4))[0]
-                                        vz0001__AA = unpack("<f", f.read(4))[0]
-                                        brightness1__AA = unpack("<f", f.read(4))[0]
-                                        uvx0001__AA = unpack("<f", f.read(4))[0]
-                                        uvy0001__AA = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AA = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AB = unpack("<f", f.read(4))[0]
-                                        vy0001__AB = unpack("<f", f.read(4))[0]
-                                        vz0001__AB = unpack("<f", f.read(4))[0]
-                                        brightness1__AB = unpack("<f", f.read(4))[0]
-                                        uvx0001__AB = unpack("<f", f.read(4))[0]
-                                        uvy0001__AB = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AB = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AC = unpack("<f", f.read(4))[0]
-                                        vy0001__AC = unpack("<f", f.read(4))[0]
-                                        vz0001__AC = unpack("<f", f.read(4))[0]
-                                        brightness1__AC = unpack("<f", f.read(4))[0]
-                                        uvx0001__AC = unpack("<f", f.read(4))[0]
-                                        uvy0001__AC = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AC = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AD = unpack("<f", f.read(4))[0]
-                                        vy0001__AD = unpack("<f", f.read(4))[0]
-                                        vz0001__AD = unpack("<f", f.read(4))[0]
-                                        brightness1__AD = unpack("<f", f.read(4))[0]
-                                        uvx0001__AD = unpack("<f", f.read(4))[0]
-                                        uvy0001__AD = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AD = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for j in range(1):
-                                        vx0001__AA_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AA_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AA_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AA_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AA_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AA_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AA_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AB_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AB_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AB_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AB_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AB_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AB_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AB_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AC_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AC_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AC_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AC_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AC_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AC_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AC_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AD_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AD_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AD_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AD_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AD_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AD_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AD_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offffsetA = unpack("<I", f.read(4))[0]
-                                    if offffsetA == 16777473:
-                                        if type4AA_ == 1:
-                                            if type4AB_ == 1:
-                                                if type4AC_ == 0:
-                                                    if type4AD_ == 0:
-                                                        vertices3Caq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
-                                                        vertices3Caq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
-                                                        vertices3Caq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
-                                                        vertices3Caq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
-
-                                                        fa2CAQ+=1*4
-                                                        fb2CAQ+=1*4
-                                                        fc2CAQ+=1*4
-
-                                                        fa3CAQ+=1*4
-
-                                                        faces3Caq.append([fa2CAQ,fb2CAQ,fc2CAQ])
-                                                        faces3Caq.append([fb2CAQ,fc2CAQ,fa3CAQ])
-                                    elif offffsetA == 1627553811:
-                                        offffsetB = unpack("<I", f.read(4))[0]
-                                        if offffsetB == 65540:
-                                            ofssetA = unpack("<I", f.read(4))[0]
-                                            if ofssetA == 1627553815:
-                                                ofssetB = unpack("<I", f.read(4))[0]
-                                                if ofssetB == 65538:
-                                                    f.seek(2,1)
-                                                    vvvcount1 = unpack("B", f.read(1))[0]
-                                                    ffflag1 = unpack("B", f.read(1))[0]
-                                                    if ffflag1 == 0x6C:
-                                                        if vvvcount1 == 4:
-                                                            for i in range(1):
-                                                                vx0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                type1__AE_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                                vx0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                type1__AF_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                                vx0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                type1__AG_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                                vx0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                type1__AH_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                            ofssetC = unpack("<I", f.read(4))[0]
-                                                            if ofssetC == 16777473:
-                                                                if type4AA_ == 1:
-                                                                    if type4AB_ == 1:
-                                                                        if type4AC_ == 0:
-                                                                            if type4AD_ == 0:
-                                                                                if type1__AE_ == 0:
-                                                                                    if type1__AF_ == 0:
-                                                                                        if type1__AG_ == 0:
-                                                                                            if type1__AH_ == 0:
-                                                                                                vertices3Daq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
-                                                                                                vertices3Daq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
-                                                                                                vertices3Daq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
-                                                                                                vertices3Daq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
-                                                                                                vertices3Daq.append([vx0001__AG_,vz0001__AG_,vy0001__AG_])
-
-                                                                                                fa2Ta_d+=1*5
-                                                                                                fb2Ta_d+=1*5
-                                                                                                fc2Ta_d+=1*5
-                                                                                                fd2Ta_d+=1*5
-                                                                                                fe2Ta_d+=1*5
-
-                                                                                                faces3Daq.append([fa2Ta_d,fb2Ta_d,fc2Ta_d])
-                                                                                                faces3Daq.append([fb2Ta_d,fc2Ta_d,fd2Ta_d])
-                                                                                                faces3Daq.append([fb2Ta_d,fd2Ta_d,fe2Ta_d])
-                                        elif offffsetB == 65537:
-                                            f.seek(2,1)
-                                            vvcount1 = unpack("B", f.read(1))[0]
-                                            fflag1 = unpack("B", f.read(1))[0]
-                                            if fflag1 == 0x6C:
-                                                if vvcount1 == 2:
-                                                    
-                                                    for i in range(1):
-                                                        vx0001__AE = unpack("<f", f.read(4))[0]
-                                                        vy0001__AE = unpack("<f", f.read(4))[0]
-                                                        vz0001__AE = unpack("<f", f.read(4))[0]
-                                                        type1__AE = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__AF = unpack("<f", f.read(4))[0]
-                                                        vy0001__AF = unpack("<f", f.read(4))[0]
-                                                        vz0001__AF = unpack("<f", f.read(4))[0]
-                                                        type1__AF = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offffsetC = unpack("<I", f.read(4))[0]
-                                                    if offffsetC == 1627553819:
-                                                        offffsetD = unpack("<I", f.read(4))[0]
-                                                        if offffsetD == 2:
-                                                            f.seek(2,1)
-                                                            vvcount1A = unpack("B", f.read(1))[0]
-                                                            fflag1A = unpack("B", f.read(1))[0]
-                                                            if fflag1A == 0x6C:
-                                                                if vvcount1A == 4:
-                                                                    for i in range(1):
-                                                                        vx0001__AG = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AG = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AG = unpack("<f", f.read(4))[0]
-                                                                        type1__AG = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AH = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AH = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AH = unpack("<f", f.read(4))[0]
-                                                                        type1__AH = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AI = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AI = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AI = unpack("<f", f.read(4))[0]
-                                                                        type1__AI = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        type1__AJ = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-                                                                    offffsetE = unpack("<I", f.read(4))[0]
-                                                                    if offffsetE == 1627553831:
-                                                                        offffsetF = unpack("<I", f.read(4))[0]
-                                                                        if offffsetF == 65540:
-                                                                            f.seek(2,1)
-                                                                            vvcount1B = unpack("B", f.read(1))[0]
-                                                                            fflag1B = unpack("B", f.read(1))[0]
-                                                                            if fflag1B == 0x6C:
-                                                                                if vvcount1B == 2:
-                                                                                    for i in range(1):
-                                                                                        vx0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        type1__AK = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-
-                                                                                        vx0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        type1__AL = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-                                                                                    offffsetF = unpack("<I", f.read(4))[0]
-                                                                                    if offffsetF == 1627553839:
-                                                                                        offffsetG = unpack("<I", f.read(4))[0]
-                                                                                        if offffsetG == 2:
-                                                                                            f.seek(2,1)
-                                                                                            vvcount1C = unpack("B", f.read(1))[0]
-                                                                                            fflag1C = unpack("B", f.read(1))[0]
-                                                                                            if fflag1C == 0x6C:
-                                                                                                if vvcount1C == 2:
-                                                                                                    for i in range(1):
-                                                                                                        vx0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        vy0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        vz0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        type1__AM = unpack("B", f.read(1))[0]
-                                                                                                        f.seek(3,1)
-
-                                                                                                        vx0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        vy0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        vz0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        type1__AN = unpack("B", f.read(1))[0]
-                                                                                                        f.seek(3,1)
-                                                                                                    offffsetG = unpack("<I", f.read(4))[0]
-                                                                                                    if offffsetG == 1627553847:
-                                                                                                        offffsetH = unpack("<I", f.read(4))[0]
-                                                                                                        if offffsetH == 9:
-                                                                                                            offffsetI = unpack("<I", f.read(4))[0]
-                                                                                                            if offffsetI == 16777473:
-                                                                                                                if type4AA == 1:
-                                                                                                                    if type4AB == 1:
-                                                                                                                        if type4AC == 0:
-                                                                                                                            if type4AD == 0:
-                                                                                                                                if type1__AE == 0:
-                                                                                                                                    if type1__AF == 1:
-                                                                                                                                        if type1__AG == 0:
-                                                                                                                                            if type1__AH == 0:
-                                                                                                                                                if type1__AI == 0:
-                                                                                                                                                    if type1__AJ == 0:
-                                                                                                                                                        if type1__AK == 0:
-                                                                                                                                                            if type1__AL == 1:
-                                                                                                                                                                if type1__AM == 0:
-                                                                                                                                                                    if type1__AN == 0:
-                                                                                                                                                                        vertices3Baq.append([vx0001__AA,vz0001__AA,vy0001__AA])
-                                                                                                                                                                        vertices3Baq.append([vx0001__AB,vz0001__AB,vy0001__AB])
-                                                                                                                                                                        vertices3Baq.append([vx0001__AC,vz0001__AC,vy0001__AC])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AD,vz0001__AD,vy0001__AD])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AE,vz0001__AE,vy0001__AE])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AG,vz0001__AG,vy0001__AG])
-
-                                                                                                                                                                        fa2Ta_c+=1*6
-                                                                                                                                                                        fb2Ta_c+=1*6
-                                                                                                                                                                        fc2Ta_c+=1*6
-                                                                                                                                                                        fd2Ta_c+=1*6
-                                                                                                                                                                        fe2Ta_c+=1*6
-                                                                                                                                                                        ff2Ta_c+=1*6
-
-                                                                                                                                                                        faces3Baq.append([fa2Ta_c,fb2Ta_c,fc2Ta_c])
-                                                                                                                                                                        faces3Baq.append([fb2Ta_c,fc2Ta_c,fd2Ta_c])
-                                
-                if UnkCount1 == 0 and UnkCount2 == 0:
-                    f.seek(0)
-                    Chunk = f.read()
-                    f.seek(0)
-                    while f.tell() < len(Chunk):
-                        Chunks = f.read(4)
-                        if Chunks == b"\x03\x01\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0]
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount:
-                                    for j in range(vertexCount):
-                                        vx = unpack("<f", f.read(4))[0]
-                                        vy = unpack("<f", f.read(4))[0]
-                                        vz = unpack("<f", f.read(4))[0]
-                                        type4 = unpack("B", f.read(1))[0]==False
-                                        value1 = unpack("B", f.read(1))[0]
-                                        nz = unpack("<h", f.read(2))[0]
-                                        vertices.append([vx,vz,vy])
-                                        fa+=1
-                                        fb+=1
-                                        fc+=1
-                                        if type4 > 0:
-                                            faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
-                        elif Chunks == b"\x03\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2a = unpack("B", f.read(1))[0]
-                            if flag2a == 0x6D:
-                                if vertexCount == 3:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2.append([vxaa,vzaa,vyaa])
-                                    f.seek(78,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd = unpack("B", f.read(1))[0] & 0x0F
-                                            
-                                        fad//=3
-                                        fbd//=3
-                                        fcd//=3
-
-                                        fad+=1*len(vertices2)-3
-                                        fbd+=1*len(vertices2)-3
-                                        fcd+=1*len(vertices2)-3
-
-                                        faces2.append([fad,fbd,fcd])
-
-                                elif vertexCount == 4:
-                                    for i in range(vertexCount):
-                                        vxaa = unpack("<h", f.read(2))[0] / 4096
-                                        vyaa = unpack("<h", f.read(2))[0] / 4096
-                                        vzaa = unpack("<h", f.read(2))[0] / 4096
-                                        vwaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                        uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2a.append([vxaa,vzaa,vyaa])
-                                    f.seek(82,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd1abc = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-                                        pad03 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 12 and pad02 == 15 and pad03 == 18:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-
-                                        elif pad01 == 60 and pad02 == 57 and pad03 == 54:
-                                            fad1abc//=3
-                                            fbd1abc//=3
-                                            fcd1abc//=3
-                                            fdd1abc//=3
-
-                                            fad1abc+=1*len(vertices2a)-4
-                                            fbd1abc+=1*len(vertices2a)-4
-                                            fcd1abc+=1*len(vertices2a)-4
-                                            fdd1abc+=1*len(vertices2a)-4
-
-                                            faces2a.append([fad1abc,fbd1abc,fcd1abc])
-                                            faces2a.append([fbd1abc,fcd1abc,fdd1abc])
-                                        
-
-                                elif vertexCount == 5:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx3 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy3 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        vertices2b.append([vx,vz,vy])
-
-                                    f.seek(86,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsB = unpack("B", f.read(1))[0]
-                                    if flagsB == 0x6E:
-                                        id1 = unpack("B", f.read(1))[0]
-                                        fad5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fbd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fcd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fdd5 = unpack("B", f.read(1))[0] & 0x0F
-                                        fed5 = unpack("B", f.read(1))[0] & 0x0F
-                                        pad01 = unpack("B", f.read(1))[0]
-                                        pad02 = unpack("B", f.read(1))[0]
-
-                                        if pad01 == 100 and pad02 == 100:
-                                            
-                                        
-                                            fad5//=3
-                                            fbd5//=3
-                                            fcd5//=3
-                                            fdd5//=3
-                                            fed5//=3
-                                            
-                                            fad5+=1*len(vertices2b)-5
-                                            fbd5+=1*len(vertices2b)-5
-                                            fcd5+=1*len(vertices2b)-5
-                                            fdd5+=1*len(vertices2b)-5
-                                            fed5+=1*len(vertices2b)-5
-                                            
-                                            faces2b.append([fad5,fbd5,fcd5])
-                                            faces2b.append([fbd5,fcd5,fdd5])
-                                            faces2b.append([fcd5,fdd5,fed5])
-
-                                elif vertexCount == 6:
-                                    for i in range(1):
-                                        vx = unpack("<h", f.read(2))[0]/4096
-                                        vy = unpack("<h", f.read(2))[0]/4096
-                                        vz = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx1 = unpack("<h", f.read(2))[0]/4096
-                                        vy1 = unpack("<h", f.read(2))[0]/4096
-                                        vz1 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx2 = unpack("<h", f.read(2))[0]/4096
-                                        vy2 = unpack("<h", f.read(2))[0]/4096
-                                        vz2 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx3 = unpack("<h", f.read(2))[0]/4096
-                                        vy3 = unpack("<h", f.read(2))[0]/4096
-                                        vz3 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx4 = unpack("<h", f.read(2))[0]/4096
-                                        vy4 = unpack("<h", f.read(2))[0]/4096
-                                        vz4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-
-                                        vx6 = unpack("<h", f.read(2))[0]/4096
-                                        vy6 = unpack("<h", f.read(2))[0]/4096
-                                        vz6 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(2,1)
-                                        uvx4 = unpack("<h", f.read(2))[0]/4096
-                                        uvy4 = unpack("<h", f.read(2))[0]/4096
-                                        f.seek(4,1)
-                                        vertices2c.append([vx,vz,vy])
-                                        vertices2c.append([vx1,vz1,vy1])
-                                        vertices2c.append([vx2,vz2,vy2])
-                                        vertices2c.append([vx3,vz3,vy3])
-                                        vertices2c.append([vx4,vz4,vy4])
-                                        vertices2c.append([vx6,vz6,vy6])
-
-                                    f.seek(90,1)
-                                    facecount = unpack("B", f.read(1))[0]
-                                    flagsC = unpack("B", f.read(1))[0]
-                                    if flagsC == 0x6E:
-                                        if facecount == 2:
-                                            
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6 = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6 = unpack("B", f.read(1))[0] & 0x0F
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            if pad01 == 100:
-                                                
-                                            
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                            elif pad01 == 15:
-                                                fad6//=3
-                                                fbd6//=3
-                                                fcd6//=3
-                                                fdd6//=3
-                                                fed6//=3
-                                                ffd6//=3
-                                                
-                                                fad6+=1*len(vertices2c)-6
-                                                fbd6+=1*len(vertices2c)-6
-                                                fcd6+=1*len(vertices2c)-6
-                                                fdd6+=1*len(vertices2c)-6
-                                                fed6+=1*len(vertices2c)-6
-                                                ffd6+=1*len(vertices2c)-6
-
-                                                if math.isclose(vy3,vy4) == True:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fbd6,fcd6,fdd6])
-                                                    faces2c.append([fcd6,fdd6,fed6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-                                                else:
-                                                    faces2c.append([fad6,fbd6,fcd6])
-                                                    faces2c.append([fdd6,fed6,ffd6])
-
-                                        elif facecount == 3:
-                                            id1 = unpack("B", f.read(1))[0]
-                                            fad6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fbd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fcd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fdd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fed6a = unpack("B", f.read(1))[0] & 0x0F
-                                            ffd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fgd6a = unpack("B", f.read(1))[0] & 0x0F
-                                            fhd6a = unpack("B", f.read(1))[0] & 0x0F
-
-                                            pad01 = unpack("B", f.read(1))[0]
-                                            pad02 = unpack("B", f.read(1))[0]
-                                            pad03 = unpack("B", f.read(1))[0]
-
-                                            if pad01 == 100 and pad02 == 100 and pad03 == 100:
-                                                fad6a//=3
-                                                fbd6a//=3
-                                                fcd6a//=3
-                                                fdd6a//=3
-                                                fed6a//=3
-                                                ffd6a//=3
-                                                fgd6a//=3
-                                                fhd6a//=3
-                                                
-                                                fad6a+=1*len(vertices2c)-6
-                                                fbd6a+=1*len(vertices2c)-6
-                                                fcd6a+=1*len(vertices2c)-6
-                                                fdd6a+=1*len(vertices2c)-6
-                                                fed6a+=1*len(vertices2c)-6
-                                                ffd6a+=1*len(vertices2c)-6
-                                                fgd6a+=1*len(vertices2c)-6
-                                                fhd6a+=1*len(vertices2c)-6
-
-                                                faces2c.append([fad6a,fbd6a,fcd6a])
-                                                faces2c.append([fbd6a,fcd6a,fdd6a])
-                                                faces2c.append([fcd6a,fdd6a,fed6a])
-                                                faces2c.append([fdd6a,fed6a,ffd6a])
-                                                faces2c.append([fed6a,ffd6a,fgd6a])
-                                                faces2c.append([ffd6a,fgd6a,fhd6a])
-
-                                elif vertexCount == 7:
-                                    for i in range(vertexCount):
-                                        vx = unpack("<h", f.read(2))[0] / 4096
-                                        vy = unpack("<h", f.read(2))[0] / 4096
-                                        vz = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(2,1)
-                                        uvx5 = unpack("<h", f.read(2))[0] / 4096
-                                        uvy5 = unpack("<h", f.read(2))[0] / 4096
-                                        f.seek(4,1)
-                                        
-                                        vertices2d.append([vx,vz,vy])
-                                    
-                                    
-                                    
-                                    
-                                    
-                                                
-                                    
-                                
-                        elif Chunks == b"\x04\x02\x00\x01":
-                            f.seek(1,1)
-                            value1 = unpack("B", f.read(1))[0]
-                            vertexCount = unpack("B", f.read(1))[0] // 2
-                            flag2 = unpack("B", f.read(1))[0]
-                            if flag2 == 0x6C:
-                                if vertexCount == 0:
-                                    pass
-                                elif vertexCount == 1:
-                                    pass
-                                elif vertexCount == 2:
-                                    pass
-                                elif vertexCount == 3:
-                                    for j in range(1):
-                                        
-                                        vx0001__ = unpack("<f", f.read(4))[0]
-                                        vy0001__ = unpack("<f", f.read(4))[0]
-                                        vz0001__ = unpack("<f", f.read(4))[0]
-                                        brightness1__ = unpack("<f", f.read(4))[0]
-                                        uvx0001__ = unpack("<f", f.read(4))[0]
-                                        uvy0001__ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4 = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__A = unpack("<f", f.read(4))[0]
-                                        vy0001__A = unpack("<f", f.read(4))[0]
-                                        vz0001__A = unpack("<f", f.read(4))[0]
-                                        brightness1__A = unpack("<f", f.read(4))[0]
-                                        uvx0001__A = unpack("<f", f.read(4))[0]
-                                        uvy0001__A = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4A = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__B = unpack("<f", f.read(4))[0]
-                                        vy0001__B = unpack("<f", f.read(4))[0]
-                                        vz0001__B = unpack("<f", f.read(4))[0]
-                                        brightness1__B = unpack("<f", f.read(4))[0]
-                                        uvx0001__B = unpack("<f", f.read(4))[0]
-                                        uvy0001__B = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4B = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__C = unpack("<f", f.read(4))[0]
-                                        vy0001__C = unpack("<f", f.read(4))[0]
-                                        vz0001__C = unpack("<f", f.read(4))[0]
-                                        brightness1__C = unpack("<f", f.read(4))[0]
-                                        uvx0001__C = unpack("<f", f.read(4))[0]
-                                        uvy0001__C = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4C = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__D = unpack("<f", f.read(4))[0]
-                                        vy0001__D = unpack("<f", f.read(4))[0]
-                                        vz0001__D = unpack("<f", f.read(4))[0]
-                                        brightness1__D = unpack("<f", f.read(4))[0]
-                                        uvx0001__D = unpack("<f", f.read(4))[0]
-                                        uvy0001__D = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4D = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__E = unpack("<f", f.read(4))[0]
-                                        vy0001__E = unpack("<f", f.read(4))[0]
-                                        vz0001__E = unpack("<f", f.read(4))[0]
-                                        brightness1__E = unpack("<f", f.read(4))[0]
-                                        uvx0001__E = unpack("<f", f.read(4))[0]
-                                        uvy0001__E = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4E = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for i in range(1):
-                                        vx0001__N = unpack("<f", f.read(4))[0]
-                                        vy0001__N = unpack("<f", f.read(4))[0]
-                                        vz0001__N = unpack("<f", f.read(4))[0]
-                                        brightness1__N = unpack("<f", f.read(4))[0]
-                                        uvx0001__N = unpack("<f", f.read(4))[0]
-                                        uvy0001__N = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4N = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__O = unpack("<f", f.read(4))[0]
-                                        vy0001__O = unpack("<f", f.read(4))[0]
-                                        vz0001__O = unpack("<f", f.read(4))[0]
-                                        brightness1__O = unpack("<f", f.read(4))[0]
-                                        uvx0001__O = unpack("<f", f.read(4))[0]
-                                        uvy0001__O = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4O = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__P = unpack("<f", f.read(4))[0]
-                                        vy0001__P = unpack("<f", f.read(4))[0]
-                                        vz0001__P = unpack("<f", f.read(4))[0]
-                                        brightness1__P = unpack("<f", f.read(4))[0]
-                                        uvx0001__P = unpack("<f", f.read(4))[0]
-                                        uvy0001__P = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4P = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offsettA = unpack("<I", f.read(4))[0]
-                                    if offsettA == 1627553807:
-                                        offsetB = unpack("<I", f.read(4))[0]
-                                        if offsetB != 65538:
-                                            f.seek(-4,1)
-                                            offsetC = unpack("<I", f.read(4))[0]
-                                            if offsetC == 65539:
-                                                f.seek(2,1)
-                                                vcount2 = unpack("B", f.read(1))[0]
-                                                vflag2 = unpack("B", f.read(1))[0]
-                                                if vflag2 == 0x6C:
-                                                    #missing verts
-                                                    if vcount2 == 4:
-                                                        for i in range(1):
-                                                            vx0001__J = unpack("<f", f.read(4))[0]
-                                                            vy0001__J = unpack("<f", f.read(4))[0]
-                                                            vz0001__J = unpack("<f", f.read(4))[0]
-                                                            type4J = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__K = unpack("<f", f.read(4))[0]
-                                                            vy0001__K = unpack("<f", f.read(4))[0]
-                                                            vz0001__K = unpack("<f", f.read(4))[0]
-                                                            type4K = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__L = unpack("<f", f.read(4))[0]
-                                                            vy0001__L = unpack("<f", f.read(4))[0]
-                                                            vz0001__L = unpack("<f", f.read(4))[0]
-                                                            type4L = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                            vx0001__M = unpack("<f", f.read(4))[0]
-                                                            vy0001__M = unpack("<f", f.read(4))[0]
-                                                            vz0001__M = unpack("<f", f.read(4))[0]
-                                                            type4M = unpack("B", f.read(1))[0]
-                                                            f.seek(3,1)
-                                                        offsettC = unpack("<I", f.read(4))[0]
-                                                        if offsettC == 16777473:
-                                                            if type4J == 0:
-                                                                if type4K == 1:
-                                                                    if type4L == 0:
-                                                                        if type4M == 0:
-                                                                            vertices3Aaq.append([vx0001__N,vz0001__N,vy0001__N])
-                                                                            vertices3Aaq.append([vx0001__O,vz0001__O,vy0001__O])
-                                                                            vertices3Aaq.append([vx0001__P,vz0001__P,vy0001__P])
-
-                                                                            vertices3Aaq.append([vx0001__J,vz0001__J,vy0001__J])
-                                                                            vertices3Aaq.append([vx0001__L,vz0001__L,vy0001__L])
-                                                                            vertices3Aaq.append([vx0001__M,vz0001__M,vy0001__M])
-
-                                                                            fa2Ta_b+=1*5
-                                                                            fb2Ta_b+=1*5
-                                                                            fc2Ta_b+=1*5
-                                                                            fd2Ta_b+=1*5
-                                                                            fe2Ta_b+=1*5
-
-                                                                            faces3Aaq.append([fa2Ta_b,fb2Ta_b,fc2Ta_b])
-                                                                            faces3Aaq.append([fb2Ta_b,fc2Ta_b,fd2Ta_b])
-                                                                            faces3Aaq.append([fc2Ta_b,fd2Ta_b,fe2Ta_b])
-                                        elif offsetB == 65538:
-                                            f.seek(2,1)
-                                            vcount1 = unpack("B", f.read(1))[0]
-                                            vflag1 = unpack("B", f.read(1))[0]
-                                            if vflag1 == 0x6C:
-                                                #missing verts
-                                                if vcount1 == 4:
-                                                    for i in range(1):
-                                                        vx0001__F = unpack("<f", f.read(4))[0]
-                                                        vy0001__F = unpack("<f", f.read(4))[0]
-                                                        vz0001__F = unpack("<f", f.read(4))[0]
-                                                        type4F = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__G = unpack("<f", f.read(4))[0]
-                                                        vy0001__G = unpack("<f", f.read(4))[0]
-                                                        vz0001__G = unpack("<f", f.read(4))[0]
-                                                        type4G = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__H = unpack("<f", f.read(4))[0]
-                                                        vy0001__H = unpack("<f", f.read(4))[0]
-                                                        vz0001__H = unpack("<f", f.read(4))[0]
-                                                        type4H = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__I = unpack("<f", f.read(4))[0]
-                                                        vy0001__I = unpack("<f", f.read(4))[0]
-                                                        vz0001__I = unpack("<f", f.read(4))[0]
-                                                        type4I = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offsettB = unpack("<I", f.read(4))[0]
-                                                    if offsettB == 16777473:
-                                                        if type4F == 0:
-                                                            if type4G == 1:
-                                                                if type4H == 0:
-                                                                    if type4I == 0:
-                                                                        vertices3A.append([vx0001__C,vz0001__C,vy0001__C])
-                                                                        vertices3A.append([vx0001__D,vz0001__D,vy0001__D])
-                                                                        vertices3A.append([vx0001__E,vz0001__E,vy0001__E])
-
-                                                                        vertices3A.append([vx0001__F,vz0001__F,vy0001__F])
-                                                                        vertices3A.append([vx0001__H,vz0001__H,vy0001__H])
-                                                                        vertices3A.append([vx0001__I,vz0001__I,vy0001__I])
-
-                                                                        fa2Ta_a+=1*5
-                                                                        fb2Ta_a+=1*5
-                                                                        fc2Ta_a+=1*5
-                                                                        fd2Ta_a+=1*5
-                                                                        fe2Ta_a+=1*5
-
-                                                                        faces3A.append([fa2Ta_a,fb2Ta_a,fc2Ta_a])
-                                                                        faces3A.append([fb2Ta_a,fc2Ta_a,fd2Ta_a])
-                                                                        faces3A.append([fc2Ta_a,fd2Ta_a,fe2Ta_a])
-                                    elif offsettA == 16777473:
-                                        if type4 == 1:
-                                            if type4A == 1:
-                                                if type4B == 0:
-
-                                                    vertices3.append([vx0001__,vz0001__,vy0001__])
-                                                    vertices3.append([vx0001__A,vz0001__A,vy0001__A])
-                                                    vertices3.append([vx0001__B,vz0001__B,vy0001__B])
-                                                    uv_coords.append([uvx0001__,-uvy0001__])
-                                                    uv_coords.append([uvx0001__A,-uvy0001__A])
-                                                    uv_coords.append([uvx0001__B,-uvy0001__B])
-
-                                                    fa2+=1*3
-                                                    fb2+=1*3
-                                                    fc2+=1*3
-
-                                                    faces3.append([fa2,fb2,fc2])
-
-                                elif vertexCount == 4:
-                                    for j in range(1):
-                                        vx0001__AA = unpack("<f", f.read(4))[0]
-                                        vy0001__AA = unpack("<f", f.read(4))[0]
-                                        vz0001__AA = unpack("<f", f.read(4))[0]
-                                        brightness1__AA = unpack("<f", f.read(4))[0]
-                                        uvx0001__AA = unpack("<f", f.read(4))[0]
-                                        uvy0001__AA = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AA = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AB = unpack("<f", f.read(4))[0]
-                                        vy0001__AB = unpack("<f", f.read(4))[0]
-                                        vz0001__AB = unpack("<f", f.read(4))[0]
-                                        brightness1__AB = unpack("<f", f.read(4))[0]
-                                        uvx0001__AB = unpack("<f", f.read(4))[0]
-                                        uvy0001__AB = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AB = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AC = unpack("<f", f.read(4))[0]
-                                        vy0001__AC = unpack("<f", f.read(4))[0]
-                                        vz0001__AC = unpack("<f", f.read(4))[0]
-                                        brightness1__AC = unpack("<f", f.read(4))[0]
-                                        uvx0001__AC = unpack("<f", f.read(4))[0]
-                                        uvy0001__AC = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AC = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AD = unpack("<f", f.read(4))[0]
-                                        vy0001__AD = unpack("<f", f.read(4))[0]
-                                        vz0001__AD = unpack("<f", f.read(4))[0]
-                                        brightness1__AD = unpack("<f", f.read(4))[0]
-                                        uvx0001__AD = unpack("<f", f.read(4))[0]
-                                        uvy0001__AD = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AD = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    for i in range(vertexCount):
-                                        f.seek(-32,1)
-                                    for j in range(1):
-                                        vx0001__AA_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AA_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AA_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AA_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AA_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AA_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AA_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AB_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AB_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AB_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AB_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AB_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AB_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AB_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AC_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AC_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AC_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AC_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AC_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AC_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AC_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-
-                                        vx0001__AD_ = unpack("<f", f.read(4))[0]
-                                        vy0001__AD_ = unpack("<f", f.read(4))[0]
-                                        vz0001__AD_ = unpack("<f", f.read(4))[0]
-                                        brightness1__AD_ = unpack("<f", f.read(4))[0]
-                                        uvx0001__AD_ = unpack("<f", f.read(4))[0]
-                                        uvy0001__AD_ = unpack("<f", f.read(4))[0]
-                                        f.seek(4,1)
-                                        type4AD_ = unpack("B", f.read(1))[0]
-                                        f.seek(3,1)
-                                    offffsetA = unpack("<I", f.read(4))[0]
-                                    if offffsetA == 16777473:
-                                        if type4AA_ == 1:
-                                            if type4AB_ == 1:
-                                                if type4AC_ == 0:
-                                                    if type4AD_ == 0:
-                                                        vertices3Caq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
-                                                        vertices3Caq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
-                                                        vertices3Caq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
-                                                        vertices3Caq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
-
-                                                        fa2CAQ+=1*4
-                                                        fb2CAQ+=1*4
-                                                        fc2CAQ+=1*4
-
-                                                        fa3CAQ+=1*4
-
-                                                        faces3Caq.append([fa2CAQ,fb2CAQ,fc2CAQ])
-                                                        faces3Caq.append([fb2CAQ,fc2CAQ,fa3CAQ])
-                                    elif offffsetA == 1627553811:
-                                        offffsetB = unpack("<I", f.read(4))[0]
-                                        if offffsetB == 65540:
-                                            ofssetA = unpack("<I", f.read(4))[0]
-                                            if ofssetA == 1627553815:
-                                                ofssetB = unpack("<I", f.read(4))[0]
-                                                if ofssetB == 65538:
-                                                    f.seek(2,1)
-                                                    vvvcount1 = unpack("B", f.read(1))[0]
-                                                    ffflag1 = unpack("B", f.read(1))[0]
-                                                    if ffflag1 == 0x6C:
-                                                        if vvvcount1 == 4:
-                                                            for i in range(1):
-                                                                vx0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AE_ = unpack("<f", f.read(4))[0]
-                                                                type1__AE_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                                vx0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AF_ = unpack("<f", f.read(4))[0]
-                                                                type1__AF_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                                vx0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AG_ = unpack("<f", f.read(4))[0]
-                                                                type1__AG_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                                vx0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                vy0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                vz0001__AH_ = unpack("<f", f.read(4))[0]
-                                                                type1__AH_ = unpack("B", f.read(1))[0]
-                                                                f.seek(3,1)
-                                                            ofssetC = unpack("<I", f.read(4))[0]
-                                                            if ofssetC == 16777473:
-                                                                if type4AA_ == 1:
-                                                                    if type4AB_ == 1:
-                                                                        if type4AC_ == 0:
-                                                                            if type4AD_ == 0:
-                                                                                if type1__AE_ == 0:
-                                                                                    if type1__AF_ == 0:
-                                                                                        if type1__AG_ == 0:
-                                                                                            if type1__AH_ == 0:
-                                                                                                vertices3Daq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
-                                                                                                vertices3Daq.append([vx0001__AB_,vz0001__AB_,vy0001__AB_])
-                                                                                                vertices3Daq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
-                                                                                                vertices3Daq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
-                                                                                                vertices3Daq.append([vx0001__AG_,vz0001__AG_,vy0001__AG_])
-
-                                                                                                fa2Ta_d+=1*5
-                                                                                                fb2Ta_d+=1*5
-                                                                                                fc2Ta_d+=1*5
-                                                                                                fd2Ta_d+=1*5
-                                                                                                fe2Ta_d+=1*5
-
-                                                                                                faces3Daq.append([fa2Ta_d,fb2Ta_d,fc2Ta_d])
-                                                                                                faces3Daq.append([fb2Ta_d,fc2Ta_d,fd2Ta_d])
-                                                                                                faces3Daq.append([fb2Ta_d,fd2Ta_d,fe2Ta_d])
-                                        elif offffsetB == 65537:
-                                            f.seek(2,1)
-                                            vvcount1 = unpack("B", f.read(1))[0]
-                                            fflag1 = unpack("B", f.read(1))[0]
-                                            if fflag1 == 0x6C:
-                                                if vvcount1 == 2:
-                                                    
-                                                    for i in range(1):
-                                                        vx0001__AE = unpack("<f", f.read(4))[0]
-                                                        vy0001__AE = unpack("<f", f.read(4))[0]
-                                                        vz0001__AE = unpack("<f", f.read(4))[0]
-                                                        type1__AE = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        vx0001__AF = unpack("<f", f.read(4))[0]
-                                                        vy0001__AF = unpack("<f", f.read(4))[0]
-                                                        vz0001__AF = unpack("<f", f.read(4))[0]
-                                                        type1__AF = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                    offffsetC = unpack("<I", f.read(4))[0]
-                                                    if offffsetC == 1627553819:
-                                                        offffsetD = unpack("<I", f.read(4))[0]
-                                                        if offffsetD == 2:
-                                                            f.seek(2,1)
-                                                            vvcount1A = unpack("B", f.read(1))[0]
-                                                            fflag1A = unpack("B", f.read(1))[0]
-                                                            if fflag1A == 0x6C:
-                                                                if vvcount1A == 4:
-                                                                    for i in range(1):
-                                                                        vx0001__AG = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AG = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AG = unpack("<f", f.read(4))[0]
-                                                                        type1__AG = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AH = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AH = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AH = unpack("<f", f.read(4))[0]
-                                                                        type1__AH = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AI = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AI = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AI = unpack("<f", f.read(4))[0]
-                                                                        type1__AI = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-
-                                                                        vx0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        vy0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        vz0001__AJ = unpack("<f", f.read(4))[0]
-                                                                        type1__AJ = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-                                                                    offffsetE = unpack("<I", f.read(4))[0]
-                                                                    if offffsetE == 1627553831:
-                                                                        offffsetF = unpack("<I", f.read(4))[0]
-                                                                        if offffsetF == 65540:
-                                                                            f.seek(2,1)
-                                                                            vvcount1B = unpack("B", f.read(1))[0]
-                                                                            fflag1B = unpack("B", f.read(1))[0]
-                                                                            if fflag1B == 0x6C:
-                                                                                if vvcount1B == 2:
-                                                                                    for i in range(1):
-                                                                                        vx0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AK = unpack("<f", f.read(4))[0]
-                                                                                        type1__AK = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-
-                                                                                        vx0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AL = unpack("<f", f.read(4))[0]
-                                                                                        type1__AL = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-                                                                                    offffsetF = unpack("<I", f.read(4))[0]
-                                                                                    if offffsetF == 1627553839:
-                                                                                        offffsetG = unpack("<I", f.read(4))[0]
-                                                                                        if offffsetG == 2:
-                                                                                            f.seek(2,1)
-                                                                                            vvcount1C = unpack("B", f.read(1))[0]
-                                                                                            fflag1C = unpack("B", f.read(1))[0]
-                                                                                            if fflag1C == 0x6C:
-                                                                                                if vvcount1C == 2:
-                                                                                                    for i in range(1):
-                                                                                                        vx0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        vy0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        vz0001__AM = unpack("<f", f.read(4))[0]
-                                                                                                        type1__AM = unpack("B", f.read(1))[0]
-                                                                                                        f.seek(3,1)
-
-                                                                                                        vx0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        vy0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        vz0001__AN = unpack("<f", f.read(4))[0]
-                                                                                                        type1__AN = unpack("B", f.read(1))[0]
-                                                                                                        f.seek(3,1)
-                                                                                                    offffsetG = unpack("<I", f.read(4))[0]
-                                                                                                    if offffsetG == 1627553847:
-                                                                                                        offffsetH = unpack("<I", f.read(4))[0]
-                                                                                                        if offffsetH == 9:
-                                                                                                            offffsetI = unpack("<I", f.read(4))[0]
-                                                                                                            if offffsetI == 16777473:
-                                                                                                                if type4AA == 1:
-                                                                                                                    if type4AB == 1:
-                                                                                                                        if type4AC == 0:
-                                                                                                                            if type4AD == 0:
-                                                                                                                                if type1__AE == 0:
-                                                                                                                                    if type1__AF == 1:
-                                                                                                                                        if type1__AG == 0:
-                                                                                                                                            if type1__AH == 0:
-                                                                                                                                                if type1__AI == 0:
-                                                                                                                                                    if type1__AJ == 0:
-                                                                                                                                                        if type1__AK == 0:
-                                                                                                                                                            if type1__AL == 1:
-                                                                                                                                                                if type1__AM == 0:
-                                                                                                                                                                    if type1__AN == 0:
-                                                                                                                                                                        vertices3Baq.append([vx0001__AA,vz0001__AA,vy0001__AA])
-                                                                                                                                                                        vertices3Baq.append([vx0001__AB,vz0001__AB,vy0001__AB])
-                                                                                                                                                                        vertices3Baq.append([vx0001__AC,vz0001__AC,vy0001__AC])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AD,vz0001__AD,vy0001__AD])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AE,vz0001__AE,vy0001__AE])
-
-                                                                                                                                                                        vertices3Baq.append([vx0001__AG,vz0001__AG,vy0001__AG])
-
-                                                                                                                                                                        fa2Ta_c+=1*6
-                                                                                                                                                                        fb2Ta_c+=1*6
-                                                                                                                                                                        fc2Ta_c+=1*6
-                                                                                                                                                                        fd2Ta_c+=1*6
-                                                                                                                                                                        fe2Ta_c+=1*6
-                                                                                                                                                                        ff2Ta_c+=1*6
-
-                                                                                                                                                                        faces3Baq.append([fa2Ta_c,fb2Ta_c,fc2Ta_c])
-                                                                                                                                                                        faces3Baq.append([fb2Ta_c,fc2Ta_c,fd2Ta_c])
-                                                                                                                                                                        
+                                                            offffsetE = unpack("<I", f.read(4))[0]
+                                                            if offffsetE == 1627553831:
+                                                                offffsetF = unpack("<I", f.read(4))[0]
+                                                                if offffsetF == 65540:
+                                                                    f.seek(2,1)
+                                                                    vvcount1B = unpack("B", f.read(1))[0]
+                                                                    fflag1B = unpack("B", f.read(1))[0]
+                                                                    if fflag1B == 0x6C:
+                                                                        if vvcount1B == 2:
+                                                                            for i in range(1):
+                                                                                vx0001__AK = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AK = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AK = unpack("<f", f.read(4))[0]
+                                                                                type1__AK = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+
+                                                                                vx0001__AL = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AL = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AL = unpack("<f", f.read(4))[0]
+                                                                                type1__AL = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+                                                                            offffsetF = unpack("<I", f.read(4))[0]
+                                                                            if offffsetF == 1627553839:
+                                                                                offffsetG = unpack("<I", f.read(4))[0]
+                                                                                if offffsetG == 2:
+                                                                                    f.seek(2,1)
+                                                                                    vvcount1C = unpack("B", f.read(1))[0]
+                                                                                    fflag1C = unpack("B", f.read(1))[0]
+                                                                                    if fflag1C == 0x6C:
+                                                                                        if vvcount1C == 2:
+                                                                                            for i in range(1):
+                                                                                                vx0001__AM = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AM = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AM = unpack("<f", f.read(4))[0]
+                                                                                                type1__AM = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AN = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AN = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AN = unpack("<f", f.read(4))[0]
+                                                                                                type1__AN = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                            offffsetG = unpack("<I", f.read(4))[0]
+                                                                                            if offffsetG == 1627553847:
+                                                                                                offffsetH = unpack("<I", f.read(4))[0]
+                                                                                                if offffsetH == 9:
+                                                                                                    offffsetI = unpack("<I", f.read(4))[0]
+                                                                                                    if offffsetI == 16777473:
+                                                                                                        if type4AA == 1:
+                                                                                                            if type4AB == 1:
+                                                                                                                if type4AC == 0:
+                                                                                                                    if type4AD == 0:
+                                                                                                                        if type1__AE == 0:
+                                                                                                                            if type1__AF == 1:
+                                                                                                                                if type1__AG == 0:
+                                                                                                                                    if type1__AH == 0:
+                                                                                                                                        if type1__AI == 0:
+                                                                                                                                            if type1__AJ == 0:
+                                                                                                                                                if type1__AK == 0:
+                                                                                                                                                    if type1__AL == 1:
+                                                                                                                                                        if type1__AM == 0:
+                                                                                                                                                            if type1__AN == 0:
+                                                                                                                                                                vertices3Baq.append([vx0001__AA,vz0001__AA,vy0001__AA])
+                                                                                                                                                                vertices3Baq.append([vx0001__AB,vz0001__AB,vy0001__AB])
+                                                                                                                                                                vertices3Baq.append([vx0001__AC,vz0001__AC,vy0001__AC])
+
+                                                                                                                                                                vertices3Baq.append([vx0001__AD,vz0001__AD,vy0001__AD])
+
+                                                                                                                                                                vertices3Baq.append([vx0001__AE,vz0001__AE,vy0001__AE])
+
+                                                                                                                                                                vertices3Baq.append([vx0001__AG,vz0001__AG,vy0001__AG])
+
+                                                                                                                                                                fa2Ta_c+=1*6
+                                                                                                                                                                fb2Ta_c+=1*6
+                                                                                                                                                                fc2Ta_c+=1*6
+                                                                                                                                                                fd2Ta_c+=1*6
+                                                                                                                                                                fe2Ta_c+=1*6
+                                                                                                                                                                ff2Ta_c+=1*6
+
+                                                                                                                                                                faces3Baq.append([fa2Ta_c,fb2Ta_c,fc2Ta_c])
+                                                                                                                                                                faces3Baq.append([fb2Ta_c,fc2Ta_c,fd2Ta_c])
                                                                                                                                 
                                                                                                         
                                                                             
