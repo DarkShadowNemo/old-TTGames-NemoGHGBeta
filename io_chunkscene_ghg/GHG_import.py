@@ -512,12 +512,13 @@ def GHG_mesh(f, filepath):
     ff2Ta_c=-1
 
 
-    fa2Ta_d=-4
+    fa2Ta_d=-5
 
-    fb2Ta_d=-3
-    fc2Ta_d=-2
+    fb2Ta_d=-4
+    fc2Ta_d=-3
 
-    fd2Ta_d=-1
+    fd2Ta_d=-2
+    fe2Ta_d=-1
 
     fa2CAQ=-4
     fb2CAQ=-3
@@ -5683,15 +5684,45 @@ def GHG_mesh(f, filepath):
                                                                                         vertices3Daq.append([vx0001__AA_,vz0001__AA_,vy0001__AA_])
                                                                                         vertices3Daq.append([vx0001__AC_,vz0001__AC_,vy0001__AC_])
                                                                                         vertices3Daq.append([vx0001__AD_,vz0001__AD_,vy0001__AD_])
+                                                                                        vertices3Daq.append([vx0001__AE_,vz0001__AE_,vy0001__AE_])
                                                                                         vertices3Daq.append([vx0001__AG_,vz0001__AG_,vy0001__AG_])
 
-                                                                                        fa2Ta_d+=1*4
-                                                                                        fb2Ta_d+=1*4
-                                                                                        fc2Ta_d+=1*4
-                                                                                        fd2Ta_d+=1*4
+                                                                                        fa2Ta_d+=1*5
+                                                                                        fb2Ta_d+=1*5
+                                                                                        fc2Ta_d+=1*5
+                                                                                        fd2Ta_d+=1*5
+                                                                                        fe2Ta_d+=1*5
 
                                                                                         faces3Daq.append([fa2Ta_d,fb2Ta_d,fc2Ta_d])
-                                                                                        faces3Daq.append([fa2Ta_d,fb2Ta_d,fd2Ta_d])
+                                                                                        faces3Daq.append([fb2Ta_d,fc2Ta_d,fd2Ta_d])
+                                                                                        faces3Daq.append([fc2Ta_d,fd2Ta_d,fe2Ta_d])
+
+                                elif offffsetB == 65538:
+                                    f.seek(2,1)
+                                    vvavC = unpack("B", f.read(1))[0]
+                                    fvflag1 = unpack("B", f.read(1))[0]
+                                    if fvflag1 == 0x6C:
+                                        if vvavC == 2:
+                                            for i in range(1):
+                                                vx0001__AO__ = unpack("<f", f.read(4))[0]
+                                                vy0001__AO__ = unpack("<f", f.read(4))[0]
+                                                vz0001__AO__ = unpack("<f", f.read(4))[0]
+                                                type1__AO__ = unpack("<f", f.read(4))[0]
+                                                f.seek(3,1)
+                                                vx0001__AP__ = unpack("<f", f.read(4))[0]
+                                                vy0001__AP__ = unpack("<f", f.read(4))[0]
+                                                vz0001__AP__ = unpack("<f", f.read(4))[0]
+                                                type1__AP__ = unpack("<f", f.read(4))[0]
+                                                f.seek(3,1)
+                                            f.seek(2,1)
+                                            vvavC2 = unpack("B", f.read(1))[0]
+                                            fvflag2 = unpack("B", f.read(1))[0]
+                                            if fvflag2 == 0x6C:
+                                                if vvavC2 == 2:
+                                                    num01 = unpack("<I", f.read(4))[0]
+                                                    if num01 == 4:
+                                                        f.seek(2,1)
+                                                
                                 elif offffsetB == 65537:
                                     f.seek(2,1)
                                     vvcount1 = unpack("B", f.read(1))[0]
@@ -5904,6 +5935,58 @@ def GHG_mesh(f, filepath):
 
                                                                                                                                                                 faces3Baq.append([fa2Ta_c,fb2Ta_c,fc2Ta_c])
                                                                                                                                                                 faces3Baq.append([fb2Ta_c,fc2Ta_c,fd2Ta_c])
+
+                        elif vertexCount == 5:
+                            for j in range(1):
+                                vx0001__BA = unpack("<f", f.read(4))[0]
+                                vy0001__BA = unpack("<f", f.read(4))[0]
+                                vz0001__BA = unpack("<f", f.read(4))[0]
+                                brightness__BA = unpack("<f", f.read(4))[0]
+                                uvx0001__BA = unpack("<f", f.read(4))[0]
+                                uvy0001__BA = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4BA = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__BB = unpack("<f", f.read(4))[0]
+                                vy0001__BB = unpack("<f", f.read(4))[0]
+                                vz0001__BB = unpack("<f", f.read(4))[0]
+                                brightness__BB = unpack("<f", f.read(4))[0]
+                                uvx0001__BB = unpack("<f", f.read(4))[0]
+                                uvy0001__BB = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4BB = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__BC = unpack("<f", f.read(4))[0]
+                                vy0001__BC = unpack("<f", f.read(4))[0]
+                                vz0001__BC = unpack("<f", f.read(4))[0]
+                                brightness__BC = unpack("<f", f.read(4))[0]
+                                uvx0001__BC = unpack("<f", f.read(4))[0]
+                                uvy0001__BC = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4BC = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__BD = unpack("<f", f.read(4))[0]
+                                vy0001__BD = unpack("<f", f.read(4))[0]
+                                vz0001__BD = unpack("<f", f.read(4))[0]
+                                brightness__BD = unpack("<f", f.read(4))[0]
+                                uvx0001__BD = unpack("<f", f.read(4))[0]
+                                uvy0001__BD = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4BD = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__BE = unpack("<f", f.read(4))[0]
+                                vy0001__BE = unpack("<f", f.read(4))[0]
+                                vz0001__BE = unpack("<f", f.read(4))[0]
+                                brightness__BE = unpack("<f", f.read(4))[0]
+                                uvx0001__BE = unpack("<f", f.read(4))[0]
+                                uvy0001__BE = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4BE = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
                                                                                                                                 
                                                                                                         
                                                                             
