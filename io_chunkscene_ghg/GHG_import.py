@@ -290,6 +290,10 @@ def GHG_mesh(f, filepath):
     vertices3Daq = []
     faces3Daq = []
 
+    vertices3Daqa=[]
+    faces3Daqa=[]
+    
+
     vertices3AA = []
     faces3AA = []
 
@@ -5756,208 +5760,217 @@ def GHG_mesh(f, filepath):
                                                 vz0001__AP__ = unpack("<f", f.read(4))[0]
                                                 type1__AP__ = unpack("B", f.read(1))[0]
                                                 f.seek(3,1)
-                                            f.seek(2,1)
-                                            vvavC2 = unpack("B", f.read(1))[0]
-                                            fvflag2 = unpack("B", f.read(1))[0]
-                                            if fvflag2 == 0x6C:
-                                                if vvavC2 == 2:
-                                                    num01 = unpack("<I", f.read(4))[0]
-                                                    if num01 == 4:
-                                                        f.seek(2,1)
-                                                        vvavC3 = unpack("B", f.read(1))[0]
-                                                        fvflag3 = unpack("B", f.read(1))[0]
-                                                        if fvflag3 == 0x6C:
-                                                            if vvavC3 == 2:
-                                                                for i in range(1):
-                                                                    vx0001__AQ__ = unpack("<f", f.read(4))[0]
-                                                                    vy0001__AQ__ = unpack("<f", f.read(4))[0]
-                                                                    vz0001__AQ__ = unpack("<f", f.read(4))[0]
-                                                                    type1__AQ__ = unpack("B", f.read(1))[0]
-                                                                    f.seek(3,1)
-                                                                    vx0001__AR__ = unpack("<f", f.read(4))[0]
-                                                                    vy0001__AR__ = unpack("<f", f.read(4))[0]
-                                                                    vz0001__AR__ = unpack("<f", f.read(4))[0]
-                                                                    type1__AR__ = unpack("B", f.read(1))[0]
-                                                                    f.seek(3,1)
-                                                                f.seek(2,1)
-                                                                vvavC4 = unpack("B", f.read(1))[0]
-                                                                fvflag4 = unpack("B", f.read(1))[0]
-                                                                if fvflag4 == 0x61:
-                                                                    if vvavC4 == 2:
-                                                                        num02 = unpack("<I", f.read(4))[0]
-                                                                        if num02 == 65542:
-                                                                            f.seek(2,1)
-                                                                            vvavC5 = unpack("B", f.read(1))[0]
-                                                                            fvflag5 = unpack("B", f.read(1))[0]
-                                                                            if fvflag4 == 0x6C:
-                                                                                if fvflag5 == 2:
-                                                                                    for i in range(1):
-                                                                                        vx0001__AS__ = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AS__ = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AS__ = unpack("<f", f.read(4))[0]
-                                                                                        type1__AS__ = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-                                                                                        vx0001__AT__ = unpack("<f", f.read(4))[0]
-                                                                                        vy0001__AT__ = unpack("<f", f.read(4))[0]
-                                                                                        vz0001__AT__ = unpack("<f", f.read(4))[0]
-                                                                                        type1__AT__ = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
+                                            fvflag2 = unpack("<I", f.read(4))[0]
+                                            if fvflag2 == 1627553819:
+                                                
+                                                num01 = unpack("<I", f.read(4))[0]
+                                                if num01 == 4:
+                                                    f.seek(2,1)
+                                                    vvavC3 = unpack("B", f.read(1))[0]
+                                                    fvflag3 = unpack("B", f.read(1))[0]
+                                                    if fvflag3 == 0x6C:
+                                                        if vvavC3 == 2:
+                                                            for i in range(1):
+                                                                vx0001__AQ__ = unpack("<f", f.read(4))[0]
+                                                                vy0001__AQ__ = unpack("<f", f.read(4))[0]
+                                                                vz0001__AQ__ = unpack("<f", f.read(4))[0]
+                                                                type1__AQ__ = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+                                                                vx0001__AR__ = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR__ = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR__ = unpack("<f", f.read(4))[0]
+                                                                type1__AR__ = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+                                                            fvflag4 = unpack("<I", f.read(4))[0]
+                                                            if fvflag4 == 1627553827:
+                                                                num02 = unpack("<I", f.read(4))[0]
+                                                                if num02 == 65542:
+                                                                    f.seek(2,1)
+                                                                    vvavC5 = unpack("B", f.read(1))[0]
+                                                                    fvflag5 = unpack("B", f.read(1))[0]
+                                                                    if fvflag5 == 0x6C:
+                                                                        if vvavC5 == 2:
+                                                                            for i in range(1):
+                                                                                vx0001__AS__ = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AS__ = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AS__ = unpack("<f", f.read(4))[0]
+                                                                                type1__AS__ = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+                                                                                vx0001__AT__ = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AT__ = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AT__ = unpack("<f", f.read(4))[0]
+                                                                                type1__AT__ = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+                                                                            fvflag6 = unpack("<I", f.read(4))[0]
+                                                                            if fvflag6 == 1627553835:
+                                                                                num03 = unpack("<I", f.read(4))[0]
+                                                                                if num03 == 8:
                                                                                     f.seek(2,1)
-                                                                                    vvavC6 = unpack("B", f.read(1))[0]
-                                                                                    fvflag6 = unpack("B", f.read(1))[0]
-                                                                                    if fvflag6 == 0x61:
-                                                                                        if vvavC6 == 2:
-                                                                                            num03 = unpack("<I", f.read(4))[0]
-                                                                                            if num03 == 8:
-                                                                                                f.seek(2,1)
-                                                                                                vvavC7 = unpack("B", f.read(1))[0]
-                                                                                                fvflag7 = unpack("B", f.read(1))[0]
-                                                                                                if fvflag7 == 0x6C:
-                                                                                                    if vvavC7 == 18:
-                                                                                                        for i in range(1):
-                                                                                                            vx0001__AU__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AU__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AU__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AU__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AV__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AV__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AV__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AV__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
+                                                                                    vvavC7 = unpack("B", f.read(1))[0]
+                                                                                    fvflag7 = unpack("B", f.read(1))[0]
+                                                                                    if fvflag7 == 0x6C:
+                                                                                        if vvavC7 == 18:
+                                                                                            for i in range(1):
+                                                                                                vx0001__AU__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AU__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AU__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AU__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AV__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AV__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AV__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AV__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
 
-                                                                                                            vx0001__AW__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AW__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AW__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AW__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AX__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AX__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AX__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AX__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
+                                                                                                vx0001__AW__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AW__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AW__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AW__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AX__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AX__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AX__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AX__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
 
-                                                                                                            vx0001__AY__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AY__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AY__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AY__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
+                                                                                                vx0001__AY__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AY__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AY__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AY__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
 
-                                                                                                            vx0001__AZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
+                                                                                                vx0001__AZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
 
-                                                                                                            vx0001__AYZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AYZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AYZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
+                                                                                                vx0001__AZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
 
-                                                                                                            vx0001__AZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
+                                                                                                vx0001__AZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
 
-                                                                                                            vx0001__AZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
+                                                                                                vx0001__AZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
 
-                                                                                                            vx0001__AZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZZZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
+                                                                                                vx0001__AZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
 
-                                                                                                            vx0001__AZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZZZZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                            vx0001__AZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vy0001__AZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            vz0001__AZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
-                                                                                                            type1__AZZZZZZZZZZZZZ__ = unpack("B", f.read(1))[0]
-                                                                                                            f.seek(3,1)
-                                                                                                        f.seek(2,1)
-                                                                                                        vvavC8 = unpack("B", f.read(1))[0]
-                                                                                                        fvflag8 = unpack("B", f.read(1))[0]
-                                                                                                        if fvflag8 == 0x61:
-                                                                                                            if vvavC8 == 2:
-                                                                                                                num04 = unpack("<I", f.read(4))[0]
-                                                                                                                if num04 == 65548:
-                                                                                                                    f.seek(2,1)
-                                                                                                                    vvavC9 = unpack("B", f.read(1))[0]
-                                                                                                                    fvflag9 = unpack("B", f.read(1))[0]
-                                                                                                                    if fvflag9 == 0x61:
-                                                                                                                        if vvavC9 == 2:
-                                                                                                                            num05 = unpack("<I", f.read(4))[0]
-                                                                                                                            if num05 == 10:
-                                                                                                                                EEEndoffszett = unpack("<I", f.read(4))[0]
-                                                                                                                                if EEEndoffszett == 16777473:
-                                                                                                                                    if type4AA__ == 1:
-                                                                                                                                        if type4AB__ == 1:
-                                                                                                                                            if type4AC__ == 0:
-                                                                                                                                                if type4AD__ == 0:
-                                                                                                                                                    if type1__AO__ == 0:
-                                                                                                                                                        if type1__AP__ == 1:
-                                                                                                                                                            if type1__AQ__ == 0:
-                                                                                                                                                                if type1__AR__ == 0:
-                                                                                                                                                                    if type1__AS__ == 0:
-                                                                                                                                                                        if type1__AT__ == 1:
-                                                                                                                                                                            if type1__AU__ == 0:
-                                                                                                                                                                                if type1__AV__ == 0:
-                                                                                                                                                                                    if type1__AW__ == 0:
-                                                                                                                                                                                        if type1__AX__ == 1:
-                                                                                                                                                                                            if type1__AY__ == 0:
-                                                                                                                                                                                                if type1__AZ__ == 1:
-                                                                                                                                                                                                    if type1__AZZ__ == 0:
-                                                                                                                                                                                                        if type1__AZZZ__ == 0:
-                                                                                                                                                                                                            if type1__AZZZZ__ == 0:
-                                                                                                                                                                                                                if type1__AZZZZZ__ == 0:
-                                                                                                                                                                                                                    if type1__AZZZZZZ__ == 0:
-                                                                                                                                                                                                                        if type1__AZZZZZZZ__ == 0:
-                                                                                                                                                                                                                            if type1__AZZZZZZZZ__ == 0:
-                                                                                                                                                                                                                                if type1__AZZZZZZZZZ__ == 0:
-                                                                                                                                                                                                                                    if type1__AZZZZZZZZZZ__ == 0:
-                                                                                                                                                                                                                                        if type1__AZZZZZZZZZZZ__ == 0:
-                                                                                                                                                                                                                                            if type1__AZZZZZZZZZZZZ__ == 0:
-                                                                                                                                                                                                                                                if type1__AZZZZZZZZZZZZZ__ == 1:
-                                                                                                                                                                                                                                                    pass
+                                                                                                vx0001__AZZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZZZZZZZ__ = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZZZZZZZ__ = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                            fvflag8 = unpack("<I", f.read(4))[0]
+                                                                                            if fvflag8 == 1627553875:
+                                                                                                num04 = unpack("<I", f.read(4))[0]
+                                                                                                if num04 == 65548:
+                                                                                                    fvflag9 = unpack("<I", f.read(4))[0]
+                                                                                                    if fvflag9 == 1627553879:
+                                                                                                        num05 = unpack("<I", f.read(4))[0]
+                                                                                                        if num05 == 10:
+                                                                                                            EEEndoffszett = unpack("<I", f.read(4))[0]
+                                                                                                            if EEEndoffszett == 16777473:
+                                                                                                                if type4AA__ == 1:
+                                                                                                                    if type4AB__ == 1:
+                                                                                                                        if type4AC__ == 0:
+                                                                                                                            if type4AD__ == 0:
+                                                                                                                                if type1__AO__ == 0:
+                                                                                                                                    if type1__AP__ == 1:
+                                                                                                                                        if type1__AQ__ == 0:
+                                                                                                                                            if type1__AR__ == 0:
+                                                                                                                                                if type1__AS__ == 0:
+                                                                                                                                                    if type1__AT__ == 1:
+                                                                                                                                                        if type1__AU__ == 0:
+                                                                                                                                                            if type1__AV__ == 0:
+                                                                                                                                                                if type1__AW__ == 0:
+                                                                                                                                                                    if type1__AX__ == 1:
+                                                                                                                                                                        if type1__AY__ == 0:
+                                                                                                                                                                            if type1__AZ__ == 1:
+                                                                                                                                                                                if type1__AZZ__ == 0:
+                                                                                                                                                                                    if type1__AZZZ__ == 0:
+                                                                                                                                                                                        if type1__AZZZZ__ == 0:
+                                                                                                                                                                                            if type1__AZZZZZ__ == 0:
+                                                                                                                                                                                                if type1__AZZZZZZ__ == 0:
+                                                                                                                                                                                                    if type1__AZZZZZZZ__ == 0:
+                                                                                                                                                                                                        if type1__AZZZZZZZZ__ == 0:
+                                                                                                                                                                                                            if type1__AZZZZZZZZZ__ == 0:
+                                                                                                                                                                                                                if type1__AZZZZZZZZZZ__ == 0:
+                                                                                                                                                                                                                    if type1__AZZZZZZZZZZZ__ == 0:
+                                                                                                                                                                                                                        if type1__AZZZZZZZZZZZZ__ == 0:
+                                                                                                                                                                                                                            if type1__AZZZZZZZZZZZZZ__ == 1:
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AA__,vz0001__AA__,vy0001__AA__])
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AB__,vz0001__AB__,vy0001__AB__])
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AC__,vz0001__AC__,vy0001__AC__])
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AD__,vz0001__AD__,vy0001__AD__])
+
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AO__,vz0001__AO__,vy0001__AO__])
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AQ__,vz0001__AQ__,vy0001__AQ__])
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AS__,vz0001__AS__,vy0001__AS__])
+
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AU__,vz0001__AU__,vy0001__AU__])
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AW__,vz0001__AW__,vy0001__AW__])
+
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AY__,vz0001__AY__,vy0001__AY__])
+
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AZZ__,vz0001__AZZ__,vy0001__AZZ__])
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AZZZZ__,vz0001__AZZZZ__,vy0001__AZZZZ__])
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AZZZZZZ__,vz0001__AZZZZZZ__,vy0001__AZZZZZZ__])
+
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AZZZZZZZZ__,vz0001__AZZZZZZZZ__,vy0001__AZZZZZZZZ__])
+
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AZZZZZZZZZZ__,vz0001__AZZZZZZZZZZ__,vy0001__AZZZZZZZZZZ__])
+
+                                                                                                                                                                                                                                vertices3Daqa.append([vx0001__AZZZZZZZZZZZZ__,vz0001__AZZZZZZZZZZZZ__,vy0001__AZZZZZZZZZZZZ__])
+                                                                                                                                                                                                                                                    
                                                                                                                                                                                                                     
                                                                                                                                 
                                                                                                                 
@@ -6709,6 +6722,11 @@ def GHG_mesh(f, filepath):
     mesh3yyE.from_pydata(vertices3Daq, [], faces3Daq)
     objects3yyE = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyE)
     collection.objects.link(objects3yyE)
+
+    mesh3yyF = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3yyF.from_pydata(vertices3Daqa, [], [])
+    objects3yyF = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyF)
+    collection.objects.link(objects3yyF)
 
     """for obj in bpy.context.scene.objects:
         if obj.name.startswith("nigel"):
