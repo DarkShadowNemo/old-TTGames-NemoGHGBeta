@@ -292,6 +292,9 @@ def GHG_mesh(f, filepath):
 
     vertices3Daqa=[]
     faces3Daqa=[]
+
+    vertices3Daqaq=[]
+    faces3Daqaq=[]
     
 
     vertices3AA = []
@@ -523,6 +526,12 @@ def GHG_mesh(f, filepath):
 
     fd2Ta_d=-2
     fe2Ta_d=-1
+
+    fa2Ta_daT=-16
+    fb2Ta_daT=-15
+    fc2Ta_daT=-14
+    fd2Ta_daT=-13
+    fe2Ta_daT=-12
 
     fa2Ta_da=-28
 
@@ -5689,6 +5698,49 @@ def GHG_mesh(f, filepath):
                                 f.seek(4,1)
                                 type4AD__ = unpack("B", f.read(1))[0]
                                 f.seek(3,1)
+
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for j in range(1):
+                                vx0001__AA___ = unpack("<f", f.read(4))[0]
+                                vy0001__AA___ = unpack("<f", f.read(4))[0]
+                                vz0001__AA___ = unpack("<f", f.read(4))[0]
+                                brightness1__AA___ = unpack("<f", f.read(4))[0]
+                                uvx0001__AA___ = unpack("<f", f.read(4))[0]
+                                uvy0001__AA___ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AA___ = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AB___ = unpack("<f", f.read(4))[0]
+                                vy0001__AB___ = unpack("<f", f.read(4))[0]
+                                vz0001__AB___ = unpack("<f", f.read(4))[0]
+                                brightness1__AB___ = unpack("<f", f.read(4))[0]
+                                uvx0001__AB___ = unpack("<f", f.read(4))[0]
+                                uvy0001__AB___ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AB___ = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AC___ = unpack("<f", f.read(4))[0]
+                                vy0001__AC___ = unpack("<f", f.read(4))[0]
+                                vz0001__AC___ = unpack("<f", f.read(4))[0]
+                                brightness1__AC___ = unpack("<f", f.read(4))[0]
+                                uvx0001__AC___ = unpack("<f", f.read(4))[0]
+                                uvy0001__AC___ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AC___ = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AD___ = unpack("<f", f.read(4))[0]
+                                vy0001__AD___ = unpack("<f", f.read(4))[0]
+                                vz0001__AD___ = unpack("<f", f.read(4))[0]
+                                brightness1__AD___ = unpack("<f", f.read(4))[0]
+                                uvx0001__AD___ = unpack("<f", f.read(4))[0]
+                                uvy0001__AD___ = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AD___ = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
                             offffsetA = unpack("<I", f.read(4))[0]
                             if offffsetA == 16777473:
                                 if type4AA_ == 1:
@@ -5793,7 +5845,254 @@ def GHG_mesh(f, filepath):
                                                     vvavC3 = unpack("B", f.read(1))[0]
                                                     fvflag3 = unpack("B", f.read(1))[0]
                                                     if fvflag3 == 0x6C:
-                                                        if vvavC3 == 2:
+                                                        if vvavC3 == 14:
+                                                            for i in range(1):
+                                                                vx0001__AQ___ = unpack("<f", f.read(4))[0]
+                                                                vy0001__AQ___ = unpack("<f", f.read(4))[0]
+                                                                vz0001__AQ___ = unpack("<f", f.read(4))[0]
+                                                                type1__AQ___ = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+                                                                vx0001__AR___ = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___ = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___ = unpack("<f", f.read(4))[0]
+                                                                type1__AR___ = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+                                                                vx0001__AR___pt1 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt1 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt1 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt1 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt2 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt2 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt2 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt2 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt3 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt3 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt3 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt3 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt4 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt4 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt4 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt4 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt5 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt5 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt5 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt5 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt6 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt6 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt6 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt6 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt7 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt7 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt7 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt7 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt8 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt8 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt8 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt8 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt9 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt9 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt9 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt9 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt10 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt10 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt10 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt10 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt11 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt11 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt11 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt11 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                                vx0001__AR___pt12 = unpack("<f", f.read(4))[0]
+                                                                vy0001__AR___pt12 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AR___pt12 = unpack("<f", f.read(4))[0]
+                                                                type1__AR___pt12 = unpack("B", f.read(1))[0]
+                                                                f.seek(3,1)
+
+                                                            vavy01 = unpack("<I", f.read(4))[0]
+                                                            if vavy01 == 1627553851:
+                                                                vvav = unpack("<I", f.read(4))[0]
+                                                                if vvav == 65548:
+                                                                    f.seek(2,1)
+                                                                    vvavCount01 = unpack("B", f.read(1))[0]
+                                                                    vvavCount01Flag = unpack("B", f.read(1))[0]
+                                                                    if vvavCount01Flag == 0x6C:
+                                                                        if vvavCount01 == 2:
+                                                                            for i in range(1):
+                                                                                vx0001__AR___pt13 = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AR___pt13 = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AR___pt13 = unpack("<f", f.read(4))[0]
+                                                                                type1__AR___pt13 = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+
+                                                                                vx0001__AR___pt14 = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AR___pt14 = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AR___pt14 = unpack("<f", f.read(4))[0]
+                                                                                type1__AR___pt14 = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+
+                                                                            vavy02 = unpack("<I", f.read(4))[0]
+                                                                            if vavy02 == 1627553859:
+                                                                                nnnum01 = unpack("<I", f.read(4))[0]
+                                                                                if nnnum01 == 14:
+                                                                                    f.seek(2,1)
+                                                                                    vvavCount02 = unpack("B", f.read(1))[0]
+                                                                                    vvavCount02Flag = unpack("B", f.read(1))[0]
+                                                                                    if vvavCount02Flag == 0x6C:
+                                                                                        if vvavCount02 == 2:
+                                                                                            for i in range(1):
+                                                                                                vx0001__AR___pt15 = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AR___pt15 = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AR___pt15 = unpack("<f", f.read(4))[0]
+                                                                                                type1__AR___pt15 = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AR___pt16 = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AR___pt16 = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AR___pt16 = unpack("<f", f.read(4))[0]
+                                                                                                type1__AR___pt16 = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                            vavy03 = unpack("<I", f.read(4))[0]
+                                                                                            if vavy03 == 1627553867:
+                                                                                                vavy02 = unpack("<I", f.read(4))[0]
+                                                                                                if vavy02 == 65554:
+                                                                                                    f.seek(2,1)
+                                                                                                    vvavCount03 = unpack("B", f.read(1))[0]
+                                                                                                    vvavCount03Flag = unpack("B", f.read(1))[0]
+                                                                                                    if vvavCount03Flag == 0x6C:
+                                                                                                        if vvavCount03 == 2:
+                                                                                                            for i in range(1):
+                                                                                                                vx0001__AR___pt17 = unpack("<f", f.read(4))[0]
+                                                                                                                vy0001__AR___pt17 = unpack("<f", f.read(4))[0]
+                                                                                                                vz0001__AR___pt17 = unpack("<f", f.read(4))[0]
+                                                                                                                type1__AR___pt17 = unpack("B", f.read(1))[0]
+                                                                                                                f.seek(3,1)
+
+                                                                                                                vx0001__AR___pt18 = unpack("<f", f.read(4))[0]
+                                                                                                                vy0001__AR___pt18 = unpack("<f", f.read(4))[0]
+                                                                                                                vz0001__AR___pt18 = unpack("<f", f.read(4))[0]
+                                                                                                                type1__AR___pt18 = unpack("B", f.read(1))[0]
+                                                                                                                f.seek(3,1)
+                                                                                                            vavy04 = unpack("<I", f.read(4))[0]
+                                                                                                            if vavy04 == 1627553875:
+                                                                                                                nnnum02 = unpack("<I", f.read(4))[0]
+                                                                                                                if nnnum02 == 16:
+                                                                                                                    f.seek(2,1)
+                                                                                                                    vvavCount04 = unpack("B", f.read(1))[0]
+                                                                                                                    vvavCount04Flag = unpack("B", f.read(1))[0]
+                                                                                                                    if vvavCount04Flag == 0x6C:
+                                                                                                                        if vvavCount04 == 2:
+                                                                                                                            for i in range(1):
+                                                                                                                                vx0001__AR___pt19 = unpack("<f", f.read(4))[0]
+                                                                                                                                vy0001__AR___pt19 = unpack("<f", f.read(4))[0]
+                                                                                                                                vz0001__AR___pt19 = unpack("<f", f.read(4))[0]
+                                                                                                                                type1__AR___pt19 = unpack("B", f.read(1))[0]
+                                                                                                                                f.seek(3,1)
+
+                                                                                                                                vx0001__AR___pt20 = unpack("<f", f.read(4))[0]
+                                                                                                                                vy0001__AR___pt20 = unpack("<f", f.read(4))[0]
+                                                                                                                                vz0001__AR___pt20 = unpack("<f", f.read(4))[0]
+                                                                                                                                type1__AR___pt20 = unpack("B", f.read(1))[0]
+                                                                                                                                f.seek(3,1)
+
+                                                                                                                            EdEndoffse1 = unpack("<I", f.read(4))[0]
+                                                                                                                            if EdEndoffse1 == 16777473:
+                                                                                                                                if type4AA___ == 1:
+                                                                                                                                    if type4AB___ == 1:
+                                                                                                                                        if type4AC___ == 0:
+                                                                                                                                            if type4AD___ == 0:
+                                                                                                                                                if type1__AO__ == 0:
+                                                                                                                                                    if type1__AP__ == 1:
+                                                                                                                                                        if type1__AQ___ == 0:
+                                                                                                                                                            if type1__AR___ == 0:
+                                                                                                                                                                if type1__AR___pt1 == 0:
+                                                                                                                                                                    if type1__AR___pt2 == 0:
+                                                                                                                                                                        if type1__AR___pt3 == 0:
+                                                                                                                                                                            if type1__AR___pt4 == 0:
+                                                                                                                                                                                if type1__AR___pt5 == 0:
+                                                                                                                                                                                    if type1__AR___pt6 == 0:
+                                                                                                                                                                                        if type1__AR___pt7 == 0:
+                                                                                                                                                                                            if type1__AR___pt8 == 0:
+                                                                                                                                                                                                if type1__AR___pt9 == 0:
+                                                                                                                                                                                                    if type1__AR___pt10 == 0:
+                                                                                                                                                                                                        if type1__AR___pt11 == 0:
+                                                                                                                                                                                                            if type1__AR___pt12 == 0:
+                                                                                                                                                                                                                if type1__AR___pt13 == 0:
+                                                                                                                                                                                                                    if type1__AR___pt14 == 1:
+                                                                                                                                                                                                                        if type1__AR___pt15 == 0:
+                                                                                                                                                                                                                            if type1__AR___pt16 == 0:
+                                                                                                                                                                                                                                if type1__AR___pt17 == 0:
+                                                                                                                                                                                                                                    if type1__AR___pt18 == 1:
+                                                                                                                                                                                                                                        if type1__AR___pt19 == 0:
+                                                                                                                                                                                                                                            if type1__AR___pt20 == 0:
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AA___,vz0001__AA___,vy0001__AA___])
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AB___,vz0001__AB___,vy0001__AB___])
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AC___,vz0001__AC___,vy0001__AC___])
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AD___,vz0001__AD___,vy0001__AD___])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AO__,vz0001__AO__,vy0001__AO__])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AQ___,vz0001__AQ___,vy0001__AQ___])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt1,vz0001__AR___pt1,vy0001__AR___pt1])
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt3,vz0001__AR___pt3,vy0001__AR___pt3])
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt5,vz0001__AR___pt5,vy0001__AR___pt5])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt7,vz0001__AR___pt7,vy0001__AR___pt7])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt9,vz0001__AR___pt9,vy0001__AR___pt9])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt11,vz0001__AR___pt11,vy0001__AR___pt11])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt13,vz0001__AR___pt13,vy0001__AR___pt13])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt15,vz0001__AR___pt15,vy0001__AR___pt15])
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt17,vz0001__AR___pt17,vy0001__AR___pt17])
+
+                                                                                                                                                                                                                                                vertices3Daqaq.append([vx0001__AR___pt19,vz0001__AR___pt19,vy0001__AR___pt19])
+
+                                                                                                                                                                                                                                                fa2Ta_daT+=1*16
+                                                                                                                                                                                                                                                fb2Ta_daT+=1*16
+                                                                                                                                                                                                                                                fc2Ta_daT+=1*16
+                                                                                                                                                                                                                                                fd2Ta_daT+=1*16
+                                                                                                                                                                                                                                                fe2Ta_daT+=1*16
+
+                                                                                                                                                                                                                                                faces3Daqaq.append([fa2Ta_daT,fb2Ta_daT,fc2Ta_daT])
+                                                                                                                                                                                                                                                faces3Daqaq.append([fb2Ta_daT,fc2Ta_daT,fd2Ta_daT])
+                                                                                                                                                                                                                                                faces3Daqaq.append([fb2Ta_daT,fd2Ta_daT,fe2Ta_daT])
+                                                                                                                                                                                                                        
+                                                                                                                                                                
+                                                                                                                                                    
+                                                                                                                                
+                                                                                                                                
+                                                                                                                
+                                                                                                                
+                                                                                                                
+                                                                                                
+                                                                                
+                                                                
+                                                        elif vvavC3 == 2:
                                                             for i in range(1):
                                                                 vx0001__AQ__ = unpack("<f", f.read(4))[0]
                                                                 vy0001__AQ__ = unpack("<f", f.read(4))[0]
@@ -6785,6 +7084,11 @@ def GHG_mesh(f, filepath):
     mesh3yyF.from_pydata(vertices3Daqa, [], faces3Daqa)
     objects3yyF = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyF)
     collection.objects.link(objects3yyF)
+
+    mesh3yyG = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3yyG.from_pydata(vertices3Daqaq, [], faces3Daqaq)
+    objects3yyG = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyG)
+    collection.objects.link(objects3yyG)
 
     """for obj in bpy.context.scene.objects:
         if obj.name.startswith("nigel"):
