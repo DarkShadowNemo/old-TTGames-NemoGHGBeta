@@ -524,6 +524,30 @@ def GHG_mesh(f, filepath):
     fd2Ta_d=-2
     fe2Ta_d=-1
 
+    fa2Ta_da=-28
+
+    fb2Ta_da=-27
+    fc2Ta_da=-26
+
+    fd2Ta_da=-25
+    fe2Ta_da=-24
+    ff2Ta_da=-23
+
+    fg2Ta_da=-22
+
+    fh2Ta_da=-21
+    fi2Ta_da=-13
+
+    fj2Ta_da=-20
+    fk2Ta_da=-19
+    fl2Ta_da=-18
+
+    fm2Ta_da=-17
+    fn2Ta_da=-16
+    fo2Ta_da=-15
+
+    fp2Ta_da=-6
+
     fa2CAQ=-4
     fb2CAQ=-3
     fc2CAQ=-2
@@ -5970,6 +5994,40 @@ def GHG_mesh(f, filepath):
                                                                                                                                                                                                                                 vertices3Daqa.append([vx0001__AZZZZZZZZZZ__,vz0001__AZZZZZZZZZZ__,vy0001__AZZZZZZZZZZ__])
 
                                                                                                                                                                                                                                 vertices3Daqa.append([vx0001__AZZZZZZZZZZZZ__,vz0001__AZZZZZZZZZZZZ__,vy0001__AZZZZZZZZZZZZ__])
+
+                                                                                                                                                                                                                                fa2Ta_da+=1*28
+                                                                                                                                                                                                                                fb2Ta_da+=1*28
+                                                                                                                                                                                                                                fc2Ta_da+=1*28
+                                                                                                                                                                                                                                fd2Ta_da+=1*28
+                                                                                                                                                                                                                                fe2Ta_da+=1*28
+                                                                                                                                                                                                                                ff2Ta_da+=1*28
+                                                                                                                                                                                                                                fg2Ta_da+=1*28
+                                                                                                                                                                                                                                fh2Ta_da+=1*28
+                                                                                                                                                                                                                                fi2Ta_da+=1*28
+
+                                                                                                                                                                                                                                fj2Ta_da+=1*28
+                                                                                                                                                                                                                                fk2Ta_da+=1*28
+                                                                                                                                                                                                                                fl2Ta_da+=1*28
+                                                                                                                                                                                                                                fm2Ta_da+=1*28
+                                                                                                                                                                                                                                fn2Ta_da+=1*28
+
+                                                                                                                                                                                                                                fo2Ta_da+=1*28
+
+                                                                                                                                                                                                                                faces3Daqa.append([fa2Ta_da,fb2Ta_da,fc2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([fb2Ta_da,fc2Ta_da,fd2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([fb2Ta_da,fd2Ta_da,fe2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([fd2Ta_da,fe2Ta_da,ff2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([fe2Ta_da,ff2Ta_da,fg2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([ff2Ta_da,fg2Ta_da,fh2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([fg2Ta_da,fh2Ta_da,fi2Ta_da])
+
+                                                                                                                                                                                                                                faces3Daqa.append([fj2Ta_da,fk2Ta_da,fl2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([fk2Ta_da,fl2Ta_da,fm2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([fl2Ta_da,fm2Ta_da,fn2Ta_da])
+                                                                                                                                                                                                                                faces3Daqa.append([fm2Ta_da,fn2Ta_da,fo2Ta_da])
+
+                                                                                                                                                                                                                                #faces3Daqa.append([fm2Ta_da,fo2Ta_da,fp2Ta_da])
+                                                                                                                                                                                                                                
                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                     
                                                                                                                                 
@@ -6724,7 +6782,7 @@ def GHG_mesh(f, filepath):
     collection.objects.link(objects3yyE)
 
     mesh3yyF = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3yyF.from_pydata(vertices3Daqa, [], [])
+    mesh3yyF.from_pydata(vertices3Daqa, [], faces3Daqa)
     objects3yyF = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyF)
     collection.objects.link(objects3yyF)
 
