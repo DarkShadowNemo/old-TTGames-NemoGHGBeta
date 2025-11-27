@@ -533,6 +533,26 @@ def GHG_mesh(f, filepath):
     fd2Ta_d=-2
     fe2Ta_d=-1
 
+    fa2Ta_daTaT=-19
+    fb2Ta_daTaT=-18
+    fc2Ta_daTaT=-17
+    fd2Ta_daTaT=-16
+    fe2Ta_daTaT=-15
+    ff2Ta_daTaT=-14
+    fg2Ta_daTaT=-13
+    fh2Ta_daTaT=-12
+    fi2Ta_daTaT=-11
+    fj2Ta_daTaT=-10
+    fk2Ta_daTaT=-9
+    fl2Ta_daTaT=-8
+    fm2Ta_daTaT=-7
+    fn2Ta_daTaT=-6
+    fo2Ta_daTaT=-5
+    fp2Ta_daTaT=-4
+    fq2Ta_daTaT=-3
+    fr2Ta_daTaT=-2
+    fs2Ta_daTaT=-1
+
     fa2Ta_daTa=-8
     fb2Ta_daTa=-7
     fc2Ta_daTa=-6
@@ -5848,6 +5868,49 @@ def GHG_mesh(f, filepath):
                                 f.seek(4,1)
                                 type4AD___1a = unpack("B", f.read(1))[0]
                                 f.seek(3,1)
+
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for j in range(1):
+                                vx0001__AA___1aa = unpack("<f", f.read(4))[0]
+                                vy0001__AA___1aa = unpack("<f", f.read(4))[0]
+                                vz0001__AA___1aa = unpack("<f", f.read(4))[0]
+                                brightness1__AA___1aa = unpack("<f", f.read(4))[0]
+                                uvx0001__AA___1aa = unpack("<f", f.read(4))[0]
+                                uvy0001__AA___1aa = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AA___1aa = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AB___1aa = unpack("<f", f.read(4))[0]
+                                vy0001__AB___1aa = unpack("<f", f.read(4))[0]
+                                vz0001__AB___1aa = unpack("<f", f.read(4))[0]
+                                brightness1__AB___1aa = unpack("<f", f.read(4))[0]
+                                uvx0001__AB___1aa = unpack("<f", f.read(4))[0]
+                                uvy0001__AB___1aa = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AB___1aa = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AC___1aa = unpack("<f", f.read(4))[0]
+                                vy0001__AC___1aa = unpack("<f", f.read(4))[0]
+                                vz0001__AC___1aa = unpack("<f", f.read(4))[0]
+                                brightness1__AC___1aa = unpack("<f", f.read(4))[0]
+                                uvx0001__AC___1aa = unpack("<f", f.read(4))[0]
+                                uvy0001__AC___1aa = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AC___1aa = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AD___1aa = unpack("<f", f.read(4))[0]
+                                vy0001__AD___1aa = unpack("<f", f.read(4))[0]
+                                vz0001__AD___1aa = unpack("<f", f.read(4))[0]
+                                brightness1__AD___1aa = unpack("<f", f.read(4))[0]
+                                uvx0001__AD___1aa = unpack("<f", f.read(4))[0]
+                                uvy0001__AD___1aa = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AD___1aa = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
                             offffsetA = unpack("<I", f.read(4))[0]
                             if offffsetA == 16777473:
                                 if type4AA_ == 1:
@@ -5995,7 +6058,158 @@ def GHG_mesh(f, filepath):
                                             vvvcount1 = unpack("B", f.read(1))[0]
                                             ffflag1 = unpack("B", f.read(1))[0]
                                             if ffflag1 == 0x6C:
-                                                if vvvcount1 == 26:
+                                                if vvvcount1 == 12:
+                                                    for i in range(1):
+                                                        vx0001__AF_8a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_8a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_8a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_8a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_9a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_9a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_9a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_9a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_10a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_10a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_10a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_10a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_11a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_11a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_11a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_11a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_12a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_12a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_12a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_12a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_13a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_13a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_13a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_13a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_14a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_14a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_14a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_14a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_15a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_15a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_15a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_15a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_16a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_16a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_16a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_16a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_17a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_17a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_17a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_17a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_18a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_18a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_18a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_18a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                        vx0001__AF_19a = unpack("<f", f.read(4))[0]
+                                                        vy0001__AF_19a = unpack("<f", f.read(4))[0]
+                                                        vz0001__AF_19a = unpack("<f", f.read(4))[0]
+                                                        type1__AF_19a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+
+                                                    ofssetBXa1 = unpack("<I", f.read(4))[0]
+                                                    if ofssetBXa1 == 1627553839:
+                                                        numX1 = unpack("<I", f.read(4))[0]
+                                                        if numX1 == 7:
+                                                            ofssetBXa2 = unpack("<I", f.read(4))[0]
+                                                            if ofssetBXa2 == 1627553843:
+                                                                numX2 = unpack("<I", f.read(4))[0]
+                                                                if numX2 == 9:
+                                                                    f.seek(2,1)
+                                                                    vvvcount1xx = unpack("B", f.read(1))[0]
+                                                                    ffflag1xx = unpack("B", f.read(1))[0]
+                                                                    if ffflag1xx == 0x6C:
+                                                                        if vvvcount1xx == 2:
+                                                                            for i in range(1):
+                                                                                vx0001__AF_20a = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AF_20a = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AF_20a = unpack("<f", f.read(4))[0]
+                                                                                type1__AF_20a = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+
+                                                                                vx0001__AF_21a = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AF_21a = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AF_21a = unpack("<f", f.read(4))[0]
+                                                                                type1__AF_21a = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+
+                                                                            ofssetBXa2 = unpack("<I", f.read(4))[0]
+                                                                            if ofssetBXa2 == 1627553851:
+                                                                                numX2 = unpack("<I", f.read(4))[0]
+                                                                                if numX2 == 65546:
+                                                                                    f.seek(2,1)
+                                                                                    vvvcount2xx = unpack("B", f.read(1))[0]
+                                                                                    ffflag2xx = unpack("B", f.read(1))[0]
+                                                                                    if ffflag2xx == 0x6C:
+                                                                                        if vvvcount2xx == 2:
+                                                                                            for i in range(1):
+                                                                                                vx0001__AF_22a = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AF_22a = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AF_22a = unpack("<f", f.read(4))[0]
+                                                                                                type1__AF_22a = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AF_23a = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AF_23a = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AF_23a = unpack("<f", f.read(4))[0]
+                                                                                                type1__AF_23a = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                            EdgesEnd01 = unpack("<I", f.read(4))[0]
+                                                                                            if EdgesEnd01 == 16777473:
+                                                                                                if type4AA___1aa == 1:
+                                                                                                    if type4AB___1aa == 1:
+                                                                                                        if type4AC___1aa == 0:
+                                                                                                            if type4AD___1aa == 0:
+                                                                                                                if type1__AF_8a == 0:
+                                                                                                                    if type1__AF_9a == 1:
+                                                                                                                        if type1__AF_10a == 0:
+                                                                                                                            if type1__AF_11a == 0:
+                                                                                                                                if type1__AF_12a == 0:
+                                                                                                                                    if type1__AF_13a == 0:
+                                                                                                                                        if type1__AF_14a == 0:
+                                                                                                                                            if type1__AF_15a == 0:
+                                                                                                                                                if type1__AF_16a == 0:
+                                                                                                                                                    if type1__AF_17a == 1:
+                                                                                                                                                        if type1__AF_18a == 0:
+                                                                                                                                                            if type1__AF_19a == 1:
+                                                                                                                                                                if type1__AF_20a == 0:
+                                                                                                                                                                    if type1__AF_21a == 1:
+                                                                                                                                                                        if type1__AF_22a == 0:
+                                                                                                                                                                            if type1__AF_23a == 0:
+                                                                                                                                                                                pass
+
+                                                                            
+                                                                                
+                                                                
+                                                            
+                                                        
+                                                elif vvvcount1 == 26:
                                                     for i in range(1):
                                                         vx0001__AF_8 = unpack("<f", f.read(4))[0]
                                                         vy0001__AF_8 = unpack("<f", f.read(4))[0]
@@ -6235,6 +6449,74 @@ def GHG_mesh(f, filepath):
                                                                                                                                                                                                                                 vertices3Daqaqaq.append([vx0001__AB___1a,vz0001__AB___1a,vy0001__AB___1a])
                                                                                                                                                                                                                                 vertices3Daqaqaq.append([vx0001__AC___1a,vz0001__AC___1a,vy0001__AC___1a])
                                                                                                                                                                                                                                 vertices3Daqaqaq.append([vx0001__AD___1a,vz0001__AD___1a,vy0001__AD___1a])
+
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_8,vz0001__AF_8,vy0001__AF_8])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_10,vz0001__AF_10,vy0001__AF_10])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_12,vz0001__AF_12,vy0001__AF_12])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_14,vz0001__AF_14,vy0001__AF_14])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_16,vz0001__AF_16,vy0001__AF_16])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_18,vz0001__AF_18,vy0001__AF_18])
+
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_20,vz0001__AF_20,vy0001__AF_20])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_22,vz0001__AF_22,vy0001__AF_22])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_24,vz0001__AF_24,vy0001__AF_24])
+
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_26,vz0001__AF_26,vy0001__AF_26])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_28,vz0001__AF_28,vy0001__AF_28])
+
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_30,vz0001__AF_30,vy0001__AF_30])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_32,vz0001__AF_32,vy0001__AF_32])
+
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_34,vz0001__AF_34,vy0001__AF_34])
+                                                                                                                                                                                                                                vertices3Daqaqaq.append([vx0001__AF_36,vz0001__AF_36,vy0001__AF_36])
+
+                                                                                                                                                                                                                                fa2Ta_daTaT+=1*19
+                                                                                                                                                                                                                                fb2Ta_daTaT+=1*19
+                                                                                                                                                                                                                                fc2Ta_daTaT+=1*19
+                                                                                                                                                                                                                                fd2Ta_daTaT+=1*19
+
+                                                                                                                                                                                                                                fe2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                ff2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fg2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fh2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fi2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fj2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fk2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fl2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fm2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fn2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fo2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fp2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fq2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fr2Ta_daTaT+=1*19#
+                                                                                                                                                                                                                                fs2Ta_daTaT+=1*19#
+
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fa2Ta_daTaT,fb2Ta_daTaT,fc2Ta_daTaT])
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fb2Ta_daTaT,fc2Ta_daTaT,fd2Ta_daTaT])
+
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fc2Ta_daTaT,fd2Ta_daTaT,fe2Ta_daTaT])
+
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fd2Ta_daTaT,fe2Ta_daTaT,ff2Ta_daTaT])
+
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fe2Ta_daTaT,ff2Ta_daTaT,fg2Ta_daTaT])
+                                                                                                                                                                                                                                faces3Daqaqaq.append([ff2Ta_daTaT,fg2Ta_daTaT,fh2Ta_daTaT])
+
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fg2Ta_daTaT,fh2Ta_daTaT,fi2Ta_daTaT])
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fh2Ta_daTaT,fi2Ta_daTaT,fj2Ta_daTaT])
+
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fi2Ta_daTaT,fj2Ta_daTaT,fk2Ta_daTaT])
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fj2Ta_daTaT,fk2Ta_daTaT,fl2Ta_daTaT])
+
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fk2Ta_daTaT,fl2Ta_daTaT,fm2Ta_daTaT])
+
+                                                                                                                                                                                                                                #faces3Daqaqaq.append([fm2Ta_daTaT,fo2Ta_daTaT,fk2Ta_daTaT])
+
+                                                                                                                                                                                                                                #faces3Daqaqaq.append([fm2Ta_daTaT,fn2Ta_daTaT,fo2Ta_daTaT])
+
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fn2Ta_daTaT,fo2Ta_daTaT,fp2Ta_daTaT])
+                                                                                                                                                                                                                                faces3Daqaqaq.append([fq2Ta_daTaT,fr2Ta_daTaT,fs2Ta_daTaT])
+
+                                                                                                                                                                                                                                #0x16738
                                                                                                                                                                                                                                 
                                                                                                             
                                                                                 
@@ -7583,6 +7865,11 @@ def GHG_mesh(f, filepath):
     mesh3yyH.from_pydata(vertices3Daqaqa, [], faces3Daqaqa)
     objects3yyH = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyH)
     collection.objects.link(objects3yyH)
+
+    mesh3yyI = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3yyI.from_pydata(vertices3Daqaqaq, [], faces3Daqaqaq)
+    objects3yyI = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyI)
+    collection.objects.link(objects3yyI)
 
     """for obj in bpy.context.scene.objects:
         if obj.name.startswith("nigel"):
