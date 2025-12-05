@@ -304,6 +304,22 @@ def GHG_mesh(f, filepath):
 
     vertices3Daqaqa=[]
     faces3Daqaqa=[]
+
+    cocoVerts01 =[]
+    cocoFaces01 =[]
+
+    cocoA=-12
+    cocoB=-11
+    cocoC=-10
+    cocoD=-9
+    cocoE=-8
+    cocoF=-7
+    cocoG=-6
+    cocoH=-5
+    cocoI=-4
+    cocoJ=-3
+    cocoK=-2
+    cocoL=-1
     
 
     vertices3AA = []
@@ -5921,6 +5937,92 @@ def GHG_mesh(f, filepath):
                                 f.seek(4,1)
                                 type4AD___1aa = unpack("B", f.read(1))[0]
                                 f.seek(3,1)
+
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for j in range(1):
+                                vx0001__AA___1aaCoco = unpack("<f", f.read(4))[0]
+                                vy0001__AA___1aaCoco = unpack("<f", f.read(4))[0]
+                                vz0001__AA___1aaCoco = unpack("<f", f.read(4))[0]
+                                brightness1__AA___1aaCoco = unpack("<f", f.read(4))[0]
+                                uvx0001__AA___1aaCoco = unpack("<f", f.read(4))[0]
+                                uvy0001__AA___1aaCoco = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AA___1aaCoco = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AB___1aaCoco = unpack("<f", f.read(4))[0]
+                                vy0001__AB___1aaCoco = unpack("<f", f.read(4))[0]
+                                vz0001__AB___1aaCoco = unpack("<f", f.read(4))[0]
+                                brightness1__AB___1aaCoco = unpack("<f", f.read(4))[0]
+                                uvx0001__AB___1aaCoco = unpack("<f", f.read(4))[0]
+                                uvy0001__AB___1aaCoco = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AB___1aaCoco = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AC___1aaCoco = unpack("<f", f.read(4))[0]
+                                vy0001__AC___1aaCoco = unpack("<f", f.read(4))[0]
+                                vz0001__AC___1aaCoco = unpack("<f", f.read(4))[0]
+                                brightness1__AC___1aaCoco = unpack("<f", f.read(4))[0]
+                                uvx0001__AC___1aaCoco = unpack("<f", f.read(4))[0]
+                                uvy0001__AC___1aaCoco = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AC___1aaCoco = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AD___1aaCoco = unpack("<f", f.read(4))[0]
+                                vy0001__AD___1aaCoco = unpack("<f", f.read(4))[0]
+                                vz0001__AD___1aaCoco = unpack("<f", f.read(4))[0]
+                                brightness1__AD___1aaCoco = unpack("<f", f.read(4))[0]
+                                uvx0001__AD___1aaCoco = unpack("<f", f.read(4))[0]
+                                uvy0001__AD___1aaCoco = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AD___1aaCoco = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for j in range(1):
+                                vx0001__AA___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                vy0001__AA___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                vz0001__AA___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                brightness1__AA___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                uvx0001__AA___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                uvy0001__AA___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AA___1aaCoco1 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AB___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                vy0001__AB___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                vz0001__AB___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                brightness1__AB___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                uvx0001__AB___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                uvy0001__AB___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AB___1aaCoco1 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AC___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                vy0001__AC___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                vz0001__AC___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                brightness1__AC___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                uvx0001__AC___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                uvy0001__AC___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AC___1aaCoco1 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AD___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                vy0001__AD___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                vz0001__AD___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                brightness1__AD___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                uvx0001__AD___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                uvy0001__AD___1aaCoco1 = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AD___1aaCoco1 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
                             offffsetA = unpack("<I", f.read(4))[0]
                             if offffsetA == 16777473:
                                 if type4AA_ == 1:
@@ -6552,7 +6654,7 @@ def GHG_mesh(f, filepath):
                                                                     
 
                                                     
-                                                elif vvvcount1 == 4:
+                                                elif vvvcount1y == 4:
                                                     for i in range(1):
                                                         vx0001__AE_ = unpack("<f", f.read(4))[0]
                                                         vy0001__AE_ = unpack("<f", f.read(4))[0]
@@ -6626,17 +6728,17 @@ def GHG_mesh(f, filepath):
                                                     vvavC3 = unpack("B", f.read(1))[0]
                                                     fvflag3 = unpack("B", f.read(1))[0]
                                                     if fvflag3 == 0x6C:
-                                                        if vvaC3 == 2:
+                                                        if vvavC3 == 2:
                                                             for i in range(1):
                                                                 vx0001__AQ___2 = unpack("<f", f.read(4))[0]
                                                                 vy0001__AQ___2 = unpack("<f", f.read(4))[0]
-                                                                vy0001__AQ___2 = unpack("<f", f.read(4))[0]
+                                                                vz0001__AQ___2 = unpack("<f", f.read(4))[0]
                                                                 type1__AQ___2 = unpack("B", f.read(1))[0]
                                                                 f.seek(3,1)
                                                                 vx0001__AR___2 = unpack("<f", f.read(4))[0]
                                                                 vy0001__AR___2 = unpack("<f", f.read(4))[0]
                                                                 vz0001__AR___2 = unpack("<f", f.read(4))[0]
-                                                                type1__AQ___2 = unpack("B", f.read(1))[0]
+                                                                type1__AR___2 = unpack("B", f.read(1))[0]
                                                                 f.seek(3,1)
                                                             cocoO = unpack("<I", f.read(4))[0]
                                                             if cocoO == 1627553827:
@@ -6667,7 +6769,102 @@ def GHG_mesh(f, filepath):
                                                                                     cocoTwoCount1 = unpack("B", f.read(1))[0]
                                                                                     cocoTwoFlag1 = unpack("B", f.read(1))[0]
                                                                                     if cocoTwoFlag1 == 0x6C:
-                                                                                        if cocoTwoFlag1 == 2:
+                                                                                        if cocoTwoCount1 == 16:
+                                                                                            for i in range(1):
+                                                                                                vx0001__AS___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AS___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AS___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AS___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AT___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AT___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AT___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AT___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AU___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AU___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AU___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AU___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AV___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AV___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AV___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AV___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AW___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AW___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AW___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AW___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AX___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AX___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AX___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AX___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AY___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AY___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AY___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AY___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                                vx0001__AZZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AZZZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AZZZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AZZZZZZZZZ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AZZZZZZZZZ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                            cocoCartoon1 = unpack("<I", f.read(4))[0]
+                                                                                            if cocoCartoon1 == 1627553871:
+                                                                                                cocorunny = unpack("<I", f.read(4))[0]
+                                                                                                if cocorunny == 1:
+                                                                                                    f.seek(2,1)
+                                                                                        elif cocoTwoCount1 == 2:
                                                                                             for i in range(1):
                                                                                                 vx0001__AQ___2cocococo = unpack("<f", f.read(4))[0]
                                                                                                 vy0001__AQ___2cocococo = unpack("<f", f.read(4))[0]
@@ -6677,7 +6874,7 @@ def GHG_mesh(f, filepath):
                                                                                                 vx0001__AR___2cocococo = unpack("<f", f.read(4))[0]
                                                                                                 vy0001__AR___2cocococo = unpack("<f", f.read(4))[0]
                                                                                                 vz0001__AR___2cocococo = unpack("<f", f.read(4))[0]
-                                                                                                type1__AQ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                type1__AR___2cocococo = unpack("B", f.read(1))[0]
                                                                                                 f.seek(3,1)
 
                                                                                             cocoFatherOffset1 = unpack("<I", f.read(4))[0]
@@ -6704,7 +6901,7 @@ def GHG_mesh(f, filepath):
                                                                                                             if cocoDoom01 == 1627553851:
                                                                                                                 cocoNounsNum01 = unpack("<I", f.read(4))[0]
                                                                                                                 if cocoNounsNum01 == 12:
-                                                                                                                    f.see(2,1)
+                                                                                                                    f.seek(2,1)
                                                                                                                     cocoDoomCount1 = unpack("B", f.read(1))[0]
                                                                                                                     cocoDoomFlag1 = unpack("B", f.read(1))[0]
                                                                                                                     if cocoDoomFlag1 == 0x6C:
@@ -6722,7 +6919,108 @@ def GHG_mesh(f, filepath):
                                                                                                                                 f.seek(3,1)
                                                                                                                             cocoisaPowerPuffGirl = unpack("<I", f.read(4))[0]
                                                                                                                             if cocoisaPowerPuffGirl == 1627553859:
-                                                                                                                                pass
+                                                                                                                                cocoisnotgood = unpack("<I", f.read(4))[0]
+                                                                                                                                if cocoisnotgood == 65550:
+                                                                                                                                    f.seek(2,1)
+                                                                                                                                    cocoisnotHealthyCount = unpack("B", f.read(1))[0]
+                                                                                                                                    cocoisnotHealthyFlag = unpack("B", f.read(1))[0]
+                                                                                                                                    if cocoisnotHealthyFlag == 0x6C:
+                                                                                                                                        if cocoisnotHealthyCount == 2:
+                                                                                                                                            for i in range(1):
+                                                                                                                                                vx0001__AQ___2cocococococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                                vy0001__AQ___2cocococococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                                vz0001__AQ___2cocococococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                                type1__AQ___2cocococococo2 = unpack("B", f.read(1))[0]
+                                                                                                                                                f.seek(3,1)
+                                                                                                                                                vx0001__AR___2cocococococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                                vy0001__AR___2cocococococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                                vz0001__AR___2cocococococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                                type1__AR___2cocococococo2 = unpack("B", f.read(1))[0]
+                                                                                                                                                f.seek(3,1)
+                                                                                                                                            cocotooluv = unpack("<I", f.read(4))[0]
+                                                                                                                                            if cocotooluv == 1627553867:
+                                                                                                                                                cocoTooCrash1 = unpack("<I", f.read(4))[0]
+                                                                                                                                                if cocoTooCrash1 == 16:
+                                                                                                                                                    f.seek(2,1)
+                                                                                                                                                    cocotooshortycount1 = unpack("B", f.read(1))[0]
+                                                                                                                                                    cocotooshortyflag1 = unpack("B", f.read(1))[0]
+                                                                                                                                                    if cocotooshortyflag1 == 0x6C:
+                                                                                                                                                        if cocotooshortycount1 == 2:
+                                                                                                                                                            for i in range(1):
+                                                                                                                                                                vx0001__AQ___2cocococococo3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                vy0001__AQ___2cocococococo3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                vz0001__AQ___2cocococococo3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                type1__AQ___2cocococococo3 = unpack("B", f.read(1))[0]
+                                                                                                                                                                f.seek(3,1)
+                                                                                                                                                                vx0001__AR___2cocococococo3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                vy0001__AR___2cocococococo3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                vz0001__AR___2cocococococo3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                type1__AR___2cocococococo3 = unpack("B", f.read(1))[0]
+                                                                                                                                                                f.seek(3,1)
+
+                                                                                                                                                            cocoEnd01 = unpack("<I", f.read(4))[0]
+                                                                                                                                                            if cocoEnd01 == 16777473:
+                                                                                                                                                                if type4AA___1aaCoco == 1:
+                                                                                                                                                                    if type4AB___1aaCoco == 1:
+                                                                                                                                                                        if type4AC___1aaCoco == 0:
+                                                                                                                                                                            if type4AD___1aaCoco == 0:
+                                                                                                                                                                                if type1__AO__ == 0:
+                                                                                                                                                                                    if type1__AP__ == 1:
+                                                                                                                                                                                        if type1__AQ___2 == 0:
+                                                                                                                                                                                            if type1__AR___2 == 0:#0xdb50
+                                                                                                                                                                                                if type1__AQ___2coco == 0:
+                                                                                                                                                                                                    if type1__AR___2coco == 1:
+                                                                                                                                                                                                        if type1__AQ___2cocococo == 0:
+                                                                                                                                                                                                            if type1__AR___2cocococo == 0:#0xdbA8
+                                                                                                                                                                                                                if type1__AQ___2cocococococo == 0:
+                                                                                                                                                                                                                    if type1__AR___2cocococococo == 1:
+                                                                                                                                                                                                                        if type1__AQ___2cocococococo1 == 0:
+                                                                                                                                                                                                                            if type1__AR___2cocococococo1 == 0:
+                                                                                                                                                                                                                                if type1__AQ___2cocococococo2 == 0:
+                                                                                                                                                                                                                                    if type1__AR___2cocococococo2 == 1:
+                                                                                                                                                                                                                                        if type1__AQ___2cocococococo3 == 0:
+                                                                                                                                                                                                                                            if type1__AR___2cocococococo3 == 0:
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AA___1aaCoco,vz0001__AA___1aaCoco,vy0001__AA___1aaCoco])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AB___1aaCoco,vz0001__AB___1aaCoco,vy0001__AB___1aaCoco])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AC___1aaCoco,vz0001__AC___1aaCoco,vy0001__AC___1aaCoco])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AD___1aaCoco,vz0001__AD___1aaCoco,vy0001__AD___1aaCoco])
+
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AO__,vz0001__AO__,vy0001__AO__])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AQ___2,vz0001__AQ___2,vy0001__AQ___2])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AQ___2coco,vz0001__AQ___2coco,vy0001__AQ___2coco])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AQ___2cocococo,vz0001__AQ___2cocococo,vy0001__AQ___2cocococo])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AQ___2cocococococo,vz0001__AQ___2cocococococo,vy0001__AQ___2cocococococo])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AQ___2cocococococo1,vz0001__AQ___2cocococococo1,vy0001__AQ___2cocococococo1])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AQ___2cocococococo2,vz0001__AQ___2cocococococo2,vy0001__AQ___2cocococococo2])
+                                                                                                                                                                                                                                                cocoVerts01.append([vx0001__AQ___2cocococococo3,vz0001__AQ___2cocococococo3,vy0001__AQ___2cocococococo3])
+
+                                                                                                                                                                                                                                                cocoA+=1*12
+                                                                                                                                                                                                                                                cocoB+=1*12
+                                                                                                                                                                                                                                                cocoC+=1*12
+                                                                                                                                                                                                                                                cocoD+=1*12
+                                                                                                                                                                                                                                                cocoE+=1*12
+                                                                                                                                                                                                                                                cocoF+=1*12
+                                                                                                                                                                                                                                                cocoG+=1*12
+                                                                                                                                                                                                                                                cocoH+=1*12
+                                                                                                                                                                                                                                                cocoI+=1*12
+                                                                                                                                                                                                                                                cocoJ+=1*12
+                                                                                                                                                                                                                                                cocoK+=1*12
+                                                                                                                                                                                                                                                cocoL+=1*12
+
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoA,cocoB,cocoC])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoB,cocoC,cocoE])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoC,cocoD,cocoE])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoD,cocoE,cocoF])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoE,cocoF,cocoG])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoF,cocoG,cocoH])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoG,cocoH,cocoI])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoH,cocoI,cocoJ])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoI,cocoJ,cocoK])
+                                                                                                                                                                                                                                                cocoFaces01.append([cocoJ,cocoK,cocoL])
+                                                                                                                                                                
+                                                                                                                                                            
+                                                                                                                                                
+                                                                                                                                    
                                                                                                 
                                                         elif vvavC3 == 14:
                                                             for i in range(1):
@@ -8002,6 +8300,11 @@ def GHG_mesh(f, filepath):
     mesh3yyJ.from_pydata(vertices3Daqaqaqe, [], faces3Daqaqaqe)
     objects3yyJ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyJ)
     collection.objects.link(objects3yyJ)
+
+    mesh3yyK = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3yyK.from_pydata(cocoVerts01, [], cocoFaces01)
+    objects3yyK = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyK)
+    collection.objects.link(objects3yyK)
 
     """for obj in bpy.context.scene.objects:
         if obj.name.startswith("nigel"):
