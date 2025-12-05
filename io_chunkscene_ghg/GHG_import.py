@@ -6647,7 +6647,83 @@ def GHG_mesh(f, filepath):
                                                                     cocoTwoFlag = unpack("B", f.read(1))[0]
                                                                     if cocoTwoFlag == 0x6C:
                                                                         if cocoTwoCount == 2:
-                                                                            pass
+                                                                            for i in range(1):
+                                                                                vx0001__AQ___2coco = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AQ___2coco = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AQ___2coco = unpack("<f", f.read(4))[0]
+                                                                                type1__AQ___2coco = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+                                                                                vx0001__AR___2coco = unpack("<f", f.read(4))[0]
+                                                                                vy0001__AR___2coco = unpack("<f", f.read(4))[0]
+                                                                                vz0001__AR___2coco = unpack("<f", f.read(4))[0]
+                                                                                type1__AR___2coco = unpack("B", f.read(1))[0]
+                                                                                f.seek(3,1)
+
+                                                                            cocoPLS = unpack("<I", f.read(4))[0]
+                                                                            if cocoPLS == 1627553835:
+                                                                                cocoNUM = unpack("<I", f.read(4))[0]
+                                                                                if cocoNUM == 8:
+                                                                                    f.seek(2,1)
+                                                                                    cocoTwoCount1 = unpack("B", f.read(1))[0]
+                                                                                    cocoTwoFlag1 = unpack("B", f.read(1))[0]
+                                                                                    if cocoTwoFlag1 == 0x6C:
+                                                                                        if cocoTwoFlag1 == 2:
+                                                                                            for i in range(1):
+                                                                                                vx0001__AQ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AQ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AQ___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AQ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+                                                                                                vx0001__AR___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vy0001__AR___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                vz0001__AR___2cocococo = unpack("<f", f.read(4))[0]
+                                                                                                type1__AQ___2cocococo = unpack("B", f.read(1))[0]
+                                                                                                f.seek(3,1)
+
+                                                                                            cocoFatherOffset1 = unpack("<I", f.read(4))[0]
+                                                                                            if cocoFatherOffset1 == 1627553843:
+                                                                                                cocoMumCount1 = unpack("<I", f.read(4))[0]
+                                                                                                if cocoMumCount1 == 65546:
+                                                                                                    f.seek(2,1)
+                                                                                                    cocoMINIMECount = unpack("B", f.read(1))[0]
+                                                                                                    cocoMINIMEFlag = unpack("B", f.read(1))[0]
+                                                                                                    if cocoMINIMEFlag == 0x6C:
+                                                                                                        if cocoMINIMECount == 2:
+                                                                                                            for i in range(1):
+                                                                                                                vx0001__AQ___2cocococococo = unpack("<f", f.read(4))[0]
+                                                                                                                vy0001__AQ___2cocococococo = unpack("<f", f.read(4))[0]
+                                                                                                                vz0001__AQ___2cocococococo = unpack("<f", f.read(4))[0]
+                                                                                                                type1__AQ___2cocococococo = unpack("B", f.read(1))[0]
+                                                                                                                f.seek(3,1)
+                                                                                                                vx0001__AR___2cocococococo = unpack("<f", f.read(4))[0]
+                                                                                                                vy0001__AR___2cocococococo = unpack("<f", f.read(4))[0]
+                                                                                                                vz0001__AR___2cocococococo = unpack("<f", f.read(4))[0]
+                                                                                                                type1__AR___2cocococococo = unpack("B", f.read(1))[0]
+                                                                                                                f.seek(3,1)
+                                                                                                            cocoDoom01 = unpack("<I", f.read(4))[0]
+                                                                                                            if cocoDoom01 == 1627553851:
+                                                                                                                cocoNounsNum01 = unpack("<I", f.read(4))[0]
+                                                                                                                if cocoNounsNum01 == 12:
+                                                                                                                    f.see(2,1)
+                                                                                                                    cocoDoomCount1 = unpack("B", f.read(1))[0]
+                                                                                                                    cocoDoomFlag1 = unpack("B", f.read(1))[0]
+                                                                                                                    if cocoDoomFlag1 == 0x6C:
+                                                                                                                        if cocoDoomCount1 == 2:
+                                                                                                                            for i in range(1):
+                                                                                                                                vx0001__AQ___2cocococococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                                vy0001__AQ___2cocococococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                                vz0001__AQ___2cocococococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                                type1__AQ___2cocococococo1 = unpack("B", f.read(1))[0]
+                                                                                                                                f.seek(3,1)
+                                                                                                                                vx0001__AR___2cocococococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                                vy0001__AR___2cocococococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                                vz0001__AR___2cocococococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                                type1__AR___2cocococococo1 = unpack("B", f.read(1))[0]
+                                                                                                                                f.seek(3,1)
+                                                                                                                            cocoisaPowerPuffGirl = unpack("<I", f.read(4))[0]
+                                                                                                                            if cocoisaPowerPuffGirl == 1627553859:
+                                                                                                                                pass
+                                                                                                
                                                         elif vvavC3 == 14:
                                                             for i in range(1):
                                                                 vx0001__AQ___ = unpack("<f", f.read(4))[0]
