@@ -305,6 +305,9 @@ def GHG_mesh(f, filepath):
     vertices3Daqaqa=[]
     faces3Daqaqa=[]
 
+    cocoVerts02 =[]
+    cocoFaces02 =[]
+
     cocoVerts01 =[]
     cocoFaces01 =[]
 
@@ -320,6 +323,24 @@ def GHG_mesh(f, filepath):
     cocoJ=-3
     cocoK=-2
     cocoL=-1
+
+    cocoAa=-17
+    cocoBa=-16
+    cocoCa=-15
+    cocoDa=-14
+    cocoEa=-13
+    cocoFa=-12
+    cocoGa=-11
+    cocoHa=-10
+    cocoIa=-2
+    cocoJa=-1
+    cocoKa=-9
+    cocoLa=-8
+    cocoMa=-7
+    cocoNa=-6
+    cocoOa=-5
+    cocoPa=-4
+    cocoQa=-3
     
 
     vertices3AA = []
@@ -6023,6 +6044,49 @@ def GHG_mesh(f, filepath):
                                 f.seek(4,1)
                                 type4AD___1aaCoco1 = unpack("B", f.read(1))[0]
                                 f.seek(3,1)
+
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for j in range(1):
+                                vx0001__AA___1aaOverlord = unpack("<f", f.read(4))[0]
+                                vy0001__AA___1aaOverlord = unpack("<f", f.read(4))[0]
+                                vz0001__AA___1aaOverlord = unpack("<f", f.read(4))[0]
+                                brightness1__AA___1aaOverlord = unpack("<f", f.read(4))[0]
+                                uvx0001__AA___1aaOverlord = unpack("<f", f.read(4))[0]
+                                uvy0001__AA___1aaOverlord = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AA___1aaOverlord = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AB___1aaOverlord = unpack("<f", f.read(4))[0]
+                                vy0001__AB___1aaOverlord = unpack("<f", f.read(4))[0]
+                                vz0001__AB___1aaOverlord = unpack("<f", f.read(4))[0]
+                                brightness1__AB___1aaOverlord = unpack("<f", f.read(4))[0]
+                                uvx0001__AB___1aaOverlord = unpack("<f", f.read(4))[0]
+                                uvy0001__AB___1aaOverlord = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AB___1aaOverlord = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AC___1aaOverlord = unpack("<f", f.read(4))[0]
+                                vy0001__AC___1aaOverlord = unpack("<f", f.read(4))[0]
+                                vz0001__AC___1aaOverlord = unpack("<f", f.read(4))[0]
+                                brightness1__AC___1aaOverlord = unpack("<f", f.read(4))[0]
+                                uvx0001__AC___1aaOverlord = unpack("<f", f.read(4))[0]
+                                uvy0001__AC___1aaOverlord = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AC___1aaOverlord = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AD___1aaOverlord = unpack("<f", f.read(4))[0]
+                                vy0001__AD___1aaOverlord = unpack("<f", f.read(4))[0]
+                                vz0001__AD___1aaOverlord = unpack("<f", f.read(4))[0]
+                                brightness1__AD___1aaOverlord = unpack("<f", f.read(4))[0]
+                                uvx0001__AD___1aaOverlord = unpack("<f", f.read(4))[0]
+                                uvy0001__AD___1aaOverlord = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AD___1aaOverlord = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
                             offffsetA = unpack("<I", f.read(4))[0]
                             if offffsetA == 16777473:
                                 if type4AA_ == 1:
@@ -6864,6 +6928,155 @@ def GHG_mesh(f, filepath):
                                                                                                 cocorunny = unpack("<I", f.read(4))[0]
                                                                                                 if cocorunny == 1:
                                                                                                     f.seek(2,1)
+                                                                                                    cocoStreetCount1 = unpack("B", f.read(1))[0]
+                                                                                                    cocoStreetFlag1 = unpack("B", f.read(1))[0]
+                                                                                                    if cocoStreetFlag1 == 0x6C:
+                                                                                                        if cocoStreetCount1 == 2:
+                                                                                                            #0xFE9C
+                                                                                                            for i in range(1):
+                                                                                                                vx0001__AS___2cocococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                vy0001__AS___2cocococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                vz0001__AS___2cocococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                type1__AS___2cocococo1 = unpack("B", f.read(1))[0]
+                                                                                                                f.seek(3,1)
+
+                                                                                                                vx0001__AT___2cocococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                vy0001__AT___2cocococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                vz0001__AT___2cocococo1 = unpack("<f", f.read(4))[0]
+                                                                                                                type1__AT___2cocococo1 = unpack("B", f.read(1))[0]
+                                                                                                                f.seek(3,1)
+                                                                                                            cocoKFC1 = unpack("<I", f.read(4))[0]
+                                                                                                            if cocoKFC1 == 1627553879:
+                                                                                                                cocomessedup1 = unpack("<I", f.read(4))[0]
+                                                                                                                if cocomessedup1 == 65546:
+                                                                                                                    cocomediumup1 = unpack("<I", f.read(4))[0]
+                                                                                                                    if cocomediumup1 == 1627553883:
+                                                                                                                        cocotwelve = unpack("<I", f.read(4))[0]
+                                                                                                                        if cocotwelve == 12:
+                                                                                                                            f.seek(2,1)
+                                                                                                                            coco2pounds = unpack("B", f.read(1))[0]
+                                                                                                                            coco2poundsFlag = unpack("B", f.read(1))[0]
+                                                                                                                            if coco2poundsFlag == 0x6C:
+                                                                                                                                if coco2pounds == 2:
+                                                                                                                                    for i in range(1):
+                                                                                                                                        vx0001__AS___2cocococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                        vy0001__AS___2cocococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                        vz0001__AS___2cocococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                        type1__AS___2cocococo2 = unpack("B", f.read(1))[0]
+                                                                                                                                        f.seek(3,1)
+
+                                                                                                                                        vx0001__AT___2cocococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                        vy0001__AT___2cocococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                        vz0001__AT___2cocococo2 = unpack("<f", f.read(4))[0]
+                                                                                                                                        type1__AT___2cocococo2 = unpack("B", f.read(1))[0]
+                                                                                                                                        f.seek(3,1)
+
+                                                                                                                                    cocolostcoin01 = unpack("<I", f.read(4))[0]
+                                                                                                                                    if cocolostcoin01 == 1627553891:
+                                                                                                                                        cocoislost01 = unpack("<I", f.read(4))[0]
+                                                                                                                                        if cocoislost01 == 65557:
+                                                                                                                                            cocosugar01 = unpack("<I", f.read(4))[0]
+                                                                                                                                            if cocosugar01 == 1627553895:
+                                                                                                                                                cocoGranted01 = unpack("<I", f.read(4))[0]
+                                                                                                                                                if cocoGranted01 == 13:
+                                                                                                                                                    cocoExist01 = unpack("<I", f.read(4))[0]
+                                                                                                                                                    if cocoExist01 == 16777473:
+                                                                                                                                                        if type4AA___1aaCoco1 == 1:
+                                                                                                                                                            if type4AB___1aaCoco1 == 1:
+                                                                                                                                                                if type4AC___1aaCoco1 == 0:
+                                                                                                                                                                    if type4AD___1aaCoco1 == 0:
+                                                                                                                                                                        if type1__AO__ == 0:
+                                                                                                                                                                            if type1__AP__ == 1:
+                                                                                                                                                                                if type1__AQ___2 == 0:
+                                                                                                                                                                                    if type1__AR___2 == 0:
+                                                                                                                                                                                        if type1__AQ___2coco == 0:
+                                                                                                                                                                                            if type1__AR___2coco == 1:
+                                                                                                                                                                                                if type1__AS___2cocococo == 0:
+                                                                                                                                                                                                    if type1__AT___2cocococo == 0:
+                                                                                                                                                                                                        if type1__AU___2cocococo == 0:
+                                                                                                                                                                                                            if type1__AV___2cocococo == 1:
+                                                                                                                                                                                                                if type1__AW___2cocococo == 0:
+                                                                                                                                                                                                                    if type1__AX___2cocococo == 1:
+                                                                                                                                                                                                                        if type1__AY___2cocococo == 0:
+                                                                                                                                                                                                                            if type1__AZ___2cocococo == 0:
+                                                                                                                                                                                                                                if type1__AZZ___2cocococo == 0:
+                                                                                                                                                                                                                                    if type1__AZZZ___2cocococo == 0:
+                                                                                                                                                                                                                                        if type1__AZZZZ___2cocococo == 0:
+                                                                                                                                                                                                                                            if type1__AZZZZZ___2cocococo == 0:
+                                                                                                                                                                                                                                                if type1__AZZZZZZ___2cocococo == 0:
+                                                                                                                                                                                                                                                    if type1__AZZZZZZZ___2cocococo == 0:
+                                                                                                                                                                                                                                                        if type1__AZZZZZZZZ___2cocococo == 0:
+                                                                                                                                                                                                                                                            if type1__AZZZZZZZZZ___2cocococo == 0:
+                                                                                                                                                                                                                                                                if type1__AS___2cocococo1 == 0:
+                                                                                                                                                                                                                                                                    if type1__AT___2cocococo1 == 1:
+                                                                                                                                                                                                                                                                        if type1__AS___2cocococo2 == 0:
+                                                                                                                                                                                                                                                                            if type1__AT___2cocococo2 == 1:
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AA___1aaCoco1,vz0001__AA___1aaCoco1,vy0001__AA___1aaCoco1])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AB___1aaCoco1,vz0001__AB___1aaCoco1,vy0001__AB___1aaCoco1])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AC___1aaCoco1,vz0001__AC___1aaCoco1,vy0001__AC___1aaCoco1])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AD___1aaCoco1,vz0001__AD___1aaCoco1,vy0001__AD___1aaCoco1])
+
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AO__,vz0001__AO__,vy0001__AO__])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AQ___2,vz0001__AQ___2,vy0001__AQ___2])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AQ___2coco,vz0001__AQ___2coco,vy0001__AQ___2coco])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AS___2cocococo,vz0001__AS___2cocococo,vy0001__AS___2cocococo])
+
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AU___2cocococo,vz0001__AU___2cocococo,vy0001__AU___2cocococo])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AW___2cocococo,vz0001__AW___2cocococo,vy0001__AW___2cocococo])
+
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AY___2cocococo,vz0001__AY___2cocococo,vy0001__AY___2cocococo])
+
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AZZ___2cocococo,vz0001__AZZ___2cocococo,vy0001__AZZ___2cocococo])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AZZZZ___2cocococo,vz0001__AZZZZ___2cocococo,vy0001__AZZZZ___2cocococo])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AZZZZZZ___2cocococo,vz0001__AZZZZZZ___2cocococo,vy0001__AZZZZZZ___2cocococo])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AZZZZZZZZ___2cocococo,vz0001__AZZZZZZZZ___2cocococo,vy0001__AZZZZZZZZ___2cocococo])
+
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AS___2cocococo1,vz0001__AS___2cocococo1,vy0001__AS___2cocococo1])
+                                                                                                                                                                                                                                                                                cocoVerts02.append([vx0001__AS___2cocococo2,vz0001__AS___2cocococo2,vy0001__AS___2cocococo2])
+
+                                                                                                                                                                                                                                                                                cocoAa+=1*17
+                                                                                                                                                                                                                                                                                cocoBa+=1*17
+                                                                                                                                                                                                                                                                                cocoCa+=1*17
+                                                                                                                                                                                                                                                                                cocoDa+=1*17
+                                                                                                                                                                                                                                                                                cocoEa+=1*17
+                                                                                                                                                                                                                                                                                cocoFa+=1*17
+                                                                                                                                                                                                                                                                                cocoGa+=1*17
+                                                                                                                                                                                                                                                                                cocoHa+=1*17
+                                                                                                                                                                                                                                                                                cocoIa+=1*17
+                                                                                                                                                                                                                                                                                cocoJa+=1*17
+                                                                                                                                                                                                                                                                                cocoKa+=1*17
+                                                                                                                                                                                                                                                                                cocoLa+=1*17
+                                                                                                                                                                                                                                                                                cocoMa+=1*17
+                                                                                                                                                                                                                                                                                cocoNa+=1*17
+                                                                                                                                                                                                                                                                                cocoOa+=1*17
+                                                                                                                                                                                                                                                                                cocoPa+=1*17
+                                                                                                                                                                                                                                                                                cocoQa+=1*17
+
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoAa,cocoBa,cocoCa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoBa,cocoCa,cocoEa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoCa,cocoDa,cocoEa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoDa,cocoEa,cocoFa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoEa,cocoFa,cocoGa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoFa,cocoGa,cocoHa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoGa,cocoHa,cocoIa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoGa,cocoIa,cocoJa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoIa,cocoJa,cocoKa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoIa,cocoKa,cocoLa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoKa,cocoLa,cocoMa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoLa,cocoMa,cocoNa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoMa,cocoNa,cocoOa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoNa,cocoOa,cocoPa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoOa,cocoPa,cocoQa])
+                                                                                                                                                                                                                                                                                cocoFaces02.append([cocoPa,cocoQa,cocoAa])
+
+                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                
+                                                                                                                                        
+                                                                                                                            
+                                                                                                                        
+
+                                                                                                                
                                                                                         elif cocoTwoCount1 == 2:
                                                                                             for i in range(1):
                                                                                                 vx0001__AQ___2cocococo = unpack("<f", f.read(4))[0]
@@ -8305,6 +8518,11 @@ def GHG_mesh(f, filepath):
     mesh3yyK.from_pydata(cocoVerts01, [], cocoFaces01)
     objects3yyK = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyK)
     collection.objects.link(objects3yyK)
+
+    mesh3yyL = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3yyL.from_pydata(cocoVerts02, [], cocoFaces02)
+    objects3yyL = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3yyL)
+    collection.objects.link(objects3yyL)
 
     """for obj in bpy.context.scene.objects:
         if obj.name.startswith("nigel"):
