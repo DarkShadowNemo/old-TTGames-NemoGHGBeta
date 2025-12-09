@@ -326,6 +326,23 @@ def GHG_mesh(f, filepath):
     overlordD3=-21
     overlordE3=-20
     overlordF3=-19
+    overlordG3=-18
+    overlordH3=-17
+    overlordI3=-16
+    overlordJ3=-15
+    overlordK3=-14
+    overlordL3=-13
+    overlordM3=-12
+    overlordN3=-11
+    overlordO3=-10
+    overlordP3=-8
+    overlordQ3=-6
+    overlordR3=-7
+    overlordS3=-5
+    overlordT3=-4
+    overlordU3=-3
+    overlordV3=-1
+    overlordW3=-9
 
     
     overlordA2=-7
@@ -6206,6 +6223,49 @@ def GHG_mesh(f, filepath):
                                 f.seek(4,1)
                                 type4AD___1aaOverlord2 = unpack("B", f.read(1))[0]
                                 f.seek(3,1)
+
+                            for i in range(vertexCount):
+                                f.seek(-32,1)
+                            for j in range(1):
+                                vx0001__AA___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                vy0001__AA___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                vz0001__AA___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                brightness1__AA___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                uvx0001__AA___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                uvy0001__AA___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AA___1aaOverlord3 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AB___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                vy0001__AB___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                vz0001__AB___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                brightness1__AB___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                uvx0001__AB___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                uvy0001__AB___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AB___1aaOverlord3 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AC___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                vy0001__AC___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                vz0001__AC___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                brightness1__AC___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                uvx0001__AC___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                uvy0001__AC___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AC___1aaOverlord3 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+
+                                vx0001__AD___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                vy0001__AD___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                vz0001__AD___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                brightness1__AD___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                uvx0001__AD___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                uvy0001__AD___1aaOverlord3 = unpack("<f", f.read(4))[0]
+                                f.seek(4,1)
+                                type4AD___1aaOverlord3 = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
                             offffsetA = unpack("<I", f.read(4))[0]
                             if offffsetA == 16777473:
                                 if type4AA_ == 1:
@@ -6957,7 +7017,236 @@ def GHG_mesh(f, filepath):
                                     f.seek(2,1)
                                     vvavC = unpack("B", f.read(1))[0]
                                     fvflag1 = unpack("B", f.read(1))[0]
-                                    if fvflag1 == 0x6C:
+                                    if fvflag1 != 0x6C:
+                                        f.seek(-4,1)
+                                        overlordofffsset1 = unpack("<I", f.read(4))[0]
+                                        if overlordofffsset1 == 1627553815:
+                                            overlordd01 = unpack("<I", f.read(4))[0]
+                                            if overlordd01 == 65540:
+                                                f.seek(2,1)
+                                                overlordTimeCount01 = unpack("B", f.read(1))[0]
+                                                overlordTimeFlag01 = unpack("B", f.read(1))[0]
+                                                if overlordTimeFlag01 == 0x6C:
+                                                    if overlordTimeCount01 == 4:
+                                                        for i in range(1):
+                                                            vx0001__AO__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            vy0001__AO__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            vz0001__AO__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            type1__AO__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                            f.seek(3,1)
+                                                            vx0001__AP__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            vy0001__AP__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            vz0001__AP__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            type1__AP__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                            f.seek(3,1)
+                                                            vx0001__AQ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            vy0001__AQ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            vz0001__AQ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            type1__AQ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                            f.seek(3,1)
+                                                            vx0001__AR__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            vy0001__AR__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            vz0001__AR__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                            type1__AR__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                            f.seek(3,1)
+                                                        overlordShadowOffset01 = unpack("<I", f.read(4))[0]
+                                                        if overlordShadowOffset01 == 1627553827:
+                                                            overlordShadowNUM01 = unpack("<I", f.read(4))[0]
+                                                            if overlordShadowNUM01 == 65544:
+                                                                f.seek(2,1)
+                                                                overlordCShadowCount01 = unpack("B", f.read(1))[0]
+                                                                overlordCShadowFlag01 = unpack("B", f.read(1))[0]
+                                                                if overlordCShadowFlag01 == 0x6C:
+                                                                    if overlordCShadowCount01 == 6:
+                                                                        for i in range(1):
+                                                                            vx0001__AS__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vy0001__AS__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vz0001__AS__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            type1__AS__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                            f.seek(3,1)
+
+                                                                            vx0001__AT__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vy0001__AT__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vz0001__AT__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            type1__AT__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                            f.seek(3,1)
+
+                                                                            vx0001__AU__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vy0001__AU__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vz0001__AU__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            type1__AU__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                            f.seek(3,1)
+
+                                                                            vx0001__AV__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vy0001__AV__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vz0001__AV__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            type1__AV__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                            f.seek(3,1)
+
+                                                                            vx0001__AW__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vy0001__AW__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vz0001__AW__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            type1__AW__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                            f.seek(3,1)
+
+                                                                            vx0001__AX__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vy0001__AX__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            vz0001__AX__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                            type1__AX__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                            f.seek(3,1)
+
+                                                                        overlordMasterOffset01 = unpack("<I", f.read(4))[0]
+                                                                        if overlordMasterOffset01 == 1627553843:
+                                                                            overlordMasterNUM01 = unpack("<I", f.read(4))[0]
+                                                                            if overlordMasterNUM01 == 65546:
+                                                                                f.seek(2,1)
+                                                                                overlordCShadowwCount01 = unpack("B", f.read(1))[0]
+                                                                                overlordCShadowwFlag01 = unpack("B", f.read(1))[0]
+                                                                                #256B4
+                                                                                if overlordCShadowwFlag01 == 0x6C:
+                                                                                    if overlordCShadowwCount01 == 10:
+                                                                                        for i in range(1):
+                                                                                            vx0001__AY__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AY__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AY__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AY__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZZZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZZZZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZZZZZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZZZZZZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZZZZZZZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZZZZZZZZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                            vx0001__AZZZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vy0001__AZZZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            vz0001__AZZZZZZZZZ__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                            type1__AZZZZZZZZZ__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                            f.seek(3,1)
+
+                                                                                        overLordMword01 = unpack("<I", f.read(4))[0]
+                                                                                        if overLordMword01 == 1627553875:
+                                                                                            overllord01 = unpack("<I", f.read(4))[0]
+                                                                                            if overllord01 == 65554:
+                                                                                                overlloord01 = unpack("<I", f.read(4))[0]
+                                                                                                if overlloord01 == 1627553879:
+                                                                                                    overlloorrd01 = unpack("<I", f.read(4))[0]
+                                                                                                    if overlloorrd01 == 65556:
+                                                                                                        f.seek(2,1)
+                                                                                                        overlordCShadowwwCount01 = unpack("B", f.read(1))[0]
+                                                                                                        overlordCShadowwwFlag01 = unpack("B", f.read(1))[0]
+                                                                                                        if overlordCShadowwwFlag01 == 0x6C:
+                                                                                                            if overlordCShadowwwCount01 == 10:
+                                                                                                                for i in range(1):
+                                                                                                                    vx0001__AZZZZZZZZZ1__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ1__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ1__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ1__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ2__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ2__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ2__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ2__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ3__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ3__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ3__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ3__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ4__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ4__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ4__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ4__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ5__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ5__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ5__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ5__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ6__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ6__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ6__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ6__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ7__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ7__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ7__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ7__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ8__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ8__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ8__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ8__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ9__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ9__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ9__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ9__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                    vx0001__AZZZZZZZZZ10__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy0001__AZZZZZZZZZ10__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz0001__AZZZZZZZZZ10__overlordShadow01 = unpack("<f", f.read(4))[0]
+                                                                                                                    type1__AZZZZZZZZZ10__overlordShadow01 = unpack("B", f.read(1))[0]
+                                                                                                                    f.seek(3,1)
+
+                                                                                                                overlordyEnd01 = unpack("<I", f.read(4))[0]
+                                                                                                                if overlordyEnd01 == 16777473:
+                                                                                                                    pass
+                                                                                                                    
+                                                                                                    
+                                                            
+                                    elif fvflag1 == 0x6C:
                                         if vvavC == 2:
                                             for i in range(1):
                                                 vx0001__AO__ = unpack("<f", f.read(4))[0]
@@ -8328,11 +8617,47 @@ def GHG_mesh(f, filepath):
                                                                                                                                                                                                                                                             overlordD3+=1*24
                                                                                                                                                                                                                                                             overlordE3+=1*24
                                                                                                                                                                                                                                                             overlordF3+=1*24
+                                                                                                                                                                                                                                                            overlordG3+=1*24
+                                                                                                                                                                                                                                                            overlordH3+=1*24
+                                                                                                                                                                                                                                                            overlordI3+=1*24
+
+                                                                                                                                                                                                                                                            overlordJ3+=1*24
+                                                                                                                                                                                                                                                            overlordK3+=1*24
+                                                                                                                                                                                                                                                            overlordL3+=1*24
+                                                                                                                                                                                                                                                            overlordM3+=1*24
+
+                                                                                                                                                                                                                                                            overlordN3+=1*24
+                                                                                                                                                                                                                                                            overlordO3+=1*24
+                                                                                                                                                                                                                                                            overlordP3+=1*24
+                                                                                                                                                                                                                                                            overlordQ3+=1*24
+                                                                                                                                                                                                                                                            overlordR3+=1*24
+
+                                                                                                                                                                                                                                                            overlordS3+=1*24
+                                                                                                                                                                                                                                                            overlordT3+=1*24
+                                                                                                                                                                                                                                                            overlordU3+=1*24
+                                                                                                                                                                                                                                                            overlordV3+=1*24
+
+                                                                                                                                                                                                                                                            overlordW3+=1*24
 
                                                                                                                                                                                                                                                             overlordfaces03.append([overlordA3,overlordB3,overlordC3])
                                                                                                                                                                                                                                                             overlordfaces03.append([overlordB3,overlordC3,overlordD3])
-                                                                                                                                                                                                                                                            #]overlordfaces03.append([overlordA3,overlordC3,overlordE3])
-                                                                                                                                                                                                                                                            #overlordfaces03.append([overlordD3,overlordE3,overlordF3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordA3,overlordC3,overlordE3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordA3,overlordE3,overlordF3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordE3,overlordF3,overlordG3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordF3,overlordG3,overlordH3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordG3,overlordH3,overlordI3])
+
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordJ3,overlordK3,overlordL3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordK3,overlordL3,overlordM3])
+
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordN3,overlordO3,overlordP3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordN3,overlordP3,overlordW3])
+                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordK3,overlordM3,overlordQ3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordM3,overlordQ3,overlordR3])
+
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordS3,overlordT3,overlordU3])
+                                                                                                                                                                                                                                                            overlordfaces03.append([overlordS3,overlordT3,overlordV3])
                                                                                                                                                                                                         
 
                                                                 
