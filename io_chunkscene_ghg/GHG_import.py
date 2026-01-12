@@ -6507,6 +6507,225 @@ def GHG_mesh(f, filepath):
                             faces2l.append([fh1aaalb,fi1aaalb,fj1aaalb])
                             faces2l.append([fi1aaalb,fj1aaalb,fk1aaalb])
                             faces2l.append([fj1aaalb,fk1aaalb,fl1aaalb])
+
+                elif vertexCount == 16:
+                    for i in range(vertexCount):
+                        vx1_12 = unpack("<h", f.read(2))[0] / 4096
+                        vy1_12 = unpack("<h", f.read(2))[0] / 4096
+                        vz1_12 = unpack("<h", f.read(2))[0] / 4096
+                        f.seek(2,1)
+                        uvx1_12 = unpack("<h", f.read(2))[0] / 4096
+                        uvy1_12 = unpack("<h", f.read(2))[0] / 4096
+                        f.seek(4,1)
+                        vertices2m.append([vx1_12,vz1_12,vy1_12])
+
+                    f.seek(130,1)
+                    facecount = unpack("B", f.read(1))[0]
+                    flagsC = unpack("B", f.read(1))[0]
+                    if flagsC == 0x6E:
+                        if facecount == 6:
+                            
+                            id1 = unpack("B", f.read(1))[0]
+                            fa1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fb1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fc1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fd1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fe1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            ff1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fg1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fh1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fi1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fj1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fk1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fl1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fm1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fn1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fo1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fp1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fq1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fr1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fs1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            ft1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fu1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            f.seek(2,1)
+
+                            fa1aaam//=3
+                            fb1aaam//=3
+                            fc1aaam//=3
+                            fd1aaam//=3
+                            fe1aaam//=3
+                            ff1aaam//=3
+                            fg1aaam//=3
+                            fh1aaam//=3
+                            fi1aaam//=3
+                            fj1aaam//=3
+                            fk1aaam//=3
+                            fl1aaam//=3
+                            fm1aaam//=3
+                            fn1aaam//=3
+                            fo1aaam//=3
+                            fp1aaam//=3
+                            fq1aaam//=3
+                            fr1aaam//=3
+                            fs1aaam//=3
+                            ft1aaam//=3
+                            fu1aaam//=3
+
+                            fa1aaam+=1*len(vertices2m)-16
+                            fb1aaam+=1*len(vertices2m)-16
+                            fc1aaam+=1*len(vertices2m)-16
+                            fd1aaam+=1*len(vertices2m)-16
+                            fe1aaam+=1*len(vertices2m)-16
+                            ff1aaam+=1*len(vertices2m)-16
+                            fg1aaam+=1*len(vertices2m)-16
+                            fh1aaam+=1*len(vertices2m)-16
+                            fi1aaam+=1*len(vertices2m)-16
+                            fj1aaam+=1*len(vertices2m)-16
+                            fk1aaam+=1*len(vertices2m)-16
+                            fl1aaam+=1*len(vertices2m)-16
+                            fm1aaam+=1*len(vertices2m)-16
+                            fn1aaam+=1*len(vertices2m)-16
+                            fo1aaam+=1*len(vertices2m)-16
+                            fp1aaam+=1*len(vertices2m)-16
+                            fq1aaam+=1*len(vertices2m)-16
+                            fr1aaam+=1*len(vertices2m)-16
+                            fs1aaam+=1*len(vertices2m)-16
+                            ft1aaam+=1*len(vertices2m)-16
+                            fu1aaam+=1*len(vertices2m)-16
+
+                            faces2m.append([fa1aaam,fb1aaam,fc1aaam])
+                            faces2m.append([fb1aaam,fc1aaam,fd1aaam])
+                            faces2m.append([fd1aaam,fe1aaam,ff1aaam])
+                            faces2m.append([fg1aaam,fh1aaam,fi1aaam])
+                            faces2m.append([fh1aaam,fi1aaam,fj1aaam])
+                            faces2m.append([fi1aaam,fj1aaam,fk1aaam])
+                            faces2m.append([fj1aaam,fk1aaam,fl1aaam])
+                            faces2m.append([fk1aaam,fl1aaam,fm1aaam])
+                            faces2m.append([fm1aaam,fn1aaam,fo1aaam])
+                            faces2m.append([fn1aaam,fo1aaam,fp1aaam])
+                            faces2m.append([fo1aaam,fp1aaam,fq1aaam])
+                            faces2m.append([fp1aaam,fq1aaam,fr1aaam])
+                            faces2m.append([fq1aaam,fr1aaam,fs1aaam])
+                            faces2m.append([fr1aaam,fs1aaam,ft1aaam])
+                            faces2m.append([fs1aaam,ft1aaam,fu1aaam])
+
+                        elif facecount == 5:
+                            
+                            id1 = unpack("B", f.read(1))[0]
+                            fa1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fb1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fc1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fd1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fe1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            ff1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fg1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fh1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fi1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fj1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fk1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fl1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fm1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fn1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fo1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fp1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            fq1aaama = unpack("B", f.read(1))[0] & 0x2F
+                            f.seek(2,1)
+
+                            fa1aaama//=3
+                            fb1aaama//=3
+                            fc1aaama//=3
+                            fd1aaama//=3
+                            fe1aaama//=3
+                            ff1aaama//=3
+                            fg1aaama//=3
+                            fh1aaama//=3
+                            fi1aaama//=3
+                            fj1aaama//=3
+                            fk1aaama//=3
+                            fl1aaama//=3
+                            fm1aaama//=3
+                            fn1aaama//=3
+                            fo1aaama//=3
+                            fp1aaama//=3
+                            fq1aaama//=3
+
+                            fa1aaama+=1*len(vertices2m)-16
+                            fb1aaama+=1*len(vertices2m)-16
+                            fc1aaama+=1*len(vertices2m)-16
+                            fd1aaama+=1*len(vertices2m)-16
+                            fe1aaama+=1*len(vertices2m)-16
+                            ff1aaama+=1*len(vertices2m)-16
+                            fg1aaama+=1*len(vertices2m)-16
+                            fh1aaama+=1*len(vertices2m)-16
+                            fi1aaama+=1*len(vertices2m)-16
+                            fj1aaama+=1*len(vertices2m)-16
+                            fk1aaama+=1*len(vertices2m)-16
+                            fl1aaama+=1*len(vertices2m)-16
+                            fm1aaama+=1*len(vertices2m)-16
+                            fn1aaama+=1*len(vertices2m)-16
+                            fo1aaama+=1*len(vertices2m)-16
+                            fp1aaama+=1*len(vertices2m)-16
+                            fq1aaama+=1*len(vertices2m)-16
+
+                            faces2m.append([fa1aaama,fb1aaama,fc1aaama])
+                            faces2m.append([fb1aaama,fc1aaama,fd1aaama])
+                            faces2m.append([fd1aaama,fe1aaama,ff1aaama])
+                            faces2m.append([fg1aaama,fh1aaama,fi1aaama])
+                            faces2m.append([fh1aaama,fi1aaama,fj1aaama])
+                            faces2m.append([fi1aaama,fj1aaama,fk1aaama])
+                            faces2m.append([fj1aaama,fk1aaama,fl1aaama])
+                            faces2m.append([fk1aaama,fl1aaama,fm1aaama])
+                            faces2m.append([fm1aaama,fn1aaama,fo1aaama])
+                            faces2m.append([fn1aaama,fo1aaama,fp1aaama])
+                            faces2m.append([fo1aaama,fp1aaama,fq1aaama])
+
+                elif vertexCount == 17:
+                    for i in range(vertexCount):
+                        vx1_13 = unpack("<h", f.read(2))[0] / 4096
+                        vy1_13 = unpack("<h", f.read(2))[0] / 4096
+                        vz1_13 = unpack("<h", f.read(2))[0] / 4096
+                        f.seek(2,1)
+                        uvx1_13 = unpack("<h", f.read(2))[0] / 4096
+                        uvy1_13 = unpack("<h", f.read(2))[0] / 4096
+                        f.seek(4,1)
+                        vertices2n.append([vx1_13,vz1_13,vy1_13])
+
+                    f.seek(134,1)
+
+                    facecount = unpack("B", f.read(1))[0]
+                    flagsC = unpack("B", f.read(1))[0]
+                    if flagsC == 0x6E:
+                        if facecount == 7:
+                            
+                            id1 = unpack("B", f.read(1))[0]
+
+                            fa1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fb1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fc1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fd1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fe1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            ff1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fg1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fh1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fi1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fj1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fk1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fl1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fm1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fn1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fo1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fp1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fq1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fr1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fs1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            ft1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fu1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fn1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fo1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fp1aaam = unpack("B", f.read(1))[0] & 0x2F
+                            fq1aaam = unpack("B", f.read(1))[0] & 0x2F
+
+                            f.seek(2,1)
                         
 
                     
