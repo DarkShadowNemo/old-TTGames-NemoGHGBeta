@@ -5308,17 +5308,39 @@ def GHG_mesh(f, filepath):
                             fe1aaac+=1*len(vertices2c)-6
                             ff1aaac+=1*len(vertices2c)-6
 
-                            if vz1_3a != vz1_3b != vz1_3c != vz1_3d == vz1_3e != vz1_3f:
-                                faces2c.append([fa1aaac,fb1aaac,fc1aaac])
-                                faces2c.append([fb1aaac,fc1aaac,fd1aaac])
-                                faces2c.append([fc1aaac,fd1aaac,fe1aaac])
-                                faces2c.append([fd1aaac,fe1aaac,ff1aaac])
-                            elif vz1_3a != vz1_3b != vz1_3c != vz1_3d != vz1_3e != vz1_3f:
-                                faces2c.append([fa1aaac,fb1aaac,fc1aaac])
-                                faces2c.append([fd1aaac,fe1aaac,ff1aaac])
+                            if fa1aaac == 0 and fb1aaac == 1 and fc1aaac == 2 and fd1aaac == 3 and fe1aaac == 4 and ff1aaac == 5:
+                                if vz1_3a != vz1_3b != vz1_3c == vz1_3d != vz1_3e != vz1_3f:
+                                    faces2c.append([fa1aaac,fb1aaac,fc1aaac])
+                                    faces2c.append([fb1aaac,fc1aaac,fd1aaac])
+                                    faces2c.append([fc1aaac,fd1aaac,fe1aaac])
+                                    faces2c.append([fd1aaac,fe1aaac,ff1aaac])
+                                elif vz1_3a != vz1_3b != vz1_3c != vz1_3d != vz1_3e != vz1_3f:
+                                    faces2c.append([fa1aaac,fb1aaac,fc1aaac])
+                                    faces2c.append([fd1aaac,fe1aaac,ff1aaac])
+                                else:
+                                    faces2c.append([fa1aaac,fb1aaac,fc1aaac])
+                                    faces2c.append([fb1aaac,fc1aaac,fd1aaac])
+                                    faces2c.append([fc1aaac,fd1aaac,fe1aaac])
+                                    faces2c.append([fd1aaac,fe1aaac,ff1aaac])
+
+                            elif fa1aaac != 0 and fb1aaac != 1 and fc1aaac != 2 and fd1aaac != 3 and fe1aaac != 4 and ff1aaac != 5:
+                                if vz1_3a != vz1_3b != vz1_3c != vz1_3d == vz1_3e != vz1_3f:
+                                    faces2c.append([fa1aaac,fb1aaac,fc1aaac])
+                                    faces2c.append([fb1aaac,fc1aaac,fd1aaac])
+                                    faces2c.append([fc1aaac,fd1aaac,fe1aaac])
+                                    faces2c.append([fd1aaac,fe1aaac,ff1aaac])
+                                elif vz1_3a != vz1_3b != vz1_3c != vz1_3d != vz1_3e != vz1_3f:
+                                    faces2c.append([fa1aaac,fb1aaac,fc1aaac])
+                                    faces2c.append([fd1aaac,fe1aaac,ff1aaac])
+                                else:
+                                    faces2c.append([fa1aaac,fb1aaac,fc1aaac])
+                                    faces2c.append([fb1aaac,fc1aaac,fd1aaac])
+                                    faces2c.append([fc1aaac,fd1aaac,fe1aaac])
+                                    faces2c.append([fd1aaac,fe1aaac,ff1aaac])
+                                    
 
                         elif facecount == 3:
-                            
+
                             id1 = unpack("B", f.read(1))[0]
                             fa1aaaca = unpack("B", f.read(1))[0] & 0x0F
                             fb1aaaca = unpack("B", f.read(1))[0] & 0x0F
@@ -5328,8 +5350,7 @@ def GHG_mesh(f, filepath):
                             ff1aaaca = unpack("B", f.read(1))[0] & 0x0F
                             fg1aaaca = unpack("B", f.read(1))[0] & 0x0F
                             fh1aaaca = unpack("B", f.read(1))[0] & 0x0F
-                            fi1aaaca = unpack("B", f.read(1))[0] & 0x0F
-                            f.seek(2,1)
+                            f.seek(3,1)
                             
                             fa1aaaca//=3
                             fb1aaaca//=3
@@ -5337,6 +5358,8 @@ def GHG_mesh(f, filepath):
                             fd1aaaca//=3
                             fe1aaaca//=3
                             ff1aaaca//=3
+                            fg1aaaca//=3
+                            fh1aaaca//=3
 
                             fa1aaaca+=1*len(vertices2c)-6
                             fb1aaaca+=1*len(vertices2c)-6
@@ -5344,43 +5367,76 @@ def GHG_mesh(f, filepath):
                             fd1aaaca+=1*len(vertices2c)-6
                             fe1aaaca+=1*len(vertices2c)-6
                             ff1aaaca+=1*len(vertices2c)-6
+                            fg1aaaca+=1*len(vertices2c)-6
+                            fh1aaaca+=1*len(vertices2c)-6
+                            
+                            if fa1aaaca == 0 and fb1aaaca == 1 and fc1aaaca == 2 and fd1aaaca == 2 and fe1aaaca == 3 and ff1aaaca == 4 and fg1aaaca == 5:
+                                if vz1_3a != vz1_3b != vz1_3c == vz1_3c != vz1_3d != vz1_3e != vz1_3f:
+                                    faces2c.append([fa1aaaca,fb1aaaca,fc1aaaca])
+                                    faces2c.append([fd1aaaca,fe1aaaca,ff1aaaca])
+                                    faces2c.append([fe1aaaca,ff1aaaca,fg1aaaca])
 
-                            faces2c.append([fa1aaaca,fb1aaaca,fc1aaaca])
-                            faces2c.append([fb1aaaca,fc1aaaca,fd1aaaca])
-                            faces2c.append([fc1aaaca,fd1aaaca,fe1aaaca])
-                            faces2c.append([fd1aaaca,fe1aaaca,ff1aaaca])
-                            faces2c.append([fe1aaaca,ff1aaaca,fg1aaaca])
-                            faces2c.append([fg1aaaca,fh1aaaca,fi1aaaca])
+                            elif fa1aaaca != 0 and fb1aaaca != 1 and fc1aaaca != 2 and fd1aaaca != 2 and fe1aaaca != 3 and ff1aaaca != 4 and fg1aaaca != 5:
+                                faces2c.append([fa1aaaca,fb1aaaca,fc1aaaca])
+                                faces2c.append([fd1aaaca,fe1aaaca,ff1aaaca])
+                                faces2c.append([fe1aaaca,ff1aaaca,fg1aaaca])
+                                faces2c.append([ff1aaaca,fg1aaaca,fh1aaaca])
 
                         elif facecount == 4:
-                            
+
                             id1 = unpack("B", f.read(1))[0]
-                            fa1aaacax = unpack("B", f.read(1))[0] & 0x0F
-                            fb1aaacax = unpack("B", f.read(1))[0] & 0x0F
-                            fc1aaacax = unpack("B", f.read(1))[0] & 0x0F
-                            fd1aaacax = unpack("B", f.read(1))[0] & 0x0F
-                            fe1aaacax = unpack("B", f.read(1))[0] & 0x0F
-                            ff1aaacax = unpack("B", f.read(1))[0] & 0x0F
-                            f.seek(2,1)
+                            fa1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fb1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fc1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fd1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fe1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            ff1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fg1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fh1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fi1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fj1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fk1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            fl1aaacb = unpack("B", f.read(1))[0] & 0x0F
+                            f.seek(3,1)
                             
-                            fa1aaacax//=3
-                            fb1aaacax//=3
-                            fc1aaacax//=3
-                            fd1aaacax//=3
-                            fe1aaacax//=3
-                            ff1aaacax//=3 
+                            fa1aaacb//=3
+                            fb1aaacb//=3
+                            fc1aaacb//=3
+                            fd1aaacb//=3
+                            fe1aaacb//=3
+                            ff1aaacb//=3
+                            fg1aaacb//=3
+                            fh1aaacb//=3
+                            fi1aaacb//=3
+                            fj1aaacb//=3
+                            fk1aaacb//=3
+                            fl1aaacb//=3
 
-                            fa1aaacax+=1*len(vertices2c)-6
-                            fb1aaacax+=1*len(vertices2c)-6
-                            fc1aaacax+=1*len(vertices2c)-6
-                            fd1aaacax+=1*len(vertices2c)-6
-                            fe1aaacax+=1*len(vertices2c)-6
-                            ff1aaacax+=1*len(vertices2c)-6
+                            fa1aaacb+=1*len(vertices2c)-6
+                            fb1aaacb+=1*len(vertices2c)-6
+                            fc1aaacb+=1*len(vertices2c)-6
+                            fd1aaacb+=1*len(vertices2c)-6
+                            fe1aaacb+=1*len(vertices2c)-6
+                            ff1aaacb+=1*len(vertices2c)-6
+                            fg1aaacb+=1*len(vertices2c)-6
+                            fh1aaacb+=1*len(vertices2c)-6
+                            fi1aaacb+=1*len(vertices2c)-6
+                            fj1aaacb+=1*len(vertices2c)-6
+                            fk1aaacb+=1*len(vertices2c)-6
+                            fl1aaacb+=1*len(vertices2c)-6
 
-                            faces2c.append([fa1aaacax,fb1aaacax,fc1aaacax])
-                            faces2c.append([fb1aaacax,fc1aaacax,fd1aaacax])
-                            faces2c.append([fb1aaacax,fc1aaacax,fd1aaacax])
-                            faces2c.append([fc1aaacax,fd1aaacax,fe1aaacax])
+                            if fa1aaacb == 0 and fb1aaacb == 1 and fc1aaacb == 2 and fd1aaacb == 1 and fe1aaacb == 2 and ff1aaacb == 3 and fg1aaacb == 2 and fh1aaacb == 3 and fi1aaacb == 4 and fj1aaacb == 3 and fk1aaacb == 4 and fl1aaacb == 5:
+                                faces2c.append([fa1aaacb,fb1aaacb,fc1aaacb])
+                                faces2c.append([fd1aaacb,fe1aaacb,ff1aaacb])
+                                faces2c.append([fg1aaacb,fh1aaacb,fi1aaacb])
+                                faces2c.append([fj1aaacb,fk1aaacb,fl1aaacb])
+                            elif fa1aaacb != 0 and fb1aaacb != 1 and fc1aaacb != 2 and fd1aaacb != 1 and fe1aaacb != 2 and ff1aaacb != 3 and fg1aaacb != 2 and fh1aaacb != 3 and fi1aaacb != 4 and fj1aaacb != 3 and fk1aaacb != 4 and fl1aaacb != 5:
+                                faces2c.append([fa1aaacb,fb1aaacb,fc1aaacb])
+                                faces2c.append([fd1aaacb,fe1aaacb,ff1aaacb])
+                                faces2c.append([fg1aaacb,fh1aaacb,fi1aaacb])
+                                faces2c.append([fj1aaacb,fk1aaacb,fl1aaacb])
+
+                        
 
                 elif vertexCount == 7:
                     for i in range(vertexCount):
@@ -6896,7 +6952,6 @@ def GHG_mesh(f, filepath):
                             faces2n.append([fq1aaana,fr1aaana,fs1aaana])
                             faces2n.append([fr1aaana,fs1aaana,ft1aaana])
                             faces2n.append([fs1aaana,ft1aaana,fu1aaana])
-                        
 
                     
                             
