@@ -7110,7 +7110,108 @@ def GHG_mesh(f, filepath):
                     facecount = unpack("B", f.read(1))[0]
                     flagsC = unpack("B", f.read(1))[0]
                     if flagsC == 0x6E:
-                        if facecount == 7:
+                        if facecount == 8:
+                            
+                            id1 = unpack("B", f.read(1))[0]
+
+                            fa1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fb1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fc1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fd1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fe1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            ff1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fg1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fh1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fi1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fj1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fk1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fl1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fm1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fn1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fo1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fp1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fq1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fr1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fs1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            ft1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fu1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fv1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fw1aaaob = unpack("B", f.read(1))[0] & 0x3F
+                            fx1aaaob = unpack("B", f.read(1))[0] & 0x3F
+
+                            f.seek(7,1)
+
+                            fa1aaaob//=3
+                            fb1aaaob//=3
+                            fc1aaaob//=3
+                            fd1aaaob//=3
+                            fe1aaaob//=3
+                            ff1aaaob//=3
+                            fg1aaaob//=3
+                            fh1aaaob//=3
+                            fi1aaaob//=3
+                            fj1aaaob//=3
+                            fk1aaaob//=3
+                            fl1aaaob//=3
+                            fm1aaaob//=3
+                            fn1aaaob//=3
+                            fo1aaaob//=3
+                            fp1aaaob//=3
+                            fq1aaaob//=3
+                            fr1aaaob//=3
+                            fs1aaaob//=3
+                            ft1aaaob//=3
+                            fu1aaaob//=3
+                            fv1aaaob//=3
+                            fw1aaaob//=3
+                            fx1aaaob//=3
+
+                            fa1aaaob+=1*len(vertices2o)-18
+                            fb1aaaob+=1*len(vertices2o)-18
+                            fc1aaaob+=1*len(vertices2o)-18
+                            fd1aaaob+=1*len(vertices2o)-18
+                            fe1aaaob+=1*len(vertices2o)-18
+                            ff1aaaob+=1*len(vertices2o)-18
+                            fg1aaaob+=1*len(vertices2o)-18
+                            fh1aaaob+=1*len(vertices2o)-18
+                            fi1aaaob+=1*len(vertices2o)-18
+                            fj1aaaob+=1*len(vertices2o)-18
+                            fk1aaaob+=1*len(vertices2o)-18
+                            fl1aaaob+=1*len(vertices2o)-18
+                            fm1aaaob+=1*len(vertices2o)-18
+                            fn1aaaob+=1*len(vertices2o)-18
+                            fo1aaaob+=1*len(vertices2o)-18
+                            fp1aaaob+=1*len(vertices2o)-18
+                            fq1aaaob+=1*len(vertices2o)-18
+                            fr1aaaob+=1*len(vertices2o)-18
+                            fs1aaaob+=1*len(vertices2o)-18
+                            ft1aaaob+=1*len(vertices2o)-18
+                            fu1aaaob+=1*len(vertices2o)-18
+                            fv1aaaob+=1*len(vertices2o)-18
+                            fw1aaaob+=1*len(vertices2o)-18
+                            fx1aaaob+=1*len(vertices2o)-18
+
+                            faces2o.append([fa1aaaob,fb1aaaob,fc1aaaob])
+                            faces2o.append([fb1aaaob,fc1aaaob,fd1aaaob])
+                            faces2o.append([fc1aaaob,fd1aaaob,fe1aaaob])
+                            faces2o.append([fd1aaaob,fe1aaaob,ff1aaaob])
+                            faces2o.append([fg1aaaob,fh1aaaob,fi1aaaob])
+                            faces2o.append([fh1aaaob,fi1aaaob,fj1aaaob])
+                            faces2o.append([fi1aaaob,fj1aaaob,fk1aaaob])
+                            faces2o.append([fj1aaaob,fk1aaaob,fl1aaaob])
+                            faces2o.append([fk1aaaob,fl1aaaob,fm1aaaob])
+                            faces2o.append([fm1aaaob,fn1aaaob,fo1aaaob])
+                            faces2o.append([fn1aaaob,fo1aaaob,fp1aaaob])
+                            faces2o.append([fo1aaaob,fp1aaaob,fq1aaaob])
+                            faces2o.append([fp1aaaob,fq1aaaob,fr1aaaob])
+                            faces2o.append([fq1aaaob,fr1aaaob,fs1aaaob])
+                            faces2o.append([fr1aaaob,fs1aaaob,ft1aaaob])
+                            faces2o.append([fs1aaaob,ft1aaaob,fu1aaaob])
+                            faces2o.append([ft1aaaob,fu1aaaob,fv1aaaob])
+                            faces2o.append([fu1aaaob,fv1aaaob,fw1aaaob])
+                            faces2o.append([fv1aaaob,fw1aaaob,fx1aaaob])
+                            
+                        elif facecount == 7:
                             
                             id1 = unpack("B", f.read(1))[0]
 
@@ -7198,6 +7299,254 @@ def GHG_mesh(f, filepath):
                             faces2o.append([fq1aaao,fr1aaao,fs1aaao])
                             faces2o.append([fr1aaao,fs1aaao,ft1aaao])
                             faces2o.append([fs1aaao,ft1aaao,fu1aaao])
+
+                        elif facecount == 6:
+                            
+                            id1 = unpack("B", f.read(1))[0]
+
+                            fa1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fb1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fc1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fd1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fe1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            ff1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fg1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fh1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fi1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fj1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fk1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fl1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fm1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fn1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fo1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fp1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fq1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+                            fr1aaaoc = unpack("B", f.read(1))[0] & 0x3F
+
+                            f.seek(5,1)
+
+                            fa1aaaoc//=3
+                            fb1aaaoc//=3
+                            fc1aaaoc//=3
+                            fd1aaaoc//=3
+                            fe1aaaoc//=3
+                            ff1aaaoc//=3
+                            fg1aaaoc//=3
+                            fh1aaaoc//=3
+                            fi1aaaoc//=3
+                            fj1aaaoc//=3
+                            fk1aaaoc//=3
+                            fl1aaaoc//=3
+                            fm1aaaoc//=3
+                            fn1aaaoc//=3
+                            fo1aaaoc//=3
+                            fp1aaaoc//=3
+                            fq1aaaoc//=3
+                            fr1aaaoc//=3
+
+                            fa1aaaoc+=1*len(vertices2o)-18
+                            fb1aaaoc+=1*len(vertices2o)-18
+                            fc1aaaoc+=1*len(vertices2o)-18
+                            fd1aaaoc+=1*len(vertices2o)-18
+                            fe1aaaoc+=1*len(vertices2o)-18
+                            ff1aaaoc+=1*len(vertices2o)-18
+                            fg1aaaoc+=1*len(vertices2o)-18
+                            fh1aaaoc+=1*len(vertices2o)-18
+                            fi1aaaoc+=1*len(vertices2o)-18
+                            fj1aaaoc+=1*len(vertices2o)-18
+                            fk1aaaoc+=1*len(vertices2o)-18
+                            fl1aaaoc+=1*len(vertices2o)-18
+                            fm1aaaoc+=1*len(vertices2o)-18
+                            fn1aaaoc+=1*len(vertices2o)-18
+                            fo1aaaoc+=1*len(vertices2o)-18
+                            fp1aaaoc+=1*len(vertices2o)-18
+                            fq1aaaoc+=1*len(vertices2o)-18
+                            fr1aaaoc+=1*len(vertices2o)-18
+
+                            faces2o.append([fa1aaaoc,fb1aaaoc,fc1aaaoc])
+                            faces2o.append([fb1aaaoc,fc1aaaoc,fd1aaaoc])
+                            faces2o.append([fc1aaaoc,fd1aaaoc,fe1aaaoc])
+                            faces2o.append([fd1aaaoc,fe1aaaoc,ff1aaaoc])
+                            faces2o.append([fg1aaaoc,fh1aaaoc,fi1aaaoc])
+                            faces2o.append([fh1aaaoc,fi1aaaoc,fj1aaaoc])
+                            faces2o.append([fi1aaaoc,fj1aaaoc,fk1aaaoc])
+                            faces2o.append([fj1aaaoc,fk1aaaoc,fl1aaaoc])
+                            faces2o.append([fk1aaaoc,fl1aaaoc,fm1aaaoc])
+                            faces2o.append([fm1aaaoc,fn1aaaoc,fo1aaaoc])
+                            faces2o.append([fn1aaaoc,fo1aaaoc,fp1aaaoc])
+                            faces2o.append([fo1aaaoc,fp1aaaoc,fq1aaaoc])
+                            faces2o.append([fp1aaaoc,fq1aaaoc,fr1aaaoc])
+                            
+                        elif facecount == 5:
+                            
+                            id1 = unpack("B", f.read(1))[0]
+
+                            fa1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fb1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fc1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fd1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fe1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            ff1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fg1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fh1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fi1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fj1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fk1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fl1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fm1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fn1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+                            fo1aaaoa = unpack("B", f.read(1))[0] & 0x3F
+
+                            f.seek(4,1)
+
+                            fa1aaaoa//=3
+                            fb1aaaoa//=3
+                            fc1aaaoa//=3
+                            fd1aaaoa//=3
+                            fe1aaaoa//=3
+                            ff1aaaoa//=3
+                            fg1aaaoa//=3
+                            fh1aaaoa//=3
+                            fi1aaaoa//=3
+                            fj1aaaoa//=3
+                            fk1aaaoa//=3
+                            fl1aaaoa//=3
+                            fm1aaaoa//=3
+                            fn1aaaoa//=3
+                            fo1aaaoa//=3
+
+                            fa1aaaoa+=1*len(vertices2o)-18
+                            fb1aaaoa+=1*len(vertices2o)-18
+                            fc1aaaoa+=1*len(vertices2o)-18
+                            fd1aaaoa+=1*len(vertices2o)-18
+                            fe1aaaoa+=1*len(vertices2o)-18
+                            ff1aaaoa+=1*len(vertices2o)-18
+                            fg1aaaoa+=1*len(vertices2o)-18
+                            fh1aaaoa+=1*len(vertices2o)-18
+                            fi1aaaoa+=1*len(vertices2o)-18
+                            fj1aaaoa+=1*len(vertices2o)-18
+                            fk1aaaoa+=1*len(vertices2o)-18
+                            fl1aaaoa+=1*len(vertices2o)-18
+                            fm1aaaoa+=1*len(vertices2o)-18
+                            fn1aaaoa+=1*len(vertices2o)-18
+                            fo1aaaoa+=1*len(vertices2o)-18
+
+                            faces2o.append([fa1aaaoa,fb1aaaoa,fc1aaaoa])
+                            faces2o.append([fb1aaaoa,fc1aaaoa,fd1aaaoa])
+                            faces2o.append([fc1aaaoa,fd1aaaoa,fe1aaaoa])
+                            faces2o.append([fd1aaaoa,fe1aaaoa,ff1aaaoa])
+                            faces2o.append([fg1aaaoa,fh1aaaoa,fi1aaaoa])
+                            faces2o.append([fh1aaaoa,fi1aaaoa,fj1aaaoa])
+                            faces2o.append([fi1aaaoa,fj1aaaoa,fk1aaaoa])
+                            faces2o.append([fj1aaaoa,fk1aaaoa,fl1aaaoa])
+                            faces2o.append([fk1aaaoa,fl1aaaoa,fm1aaaoa])
+                            faces2o.append([fm1aaaoa,fn1aaaoa,fo1aaaoa])
+
+                elif vertexCount == 19:
+                    for i in range(vertexCount):
+                        vx1_15 = unpack("<h", f.read(2))[0] / 4096
+                        vy1_15 = unpack("<h", f.read(2))[0] / 4096
+                        vz1_15 = unpack("<h", f.read(2))[0] / 4096
+                        f.seek(2,1)
+                        uvx1_15 = unpack("<h", f.read(2))[0] / 4096
+                        uvy1_15 = unpack("<h", f.read(2))[0] / 4096
+                        f.seek(4,1)
+                        vertices2p.append([vx1_15,vz1_15,vy1_15])
+
+                    f.seek(142,1)
+                    facecount = unpack("B", f.read(1))[0]
+                    flagsC = unpack("B", f.read(1))[0]
+                    if flagsC == 0x6E:
+                        if facecount == 7:
+                            
+                            id1 = unpack("B", f.read(1))[0]
+
+                            fa1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fb1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fc1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fd1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fe1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            ff1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fg1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fh1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fi1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fj1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fk1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fl1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fm1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fn1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fo1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fp1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fq1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fr1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fs1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            ft1aaap = unpack("B", f.read(1))[0] & 0x3F
+                            fu1aaap = unpack("B", f.read(1))[0] & 0x3F
+
+                            f.seek(6,1)
+
+                            fa1aaap//=3
+                            fb1aaap//=3
+                            fc1aaap//=3
+                            fd1aaap//=3
+                            fe1aaap//=3
+                            ff1aaap//=3
+                            fg1aaap//=3
+                            fh1aaap//=3
+                            fi1aaap//=3
+                            fj1aaap//=3
+                            fk1aaap//=3
+                            fl1aaap//=3
+                            fm1aaap//=3
+                            fn1aaap//=3
+                            fo1aaap//=3
+                            fp1aaap//=3
+                            fq1aaap//=3
+                            fr1aaap//=3
+                            fs1aaap//=3
+                            ft1aaap//=3
+                            fu1aaap//=3
+
+                            fa1aaap+=1*len(vertices2p)-19
+                            fb1aaap+=1*len(vertices2p)-19
+                            fc1aaap+=1*len(vertices2p)-19
+                            fd1aaap+=1*len(vertices2p)-19
+                            fe1aaap+=1*len(vertices2p)-19
+                            ff1aaap+=1*len(vertices2p)-19
+                            fg1aaap+=1*len(vertices2p)-19
+                            fh1aaap+=1*len(vertices2p)-19
+                            fi1aaap+=1*len(vertices2p)-19
+                            fj1aaap+=1*len(vertices2p)-19
+                            fk1aaap+=1*len(vertices2p)-19
+                            fl1aaap+=1*len(vertices2p)-19
+                            fm1aaap+=1*len(vertices2p)-19
+                            fn1aaap+=1*len(vertices2p)-19
+                            fo1aaap+=1*len(vertices2p)-19
+                            fp1aaap+=1*len(vertices2p)-19
+                            fq1aaap+=1*len(vertices2p)-19
+                            fr1aaap+=1*len(vertices2p)-19
+                            fs1aaap+=1*len(vertices2p)-19
+                            ft1aaap+=1*len(vertices2p)-19
+                            fu1aaap+=1*len(vertices2p)-19
+
+                            faces2p.append([fa1aaap,fb1aaap,fc1aaap])
+                            faces2p.append([fb1aaap,fc1aaap,fd1aaap])
+                            faces2p.append([fc1aaap,fd1aaap,fe1aaap])
+                            faces2p.append([fd1aaap,fe1aaap,ff1aaap])
+                            faces2p.append([fg1aaap,fh1aaap,fi1aaap])
+                            faces2p.append([fh1aaap,fi1aaap,fj1aaap])
+                            faces2p.append([fi1aaap,fj1aaap,fk1aaap])
+                            faces2p.append([fj1aaap,fk1aaap,fl1aaap])
+                            faces2p.append([fk1aaap,fl1aaap,fm1aaap])
+                            faces2p.append([fm1aaap,fn1aaap,fo1aaap])
+                            faces2p.append([fn1aaap,fo1aaap,fp1aaap])
+                            faces2p.append([fo1aaap,fp1aaap,fq1aaap])
+                            faces2p.append([fp1aaap,fq1aaap,fr1aaap])
+                            faces2p.append([fq1aaap,fr1aaap,fs1aaap])
+                            faces2p.append([fr1aaap,fs1aaap,ft1aaap])
+                            faces2p.append([fs1aaap,ft1aaap,fu1aaap])
+
+                            
 
                     
                             
