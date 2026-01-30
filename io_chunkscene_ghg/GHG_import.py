@@ -5025,8 +5025,8 @@ def GHG_mesh(f, filepath):
                 except:
                     ValueError
 
-                mrscl3s.append(mrscl3)
-                mrscl9s.append(mrscl9)
+                mrscl3s.append(mrscl9)
+                mrscl9s.append(mrscl6)
 
 
             f.seek(0)
@@ -5074,12 +5074,12 @@ def GHG_mesh(f, filepath):
                 skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
             bpy.ops.object.mode_set(mode = 'OBJECT')
 
-            bpy.context.object.pose.bones[0].scale[0] = mrscl9s[1]
+            bpy.context.object.pose.bones[0].scale[0] = mrscl3s[1]
             
-            bpy.context.object.pose.bones[0].scale[1] = mrscl3s[1]
-            bpy.context.object.pose.bones[0].scale[2] = mrscl3s[1]
-            bpy.context.object.pose.bones[0].rotation_euler[0] = math.radians(math.degrees(math.acos(mrscl3s[1])))/2
-            bpy.context.object.pose.bones[0].rotation_euler[2] = math.radians(math.degrees(math.acos(mrscl3s[1])))
+            bpy.context.object.pose.bones[0].scale[1] = mrscl9s[1]
+            bpy.context.object.pose.bones[0].scale[2] = mrscl9s[1]
+            bpy.context.object.pose.bones[0].rotation_quaternion[2] = -math.degrees(math.acos(mrscl9s[1]))
+            bpy.context.object.pose.bones[0].rotation_quaternion[3] = math.degrees(math.acos(mrscl9s[1]))
 
     f.seek(0)
     Chunk = f.read()
