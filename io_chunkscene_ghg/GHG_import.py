@@ -5076,14 +5076,26 @@ def GHG_mesh(f, filepath):
                 skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
             bpy.ops.object.mode_set(mode = 'OBJECT')
 
-            bpy.context.object.pose.bones[0].scale[0] = max(mrscl3s[1]+mrscl1s[1],-1) % 2
-            
-            bpy.context.object.pose.bones[0].scale[1] = mrscl9s[1]
-            bpy.context.object.pose.bones[0].scale[2] = mrscl9s[1]
-            bpy.context.object.pose.bones[0].rotation_quaternion[0] = 1
-            bpy.context.object.pose.bones[0].rotation_quaternion[1] = 0
-            bpy.context.object.pose.bones[0].rotation_quaternion[2] = -math.degrees(math.acos(mrscl9s[1]))
-            bpy.context.object.pose.bones[0].rotation_quaternion[3] = math.degrees(math.acos(mrscl9s[1]))
+            try:
+                bpy.context.object.pose.bones[0].scale[0] = max(mrscl3s[1]+mrscl1s[1],-1)
+                
+                bpy.context.object.pose.bones[0].scale[1] = mrscl9s[1]
+                bpy.context.object.pose.bones[0].scale[2] = mrscl9s[1]
+                bpy.context.object.pose.bones[0].rotation_quaternion[0] = 1
+                bpy.context.object.pose.bones[0].rotation_quaternion[1] = 0
+                bpy.context.object.pose.bones[0].rotation_quaternion[2] = -math.degrees(math.acos(mrscl9s[1]))
+                bpy.context.object.pose.bones[0].rotation_quaternion[3] = math.degrees(math.acos(mrscl9s[1]))
+
+                bpy.context.object.pose.bones[1].scale[0] = max(mrscl3s[2]+mrscl1s[2],-1)
+                    
+                bpy.context.object.pose.bones[1].scale[1] = mrscl9s[2]
+                bpy.context.object.pose.bones[1].scale[2] = mrscl9s[2]
+                bpy.context.object.pose.bones[1].rotation_quaternion[0] = 1
+                bpy.context.object.pose.bones[1].rotation_quaternion[1] = 0
+                bpy.context.object.pose.bones[1].rotation_quaternion[2] = -math.degrees(math.acos(mrscl9s[2]))
+                bpy.context.object.pose.bones[1].rotation_quaternion[3] = math.degrees(math.acos(mrscl9s[2]))
+            except:
+                IndexError
 
     f.seek(0)
     Chunk = f.read()
