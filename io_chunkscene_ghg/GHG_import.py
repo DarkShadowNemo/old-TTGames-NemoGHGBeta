@@ -3699,6 +3699,7 @@ def GHG_mesh(f, filepath):
     fbd819=-2
     fcd819=-1
 
+    mrscl1s=[]
     mrscl3s=[]
     mrscl9s=[]
 
@@ -5025,6 +5026,7 @@ def GHG_mesh(f, filepath):
                 except:
                     ValueError
 
+                mrscl1s.append(mrscl1)
                 mrscl3s.append(mrscl9)
                 mrscl9s.append(mrscl6)
 
@@ -5074,10 +5076,12 @@ def GHG_mesh(f, filepath):
                 skel.edit_bones[bone_id].parent = skel.edit_bones[bone_parent]
             bpy.ops.object.mode_set(mode = 'OBJECT')
 
-            bpy.context.object.pose.bones[0].scale[0] = mrscl3s[1]
+            bpy.context.object.pose.bones[0].scale[0] = max(mrscl3s[1]+mrscl1s[1],-1) % 2
             
             bpy.context.object.pose.bones[0].scale[1] = mrscl9s[1]
             bpy.context.object.pose.bones[0].scale[2] = mrscl9s[1]
+            bpy.context.object.pose.bones[0].rotation_quaternion[0] = 1
+            bpy.context.object.pose.bones[0].rotation_quaternion[1] = 0
             bpy.context.object.pose.bones[0].rotation_quaternion[2] = -math.degrees(math.acos(mrscl9s[1]))
             bpy.context.object.pose.bones[0].rotation_quaternion[3] = math.degrees(math.acos(mrscl9s[1]))
 
