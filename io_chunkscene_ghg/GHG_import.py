@@ -5001,13 +5001,7 @@ def GHG_mesh(f, filepath):
                 pad07 = unpack("B", f.read(1))[0]
                 pad08 = unpack("B", f.read(1))[0]
                 pad09 = unpack("B", f.read(1))[0]
-                m = bpy.data.materials.new('GHG Material')
-                if tid >= 0:
-                    m.use_nodes = True
-                    m.blend_method = 'HASHED'
-                    targetnode = m.node_tree.nodes.get('Principled BSDF')
-                    assert targetnode, 'Failed to locate target node.'
-                    n = m.node_tree.nodes.new('ShaderNodeTexImage')
+                
                         
 
             f.seek(0)
@@ -5155,7 +5149,7 @@ def GHG_mesh(f, filepath):
                         static_vy = round(vy,3)
                         static_vz = round(vz,3)
                         
-                        vertices.append([vx,vz,vy])
+                        vertices.append([static_vx,static_vz,static_vy])
                         fa+=1
                         fb+=1
                         fc+=1
@@ -6564,22 +6558,36 @@ def GHG_mesh(f, filepath):
     bpy.data.materials["ghg materials"].node_tree.nodes["Principled BSDF"].inputs[12].default_value = 0
 
     #fill missig faces
+    if vertices3[0:2] == [[0.279,-0.058,0.237],[0.279,-0.056,0.081]]:
+        
+        obj_a3 = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+        bpy.context.view_layer.objects.active = obj_a3
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+        #bpy.ops.mesh.select_mode(use_extend=False, use_expand=False, type='VERT')
 
-    """obj_a3 = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
-    bpy.context.view_layer.objects.active = obj_a3
-    bpy.ops.object.mode_set(mode='OBJECT')
-    bpy.ops.object.mode_set(mode='EDIT')
-    bpy.ops.mesh.select_mode(type="VERT")
-    bpy.ops.mesh.select_all(action="DESELECT")
-    bpy.ops.object.mode_set(mode='OBJECT')
-    #bpy.ops.mesh.select_mode(use_extend=False, use_expand=False, type='VERT')
+        obj_a3.data.vertices[518].select = True
+        obj_a3.data.vertices[573].select = True
+        obj_a3.data.vertices[574].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
 
-    obj_a3.data.vertices[513].select = True
-    obj_a3.data.vertices[514].select = True
-    obj_a3.data.vertices[575].select = True
-    bpy.ops.object.mode_set(mode='EDIT')
-    bpy.ops.mesh.edge_face_add()
-    bpy.ops.object.editmode_toggle()"""
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[421].select = True
+        obj_a3.data.vertices[567].select = True
+        obj_a3.data.vertices[517].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
 
 
 
