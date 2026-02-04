@@ -1204,6 +1204,7 @@ def GHG_mesh(f, filepath):
     uvs2a=[]
     uvs2apt2=[]
     uvs2=[]
+    uvs=[]
     normals2=[]
     normals2a=[]
     normals2b=[]
@@ -3700,8 +3701,12 @@ def GHG_mesh(f, filepath):
     fcd819=-1
 
     mrscl1s=[]
+    mrscl2s=[]
     mrscl3s=[]
     mrscl9s=[]
+    mrsc20s=[]
+    mrscl7s=[]
+    mrscl4s=[]
 
     alp=[]
     alp2=[]
@@ -3741,6 +3746,8 @@ def GHG_mesh(f, filepath):
     restoreFewFaceA=-2
     restoreFewFaceB=0
     restoreFewFaceC=1
+
+    bone_names=[]
 
     #this does not work when during importing the model and texture at the same time when i seek it back using enumerate with a function # not supporting textures because it will freeze blender
 
@@ -3863,7 +3870,7 @@ def GHG_mesh(f, filepath):
                 name_offset,=unpack("<L", f.read(4)) # WHAT doesnt work
                 f.seek(11,1)
                 try:
-                    ntbl_buffer.seek(name_offset)
+                    ntbl_buffer.seek(name_offset-1)
                 except:
                     ValueError
 
@@ -3943,6 +3950,22 @@ def GHG_mesh(f, filepath):
                                 fc+=1
                                 if type4 > 0:
                                     faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+
+                            offsetuv = unpack("<H", f.read(2))[0]
+                            if offsetuv == 32772:
+                                uvcount = unpack("B", f.read(1))[0]
+                                flag2aa = unpack("B", f.read(1))[0]
+                                if flag2aa == 0x6D:
+                                    for i in range(uvcount):
+                                        uvx = unpack("<h", f.read(2))[0] / 4096
+                                        uvy = unpack("<h", f.read(2))[0] / 4096
+                                        uvscalex = unpack("<h", f.read(2))[0] / 4096
+                                        uvscaley = unpack("<h", f.read(2))[0] / 4096
+                                        uvs.append([uvx,-uvy])
+                                    
+                                
+                                
+                            
                 elif Chunks == b"\x03\x02\x00\x01":
                     f.seek(1,1)
                     value1 = unpack("B", f.read(1))[0]
@@ -5022,13 +5045,17 @@ def GHG_mesh(f, filepath):
                 name_offset,=unpack("<L", f.read(4)) # WHAT doesnt work
                 f.seek(11,1)
                 try:
-                    ntbl_buffer.seek(name_offset)
+                    ntbl_buffer.seek(name_offset-1)
                 except:
                     ValueError
 
                 mrscl1s.append(mrscl1)
+                mrscl4s.append(mrscl2)
+                mrscl2s.append(mrscl3)
                 mrscl3s.append(mrscl9)
                 mrscl9s.append(mrscl6)
+                mrscl7s.append(mrscl7)
+                mrsc20s.append(mrsc20)
 
 
             f.seek(0)
@@ -5057,6 +5084,7 @@ def GHG_mesh(f, filepath):
 
                 matrix = mathutils.Matrix([m1,m3,m2,m4]).inverted().to_3x3().transposed()
                 bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
+                bone_names.append([bone_name])
 
                 bone = skel.edit_bones.new(bone_name)
                 
@@ -5079,21 +5107,21 @@ def GHG_mesh(f, filepath):
             try:
                 bpy.context.object.pose.bones[0].scale[0] = max(mrscl3s[1]+mrscl1s[1],-1)
                 
-                bpy.context.object.pose.bones[0].scale[1] = mrscl9s[1]
-                bpy.context.object.pose.bones[0].scale[2] = mrscl9s[1]
+                bpy.context.object.pose.bones[0].scale[1] = max(mrscl9s[1]+mrsc20s[1]+mrscl7s[1],0)
+                bpy.context.object.pose.bones[0].scale[2] = max(mrscl9s[1]+mrsc20s[1]+mrscl4s[1],0)
                 bpy.context.object.pose.bones[0].rotation_quaternion[0] = 1
                 bpy.context.object.pose.bones[0].rotation_quaternion[1] = 0
-                bpy.context.object.pose.bones[0].rotation_quaternion[2] = -math.degrees(math.acos(mrscl9s[1]))
-                bpy.context.object.pose.bones[0].rotation_quaternion[3] = math.degrees(math.acos(mrscl9s[1]))
+                bpy.context.object.pose.bones[0].rotation_quaternion[2] = max(-math.degrees(math.acos(mrscl9s[1]+mrscl7s[1])),0)
+                bpy.context.object.pose.bones[0].rotation_quaternion[3] = min(math.degrees(math.acos(mrscl9s[1]+mrscl4s[1])),0)
 
                 bpy.context.object.pose.bones[1].scale[0] = max(mrscl3s[2]+mrscl1s[2],-1)
                     
-                bpy.context.object.pose.bones[1].scale[1] = mrscl9s[2]
-                bpy.context.object.pose.bones[1].scale[2] = mrscl9s[2]
+                bpy.context.object.pose.bones[1].scale[1] = max(mrscl9s[2]+mrsc20s[2],0)
+                bpy.context.object.pose.bones[1].scale[2] = max(mrscl9s[2]+mrsc20s[2],0)
                 bpy.context.object.pose.bones[1].rotation_quaternion[0] = 1
                 bpy.context.object.pose.bones[1].rotation_quaternion[1] = 0
-                bpy.context.object.pose.bones[1].rotation_quaternion[2] = -math.degrees(math.acos(mrscl9s[2]))
-                bpy.context.object.pose.bones[1].rotation_quaternion[3] = math.degrees(math.acos(mrscl9s[2]))
+                bpy.context.object.pose.bones[1].rotation_quaternion[2] = max(-math.degrees(math.acos(mrscl9s[2]+mrscl7s[1])),0)
+                bpy.context.object.pose.bones[1].rotation_quaternion[3] = min(math.degrees(math.acos(mrscl9s[2]+mrscl4s[1])),0)
             except:
                 IndexError
 
@@ -5122,6 +5150,11 @@ def GHG_mesh(f, filepath):
                         type4 = unpack("B", f.read(1))[0]==False
                         value1 = unpack("B", f.read(1))[0]
                         nz = unpack("<h", f.read(2))[0]
+
+                        static_vx = round(vx,3)
+                        static_vy = round(vy,3)
+                        static_vz = round(vz,3)
+                        
                         vertices.append([vx,vz,vy])
                         fa+=1
                         fb+=1
@@ -5149,7 +5182,12 @@ def GHG_mesh(f, filepath):
                         uvxaa = unpack("<h", f.read(2))[0] / 4096
                         uvyaa = unpack("<h", f.read(2))[0] / 4096
                         f.seek(4,1)
-                        vertices2.append([vxaa,vzaa,vyaa])
+                        
+                        static_vxaa = round(vxaa,3)
+                        static_vyaa = round(vyaa,3)
+                        static_vzaa = round(vzaa,3)
+                        
+                        vertices2.append([static_vxaa,static_vzaa,static_vyaa])
                         #uvs2.append([uvxaa,-uvyaa])
                     for i in range(vertexCount-2):
                         fad1abc+=1
@@ -5192,7 +5230,12 @@ def GHG_mesh(f, filepath):
                         f.seek(4,1)
                         type4 = unpack("B", f.read(1))[0]==False
                         f.seek(3,1)
-                        vertices3.append([vx0001__,vz0001__,vy0001__])
+
+                        static_vx0001 = round(vx0001__,3)
+                        static_vy0001 = round(vy0001__,3)
+                        static_vz0001 = round(vz0001__,3)
+                        
+                        vertices3.append([static_vx0001,static_vz0001,static_vy0001])
                         fa2+=1
                         fb2+=1
                         fc2+=1
@@ -5210,6 +5253,15 @@ def GHG_mesh(f, filepath):
     meshh.from_pydata(vertices, [], faces)
     objectsh = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), meshh)
     collection.objects.link(objectsh)
+
+    uv_tex = meshh.uv_layers.new()
+    uv_layer = meshh.uv_layers[0].data
+    vert_loops = {}
+    for l in meshh.loops:
+        vert_loops.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs):
+        for li in vert_loops[i]:
+            uv_layer[li].uv = coord
 
     mesh3FF = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh3FF.from_pydata(vertices3FF, [], faces3FF)
@@ -6508,6 +6560,29 @@ def GHG_mesh(f, filepath):
     obj_a2.data.materials.append(mat2)
     mat2.use_nodes = True
     bpy.context.object.active_material_index = 1
+    bpy.data.materials["ghg materials"].node_tree.nodes["Principled BSDF"].inputs[2].default_value = 1
+    bpy.data.materials["ghg materials"].node_tree.nodes["Principled BSDF"].inputs[12].default_value = 0
+
+    #fill missig faces
+
+    """obj_a3 = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
+    bpy.context.view_layer.objects.active = obj_a3
+    bpy.ops.object.mode_set(mode='OBJECT')
+    bpy.ops.object.mode_set(mode='EDIT')
+    bpy.ops.mesh.select_mode(type="VERT")
+    bpy.ops.mesh.select_all(action="DESELECT")
+    bpy.ops.object.mode_set(mode='OBJECT')
+    #bpy.ops.mesh.select_mode(use_extend=False, use_expand=False, type='VERT')
+
+    obj_a3.data.vertices[513].select = True
+    obj_a3.data.vertices[514].select = True
+    obj_a3.data.vertices[575].select = True
+    bpy.ops.object.mode_set(mode='EDIT')
+    bpy.ops.mesh.edge_face_add()
+    bpy.ops.object.editmode_toggle()"""
+
+
+
 
     #bpy.ops.object.select_all(action='SELECT')
 
