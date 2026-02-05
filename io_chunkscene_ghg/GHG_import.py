@@ -6558,7 +6558,7 @@ def GHG_mesh(f, filepath):
     bpy.data.materials["ghg materials"].node_tree.nodes["Principled BSDF"].inputs[12].default_value = 0
 
     #fill missig faces
-    if vertices3[0:2] == [[0.279,-0.058,0.237],[0.279,-0.056,0.081]]:
+    if vertices3[0:4] == [[0.279,-0.058,0.237],[0.279,-0.056,0.081],[0.220,-0.060,0.237],[0.220,-0.058,0.081]]:
         
         obj_a3 = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
         bpy.context.view_layer.objects.active = obj_a3
@@ -6588,6 +6588,164 @@ def GHG_mesh(f, filepath):
         bpy.ops.object.mode_set(mode='EDIT')
         bpy.ops.mesh.edge_face_add()
         bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[424].select = True
+        obj_a3.data.vertices[479].select = True
+        obj_a3.data.vertices[454].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[479].select = True
+        obj_a3.data.vertices[463].select = True
+        obj_a3.data.vertices[462].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[479].select = True
+        obj_a3.data.vertices[562].select = True
+        obj_a3.data.vertices[557].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[480].select = True
+        obj_a3.data.vertices[463].select = True
+        obj_a3.data.vertices[473].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[480].select = True
+        obj_a3.data.vertices[473].select = True
+        obj_a3.data.vertices[474].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[446].select = True
+        obj_a3.data.vertices[514].select = True
+        obj_a3.data.vertices[513].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[519].select = True
+        obj_a3.data.vertices[495].select = True
+        obj_a3.data.vertices[494].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[568].select = True
+        obj_a3.data.vertices[513].select = True
+        obj_a3.data.vertices[446].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[568].select = True
+        obj_a3.data.vertices[446].select = True
+        obj_a3.data.vertices[419].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[419].select = True
+        obj_a3.data.vertices[446].select = True
+        obj_a3.data.vertices[450].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[450].select = True
+        obj_a3.data.vertices[446].select = True
+        obj_a3.data.vertices[445].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[448].select = True
+        obj_a3.data.vertices[449].select = True
+        obj_a3.data.vertices[25].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        
 
 
 
