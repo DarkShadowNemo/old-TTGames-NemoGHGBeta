@@ -115,8 +115,8 @@ def GHG_Blend_Object(f, filepath):
         for i, bl_ in enumerate(blends):
             if bl_[3]:
                 blendshape.data[0].co.x += bl_[0]
-                blendshape.data[1].co.y += bl_[2]
-                blendshape.data[2].co.z += bl_[1]
+                blendshape.data[1].co.y += bl_[1]
+                blendshape.data[2].co.z += bl_[2]
     
 
 def truncate_cstr(s: bytes) -> bytes:
@@ -906,16 +906,16 @@ def GHG_mesh(f, filepath):
     fbu = 0
     fcu = 1
 
-    #fad1 = -4
-    #fbd1 = -3
-    #fcd1 = -2
-    #fad2 = -3
-    #fbd2 = -2
-    #fcd2 = -1
+    fad1 = -4
+    fbd1 = -3
+    fcd1 = -2
+    fad2 = -3
+    fbd2 = -2
+    fcd2 = -1
 
-    fad = -3
-    fbd = -2
-    fcd = -1
+    fad = -1
+    fbd = 0
+    fcd = 1
 
     fad1abc = -1
     fbd1abc = 0
@@ -1205,6 +1205,7 @@ def GHG_mesh(f, filepath):
     uvs2apt2=[]
     uvs2=[]
     uvs=[]
+    vcols=[]
     normals2=[]
     normals2a=[]
     normals2b=[]
@@ -3708,6 +3709,10 @@ def GHG_mesh(f, filepath):
     mrscl7s=[]
     mrscl4s=[]
 
+    nrmsVX1=[]
+    nrmsVY1=[]
+    nrmsVZ1=[]
+
     alp=[]
     alp2=[]
 
@@ -3789,7 +3794,7 @@ def GHG_mesh(f, filepath):
     type01 = unpack("<I", f.read(4))[0]
     typeSize1 = unpack("<I", f.read(4))[0]
     if TextureCount == 0:
-        if MaterialEntrySize1 == 144 or MaterialEntrySize1 == 148:
+        if MaterialEntrySize1 == 144 or MaterialEntrySize1 == 148 or MaterialEntrySize1 == 152:
             f.seek(MaterialEntrySize1,0)
             for i in range(MaterialCount):
                 matentrysizelist1 = unpack("<I", f.read(4))[0]
@@ -3962,6 +3967,35 @@ def GHG_mesh(f, filepath):
                                         uvscalex = unpack("<h", f.read(2))[0] / 4096
                                         uvscaley = unpack("<h", f.read(2))[0] / 4096
                                         uvs.append([uvx,-uvy])
+                                    offsetvcol = unpack("<H", f.read(2))[0]
+                                    if offsetvcol == 49157:
+                                        vcolcount = unpack("B", f.read(1))[0]
+                                        flag2aaaa = unpack("B", f.read(1))[0]
+                                        if flag2aaaa == 0x6E:
+                                            for i in range(vcolcount):
+                                                r = unpack("B", f.read(1))[0] / 127
+                                                g = unpack("B", f.read(1))[0] / 127
+                                                b = unpack("B", f.read(1))[0] / 127
+                                                a = unpack("B", f.read(1))[0] / 127
+                                                vcols.append([r,g,b,a])
+                                            
+                                        
+                                elif flag2aa == 0x65:
+                                    for i in range(uvcount):
+                                        uvx = unpack("<h", f.read(2))[0] / 4096
+                                        uvy = unpack("<h", f.read(2))[0] / 4096
+                                        uvs.append([uvx,-uvy])
+                                    offsetvcol = unpack("<H", f.read(2))[0]
+                                    if offsetvcol == 49157:
+                                        vcolcount = unpack("B", f.read(1))[0]
+                                        flag2aaaa = unpack("B", f.read(1))[0]
+                                        if flag2aaaa == 0x6E:
+                                            for i in range(vcolcount):
+                                                r = unpack("B", f.read(1))[0] / 127
+                                                g = unpack("B", f.read(1))[0] / 127
+                                                b = unpack("B", f.read(1))[0] / 127
+                                                a = unpack("B", f.read(1))[0] / 127
+                                                vcols.append([r,g,b,a])
                                     
                                 
                                 
@@ -3972,7 +4006,7 @@ def GHG_mesh(f, filepath):
                     vertexCount = unpack("B", f.read(1))[0] // 2
                     flag2a = unpack("B", f.read(1))[0]
                     if flag2a == 0x6D:
-                        if vertexCount == 3:
+                        if vertexCount:
                             for i in range(vertexCount):
                                 vxaa = unpack("<h", f.read(2))[0] / 4096
                                 vyaa = unpack("<h", f.read(2))[0] / 4096
@@ -3982,31 +4016,24 @@ def GHG_mesh(f, filepath):
                                 uvyaa = unpack("<h", f.read(2))[0] / 4096
                                 f.seek(4,1)
                                 vertices2.append([vxaa,vzaa,vyaa])
-
-                            for i in range(vertexCount-2):
-                                fad+=1*3
-                                fbd+=1*3
-                                fcd+=1*3
-
-                                faces2.append([fad,fbd,fcd])
-
-                        elif vertexCount == 4:
-                            for i in range(vertexCount):
-                                vxaa = unpack("<h", f.read(2))[0] / 4096
-                                vyaa = unpack("<h", f.read(2))[0] / 4096
-                                vzaa = unpack("<h", f.read(2))[0] / 4096
-                                vwaa = unpack("<h", f.read(2))[0] / 4096
-                                uvxaa = unpack("<h", f.read(2))[0] / 4096
-                                uvyaa = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2a.append([vxaa,vzaa,vyaa])
-                            for i in range(vertexCount-3):
-                                fad1abc+=1
-                                fbd1abc+=1
-                                fcd1abc+=1
-
-                                faces2a.append(set([fad1abc,fbd1abc,fcd1abc]))
-                            
+                elif Chunk == b"\x01\x01\x00\x01":
+                    f.seek(30,1)
+                    facecount = unpack("B", f.read(1))[0]*4
+                    flag3a = unpack("B", f.read(1))[0]
+                    if flag3a == 0x6E:
+                        f.seek(1,1)
+                        for ss in range(facecount-1):
+                            type1=unpack("B", f.read(1))[0]
+                            type2 = type1
+                            if type1 > 127:
+                                type2-=128
+                                type2//=3
+                            else:
+                                type2 = type1
+                                type2//=3
+                            faces2.append(type2)
+                            if faces2[0:0] == []:
+                                break
                             
                             
                             
@@ -5050,7 +5077,9 @@ def GHG_mesh(f, filepath):
                 mrscl9s.append(mrscl6)
                 mrscl7s.append(mrscl7)
                 mrsc20s.append(mrsc20)
-
+                
+                
+                
 
             f.seek(0)
             f.seek(PosBoneEntrySize1,0)
@@ -5180,14 +5209,33 @@ def GHG_mesh(f, filepath):
                         static_vxaa = round(vxaa,3)
                         static_vyaa = round(vyaa,3)
                         static_vzaa = round(vzaa,3)
+
+                        static_uvxaa = round(uvxaa,3)
+                        static_uvyaa = round(uvyaa,3)
+
+                        
                         
                         vertices2.append([static_vxaa,static_vzaa,static_vyaa])
-                        #uvs2.append([uvxaa,-uvyaa])
-                    for i in range(vertexCount-2):
-                        fad1abc+=1
-                        fbd1abc+=1
-                        fcd1abc+=1
-                        faces2.append([fad1abc,fbd1abc,fcd1abc])
+                        uvs2.append([static_uvxaa,-static_uvyaa])
+        elif Chunk == b"\x01\x01\x00\x01":
+            f.seek(30,1)
+            facecount = unpack("B", f.read(1))[0]*4
+            flag3a = unpack("B", f.read(1))[0]
+            if flag3a == 0x6E:
+                f.seek(1,1)
+                for ss in range(facecount-1):
+                    type1=unpack("B", f.read(1))[0]
+                    type2 = type1
+                    if type1 > 127:
+                        type2-=128
+                        type2//=3
+                    else:
+                        type2 = type1
+                        type2//=3
+                    faces2.append(type2)
+                    if faces2[0:0] == []:
+                        break
+                    
 
                             
 
@@ -5834,22 +5882,18 @@ def GHG_mesh(f, filepath):
     vgroups3 = [objects3.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
 
     mesh4 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh4.from_pydata(vertices2, [], faces2)
+    mesh4.from_pydata(vertices2, [], [])
     objects4 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh4)
     collection.objects.link(objects4)
 
     uv_texauuu = mesh4.uv_layers.new()
     uv_layerauuu = mesh4.uv_layers[0].data
     vert_loopsauuu = {}
-    try:
-        
-        for l in mesh4.loops:
-            vert_loopsauuu.setdefault(l.vertex_index, []).append(l.index)
-        for i, coord in enumerate(uvs2):
-            for li in vert_loopsauuu[i]:
-                uv_layerauuu[li].uv = coord
-    except:
-        KeyError
+    for l in mesh4.loops:
+        vert_loopsauuu.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs2):
+        for li in vert_loopsauuu[i]:
+            uv_layerauuu[li].uv = coord
 
     vindex = 0
 
@@ -5880,15 +5924,11 @@ def GHG_mesh(f, filepath):
     uv_texa = mesh4a.uv_layers.new()
     uv_layera = mesh4a.uv_layers[0].data
     vert_loopsa = {}
-    try:
-        
-        for l in mesh4a.loops:
-            vert_loopsa.setdefault(l.vertex_index, []).append(l.index)
-        for i, coord in enumerate(uvs2a):
-            for li in vert_loopsa[i]:
-                uv_layera[li].uv = coord
-    except:
-        KeyError
+    for l in mesh4a.loops:
+        vert_loopsa.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs2a):
+        for li in vert_loopsa[i]:
+            uv_layera[li].uv = coord
 
     vindex = 0
 
@@ -6558,7 +6598,7 @@ def GHG_mesh(f, filepath):
     bpy.data.materials["ghg materials"].node_tree.nodes["Principled BSDF"].inputs[12].default_value = 0
 
     #fill missig faces
-    if vertices3[0:4] == [[0.279,-0.058,0.237],[0.279,-0.056,0.081],[0.220,-0.060,0.237],[0.220,-0.058,0.081]]:
+    """if vertices3[0:5] == [[0.279,-0.058,0.237],[0.279,-0.056,0.081],[0.220,-0.060,0.237],[0.220,-0.058,0.081],[-0.226,-0.058,0.081]]:
         
         obj_a3 = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
         bpy.context.view_layer.objects.active = obj_a3
@@ -6744,6 +6784,45 @@ def GHG_mesh(f, filepath):
         bpy.ops.object.mode_set(mode='EDIT')
         bpy.ops.mesh.edge_face_add()
         bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[560].select = True
+        obj_a3.data.vertices[481].select = True
+        obj_a3.data.vertices[448].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[560].select = True
+        obj_a3.data.vertices[448].select = True
+        obj_a3.data.vertices[553].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.select_mode(type="VERT")
+        bpy.ops.mesh.select_all(action="DESELECT")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        obj_a3.data.vertices[448].select = True
+        obj_a3.data.vertices[27].select = True
+        obj_a3.data.vertices[456].select = True
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.mesh.edge_face_add()
+        bpy.ops.object.editmode_toggle()"""
 
         
 
