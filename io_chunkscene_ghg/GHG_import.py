@@ -655,6 +655,10 @@ def GHG_mesh(f, filepath):
     fb = 0
     fc = 1
 
+    fa__ = -1
+    fb__ = 0
+    fc__ = 1
+
     faqqqqa=-4
     fbqqqqa=-3
     fcqqqqa=-2
@@ -3977,6 +3981,78 @@ def GHG_mesh(f, filepath):
                                     fc+=1
                                     if type4 > 0:
                                         faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                                offset1 = unpack("<I", f.read(4))[0]
+                                if offset1 == 83886081:
+                                    f.seek(2,1)
+                                    uvcount = unpack("B", f.read(1))[0]
+                                    uvflg01 = unpack("B", f.read(1))[0]
+                                    if uvflg01 == 0x6D:
+                                        if uvcount == 0:
+                                            pass
+                                        elif uvcount == 1:
+                                            pass
+                                        elif uvcount == 2:
+                                            pass
+                                        elif uvcount != 0:
+                                            for i in range(uvcount):
+                                                uvx1 = unpack("<h", f.read(2))[0]/4096
+                                                uvy1 = unpack("<h", f.read(2))[0]/4096
+                                                f.seek(4,1)
+                                                uvs.append([uvx1,-uvy1])
+                                            offset2 = unpack("<I", f.read(4))[0]
+                                            if offset2 == 83886080:
+                                                f.seek(2,1)
+                                                vcolcount = unpack("B", f.read(1))[0]
+                                                vcolflg01 = unpack("B", f.read(1))[0]
+                                                if vcolflg01 == 0x6E:
+                                                    if vcolcount == 0:
+                                                        pass
+                                                    elif vcolcount == 1:
+                                                        pass
+                                                    elif vcolcount == 2:
+                                                        pass
+                                                    elif vcolcount != 0:
+                                                        for i in range(vcolcount):
+                                                            r=unpack("B", f.read(1))[0]/127
+                                                            g=unpack("B", f.read(1))[0]/127
+                                                            b=unpack("B", f.read(1))[0]/127
+                                                            a=unpack("B", f.read(1))[0]/127
+                                                        offset3 = unpack("<I", f.read(4))[0]
+                                                        offset4 = unpack("<I", f.read(4))[0]
+                                                        if offset4 == 335545088:
+                                                            f.seek(32,1)
+                                                            offset5 = unpack("<I", f.read(4))[0]
+                                                            if offset5 == 16777475:
+                                                                f.seek(2,1)
+                                                                vertexCount2 = unpack("B", f.read(1))[0]
+                                                                flag2a2 = unpack("B", f.read(1))[0]
+                                                                if flag2a2 == 0x6C:
+                                                                    if vertexCount2 == 0:
+                                                                        pass
+                                                                    elif vertexCount2 == 1:
+                                                                        pass
+                                                                    elif vertexCount2 == 2:
+                                                                        pass
+                                                                    elif vertexCount2 != 0:
+                                                                        for j in range(vertexCount2):
+                                                                            vx1 = unpack("<f", f.read(4))[0]
+                                                                            vy1 = unpack("<f", f.read(4))[0]
+                                                                            vz1 = unpack("<f", f.read(4))[0]
+                                                                            type4 = unpack("B", f.read(1))[0]==False
+                                                                            value1 = unpack("B", f.read(1))[0]
+                                                                            nz1 = unpack("<h", f.read(2))[0]
+                                                                            vertices3FF.append([vx1,vz1,vy1])
+                                                                            fa__+=1
+                                                                            fb__+=1
+                                                                            fc__+=1
+                                                                            if type4 > 0:
+                                                                                faces3FF.append([j+j+type4-type4-1+fa__-j-j-1+j%2,j-j+type4-type4+1+fb__-2-1+j-j-j%2,j+type4-type4+fc__-j+2-4])
+                                                                    
+                                                                
+                                                            
+                                                
+                                                
+                                        
                                 break
                                     
                                 
