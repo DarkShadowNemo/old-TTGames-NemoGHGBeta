@@ -149,6 +149,11 @@ def GHG_mesh(f, filepath):
     ffd7_=4
     fgd7_=5
 
+    faaas=0
+    fbaas=-1
+    fcaas=-2
+    
+
     vertices2=[]
     faces2=[]
 
@@ -4018,22 +4023,37 @@ def GHG_mesh(f, filepath):
                                 vertices2.append([vxaa,vzaa,vyaa])
                 elif Chunk == b"\x01\x01\x00\x01":
                     f.seek(30,1)
-                    facecount = unpack("B", f.read(1))[0]*4
+                    facecount = unpack("B", f.read(1))[0]
                     flag3a = unpack("B", f.read(1))[0]
                     if flag3a == 0x6E:
-                        f.seek(1,1)
-                        for ss in range(facecount-1):
-                            type1=unpack("B", f.read(1))[0]
-                            type2 = type1
-                            if type1 > 127:
-                                type2-=128
-                                type2//=3
+                        for ss in range(facecount):
+                            type1=unpack("<I", f.read(4))[0]
+
+                            type2=type1>>8&0xFF
+                            type3=type1>>16&0xFF
+                            type4=type1>>24&0xFF
+
+                            type5 = type2
+                            type6 = type3
+                            type7 = type4
+                            if type2 > 128:
+                                type5-=127
+                                type5//=3
                             else:
-                                type2 = type1
-                                type2//=3
-                            faces2.append(type2)
-                            if faces2[0:0] == []:
-                                break
+                                type5 = type2
+                                type5//=3
+                            if type3 > 128:
+                                type6-=127
+                                type6//=3
+                            else:
+                                type6 = type3
+                                type6//=3
+                            if type4 > 128:
+                                type7-=127
+                                type7//=3
+                            else:
+                                type7 = type4
+                                type7//=3
                             
                             
                             
@@ -5219,22 +5239,37 @@ def GHG_mesh(f, filepath):
                         uvs2.append([static_uvxaa,-static_uvyaa])
         elif Chunk == b"\x01\x01\x00\x01":
             f.seek(30,1)
-            facecount = unpack("B", f.read(1))[0]*4
+            facecount = unpack("B", f.read(1))[0]
             flag3a = unpack("B", f.read(1))[0]
             if flag3a == 0x6E:
-                f.seek(1,1)
-                for ss in range(facecount-1):
-                    type1=unpack("B", f.read(1))[0]
-                    type2 = type1
-                    if type1 > 127:
-                        type2-=128
-                        type2//=3
+                for ss in range(facecount):
+                    type1=unpack("<I", f.read(4))[0]
+
+                    type2=type1>>8&0xFF
+                    type3=type1>>16&0xFF
+                    type4=type1>>24&0xFF
+
+                    type5 = type2
+                    type6 = type3
+                    type7 = type4
+                    if type2 > 128:
+                        type5-=127
+                        type5//=3
                     else:
-                        type2 = type1
-                        type2//=3
-                    faces2.append(type2)
-                    if faces2[0:0] == []:
-                        break
+                        type5 = type2
+                        type5//=3
+                    if type3 > 128:
+                        type6-=127
+                        type6//=3
+                    else:
+                        type6 = type3
+                        type6//=3
+                    if type4 > 128:
+                        type7-=127
+                        type7//=3
+                    else:
+                        type7 = type4
+                        type7//=3
                     
 
                             
@@ -5885,26 +5920,6 @@ def GHG_mesh(f, filepath):
     mesh4.from_pydata(vertices2, [], [])
     objects4 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh4)
     collection.objects.link(objects4)
-
-    uv_texauuu = mesh4.uv_layers.new()
-    uv_layerauuu = mesh4.uv_layers[0].data
-    vert_loopsauuu = {}
-    for l in mesh4.loops:
-        vert_loopsauuu.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs2):
-        for li in vert_loopsauuu[i]:
-            uv_layerauuu[li].uv = coord
-
-    vindex = 0
-
-    try:
-        
-
-        for vertex in mesh4.vertices:
-            vertex.normal = normals2[vindex] # where "normals" is a list of normals
-            vindex += 1
-    except:
-        AttributeError
 
     objects4.parent = arma
     armamodifier4 = objects4.modifiers.new("GHG Armature Modifier", "ARMATURE")
