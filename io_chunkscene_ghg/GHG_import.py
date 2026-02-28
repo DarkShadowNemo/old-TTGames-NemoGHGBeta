@@ -492,20 +492,20 @@ def GHG_mesh(f, filepath):
     vertices3EE = []
     faces3EE = []
 
-    vertices3FF = []
-    faces3FF = []
+    vertices1 = []
+    faces1 = []
 
-    vertices3GG = []
-    faces3GG = []
+    vertices1a = []
+    faces1a = []
 
-    vertices3HH = []
-    faces3HH = []
+    vertices1b = []
+    faces1b = []
 
-    vertices3II = []
-    faces3II = []
+    vertices1c = []
+    faces1c = []
 
-    vertices3JJ = []
-    faces3JJ = []
+    vertices1d = []
+    faces1d = []
 
     vertices3KK = []
     faces3KK = []
@@ -658,6 +658,26 @@ def GHG_mesh(f, filepath):
     fa__ = -1
     fb__ = 0
     fc__ = 1
+
+    fa__1 = -1
+    fb__1 = 0
+    fc__1 = 1
+
+    fa__2 = -1
+    fb__2 = 0
+    fc__2 = 1
+
+    fa__3 = -1
+    fb__3 = 0
+    fc__3 = 1
+
+    fa__4 = -1
+    fb__4 = 0
+    fc__4 = 1
+
+    fa__5 = -1
+    fb__5 = 0
+    fc__5 = 1
 
     faqqqqa=-4
     fbqqqqa=-3
@@ -1145,7 +1165,6 @@ def GHG_mesh(f, filepath):
     uvs3DD=[]
     uvs3EE=[]
     uvs3FF=[]
-    uvs3GG=[]
     uvs3HH=[]
     uvs3II=[]
     uvs3JJ=[]
@@ -3772,6 +3791,10 @@ def GHG_mesh(f, filepath):
     bpy.context.view_layer.objects.active = arma
     bpy.ops.object.mode_set(mode = 'EDIT')
 
+    diffusesR=[]
+    diffusesG=[]
+    diffusesB=[]
+
     
     f.seek(0)
     FileSize_ = unpack("<I", f.read(4))[0]
@@ -3860,6 +3883,9 @@ def GHG_mesh(f, filepath):
                 pad07 = unpack("B", f.read(1))[0]
                 pad08 = unpack("B", f.read(1))[0]
                 pad09 = unpack("B", f.read(1))[0]
+                diffusesR.append(diffuseR)
+                diffusesG.append(diffuseG)
+                diffusesB.append(diffuseB)
 
             f.seek(0)
             f.seek(NamedtableEntrySize1,0)
@@ -3995,10 +4021,9 @@ def GHG_mesh(f, filepath):
                                             pass
                                         elif uvcount != 0:
                                             for i in range(uvcount):
-                                                uvx1 = unpack("<h", f.read(2))[0]/4096
-                                                uvy1 = unpack("<h", f.read(2))[0]/4096
+                                                f.seek(2,1)
+                                                f.seek(2,1)
                                                 f.seek(4,1)
-                                                uvs.append([uvx1,-uvy1])
                                             offset2 = unpack("<I", f.read(4))[0]
                                             if offset2 == 83886080:
                                                 f.seek(2,1)
@@ -4013,10 +4038,7 @@ def GHG_mesh(f, filepath):
                                                         pass
                                                     elif vcolcount != 0:
                                                         for i in range(vcolcount):
-                                                            r=unpack("B", f.read(1))[0]/127
-                                                            g=unpack("B", f.read(1))[0]/127
-                                                            b=unpack("B", f.read(1))[0]/127
-                                                            a=unpack("B", f.read(1))[0]/127
+                                                            f.seek(4,1)
                                                         offset3 = unpack("<I", f.read(4))[0]
                                                         offset4 = unpack("<I", f.read(4))[0]
                                                         if offset4 == 335545088:
@@ -4041,13 +4063,310 @@ def GHG_mesh(f, filepath):
                                                                             type4 = unpack("B", f.read(1))[0]==False
                                                                             value1 = unpack("B", f.read(1))[0]
                                                                             nz1 = unpack("<h", f.read(2))[0]
-                                                                            vertices3FF.append([vx1,vz1,vy1])
+                                                                            vertices1.append([vx1,vz1,vy1])
                                                                             fa__+=1
                                                                             fb__+=1
                                                                             fc__+=1
                                                                             if type4 > 0:
-                                                                                faces3FF.append([j+j+type4-type4-1+fa__-j-j-1+j%2,j-j+type4-type4+1+fb__-2-1+j-j-j%2,j+type4-type4+fc__-j+2-4])
-                                                                    
+                                                                                faces1.append([j+j+type4-type4-1+fa__-j-j-1+j%2,j-j+type4-type4+1+fb__-2-1+j-j-j%2,j+type4-type4+fc__-j+2-4])
+                                                                        offset6 = unpack("<I", f.read(4))[0]
+                                                                        if offset6 == 83886081:
+                                                                            f.seek(2,1)
+                                                                            uvcount2 = unpack("B", f.read(1))[0]
+                                                                            uvflg02 = unpack("B", f.read(1))[0]
+                                                                            if uvflg02 == 0x6D:
+                                                                                if uvcount2 == 0:
+                                                                                    pass
+                                                                                elif uvcount2 == 1:
+                                                                                    pass
+                                                                                elif uvcount2 == 2:
+                                                                                    pass
+                                                                                elif uvcount2 != 0:
+                                                                                    for i in range(uvcount2):
+                                                                                        f.seek(2,1)
+                                                                                        f.seek(2,1)
+                                                                                        f.seek(4,1)
+                                                                                    offset7 = unpack("<I", f.read(4))[0]
+                                                                                    if offset7 == 83886080:
+                                                                                        f.seek(2,1)
+                                                                                        vcolcount2 = unpack("B", f.read(1))[0]
+                                                                                        vcolflg02 = unpack("B", f.read(1))[0]
+                                                                                        if vcolflg02 == 0x6E:
+                                                                                            if vcolcount2 == 0:
+                                                                                                pass
+                                                                                            elif vcolcount2 == 1:
+                                                                                                pass
+                                                                                            elif vcolcount2 == 2:
+                                                                                                pass
+                                                                                            elif vcolcount2 != 0:
+                                                                                                for i in range(vcolcount2):
+                                                                                                    f.seek(4,1)
+                                                                                                offset8 = unpack("<I", f.read(4))[0]
+                                                                                                offset9 = unpack("<I", f.read(4))[0]
+                                                                                                if offset9 == 335545088:
+                                                                                                    f.seek(32,1)
+                                                                                                    offset10 = unpack("<I", f.read(4))[0]
+                                                                                                    if offset10 == 16777475:
+                                                                                                        f.seek(2,1)
+                                                                                                        vertexCount3 = unpack("B", f.read(1))[0]
+                                                                                                        flag2a3 = unpack("B", f.read(1))[0]
+                                                                                                        if flag2a3 == 0x6C:
+                                                                                                            if vertexCount3 == 0:
+                                                                                                                pass
+                                                                                                            elif vertexCount3 == 1:
+                                                                                                                pass
+                                                                                                            elif vertexCount3 == 2:
+                                                                                                                pass
+                                                                                                            elif vertexCount3 != 0:
+                                                                                                                for j in range(vertexCount3):
+                                                                                                                    vx2 = unpack("<f", f.read(4))[0]
+                                                                                                                    vy2 = unpack("<f", f.read(4))[0]
+                                                                                                                    vz2 = unpack("<f", f.read(4))[0]
+                                                                                                                    type4 = unpack("B", f.read(1))[0]==False
+                                                                                                                    value1 = unpack("B", f.read(1))[0]
+                                                                                                                    nz2 = unpack("<h", f.read(2))[0]
+                                                                                                                    vertices1a.append([vx2,vz2,vy2])
+                                                                                                                    fa__1+=1
+                                                                                                                    fb__1+=1
+                                                                                                                    fc__1+=1
+                                                                                                                    if type4 > 0:
+                                                                                                                        faces1a.append([j+j+type4-type4-1+fa__1-j-j-1+j%2,j-j+type4-type4+1+fb__1-2-1+j-j-j%2,j+type4-type4+fc__1-j+2-4])
+                                                                                                                offset11 = unpack("<I", f.read(4))[0]
+                                                                                                                if offset11 == 83886081:
+                                                                                                                    f.seek(2,1)
+                                                                                                                    uvcount3 = unpack("B", f.read(1))[0]
+                                                                                                                    uvflg03 = unpack("B", f.read(1))[0]
+                                                                                                                    if uvflg03 == 0x6D:
+                                                                                                                        if uvcount3 == 0:
+                                                                                                                            pass
+                                                                                                                        elif uvcount3 == 1:
+                                                                                                                            pass
+                                                                                                                        elif uvcount3 == 2:
+                                                                                                                            pass
+                                                                                                                        elif uvcount3 != 0:
+                                                                                                                            for i in range(uvcount3):
+                                                                                                                                f.seek(2,1)
+                                                                                                                                f.seek(2,1)
+                                                                                                                                f.seek(4,1)
+                                                                                                                            offset12 = unpack("<I", f.read(4))[0]
+                                                                                                                            if offset12 == 83886080:
+                                                                                                                                f.seek(2,1)
+                                                                                                                                vcolcount3 = unpack("B", f.read(1))[0]
+                                                                                                                                vcolflg03 = unpack("B", f.read(1))[0]
+                                                                                                                                if vcolflg03 == 0x6E:
+                                                                                                                                    if vcolcount3 == 0:
+                                                                                                                                        pass
+                                                                                                                                    elif vcolcount3 == 1:
+                                                                                                                                        pass
+                                                                                                                                    elif vcolcount3 == 2:
+                                                                                                                                        pass
+                                                                                                                                    elif vcolcount3 != 0:
+                                                                                                                                        for i in range(vcolcount3):
+                                                                                                                                            f.seek(4,1)
+                                                                                                                                        offset13 = unpack("<I", f.read(4))[0]
+                                                                                                                                        offset14 = unpack("<I", f.read(4))[0]
+                                                                                                                                        if offset14 == 335545088:
+                                                                                                                                            f.seek(32,1)
+                                                                                                                                            offset15 = unpack("<I", f.read(4))[0]
+                                                                                                                                            if offset15 == 16777475:
+                                                                                                                                                f.seek(2,1)
+                                                                                                                                                vertexCount4 = unpack("B", f.read(1))[0]
+                                                                                                                                                flag2a4 = unpack("B", f.read(1))[0]
+                                                                                                                                                if flag2a4 == 0x6C:
+                                                                                                                                                    if vertexCount4 == 0:
+                                                                                                                                                        pass
+                                                                                                                                                    elif vertexCount4 == 1:
+                                                                                                                                                        pass
+                                                                                                                                                    elif vertexCount4 == 2:
+                                                                                                                                                        pass
+                                                                                                                                                    elif vertexCount4 != 0:
+                                                                                                                                                        for j in range(vertexCount4):
+                                                                                                                                                            vx3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                            vy3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                            vz3 = unpack("<f", f.read(4))[0]
+                                                                                                                                                            type4 = unpack("B", f.read(1))[0]==False
+                                                                                                                                                            value1 = unpack("B", f.read(1))[0]
+                                                                                                                                                            nz3 = unpack("<h", f.read(2))[0]
+                                                                                                                                                            vertices1b.append([vx3,vz3,vy3])
+                                                                                                                                                            fa__2+=1
+                                                                                                                                                            fb__2+=1
+                                                                                                                                                            fc__2+=1
+                                                                                                                                                            if type4 > 0:
+                                                                                                                                                                faces1b.append([j+j+type4-type4-1+fa__2-j-j-1+j%2,j-j+type4-type4+1+fb__2-2-1+j-j-j%2,j+type4-type4+fc__2-j+2-4])
+                                                                                                                                                        offset16 = unpack("<I", f.read(4))[0]
+                                                                                                                                                        if offset16 == 83886081:
+                                                                                                                                                            f.seek(2,1)
+                                                                                                                                                            uvcount4 = unpack("B", f.read(1))[0]
+                                                                                                                                                            uvflg04 = unpack("B", f.read(1))[0]
+                                                                                                                                                            if uvflg04 == 0x6D:
+                                                                                                                                                                if uvcount4 == 0:
+                                                                                                                                                                    pass
+                                                                                                                                                                elif uvcount4 == 1:
+                                                                                                                                                                    pass
+                                                                                                                                                                elif uvcount4 == 2:
+                                                                                                                                                                    pass
+                                                                                                                                                                elif uvcount4 != 0:
+                                                                                                                                                                    for i in range(uvcount4):
+                                                                                                                                                                        f.seek(2,1)
+                                                                                                                                                                        f.seek(2,1)
+                                                                                                                                                                        f.seek(4,1)
+                                                                                                                                                                    offset17 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                    if offset17 == 83886080:
+                                                                                                                                                                        f.seek(2,1)
+                                                                                                                                                                        vcolcount4 = unpack("B", f.read(1))[0]
+                                                                                                                                                                        vcolflg04 = unpack("B", f.read(1))[0]
+                                                                                                                                                                        if vcolflg04 == 0x6E:
+                                                                                                                                                                            if vcolcount4 == 0:
+                                                                                                                                                                                pass
+                                                                                                                                                                            elif vcolcount4 == 1:
+                                                                                                                                                                                pass
+                                                                                                                                                                            elif vcolcount4 == 2:
+                                                                                                                                                                                pass
+                                                                                                                                                                            elif vcolcount4 != 0:
+                                                                                                                                                                                for i in range(vcolcount4):
+                                                                                                                                                                                    f.seek(4,1)
+                                                                                                                                                                                offset18 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                offset19 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                if offset19 == 335545088:
+                                                                                                                                                                                    f.seek(32,1)
+                                                                                                                                                                                    offset20 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                    if offset20 == 16777475:
+                                                                                                                                                                                        f.seek(2,1)
+                                                                                                                                                                                        vertexCount5 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                        flag2a5 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                        if flag2a5 == 0x6C:
+                                                                                                                                                                                            if vertexCount5 == 0:
+                                                                                                                                                                                                pass
+                                                                                                                                                                                            elif vertexCount5 == 1:
+                                                                                                                                                                                                pass
+                                                                                                                                                                                            elif vertexCount5 == 2:
+                                                                                                                                                                                                pass
+                                                                                                                                                                                            elif vertexCount5 != 0:
+                                                                                                                                                                                                for j in range(vertexCount5):
+                                                                                                                                                                                                    vx4 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                                                    vy4 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                                                    vz4 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                                                    type4 = unpack("B", f.read(1))[0]==False
+                                                                                                                                                                                                    value1 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                    nz4 = unpack("<h", f.read(2))[0]
+                                                                                                                                                                                                    vertices1c.append([vx4,vz4,vy4])
+                                                                                                                                                                                                    fa__3+=1
+                                                                                                                                                                                                    fb__3+=1
+                                                                                                                                                                                                    fc__3+=1
+                                                                                                                                                                                                    if type4 > 0:
+                                                                                                                                                                                                        faces1c.append([j+j+type4-type4-1+fa__3-j-j-1+j%2,j-j+type4-type4+1+fb__3-2-1+j-j-j%2,j+type4-type4+fc__3-j+2-4])
+
+                                                                                                                                                                                                offset21 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                if offset21 == 83886081:
+                                                                                                                                                                                                    f.seek(2,1)
+                                                                                                                                                                                                    uvcount5 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                    uvflg05 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                    if uvflg05 == 0x6D:
+                                                                                                                                                                                                        if uvcount5 == 0:
+                                                                                                                                                                                                            pass
+                                                                                                                                                                                                        elif uvcount5 == 1:
+                                                                                                                                                                                                            pass
+                                                                                                                                                                                                        elif uvcount5 == 2:
+                                                                                                                                                                                                            pass
+                                                                                                                                                                                                        elif uvcount5 != 0:
+                                                                                                                                                                                                            for i in range(uvcount5):
+                                                                                                                                                                                                                f.seek(2,1)
+                                                                                                                                                                                                                f.seek(2,1)
+                                                                                                                                                                                                                f.seek(4,1)
+                                                                                                                                                                                                            offset22 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                            if offset22 == 83886080:
+                                                                                                                                                                                                                f.seek(2,1)
+                                                                                                                                                                                                                vcolcount5 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                vcolflg05 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                if vcolflg05 == 0x6E:
+                                                                                                                                                                                                                    if vcolcount5 == 0:
+                                                                                                                                                                                                                        pass
+                                                                                                                                                                                                                    elif vcolcount5 == 1:
+                                                                                                                                                                                                                        pass
+                                                                                                                                                                                                                    elif vcolcount5 == 2:
+                                                                                                                                                                                                                        pass
+                                                                                                                                                                                                                    elif vcolcount5 != 0:
+                                                                                                                                                                                                                        for i in range(vcolcount5):
+                                                                                                                                                                                                                            f.seek(4,1)
+                                                                                                                                                                                                                        offset23 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                        offset24 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                        if offset24 == 335545088:
+                                                                                                                                                                                                                            f.seek(32,1)
+                                                                                                                                                                                                                            offset25 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                            if offset25 == 16777475:
+                                                                                                                                                                                                                                f.seek(2,1)
+                                                                                                                                                                                                                                vertexCount6 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                                flag2a6 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                                if flag2a6 == 0x6C:
+                                                                                                                                                                                                                                    if vertexCount6 == 0:
+                                                                                                                                                                                                                                        pass
+                                                                                                                                                                                                                                    elif vertexCount6 == 1:
+                                                                                                                                                                                                                                        pass
+                                                                                                                                                                                                                                    elif vertexCount6 == 2:
+                                                                                                                                                                                                                                        pass
+                                                                                                                                                                                                                                    elif vertexCount6 != 0:
+                                                                                                                                                                                                                                        for j in range(vertexCount6):
+                                                                                                                                                                                                                                            vx5 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                                                                                            vy5 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                                                                                            vz5 = unpack("<f", f.read(4))[0]
+                                                                                                                                                                                                                                            type4 = unpack("B", f.read(1))[0]==False
+                                                                                                                                                                                                                                            value1 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                                            nz5 = unpack("<h", f.read(2))[0]
+                                                                                                                                                                                                                                            vertices1d.append([vx5,vz5,vy5])
+                                                                                                                                                                                                                                            fa__4+=1
+                                                                                                                                                                                                                                            fb__4+=1
+                                                                                                                                                                                                                                            fc__4+=1
+                                                                                                                                                                                                                                            if type4 > 0:
+                                                                                                                                                                                                                                                faces1d.append([j+j+type4-type4-1+fa__4-j-j-1+j%2,j-j+type4-type4+1+fb__4-2-1+j-j-j%2,j+type4-type4+fc__4-j+2-4])
+
+                                                                                                                                                                                                                                        offset26 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                                        if offset26 == 83886081:
+                                                                                                                                                                                                                                            f.seek(2,1)
+                                                                                                                                                                                                                                            uvcount6 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                                            uvflg06 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                                            if uvflg06 == 0x6D:
+                                                                                                                                                                                                                                                if uvcount6 == 0:
+                                                                                                                                                                                                                                                    pass
+                                                                                                                                                                                                                                                elif uvcount6 == 1:
+                                                                                                                                                                                                                                                    pass
+                                                                                                                                                                                                                                                elif uvcount6 == 2:
+                                                                                                                                                                                                                                                    pass
+                                                                                                                                                                                                                                                elif uvcount6 != 0:
+                                                                                                                                                                                                                                                    for i in range(uvcount6):
+                                                                                                                                                                                                                                                        f.seek(2,1)
+                                                                                                                                                                                                                                                        f.seek(2,1)
+                                                                                                                                                                                                                                                        f.seek(4,1)
+                                                                                                                                                                                                                                                    offset27 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                                                    if offset27 == 83886080:
+                                                                                                                                                                                                                                                        f.seek(2,1)
+                                                                                                                                                                                                                                                        vcolcount6 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                                                        vcolflg06 = unpack("B", f.read(1))[0]
+                                                                                                                                                                                                                                                        if vcolflg06 == 0x6E:
+                                                                                                                                                                                                                                                            if vcolcount6 == 0:
+                                                                                                                                                                                                                                                                pass
+                                                                                                                                                                                                                                                            elif vcolcount6 == 1:
+                                                                                                                                                                                                                                                                pass
+                                                                                                                                                                                                                                                            elif vcolcount6 == 2:
+                                                                                                                                                                                                                                                                pass
+                                                                                                                                                                                                                                                            elif vcolcount6 != 0:
+                                                                                                                                                                                                                                                                for i in range(vcolcount6):
+                                                                                                                                                                                                                                                                    f.seek(4,1)
+                                                                                                                                                                                                                                                                offset28 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                                                                offset29 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                                                                f.seek(4,1)
+                                                                                                                                                                                                                                                                offset28 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                                                                if offset28 == 1610612736:
+                                                                                                                                                                                                                                                                    f.seek(12,1)
+                                                                                                                                                                                                                                                                    offset29 = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                                                                    if offset29 == 14352:
+                                                                                                                                                                                                                                                                        matmatmat = unpack("<I", f.read(4))[0]
+                                                                                                                                                                                                                                                                        if matmatmat == 1:
+                                                                                                                                                                                                                                                                            pass
+                                                                                                                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                                                                                        
+
+                                                                                
                                                                 
                                                             
                                                 
@@ -5165,84 +5484,30 @@ def GHG_mesh(f, filepath):
     objectsh = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), meshh)
     collection.objects.link(objectsh)
 
-    uv_tex = meshh.uv_layers.new()
-    uv_layer = meshh.uv_layers[0].data
-    vert_loops = {}
-    for l in meshh.loops:
-        vert_loops.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs):
-        for li in vert_loops[i]:
-            uv_layer[li].uv = coord
-
     mesh3FF = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3FF.from_pydata(vertices3FF, [], faces3FF)
+    mesh3FF.from_pydata(vertices1, [], faces1)
     objects3FF = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3FF)
     collection.objects.link(objects3FF)
 
-    uv_tex3FF = mesh3FF.uv_layers.new()
-    uv_layer3FF = mesh3FF.uv_layers[0].data
-    vert_loops3FF = {}
-    for l in mesh3FF.loops:
-        vert_loops3FF.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3FF):
-        for li in vert_loops3FF[i]:
-            uv_layer3FF[li].uv = coord
-
     mesh3GG = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3GG.from_pydata(vertices3GG, [], faces3GG)
+    mesh3GG.from_pydata(vertices1a, [], faces1a)
     objects3GG = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3GG)
     collection.objects.link(objects3GG)
 
-    uv_tex3GG = mesh3GG.uv_layers.new()
-    uv_layer3GG = mesh3GG.uv_layers[0].data
-    vert_loops3GG = {}
-    for l in mesh3GG.loops:
-        vert_loops3GG.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3GG):
-        for li in vert_loops3GG[i]:
-            uv_layer3GG[li].uv = coord
-
     mesh3HH = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3HH.from_pydata(vertices3HH, [], faces3HH)
+    mesh3HH.from_pydata(vertices1b, [], faces1b)
     objects3HH = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3HH)
     collection.objects.link(objects3HH)
 
-    uv_tex3HH = mesh3HH.uv_layers.new()
-    uv_layer3HH = mesh3HH.uv_layers[0].data
-    vert_loops3HH = {}
-    for l in mesh3HH.loops:
-        vert_loops3HH.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3HH):
-        for li in vert_loops3HH[i]:
-            uv_layer3HH[li].uv = coord
-
     mesh3II = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3II.from_pydata(vertices3II, [], faces3II)
+    mesh3II.from_pydata(vertices1c, [], faces1c)
     objects3II = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3II)
     collection.objects.link(objects3II)
 
-    uv_tex3II = mesh3II.uv_layers.new()
-    uv_layer3II = mesh3II.uv_layers[0].data
-    vert_loops3II = {}
-    for l in mesh3II.loops:
-        vert_loops3II.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3II):
-        for li in vert_loops3II[i]:
-            uv_layer3II[li].uv = coord
-
     mesh3JJ = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3JJ.from_pydata(vertices3JJ, [], faces3JJ)
+    mesh3JJ.from_pydata(vertices1d, [], faces1d)
     objects3JJ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3JJ)
     collection.objects.link(objects3JJ)
-
-    uv_tex3JJ = mesh3JJ.uv_layers.new()
-    uv_layer3JJ = mesh3JJ.uv_layers[0].data
-    vert_loops3JJ = {}
-    for l in mesh3JJ.loops:
-        vert_loops3JJ.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs3JJ):
-        for li in vert_loops3JJ[i]:
-            uv_layer3JJ[li].uv = coord
 
 
     mesh3KK = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
@@ -6445,6 +6710,14 @@ def GHG_mesh(f, filepath):
     bpy.context.object.active_material_index = 1
     bpy.data.materials["ghg materials"].node_tree.nodes["Principled BSDF"].inputs[2].default_value = 1
     bpy.data.materials["ghg materials"].node_tree.nodes["Principled BSDF"].inputs[12].default_value = 0
+
+    bpy.data.materials["ghg materials"].node_tree.nodes["Principled BSDF"].inputs[0].default_value = (diffusesR[0], diffusesG[0], diffusesB[0], 1)
+    bpy.ops.object.mode_set(mode='EDIT')
+    bpy.ops.object.material_slot_assign()
+    bpy.ops.object.mode_set(mode='OBJECT')
+    bpy.ops.object.select_all(action='DESELECT')
+
+    
 
     #fill missig faces
     """if vertices3[0:5] == [[0.279,-0.058,0.237],[0.279,-0.056,0.081],[0.220,-0.060,0.237],[0.220,-0.058,0.081],[-0.226,-0.058,0.081]]:
