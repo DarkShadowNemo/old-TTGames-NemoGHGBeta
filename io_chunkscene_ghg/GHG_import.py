@@ -5566,6 +5566,48 @@ def GHG_mesh(f, filepath):
                             fc2+=1
                             if type4 > 0:
                                 faces3.append([j+j+type4-type4-1+fa2-j-j-1,j-j+type4-type4+1+fb2-2-1,j+type4-type4+fc2-j+2-4])
+                        offZSet = unpack("<I", f.read(4))[0]
+                        if offZSet == 1627553843:
+                            coun1 = unpack("<I", f.read(4))[0]
+                            if coun1 == 6:
+                                offZSet1 = unpack("<I", f.read(4))[0]
+                                if offZSet == 1627553847:
+                                    coun2 = unpack("<I", f.read(4)){0]
+                                    if coun2 == 4:
+                                        offZSet2 = unpack("<I", f.read(4))[0]
+                                        if offZSet2 == 1627553851:
+                                            xcounoffset1 = unpack("<I", f.read(4)){0]
+                                            if xcounoffset1 == 65540:
+                                                offZSet3 = unpack("<I", f.read(4))[0]
+                                                if offZSet3 == 1627553851:
+                                                    xcounoffset2 = unpack("<I", f.read(4)){0]
+                                                    if xcounoffset2 == 65538:
+                                                        offZSet4 = unpack("<I", f.read(4))[0]
+                                                        if offZSet4 == 1627553859:
+                                                            coun3 = unpack("<I", f.read(4)){0]
+                                                            if coun3 == 12:
+                                                                offZSet5 = unpack("<I", f.read(4))[0]
+                                                                if offZSet5 == 1627553863:
+                                                                    coun4 = unpack("<I", f.read(4)){0]
+                                                                    if coun4 == 10:
+                                                                        offZSet6 = unpack("<I", f.read(4))[0]
+                                                                        if offZSet6 == 1627553867:
+                                                                            xcounoffset3 = unpack("<I", f.read(4)){0]
+                                                                            if xxcounoffset3 == 65544:
+                                                                                ffialoffset1 = unpack("<I", f.read(4)){0]
+                                                                                if ffialoffset1 == 1812103247:
+                                                                                    for i in range(1):
+                                                                                        vx0001__faceoff1 = unpack("<f", f.read(4))[0]
+                                                                                        vy0001__faceoff1 = unpack("<f", f.read(4))[0]
+                                                                                        vz0001__faceoff1 = unpack("<f", f.read(4))[0]
+                                                                                        faceoff1 = unpack("B", f.read(1))[0]!=True
+                                                                                        f.seek(3,1)
+                                                                                        f.seek(12,1)
+                                                                                        
+                                                                                        
+                                                                            
+                                                            
+                                        
                         break
                                                                                                                                 
                                                                                                         
