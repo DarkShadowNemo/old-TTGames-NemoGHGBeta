@@ -575,6 +575,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("B", 128))
             f.write(pack("B", len(mm_mat.vertices)*2))
             f.write(pack("B", 108))
+            indexFaces3a=-1
             for v in mm_mat.vertices:
                 f.write(pack("<f", v.co.x))
                 f.write(pack("<f", v.co.z))
@@ -585,19 +586,18 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
                 f.write(pack("<f", 0))
                 f.write(pack("<f", 0))
             for facs in mm_mat.polygons:
-                indexFaces3+=1
-                if indexFaces3 == 0:
-                    f.seek(-96,1)
-                    if facs.vertices[0:3]:
-                        f.seek(28,1)
-                        f.write(pack("B", 1))
-                        f.seek(3,1)
-                        f.seek(28,1)
-                        f.write(pack("B", 1))
-                        f.seek(3,1)
-                        f.seek(28,1)
-                        f.write(pack("B", 0))
-                        f.seek(3,1)
+                indexFaces3a+=1
+                f.seek(-96,1)
+                if indexFaces3a == 0:
+                    f.seek(28,1)
+                    f.write(pack("B", 1))
+                    f.seek(3,1)
+                    f.seek(28,1)
+                    f.write(pack("B", 1))
+                    f.seek(3,1)
+                    f.seek(28,1)
+                    f.write(pack("B", 0))
+                    f.seek(3,1)
             f.write(pack("<I", 16777473))
             f.write(pack("<I", 1610842117))
             f.write(pack("<I", 1065353216))
@@ -914,8 +914,6 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
                 faces000.append([a,b,c])
             if faces000[0:5] == [[0, 1, 2], [2, 3, 4], [2, 1, 3]]:
                 f.seek(-160,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1)
-            elif faces000[0:2] == [[0, 1, 2], [2, 3, 4]]:
-                f.seek(-160,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1)
 
             f.write(pack("<I", 16777473))
             f.write(pack("<I", 1610776581))
@@ -1134,12 +1132,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             if faces0000[0:8] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [4, 3, 5]]:
                 f.seek(-192,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1)
             elif faces0000[0:2] == [[0, 1, 2], [4, 3, 5]]:
-                f.seek(-192,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1)
-            elif faces0000[0:5] == [[0, 1, 2], [2, 3, 4], [4, 3, 5]]:
-                f.seek(-192,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1)
-            elif faces0000[0:5] == [[0, 1, 2], [2, 1, 3], [4, 3, 5]]:
-                f.seek(-192,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1)
-                
+                f.seek(-192,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 1));f.seek(3,1);f.seek(28,1);f.write(pack("B", 0));f.seek(3,1)                
             f.write(pack("<I", 16777473))
             f.write(pack("<I", 1610973189))
             f.write(pack("<f", 1))
@@ -1297,10 +1290,85 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<f", 1))
             f.write(pack("<f", 1))
             f.write(pack("<f", 1))
-            f.write(pack("<f", 1610711053))
+            f.write(pack("<I", 1610711053))
             f.write(pack("<f", 1))
             f.write(pack("<I", 385875968))
-            
+        elif len(mm_mat.vertices) == 7:
+            f.write(pack("<I", FileSize23))
+            dsize10 = f.seek(FileSize23,1)
+            f.seek(-4,1)
+            f.write(pack("<I", dsize10-4+0))
+            f.write(pack("<I", modelID))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", FileSize24))
+            dsize11 = f.seek(FileSize24,1)
+            f.seek(-4,1)
+            f.write(pack("<I", dsize11))
+
+            f.write(pack("<I", 268894208))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 16777480))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 805830660))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 268435456))
+            f.write(pack("<I", 1812201496))
+            f.write(pack("<I", 1342177280))
+            f.write(pack("<I", 208))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+
+            f.write(pack("<I", 268894208))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 16777480))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 805830660))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 268435456))
+            f.write(pack("<I", 1812201496))
+            f.write(pack("<I", 1342177280))
+            f.write(pack("<I", 496))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+
+            f.write(pack("<I", 268894208))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 16777480))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 805830660))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 268435456))
+            f.write(pack("<I", 1812201496))
+            f.write(pack("<I", 1342177280))
+            f.write(pack("<I", 784))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+
+            f.write(pack("<I", 268894208))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 16777480))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 805830660))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 268435456))
+            f.write(pack("<I", 1812201496))
+            f.write(pack("<I", 1342177280))
+            f.write(pack("<I", 1072))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+
+            f.write(pack("<I", 268894208))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 16777480))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 805830660))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 268435456))
+            f.write(pack("<I", 1812201496))
+            f.write(pack("<I", 1342177280))
+            f.write(pack("<I", 1072))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
         modelID+=1
     if len(mm_mat.vertices) == 3:
         f.seek(-480,1)
