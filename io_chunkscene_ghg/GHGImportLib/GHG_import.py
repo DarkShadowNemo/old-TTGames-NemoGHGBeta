@@ -4,6 +4,7 @@ import math
 import bpy
 import mathutils
 from io import BytesIO as bio
+from .pearl import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -122,18 +123,5 @@ def GHG_mesh(f, filepath):
     object2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2)
     collection.objects.link(object2)
     
-    obj_a3 = bpy.data.objects[os.path.basename(os.path.splitext(filepath)[0])]
-    
     if vertices2_[0:3] == [{-0.031, 1.965, 3.031}, {2.971, 4.963, 6.033}, {9.035, 5.974, 7.955}]:
-        bpy.context.view_layer.objects.active = obj_a3
-        bpy.ops.object.mode_set(mode='OBJECT')
-        bpy.ops.object.mode_set(mode='EDIT')
-        bpy.ops.mesh.select_mode(type="VERT")
-        bpy.ops.mesh.select_all(action="DESELECT")
-        bpy.ops.object.mode_set(mode='OBJECT')
-        obj_a3.data.vertices[0].select = True
-        obj_a3.data.vertices[0].co.x = 1370/4096
-        obj_a3.data.vertices[0].co.z = -1526/4096
-        obj_a3.data.vertices[0].co.y = -1193/4096
-        bpy.ops.object.mode_set(mode='EDIT')
-        bpy.ops.object.editmode_toggle()
+        pearl_(filepath)
