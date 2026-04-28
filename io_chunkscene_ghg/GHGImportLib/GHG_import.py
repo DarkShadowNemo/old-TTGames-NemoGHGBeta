@@ -43,6 +43,14 @@ def GHG_mesh(f, filepath):
     fb1pt2=-3
     fc1pt2=-2
     fd1pt2=-1
+
+    FileSize = unpack("<I", f.read(4))[0]
+    null1 = unpack("<I", f.read(4))[0]
+    TextureCount = unpack("<I", f.read(4))[0]
+    TextureEntrySize1 = unpack("<I", f.read(4))[0]
+    MaterialCount = unpack("<I", f.read(4))[0]
+    MaterialEntrySize1 = unpack("<I", f.read(4))[0]
+    BoneCount = unpack("<I", f.read(4))[0]
     
     f.seek(0)
     Chunks = f.read()
@@ -76,7 +84,7 @@ def GHG_mesh(f, filepath):
                         fb1+=1*3
                         fc1+=1*3
                         faces2.append([fa1,fb1,fc1])
-                elif VertexCount == 4:
+                elif VertexCount:
                     for i in range(VertexCount):
                         vx_ = unpack("<h", f.read(2))[0] / 4096
                         vy_ = unpack("<h", f.read(2))[0] / 4096
@@ -125,5 +133,5 @@ def GHG_mesh(f, filepath):
     object2_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2_)
     collection.objects.link(object2_)
     
-    if vertices2_[0:3] == [{-4.009, -3.057, -2.043}, {-0.004, 1.957, 0.953}, {3.994, 4.955, 5.957}]:
+    if vertices2_[0:3] == [{-3.069, -3.962, -2.021}, {0.036, 1.975, 0.944}, {4.036, 5.975, 4.944}]:
         pearl_(filepath)
