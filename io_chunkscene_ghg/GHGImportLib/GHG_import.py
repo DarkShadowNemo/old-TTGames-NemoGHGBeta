@@ -24,6 +24,7 @@ def GHG_mesh(f, filepath):
     idx1_=0
 
     vertices2=[]
+    vertices2pt2=[]
     vertices2_=[]
     faces2=[]
     
@@ -33,6 +34,10 @@ def GHG_mesh(f, filepath):
     fa1=-3
     fb1=-2
     fc1=-1
+    
+    fa1_=-4
+    fb1_=-3
+    fc1_=-2
     
     fa1pt2=-4
     fb1pt2=-3
@@ -66,30 +71,27 @@ def GHG_mesh(f, filepath):
                         uy = unpack("<h", f.read(2))[0] / 4096
                         f.seek(4,1)
                         vertices2.append([vx,vz,vy])
-                    f.seek(78,1)
-                    facecount = unpack("B", f.read(1))[0]
-                    flag1 = unpack("B", f.read(1))[0]
-                    if flag1 == 0x6E:
-                        fa1= unpack("B", f.read(1))[0] & 0x0F
-                        fb1= unpack("B", f.read(1))[0] & 0x0F
-                        fc1= unpack("B", f.read(1))[0] & 0x0F
-                        fa1//=3
-                        fb1//=3
-                        fc1//=3
-                        fa1+=1*len(vertices2)-3
-                        fb1+=1*len(vertices2)-3
-                        fc1+=1*len(vertices2)-3
+                    for i in range(VertexCount-2):
+                        fa1+=1*3
+                        fb1+=1*3
+                        fc1+=1*3
                         faces2.append([fa1,fb1,fc1])
-                        
+                elif VertexCount == 4:
+                    for i in range(VertexCount):
+                        vx_ = unpack("<h", f.read(2))[0] / 4096
+                        vy_ = unpack("<h", f.read(2))[0] / 4096
+                        vz_ = unpack("<h", f.read(2))[0] / 4096
+                        fn_ = unpack("<h", f.read(2))[0] / 4096
+                        ux_ = unpack("<h", f.read(2))[0] / 4096
+                        uy_ = unpack("<h", f.read(2))[0] / 4096
+                        f.seek(4,1)
+                        vertices2pt2.append([vx_,vz_,vy_])
                     for i in range(VertexCount):
                         f.seek(-16,1)
-                    f.seek(-78,1)
-                    f.seek(-2,1)
-                    f.seek(-3,1)
                     for i in range(VertexCount):
-                        vx1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fa1
-                        vy1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fb1
-                        vz1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fc1
+                        vx1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fa1_
+                        vy1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fb1_
+                        vz1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fc1_
                         fn1 = unpack("<h", f.read(2))[0] / 4096
                         ux1 = unpack("<h", f.read(2))[0] / 4096
                         uy1 = unpack("<h", f.read(2))[0] / 4096
@@ -97,9 +99,9 @@ def GHG_mesh(f, filepath):
                         vy2 = vy1
                         vz2 = vz1
                         f.seek(4,1)
-                        fa1+=1*3
-                        fb1+=1*3
-                        fc1+=1*3
+                        fa1_+=1*4
+                        fb1_+=1*4
+                        fc1_+=1*4
                         idx1+=1
                         
                         if idx1 == 1:
@@ -110,18 +112,18 @@ def GHG_mesh(f, filepath):
                         elif idx1 == 3:
                             vertices2_.append(set([round(vx1,3),round(vz1,3),round(vy1,3)]))
                             
-                            
-                        
-                        
-                        
-
     collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
     bpy.context.scene.collection.children.link(collection)
 
     mesh2 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh2.from_pydata(vertices2_, [], [])
+    mesh2.from_pydata(vertices2, [], faces2)
     object2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2)
     collection.objects.link(object2)
     
-    if vertices2_[0:3] == [{-0.031, 1.965, 3.031}, {2.971, 4.963, 6.033}, {9.035, 5.974, 7.955}]:
+    mesh2_ = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh2_.from_pydata(vertices2pt2, [], [])
+    object2_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2_)
+    collection.objects.link(object2_)
+    
+    if vertices2_[0:3] == [{-4.009, -3.057, -2.043}, {-0.004, 1.957, 0.953}, {3.994, 4.955, 5.957}]:
         pearl_(filepath)
