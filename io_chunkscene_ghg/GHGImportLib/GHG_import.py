@@ -39,8 +39,8 @@ def GHG_mesh(f, filepath):
     vertices3=[]
     faces3=[]
 
-    vertices3pt2=[]
-    faces3pt2=[]
+    vertices3pt2a=[]
+    faces3pt2a=[]
     
     vertices2pt2=[]
     faces2pt2=[]
@@ -332,7 +332,7 @@ def GHG_mesh(f, filepath):
                                                 if vertexCount3c == 2:
                                                     #0x65960
                                                     for i in range(1):
-                                                        vx4_off = unpack("<f", f.read(4))[0];vy4_off = unpack("<f", f.read(4))[0];vz4_off = unpack("<f", f.read(4))[0];face_off1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off1 = unpack("<f", f.read(4))[0];uvy4_off1 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off = unpack("<f", f.read(4))[0];vy4_off = unpack("<f", f.read(4))[0];vz_off = unpack("<f", f.read(4))[0];face_off = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off = unpack("<f", f.read(4))[0];uvy4_off = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                        vx4_off = unpack("<f", f.read(4))[0];vy4_off = unpack("<f", f.read(4))[0];vz4_off = unpack("<f", f.read(4))[0];face_off1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off1 = unpack("<f", f.read(4))[0];uvy4_off1 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off_ = unpack("<f", f.read(4))[0];vy4_off_ = unpack("<f", f.read(4))[0];vz4_off_ = unpack("<f", f.read(4))[0];face_off = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off = unpack("<f", f.read(4))[0];uvy4_off = unpack("<f", f.read(4))[0];f.seek(8,1)
                                                     offset3d = unpack("<I", f.read(4))[0]
                                                     if offset3d == 1627553827:
                                                         offset3e = unpack("<I", f.read(4))[0]
@@ -347,7 +347,7 @@ def GHG_mesh(f, filepath):
                                                                     if flag3g == 0x6C:
                                                                         if vertexCount3g == 3:
                                                                             for i in range(1):
-                                                                                vx4_offa = unpack("<f", f.read(4))[0];vy4_offa = unpack("<f", f.read(4))[0];vz4_offa = unpack("<f", f.read(4))[0];face_off1a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offa = unpack("<f", f.read(4))[0];uvy4_offa = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off1a = unpack("<f", f.read(4))[0];vy4_off1a = unpack("<f", f.read(4))[0];vz_off1a = unpack("<f", f.read(4))[0];face_off1a_ = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off1a = unpack("<f", f.read(4))[0];uvy4_off1a = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off2a = unpack("<f", f.read(4))[0];vy4_off2a = unpack("<f", f.read(4))[0];vz_off2a = unpack("<f", f.read(4))[0];face_off2a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off2a = unpack("<f", f.read(4))[0];uvy4_off2a = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                vx4_offa = unpack("<f", f.read(4))[0];vy4_offa = unpack("<f", f.read(4))[0];vz4_offa = unpack("<f", f.read(4))[0];face_off1a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offa = unpack("<f", f.read(4))[0];uvy4_offa = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off1a = unpack("<f", f.read(4))[0];vy4_off1a = unpack("<f", f.read(4))[0];vz4_off1a = unpack("<f", f.read(4))[0];face_off1a_ = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off1a = unpack("<f", f.read(4))[0];uvy4_off1a = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off2a = unpack("<f", f.read(4))[0];vy4_off2a = unpack("<f", f.read(4))[0];vz4_off2a = unpack("<f", f.read(4))[0];face_off2a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off2a = unpack("<f", f.read(4))[0];uvy4_off2a = unpack("<f", f.read(4))[0];f.seek(8,1)
                                                                             offset3h = unpack("<I", f.read(4))[0]
                                                                             if offset3h == 1627553847:
                                                                                 offset3i = unpack("<I", f.read(4))[0]
@@ -405,7 +405,25 @@ def GHG_mesh(f, filepath):
                                                                                                                                                                                         if face_off1c == 0:
                                                                                                                                                                                             if face_off1d == 0:
                                                                                                                                                                                                 if face_off1e == 0:
-                                                                                                                                                                                                    pass
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_a,vz4_a,vy4_a])
+                                                                                                                                                                                                    vertices3pt2a.append([vx5_a,vz5_a,vy5_a])
+                                                                                                                                                                                                    vertices3pt2a.append([vx6_a,vz6_a,vy6_a])
+                                                                                                                                                                                                    vertices3pt2a.append([vx7_a,vz7_a,vy7_a])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_off,vz4_off,vy4_off])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_off_,vz4_off_,vy4_off_])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_offa,vz4_offa,vy4_offa])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_off1a,vz4_off1a,vy4_off1a])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_off2a,vz4_off2a,vy4_off2a])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_offb,vz4_offb,vy4_offb])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_offc,vz4_offc,vy4_offc])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_offd,vz4_offd,vy4_offd])
+                                                                                                                                                                                                    vertices3pt2a.append([vx4_offe,vz4_offe,vy4_offe])
+                                                                                                                                                                                                    faces3pt2a.append([0,1,2])
+                                                                                                                                                                                                    faces3pt2a.append([1,2,3])
+                                                                                                                                                                                                    faces3pt2a.append([1,3,4])
+                                                                                                                                                                                                    faces3pt2a.append([3,4,5])
+                                                                                                                                                                                                    faces3pt2a.append([5,3,6])
+                                                                                                                                                                                                    
                                                                                                                                                                                     
                                                                                                                                                                                 
                                                                                                                                                                     
@@ -437,6 +455,11 @@ def GHG_mesh(f, filepath):
     mesh3.from_pydata(vertices3, [], faces3)
     object3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
     collection.objects.link(object3)
+
+    mesh3pt2 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3pt2.from_pydata(vertices3pt2a, [], faces3pt2a)
+    object3pt2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3pt2)
+    collection.objects.link(object3pt2)
 
     uv_tex3 = mesh3.uv_layers.new()
     uv_layer3 = mesh3.uv_layers[0].data
