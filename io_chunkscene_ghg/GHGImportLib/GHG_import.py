@@ -38,6 +38,9 @@ def GHG_mesh(f, filepath):
 
     vertices3=[]
     faces3=[]
+
+    vertices3pt2=[]
+    faces3pt2=[]
     
     vertices2pt2=[]
     faces2pt2=[]
@@ -64,6 +67,7 @@ def GHG_mesh(f, filepath):
     fc=1
 
     uvs3=[]
+    uvs3pt2=[]
 
     coll = bpy.context.collection
     skel = bpy.data.armatures.new('GHG Skeleton')
@@ -310,7 +314,7 @@ def GHG_mesh(f, filepath):
                             for i in range(1):
                                 f.seek(-128,1)#
                             for i in range(1):
-                                vx4_a = unpack("<f", f.read(4))[0];vy4_a = unpack("<f", f.read(4))[0];vz4_a = unpack("<f", f.read(4))[0];brightness4_a = unpack("<f", f.read(4))[0];uvx4_a = unpack("<f", f.read(4))[0];uvy4_a = unpack("<f", f.read(4))[0];unk4_a = unpack("<f", f.read(4))[0];faceon4_a = unpack("B", f.read(1))[0];valueon4_a = unpack("B", f.read(1))[0];nz4_a = unpack("<h", f.read(2))[0];vx5_a = unpack("<f", f.read(4))[0];vy5_a = unpack("<f", f.read(4))[0];vz5_a = unpack("<f", f.read(4))[0];brightness5_a = unpack("<f", f.read(4))[0];uvx5_a = unpack("<f", f.read(4))[0];uvy5_a = unpack("<f", f.read(4))[0];unk5_a = unpack("<f", f.read(4))[0];faceon5_a = unpack("B", f.read(1))[0];valueon5_a = unpack("B", f.read(1))[0];nz5_a = unpack("<h", f.read(2))[0];vx6_a = unpack("<f", f.read(4))[0];vy6_a = unpack("<f", f.read(4))[0];vz6_a = unpack("<f", f.read(4))[0];brightness6_a = unpack("<f", f.read(4))[0];uvx6_a = unpack("<f", f.read(4))[0];uvy6_a = unpack("<f", f.read(4))[0];unk6_a = unpack("<f", f.read(4))[0];faceon6_a = unpack("B", f.read(1))[0];valueon6_a = unpack("B", f.read(1))[0];nz6_a = unpack("<h", f.read(2))[0]
+                                vx4_a = unpack("<f", f.read(4))[0];vy4_a = unpack("<f", f.read(4))[0];vz4_a = unpack("<f", f.read(4))[0];brightness4_a = unpack("<f", f.read(4))[0];uvx4_a = unpack("<f", f.read(4))[0];uvy4_a = unpack("<f", f.read(4))[0];unk4_a = unpack("<f", f.read(4))[0];faceon4_a = unpack("B", f.read(1))[0];valueon4_a = unpack("B", f.read(1))[0];nz4_a = unpack("<h", f.read(2))[0];vx5_a = unpack("<f", f.read(4))[0];vy5_a = unpack("<f", f.read(4))[0];vz5_a = unpack("<f", f.read(4))[0];brightness5_a = unpack("<f", f.read(4))[0];uvx5_a = unpack("<f", f.read(4))[0];uvy5_a = unpack("<f", f.read(4))[0];unk5_a = unpack("<f", f.read(4))[0];faceon5_a = unpack("B", f.read(1))[0];valueon5_a = unpack("B", f.read(1))[0];nz5_a = unpack("<h", f.read(2))[0];vx6_a = unpack("<f", f.read(4))[0];vy6_a = unpack("<f", f.read(4))[0];vz6_a = unpack("<f", f.read(4))[0];brightness6_a = unpack("<f", f.read(4))[0];uvx6_a = unpack("<f", f.read(4))[0];uvy6_a = unpack("<f", f.read(4))[0];unk6_a = unpack("<f", f.read(4))[0];faceon6_a = unpack("B", f.read(1))[0];valueon6_a = unpack("B", f.read(1))[0];nz6_a = unpack("<h", f.read(2))[0];vx7_a = unpack("<f", f.read(4))[0];vy7_a = unpack("<f", f.read(4))[0];vz7_a = unpack("<f", f.read(4))[0];brightness7_a = unpack("<f", f.read(4))[0];uvx7_a = unpack("<f", f.read(4))[0];uvy7_a = unpack("<f", f.read(4))[0];unk7_a = unpack("<f", f.read(4))[0];faceon7_a = unpack("B", f.read(1))[0];valueon7_a = unpack("B", f.read(1))[0];nz7_a = unpack("<h", f.read(2))[0]
                             offset2 = unpack("<I", f.read(4))[0]
                             f.seek(-4,1)
                             offset3 = unpack("<I", f.read(4))[0]
@@ -328,7 +332,7 @@ def GHG_mesh(f, filepath):
                                                 if vertexCount3c == 2:
                                                     #0x65960
                                                     for i in range(1):
-                                                        vx4_off = unpack("<f", f.read(4))[0];vy4_off = unpack("<f", f.read(4))[0];vz4_off = unpack("<f", f.read(4))[0];face_off1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off = unpack("<f", f.read(4))[0];uvy4_off = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off1 = unpack("<f", f.read(4))[0];vy4_off1 = unpack("<f", f.read(4))[0];vz_off1 = unpack("<f", f.read(4))[0];face_off1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off1 = unpack("<f", f.read(4))[0];uvy4_off1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                        vx4_off = unpack("<f", f.read(4))[0];vy4_off = unpack("<f", f.read(4))[0];vz4_off = unpack("<f", f.read(4))[0];face_off1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off1 = unpack("<f", f.read(4))[0];uvy4_off1 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off = unpack("<f", f.read(4))[0];vy4_off = unpack("<f", f.read(4))[0];vz_off = unpack("<f", f.read(4))[0];face_off = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off = unpack("<f", f.read(4))[0];uvy4_off = unpack("<f", f.read(4))[0];f.seek(8,1)
                                                     offset3d = unpack("<I", f.read(4))[0]
                                                     if offset3d == 1627553827:
                                                         offset3e = unpack("<I", f.read(4))[0]
@@ -343,7 +347,7 @@ def GHG_mesh(f, filepath):
                                                                     if flag3g == 0x6C:
                                                                         if vertexCount3g == 3:
                                                                             for i in range(1):
-                                                                                vx4_offa = unpack("<f", f.read(4))[0];vy4_offa = unpack("<f", f.read(4))[0];vz4_offa = unpack("<f", f.read(4))[0];face_off1a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offa = unpack("<f", f.read(4))[0];uvy4_offa = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off1a = unpack("<f", f.read(4))[0];vy4_off1a = unpack("<f", f.read(4))[0];vz_off1a = unpack("<f", f.read(4))[0];face_off1a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off1a = unpack("<f", f.read(4))[0];uvy4_off1a = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off2a = unpack("<f", f.read(4))[0];vy4_off2a = unpack("<f", f.read(4))[0];vz_off2a = unpack("<f", f.read(4))[0];face_off2a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off2a = unpack("<f", f.read(4))[0];uvy4_off2a = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                vx4_offa = unpack("<f", f.read(4))[0];vy4_offa = unpack("<f", f.read(4))[0];vz4_offa = unpack("<f", f.read(4))[0];face_off1a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offa = unpack("<f", f.read(4))[0];uvy4_offa = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off1a = unpack("<f", f.read(4))[0];vy4_off1a = unpack("<f", f.read(4))[0];vz_off1a = unpack("<f", f.read(4))[0];face_off1a_ = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off1a = unpack("<f", f.read(4))[0];uvy4_off1a = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_off2a = unpack("<f", f.read(4))[0];vy4_off2a = unpack("<f", f.read(4))[0];vz_off2a = unpack("<f", f.read(4))[0];face_off2a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_off2a = unpack("<f", f.read(4))[0];uvy4_off2a = unpack("<f", f.read(4))[0];f.seek(8,1)
                                                                             offset3h = unpack("<I", f.read(4))[0]
                                                                             if offset3h == 1627553847:
                                                                                 offset3i = unpack("<I", f.read(4))[0]
@@ -352,8 +356,63 @@ def GHG_mesh(f, filepath):
                                                                                     vertexCount3i = unpack("B", f.read(1))[0]//2
                                                                                     flag3i = unpack("B", f.read(1))[0]
                                                                                     if flag3i == 0x6C:
+                                                                                        #0x3F80026100000000
                                                                                         if vertexCount3i == 1:
-                                                                                            pass
+                                                                                            for i in range(1):
+                                                                                                vx4_offb = unpack("<f", f.read(4))[0];vy4_offb = unpack("<f", f.read(4))[0];vz4_offb = unpack("<f", f.read(4))[0];face_off1b = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offb = unpack("<f", f.read(4))[0];uvy4_offb = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                            offset3j = unpack("<I", f.read(4))[0]
+                                                                                            if offset3j == 1627553855:
+                                                                                                offset3k = unpack("<I", f.read(4))[0]
+                                                                                                if offset3k == 13:
+                                                                                                    f.seek(2,1)
+                                                                                                    vertexCount3k = unpack("B", f.read(1))[0]//2
+                                                                                                    flag3k = unpack("B", f.read(1))[0]
+                                                                                                    if flag3k == 0x6C:
+                                                                                                        if vertexCount3k == 1:
+                                                                                                            for i in range(1):
+                                                                                                                vx4_offc = unpack("<f", f.read(4))[0];vy4_offc = unpack("<f", f.read(4))[0];vz4_offc = unpack("<f", f.read(4))[0];face_off1c = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offc = unpack("<f", f.read(4))[0];uvy4_offc = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                                            offset3l = unpack("<I", f.read(4))[0]
+                                                                                                            if offset3l == 1627553863:
+                                                                                                                offset3m = unpack("<I", f.read(4))[0]
+                                                                                                                if offset3m == 65553:
+                                                                                                                    offset3n = unpack("<I", f.read(4))[0]
+                                                                                                                    if offset3n == 1627553867:
+                                                                                                                        offset3o = unpack("<I", f.read(4))[0]
+                                                                                                                        if offset3o == 65551:
+                                                                                                                            f.seek(2,1)
+                                                                                                                            vertexCount3o = unpack("B", f.read(1))[0]//2
+                                                                                                                            flag3o = unpack("B", f.read(1))[0]
+                                                                                                                            if flag3o == 0x6C:
+                                                                                                                                if vertexCount3o == 2:
+                                                                                                                                    for i in range(1):
+                                                                                                                                        vx4_offd = unpack("<f", f.read(4))[0];vy4_offd = unpack("<f", f.read(4))[0];vz4_offd = unpack("<f", f.read(4))[0];face_off1d = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offd = unpack("<f", f.read(4))[0];uvy4_offd = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offe = unpack("<f", f.read(4))[0];vy4_offe = unpack("<f", f.read(4))[0];vz4_offe = unpack("<f", f.read(4))[0];face_off1e = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offe = unpack("<f", f.read(4))[0];uvy4_offe = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                                                                    offset3p = unpack("<I", f.read(4))[0]
+                                                                                                                                    if offset3p == 1627553879:
+                                                                                                                                        offset3q = unpack("<I", f.read(4))[0]
+                                                                                                                                        if offset3q == 1:
+                                                                                                                                            offset3r = unpack("<I", f.read(4))[0]
+                                                                                                                                            if offset3r == 16777473:
+                                                                                                                                                if faceon4_a == 1:
+                                                                                                                                                    if faceon5_a == 1:
+                                                                                                                                                        if faceon6_a == 0:
+                                                                                                                                                            if faceon7_a == 0:
+                                                                                                                                                                if face_off1 == 0:
+                                                                                                                                                                    if face_off == 0:
+                                                                                                                                                                        if face_off1a == 0:
+                                                                                                                                                                            if face_off1a_ == 0:
+                                                                                                                                                                                if face_off2a == 0:
+                                                                                                                                                                                    if face_off1b == 0:
+                                                                                                                                                                                        if face_off1c == 0:
+                                                                                                                                                                                            if face_off1d == 0:
+                                                                                                                                                                                                if face_off1e == 0:
+                                                                                                                                                                                                    pass
+                                                                                                                                                                                    
+                                                                                                                                                                                
+                                                                                                                                                                    
+
+                
+                                                                                                                        
+
 
                             if offset2 == 16777473:
                                 if faceon4_ == 1:
