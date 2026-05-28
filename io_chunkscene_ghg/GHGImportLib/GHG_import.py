@@ -41,6 +41,9 @@ def GHG_mesh(f, filepath):
 
     vertices3pt2a=[]
     faces3pt2a=[]
+
+    vertices3pt2=[]
+    faces3pt2=[]
     
     vertices2pt2=[]
     faces2pt2=[]
@@ -52,6 +55,11 @@ def GHG_mesh(f, filepath):
     fa3=-3
     fb3=-2
     fc3=-1
+
+    fa3a=-4
+    fb3a=-3
+    fc3a=-2
+    fd3a=-1
     
     fa1_=-4
     fb1_=-3
@@ -315,9 +323,30 @@ def GHG_mesh(f, filepath):
                                 f.seek(-128,1)#
                             for i in range(1):
                                 vx4_a = unpack("<f", f.read(4))[0];vy4_a = unpack("<f", f.read(4))[0];vz4_a = unpack("<f", f.read(4))[0];brightness4_a = unpack("<f", f.read(4))[0];uvx4_a = unpack("<f", f.read(4))[0];uvy4_a = unpack("<f", f.read(4))[0];unk4_a = unpack("<f", f.read(4))[0];faceon4_a = unpack("B", f.read(1))[0];valueon4_a = unpack("B", f.read(1))[0];nz4_a = unpack("<h", f.read(2))[0];vx5_a = unpack("<f", f.read(4))[0];vy5_a = unpack("<f", f.read(4))[0];vz5_a = unpack("<f", f.read(4))[0];brightness5_a = unpack("<f", f.read(4))[0];uvx5_a = unpack("<f", f.read(4))[0];uvy5_a = unpack("<f", f.read(4))[0];unk5_a = unpack("<f", f.read(4))[0];faceon5_a = unpack("B", f.read(1))[0];valueon5_a = unpack("B", f.read(1))[0];nz5_a = unpack("<h", f.read(2))[0];vx6_a = unpack("<f", f.read(4))[0];vy6_a = unpack("<f", f.read(4))[0];vz6_a = unpack("<f", f.read(4))[0];brightness6_a = unpack("<f", f.read(4))[0];uvx6_a = unpack("<f", f.read(4))[0];uvy6_a = unpack("<f", f.read(4))[0];unk6_a = unpack("<f", f.read(4))[0];faceon6_a = unpack("B", f.read(1))[0];valueon6_a = unpack("B", f.read(1))[0];nz6_a = unpack("<h", f.read(2))[0];vx7_a = unpack("<f", f.read(4))[0];vy7_a = unpack("<f", f.read(4))[0];vz7_a = unpack("<f", f.read(4))[0];brightness7_a = unpack("<f", f.read(4))[0];uvx7_a = unpack("<f", f.read(4))[0];uvy7_a = unpack("<f", f.read(4))[0];unk7_a = unpack("<f", f.read(4))[0];faceon7_a = unpack("B", f.read(1))[0];valueon7_a = unpack("B", f.read(1))[0];nz7_a = unpack("<h", f.read(2))[0]
+                            for i in range(1):
+                                f.seek(-128,1)
+                            for i in range(1):
+                                vx4_a_ = unpack("<f", f.read(4))[0];vy4_a_ = unpack("<f", f.read(4))[0];vz4_a_ = unpack("<f", f.read(4))[0];brightness4_a_ = unpack("<f", f.read(4))[0];uvx4_a_ = unpack("<f", f.read(4))[0];uvy4_a_ = unpack("<f", f.read(4))[0];unk4_a_ = unpack("<f", f.read(4))[0];faceon4_a_ = unpack("B", f.read(1))[0];valueon4_a_ = unpack("B", f.read(1))[0];nz4_a_ = unpack("<h", f.read(2))[0];vx5_a_ = unpack("<f", f.read(4))[0];vy5_a_ = unpack("<f", f.read(4))[0];vz5_a_ = unpack("<f", f.read(4))[0];brightness5_a_ = unpack("<f", f.read(4))[0];uvx5_a_ = unpack("<f", f.read(4))[0];uvy5_a_ = unpack("<f", f.read(4))[0];unk5_a_ = unpack("<f", f.read(4))[0];faceon5_a_ = unpack("B", f.read(1))[0];valueon5_a_ = unpack("B", f.read(1))[0];nz5_a_ = unpack("<h", f.read(2))[0];vx6_a_ = unpack("<f", f.read(4))[0];vy6_a_ = unpack("<f", f.read(4))[0];vz6_a_ = unpack("<f", f.read(4))[0];brightness6_a_ = unpack("<f", f.read(4))[0];uvx6_a_ = unpack("<f", f.read(4))[0];uvy6_a_ = unpack("<f", f.read(4))[0];unk6_a_ = unpack("<f", f.read(4))[0];faceon6_a_ = unpack("B", f.read(1))[0];valueon6_a_ = unpack("B", f.read(1))[0];nz6_a_ = unpack("<h", f.read(2))[0];vx7_a_ = unpack("<f", f.read(4))[0];vy7_a_ = unpack("<f", f.read(4))[0];vz7_a_ = unpack("<f", f.read(4))[0];brightness7_a_ = unpack("<f", f.read(4))[0];uvx7_a_ = unpack("<f", f.read(4))[0];uvy7_a_ = unpack("<f", f.read(4))[0];unk7_a_ = unpack("<f", f.read(4))[0];faceon7_a_ = unpack("B", f.read(1))[0];valueon7_a_ = unpack("B", f.read(1))[0];nz7_a_ = unpack("<h", f.read(2))[0]
+                            offset4 = unpack("<I", f.read(4))[0]
+                            f.seek(-4,1)
                             offset2 = unpack("<I", f.read(4))[0]
                             f.seek(-4,1)
                             offset3 = unpack("<I", f.read(4))[0]
+                            if offset4 == 1627553811:
+                                offset4a = unpack("<I", f.read(4))[0]
+                                if offset4a == 65540:
+                                    f.seek(2,1)
+                                    vertexCount4a = unpack("B", f.read(1))[0]//2
+                                    flag4a = unpack("B", f.read(1))[0]
+                                    if flag4a == 0x6C:
+                                        if vertexCount4a == 1:
+                                            for i in range(1):
+                                                vx4_offa = unpack("<f", f.read(4))[0];vy4_offa = unpack("<f", f.read(4))[0];vz4_offa = unpack("<f", f.read(4))[0];face_offa = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offa = unpack("<f", f.read(4))[0];uvy4_offa = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                            offset4b = unpack("<I", f.read(4))[0]
+                                            if offset4b == 1627553819:
+                                                offset4c = unpack("<I", f.read(4))[0]
+                                                if offset4c == 2:
+                                                    pass
                             if offset3 == 1627553811:
                                 offset3a = unpack("<I", f.read(4))[0]
                                 if offset3a == 65538:
@@ -423,6 +452,13 @@ def GHG_mesh(f, filepath):
                                                                                                                                                                                                     faces3pt2a.append([1,3,4])
                                                                                                                                                                                                     faces3pt2a.append([3,4,5])
                                                                                                                                                                                                     faces3pt2a.append([5,3,6])
+                                                                                                                                                                                                    faces3pt2a.append([5,6,7])
+                                                                                                                                                                                                    faces3pt2a.append([6,7,8])
+                                                                                                                                                                                                    faces3pt2a.append([6,8,9])
+                                                                                                                                                                                                    faces3pt2a.append([8,9,10])
+                                                                                                                                                                                                    faces3pt2a.append([9,10,11])
+                                                                                                                                                                                                    faces3pt2a.append([9,11,12])
+                                                                                                                                                                                                    faces3pt2a.append([11,12,0])
                                                                                                                                                                                                     
                                                                                                                                                                                     
                                                                                                                                                                                 
@@ -437,7 +473,20 @@ def GHG_mesh(f, filepath):
                                     if faceon5_ == 1:
                                         if faceon6_ == 0:
                                             if faceon7_ == 0:
-                                                pass
+                                                vertices3pt2.append([vx4_,vz4_,vy4_])
+                                                vertices3pt2.append([vx5_,vz5_,vy5_])
+                                                vertices3pt2.append([vx6_,vz6_,vy6_])
+                                                vertices3pt2.append([vx7_,vz7_,vy7_])
+                                                fa3a+=1*4
+                                                fb3a+=1*4
+                                                fc3a+=1*4
+                                                fd3a+=1*4
+                                                faces3pt2.append([fa3a,fb3a,fc3a])
+                                                faces3pt2.append([fb3a,fc3a,fd3a])
+                                                uvs3pt2.append([uvx4_,-uvy4_])
+                                                uvs3pt2.append([uvx5_,-uvy5_])
+                                                uvs3pt2.append([uvx6_,-uvy6_])
+                                                uvs3pt2.append([uvx7_,-uvy7_])
     collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
     bpy.context.scene.collection.children.link(collection)
 
@@ -461,6 +510,11 @@ def GHG_mesh(f, filepath):
     object3pt2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3pt2)
     collection.objects.link(object3pt2)
 
+    mesh3pt2a = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3pt2a.from_pydata(vertices3pt2, [], faces3pt2)
+    object3pt2a = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3pt2a)
+    collection.objects.link(object3pt2a)
+
     uv_tex3 = mesh3.uv_layers.new()
     uv_layer3 = mesh3.uv_layers[0].data
     vert_loops3 = {}
@@ -469,6 +523,15 @@ def GHG_mesh(f, filepath):
     for i, coord in enumerate(uvs3):
         for li in vert_loops3[i]:
             uv_layer3[li].uv = coord
+
+    uv_tex3a = mesh3pt2a.uv_layers.new()
+    uv_layer3a = mesh3pt2a.uv_layers[0].data
+    vert_loops3a = {}
+    for l in mesh3pt2a.loops:
+        vert_loops3a.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs3pt2):
+        for li in vert_loops3a[i]:
+            uv_layer3a[li].uv = coord
     
     #if vertices2_[0:3] == [{-3.069, -3.962, -2.021}, {0.036, 1.975, 0.944}, {4.036, 5.975, 4.944}]:
     #pearl_(filepath)
