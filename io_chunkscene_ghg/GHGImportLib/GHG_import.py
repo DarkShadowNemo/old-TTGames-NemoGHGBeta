@@ -39,6 +39,9 @@ def GHG_mesh(f, filepath):
     vertices3=[]
     faces3=[]
 
+    vertices3pt4a=[]
+    faces3pt4a=[]
+    
     vertices3pt3a=[]
     faces3pt3a=[]
     
@@ -330,6 +333,10 @@ def GHG_mesh(f, filepath):
                                 f.seek(-128,1)
                             for i in range(1):
                                 vx4_a_ = unpack("<f", f.read(4))[0];vy4_a_ = unpack("<f", f.read(4))[0];vz4_a_ = unpack("<f", f.read(4))[0];brightness4_a_ = unpack("<f", f.read(4))[0];uvx4_a_ = unpack("<f", f.read(4))[0];uvy4_a_ = unpack("<f", f.read(4))[0];unk4_a_ = unpack("<f", f.read(4))[0];faceon4_a_ = unpack("B", f.read(1))[0];valueon4_a_ = unpack("B", f.read(1))[0];nz4_a_ = unpack("<h", f.read(2))[0];vx5_a_ = unpack("<f", f.read(4))[0];vy5_a_ = unpack("<f", f.read(4))[0];vz5_a_ = unpack("<f", f.read(4))[0];brightness5_a_ = unpack("<f", f.read(4))[0];uvx5_a_ = unpack("<f", f.read(4))[0];uvy5_a_ = unpack("<f", f.read(4))[0];unk5_a_ = unpack("<f", f.read(4))[0];faceon5_a_ = unpack("B", f.read(1))[0];valueon5_a_ = unpack("B", f.read(1))[0];nz5_a_ = unpack("<h", f.read(2))[0];vx6_a_ = unpack("<f", f.read(4))[0];vy6_a_ = unpack("<f", f.read(4))[0];vz6_a_ = unpack("<f", f.read(4))[0];brightness6_a_ = unpack("<f", f.read(4))[0];uvx6_a_ = unpack("<f", f.read(4))[0];uvy6_a_ = unpack("<f", f.read(4))[0];unk6_a_ = unpack("<f", f.read(4))[0];faceon6_a_ = unpack("B", f.read(1))[0];valueon6_a_ = unpack("B", f.read(1))[0];nz6_a_ = unpack("<h", f.read(2))[0];vx7_a_ = unpack("<f", f.read(4))[0];vy7_a_ = unpack("<f", f.read(4))[0];vz7_a_ = unpack("<f", f.read(4))[0];brightness7_a_ = unpack("<f", f.read(4))[0];uvx7_a_ = unpack("<f", f.read(4))[0];uvy7_a_ = unpack("<f", f.read(4))[0];unk7_a_ = unpack("<f", f.read(4))[0];faceon7_a_ = unpack("B", f.read(1))[0];valueon7_a_ = unpack("B", f.read(1))[0];nz7_a_ = unpack("<h", f.read(2))[0]
+                            for i in range(1):
+                                f.seek(-128,1)
+                            for i in range(1):
+                                vx4_a_a = unpack("<f", f.read(4))[0];vy4_a_a = unpack("<f", f.read(4))[0];vz4_a_a = unpack("<f", f.read(4))[0];brightness4_a_a = unpack("<f", f.read(4))[0];uvx4_a_a = unpack("<f", f.read(4))[0];uvy4_a_a = unpack("<f", f.read(4))[0];unk4_a_a = unpack("<f", f.read(4))[0];faceon4_a_a = unpack("B", f.read(1))[0];valueon4_a_a = unpack("B", f.read(1))[0];nz4_a_a = unpack("<h", f.read(2))[0];vx5_a_a = unpack("<f", f.read(4))[0];vy5_a_a = unpack("<f", f.read(4))[0];vz5_a_a = unpack("<f", f.read(4))[0];brightness5_a_a = unpack("<f", f.read(4))[0];uvx5_a_a = unpack("<f", f.read(4))[0];uvy5_a_a = unpack("<f", f.read(4))[0];unk5_a_a = unpack("<f", f.read(4))[0];faceon5_a_a = unpack("B", f.read(1))[0];valueon5_a_a = unpack("B", f.read(1))[0];nz5_a_a = unpack("<h", f.read(2))[0];vx6_a_a = unpack("<f", f.read(4))[0];vy6_a_a = unpack("<f", f.read(4))[0];vz6_a_a = unpack("<f", f.read(4))[0];brightness6_a_a = unpack("<f", f.read(4))[0];uvx6_a_a = unpack("<f", f.read(4))[0];uvy6_a_a = unpack("<f", f.read(4))[0];unk6_a_a = unpack("<f", f.read(4))[0];faceon6_a_a = unpack("B", f.read(1))[0];valueon6_a_a = unpack("B", f.read(1))[0];nz6_a_a = unpack("<h", f.read(2))[0];vx7_a_a = unpack("<f", f.read(4))[0];vy7_a_a = unpack("<f", f.read(4))[0];vz7_a_a = unpack("<f", f.read(4))[0];brightness7_a_a = unpack("<f", f.read(4))[0];uvx7_a_a = unpack("<f", f.read(4))[0];uvy7_a_a = unpack("<f", f.read(4))[0];unk7_a_a = unpack("<f", f.read(4))[0];faceon7_a_a = unpack("B", f.read(1))[0];valueon7_a_a = unpack("B", f.read(1))[0];nz7_a_a = unpack("<h", f.read(2))[0]
                             offset2 = unpack("<I", f.read(4))[0]
                             f.seek(-4,1)
                             offset3 = unpack("<I", f.read(4))[0]
@@ -425,9 +432,149 @@ def GHG_mesh(f, filepath):
                                                                                                                                                                                                 vertices3pt3a.append([vx4_offcc9,vz4_offcc9,vy4_offcc9])
                                                                                                                                                                                                 faces3pt3a.append([0,1,2])
                                                                                                                                                                                                 faces3pt3a.append([1,2,3])
+                                                                                                                                                                                                faces3pt3a.append([1,3,4])
+                                                                                                                                                                                                faces3pt3a.append([1,4,5])
+                                                                                                                                                                                                faces3pt3a.append([1,5,6])
+                                                                                                                                                                                                faces3pt3a.append([1,6,11])
+                                                                                                                                                                                                faces3pt3a.append([1,11,9])
+                                                                                                                                                                                                faces3pt3a.append([0,1,9])
+                                                                                                                                                                                                faces3pt3a.append([0,9,10])
+                                                                                                                                                                                                faces3pt3a.append([6,11,12])
+                                                                                                                                                                                                faces3pt3a.append([6,12,17])
+                                                                                                                                                                                                faces3pt3a.append([7,8,10])
+                                                                                                                                                                                                faces3pt3a.append([7,9,10])
+                                                                                                                                                                                                faces3pt3a.append([7,9,13])
+                                                                                                                                                                                                faces3pt3a.append([9,11,13])
+                                                                                                                                                                                                faces3pt3a.append([11,12,13])
+                                                                                                                                                                                                faces3pt3a.append([12,13,14])
+                                                                                                                                                                                                faces3pt3a.append([12,14,17])
+                                                                                                                                                                                                faces3pt3a.append([14,17,18])
+                                                                                                                                                                                                faces3pt3a.append([17,18,19])
+                                                                                                                                                                                                faces3pt3a.append([20,21,22])
+                                                                                                                                                                                                faces3pt3a.append([15,21,25])
+                                                                                                                                                                                                faces3pt3a.append([15,21,25])
+                                                                                                                                                                                                faces3pt3a.append([15,21,22])
+                                                                                                                                                                                                faces3pt3a.append([25,15,24])
                                 elif offset3a == 65538:
                                     offset3b = unpack("<I", f.read(4))[0]
-                                    if offset3b == 1627553815:
+                                    if offset3b == 1812103191:
+                                        for i in range(1):
+                                            vx4_offdd = unpack("<f", f.read(4))[0];vy4_offdd = unpack("<f", f.read(4))[0];vz4_offdd = unpack("<f", f.read(4))[0];face_offdd1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offdd1 = unpack("<f", f.read(4))[0];uvy4_offdd1 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offdd_ = unpack("<f", f.read(4))[0];vy4_offdd_ = unpack("<f", f.read(4))[0];vz4_offdd_ = unpack("<f", f.read(4))[0];face_offdd = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offdd = unpack("<f", f.read(4))[0];uvy4_offdd = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                        offset3a_ = unpack("<I", f.read(4))[0]
+                                        if offset3a_ != 1627553819:
+                                            f.seek(-36,1)
+                                            offset3a__ = unpack("<I", f.read(4))[0]
+                                            if offset3a__ == 1627553819:
+                                                
+                                                offset3b_ = unpack("<I", f.read(4))[0]
+                                                if offset3b_ == 4:
+                                                    f.seek(2,1)
+                                                    vertexCount3b_ = unpack("B", f.read(1))[0]//2
+                                                    flag3b_ = unpack("B", f.read(1))[0]
+                                                    if flag3b_ == 0x6C:
+                                                        if vertexCount3b_ == 3:
+                                                            for i in range(1):
+                                                                vx4_offee = unpack("<f", f.read(4))[0];vy4_offee = unpack("<f", f.read(4))[0];vz4_offee = unpack("<f", f.read(4))[0];face_offee1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offee1 = unpack("<f", f.read(4))[0];uvy4_offee1 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offee_ = unpack("<f", f.read(4))[0];vy4_offee_ = unpack("<f", f.read(4))[0];vz4_offee_ = unpack("<f", f.read(4))[0];face_offee = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offee = unpack("<f", f.read(4))[0];uvy4_offee = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offff = unpack("<f", f.read(4))[0];vy4_offff = unpack("<f", f.read(4))[0];vz4_offff = unpack("<f", f.read(4))[0];face_offff1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offff1 = unpack("<f", f.read(4))[0];uvy4_offff1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                            offset3c_a = unpack("<I", f.read(4))[0]
+                                                            if offset3c_a == 1627553835:
+                                                                offset3c_ = unpack("<I", f.read(4))[0]
+                                                                if offset3c_ == 65542:
+                                                                    
+                                                                    f.seek(2,1)
+                                                                    vertexCount3d_ = unpack("B", f.read(1))[0]//2
+                                                                    flag3d_ = unpack("B", f.read(1))[0]
+                                                                    if flag3d_ == 0x6C:
+                                                                        if vertexCount3d_ == 1:
+                                                                            for i in range(1):
+                                                                                vx4_offhh = unpack("<f", f.read(4))[0];vy4_offhh = unpack("<f", f.read(4))[0];vz4_offhh = unpack("<f", f.read(4))[0];face_offhh1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offhh1 = unpack("<f", f.read(4))[0];uvy4_offhh1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                            offset3c_b = unpack("<I", f.read(4))[0]
+                                                                            if offset3c_b == 1627553843:
+                                                                                
+                                                                                offset3d_ = unpack("<I", f.read(4))[0]
+                                                                                if offset3d_ == 8:
+                                                                                    f.seek(2,1)
+                                                                                    vertexCount3d_ = unpack("B", f.read(1))[0]//2
+                                                                                    flag3d_ = unpack("B", f.read(1))[0]
+                                                                                    if flag3d_ == 0x6C:
+                                                                                        if vertexCount3d_ == 1:
+                                                                                            for i in range(1):
+                                                                                                vx4_offhha = unpack("<f", f.read(4))[0];vy4_offhha = unpack("<f", f.read(4))[0];vz4_offhha = unpack("<f", f.read(4))[0];face_offhh1a = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offhh1 = unpack("<f", f.read(4))[0];uvy4_offhh1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                            offset3d_a = unpack("<I", f.read(4))[0]
+                                                                                            if offset3d_a == 1627553851:
+                                                                                                offset3d_aaa = unpack("<I", f.read(4))[0]
+                                                                                                if offset3d_aaa == 65548:
+                                                                                                    f.seek(2,1)
+                                                                                                    vertexCount3e_ = unpack("B", f.read(1))[0]//2
+                                                                                                    flag3e_ = unpack("B", f.read(1))[0]
+                                                                                                    if flag3e_ == 0x6C:
+                                                                                                        if vertexCount3e_ == 1:
+                                                                                                            for i in range(1):
+                                                                                                                vx4_offii = unpack("<f", f.read(4))[0];vy4_offii = unpack("<f", f.read(4))[0];vz4_offii = unpack("<f", f.read(4))[0];face_offii1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offii1 = unpack("<f", f.read(4))[0];uvy4_offii1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                                            offset3f_ = unpack("<I", f.read(4))[0]
+                                                                                                            if offset3f_ == 1627553859:
+                                                                                                                offset3f_aa = unpack("<I", f.read(4))[0]
+                                                                                                                if offset3f_aa == 14:
+                                                                                                                    f.seek(2,1)
+                                                                                                                    vertexCount3i_ = unpack("B", f.read(1))[0]//2
+                                                                                                                    flag3i_ = unpack("B", f.read(1))[0]
+                                                                                                                    if flag3i_ == 0x6C:
+                                                                                                                        if vertexCount3i_ == 3:
+                                                                                                                            for i in range(1):
+                                                                                                                                vx4_offkk = unpack("<f", f.read(4))[0];vy4_offkk = unpack("<f", f.read(4))[0];vz4_offkk = unpack("<f", f.read(4))[0];face_offkk1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offkk1 = unpack("<f", f.read(4))[0];uvy4_offkk1 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offkk_ = unpack("<f", f.read(4))[0];vy4_offkk_ = unpack("<f", f.read(4))[0];vz4_offkk_ = unpack("<f", f.read(4))[0];face_offkk = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offkk = unpack("<f", f.read(4))[0];uvy4_offkk = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offll = unpack("<f", f.read(4))[0];vy4_offll = unpack("<f", f.read(4))[0];vz4_offll = unpack("<f", f.read(4))[0];face_offll1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offll1 = unpack("<f", f.read(4))[0];uvy4_offll1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                                                            offset3k_ = unpack("<I", f.read(4))[0]
+                                                                                                                            print(f.tell())
+                                                                                                                            if offset3k_ == 1627553875:
+                                                                                                                                offset3l_ = unpack("<I", f.read(4))[0]
+                                                                                                                                if offset3l_ == 65556:
+                                                                                                                                    offset3m_ = unpack("<I", f.read(4))[0]
+                                                                                                                                    if offset3m_ == 1627553879:
+                                                                                                                                        offset3n_ = unpack("<I", f.read(4))[0]
+                                                                                                                                        if offset3n_ == 65554:
+                                                                                                                                            f.seek(2,1)
+                                                                                                                                            vertexCount3m_ = unpack("B", f.read(1))[0]//2
+                                                                                                                                            flag3m_ = unpack("B", f.read(1))[0]
+                                                                                                                                            if flag3m_ == 0x6C:
+                                                                                                                                                if vertexCount3m_ == 2:
+                                                                                                                                                    for i in range(1):
+                                                                                                                                                        vx4_offnn = unpack("<f", f.read(4))[0];vy4_offnn = unpack("<f", f.read(4))[0];vz4_offnn = unpack("<f", f.read(4))[0];face_offnn1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offnn1 = unpack("<f", f.read(4))[0];uvy4_offnn1 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offnn_ = unpack("<f", f.read(4))[0];vy4_offnn_ = unpack("<f", f.read(4))[0];vz4_offnn_ = unpack("<f", f.read(4))[0];face_offnn = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offnn = unpack("<f", f.read(4))[0];uvy4_offnn = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                                                                                    offset3n_ = unpack("<I", f.read(4))[0]
+                                                                                                                                                    if offset3n_ == 16777473:
+                                                                                                                                                        if faceon4_a_a == 1:
+                                                                                                                                                            if faceon5_a_a == 1:
+                                                                                                                                                                if faceon6_a_a == 0:
+                                                                                                                                                                    if faceon7_a_a == 0:
+                                                                                                                                                                        if face_offdd1 == 0:
+                                                                                                                                                                            if face_offee1 == 0:
+                                                                                                                                                                                if face_offee1 == 0:
+                                                                                                                                                                                    if face_offee == 0:
+                                                                                                                                                                                        if face_offff1 == 0:
+                                                                                                                                                                                            if face_offhh1 == 0:
+                                                                                                                                                                                                if face_offhh1a == 0:
+                                                                                                                                                                                                    if face_offii1 == 0:
+                                                                                                                                                                                                        if face_offkk1 == 0:
+                                                                                                                                                                                                            if face_offkk == 0:
+                                                                                                                                                                                                                if face_offll1 == 0:
+                                                                                                                                                                                                                    if face_offnn1 == 0:
+                                                                                                                                                                                                                        if face_offnn == 0:
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_a_a,vz4_a_a,vy4_a_a])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx5_a_a,vz5_a_a,vy5_a_a])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx6_a_a,vz6_a_a,vy6_a_a])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx7_a_a,vz7_a_a,vy7_a_a])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offdd,vz4_offdd,vy4_offdd])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offee,vz4_offee,vy4_offee])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offee_,vz4_offee_,vy4_offee_])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offff,vz4_offff,vy4_offff])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offhh,vz4_offhh,vy4_offhh])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offhha,vz4_offhha,vy4_offhha])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offii,vz4_offii,vy4_offii])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offkk,vz4_offkk,vy4_offkk])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offkk_,vz4_offkk_,vy4_offkk_])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offll,vz4_offll,vy4_offll])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offnn,vz4_offnn,vy4_offnn])
+                                                                                                                                                                                                                            vertices3pt4a.append([vx4_offnn_,vz4_offnn_,vy4_offnn_])
+                                                                                                                                                                                                                            faces3pt4a.append([0,1,2])
+                                                                                                                                                                                                                            faces3pt4a.append([1,2,3])
+                                    elif offset3b == 1627553815:
                                         offset3c = unpack("<I", f.read(4))[0]
                                         if offset3c == 65540:
                                             f.seek(2,1)
@@ -590,6 +737,11 @@ def GHG_mesh(f, filepath):
     mesh3pt3.from_pydata(vertices3pt3a, [], faces3pt3a)
     object3pt3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3pt3)
     collection.objects.link(object3pt3)
+
+    mesh3pt4 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3pt4.from_pydata(vertices3pt4a, [], faces3pt4a)
+    object3pt4 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3pt4)
+    collection.objects.link(object3pt4)
 
     mesh3pt2a = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh3pt2a.from_pydata(vertices3pt2, [], faces3pt2)
