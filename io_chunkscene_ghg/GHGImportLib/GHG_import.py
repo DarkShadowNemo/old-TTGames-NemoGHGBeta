@@ -341,12 +341,17 @@ def GHG_mesh(f, filepath):
                                     if flag4a == 0x6C:
                                         if vertexCount4a == 1:
                                             for i in range(1):
-                                                vx4_offa = unpack("<f", f.read(4))[0];vy4_offa = unpack("<f", f.read(4))[0];vz4_offa = unpack("<f", f.read(4))[0];face_offa = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offa = unpack("<f", f.read(4))[0];uvy4_offa = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                vx4_offaa = unpack("<f", f.read(4))[0];vy4_offaa = unpack("<f", f.read(4))[0];vz4_offaa = unpack("<f", f.read(4))[0];face_offaa = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offaa = unpack("<f", f.read(4))[0];uvy4_offaa = unpack("<f", f.read(4))[0];f.seek(8,1)
                                             offset4b = unpack("<I", f.read(4))[0]
                                             if offset4b == 1627553819:
                                                 offset4c = unpack("<I", f.read(4))[0]
                                                 if offset4c == 2:
-                                                    pass
+                                                    f.seek(2,1)
+                                                    vertexCount4c = unpack("B", f.read(1))[0]//2
+                                                    flag4c = unpack("B", f.read(1))[0]
+                                                    if flag4c == 0x6C:
+                                                        if vertexCount4c == 12:
+                                                            vx4_offbb = unpack("<f", f.read(4))[0];vy4_offbb = unpack("<f", f.read(4))[0];vz4_offbb = unpack("<f", f.read(4))[0];face_offbb = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb = unpack("<f", f.read(4))[0];uvy4_offbb = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb1 = unpack("<f", f.read(4))[0]
                             if offset3 == 1627553811:
                                 offset3a = unpack("<I", f.read(4))[0]
                                 if offset3a == 65538:
