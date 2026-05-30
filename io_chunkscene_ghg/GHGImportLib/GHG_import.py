@@ -4,7 +4,7 @@ import math
 import bpy
 import mathutils
 from io import BytesIO as bio
-from .pearl import *
+#from .pearl import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -351,7 +351,22 @@ def GHG_mesh(f, filepath):
                                                     flag4c = unpack("B", f.read(1))[0]
                                                     if flag4c == 0x6C:
                                                         if vertexCount4c == 12:
-                                                            vx4_offbb = unpack("<f", f.read(4))[0];vy4_offbb = unpack("<f", f.read(4))[0];vz4_offbb = unpack("<f", f.read(4))[0];face_offbb = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb = unpack("<f", f.read(4))[0];uvy4_offbb = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb1 = unpack("<f", f.read(4))[0]
+                                                            vx4_offbb = unpack("<f", f.read(4))[0];vy4_offbb = unpack("<f", f.read(4))[0];vz4_offbb = unpack("<f", f.read(4))[0];face_offbb = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb = unpack("<f", f.read(4))[0];uvy4_offbb = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb1 = unpack("<f", f.read(4))[0];vy4_offbb1 = unpack("<f", f.read(4))[0];vz4_offbb1 = unpack("<f", f.read(4))[0];face_offbb1 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb1 = unpack("<f", f.read(4))[0];uvy4_offbb1 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb2 = unpack("<f", f.read(4))[0];vy4_offbb2 = unpack("<f", f.read(4))[0];vz4_offbb2 = unpack("<f", f.read(4))[0];face_offbb2 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb2 = unpack("<f", f.read(4))[0];uvy4_offbb2 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb3 = unpack("<f", f.read(4))[0];vy4_offbb3 = unpack("<f", f.read(4))[0];vz4_offbb3 = unpack("<f", f.read(4))[0];face_offbb3 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb3 = unpack("<f", f.read(4))[0];uvy4_offbb3 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb4 = unpack("<f", f.read(4))[0];vy4_offbb4 = unpack("<f", f.read(4))[0];vz4_offbb4 = unpack("<f", f.read(4))[0];face_offbb4 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb4 = unpack("<f", f.read(4))[0];uvy4_offbb4 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb5 = unpack("<f", f.read(4))[0];vy4_offbb5 = unpack("<f", f.read(4))[0];vz4_offbb5 = unpack("<f", f.read(4))[0];face_offbb5 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb5 = unpack("<f", f.read(4))[0];uvy4_offbb5 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb6 = unpack("<f", f.read(4))[0];vy4_offbb6 = unpack("<f", f.read(4))[0];vz4_offbb6 = unpack("<f", f.read(4))[0];face_offbb6 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb6 = unpack("<f", f.read(4))[0];uvy4_offbb6 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb7 = unpack("<f", f.read(4))[0];vy4_offbb7 = unpack("<f", f.read(4))[0];vz4_offbb7 = unpack("<f", f.read(4))[0];face_offbb7 = unpack("B", f.read(1))[0];f.seek(3,1);vx4_offbb8 = unpack("<f", f.read(4))[0];vy4_offbb8 = unpack("<f", f.read(4))[0];vz4_offbb8 = unpack("<f", f.read(4))[0];face_offbb8 = unpack("B", f.read(1))[0];f.seek(3,1);vx4_offbb9 = unpack("<f", f.read(4))[0];vy4_offbb9 = unpack("<f", f.read(4))[0];vz4_offbb9 = unpack("<f", f.read(4))[0];face_offbb9 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb9 = unpack("<f", f.read(4))[0];uvy4_offbb9 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb10 = unpack("<f", f.read(4))[0];vy4_offbb10 = unpack("<f", f.read(4))[0];vz4_offbb10 = unpack("<f", f.read(4))[0];face_offbb10 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb10 = unpack("<f", f.read(4))[0];uvy4_offbb10 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb11 = unpack("<f", f.read(4))[0];vy4_offbb11 = unpack("<f", f.read(4))[0];vz4_offbb11 = unpack("<f", f.read(4))[0];face_offbb11 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb11 = unpack("<f", f.read(4))[0];uvy4_offbb11 = unpack("<f", f.read(4))[0];f.seek(8,1);vx4_offbb12 = unpack("<f", f.read(4))[0];vy4_offbb12 = unpack("<f", f.read(4))[0];vz4_offbb12 = unpack("<f", f.read(4))[0];face_offbb12 = unpack("B", f.read(1))[0];f.seek(3,1);uvx4_offbb12 = unpack("<f", f.read(4))[0];uvy4_offbb12 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                        offset4d = unpack("<I", f.read(4))[0]
+                                                        if offset4d == 1627553871:
+                                                            offset4e = unpack("<I", f.read(4))[0]
+                                                            if offset4e == 11:
+                                                                offset4f = unpack("<I", f.read(4))[0]
+                                                                if offset4f == 1627553875:
+                                                                    offset4g = unpack("<I", f.read(4))[0]
+                                                                    if offset4g == 13:
+                                                                        f.seek(2,1)
+                                                                        vertexCount4g = unpack("B", f.read(1))[0]//2
+                                                                        flag4g = unpack("B", f.read(1))[0]
+                                                                        if flag4g == 0x6C:
+                                                                            if vertexCount4g == 9:
+                                                                                pass
+                                                                            
                             if offset3 == 1627553811:
                                 offset3a = unpack("<I", f.read(4))[0]
                                 if offset3a == 65538:
