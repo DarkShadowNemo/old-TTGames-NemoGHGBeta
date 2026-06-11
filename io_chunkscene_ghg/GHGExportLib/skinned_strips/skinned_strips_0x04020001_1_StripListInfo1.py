@@ -48,6 +48,8 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
     FileSize36 = 0
     FileSize37 = 0
     FileSize38 = 0
+    FileSize39 = 0
+    FileSize40 = 0
     f.write(pack("<I", FileSize))
     f.write(pack("<I", 0))
     f.write(pack("<I", 0))
@@ -6070,7 +6072,29 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<f", 1))
             f.write(pack("<I", 385875968))
         elif len(mm_mat.vertices) == 15:
-            pass
+            f.write(pack("<I", FileSize39))
+            dsize26 = f.seek(FileSize39,1)
+            f.seek(-4,1)
+            f.write(pack("<I", dsize26-4+0))
+            f.write(pack("<I", modelID))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", FileSize40))
+            dsize27 = f.seek(FileSize40,1)
+            f.seek(-4,1)
+            f.write(pack("<I", dsize27))
+            f.write(pack("<I", 268894208))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 16777480))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 805830660))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 268435456))
+            f.write(pack("<I", 1812201496))
+            f.write(pack("<I", 1342177280))
+            f.write(pack("<I", 640))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+            
         modelID+=1
     if len(mm_mat.vertices) == 3:
         f.seek(-480,1)
