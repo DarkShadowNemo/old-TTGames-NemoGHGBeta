@@ -32,6 +32,7 @@ def GHG_mesh(f, filepath):
     vertices2pt2=[]
     vertices2_=[]
     faces2=[]
+    uvs2=[]
 
     vertices1=[]
     faces1=[]
@@ -70,9 +71,9 @@ def GHG_mesh(f, filepath):
     fc3a=-2
     fd3a=-1
     
-    fa1_=-4
-    fb1_=-3
-    fc1_=-2
+    fa1_=-1
+    fb1_=0
+    fc1_=1
     
     fa1pt2=-4
     fb1pt2=-3
@@ -85,6 +86,8 @@ def GHG_mesh(f, filepath):
 
     uvs3=[]
     uvs3pt2=[]
+
+    ii=1
 
     coll = bpy.context.collection
     skel = bpy.data.armatures.new('GHG Skeleton')
@@ -255,55 +258,150 @@ def GHG_mesh(f, filepath):
                         elif VertexCount == 2:
                             pass
                         elif VertexCount == 3:
-                            for i in range(VertexCount):
-                                vx = unpack("<h", f.read(2))[0] / 4096
-                                vy = unpack("<h", f.read(2))[0] / 4096
-                                vz = unpack("<h", f.read(2))[0] / 4096
-                                fn = unpack("<h", f.read(2))[0] / 4096
-                                ux = unpack("<h", f.read(2))[0] / 4096
-                                uy = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2.append([vx,vz,vy])
-                            for i in range(VertexCount-2):
-                                fa1+=1*3
-                                fb1+=1*3
-                                fc1+=1*3
-                                faces2.append([fa1,fb1,fc1])
-                        elif VertexCount:
-                            for i in range(VertexCount):
-                                vx_ = unpack("<h", f.read(2))[0] / 4096
-                                vy_ = unpack("<h", f.read(2))[0] / 4096
-                                vz_ = unpack("<h", f.read(2))[0] / 4096
-                                fn_ = unpack("<h", f.read(2))[0] / 4096
-                                ux_ = unpack("<h", f.read(2))[0] / 4096
-                                uy_ = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2pt2.append([vx_,vz_,vy_])
-                            for i in range(VertexCount):
-                                f.seek(-16,1)
-                            for i in range(VertexCount):
-                                vx1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fa1_
-                                vy1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fb1_
-                                vz1 = unpack("<h", f.read(2))[0] / 4096 / 10 + fc1_
+                            for j in range(1):
+                                vx1 = unpack("<h", f.read(2))[0] / 4096
+                                vy1 = unpack("<h", f.read(2))[0] / 4096
+                                vz1 = unpack("<h", f.read(2))[0] / 4096
                                 fn1 = unpack("<h", f.read(2))[0] / 4096
                                 ux1 = unpack("<h", f.read(2))[0] / 4096
                                 uy1 = unpack("<h", f.read(2))[0] / 4096
-                                vx2 = vx1
-                                vy2 = vy1
-                                vz2 = vz1
                                 f.seek(4,1)
-                                fa1_+=1*4
-                                fb1_+=1*4
-                                fc1_+=1*4
-                                idx1+=1
-                                
-                                if idx1 == 1:
-                                    vertices2_.append(set([round(vx1,3),round(vz1,3),round(vy1,3)]))
-                                    
-                                elif idx1 == 2:
-                                    vertices2_.append(set([round(vx1,3),round(vz1,3),round(vy1,3)]))
-                                elif idx1 == 3:
-                                    vertices2_.append(set([round(vx1,3),round(vz1,3),round(vy1,3)]))
+                                vx2 = unpack("<h", f.read(2))[0] / 4096
+                                vy2 = unpack("<h", f.read(2))[0] / 4096
+                                vz2 = unpack("<h", f.read(2))[0] / 4096
+                                fn2 = unpack("<h", f.read(2))[0] / 4096
+                                ux2 = unpack("<h", f.read(2))[0] / 4096
+                                uy2 = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                vx3 = unpack("<h", f.read(2))[0] / 4096
+                                vy3 = unpack("<h", f.read(2))[0] / 4096
+                                vz3 = unpack("<h", f.read(2))[0] / 4096
+                                fn3 = unpack("<h", f.read(2))[0] / 4096
+                                ux3 = unpack("<h", f.read(2))[0] / 4096
+                                uy3 = unpack("<h", f.read(2))[0] / 4096
+                                f.seek(4,1)
+                                vertices2.append([vx1,vz1,vy1])
+                                vertices2.append([vx2,vz2,vy2])
+                                vertices2.append([vx3,vz3,vy3])
+                                uvs2.append([ux1,-uy1])
+                                uvs2.append([ux2,-uy2])
+                                uvs2.append([ux3,-uy3])
+                            f.seek(78,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            flagsFace = unpack("B", f.read(1))[0]
+                            if flagsFace == 0x6E:
+                                if facecount == 1:
+                                    id1 = unpack("B", f.read(1))[0]
+                                    if id1 == 9:
+                                        faceA = unpack("B", f.read(1))[0]&0x0F
+                                        faceB = unpack("B", f.read(1))[0]&0x0F
+                                        faceC = unpack("B", f.read(1))[0]&0x0F
+                                        faceA//=3
+                                        faceB//=3
+                                        faceC//=3
+                                        if faceA == 0 and faceB == 0 and faceC == 0:
+                                            fa1+=1*3
+                                            faces2.append([fa1,fa1,fa1])
+                                        elif faceA == 1 and faceB == 1 and faceC == 1:
+                                            fb1+=1*3
+                                            faces2.append([fb1,fb1,fb1])
+                                        elif faceA == 2 and faceB == 2 and faceC == 2:
+                                            fc1+=1*3
+                                            faces2.append([fc1,fc1,fc1])
+                                        elif faceA == 0 and faceB == 1 and faceC == 1:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            faces2.append([fa1,fb1,fb1])
+                                        elif faceA == 1 and faceB == 1 and faceC == 0:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            faces2.append([fa1,fb1,fb1])
+                                        elif faceA == 0 and faceB == 1 and faceC == 0:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            faces2.append([fa1,fb1,fa1])
+                                        elif faceA == 0 and faceB == 2 and faceC == 0:
+                                            fa1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fc1,fa1])
+                                        elif faceA == 1 and faceB == 0 and faceC == 0:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            faces2.append([fa1,fb1,fb1])
+                                        elif faceA == 2 and faceB == 0 and faceC == 0:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            faces2.append([fc1,fa1,fb1])
+                                        elif faceA == 2 and faceB == 2 and faceC == 0:
+                                            fa1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fc1,fc1])
+                                        elif faceA == 0 and faceB == 2 and faceC == 2:
+                                            fa1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fc1,fc1])
+                                        elif faceA == 0 and faceB == 0 and faceC == 1:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            faces2.append([fa1,fa1,fb1])
+                                        elif faceA == 0 and faceB == 0 and faceC == 2:
+                                            fa1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fa1,fc1])
+                                        elif faceA == 1 and faceB == 2 and faceC == 2:
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fb1,fc1,fc1])
+                                        elif faceA == 2 and faceB == 0 and faceC == 2:
+                                            fa1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fc1,fc1])
+                                        elif faceA == 1 and faceB == 0 and faceC == 1:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            faces2.append([fa1,fb1,fb1])
+                                        elif faceA == 1 and faceB == 2 and faceC == 1:
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fb1,fc1,fb1])
+                                        elif faceA == 2 and faceB == 2 and faceC == 1:
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fc1,fc1,fb1])
+                                        elif faceA == 2 and faceB == 2 and faceC == 0:
+                                            fa1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fc1,fc1,fa1])
+                                        elif faceA == 0 and faceB == 1 and faceC == 2:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fb1,fc1])
+                                        elif faceA == 2 and faceB == 0 and faceC == 1:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fb1,fc1])
+                                        elif faceA == 1 and faceB == 0 and faceC == 2:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fb1,fc1])
+                                        elif faceA == 1 and faceB == 2 and faceC == 0:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fb1,fc1])
+                                        elif faceA == 2 and faceB == 1 and faceC == 0:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fb1,fc1])
+                                        elif faceA == 0 and faceB == 2 and faceC == 1:
+                                            fa1+=1*3
+                                            fb1+=1*3
+                                            fc1+=1*3
+                                            faces2.append([fa1,fb1,fc1])
 
                 elif Chunk == b"\x04\x02\x00\x01":
                     f.seek(2,1)
@@ -311,7 +409,22 @@ def GHG_mesh(f, filepath):
                     flag001 = unpack("B", f.read(1))[0]
                     if flag001 == 0x6C:
                         if stripcount == 0:
-                            pass
+                            for j in range(stripcount):
+                                vx = unpack("<f", f.read(4))[0]
+                                vy = unpack("<f", f.read(4))[0]
+                                vz = unpack("<f", f.read(4))[0]
+                                brightness = unpack("<f", f.read(4))[0]
+                                uvx = unpack("<f", f.read(4))[0]
+                                uvy = unpack("<f", f.read(4))[0]
+                                unk = unpack("<f", f.read(4))[0]
+                                faceon=unpack("B", f.read(1))[0]!=1
+                                values=unpack("B", f.read(1))[0]
+                                nz = unpack("<h", f.read(2))[0]
+                                fa__1+=1
+                                fb__1+=1
+                                fc__1+=1
+                                if faceon < 1:
+                                    faces2.append([j-j-faceon+faceon+1+fa__1-1-j+j-j+j%3])
                         elif stripcount == 1:
                             pass
                         elif stripcount == 2:
@@ -677,6 +790,11 @@ def GHG_mesh(f, filepath):
                                                                                                                                                                                                                     vertices3pt5a.append([vx4_offuuuuuummmm,vz4_offuuuuuummmm,vy4_offuuuuuummmm])
                                                                                                                                                                                                                     faces3pt5a.append([0,1,2])
                                                                                                                                                                                                                     faces3pt5a.append([1,2,3])
+                                                                                                                                                                                                                    faces3pt5a.append([1,3,4])
+                                                                                                                                                                                                                    faces3pt5a.append([3,4,11])
+                                                                                                                                                                                                                    faces3pt5a.append([11,7,4])
+                                                                                                                                                                                                                    faces3pt5a.append([13,11,7])
+                                                                                                                                                                                                                    faces3pt5a.append([13,11,12])
                                                                                                                                                                     
                                                                                                                                                                 
                                                                                                                                                             
@@ -832,9 +950,18 @@ def GHG_mesh(f, filepath):
     mesh2.from_pydata(vertices2, [], faces2)
     object2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2)
     collection.objects.link(object2)
+
+    uv_tex2 = mesh2.uv_layers.new()
+    uv_layer2 = mesh2.uv_layers[0].data
+    vert_loops2 = {}
+    for l in mesh2.loops:
+        vert_loops2.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs2):
+        for li in vert_loops2[i]:
+            uv_layer2[li].uv = coord
     
     mesh2_ = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh2_.from_pydata(vertices2pt2, [], [])
+    mesh2_.from_pydata(vertices2pt2, [], faces2pt2)
     object2_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2_)
     collection.objects.link(object2_)
 
