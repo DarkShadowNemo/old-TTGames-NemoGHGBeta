@@ -36,6 +36,7 @@ def GHG_mesh(f, filepath):
 
     vertices1=[]
     faces1=[]
+    uvs1=[]
 
     vertices3=[]
     faces3=[]
@@ -245,6 +246,24 @@ def GHG_mesh(f, filepath):
                                 fc+=1
                                 if faceon > 0:
                                     faces1.append([j+j+faceon-faceon-1+fa-j-j-1+j%2,j-j+faceon-faceon+1+fb-2-1+j-j-j%2,j+faceon-faceon+fc-j+2-4])
+                            Chunk_ = unpack("<H", f.read(2))[0]
+                            if Chunk_ == 1:
+                                f.seek(4,1)
+                                uvcount = unpack("B", f.read(1))[0]
+                                uvflag = unpack("B", f.read(1))[0]
+                                if uvflag == 0x6D:
+                                    if uvcount == 0:
+                                        pass
+                                    elif uvcount == 1:
+                                        pass
+                                    elif uvcount == 2:
+                                        pass
+                                    elif uvcount:
+                                        for i in range(uvcount):
+                                            uvx = unpack("<h", f.read(2))[0]/4096
+                                            uvy = unpack("<h", f.read(2))[0]/4096
+                                            f.seek(4,1)
+                                            uvs1.append([uvx,-uvy])
                         
                 elif Chunk == b"\x03\x02\x00\x01":
                     f.seek(2,1)
@@ -402,6 +421,8 @@ def GHG_mesh(f, filepath):
                                             fb1+=1*3
                                             fc1+=1*3
                                             faces2.append([fa1,fb1,fc1])
+                        elif VertexCount == 4:
+                            pass
 
                 elif Chunk == b"\x04\x02\x00\x01":
                     f.seek(2,1)
@@ -409,22 +430,7 @@ def GHG_mesh(f, filepath):
                     flag001 = unpack("B", f.read(1))[0]
                     if flag001 == 0x6C:
                         if stripcount == 0:
-                            for j in range(stripcount):
-                                vx = unpack("<f", f.read(4))[0]
-                                vy = unpack("<f", f.read(4))[0]
-                                vz = unpack("<f", f.read(4))[0]
-                                brightness = unpack("<f", f.read(4))[0]
-                                uvx = unpack("<f", f.read(4))[0]
-                                uvy = unpack("<f", f.read(4))[0]
-                                unk = unpack("<f", f.read(4))[0]
-                                faceon=unpack("B", f.read(1))[0]!=1
-                                values=unpack("B", f.read(1))[0]
-                                nz = unpack("<h", f.read(2))[0]
-                                fa__1+=1
-                                fb__1+=1
-                                fc__1+=1
-                                if faceon < 1:
-                                    faces2.append([j-j-faceon+faceon+1+fa__1-1-j+j-j+j%3])
+                            pass
                         elif stripcount == 1:
                             pass
                         elif stripcount == 2:
@@ -457,6 +463,10 @@ def GHG_mesh(f, filepath):
                                 f.seek(-128,1)
                             for i in range(1):
                                 vx4_a_a_ = unpack("<f", f.read(4))[0];vy4_a_a_ = unpack("<f", f.read(4))[0];vz4_a_a_ = unpack("<f", f.read(4))[0];brightness4_a_a_ = unpack("<f", f.read(4))[0];uvx4_a_a_ = unpack("<f", f.read(4))[0];uvy4_a_a_ = unpack("<f", f.read(4))[0];unk4_a_a_ = unpack("<f", f.read(4))[0];faceon4_a_a_ = unpack("B", f.read(1))[0];valueon4_a_a_ = unpack("B", f.read(1))[0];nz4_a_a_ = unpack("<h", f.read(2))[0];vx5_a_a_ = unpack("<f", f.read(4))[0];vy5_a_a_ = unpack("<f", f.read(4))[0];vz5_a_a_ = unpack("<f", f.read(4))[0];brightness5_a_a_ = unpack("<f", f.read(4))[0];uvx5_a_a_ = unpack("<f", f.read(4))[0];uvy5_a_a_ = unpack("<f", f.read(4))[0];unk5_a_a_ = unpack("<f", f.read(4))[0];faceon5_a_a_ = unpack("B", f.read(1))[0];valueon5_a_a_ = unpack("B", f.read(1))[0];nz5_a_a_ = unpack("<h", f.read(2))[0];vx6_a_a_ = unpack("<f", f.read(4))[0];vy6_a_a_ = unpack("<f", f.read(4))[0];vz6_a_a_ = unpack("<f", f.read(4))[0];brightness6_a_a_ = unpack("<f", f.read(4))[0];uvx6_a_a_ = unpack("<f", f.read(4))[0];uvy6_a_a_ = unpack("<f", f.read(4))[0];unk6_a_a_ = unpack("<f", f.read(4))[0];faceon6_a_a_ = unpack("B", f.read(1))[0];valueon6_a_a_ = unpack("B", f.read(1))[0];nz6_a_a_ = unpack("<h", f.read(2))[0];vx7_a_a_ = unpack("<f", f.read(4))[0];vy7_a_a_ = unpack("<f", f.read(4))[0];vz7_a_a_ = unpack("<f", f.read(4))[0];brightness7_a_a_ = unpack("<f", f.read(4))[0];uvx7_a_a_ = unpack("<f", f.read(4))[0];uvy7_a_a_ = unpack("<f", f.read(4))[0];unk7_a_a_ = unpack("<f", f.read(4))[0];faceon7_a_a_ = unpack("B", f.read(1))[0];valueon7_a_a_ = unpack("B", f.read(1))[0];nz7_a_a_ = unpack("<h", f.read(2))[0]
+                            for i in range(1):
+                                f.seek(-128,1)
+                            for i in range(1):
+                                vx4_a_a_a = unpack("<f", f.read(4))[0];vy4_a_a_a = unpack("<f", f.read(4))[0];;vz4_a_a_a = unpack("<f", f.read(4))[0];;brightness4_a_a_a = unpack("<f", f.read(4))[0];uvx4_a_a_a = unpack("<f", f.read(4))[0];uvy4_a_a_a = unpack("<f", f.read(4))[0];unk4_a_a_a = unpack("<f", f.read(4))[0];faceon4_a_a_a = unpack("B", f.read(1))[0];valueon4_a_a_a = unpack("B", f.read(1))[0];nz4_a_a_ = unpack("<h", f.read(2))[0];vx5_a_a_a = unpack("<f", f.read(4))[0];vy5_a_a_a = unpack("<f", f.read(4))[0];vz5_a_a_ = unpack("<f", f.read(4))[0];brightness5_a_a_a = unpack("<f", f.read(4))[0];uvx5_a_a_a = unpack("<f", f.read(4))[0];uvy5_a_a_a = unpack("<f", f.read(4))[0];unk5_a_a_a = unpack("<f", f.read(4))[0];faceon5_a_a_a = unpack("B", f.read(1))[0];valueon5_a_a_a = unpack("B", f.read(1))[0];nz5_a_a_a = unpack("<h", f.read(2))[0];vx6_a_a_a = unpack("<f", f.read(4))[0];vy6_a_a_a = unpack("<f", f.read(4))[0];vz6_a_a_a = unpack("<f", f.read(4))[0];brightness6_a_a_a = unpack("<f", f.read(4))[0];uvx6_a_a_a = unpack("<f", f.read(4))[0];uvy6_a_a_a = unpack("<f", f.read(4))[0];unk6_a_a_a = unpack("<f", f.read(4))[0];faceon6_a_a_a = unpack("B", f.read(1))[0];valueon6_a_a_a = unpack("B", f.read(1))[0];nz6_a_a_a = unpack("<h", f.read(2))[0];vx7_a_a_a = unpack("<f", f.read(4))[0];vy7_a_a_a = unpack("<f", f.read(4))[0];vz7_a_a_a = unpack("<f", f.read(4))[0];brightness7_a_a_a = unpack("<f", f.read(4))[0];uvx7_a_a_a = unpack("<f", f.read(4))[0];uvy7_a_a_a = unpack("<f", f.read(4))[0];faceon7_a_a_a = unpack("B", f.read(1))[0];valueon7_a_a_a = unpack("B", f.read(1))[0];nz7_a_a_a = unpack("<h", f.read(2))[0]
                             offset2 = unpack("<I", f.read(4))[0]
                             f.seek(-4,1)
                             offset3 = unpack("<I", f.read(4))[0]
@@ -795,6 +805,15 @@ def GHG_mesh(f, filepath):
                                                                                                                                                                                                                     faces3pt5a.append([11,7,4])
                                                                                                                                                                                                                     faces3pt5a.append([13,11,7])
                                                                                                                                                                                                                     faces3pt5a.append([13,11,12])
+                                                                                                                                                                                                                    faces3pt5a.append([11,3,10])
+                                                                                                                                                                                                                    faces3pt5a.append([11,10,12])
+                                                                                                                                                                                                                    faces3pt5a.append([3,10,9])
+                                                                                                                                                                                                                    faces3pt5a.append([3,9,8])
+                                                                                                                                                                                                                    faces3pt5a.append([8,9,0])
+                                                                                                                                                                                                                    faces3pt5a.append([14,12,10])
+                                                                                                                                                                                                                    faces3pt5a.append([14,7,4])
+                                                                                                                                                                                                                    faces3pt5a.append([0,15,17])
+                                                                                                                                                                                                                    faces3pt5a.append([15,16,17])
                                                                                                                                                                     
                                                                                                                                                                 
                                                                                                                                                             
