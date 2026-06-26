@@ -41,6 +41,9 @@ def GHG_mesh(f, filepath):
     vertices3=[]
     faces3=[]
 
+    vertices3pt6a=[]
+    faces3pt6a=[]
+
     vertices3pt5a=[]
     faces3pt5a=[]
     
@@ -466,21 +469,99 @@ def GHG_mesh(f, filepath):
                             for i in range(1):
                                 f.seek(-128,1)
                             for i in range(1):
-                                vx4_a_a_a = unpack("<f", f.read(4))[0];vy4_a_a_a = unpack("<f", f.read(4))[0];vz4_a_a_a = unpack("<f", f.read(4))[0];brightness4_a_a_a = unpack("<f", f.read(4))[0];uvx4_a_a_a = unpack("<f", f.read(4))[0];uvy4_a_a_a = unpack("<f", f.read(4))[0];unk4_a_a_a = unpack("<f", f.read(4))[0];faceon4_a_a_a = unpack("B", f.read(1))[0];valueon4_a_a_a = unpack("B", f.read(1))[0];nz4_a_a_ = unpack("<h", f.read(2))[0];vx5_a_a_a = unpack("<f", f.read(4))[0];vy5_a_a_a = unpack("<f", f.read(4))[0];vz5_a_a_ = unpack("<f", f.read(4))[0];brightness5_a_a_a = unpack("<f", f.read(4))[0];uvx5_a_a_a = unpack("<f", f.read(4))[0];uvy5_a_a_a = unpack("<f", f.read(4))[0];unk5_a_a_a = unpack("<f", f.read(4))[0];faceon5_a_a_a = unpack("B", f.read(1))[0];valueon5_a_a_a = unpack("B", f.read(1))[0];nz5_a_a_a = unpack("<h", f.read(2))[0];vx6_a_a_a = unpack("<f", f.read(4))[0];vy6_a_a_a = unpack("<f", f.read(4))[0];vz6_a_a_a = unpack("<f", f.read(4))[0];brightness6_a_a_a = unpack("<f", f.read(4))[0];uvx6_a_a_a = unpack("<f", f.read(4))[0];uvy6_a_a_a = unpack("<f", f.read(4))[0];unk6_a_a_a = unpack("<f", f.read(4))[0];faceon6_a_a_a = unpack("B", f.read(1))[0];valueon6_a_a_a = unpack("B", f.read(1))[0];nz6_a_a_a = unpack("<h", f.read(2))[0];vx7_a_a_a = unpack("<f", f.read(4))[0];vy7_a_a_a = unpack("<f", f.read(4))[0];vz7_a_a_a = unpack("<f", f.read(4))[0];brightness7_a_a_a = unpack("<f", f.read(4))[0];uvx7_a_a_a = unpack("<f", f.read(4))[0];uvy7_a_a_a = unpack("<f", f.read(4))[0];faceon7_a_a_a = unpack("B", f.read(1))[0];valueon7_a_a_a = unpack("B", f.read(1))[0];nz7_a_a_a = unpack("<h", f.read(2))[0]
+                                vx4_a_a_a = unpack("<f", f.read(4))[0];vy4_a_a_a = unpack("<f", f.read(4))[0];vz4_a_a_a = unpack("<f", f.read(4))[0];brightness4_a_a_a = unpack("<f", f.read(4))[0];uvx4_a_a_a = unpack("<f", f.read(4))[0];uvy4_a_a_a = unpack("<f", f.read(4))[0];unk4_a_a_a = unpack("<f", f.read(4))[0];faceon4_a_a_a = unpack("B", f.read(1))[0];valueon4_a_a_a = unpack("B", f.read(1))[0];nz4_a_a_ = unpack("<h", f.read(2))[0];vx5_a_a_a = unpack("<f", f.read(4))[0];vy5_a_a_a = unpack("<f", f.read(4))[0];vz5_a_a_a = unpack("<f", f.read(4))[0];brightness5_a_a_a = unpack("<f", f.read(4))[0];uvx5_a_a_a = unpack("<f", f.read(4))[0];uvy5_a_a_a = unpack("<f", f.read(4))[0];unk5_a_a_a = unpack("<f", f.read(4))[0];faceon5_a_a_a = unpack("B", f.read(1))[0];valueon5_a_a_a = unpack("B", f.read(1))[0];nz5_a_a_a = unpack("<h", f.read(2))[0];vx6_a_a_a = unpack("<f", f.read(4))[0];vy6_a_a_a = unpack("<f", f.read(4))[0];vz6_a_a_a = unpack("<f", f.read(4))[0];brightness6_a_a_a = unpack("<f", f.read(4))[0];uvx6_a_a_a = unpack("<f", f.read(4))[0];uvy6_a_a_a = unpack("<f", f.read(4))[0];unk6_a_a_a = unpack("<f", f.read(4))[0];faceon6_a_a_a = unpack("B", f.read(1))[0];valueon6_a_a_a = unpack("B", f.read(1))[0];nz6_a_a_a = unpack("<h", f.read(2))[0];vx7_a_a_a = unpack("<f", f.read(4))[0];vy7_a_a_a = unpack("<f", f.read(4))[0];vz7_a_a_a = unpack("<f", f.read(4))[0];brightness7_a_a_a = unpack("<f", f.read(4))[0];uvx7_a_a_a = unpack("<f", f.read(4))[0];uvy7_a_a_a = unpack("<f", f.read(4))[0];faceon7_a_a_a = unpack("B", f.read(1))[0];valueon7_a_a_a = unpack("B", f.read(1))[0];nz7_a_a_a = unpack("<h", f.read(2))[0]
                             offset2 = unpack("<I", f.read(4))[0]
                             f.seek(-4,1)
                             offset3 = unpack("<I", f.read(4))[0]
-                            if offset3 == 1627553811:
-                                offset3a = unpack("<I", f.read(4))[0]
-                                if offset3a == 65539:
-                                    f.seek(2,1)
-                                    himCount1 = unpack("B", f.read(1))[0]//2
-                                    himFlag1 = unpack("B", f.read(1))[0]
-                                    if himFlag1 == 0x6C:
-                                        if himCount1 == 17:
-                                            for i in range(1):
-                                                himvx1 = unpack("<f", f.read(4))[0];himvy1 = unpack("<f", f.read(4))[0];himvz1 = unpack("<f", f.read(4))[0];himfaceoff1 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx1 = unpack("<f", f.read(4))[0];himuvy1 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx2 = unpack("<f", f.read(4))[0];himvy2 = unpack("<f", f.read(4))[0];himvz2 = unpack("<f", f.read(4))[0];himfaceoff2 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx2 = unpack("<f", f.read(4))[0];himuvy2 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx3 = unpack("<f", f.read(4))[0];himvy3 = unpack("<f", f.read(4))[0];himvz3 = unpack("<f", f.read(4))[0];himfaceoff3 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx3 = unpack("<f", f.read(4))[0];himuvy3 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx4 = unpack("<f", f.read(4))[0];himvy4 = unpack("<f", f.read(4))[0];himvz4 = unpack("<f", f.read(4))[0];himfaceoff4 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx4 = unpack("<f", f.read(4))[0];himuvy4 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx5 = unpack("<f", f.read(4))[0];himvy5 = unpack("<f", f.read(4))[0];himvz5 = unpack("<f", f.read(4))[0];himfaceoff5 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx5 = unpack("<f", f.read(4))[0];himuvy5 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx6 = unpack("<f", f.read(4))[0];himvy6 = unpack("<f", f.read(4))[0];himvz6 = unpack("<f", f.read(4))[0];himfaceoff6 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx6 = unpack("<f", f.read(4))[0];himuvy6 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx7 = unpack("<f", f.read(4))[0];himvy7 = unpack("<f", f.read(4))[0];himvz7 = unpack("<f", f.read(4))[0];himfaceoff7 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx7 = unpack("<f", f.read(4))[0];himuvy7 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx8 = unpack("<f", f.read(4))[0];himvy8 = unpack("<f", f.read(4))[0];himvz8 = unpack("<f", f.read(4))[0];himfaceoff8 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx8 = unpack("<f", f.read(4))[0];himuvy8 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx9 = unpack("<f", f.read(4))[0];himvy9 = unpack("<f", f.read(4))[0];himvz9 = unpack("<f", f.read(4))[0];himfaceoff9 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx9 = unpack("<f", f.read(4))[0];himuvy9 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx10 = unpack("<f", f.read(4))[0];himvy10 = unpack("<f", f.read(4))[0];himvz10 = unpack("<f", f.read(4))[0];himfaceoff10 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx10 = unpack("<f", f.read(4))[0];himuvy10 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx11 = unpack("<f", f.read(4))[0];himvy11 = unpack("<f", f.read(4))[0];himvz11 = unpack("<f", f.read(4))[0];himfaceoff11 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx11 = unpack("<f", f.read(4))[0];himuvy11 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx12 = unpack("<f", f.read(4))[0];himvy12 = unpack("<f", f.read(4))[0];himvz12 = unpack("<f", f.read(4))[0];himfaceoff12 = unpack("<f", f.read(4))[0];f.seek(3,1);himuvx12 = unpack("<f", f.read(4))[0];himuvy12 = unpack("<f", f.read(4))[0];f.seek(8,1)
-                                elif offset3a == 65540:
+                            f.seek(-4,1)
+                            offset4 = unpack("<I", f.read(4))[0]
+                            if offset4 != 1627553811:
+                               offset4a_ = unpack("<I", f.read(4))[0]
+                               if offset4a_ == 1627553811:
+                                   offset3aa = unpack("<I", f.read(4))[0]
+                                   if offset3aa == 65539:
+                                       f.seek(2,1)
+                                       himCount1 = unpack("B", f.read(1))[0]//2
+                                       himFlag1 = unpack("B", f.read(1))[0]
+                                       if himFlag1 == 0x6C:
+                                           if himCount1 == 17:
+                                               for i in range(1):
+                                                   himvx1 = unpack("<f", f.read(4))[0];himvy1 = unpack("<f", f.read(4))[0];himvz1 = unpack("<f", f.read(4))[0];himfaceoff1 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx1 = unpack("<f", f.read(4))[0];himuvy1 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx2 = unpack("<f", f.read(4))[0];himvy2 = unpack("<f", f.read(4))[0];himvz2 = unpack("<f", f.read(4))[0];himfaceoff2 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx2 = unpack("<f", f.read(4))[0];himuvy2 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx3 = unpack("<f", f.read(4))[0];himvy3 = unpack("<f", f.read(4))[0];himvz3 = unpack("<f", f.read(4))[0];himfaceoff3 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx3 = unpack("<f", f.read(4))[0];himuvy3 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx4 = unpack("<f", f.read(4))[0];himvy4 = unpack("<f", f.read(4))[0];himvz4 = unpack("<f", f.read(4))[0];himfaceoff4 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx4 = unpack("<f", f.read(4))[0];himuvy4 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx5 = unpack("<f", f.read(4))[0];himvy5 = unpack("<f", f.read(4))[0];himvz5 = unpack("<f", f.read(4))[0];himfaceoff5 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx5 = unpack("<f", f.read(4))[0];himuvy5 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx6 = unpack("<f", f.read(4))[0];himvy6 = unpack("<f", f.read(4))[0];himvz6 = unpack("<f", f.read(4))[0];himfaceoff6 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx6 = unpack("<f", f.read(4))[0];himuvy6 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx7 = unpack("<f", f.read(4))[0];himvy7 = unpack("<f", f.read(4))[0];himvz7 = unpack("<f", f.read(4))[0];himfaceoff7 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx7 = unpack("<f", f.read(4))[0];himuvy7 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx8 = unpack("<f", f.read(4))[0];himvy8 = unpack("<f", f.read(4))[0];himvz8 = unpack("<f", f.read(4))[0];himfaceoff8 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx8 = unpack("<f", f.read(4))[0];himuvy8 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx9 = unpack("<f", f.read(4))[0];himvy9 = unpack("<f", f.read(4))[0];himvz9 = unpack("<f", f.read(4))[0];himfaceoff9 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx9 = unpack("<f", f.read(4))[0];himuvy9 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx10 = unpack("<f", f.read(4))[0];himvy10 = unpack("<f", f.read(4))[0];himvz10 = unpack("<f", f.read(4))[0];himfaceoff10 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx10 = unpack("<f", f.read(4))[0];himuvy10 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx11 = unpack("<f", f.read(4))[0];himvy11 = unpack("<f", f.read(4))[0];himvz11 = unpack("<f", f.read(4))[0];himfaceoff11 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx11 = unpack("<f", f.read(4))[0];himuvy11 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx12 = unpack("<f", f.read(4))[0];himvy12 = unpack("<f", f.read(4))[0];himvz12 = unpack("<f", f.read(4))[0];himfaceoff12 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx12 = unpack("<f", f.read(4))[0];himuvy12 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx13 = unpack("<f", f.read(4))[0];himvy13 = unpack("<f", f.read(4))[0];himvz13 = unpack("<f", f.read(4))[0];himfaceoff13 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx13 = unpack("<f", f.read(4))[0];himuvy13 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx14 = unpack("<f", f.read(4))[0];himvy14 = unpack("<f", f.read(4))[0];himvz14 = unpack("<f", f.read(4))[0];himfaceoff14 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx14 = unpack("<f", f.read(4))[0];himuvy14 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx15 = unpack("<f", f.read(4))[0];himvy15 = unpack("<f", f.read(4))[0];himvz15 = unpack("<f", f.read(4))[0];himfaceoff15 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx15 = unpack("<f", f.read(4))[0];himuvy15 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx16 = unpack("<f", f.read(4))[0];himvy16 = unpack("<f", f.read(4))[0];himvz16 = unpack("<f", f.read(4))[0];himfaceoff16 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx16 = unpack("<f", f.read(4))[0];himuvy16 = unpack("<f", f.read(4))[0];f.seek(8,1);himvx17 = unpack("<f", f.read(4))[0];himvy17 = unpack("<f", f.read(4))[0];himvz17 = unpack("<f", f.read(4))[0];himfaceoff17 = unpack("B", f.read(1))[0];f.seek(3,1);himuvx17 = unpack("<f", f.read(4))[0];himuvy17 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                               
+                                               himOffset1 = unpack("<I", f.read(4))[0]
+                                               if himOffset1 == 1627553883:
+                                                   himC = unpack("<I", f.read(4))[0]
+                                                   if himC == 12:
+                                                       himOffset2 = unpack("<I", f.read(4))[0]
+                                                       if himOffset2 == 1627553887:
+                                                           himE = unpack("<I", f.read(4))[0]
+                                                           if himE == 14:
+                                                               himOffset3 = unpack("<I", f.read(4))[0]
+                                                               if himOffset3 == 16777473:
+                                                                   if faceon4_a_a_a == 1:
+                                                                       if faceon5_a_a_a == 1:
+                                                                           if faceon6_a_a_a == 0:
+                                                                               if faceon6_a_a_a == 0:
+                                                                                   if himfaceoff1 == 0:
+                                                                                       if himfaceoff2 == 0:
+                                                                                           if himfaceoff3 == 0:
+                                                                                               if himfaceoff4 == 0:
+                                                                                                   if himfaceoff5 == 0:
+                                                                                                       if himfaceoff6 == 0:
+                                                                                                           if himfaceoff7 == 0:
+                                                                                                               if himfaceoff8 == 0:
+                                                                                                                   if himfaceoff9 == 0:
+                                                                                                                       if himfaceoff10 == 0:
+                                                                                                                           if himfaceoff11 == 0:
+                                                                                                                               if himfaceoff12 == 0:
+                                                                                                                                   if himfaceoff13 == 0:
+                                                                                                                                       if himfaceoff14 == 0:
+                                                                                                                                           if himfaceoff15 == 0:
+                                                                                                                                               if himfaceoff16 == 0:
+                                                                                                                                                   if himfaceoff17 == 0:
+                                                                                                                                                       vertices3pt6a.append([vx4_a_a_a,vz4_a_a_a,vy4_a_a_a])
+                                                                                                                                                       vertices3pt6a.append([vx5_a_a_a,vz5_a_a_a,vy5_a_a_a])
+                                                                                                                                                       vertices3pt6a.append([vx6_a_a_a,vz6_a_a_a,vy6_a_a_a])
+                                                                                                                                                       vertices3pt6a.append([vx7_a_a_a,vz7_a_a_a,vy7_a_a_a])
+                                                                                                                                                       vertices3pt6a.append([himvx1,himvz1,himvy1])
+                                                                                                                                                       vertices3pt6a.append([himvx2,himvz2,himvy2])
+                                                                                                                                                       vertices3pt6a.append([himvx3,himvz3,himvy3])
+                                                                                                                                                       vertices3pt6a.append([himvx4,himvz4,himvy4])
+                                                                                                                                                       vertices3pt6a.append([himvx5,himvz5,himvy5])
+                                                                                                                                                       vertices3pt6a.append([himvx6,himvz6,himvy6])
+                                                                                                                                                       vertices3pt6a.append([himvx7,himvz7,himvy7])
+                                                                                                                                                       vertices3pt6a.append([himvx8,himvz8,himvy8])
+                                                                                                                                                       vertices3pt6a.append([himvx9,himvz9,himvy9])
+                                                                                                                                                       vertices3pt6a.append([himvx10,himvz10,himvy10])
+                                                                                                                                                       vertices3pt6a.append([himvx11,himvz11,himvy11])
+                                                                                                                                                       vertices3pt6a.append([himvx12,himvz12,himvy12])
+                                                                                                                                                       vertices3pt6a.append([himvx13,himvz13,himvy13])
+                                                                                                                                                       vertices3pt6a.append([himvx14,himvz14,himvy14])
+                                                                                                                                                       vertices3pt6a.append([himvx15,himvz15,himvy15])
+                                                                                                                                                       vertices3pt6a.append([himvx16,himvz16,himvy16])
+                                                                                                                                                       vertices3pt6a.append([himvx17,himvz17,himvy17])
+
+                                                                                                                                                       faces3pt6a.append([0,1,2])
+                                                                                                                                                       faces3pt6a.append([1,2,3])
+                                                                                                                                                       faces3pt6a.append([4,6,2])
+                                                                                                                                                       faces3pt6a.append([0,6,2])
+                                                                                                                                                       faces3pt6a.append([4,6,10])
+                                                                                                                                                       faces3pt6a.append([6,10,9])
+                                                                                                                                                       faces3pt6a.append([9,10,3])
+                                                                                                                                                       faces3pt6a.append([9,3,1])
+                                                                                                                                                       faces3pt6a.append([0,27,31])
+                                                                                                                                                       faces3pt6a.append([25,27,31])
+                                                                                                                                                       faces3pt6a.append([25,31,40])
+                                                                                                                                                       faces3pt6a.append([25,40,39])
+                                                                                                                                                       faces3pt6a.append([0,31,24])
+                                                                                                                                                       faces3pt6a.append([24,0,22])
+                                                                                                                                                       faces3pt6a.append([31,40,35])
+                                                                                                                                                       
+                                                                                                                                                       
+                            if offset3 != 1627553811:
+                                f.seek(-4,1)
+                                offset3a = unpack("<I", f.read(4))[0]                                   
+                                if offset3a == 65540:
                                     f.seek(2,1)
                                     vertexCount4a = unpack("B", f.read(1))[0]//2
                                     flag4a = unpack("B", f.read(1))[0]
@@ -1016,6 +1097,11 @@ def GHG_mesh(f, filepath):
     mesh3pt5.from_pydata(vertices3pt5a, [], faces3pt5a)
     object3pt5 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3pt5)
     collection.objects.link(object3pt5)
+
+    mesh3pt6 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3pt6.from_pydata(vertices3pt6a, [], faces3pt6a)
+    object3pt6 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3pt6)
+    collection.objects.link(object3pt6)
 
     mesh3pt2a = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh3pt2a.from_pydata(vertices3pt2, [], faces3pt2)
