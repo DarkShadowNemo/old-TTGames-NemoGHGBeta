@@ -814,8 +814,8 @@ def nigel_(f):
                         if offset6_ == 65539:
                             f.seek(2,1)
                             ShadowTheHedgehogVertexCount = unpack("B", f.read(1))[0]//2
-                            ShadowTheHedgegogFlag1 = unpack("B", f.read(1))[0]
-                            if ShadowTheHedgegogFlag1 == 0x6C:
+                            ShadowTheHedgehogFlag1 = unpack("B", f.read(1))[0]
+                            if ShadowTheHedgehogFlag1 == 0x6C:
                                 if ShadowTheHedgehogVertexCount == 1:
                                     for i in range(1):
                                         bigfatcatvx1 = unpack("<f", f.read(4))[0];bigfatcatvy1 = unpack("<f", f.read(4))[0];bigfatcatvz1 = unpack("<f", f.read(4))[0];bigfatfaceoff1 = unpack("B", f.read(1))[0];f.seek(3,1);bigfatcatuvx1 = unpack("<f", f.read(4))[0];bigfatcatuvy1 = unpack("<f", f.read(4))[0];f.seek(8,1)
@@ -825,6 +825,34 @@ def nigel_(f):
                                         if rosieandjimCount1 == 5:
                                             f.seek(2,1)
                                             mandarkStripCount = unpack("B", f.read(1))[0]//2
+                                            mandarkFlag1 = unpack("B", f.read(1))[0]
+                                            if mandarkFlag1 == 0x6C:
+                                                if mandarkStripCount == 1:
+                                                    for i in range(1):
+                                                        Calum_vx1 = unpack("<f", f.read(4))[0];Calum_vy1 = unpack("<f", f.read(4))[0];Calum_vz1 = unpack("<f", f.read(4))[0];Calum_faceoff1 = unpack("B", f.read(1))[0];f.seek(3,1);Calum_uvx1 = unpack("<f", f.read(4))[0];Calum_uvy1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                    CalumOffset1 = unpack("<I", f.read(4))[0]
+                                                    if CalumOffset1 == 1627553831:#
+                                                        CalumOffset2 = unpack("<I", f.read(4))[0]
+                                                        if CalumOffset2 == 65543:
+                                                            f.seek(2,1)
+                                                            CalumVertexCount1 = unpack("B", f.read(1))[0]//2
+                                                            CalumFlag1 = unpack("B", f.read(1))[0]
+                                                            if CalumFlag1 == 0x6C:
+                                                                if CalumVertexCount1 == 1:
+                                                                    for i in range(1):
+                                                                        espiovx1 = unpack("<f", f.read(4))[0];espiovy1 = unpack("<f", f.read(4))[0];espiovz1 = unpack("<f", f.read(4))[0];espiofaceoff1 = unpack("B", f.read(1))[0];f.seek(3,1);espiouvx1 = unpack("<f", f.read(4))[0];espiouvy1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                    manicthehedgehogOffset1 = unpack("<I", f.read(4))[0]
+                                                                    if manicthehedgehogOffset1 == 1627553839:
+                                                                        manicthehedgehogCount1 = unpack("<I", f.read(4))[0]
+                                                                        if manicthehedgehogCount1 == 9:
+                                                                            f.seek(2,1)
+                                                                            manicStripCount1 = unpack("B", f.read(1))[0]//2
+                                                                            manicStripFlag1 = unpack("B", f.read(1))[0]
+                                                                            if manicStripFlag1 == 0x6C:
+                                                                                if manicStripCount1 == 9:
+                                                                                    for i in range(1):
+                                                                                        manicvx1 = unpack("<f", f.read(4))[0];manicvy1 = unpack("<f", f.read(4))[0]#0xe0c0
+                                                                                        
                                             #0xE05F
                         elif offset6_ == 65540:
                             SamuraiJackoffset1_ = unpack("<I", f.read(4))[0]
