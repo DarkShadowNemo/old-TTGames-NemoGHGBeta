@@ -798,12 +798,35 @@ def nigel_(f):
                         f.seek(-160,1)
                     for i in range(1):
                         vx9_a = unpack("<f", f.read(4))[0];vy9_a = unpack("<f", f.read(4))[0];vz9_a = unpack("<f", f.read(4))[0];brightness9_a = unpack("<f", f.read(4))[0];uvx9_a = unpack("<f", f.read(4))[0];uvy9_a = unpack("<f", f.read(4))[0];unk9_a = unpack("<f", f.read(4))[0];faceon9_a = unpack("B", f.read(1))[0];valueon9_a = unpack("B", f.read(1))[0];nz9_a = unpack("<h", f.read(2))[0];vx10_a = unpack("<f", f.read(4))[0];vy10_a = unpack("<f", f.read(4))[0];vz10_a = unpack("<f", f.read(4))[0];brightness10_a = unpack("<f", f.read(4))[0];uvx10_a = unpack("<f", f.read(4))[0];uvy10_a = unpack("<f", f.read(4))[0];unk10_a = unpack("<f", f.read(4))[0];faceon10_a = unpack("B", f.read(1))[0];valueon10_a = unpack("B", f.read(1))[0];nz10_a = unpack("<h", f.read(2))[0];vx11_a = unpack("<f", f.read(4))[0];vy11_a = unpack("<f", f.read(4))[0];vz11_a = unpack("<f", f.read(4))[0];brightness11_a = unpack("<f", f.read(4))[0];uvx11_a = unpack("<f", f.read(4))[0];uvy11_a = unpack("<f", f.read(4))[0];unk11_a = unpack("<f", f.read(4))[0];faceon11_a = unpack("B", f.read(1))[0];valueon11_a = unpack("B", f.read(1))[0];nz11_a = unpack("<h", f.read(2))[0];vx12_a = unpack("<f", f.read(4))[0];vy12_a = unpack("<f", f.read(4))[0];vz12_a = unpack("<f", f.read(4))[0];brightness12_a = unpack("<f", f.read(4))[0];uvx12_a = unpack("<f", f.read(4))[0];uvy12_a = unpack("<f", f.read(4))[0];unk12_a = unpack("<f", f.read(4))[0];faceon12_a = unpack("B", f.read(1))[0];valueon12_a = unpack("B", f.read(1))[0];nz12_a = unpack("<h", f.read(2))[0];vx13_a = unpack("<f", f.read(4))[0];vy13_a = unpack("<f", f.read(4))[0];vz13_a = unpack("<f", f.read(4))[0];brightness13_a = unpack("<f", f.read(4))[0];uvx13_a = unpack("<f", f.read(4))[0];uvy13_a = unpack("<f", f.read(4))[0];unk13_a = unpack("<f", f.read(4))[0];faceon13_a = unpack("B", f.read(1))[0];valueon13_a = unpack("B", f.read(1))[0];nz13_a = unpack("<h", f.read(2))[0]
+                    for i in range(1):
+                        f.seek(-160,1)
+                    for i in range(1):
+                        vx9_a_ = unpack("<f", f.read(4))[0];vy9_a_ = unpack("<f", f.read(4))[0];vz9_a_ = unpack("<f", f.read(4))[0];brightness9_a_ = unpack("<f", f.read(4))[0];uvx9_a_ = unpack("<f", f.read(4))[0];uvy9_a_ = unpack("<f", f.read(4))[0];unk9_a_ = unpack("<f", f.read(4))[0];faceon9_a_ = unpack("B", f.read(1))[0];valueon9_a_ = unpack("B", f.read(1))[0];nz9_a_ = unpack("<h", f.read(2))[0];vx10_a_ = unpack("<f", f.read(4))[0];vy10_a_ = unpack("<f", f.read(4))[0];vz10_a_ = unpack("<f", f.read(4))[0];brightness10_a_ = unpack("<f", f.read(4))[0];uvx10_a_ = unpack("<f", f.read(4))[0];uvy10_a_ = unpack("<f", f.read(4))[0];unk10_a_ = unpack("<f", f.read(4))[0];faceon10_a_ = unpack("B", f.read(1))[0];valueon10_a_ = unpack("B", f.read(1))[0];nz10_a_ = unpack("<h", f.read(2))[0];vx11_a_ = unpack("<f", f.read(4))[0];vy11_a_ = unpack("<f", f.read(4))[0];vz11_a_ = unpack("<f", f.read(4))[0];brightness11_a_ = unpack("<f", f.read(4))[0];uvx11_a_ = unpack("<f", f.read(4))[0];uvy11_a_ = unpack("<f", f.read(4))[0];unk11_a_ = unpack("<f", f.read(4))[0];faceon11_a_ = unpack("B", f.read(1))[0];valueon11_a_ = unpack("B", f.read(1))[0];nz11_a_ = unpack("<h", f.read(2))[0];vx12_a_ = unpack("<f", f.read(4))[0];vy12_a_ = unpack("<f", f.read(4))[0];vz12_a_ = unpack("<f", f.read(4))[0];brightness12_a_ = unpack("<f", f.read(4))[0];uvx12_a_ = unpack("<f", f.read(4))[0];uvy12_a_ = unpack("<f", f.read(4))[0];unk12_a_ = unpack("<f", f.read(4))[0];faceon12_a_ = unpack("B", f.read(1))[0];valueon12_a_ = unpack("B", f.read(1))[0];nz12_a_ = unpack("<h", f.read(2))[0];vx13_a_ = unpack("<f", f.read(4))[0];vy13_a_ = unpack("<f", f.read(4))[0];vz13_a_ = unpack("<f", f.read(4))[0];brightness13_a_ = unpack("<f", f.read(4))[0];uvx13_a_ = unpack("<f", f.read(4))[0];uvy13_a_ = unpack("<f", f.read(4))[0];unk13_a_ = unpack("<f", f.read(4))[0];faceon13_a_ = unpack("B", f.read(1))[0];valueon13_a_ = unpack("B", f.read(1))[0];nz13_a_ = unpack("<h", f.read(2))[0]
+                    for i in range(1):
+                        f.seek(-160,1)
+                    for i in range(1):
+                        vx9_a_a = unpack("<f", f.read(4))[0];vy9_a_a = unpack("<f", f.read(4))[0];vz9_a_a = unpack("<f", f.read(4))[0];brightness9_a_a = unpack("<f", f.read(4))[0];uvx9_a_a = unpack("<f", f.read(4))[0];uvy9_a_a = unpack("<f", f.read(4))[0];unk9_a_a = unpack("<f", f.read(4))[0];faceon9_a_a = unpack("B", f.read(1))[0];valueon9_a_a = unpack("B", f.read(1))[0];nz9_a_a = unpack("<h", f.read(2))[0];vx10_a_a = unpack("<f", f.read(4))[0];vy10_a_a = unpack("<f", f.read(4))[0];vz10_a_a = unpack("<f", f.read(4))[0];brightness10_a_a = unpack("<f", f.read(4))[0];uvx10_a_a = unpack("<f", f.read(4))[0];uvy10_a_a = unpack("<f", f.read(4))[0];unk10_a_a = unpack("<f", f.read(4))[0];faceon10_a_a = unpack("B", f.read(1))[0];valueon10_a_a = unpack("B", f.read(1))[0];nz10_a_a = unpack("<h", f.read(2))[0];vx11_a_a = unpack("<f", f.read(4))[0];vy11_a_a = unpack("<f", f.read(4))[0];vz11_a_a = unpack("<f", f.read(4))[0];brightness11_a_a = unpack("<f", f.read(4))[0];uvx11_a_a = unpack("<f", f.read(4))[0];uvy11_a_a = unpack("<f", f.read(4))[0];unk11_a_a = unpack("<f", f.read(4))[0];faceon11_a_a = unpack("B", f.read(1))[0];valueon11_a_a = unpack("B", f.read(1))[0];nz11_a_a = unpack("<h", f.read(2))[0];vx12_a_a = unpack("<f", f.read(4))[0];vy12_a_a = unpack("<f", f.read(4))[0];vz12_a_a = unpack("<f", f.read(4))[0];brightness12_a_a = unpack("<f", f.read(4))[0];uvx12_a_a = unpack("<f", f.read(4))[0];uvy12_a_a = unpack("<f", f.read(4))[0];unk12_a_a = unpack("<f", f.read(4))[0];faceon12_a_a = unpack("B", f.read(1))[0];valueon12_a_a = unpack("B", f.read(1))[0];nz12_a_a = unpack("<h", f.read(2))[0];vx13_a_a = unpack("<f", f.read(4))[0];vy13_a_a = unpack("<f", f.read(4))[0];vz13_a_a = unpack("<f", f.read(4))[0];brightness13_a_a = unpack("<f", f.read(4))[0];uvx13_a_a = unpack("<f", f.read(4))[0];uvy13_a_a = unpack("<f", f.read(4))[0];unk13_a_a = unpack("<f", f.read(4))[0];faceon13_a_a = unpack("B", f.read(1))[0];valueon13_a_a = unpack("B", f.read(1))[0];nz13_a_a = unpack("<h", f.read(2))[0]
                     offset6 = unpack("<I", f.read(4))[0]
                     f.seek(-4,1)
                     offset5 = unpack("<I", f.read(4))[0]
                     if offset6 == 1627553815:
                         offset6_ = unpack("<I", f.read(4))[0]
-                        if offset6_ == 65540:
+                        if offset6_ == 65539:
+                            f.seek(2,1)
+                            ShadowTheHedgehogVertexCount = unpack("B", f.read(1))[0]//2
+                            ShadowTheHedgegogFlag1 = unpack("B", f.read(1))[0]
+                            if ShadowTheHedgegogFlag1 == 0x6C:
+                                if ShadowTheHedgehogVertexCount == 1:
+                                    for i in range(1):
+                                        bigfatcatvx1 = unpack("<f", f.read(4))[0];bigfatcatvy1 = unpack("<f", f.read(4))[0];bigfatcatvz1 = unpack("<f", f.read(4))[0];bigfatfaceoff1 = unpack("B", f.read(1))[0];f.seek(3,1);bigfatcatuvx1 = unpack("<f", f.read(4))[0];bigfatcatuvy1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                    rosieandjimOffset1 = unpack("<I", f.read(4))[0]
+                                    if rosieandjimOffset1 == 1627553823:
+                                        rosieandjimCount1 = unpack("<I", f.read(4))[0]
+                                        if rosieandjimCount1 == 5:
+                                            f.seek(2,1)
+                                            mandarkStripCount = unpack("B", f.read(1))[0]//2
+                                            #0xE05F
+                        elif offset6_ == 65540:
                             SamuraiJackoffset1_ = unpack("<I", f.read(4))[0]
                             if SamuraiJackoffset1_ == 1627553819:
                                 SamuraiJackcount1_ = unpack("<I", f.read(4))[0]
@@ -825,6 +848,37 @@ def nigel_(f):
                                                             faces3pt8a.append([1,3,4])
                             elif SamuraiJackoffset1_ != 1627553819:
                                 f.seek(-4,1)
+                                f.seek(2,1)
+                                strippercount1 = unpack("B", f.read(1))[0]//2
+                                stripperflag1 = unpack("B", f.read(1))[0]
+                                if stripperflag1 == 0x6C:
+                                    if strippercount1 == 1:
+                                        for i in range(1):
+                                            powerpuffgirlszVX1 = unpack("<f", f.read(4))[0];powerpuffgirlszVY1 = unpack("<f", f.read(4))[0];powerpuffgirlszVZ1 = unpack("<f", f.read(4))[0];powerpuffgirlszFaceoff1 = unpack("B", f.read(1))[0];f.seek(3,1);powerpuffgirlszUVX1 = unpack("<f", f.read(4))[0];powerpuffgirlszUVY1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                        professor_utonium_offset1 = unpack("<I", f.read(4))[0]
+                                        if professor_utonium_offset1 == 1627553823:
+                                            professor_utonium_count1 = unpack("<I", f.read(4))[0]
+                                            if professor_utonium_count1 == 2:
+                                                professor_utonium_Endoffset1 = unpack("<I", f.read(4))[0]
+                                                if professor_utonium_Endoffset1 == 16777473:
+                                                    if faceon9_a_ == 1:
+                                                        if faceon10_a_ == 1:
+                                                            if faceon11_a_ == 0:
+                                                                if faceon12_a_ == 0:
+                                                                    if faceon13_a_ == 1:
+                                                                        if powerpuffgirlszFaceoff1 == 0:
+                                                                            vertices3pt9a.append([vx9_a_,vz9_a_,vy9_a_])
+                                                                            vertices3pt9a.append([vx10_a_,vz10_a_,vy10_a_])
+                                                                            vertices3pt9a.append([vx11_a_,vz11_a_,vy11_a_])
+                                                                            vertices3pt9a.append([vx12_a_,vz12_a_,vy12_a_])
+                                                                            vertices3pt9a.append([vx13_a_,vz13_a_,vy13_a_])
+                                                                            vertices3pt9a.append([powerpuffgirlszVX1,powerpuffgirlszVZ1,powerpuffgirlszVY1])
+                                                                            faces3pt9a.append([0,1,2])
+                                                                            faces3pt9a.append([1,2,3])
+                                                                            faces3pt9a.append([1,3,5])
+                                                                            faces3pt9a.append([3,5,4])
+                                                                            #0xdf80
+                                        
                     if offset5 == 16777473:
                         if faceon9_ == 1:
                             if faceon10_ == 1:
