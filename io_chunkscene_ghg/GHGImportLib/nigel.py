@@ -851,7 +851,15 @@ def nigel_(f):
                                                                             if manicStripFlag1 == 0x6C:
                                                                                 if manicStripCount1 == 9:
                                                                                     for i in range(1):
-                                                                                        manicvx1 = unpack("<f", f.read(4))[0];manicvy1 = unpack("<f", f.read(4))[0]#0xe0c0
+                                                                                        manicvx1 = unpack("<f", f.read(4))[0];manicvy1 = unpack("<f", f.read(4))[0];manicvz1 = unpack("<f", f.read(4))[0];manicfaceoff1 = unpack("B", f.read(1))[0];f.seek(3,1);manicuvx1 = unpack("<f", f.read(4))[0];manicuvy1 = unpack("<f", f.read(4))[0];f.seek(8,1)
+                                                                                    BorisRJokersOffset1 = unpack("<I", f.read(4))[0]
+                                                                                    if BorisRJokersOffset1 == 1627553879:
+                                                                                        BorisRJokersCount1 = unpack("<I", f.read(4))[0]
+                                                                                        if BorisRJokersCount1 == 11:
+                                                                                            slapCraftOffset1 = unpack("<I", f.read(4))[0]
+                                                                                            if slapCraftOffset1 == 1627553883:
+                                                                                                pass
+                                                                                    
                                                                                         
                                             #0xE05F
                         elif offset6_ == 65540:
