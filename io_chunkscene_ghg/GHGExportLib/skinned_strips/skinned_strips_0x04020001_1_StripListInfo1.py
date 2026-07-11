@@ -435,28 +435,23 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
                 f.ssek(32,1)
     
     sclm1 = f.seek(FileSize4,1)
-        
-        
-    """for i, bone in enumerate(ob.pose.bones):
-        mat = bone.matrix.copy()
-        if bone.parent:
-            mat = bone.parent.matrix.inverted_safe() @ mat"""
-    f.write(pack("<f", 1))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 1))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 1))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 0))
-    f.write(pack("<f", 1))
+    for pbone in ob.pose.bones:
+        f.write(pack("<f", 1))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 1))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 1))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 0))
+        f.write(pack("<f", 1))
 
     
         
@@ -466,25 +461,22 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
     """steps back"""
     #for i, bone in enumerate(ob.pose.bones[:bidx],1):
     
-    for i, bone in enumerate(ob.pose.bones):
-        mat = bone.matrix.copy()
-        if bone.parent:
-            mat = bone.parent.matrix.inverted_safe() @ mat
-        f.write(pack("<f", math.acos(pbone.scale[0])))
+    for pbone in ob.pose.bones:
+        f.write(pack("<f", 1))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
-        f.write(pack("<f", math.acos(pbone.scale[1])))
+        f.write(pack("<f", 1))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
         f.write(pack("<f", 0))
-        f.write(pack("<f", math.acos(pbone.scale[2])))
+        f.write(pack("<f", 1))
         f.write(pack("<f", 0))
-        f.write(pack("<f", -bone.head[0]))
-        f.write(pack("<f", -bone.head[2]))
-        f.write(pack("<f", -bone.head[1]))
+        f.write(pack("<f", -pbone.head.x))
+        f.write(pack("<f", -pbone.head.z))
+        f.write(pack("<f", -pbone.head.y))
         f.write(pack("<f", 1))
         
     msh1s = f.seek(FileSize6,1)
