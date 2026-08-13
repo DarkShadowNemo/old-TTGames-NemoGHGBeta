@@ -4,7 +4,6 @@ import math
 import bpy
 import mathutils
 from io import BytesIO as bio
-from .nigel import *
 
 def truncate_cstr(s: bytes) -> bytes:
     index = s.find(0)
@@ -20,45 +19,31 @@ def fetch_cstr(f: 'filelike') -> bytearray:
 
 def GHG_mesh(f, filepath):
 
-    idx1A=0
-
-    bone_names=[]
     bone_parentlist=[]
+    bone_names=[]
 
-    idx1=0
-    idx1_=0
-
-    vertices2=[]
-    vertices2pt2=[]
-    vertices2_=[]
-    faces2=[]
-    uvs2=[]
-
-    vertices1=[]
-    faces1=[]
+    vertices=[]
+    faces=[]
     uvs1=[]
-    
-    vertices2pt2=[]
-    faces2pt2=[]
-
-    fa1=-3
-    fb1=-2
-    fc1=-1
-    
-    fa1_=-1
-    fb1_=0
-    fc1_=1
-    
-    fa1pt2=-4
-    fb1pt2=-3
-    fc1pt2=-2
-    fd1pt2=-1
 
     fa=-1
     fb=0
     fc=1
 
-    ii=1
+    vertices3a=[]
+    faces3a=[]
+
+    
+    vertices3=[]
+    faces3=[]
+
+    faces3a=[]
+
+    faa=-1
+    fba=0
+    fca=1
+
+    idx_ = 0
 
     coll = bpy.context.collection
     skel = bpy.data.armatures.new('GHG Skeleton')
@@ -193,229 +178,175 @@ def GHG_mesh(f, filepath):
                 Chunk = f.read(4)
                 if Chunk == b"\x03\x01\x00\x01":
                     f.seek(2,1)
-                    stripcount = unpack("B", f.read(1))[0]
-                    flag001 = unpack("B", f.read(1))[0]
-                    if flag001 == 0x6C:
-                        if stripcount == 0:
+                    vertexCount2 = unpack("B", f.read(1))[0]
+                    flag_2 = unpack("B", f.read(1))[0]
+                    if flag_2 == 0x6C:
+                        if vertexCount2 == 0:
                             pass
-                        elif stripcount == 1:
+                        elif vertexCount2 == 1:
                             pass
-                        elif stripcount == 2:
+                        elif vertexCount2 == 2:
                             pass
-                        elif stripcount:
-                            for j in range(stripcount):
+                        elif vertexCount2:
+                            for j in range(vertexCount2):
                                 vx = unpack("<f", f.read(4))[0]
                                 vy = unpack("<f", f.read(4))[0]
                                 vz = unpack("<f", f.read(4))[0]
-                                faceon = unpack("B", f.read(1))[0]==False
-                                valueon = unpack("B", f.read(1))[0]
-                                nz = unpack("<h", f.read(2))[0]
-                                vertices1.append([vx,vz,vy])
+                                type4 = unpack("B", f.read(1))[0]==False
+                                value1a = unpack("B", f.read(1))[0]
+                                normalZ_ = unpack("<h", f.read(2))[0]
+                                static_vx = round(vx,3)
+                                static_vy = round(vy,3)
+                                static_vz = round(vz,3)
+                                
+                                vertices.append([static_vx,static_vz,static_vy])
                                 fa+=1
                                 fb+=1
                                 fc+=1
-                                if faceon > 0:
-                                    faces1.append([j+j+faceon-faceon-1+fa-j-j-1+j%2,j-j+faceon-faceon+1+fb-2-1+j-j-j%2,j+faceon-faceon+fc-j+2-4])
-                            Chunk_ = unpack("<H", f.read(2))[0]
-                            if Chunk_ == 1:
-                                f.seek(4,1)
-                                uvcount = unpack("B", f.read(1))[0]
-                                uvflag = unpack("B", f.read(1))[0]
-                                if uvflag == 0x6D:
-                                    if uvcount == 0:
-                                        pass
-                                    elif uvcount == 1:
-                                        pass
-                                    elif uvcount == 2:
-                                        pass
-                                    elif uvcount:
-                                        for i in range(uvcount):
-                                            uvx = unpack("<h", f.read(2))[0]/4096
-                                            uvy = unpack("<h", f.read(2))[0]/4096
-                                            f.seek(4,1)
-                                            uvs1.append([uvx,-uvy])
-                        
-                elif Chunk == b"\x03\x02\x00\x01":
-                    f.seek(2,1)
-                    VertexCount = unpack("B", f.read(1))[0]//2
-                    flag01 = unpack("B", f.read(1))[0]
-                    if flag01 == 0x6D:
-                        if VertexCount == 0:
-                            pass
-                        elif VertexCount == 1:
-                            pass
-                        elif VertexCount == 2:
-                            pass
-                        elif VertexCount == 3:
-                            for j in range(1):
-                                vx1 = unpack("<h", f.read(2))[0] / 4096
-                                vy1 = unpack("<h", f.read(2))[0] / 4096
-                                vz1 = unpack("<h", f.read(2))[0] / 4096
-                                fn1 = unpack("<h", f.read(2))[0] / 4096
-                                ux1 = unpack("<h", f.read(2))[0] / 4096
-                                uy1 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vx2 = unpack("<h", f.read(2))[0] / 4096
-                                vy2 = unpack("<h", f.read(2))[0] / 4096
-                                vz2 = unpack("<h", f.read(2))[0] / 4096
-                                fn2 = unpack("<h", f.read(2))[0] / 4096
-                                ux2 = unpack("<h", f.read(2))[0] / 4096
-                                uy2 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vx3 = unpack("<h", f.read(2))[0] / 4096
-                                vy3 = unpack("<h", f.read(2))[0] / 4096
-                                vz3 = unpack("<h", f.read(2))[0] / 4096
-                                fn3 = unpack("<h", f.read(2))[0] / 4096
-                                ux3 = unpack("<h", f.read(2))[0] / 4096
-                                uy3 = unpack("<h", f.read(2))[0] / 4096
-                                f.seek(4,1)
-                                vertices2.append([vx1,vz1,vy1])
-                                vertices2.append([vx2,vz2,vy2])
-                                vertices2.append([vx3,vz3,vy3])
-                                uvs2.append([ux1,-uy1])
-                                uvs2.append([ux2,-uy2])
-                                uvs2.append([ux3,-uy3])
-                            f.seek(78,1)
-                            facecount = unpack("B", f.read(1))[0]
-                            flagsFace = unpack("B", f.read(1))[0]
-                            if flagsFace == 0x6E:
-                                if facecount == 1:
-                                    id1 = unpack("B", f.read(1))[0]
-                                    if id1 == 9:
-                                        faceA = unpack("B", f.read(1))[0]&0x0F
-                                        faceB = unpack("B", f.read(1))[0]&0x0F
-                                        faceC = unpack("B", f.read(1))[0]&0x0F
-                                        faceA//=3
-                                        faceB//=3
-                                        faceC//=3
-                                        if faceA == 0 and faceB == 0 and faceC == 0:
-                                            fa1+=1*3
-                                            faces2.append([fa1,fa1,fa1])
-                                        elif faceA == 1 and faceB == 1 and faceC == 1:
-                                            fb1+=1*3
-                                            faces2.append([fb1,fb1,fb1])
-                                        elif faceA == 2 and faceB == 2 and faceC == 2:
-                                            fc1+=1*3
-                                            faces2.append([fc1,fc1,fc1])
-                                        elif faceA == 0 and faceB == 1 and faceC == 1:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            faces2.append([fa1,fb1,fb1])
-                                        elif faceA == 1 and faceB == 1 and faceC == 0:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            faces2.append([fa1,fb1,fb1])
-                                        elif faceA == 0 and faceB == 1 and faceC == 0:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            faces2.append([fa1,fb1,fa1])
-                                        elif faceA == 0 and faceB == 2 and faceC == 0:
-                                            fa1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fc1,fa1])
-                                        elif faceA == 1 and faceB == 0 and faceC == 0:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            faces2.append([fa1,fb1,fb1])
-                                        elif faceA == 2 and faceB == 0 and faceC == 0:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            faces2.append([fc1,fa1,fb1])
-                                        elif faceA == 2 and faceB == 2 and faceC == 0:
-                                            fa1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fc1,fc1])
-                                        elif faceA == 0 and faceB == 2 and faceC == 2:
-                                            fa1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fc1,fc1])
-                                        elif faceA == 0 and faceB == 0 and faceC == 1:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            faces2.append([fa1,fa1,fb1])
-                                        elif faceA == 0 and faceB == 0 and faceC == 2:
-                                            fa1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fa1,fc1])
-                                        elif faceA == 1 and faceB == 2 and faceC == 2:
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fb1,fc1,fc1])
-                                        elif faceA == 2 and faceB == 0 and faceC == 2:
-                                            fa1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fc1,fc1])
-                                        elif faceA == 1 and faceB == 0 and faceC == 1:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            faces2.append([fa1,fb1,fb1])
-                                        elif faceA == 1 and faceB == 2 and faceC == 1:
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fb1,fc1,fb1])
-                                        elif faceA == 2 and faceB == 2 and faceC == 1:
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fc1,fc1,fb1])
-                                        elif faceA == 2 and faceB == 2 and faceC == 0:
-                                            fa1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fc1,fc1,fa1])
-                                        elif faceA == 0 and faceB == 1 and faceC == 2:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fb1,fc1])
-                                        elif faceA == 2 and faceB == 0 and faceC == 1:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fb1,fc1])
-                                        elif faceA == 1 and faceB == 0 and faceC == 2:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fb1,fc1])
-                                        elif faceA == 1 and faceB == 2 and faceC == 0:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fb1,fc1])
-                                        elif faceA == 2 and faceB == 1 and faceC == 0:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fb1,fc1])
-                                        elif faceA == 0 and faceB == 2 and faceC == 1:
-                                            fa1+=1*3
-                                            fb1+=1*3
-                                            fc1+=1*3
-                                            faces2.append([fa1,fb1,fc1])
-                        elif VertexCount == 4:
-                            pass
+                                if type4 > 0:
+                                    faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
 
-            f.seek(0)
-            nigel_(f)
-    
+                elif Chunk == b"\x04\x02\x00\x01":
+                    f.seek(2,1)
+                    vertexCount2a = unpack("B", f.read(1))[0]//2
+                    flag_2a = unpack("B", f.read(1))[0]
+                    if flag_2a == 0x6C:
+                        if vertexCount2a == 0:
+                            pass
+                        elif vertexCount2a == 1:
+                            pass
+                        elif vertexCount2a == 2:
+                            pass
+                        elif vertexCount2a:
+                            for j in range(vertexCount2a):
+                                vxa = unpack("<f", f.read(4))[0]
+                                vya = unpack("<f", f.read(4))[0]
+                                vza = unpack("<f", f.read(4))[0]
+                                brighness = unpack("<f", f.read(4))[0]
+                                uvx3a = unpack("<f", f.read(4))[0]
+                                uvy3a = unpack("<f", f.read(4))[0]
+                                unk3a = unpack("<f", f.read(4))[0]
+                                type4a = unpack("B", f.read(1))[0]==False
+                                value1aa = unpack("B", f.read(1))[0]
+                                normalZa_ = unpack("<h", f.read(2))[0]
+                                static_vxa = round(vxa,3)
+                                static_vya = round(vya,3)
+                                static_vza = round(vza,3)
+                                
+                                vertices3.append([static_vxa,static_vza,static_vya])
+                                faa+=1
+                                fba+=1
+                                fca+=1
+                                if type4a > 0:
+                                    faces3.append([abs(j+j+type4a-type4a-1+faa-j-j-1+j%2),abs(j-j+type4a-type4a+1+fba-2-1+j-j-j%2),abs(j+type4a-type4a+fca-j+2-4)])
+
+                                idx_+=1
+                                if idx_ == 20:
+                                    offset1loop = unpack("<I", f.read(4))[0]
+                                    if offset1loop == 1627553815:
+                                        offset1loop2 = unpack("<I", f.read(4))[0]
+                                        if offset1loop2 == 65540:
+                                            offset1loop3 = unpack("<I", f.read(4))[0]
+                                            if offset1loop3 == 1627553819:
+                                                offset1loop4 = unpack("<I", f.read(4))[0]
+                                                if offset1loop4 == 2:
+                                                    offset1loop5 = unpack("<I", f.read(4))[0]
+                                                    if offset1loop5 == 16777473:
+                                                        faces3.append([16,18,19])
+                                elif idx_ == 37:
+                                    offset2loop = unpack("<I", f.read(4))[0]
+                                    if offset2loop == 1627553823:
+                                        offset2loop2 = unpack("<I", f.read(4))[0]
+                                        if offset2loop2 == 65541:
+                                            f.seek(2,1)
+                                            vertexCount2aa = unpack("B", f.read(1))[0]//2
+                                            flag_2aa = unpack("B", f.read(1))[0]
+                                            if flag_2aa == 0x6C:
+                                                if vertexCount2aa == 0:
+                                                    pass
+                                                elif vertexCount2aa == 1:
+                                                    for i in range(vertexCount2aa):
+                                                        vxa2 = unpack("<f", f.read(4))[0]
+                                                        vya2 = unpack("<f", f.read(4))[0]
+                                                        vza2 = unpack("<f", f.read(4))[0]
+                                                        faceoff1a = unpack("B", f.read(1))[0]
+                                                        f.seek(3,1)
+                                                        f.seek(16,1)
+                                                        static_vxaa = round(vxa2,3)
+                                                        static_vyaa = round(vya2,3)
+                                                        static_vzaa = round(vza2,3)
+                                                        vertices3a.append([static_vxaa,static_vzaa,static_vyaa])
+                                                    vertices3a.append([0,-0.168,0.287])
+                                                    vertices3a.append([-0.052,-0.247,0.428])
+                                                    faces3a.append([0,1,2])
+                                                    offset2loop3 = unpack("<I", f.read(4))[0]
+                                                    if offset2loop3 == 1627553831:
+                                                        offset2loop4 = unpack("<I", f.read(4))[0]
+                                                        if offset2loop4 == 7:
+                                                            f.seek(2,1)
+                                                            vertexCount2aaa = unpack("B", f.read(1))[0]//2
+                                                            flag_2aaa = unpack("B", f.read(1))[0]
+                                                            if flag_2aaa == 0x6C:
+                                                                if vertexCount2aaa == 0:
+                                                                    pass
+                                                                elif vertexCount2aaa == 1:
+                                                                    for i in range(vertexCount2aa):
+                                                                        vxa2a = unpack("<f", f.read(4))[0]
+                                                                        vya2a = unpack("<f", f.read(4))[0]
+                                                                        vza2a = unpack("<f", f.read(4))[0]
+                                                                        faceoff1aa = unpack("B", f.read(1))[0]
+                                                                        f.seek(3,1)
+                                                                        f.seek(16,1)
+                                                                        static_vxaaa = round(vxa2a,3)
+                                                                        static_vyaaa = round(vya2a,3)
+                                                                        static_vzaaa = round(vza2a,3)
+                                                                        vertices3a.append([static_vxaaa,static_vzaaa,static_vyaaa])
+                                                                    faces3a.append([0,2,3])
+                                                                    offset2loop5 = unpack("<I", f.read(4))[0]
+                                                                    if offset2loop5 == 1627553839:
+                                                                        offset2loop6 = unpack("<I", f.read(4))[0]
+                                                                        if offset2loop6 == 65545:
+                                                                            f.seek(2,1)
+                                                                            vertexCount2aaaa = unpack("B", f.read(1))[0]//2
+                                                                            flag_2aaaa = unpack("B", f.read(1))[0]
+                                                                            if flag_2aaaa == 0x6C:
+                                                                                if vertexCount2aaa == 0:
+                                                                                    pass
+                                                                                elif vertexCount2aaa == 1:
+                                                                                    for i in range(vertexCount2aa):
+                                                                                        vxa2aa = unpack("<f", f.read(4))[0]
+                                                                                        vya2aa = unpack("<f", f.read(4))[0]
+                                                                                        vza2aa = unpack("<f", f.read(4))[0]
+                                                                                        faceoff1aa = unpack("B", f.read(1))[0]
+                                                                                        f.seek(3,1)
+                                                                                        f.seek(16,1)
+                                                                                        static_vxaaaa = round(vxa2aa,3)
+                                                                                        static_vyaaaa = round(vya2aa,3)
+                                                                                        static_vzaaaa = round(vza2aa,3)
+                                                                                        vertices3a.append([static_vxaaaa,static_vzaaaa,static_vyaaaa])
+                                                            
+                                                
+                                            
+                                            
+                                            
+                                        
+                                    
+                                                    
+
     collection = bpy.data.collections.new(os.path.basename(os.path.splitext(filepath)[0]))
     bpy.context.scene.collection.children.link(collection)
 
-    mesh2 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh2.from_pydata(vertices2, [], faces2)
-    object2 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2)
-    collection.objects.link(object2)
+    mesh = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh.from_pydata(vertices, [], faces)
+    objects = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh)
+    collection.objects.link(objects)
 
-    uv_tex2 = mesh2.uv_layers.new()
-    uv_layer2 = mesh2.uv_layers[0].data
-    vert_loops2 = {}
-    for l in mesh2.loops:
-        vert_loops2.setdefault(l.vertex_index, []).append(l.index)
-    for i, coord in enumerate(uvs2):
-        for li in vert_loops2[i]:
-            uv_layer2[li].uv = coord
-    
-    mesh2_ = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh2_.from_pydata(vertices2pt2, [], faces2pt2)
-    object2_ = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh2_)
-    collection.objects.link(object2_)
+    mesh3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3.from_pydata(vertices3, [], faces3)
+    objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
+    collection.objects.link(objects3)
 
+    mesh3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3.from_pydata(vertices3a, [], faces3a)
+    objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
+    collection.objects.link(objects3)
