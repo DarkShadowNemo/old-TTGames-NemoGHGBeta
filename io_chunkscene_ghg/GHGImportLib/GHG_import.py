@@ -204,7 +204,7 @@ def GHG_mesh(f, filepath):
                                 fb+=1
                                 fc+=1
                                 if type4 > 0:
-                                    faces.append([j+j+type4-type4-1+fa-j-j-1+j%2,j-j+type4-type4+1+fb-2-1+j-j-j%2,j+type4-type4+fc-j+2-4])
+                                    faces.append([abs(j+j+type4-type4-1+fa-j-j-1+j%2),abs(j-j+type4-type4+1+fb-2-1+j-j-j%2),abs(j+type4-type4+fc-j+2-4)])
 
                 elif Chunk == b"\x04\x02\x00\x01":
                     f.seek(2,1)
@@ -222,11 +222,11 @@ def GHG_mesh(f, filepath):
                                 vxa = unpack("<f", f.read(4))[0]
                                 vya = unpack("<f", f.read(4))[0]
                                 vza = unpack("<f", f.read(4))[0]
-                                brighness = unpack("<f", f.read(4))[0]
+                                brightness = unpack("<f", f.read(4))[0]
                                 uvx3a = unpack("<f", f.read(4))[0]
                                 uvy3a = unpack("<f", f.read(4))[0]
                                 unk3a = unpack("<f", f.read(4))[0]
-                                type4a = unpack("B", f.read(1))[0]==False
+                                type4a = unpack("B", f.read(1))[0]^1
                                 value1aa = unpack("B", f.read(1))[0]
                                 normalZa_ = unpack("<h", f.read(2))[0]
                                 static_vxa = round(vxa,3)
@@ -237,93 +237,10 @@ def GHG_mesh(f, filepath):
                                 faa+=1
                                 fba+=1
                                 fca+=1
-                                if type4a > 0:
-                                    faces3.append([abs(j+j+type4a-type4a-1+faa-j-j-1+j%2),abs(j-j+type4a-type4a+1+fba-2-1+j-j-j%2),abs(j+type4a-type4a+fca-j+2-4)])
-
-                                idx_+=1
-                                if idx_ == 20:
-                                    offset1loop = unpack("<I", f.read(4))[0]
-                                    if offset1loop == 1627553815:
-                                        offset1loop2 = unpack("<I", f.read(4))[0]
-                                        if offset1loop2 == 65540:
-                                            offset1loop3 = unpack("<I", f.read(4))[0]
-                                            if offset1loop3 == 1627553819:
-                                                offset1loop4 = unpack("<I", f.read(4))[0]
-                                                if offset1loop4 == 2:
-                                                    offset1loop5 = unpack("<I", f.read(4))[0]
-                                                    if offset1loop5 == 16777473:
-                                                        faces3.append([16,18,19])
-                                elif idx_ == 37:
-                                    offset2loop = unpack("<I", f.read(4))[0]
-                                    if offset2loop == 1627553823:
-                                        offset2loop2 = unpack("<I", f.read(4))[0]
-                                        if offset2loop2 == 65541:
-                                            f.seek(2,1)
-                                            vertexCount2aa = unpack("B", f.read(1))[0]//2
-                                            flag_2aa = unpack("B", f.read(1))[0]
-                                            if flag_2aa == 0x6C:
-                                                if vertexCount2aa == 0:
-                                                    pass
-                                                elif vertexCount2aa == 1:
-                                                    for i in range(vertexCount2aa):
-                                                        vxa2 = unpack("<f", f.read(4))[0]
-                                                        vya2 = unpack("<f", f.read(4))[0]
-                                                        vza2 = unpack("<f", f.read(4))[0]
-                                                        faceoff1a = unpack("B", f.read(1))[0]
-                                                        f.seek(3,1)
-                                                        f.seek(16,1)
-                                                        static_vxaa = round(vxa2,3)
-                                                        static_vyaa = round(vya2,3)
-                                                        static_vzaa = round(vza2,3)
-                                                        vertices3a.append([static_vxaa,static_vzaa,static_vyaa])
-                                                    vertices3a.append([0,-0.168,0.287])
-                                                    vertices3a.append([-0.052,-0.247,0.428])
-                                                    faces3a.append([0,1,2])
-                                                    offset2loop3 = unpack("<I", f.read(4))[0]
-                                                    if offset2loop3 == 1627553831:
-                                                        offset2loop4 = unpack("<I", f.read(4))[0]
-                                                        if offset2loop4 == 7:
-                                                            f.seek(2,1)
-                                                            vertexCount2aaa = unpack("B", f.read(1))[0]//2
-                                                            flag_2aaa = unpack("B", f.read(1))[0]
-                                                            if flag_2aaa == 0x6C:
-                                                                if vertexCount2aaa == 0:
-                                                                    pass
-                                                                elif vertexCount2aaa == 1:
-                                                                    for i in range(vertexCount2aa):
-                                                                        vxa2a = unpack("<f", f.read(4))[0]
-                                                                        vya2a = unpack("<f", f.read(4))[0]
-                                                                        vza2a = unpack("<f", f.read(4))[0]
-                                                                        faceoff1aa = unpack("B", f.read(1))[0]
-                                                                        f.seek(3,1)
-                                                                        f.seek(16,1)
-                                                                        static_vxaaa = round(vxa2a,3)
-                                                                        static_vyaaa = round(vya2a,3)
-                                                                        static_vzaaa = round(vza2a,3)
-                                                                        vertices3a.append([static_vxaaa,static_vzaaa,static_vyaaa])
-                                                                    faces3a.append([0,2,3])
-                                                                    offset2loop5 = unpack("<I", f.read(4))[0]
-                                                                    if offset2loop5 == 1627553839:
-                                                                        offset2loop6 = unpack("<I", f.read(4))[0]
-                                                                        if offset2loop6 == 65545:
-                                                                            f.seek(2,1)
-                                                                            vertexCount2aaaa = unpack("B", f.read(1))[0]//2
-                                                                            flag_2aaaa = unpack("B", f.read(1))[0]
-                                                                            if flag_2aaaa == 0x6C:
-                                                                                if vertexCount2aaa == 0:
-                                                                                    pass
-                                                                                elif vertexCount2aaa == 1:
-                                                                                    for i in range(vertexCount2aa):
-                                                                                        vxa2aa = unpack("<f", f.read(4))[0]
-                                                                                        vya2aa = unpack("<f", f.read(4))[0]
-                                                                                        vza2aa = unpack("<f", f.read(4))[0]
-                                                                                        faceoff1aa = unpack("B", f.read(1))[0]
-                                                                                        f.seek(3,1)
-                                                                                        f.seek(16,1)
-                                                                                        static_vxaaaa = round(vxa2aa,3)
-                                                                                        static_vyaaaa = round(vya2aa,3)
-                                                                                        static_vzaaaa = round(vza2aa,3)
-                                                                                        vertices3a.append([static_vxaaaa,static_vzaaaa,static_vyaaaa])
+                                if type4a < 1:
+                                    faces3.append([abs(j+type4a-type4a+faa-j)])
+                                                                                                                                
+                                                                                                                    
                                                             
                                                 
                                             
@@ -346,7 +263,8 @@ def GHG_mesh(f, filepath):
     objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
     collection.objects.link(objects3)
 
-    mesh3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3.from_pydata(vertices3a, [], faces3a)
-    objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
-    collection.objects.link(objects3)
+    objects3.parent = arma
+    armamodifier3 = objects3.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3.object = arma
+
+    vgroups3 = [objects3.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
