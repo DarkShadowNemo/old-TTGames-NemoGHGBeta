@@ -238,7 +238,7 @@ def GHG_mesh(f, filepath):
                                 fba+=1
                                 fca+=1
                                 if type4a < 1:
-                                    faces3.append([abs(j+type4a-type4a+faa-j)])
+                                    faces3.append([abs(j+type4a-type4a+faa-j) % abs(3)])
                                                                                                                                 
                                                                                                                     
                                                             
