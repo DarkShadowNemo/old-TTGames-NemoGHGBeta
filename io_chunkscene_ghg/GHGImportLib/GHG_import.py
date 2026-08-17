@@ -19,6 +19,8 @@ def fetch_cstr(f: 'filelike') -> bytearray:
 
 def GHG_mesh(f, filepath):
 
+    idx1a=0
+
     baseFace=[]
 
     faceA=-4
@@ -42,6 +44,7 @@ def GHG_mesh(f, filepath):
     
     vertices3=[]
     faces3=[]
+    uvs3=[]
 
     faces3a=[]
 
@@ -264,8 +267,6 @@ def GHG_mesh(f, filepath):
                                 uvy3a = unpack("<f", f.read(4))[0]
                                 unk3a = unpack("<f", f.read(4))[0]
                                 type4a = unpack("B", f.read(1))[0]==False
-                                f.seek(-1,1)
-                                faceon4a = unpack("B", f.read(1))[0]
                                 value1aa = unpack("B", f.read(1))[0]
                                 normalZa_ = unpack("<h", f.read(2))[0]
                                 static_vxa = round(vxa,3)
@@ -280,20 +281,8 @@ def GHG_mesh(f, filepath):
                                 fca+=1
                                 if type4a > 0:
                                     faces3.append([abs(j+j+type4a-type4a-1+faa-j-j-1+j%2),abs(j-j+type4a-type4a+1+fba-2-1+j-j-j%2),abs(j+type4a-type4a+fca-j+2-4)])
-                                baseFace.append([faceon4a])
-                                if vertexCount2a == 4:
-                                    if baseFace[0:4] == [[1],[1],[0],[1]]:
-                                        if len(faces3) == 1:
-                                            faces3.append([0,2,3])
-                                elif vertexCount2a == 6:
-                                    if baseFace[0:6] == [[1],[1],[0],[0],[1],[1]]:
-                                        if len(faces3) == 2:
-                                            faces3.append([1,3,4])
-                                            faces3.append([3,4,5])
-                                
-                                                                                                                                
-                                                                                                                    
-                                                            
+
+                                    
                                                 
                                             
                                             
@@ -315,7 +304,15 @@ def GHG_mesh(f, filepath):
     objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
     collection.objects.link(objects3)
 
-    mesh3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
-    mesh3a.from_pydata(vertices3a, [], faces3a)
-    objects3a = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3a)
-    collection.objects.link(objects3a)
+    uv_layer = mesh3.uv_layers.new(name="UVMap")
+
+    for loop in mesh3.loops:
+        vi = loop.vertex_index
+
+        if vi < len(uvs3):
+            uv_layer.data[loop.index].uv = uvs3[vi]
+        else:
+            uv_layer.data[loop.index].uv = (0.0, 0.0)
+            
+
+
