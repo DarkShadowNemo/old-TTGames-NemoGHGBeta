@@ -19,6 +19,12 @@ def fetch_cstr(f: 'filelike') -> bytearray:
 
 def GHG_mesh(f, filepath):
 
+    baseFace=[]
+
+    faceA=-4
+    faceB=-2
+    faceC=-1
+
     bone_parentlist=[]
     bone_names=[]
 
@@ -42,6 +48,10 @@ def GHG_mesh(f, filepath):
     faa=-1
     fba=0
     fca=1
+
+    faa1=-3
+    fba1=-2
+    fca1=-1
 
     idx_ = 0
 
@@ -206,6 +216,33 @@ def GHG_mesh(f, filepath):
                                 if type4 > 0:
                                     faces.append([abs(j+j+type4-type4-1+fa-j-j-1+j%2),abs(j-j+type4-type4+1+fb-2-1+j-j-j%2),abs(j+type4-type4+fc-j+2-4)])
 
+                elif Chunk == b"\x03\x02\x00\x01":
+                    f.seek(2,1)
+                    vertexCount2b = unpack("B", f.read(1))[0]//2
+                    flag_3b = unpack("B", f.read(1))[0]
+                    if flag_3b == 0x6D:
+                        if vertexCount2b == 0:
+                            pass
+                        elif vertexCount2b == 1:
+                            pass
+                        elif vertexCount2b == 2:
+                            pass
+                        elif vertexCount2b == 3:
+                            for i in range(vertexCount2b):
+                                vxb = unpack("<h", f.read(2))[0]/4096
+                                vyb = unpack("<h", f.read(2))[0]/4096
+                                vzb = unpack("<h", f.read(2))[0]/4096
+                                fnz = unpack("<h", f.read(2))[0]/4096
+                                uvxb = unpack("<h", f.read(2))[0]/4096
+                                uvyb = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+                                static_vxb = round(vxb,3)
+                                static_vyb = round(vyb,3)
+                                static_vzb = round(vzb,3)
+                                vertices3a.append([static_vxb,static_vzb,static_vyb])
+                                uvs3a.append([uvxb,-uvyb])
+                                
+
                 elif Chunk == b"\x04\x02\x00\x01":
                     f.seek(2,1)
                     vertexCount2a = unpack("B", f.read(1))[0]//2
@@ -226,19 +263,34 @@ def GHG_mesh(f, filepath):
                                 uvx3a = unpack("<f", f.read(4))[0]
                                 uvy3a = unpack("<f", f.read(4))[0]
                                 unk3a = unpack("<f", f.read(4))[0]
-                                type4a = unpack("B", f.read(1))[0]^1
+                                type4a = unpack("B", f.read(1))[0]==False
+                                f.seek(-1,1)
+                                faceon4a = unpack("B", f.read(1))[0]
                                 value1aa = unpack("B", f.read(1))[0]
                                 normalZa_ = unpack("<h", f.read(2))[0]
                                 static_vxa = round(vxa,3)
                                 static_vya = round(vya,3)
                                 static_vza = round(vza,3)
                                 
+                                
                                 vertices3.append([static_vxa,static_vza,static_vya])
+                                uvs3.append([uvx3a,-uvy3a])
                                 faa+=1
                                 fba+=1
                                 fca+=1
-                                if type4a < 1:
-                                    faces3.append([abs(j+type4a-type4a+faa-j) % abs(3)])
+                                if type4a > 0:
+                                    faces3.append([abs(j+j+type4a-type4a-1+faa-j-j-1+j%2),abs(j-j+type4a-type4a+1+fba-2-1+j-j-j%2),abs(j+type4a-type4a+fca-j+2-4)])
+                                baseFace.append([faceon4a])
+                                if vertexCount2a == 4:
+                                    if baseFace[0:4] == [[1],[1],[0],[1]]:
+                                        if len(faces3) == 1:
+                                            faces3.append([0,2,3])
+                                elif vertexCount2a == 6:
+                                    if baseFace[0:6] == [[1],[1],[0],[0],[1],[1]]:
+                                        if len(faces3) == 2:
+                                            faces3.append([1,3,4])
+                                            faces3.append([3,4,5])
+                                
                                                                                                                                 
                                                                                                                     
                                                             
@@ -263,8 +315,7 @@ def GHG_mesh(f, filepath):
     objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
     collection.objects.link(objects3)
 
-    objects3.parent = arma
-    armamodifier3 = objects3.modifiers.new("GHG Armature Modifier", "ARMATURE")
-    armamodifier3.object = arma
-
-    vgroups3 = [objects3.vertex_groups.new(name = bone.name) for bone in arma.data.bones]
+    mesh3 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3a.from_pydata(vertices3a, [], faces3a)
+    objects3a = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3a)
+    collection.objects.link(objects3a)
