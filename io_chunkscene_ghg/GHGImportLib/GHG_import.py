@@ -1,4 +1,4 @@
-from struct import unpack, pack
+from struct import unpack, pack, error
 import os
 import math
 import bpy
@@ -492,58 +492,338 @@ def GHG_mesh(f, filepath):
                                     faces3.append([abs(j+j+type4a-type4a-1+faa-j-j-1+j%2),abs(j-j+type4a-type4a+1+fba-2-1+j-j-j%2),abs(j+type4a-type4a+fca-j+2-4)])
 
                 elif Chunk == b"\x02\x00\x01\x00":
-                    f.seek(2,1)
-                    vertexCount4 = unpack("B", f.read(1))[0]//2
-                    flagg4a = unpack("B", f.read(1))[0]
-                    if flagg4a == 0x6C:
-                        if vertexCount4 == 0:
-                            pass
-                        elif vertexCount4 == 1:
-                            for i in range(vertexCount4):
-                                vx4a = unpack("<f", f.read(4))[0]
-                                vy4a = unpack("<f", f.read(4))[0]
-                                vz4a = unpack("<f", f.read(4))[0]
-                                faceoff = unpack("B", f.read(1))[0]
-                                f.seek(3,1)
-                                f.seek(16,1)
-                                vertices4.append([vx4a,vz4a,vy4a])
-                        elif vertexCount4 == 2:
-                            for i in range(vertexCount4):
-                                vx4a = unpack("<f", f.read(4))[0]
-                                vy4a = unpack("<f", f.read(4))[0]
-                                vz4a = unpack("<f", f.read(4))[0]
-                                faceoff = unpack("B", f.read(1))[0]
-                                f.seek(3,1)
-                                f.seek(16,1)
-                                vertices4.append([vx4a,vz4a,vy4a])
-                        elif vertexCount4 == 3:
-                            for i in range(vertexCount4):
-                                vx4a = unpack("<f", f.read(4))[0]
-                                vy4a = unpack("<f", f.read(4))[0]
-                                vz4a = unpack("<f", f.read(4))[0]
-                                faceoff = unpack("B", f.read(1))[0]
-                                f.seek(3,1)
-                                f.seek(16,1)
-                                vertices4.append([vx4a,vz4a,vy4a])
-                        elif vertexCount4 == 13:
-                            for i in range(vertexCount4):
-                                vx4a = unpack("<f", f.read(4))[0]
-                                vy4a = unpack("<f", f.read(4))[0]
-                                vz4a = unpack("<f", f.read(4))[0]
-                                faceoff = unpack("B", f.read(1))[0]
-                                f.seek(3,1)
-                                f.seek(16,1)
-                                vertices4.append([vx4a,vz4a,vy4a])
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4 = unpack("B", f.read(1))[0]//2
+                        flagg4a = unpack("B", f.read(1))[0]
+                        if flagg4a == 0x6C:
+                            if vertexCount4 == 0:
+                                pass
+                            elif vertexCount4 == 1:
+                                for i in range(vertexCount4):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4 == 2:
+                                for i in range(vertexCount4):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4 == 3:
+                                for i in range(vertexCount4):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4 == 13:
+                                for i in range(vertexCount4):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
                 elif Chunk == b"\x04\x00\x00\x00":
-                    f.seek(2,1)
-                    vertexCount4a = unpack("B", f.read(1))[0]//2
-                    flagg4aa = unpack("B", f.read(1))[0]
-                    if flagg4aa == 0x6C:
-                        if vertexCount4a == 0:
-                            pass
-                        elif vertexCount4a == 1:
-                            pass
-                    
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4a = unpack("B", f.read(1))[0]//2
+                        flagg4aa = unpack("B", f.read(1))[0]
+                        if flagg4aa == 0x6C:
+                            if vertexCount4a == 0:
+                                pass
+                            elif vertexCount4a == 1:
+                                for i in range(vertexCount4a):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4a == 2:
+                                for i in range(vertexCount4a):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4a == 3:
+                                for i in range(vertexCount4a):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4a == 4:
+                                for i in range(vertexCount4a):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4a == 7:
+                                for i in range(vertexCount4a):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4a == 9:
+                                for i in range(vertexCount4a):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4a == 10:
+                                for i in range(vertexCount4a):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+
+                elif Chunk == b"\x06\x00\x01\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4b = unpack("B", f.read(1))[0]//2
+                        flagg4ab = unpack("B", f.read(1))[0]
+                        if flagg4ab == 0x6C:
+                            if vertexCount4b == 0:
+                                pass
+                            elif vertexCount4b == 1:
+                                for i in range(vertexCount4b):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4b == 3:
+                                for i in range(vertexCount4b):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+
+                elif Chunk == b"\x08\x00\x00\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4c = unpack("B", f.read(1))[0]//2
+                        flagg4ac = unpack("B", f.read(1))[0]
+                        if flagg4ac == 0x6C:
+                            if vertexCount4c == 0:
+                                pass
+                            elif vertexCount4c == 1:
+                                for i in range(vertexCount4c):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4c == 9:
+                                for i in range(vertexCount4c):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+                elif Chunk == b"\x04\x00\x01\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4d = unpack("B", f.read(1))[0]//2
+                        flagg4ad = unpack("B", f.read(1))[0]
+                        if flagg4ad == 0x6C:
+                            if vertexCount4d == 0:
+                                pass
+                            elif vertexCount4d == 1:
+                                for i in range(vertexCount4d):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4d == 3:
+                                for i in range(vertexCount4d):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4d == 2:
+                                for i in range(vertexCount4d):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4d == 4:
+                                for i in range(vertexCount4d):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4d == 6:
+                                for i in range(vertexCount4d):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+
+                elif Chunk == b"\x06\x00\x00\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4e = unpack("B", f.read(1))[0]//2
+                        flagg4ae = unpack("B", f.read(1))[0]
+                        if flagg4ae == 0x6C:
+                            if vertexCount4e == 0:
+                                pass
+                            elif vertexCount4e == 1:
+                                for i in range(vertexCount4e):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4e == 3:
+                                for i in range(vertexCount4e):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4e == 4:
+                                for i in range(vertexCount4e):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4e == 6:
+                                for i in range(vertexCount4e):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+
+                elif Chunk == b"\x09\x00\x01\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4f = unpack("B", f.read(1))[0]//2
+                        flagg4af = unpack("B", f.read(1))[0]
+                        if flagg4af == 0x6C:
+                            if vertexCount4f == 0:
+                                pass
+                            elif vertexCount4f == 1:
+                                for i in range(vertexCount4f):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4f == 2:
+                                for i in range(vertexCount4f):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4f == 10:
+                                for i in range(vertexCount4f):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4f == 12:
+                                for i in range(vertexCount4f):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
 
                                     
                                                 
