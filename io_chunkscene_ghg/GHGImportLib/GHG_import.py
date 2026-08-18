@@ -19,6 +19,36 @@ def fetch_cstr(f: 'filelike') -> bytearray:
 
 def GHG_mesh(f, filepath):
 
+    fa1_cb=-5
+    fb1_cb=-4
+    fc1_cb=-3
+
+    fa1_ca=-5
+    fb1_ca=-4
+    fc1_ca=-3
+    fd1_ca=-2
+    fe1_ca=-1
+
+    fa1_c=-5
+    fb1_c=-4
+    fc1_c=-3
+    fd1_c=-2
+    fe1_c=-1
+
+    vertices3c=[]
+    faces3c=[]
+    uvs3c=[]
+
+    vertices3ca=[]
+    faces3ca=[]
+    uvs3ca=[]
+
+    vertices3cb=[]
+    faces3cb=[]
+    uvs3cb=[]
+
+    vertices4=[]
+
     fa1_ba=-4
     fb1_ba=-3
     fc1_ba=-2
@@ -351,6 +381,76 @@ def GHG_mesh(f, filepath):
                                         fd1_b+=1*len(vertices3b)
                                         faces3b.append([fa1_b,fb1_b,fc1_b])
                                         faces3b.append([fb1_b,fc1_b,fd1_b])
+
+                        elif vertexCount2b == 5:
+                            for i in range(vertexCount2b):
+                                vxbb = unpack("<h", f.read(2))[0]/4096
+                                vybb = unpack("<h", f.read(2))[0]/4096
+                                vzbb = unpack("<h", f.read(2))[0]/4096
+                                fnzb = unpack("<h", f.read(2))[0]/4096
+                                uvxbb = unpack("<h", f.read(2))[0]/4096
+                                uvybb = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+                                static_vxbb = round(vxbb,3)
+                                static_vybb = round(vybb,3)
+                                static_vzbb = round(vzbb,3)
+                                vertices3c.append([static_vxbb,static_vzbb,static_vybb])
+                                uvs3c.append([uvxbb,-uvybb])
+
+                                vertices3ca.append([static_vxbb,static_vzbb,static_vybb])
+                                uvs3ca.append([uvxbb,-uvybb])
+
+                                vertices3cb.append([static_vxbb,static_vzbb,static_vybb])
+                                uvs3cb.append([uvxbb,-uvybb])
+                            f.seek(86,1)
+                            facecount2 = unpack("B", f.read(1))[0]
+                            fflag3 = unpack("B", f.read(1))[0]
+                            if fflag3 == 0x6E:
+                                if facecount2 == 0:
+                                    pass
+                                elif facecount2 == 1:
+                                    id3b = unpack("B", f.read(1))[0]
+                                    if id3b == 0x09:
+                                        fa1_cb = unpack("B", f.read(1))[0]&0x0F
+                                        fb1_cb = unpack("B", f.read(1))[0]&0x0F
+                                        fc1_cb = unpack("B", f.read(1))[0]&0x0F
+                                        fa1_cb//=3
+                                        fb1_cb//=3
+                                        fc1_cb//=3
+                                        fa1_cb-=5
+                                        fb1_cb-=5
+                                        fc1_cb-=5
+                                        fa1_cb+=1*len(vertices3cb)
+                                        fb1_cb+=1*len(vertices3cb)
+                                        fc1_cb+=1*len(vertices3cb)
+                                        faces3cb.append([fa1_cb,fb1_cb,fc1_cb])
+                                elif facecount2 == 2:
+                                    id3a = unpack("B", f.read(1))[0]
+                                    if id3a == 0x09:
+                                        fa1_ca = unpack("B", f.read(1))[0]&0x0F
+                                        fb1_ca = unpack("B", f.read(1))[0]&0x0F
+                                        fc1_ca = unpack("B", f.read(1))[0]&0x0F
+                                        fd1_ca = unpack("B", f.read(1))[0]&0x0F
+                                        fe1_ca = unpack("B", f.read(1))[0]&0x0F
+                                        f.seek(2,1)
+                                        fa1_ca//=3
+                                        fb1_ca//=3
+                                        fc1_ca//=3
+                                        fd1_ca//=3
+                                        fe1_ca//=3
+                                        fa1_ca-=5
+                                        fb1_ca-=5
+                                        fc1_ca-=5
+                                        fd1_ca-=5
+                                        fe1_ca-=5
+                                        fa1_ca+=1*len(vertices3ca)
+                                        fb1_ca+=1*len(vertices3ca)
+                                        fc1_ca+=1*len(vertices3ca)
+                                        fd1_ca+=1*len(vertices3ca)
+                                        fe1_ca+=1*len(vertices3ca)
+                                        faces3ca.append([fa1_ca,fb1_ca,fc1_ca])
+                                        faces3ca.append([fb1_ca,fc1_ca,fd1_ca])
+                                        faces3ca.append([fc1_ca,fd1_ca,fe1_ca])
                                     
                                     
 
@@ -390,6 +490,60 @@ def GHG_mesh(f, filepath):
                                 fca+=1
                                 if type4a > 0:
                                     faces3.append([abs(j+j+type4a-type4a-1+faa-j-j-1+j%2),abs(j-j+type4a-type4a+1+fba-2-1+j-j-j%2),abs(j+type4a-type4a+fca-j+2-4)])
+
+                elif Chunk == b"\x02\x00\x01\x00":
+                    f.seek(2,1)
+                    vertexCount4 = unpack("B", f.read(1))[0]//2
+                    flagg4a = unpack("B", f.read(1))[0]
+                    if flagg4a == 0x6C:
+                        if vertexCount4 == 0:
+                            pass
+                        elif vertexCount4 == 1:
+                            for i in range(vertexCount4):
+                                vx4a = unpack("<f", f.read(4))[0]
+                                vy4a = unpack("<f", f.read(4))[0]
+                                vz4a = unpack("<f", f.read(4))[0]
+                                faceoff = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                                f.seek(16,1)
+                                vertices4.append([vx4a,vz4a,vy4a])
+                        elif vertexCount4 == 2:
+                            for i in range(vertexCount4):
+                                vx4a = unpack("<f", f.read(4))[0]
+                                vy4a = unpack("<f", f.read(4))[0]
+                                vz4a = unpack("<f", f.read(4))[0]
+                                faceoff = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                                f.seek(16,1)
+                                vertices4.append([vx4a,vz4a,vy4a])
+                        elif vertexCount4 == 3:
+                            for i in range(vertexCount4):
+                                vx4a = unpack("<f", f.read(4))[0]
+                                vy4a = unpack("<f", f.read(4))[0]
+                                vz4a = unpack("<f", f.read(4))[0]
+                                faceoff = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                                f.seek(16,1)
+                                vertices4.append([vx4a,vz4a,vy4a])
+                        elif vertexCount4 == 13:
+                            for i in range(vertexCount4):
+                                vx4a = unpack("<f", f.read(4))[0]
+                                vy4a = unpack("<f", f.read(4))[0]
+                                vz4a = unpack("<f", f.read(4))[0]
+                                faceoff = unpack("B", f.read(1))[0]
+                                f.seek(3,1)
+                                f.seek(16,1)
+                                vertices4.append([vx4a,vz4a,vy4a])
+                elif Chunk == b"\x04\x00\x00\x00":
+                    f.seek(2,1)
+                    vertexCount4a = unpack("B", f.read(1))[0]//2
+                    flagg4aa = unpack("B", f.read(1))[0]
+                    if flagg4aa == 0x6C:
+                        if vertexCount4a == 0:
+                            pass
+                        elif vertexCount4a == 1:
+                            pass
+                    
 
                                     
                                                 
@@ -512,6 +666,11 @@ def GHG_mesh(f, filepath):
     mesh3ba.from_pydata(vertices3ba, [], faces3ba)
     objects3ba = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3ba)
     collection.objects.link(objects3ba)
+
+    mesh4 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh4.from_pydata(vertices4, [], [])
+    objects4 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh4)
+    collection.objects.link(objects4)
             
 
 
