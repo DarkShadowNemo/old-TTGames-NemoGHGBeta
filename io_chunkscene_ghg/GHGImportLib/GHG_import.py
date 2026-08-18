@@ -19,6 +19,21 @@ def fetch_cstr(f: 'filelike') -> bytearray:
 
 def GHG_mesh(f, filepath):
 
+    fa1_ba=-4
+    fb1_ba=-3
+    fc1_ba=-2
+
+    fa1_b=-4
+    fb1_b=-3
+    fc1_b=-2
+    fd1_b=-1
+
+    fa1_a=-3
+    fb1_a=-2
+    fc1_a=-1
+
+    skininfos={}
+
     idx1a=0
 
     baseFace=[]
@@ -40,6 +55,15 @@ def GHG_mesh(f, filepath):
 
     vertices3a=[]
     faces3a=[]
+    uvs3a=[]
+
+    vertices3b=[]
+    faces3b=[]
+    uvs3b=[]
+
+    vertices3ba=[]
+    faces3ba=[]
+    uvs3ba=[]
 
     
     vertices3=[]
@@ -163,7 +187,7 @@ def GHG_mesh(f, filepath):
 
                 matrix = mathutils.Matrix([m1,m3,m2,m4]).inverted().to_3x3().transposed()
                 bone_name = fetch_cstr(ntbl_buffer).decode('ascii')
-                bone_names.append([bone_name])
+                bone_names.append(bone_name)
                 
 
                 bone = skel.edit_bones.new(bone_name)
@@ -244,13 +268,98 @@ def GHG_mesh(f, filepath):
                                 static_vzb = round(vzb,3)
                                 vertices3a.append([static_vxb,static_vzb,static_vyb])
                                 uvs3a.append([uvxb,-uvyb])
-                                
+                            f.seek(78,1)
+                            facecount = unpack("B", f.read(1))[0]
+                            fflag1 = unpack("B", f.read(1))[0]
+                            if fflag1 == 0x6E:
+                                if facecount == 0:
+                                    pass
+                                elif facecount == 1:
+                                    id1 = unpack("B", f.read(1))[0]
+                                    if id1 == 0x09:
+                                        fa1_a = unpack("B", f.read(1))[0]&0x0F
+                                        fb1_a = unpack("B", f.read(1))[0]&0x0F
+                                        fc1_a = unpack("B", f.read(1))[0]&0x0F
+                                        fa1_a//=3
+                                        fb1_a//=3
+                                        fc1_a//=3
+                                        fa1_a-=3
+                                        fb1_a-=3
+                                        fc1_a-=3
+                                        fa1_a+=1*len(vertices3a)
+                                        fb1_a+=1*len(vertices3a)
+                                        fc1_a+=1*len(vertices3a)
+                                        faces3a.append([fa1_a,fb1_a,fc1_a])
+                        elif vertexCount2b == 4:
+                            for i in range(vertexCount2b):
+                                vxba = unpack("<h", f.read(2))[0]/4096
+                                vyba = unpack("<h", f.read(2))[0]/4096
+                                vzba = unpack("<h", f.read(2))[0]/4096
+                                fnza = unpack("<h", f.read(2))[0]/4096
+                                uvxba = unpack("<h", f.read(2))[0]/4096
+                                uvyba = unpack("<h", f.read(2))[0]/4096
+                                f.seek(4,1)
+                                static_vxba = round(vxba,3)
+                                static_vyba = round(vyba,3)
+                                static_vzba = round(vzba,3)
+                                vertices3b.append([static_vxba,static_vzba,static_vyba])
+                                uvs3b.append([uvxba,-uvyba])
+
+                                vertices3ba.append([static_vxba,static_vzba,static_vyba])
+                                uvs3ba.append([uvxba,-uvyba])
+                            f.seek(82,1)
+                            facecount1 = unpack("B", f.read(1))[0]
+                            fflag2 = unpack("B", f.read(1))[0]
+                            if fflag2 == 0x6E:
+                                if facecount1 == 0:
+                                    pass
+                                elif facecount1 == 1:
+                                    id2a = unpack("B", f.read(1))[0]
+                                    if id2a == 0x09:
+                                        fa1_ba = unpack("B", f.read(1))[0]&0x0F
+                                        fb1_ba = unpack("B", f.read(1))[0]&0x0F
+                                        fc1_ba = unpack("B", f.read(1))[0]&0x0F
+                                        fa1_ba//=3
+                                        fb1_ba//=3
+                                        fc1_ba//=3
+                                        fa1_ba-=4
+                                        fb1_ba-=4
+                                        fc1_ba-=4
+                                        fa1_ba+=1*len(vertices3ba)
+                                        fb1_ba+=1*len(vertices3ba)
+                                        fc1_ba+=1*len(vertices3ba)
+                                        faces3ba.append([fa1_ba,fb1_ba,fc1_ba])
+                                elif facecount1 == 2:
+                                    id2 = unpack("B", f.read(1))[0]
+                                    if id2 == 0x09:
+                                        fa1_b = unpack("B", f.read(1))[0]&0x0F
+                                        fb1_b = unpack("B", f.read(1))[0]&0x0F
+                                        fc1_b = unpack("B", f.read(1))[0]&0x0F
+                                        fd1_b = unpack("B", f.read(1))[0]&0x0F
+                                        f.seek(3,1)
+                                        fa1_b//=3
+                                        fb1_b//=3
+                                        fc1_b//=3
+                                        fd1_b//=3
+                                        fa1_b-=4
+                                        fb1_b-=4
+                                        fc1_b-=4
+                                        fd1_b-=4
+                                        fa1_b+=1*len(vertices3b)
+                                        fb1_b+=1*len(vertices3b)
+                                        fc1_b+=1*len(vertices3b)
+                                        fd1_b+=1*len(vertices3b)
+                                        faces3b.append([fa1_b,fb1_b,fc1_b])
+                                        faces3b.append([fb1_b,fc1_b,fd1_b])
+                                    
+                                    
 
                 elif Chunk == b"\x04\x02\x00\x01":
                     f.seek(2,1)
                     vertexCount2a = unpack("B", f.read(1))[0]//2
                     flag_2a = unpack("B", f.read(1))[0]
                     if flag_2a == 0x6C:
+                        pointer3 = f.tell()
                         if vertexCount2a == 0:
                             pass
                         elif vertexCount2a == 1:
@@ -304,15 +413,105 @@ def GHG_mesh(f, filepath):
     objects3 = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3)
     collection.objects.link(objects3)
 
-    uv_layer = mesh3.uv_layers.new(name="UVMap")
+    objects3.parent = arma
+    armamodifier3 = objects3.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3.object = arma
 
-    for loop in mesh3.loops:
-        vi = loop.vertex_index
+    arma.show_in_front = True
 
-        if vi < len(uvs3):
-            uv_layer.data[loop.index].uv = uvs3[vi]
-        else:
-            uv_layer.data[loop.index].uv = (0.0, 0.0)
+    vtxgrps = {}
+    for bone in arma.data.bones:
+        vtxgrps[bone.name] = objects3.vertex_groups.new(name = bone.name)
+
+    idxuv1=0
+
+    if idxuv1 == 0:
+
+        uv_layer = mesh3.uv_layers.new(name="UVMap")
+
+        for loop in mesh3.loops:
+            vi = loop.vertex_index
+
+            if vi < len(uvs3):
+                uv_layer.data[loop.index].uv = uvs3[vi]
+            else:
+                idxuv1+=1
+                if idxuv1 == 1:
+                    uv_tex3 = mesh3.uv_layers.new()
+                    uv_layer3 = mesh3.uv_layers[0].data
+                    vert_loops3 = {}
+                    for l in mesh3.loops:
+                        vert_loops3.setdefault(l.vertex_index, []).append(l.index)
+                    for i, coord in enumerate(uvs3):
+                        for li in vert_loops3[i]:
+                            uv_layer3[li].uv = coord
+
+    mesh3a = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3a.from_pydata(vertices3a, [], faces3a)
+    objects3a = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3a)
+    collection.objects.link(objects3a)
+
+    uv_tex3a = mesh3a.uv_layers.new()
+    uv_layer3a = mesh3a.uv_layers[0].data
+    vert_loops3a = {}
+    for l in mesh3a.loops:
+        vert_loops3a.setdefault(l.vertex_index, []).append(l.index)
+    for i, coord in enumerate(uvs3a):
+        for li in vert_loops3a[i]:
+            uv_layer3a[li].uv = coord
+
+    objects3a.parent = arma
+    armamodifier3a = objects3a.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3a.object = arma
+
+    arma.show_in_front = True
+
+    vtxgrpsa = {}
+    for bone in arma.data.bones:
+        vtxgrpsa[bone.name] = objects3a.vertex_groups.new(name = bone.name)
+
+    mesh3b = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3b.from_pydata(vertices3b, [], faces3b)
+    objects3b = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3b)
+    collection.objects.link(objects3b)
+
+    idxuv2=0
+
+    if idxuv2 == 0:
+
+        uv_layer = mesh3b.uv_layers.new(name="UVMap")
+
+        for loop in mesh3b.loops:
+            vi1 = loop.vertex_index
+
+            if vi1 < len(uvs3b):
+                uv_layer.data[loop.index].uv = uvs3b[vi1]
+            else:
+                idxuv2+=1
+                if idxuv2 == 1:
+                    uv_tex3b = mesh3b.uv_layers.new()
+                    uv_layer3b = mesh3b.uv_layers[0].data
+                    vert_loops3b = {}
+                    for l in mesh3b.loops:
+                        vert_loops3b.setdefault(l.vertex_index, []).append(l.index)
+                    for i, coord in enumerate(uvs3b):
+                        for li in vert_loops3b[i]:
+                            uv_layer3b[li].uv = coord
+
+    objects3b.parent = arma
+    armamodifier3b = objects3b.modifiers.new("GHG Armature Modifier", "ARMATURE")
+    armamodifier3b.object = arma
+
+    arma.show_in_front = True
+
+    vtxgrpsb = {}
+    for bone in arma.data.bones:
+        vtxgrpsb[bone.name] = objects3b.vertex_groups.new(name = bone.name)
+
+    mesh3ba = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3ba.from_pydata(vertices3ba, [], faces3ba)
+    objects3ba = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3ba)
+    collection.objects.link(objects3ba)
             
 
 
