@@ -825,6 +825,124 @@ def GHG_mesh(f, filepath):
                     except:
                         error
 
+                elif Chunk == b"\x0B\x00\x00\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4g = unpack("B", f.read(1))[0]//2
+                        flagg4ag = unpack("B", f.read(1))[0]
+                        if flagg4ag == 0x6C:
+                            if vertexCount4g == 0:
+                                pass
+                            elif vertexCount4g == 1:
+                                for i in range(vertexCount4g):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4g == 2:
+                                for i in range(vertexCount4g):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+                elif Chunk == b"\x0F\x00\x00\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4h = unpack("B", f.read(1))[0]//2
+                        flagg4ah = unpack("B", f.read(1))[0]
+                        if flagg4ah == 0x6C:
+                            if vertexCount4h == 0:
+                                pass
+                            elif vertexCount4h == 1:
+                                for i in range(vertexCount4h):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4h == 2:
+                                for i in range(vertexCount4h):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4g == 3:
+                                for i in range(vertexCount4h):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+                elif Chunk == b"\x13\x00\x00\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4i = unpack("B", f.read(1))[0]//2
+                        flagg4ai = unpack("B", f.read(1))[0]
+                        if flagg4ai == 0x6C:
+                            if vertexCount4i == 0:
+                                pass
+                            elif vertexCount4i == 2:
+                                for i in range(vertexCount4i):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+
+                elif Chunk == b"\x11\x00\x00\x00":
+                    try:
+                        
+                        f.seek(2,1)
+                        vertexCount4j = unpack("B", f.read(1))[0]//2
+                        flagg4aj = unpack("B", f.read(1))[0]
+                        if flagg4aj == 0x6C:
+                            if vertexCount4j == 0:
+                                pass
+                            elif vertexCount4j == 1:
+                                for i in range(vertexCount4i):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                            elif vertexCount4j == 3:
+                                for i in range(vertexCount4i):
+                                    vx4a = unpack("<f", f.read(4))[0]
+                                    vy4a = unpack("<f", f.read(4))[0]
+                                    vz4a = unpack("<f", f.read(4))[0]
+                                    faceoff = unpack("B", f.read(1))[0]
+                                    f.seek(3,1)
+                                    f.seek(16,1)
+                                    vertices4.append([vx4a,vz4a,vy4a])
+                    except:
+                        error
+
                                     
                                                 
                                             
@@ -946,6 +1064,36 @@ def GHG_mesh(f, filepath):
     mesh3ba.from_pydata(vertices3ba, [], faces3ba)
     objects3ba = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3ba)
     collection.objects.link(objects3ba)
+
+    mesh3ca = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
+    mesh3ca.from_pydata(vertices3ca, [], faces3ca)
+    objects3ca = bpy.data.objects.new(os.path.basename(os.path.splitext(filepath)[0]), mesh3ca)
+    collection.objects.link(objects3ca)
+
+    idxuv3=0
+
+    if idxuv3 == 0:
+
+        uv_layer = mesh3ca.uv_layers.new(name="UVMap")
+
+        for loop in mesh3ca.loops:
+            vi2 = loop.vertex_index
+
+            if vi2 < len(uvs3ca):
+                uv_layer.data[loop.index].uv = uvs3ca[vi2]
+            else:
+                idxuv3+=1
+                if idxuv3 == 1:
+                    uv_tex3ca = mesh3ca.uv_layers.new()
+                    uv_layer3ca = mesh3ca.uv_layers[0].data
+                    vert_loops3ca = {}
+                    for l in mesh3ca.loops:
+                        vert_loops3ca.setdefault(l.vertex_index, []).append(l.index)
+                    for i, coord in enumerate(uvs3ca):
+                        for li in vert_loops3ca[i]:
+                            uv_layer3ca[li].uv = coord
+
+    
 
     mesh4 = bpy.data.meshes.new(os.path.basename(os.path.splitext(filepath)[0]))
     mesh4.from_pydata(vertices4, [], [])
