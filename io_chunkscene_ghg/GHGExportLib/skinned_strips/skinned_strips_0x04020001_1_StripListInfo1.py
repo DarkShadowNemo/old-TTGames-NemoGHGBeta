@@ -8194,7 +8194,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 2144))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8207,7 +8207,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 2848))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8220,7 +8220,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 3552))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8233,7 +8233,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 4256))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8246,7 +8246,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 4960))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8259,7 +8259,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 5664))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8272,7 +8272,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 6368))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8285,7 +8285,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 7072))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8298,7 +8298,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 7776))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8311,7 +8311,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 8480))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8324,7 +8324,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 9184))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8337,7 +8337,7 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 9888))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
 
@@ -8350,9 +8350,52 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
             f.write(pack("<I", 268435456))
             f.write(pack("<I", 1812201496))
             f.write(pack("<I", 1342177280))
-            f.write(pack("<I", 1440))
+            f.write(pack("<I", 10592))
             f.write(pack("<I", 0))
             f.write(pack("<I", 0))
+
+            f.write(pack("<I", 1610612736))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+
+            f.write(pack("<H", 0))
+            f.write(pack("B", 6))
+            f.write(pack("B", 96))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 16777473))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 1812037842))
+            f.write(pack("<I", 32785))
+            f.write(pack("<I", 805453824))
+            f.write(pack("<I", 1298))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 1828814850))
+            f.write(pack("<I", 65604))
+            f.write(pack("<I", 0))
+            f.write(pack("B", 4))
+            f.write(pack("B", 2))
+            f.write(pack("B", 0))
+            f.write(pack("B", 1))
+            f.write(pack("B", 3))
+            f.write(pack("B", 128))
+            f.write(pack("B", len(mm_mat.vertices)*2))
+            f.write(pack("B", 108))
+            faces0000k=[]
+            for v in mm_mat.vertices:
+                f.write(pack("<f", v.co.x))
+                f.write(pack("<f", v.co.z))
+                f.write(pack("<f", v.co.y))
+                f.write(pack("<f", 0))
+                f.write(pack("<f", 0))
+                f.write(pack("<f", 0))
+                f.write(pack("<f", 0))
+                f.write(pack("<f", 0))
+            for facs in mm_mat.polygons:
+                a=facs.vertices[0]
+                b=facs.vertices[1]
+                c=facs.vertices[2]
+                faces0000k.append([a,b,c])
 
             f.write(pack("<I", 16777473))
             f.write(pack("<I", 1610907653))
