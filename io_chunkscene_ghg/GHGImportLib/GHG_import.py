@@ -552,134 +552,126 @@ def GHG_mesh(f, filepath):
                                     uvxbc = unpack("<h", f.read(2))[0]/4096
                                     uvybc = unpack("<h", f.read(2))[0]/4096
                                     f.seek(4,1)
-                                    vxbca = unpack("<h", f.read(2))[0]/4096
-                                    vybca = unpack("<h", f.read(2))[0]/4096
-                                    vzbca = unpack("<h", f.read(2))[0]/4096
-                                    fnzca = unpack("<h", f.read(2))[0]/4096
-                                    uvxbca = unpack("<h", f.read(2))[0]/4096
-                                    uvybca = unpack("<h", f.read(2))[0]/4096
+                                    vxbc1 = unpack("<h", f.read(2))[0]/4096
+                                    vybc1 = unpack("<h", f.read(2))[0]/4096
+                                    vzbc1 = unpack("<h", f.read(2))[0]/4096
+                                    fnzc1 = unpack("<h", f.read(2))[0]/4096
+                                    uvxbc1 = unpack("<h", f.read(2))[0]/4096
+                                    uvybc1 = unpack("<h", f.read(2))[0]/4096
                                     f.seek(4,1)
-                                    vxbcb = unpack("<h", f.read(2))[0]/4096
-                                    vybcb = unpack("<h", f.read(2))[0]/4096
-                                    vzbcb = unpack("<h", f.read(2))[0]/4096
-                                    fnzcb = unpack("<h", f.read(2))[0]/4096
-                                    uvxbcb = unpack("<h", f.read(2))[0]/4096
-                                    uvybcb = unpack("<h", f.read(2))[0]/4096
+                                    vxbc2 = unpack("<h", f.read(2))[0]/4096
+                                    vybc2 = unpack("<h", f.read(2))[0]/4096
+                                    vzbc2 = unpack("<h", f.read(2))[0]/4096
+                                    fnzc2 = unpack("<h", f.read(2))[0]/4096
+                                    uvxbc2 = unpack("<h", f.read(2))[0]/4096
+                                    uvybc2 = unpack("<h", f.read(2))[0]/4096
                                     f.seek(4,1)
-                                    vxbcc = unpack("<h", f.read(2))[0]/4096
-                                    vybcc = unpack("<h", f.read(2))[0]/4096
-                                    vzbcc = unpack("<h", f.read(2))[0]/4096
-                                    fnzcc = unpack("<h", f.read(2))[0]/4096
-                                    uvxbcc = unpack("<h", f.read(2))[0]/4096
-                                    uvybcc = unpack("<h", f.read(2))[0]/4096
+                                    vxbc3 = unpack("<h", f.read(2))[0]/4096
+                                    vybc3 = unpack("<h", f.read(2))[0]/4096
+                                    vzbc3 = unpack("<h", f.read(2))[0]/4096
+                                    fnzc3 = unpack("<h", f.read(2))[0]/4096
+                                    uvxbc3 = unpack("<h", f.read(2))[0]/4096
+                                    uvybc3 = unpack("<h", f.read(2))[0]/4096
                                     f.seek(4,1)
-                                    vxbcd = unpack("<h", f.read(2))[0]/4096
-                                    vybcd = unpack("<h", f.read(2))[0]/4096
-                                    vzbcd = unpack("<h", f.read(2))[0]/4096
-                                    fnzcd = unpack("<h", f.read(2))[0]/4096
-                                    uvxbcd = unpack("<h", f.read(2))[0]/4096
-                                    uvybcd = unpack("<h", f.read(2))[0]/4096
+                                    vxbc4 = unpack("<h", f.read(2))[0]/4096
+                                    vybc4 = unpack("<h", f.read(2))[0]/4096
+                                    vzbc4 = unpack("<h", f.read(2))[0]/4096
+                                    fnzc4 = unpack("<h", f.read(2))[0]/4096
+                                    uvxbc4 = unpack("<h", f.read(2))[0]/4096
+                                    uvybc4 = unpack("<h", f.read(2))[0]/4096
                                     f.seek(4,1)
-                                    vxbce = unpack("<h", f.read(2))[0]/4096
-                                    vybce = unpack("<h", f.read(2))[0]/4096
-                                    vzbce = unpack("<h", f.read(2))[0]/4096
-                                    fnzce = unpack("<h", f.read(2))[0]/4096
-                                    uvxbce = unpack("<h", f.read(2))[0]/4096
-                                    uvybce = unpack("<h", f.read(2))[0]/4096
+                                    vxbc5 = unpack("<h", f.read(2))[0]/4096
+                                    vybc5 = unpack("<h", f.read(2))[0]/4096
+                                    vzbc5 = unpack("<h", f.read(2))[0]/4096
+                                    fnzc5 = unpack("<h", f.read(2))[0]/4096
+                                    uvxbc5 = unpack("<h", f.read(2))[0]/4096
+                                    uvybc5 = unpack("<h", f.read(2))[0]/4096
                                     f.seek(4,1)
                                     static_vxbc = round(vxbc,3)
                                     static_vybc = round(vybc,3)
                                     static_vzbc = round(vzbc,3)
-                                    static_vxbca = round(vxbca,3)
-                                    static_vybca = round(vybca,3)
-                                    static_vzbca = round(vzbca,3)
-                                    static_vxbcb = round(vxbcb,3)
-                                    static_vybcb = round(vybcb,3)
-                                    static_vzbcb = round(vzbcb,3)
-                                    static_vxbcc = round(vxbcc,3)
-                                    static_vybcc = round(vybcc,3)
-                                    static_vzbcc = round(vzbcc,3)
-                                    static_vxbcd = round(vxbcd,3)
-                                    static_vybcd = round(vybcd,3)
-                                    static_vzbcd = round(vzbcd,3)
-                                    static_vxbce = round(vxbce,3)
-                                    static_vybce = round(vybce,3)
-                                    static_vzbce = round(vzbce,3)
+                                    static_vxbc1 = round(vxbc1,3)
+                                    static_vybc1 = round(vybc1,3)
+                                    static_vzbc1 = round(vzbc1,3)
+                                    static_vxbc2 = round(vxbc2,3)
+                                    static_vybc2 = round(vybc2,3)
+                                    static_vzbc2 = round(vzbc2,3)
+                                    static_vxbc3 = round(vxbc3,3)
+                                    static_vybc3 = round(vybc3,3)
+                                    static_vzbc3 = round(vzbc3,3)
+                                    static_vxbc4 = round(vxbc4,3)
+                                    static_vybc4 = round(vybc4,3)
+                                    static_vzbc4 = round(vzbc4,3)
+                                    static_vxbc5 = round(vxbc5,3)
+                                    static_vybc5 = round(vybc5,3)
+                                    static_vzbc5 = round(vzbc5,3)
                                     vertices3d.append([static_vxbc,static_vzbc,static_vybc])
-                                    vertices3d.append([static_vxbca,static_vzbca,static_vybca])
-                                    vertices3d.append([static_vxbcb,static_vzbcb,static_vybcb])
-                                    vertices3d.append([static_vxbcc,static_vzbcc,static_vybcc])
-                                    vertices3d.append([static_vxbcd,static_vzbcd,static_vybcd])
-                                    vertices3d.append([static_vxbce,static_vzbce,static_vybce])
-                                    vertices3da.append([static_vxbc,static_vzbc,static_vybc])
-                                    vertices3da.append([static_vxbca,static_vzbca,static_vybca])
-                                    vertices3da.append([static_vxbcb,static_vzbcb,static_vybcb])
-                                    vertices3da.append([static_vxbcc,static_vzbcc,static_vybcc])
-                                    vertices3da.append([static_vxbcd,static_vzbcd,static_vybcd])
-                                    vertices3da.append([static_vxbce,static_vzbce,static_vybce])
+                                    vertices3d.append([static_vxbc1,static_vzbc1,static_vybc1])
+                                    vertices3d.append([static_vxbc2,static_vzbc2,static_vybc2])
+                                    vertices3d.append([static_vxbc3,static_vzbc3,static_vybc3])
+                                    vertices3d.append([static_vxbc4,static_vzbc4,static_vybc4])
+                                    vertices3d.append([static_vxbc5,static_vzbc5,static_vybc5])
                                     uvs3d.append([uvxbc,-uvybc])
-                                    uvs3d.append([uvxbca,-uvybca])
-                                    uvs3d.append([uvxbcb,-uvybcb])
-                                    uvs3d.append([uvxbcc,-uvybcc])
-                                    uvs3d.append([uvxbcd,-uvybcd])
-                                    uvs3d.append([uvxbce,-uvybce])
-                                    uvs3da.append([uvxbc,-uvybc])
-                                    uvs3da.append([uvxbca,-uvybca])
-                                    uvs3da.append([uvxbcb,-uvybcb])
-                                    uvs3da.append([uvxbcc,-uvybcc])
-                                    uvs3da.append([uvxbcd,-uvybcd])
-                                    uvs3da.append([uvxbce,-uvybce])
+                                    uvs3d.append([uvxbc1,-uvybc1])
+                                    uvs3d.append([uvxbc2,-uvybc2])
+                                    uvs3d.append([uvxbc3,-uvybc3])
+                                    uvs3d.append([uvxbc4,-uvybc4])
+                                    uvs3d.append([uvxbc5,-uvybc5])
                                 f.seek(90,1)
-                                facecount3 = unpack("B", f.read(1))[0]
-                                fflag4 = unpack("B", f.read(1))[0]
-                                if fflag4 == 0x6E:
-                                    if facecount3 == 0:
-                                        pass
-                                    elif facecount3 == 1:
-                                        id3c = unpack("B", f.read(1))[0]
-                                        if id3c == 0x09:
-                                            fa1_da = unpack("B", f.read(1))[0]&0x0F
-                                            fb1_da = unpack("B", f.read(1))[0]&0x0F
-                                            fc1_da = unpack("B", f.read(1))[0]&0x0F
-                                            fa1_da//=3
-                                            fb1_da//=3
-                                            fc1_da//=3
-                                            fa1_da-=6
-                                            fb1_da-=6
-                                            fc1_da-=6
-                                            fa1_da+=1*len(vertices3da)
-                                            fb1_da+=1*len(vertices3da)
-                                            fc1_da+=1*len(vertices3da)
-                                            faces3da.append([fa1_da,fb1_da,fc1_da])
-                                    elif facecount3 == 2:
-                                        id3ca = unpack("B", f.read(1))[0]
-                                        if id3ca == 0x09:
-                                            fa1_d = unpack("B", f.read(1))[0]&0x0F
-                                            fb1_d = unpack("B", f.read(1))[0]&0x0F
-                                            fc1_d = unpack("B", f.read(1))[0]&0x0F
-                                            fd1_d = unpack("B", f.read(1))[0]&0x0F
-                                            fe1_d = unpack("B", f.read(1))[0]&0x0F
-                                            ff1_d = unpack("B", f.read(1))[0]&0x0F
-                                            f.seek(1,1)
-                                            fa1_d//=3
-                                            fb1_d//=3
-                                            fc1_d//=3
-                                            fd1_d//=3
-                                            fe1_d//=3
-                                            ff1_d//=3
-                                            fa1_d-=6
-                                            fb1_d-=6
-                                            fc1_d-=6
-                                            fd1_d-=6
-                                            fe1_d-=6
-                                            ff1_d-=6
-                                            fa1_d+=1*len(vertices3d)
-                                            fb1_d+=1*len(vertices3d)
-                                            fc1_d+=1*len(vertices3d)
-                                            fd1_d+=1*len(vertices3d)
-                                            fe1_d+=1*len(vertices3d)
-                                            ff1_d+=1*len(vertices3d)
-                                            if vxbc is not None and vybc is not None and vzbc is not None and vxbca is not None and vybca is not None and vzbca is not None and vxbcb is not None and vybcb is not None and vzbcb is not None and vxbcc is not None and vybcc is not None and vzbcc is not None and vxbcd is not None and vybcd is not None and vzbcd is not None and vxbce is not None and vybce is not None and vzbce is not None:
+                                if vybc4 == vybc5:
+                                    facecount3 = unpack("B", f.read(1))[0]*2
+                                else:
+                                    
+                                    facecount3 = unpack("B", f.read(1))[0]
+                                    fflag4 = unpack("B", f.read(1))[0]
+                                    if fflag4 == 0x6E:
+                                        if facecount3 == 0:
+                                            pass
+                                        elif facecount3 == 1:
+                                            id3c = unpack("B", f.read(1))[0]
+                                            if id3c == 0x09:
+                                                fa1_da = unpack("B", f.read(1))[0]&0x0F
+                                                fb1_da = unpack("B", f.read(1))[0]&0x0F
+                                                fc1_da = unpack("B", f.read(1))[0]&0x0F
+                                                fa1_da//=3
+                                                fb1_da//=3
+                                                fc1_da//=3
+                                                fa1_da-=6
+                                                fb1_da-=6
+                                                fc1_da-=6
+                                                fa1_da+=1*len(vertices3da)
+                                                fb1_da+=1*len(vertices3da)
+                                                fc1_da+=1*len(vertices3da)
+                                                faces3da.append([fa1_da,fb1_da,fc1_da])
+                                        elif facecount3 == 2:
+                                            id3ca = unpack("B", f.read(1))[0]
+                                            if id3ca == 0x09:
+                                                fa1_d = unpack("B", f.read(1))[0]&0x0F
+                                                fb1_d = unpack("B", f.read(1))[0]&0x0F
+                                                fc1_d = unpack("B", f.read(1))[0]&0x0F
+                                                fd1_d = unpack("B", f.read(1))[0]&0x0F
+                                                fe1_d = unpack("B", f.read(1))[0]&0x0F
+                                                ff1_d = unpack("B", f.read(1))[0]&0x0F
+                                                f.seek(1,1)
+                                                fa1_d//=3
+                                                fb1_d//=3
+                                                fc1_d//=3
+                                                fd1_d//=3
+                                                fe1_d//=3
+                                                ff1_d//=3
+                                                fa1_d-=6
+                                                fb1_d-=6
+                                                fc1_d-=6
+                                                fd1_d-=6
+                                                fe1_d-=6
+                                                ff1_d-=6
+                                                fa1_d+=1*len(vertices3d)
+                                                fb1_d+=1*len(vertices3d)
+                                                fc1_d+=1*len(vertices3d)
+                                                fd1_d+=1*len(vertices3d)
+                                                fe1_d+=1*len(vertices3d)
+                                                ff1_d+=1*len(vertices3d)
+                                                    
                                                 faces3d.append([fa1_d,fb1_d,fc1_d])
                                                 faces3d.append([fd1_d,fe1_d,ff1_d])
                                         
@@ -1029,136 +1021,129 @@ def GHG_mesh(f, filepath):
                                 uvxbc = unpack("<h", f.read(2))[0]/4096
                                 uvybc = unpack("<h", f.read(2))[0]/4096
                                 f.seek(4,1)
-                                vxbca = unpack("<h", f.read(2))[0]/4096
-                                vybca = unpack("<h", f.read(2))[0]/4096
-                                vzbca = unpack("<h", f.read(2))[0]/4096
-                                fnzca = unpack("<h", f.read(2))[0]/4096
-                                uvxbca = unpack("<h", f.read(2))[0]/4096
-                                uvybca = unpack("<h", f.read(2))[0]/4096
+                                vxbc1 = unpack("<h", f.read(2))[0]/4096
+                                vybc1 = unpack("<h", f.read(2))[0]/4096
+                                vzbc1 = unpack("<h", f.read(2))[0]/4096
+                                fnzc1 = unpack("<h", f.read(2))[0]/4096
+                                uvxbc1 = unpack("<h", f.read(2))[0]/4096
+                                uvybc1 = unpack("<h", f.read(2))[0]/4096
                                 f.seek(4,1)
-                                vxbcb = unpack("<h", f.read(2))[0]/4096
-                                vybcb = unpack("<h", f.read(2))[0]/4096
-                                vzbcb = unpack("<h", f.read(2))[0]/4096
-                                fnzcb = unpack("<h", f.read(2))[0]/4096
-                                uvxbcb = unpack("<h", f.read(2))[0]/4096
-                                uvybcb = unpack("<h", f.read(2))[0]/4096
+                                vxbc2 = unpack("<h", f.read(2))[0]/4096
+                                vybc2 = unpack("<h", f.read(2))[0]/4096
+                                vzbc2 = unpack("<h", f.read(2))[0]/4096
+                                fnzc2 = unpack("<h", f.read(2))[0]/4096
+                                uvxbc2 = unpack("<h", f.read(2))[0]/4096
+                                uvybc2 = unpack("<h", f.read(2))[0]/4096
                                 f.seek(4,1)
-                                vxbcc = unpack("<h", f.read(2))[0]/4096
-                                vybcc = unpack("<h", f.read(2))[0]/4096
-                                vzbcc = unpack("<h", f.read(2))[0]/4096
-                                fnzcc = unpack("<h", f.read(2))[0]/4096
-                                uvxbcc = unpack("<h", f.read(2))[0]/4096
-                                uvybcc = unpack("<h", f.read(2))[0]/4096
+                                vxbc3 = unpack("<h", f.read(2))[0]/4096
+                                vybc3 = unpack("<h", f.read(2))[0]/4096
+                                vzbc3 = unpack("<h", f.read(2))[0]/4096
+                                fnzc3 = unpack("<h", f.read(2))[0]/4096
+                                uvxbc3 = unpack("<h", f.read(2))[0]/4096
+                                uvybc3 = unpack("<h", f.read(2))[0]/4096
                                 f.seek(4,1)
-                                vxbcd = unpack("<h", f.read(2))[0]/4096
-                                vybcd = unpack("<h", f.read(2))[0]/4096
-                                vzbcd = unpack("<h", f.read(2))[0]/4096
-                                fnzcd = unpack("<h", f.read(2))[0]/4096
-                                uvxbcd = unpack("<h", f.read(2))[0]/4096
-                                uvybcd = unpack("<h", f.read(2))[0]/4096
+                                vxbc4 = unpack("<h", f.read(2))[0]/4096
+                                vybc4 = unpack("<h", f.read(2))[0]/4096
+                                vzbc4 = unpack("<h", f.read(2))[0]/4096
+                                fnzc4 = unpack("<h", f.read(2))[0]/4096
+                                uvxbc4 = unpack("<h", f.read(2))[0]/4096
+                                uvybc4 = unpack("<h", f.read(2))[0]/4096
                                 f.seek(4,1)
-                                vxbce = unpack("<h", f.read(2))[0]/4096
-                                vybce = unpack("<h", f.read(2))[0]/4096
-                                vzbce = unpack("<h", f.read(2))[0]/4096
-                                fnzce = unpack("<h", f.read(2))[0]/4096
-                                uvxbce = unpack("<h", f.read(2))[0]/4096
-                                uvybce = unpack("<h", f.read(2))[0]/4096
+                                vxbc5 = unpack("<h", f.read(2))[0]/4096
+                                vybc5 = unpack("<h", f.read(2))[0]/4096
+                                vzbc5 = unpack("<h", f.read(2))[0]/4096
+                                fnzc5 = unpack("<h", f.read(2))[0]/4096
+                                uvxbc5 = unpack("<h", f.read(2))[0]/4096
+                                uvybc5 = unpack("<h", f.read(2))[0]/4096
                                 f.seek(4,1)
                                 static_vxbc = round(vxbc,3)
                                 static_vybc = round(vybc,3)
                                 static_vzbc = round(vzbc,3)
-                                static_vxbca = round(vxbca,3)
-                                static_vybca = round(vybca,3)
-                                static_vzbca = round(vzbca,3)
-                                static_vxbcb = round(vxbcb,3)
-                                static_vybcb = round(vybcb,3)
-                                static_vzbcb = round(vzbcb,3)
-                                static_vxbcc = round(vxbcc,3)
-                                static_vybcc = round(vybcc,3)
-                                static_vzbcc = round(vzbcc,3)
-                                static_vxbcd = round(vxbcd,3)
-                                static_vybcd = round(vybcd,3)
-                                static_vzbcd = round(vzbcd,3)
-                                static_vxbce = round(vxbce,3)
-                                static_vybce = round(vybce,3)
-                                static_vzbce = round(vzbce,3)
+                                static_vxbc1 = round(vxbc1,3)
+                                static_vybc1 = round(vybc1,3)
+                                static_vzbc1 = round(vzbc1,3)
+                                static_vxbc2 = round(vxbc2,3)
+                                static_vybc2 = round(vybc2,3)
+                                static_vzbc2 = round(vzbc2,3)
+                                static_vxbc3 = round(vxbc3,3)
+                                static_vybc3 = round(vybc3,3)
+                                static_vzbc3 = round(vzbc3,3)
+                                static_vxbc4 = round(vxbc4,3)
+                                static_vybc4 = round(vybc4,3)
+                                static_vzbc4 = round(vzbc4,3)
+                                static_vxbc5 = round(vxbc5,3)
+                                static_vybc5 = round(vybc5,3)
+                                static_vzbc5 = round(vzbc5,3)
                                 vertices3d.append([static_vxbc,static_vzbc,static_vybc])
-                                vertices3d.append([static_vxbca,static_vzbca,static_vybca])
-                                vertices3d.append([static_vxbcb,static_vzbcb,static_vybcb])
-                                vertices3d.append([static_vxbcc,static_vzbcc,static_vybcc])
-                                vertices3d.append([static_vxbcd,static_vzbcd,static_vybcd])
-                                vertices3d.append([static_vxbce,static_vzbce,static_vybce])
-                                vertices3da.append([static_vxbc,static_vzbc,static_vybc])
-                                vertices3da.append([static_vxbca,static_vzbca,static_vybca])
-                                vertices3da.append([static_vxbcb,static_vzbcb,static_vybcb])
-                                vertices3da.append([static_vxbcc,static_vzbcc,static_vybcc])
-                                vertices3da.append([static_vxbcd,static_vzbcd,static_vybcd])
-                                vertices3da.append([static_vxbce,static_vzbce,static_vybce])
+                                vertices3d.append([static_vxbc1,static_vzbc1,static_vybc1])
+                                vertices3d.append([static_vxbc2,static_vzbc2,static_vybc2])
+                                vertices3d.append([static_vxbc3,static_vzbc3,static_vybc3])
+                                vertices3d.append([static_vxbc4,static_vzbc4,static_vybc4])
+                                vertices3d.append([static_vxbc5,static_vzbc5,static_vybc5])
                                 uvs3d.append([uvxbc,-uvybc])
-                                uvs3d.append([uvxbca,-uvybca])
-                                uvs3d.append([uvxbcb,-uvybcb])
-                                uvs3d.append([uvxbcc,-uvybcc])
-                                uvs3d.append([uvxbcd,-uvybcd])
-                                uvs3d.append([uvxbce,-uvybce])
-                                uvs3da.append([uvxbc,-uvybc])
-                                uvs3da.append([uvxbca,-uvybca])
-                                uvs3da.append([uvxbcb,-uvybcb])
-                                uvs3da.append([uvxbcc,-uvybcc])
-                                uvs3da.append([uvxbcd,-uvybcd])
-                                uvs3da.append([uvxbce,-uvybce])
+                                uvs3d.append([uvxbc1,-uvybc1])
+                                uvs3d.append([uvxbc2,-uvybc2])
+                                uvs3d.append([uvxbc3,-uvybc3])
+                                uvs3d.append([uvxbc4,-uvybc4])
+                                uvs3d.append([uvxbc5,-uvybc5])
                             f.seek(90,1)
-                            facecount3 = unpack("B", f.read(1))[0]
-                            fflag4 = unpack("B", f.read(1))[0]
-                            if fflag4 == 0x6E:
-                                if facecount3 == 0:
-                                    pass
-                                elif facecount3 == 1:
-                                    id3c = unpack("B", f.read(1))[0]
-                                    if id3c == 0x09:
-                                        fa1_da = unpack("B", f.read(1))[0]&0x0F
-                                        fb1_da = unpack("B", f.read(1))[0]&0x0F
-                                        fc1_da = unpack("B", f.read(1))[0]&0x0F
-                                        fa1_da//=3
-                                        fb1_da//=3
-                                        fc1_da//=3
-                                        fa1_da-=6
-                                        fb1_da-=6
-                                        fc1_da-=6
-                                        fa1_da+=1*len(vertices3da)
-                                        fb1_da+=1*len(vertices3da)
-                                        fc1_da+=1*len(vertices3da)
-                                        faces3da.append([fa1_da,fb1_da,fc1_da])
-                                elif facecount3 == 2:
-                                    id3ca = unpack("B", f.read(1))[0]
-                                    if id3ca == 0x09:
-                                        fa1_d = unpack("B", f.read(1))[0]&0x0F
-                                        fb1_d = unpack("B", f.read(1))[0]&0x0F
-                                        fc1_d = unpack("B", f.read(1))[0]&0x0F
-                                        fd1_d = unpack("B", f.read(1))[0]&0x0F
-                                        fe1_d = unpack("B", f.read(1))[0]&0x0F
-                                        ff1_d = unpack("B", f.read(1))[0]&0x0F
-                                        f.seek(1,1)
-                                        fa1_d//=3
-                                        fb1_d//=3
-                                        fc1_d//=3
-                                        fd1_d//=3
-                                        fe1_d//=3
-                                        ff1_d//=3
-                                        fa1_d-=6
-                                        fb1_d-=6
-                                        fc1_d-=6
-                                        fd1_d-=6
-                                        fe1_d-=6
-                                        ff1_d-=6
-                                        fa1_d+=1*len(vertices3d)
-                                        fb1_d+=1*len(vertices3d)
-                                        fc1_d+=1*len(vertices3d)
-                                        fd1_d+=1*len(vertices3d)
-                                        fe1_d+=1*len(vertices3d)
-                                        ff1_d+=1*len(vertices3d)
-                                        if vxbc is not None and vybc is not None and vzbc is not None and vxbca is not None and vybca is not None and vzbca is not None and vxbcb is not None and vybcb is not None and vzbcb is not None and vxbcc is not None and vybcc is not None and vzbcc is not None and vxbcd is not None and vybcd is not None and vzbcd is not None and vxbce is not None and vybce is not None and vzbce is not None:
+                            if vybc4 == vybc5:
+                                facecount3 = unpack("B", f.read(1))[0]*2
+                            else:
+                                
+                                facecount3 = unpack("B", f.read(1))[0]
+                                fflag4 = unpack("B", f.read(1))[0]
+                                if fflag4 == 0x6E:
+                                    if facecount3 == 0:
+                                        pass
+                                    elif facecount3 == 1:
+                                        id3c = unpack("B", f.read(1))[0]
+                                        if id3c == 0x09:
+                                            fa1_da = unpack("B", f.read(1))[0]&0x0F
+                                            fb1_da = unpack("B", f.read(1))[0]&0x0F
+                                            fc1_da = unpack("B", f.read(1))[0]&0x0F
+                                            fa1_da//=3
+                                            fb1_da//=3
+                                            fc1_da//=3
+                                            fa1_da-=6
+                                            fb1_da-=6
+                                            fc1_da-=6
+                                            fa1_da+=1*len(vertices3da)
+                                            fb1_da+=1*len(vertices3da)
+                                            fc1_da+=1*len(vertices3da)
+                                            faces3da.append([fa1_da,fb1_da,fc1_da])
+                                    elif facecount3 == 2:
+                                        id3ca = unpack("B", f.read(1))[0]
+                                        if id3ca == 0x09:
+                                            fa1_d = unpack("B", f.read(1))[0]&0x0F
+                                            fb1_d = unpack("B", f.read(1))[0]&0x0F
+                                            fc1_d = unpack("B", f.read(1))[0]&0x0F
+                                            fd1_d = unpack("B", f.read(1))[0]&0x0F
+                                            fe1_d = unpack("B", f.read(1))[0]&0x0F
+                                            ff1_d = unpack("B", f.read(1))[0]&0x0F
+                                            f.seek(1,1)
+                                            fa1_d//=3
+                                            fb1_d//=3
+                                            fc1_d//=3
+                                            fd1_d//=3
+                                            fe1_d//=3
+                                            ff1_d//=3
+                                            fa1_d-=6
+                                            fb1_d-=6
+                                            fc1_d-=6
+                                            fd1_d-=6
+                                            fe1_d-=6
+                                            ff1_d-=6
+                                            fa1_d+=1*len(vertices3d)
+                                            fb1_d+=1*len(vertices3d)
+                                            fc1_d+=1*len(vertices3d)
+                                            fd1_d+=1*len(vertices3d)
+                                            fe1_d+=1*len(vertices3d)
+                                            ff1_d+=1*len(vertices3d)
+                                                
                                             faces3d.append([fa1_d,fb1_d,fc1_d])
                                             faces3d.append([fd1_d,fe1_d,ff1_d])
+                                        
                                     
                                     
 
