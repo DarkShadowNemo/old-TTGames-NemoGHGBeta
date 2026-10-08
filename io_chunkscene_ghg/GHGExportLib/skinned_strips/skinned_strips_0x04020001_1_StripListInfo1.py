@@ -9,6 +9,8 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
     byte1=0
     for pbone in ob.pose.bones:
         byte1+=16
+    FileSizeTexture1=0
+    FileSizeTexture2=0
     FileSize = 0
     FileSize2 = 0
     FileSize3 = 0
@@ -57,11 +59,23 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
     FileSize44 = 0
     f.write(pack("<I", FileSize))
     f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
-    f.write(pack("<I", 0))
+    if len(bpy.data.images) != 0:
+        f.write(pack("<I", 144))
+        f.write(pack("<I", FileSizeTexture1))
+    elif len(bpy.data.images) == 0:
+        f.write(pack("<I", 0))
+        f.write(pack("<I", 0))
     f.write(pack("<I", len(bpy.data.meshes)))
-    f.write(pack("<I", 144))
-    f.write(pack("<I", len(ob.pose.bones)))
+    if len(bpy.data.images) == 0:
+        f.write(pack("<I", 144))
+    elif len(bpy.data.images) != 0:
+        f.write(pack("<I", FileSizeTexture2))
+    if len(bpy.data.armatures) == 0:
+        f.write(pack("<I", 1))
+    elif len(bpy.data.armatures) == 1:
+        f.write(pack("<I", len(ob.pose.bones)))
+    elif len(bpy.data.armatures) != 0:
+        f.write(pack("<I", 1))
     f.write(pack("<I", FileSize3))
     f.write(pack("<I", FileSize4))
     f.write(pack("<I", FileSize5))
@@ -88,63 +102,87 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
     test3=0
     test4=0
     size1=0
-    
-    for i, msh in enumerate(bpy.data.meshes):
-        f.write(pack("<I", size1+144+16+test2))
-        test2+=464
+
+    size1a=0
+
+    if len(bpy.data.images) == 0:
         
-    pad_len = f.tell() % 16
-    if pad_len > 0:
-        f.write(b"\0" * (16-pad_len))
-        size2 = f.seek(size1,1)
-        f.seek(0)
-        f.seek(144,1)
+    
         for i, msh in enumerate(bpy.data.meshes):
-            f.write(pack("<I", size2+test3))
-            test3+=464
+            f.write(pack("<I", size1+144+16+test2))
+            test2+=464
             
-        pad_len77 = f.tell() % 16
-        if pad_len77 > 0:
-            f.write(b"\0" * (16-pad_len77))
+        pad_len = f.tell() % 16
+        if pad_len > 0:
+            f.write(b"\0" * (16-pad_len))
+            size2 = f.seek(size1,1)
+            f.seek(0)
+            f.seek(144,1)
+            for i, msh in enumerate(bpy.data.meshes):
+                f.write(pack("<I", size2+test3))
+                test3+=464
+                
+            pad_len77 = f.tell() % 16
+            if pad_len77 > 0:
+                f.write(b"\0" * (16-pad_len77))
+    elif len(bpy.data.images) != 0:
+        for i, (msh, img) in enumerate(zip(bpy.data.meshes, bpy.data.images)):
+            if img.size[1] == 256 and img.size[0] == 256:
+                f.write(pack("<I", 160))
+                f.write(pack("<I", 0))
+                f.write(pack("<I", 0))
+                f.write(pack("<I", 0))
+                break
+        for i, (msh, img) in enumerate(zip(bpy.data.meshes, bpy.data.images)):
+            if img.size[1] == 256 and img.size[0] == 256:
+                f.write(pack("<H", 256))
+                f.write(pack("<H", 1))
+                f.write(pack("<H", 256))
+                f.write(pack("<H", 0))
+                f.write(pack("<I", 1024))
+                break
 
-    matID=0
+    if len(bpy.data.images) == 0:
+        
 
-    for i, mat in enumerate(bpy.data.meshes):
-        for i in range(364):
+        matID=0
+
+        for i, mat in enumerate(bpy.data.meshes):
+            for i in range(364):
+                f.write(pack("B", 0))
+            f.write(pack("<f", 0.418045550584793))
+            f.write(pack("<I", 19))
+            for i in range(12):
+                f.write(pack("B", 0))
+            f.write(pack("<f", 0.5))
+            f.write(pack("<f", 0.5))
+            f.write(pack("<f", 0.5))
+            for i in range(20):
+                f.write(pack("B", 0))
+            f.write(pack("<f", 0.991739988327026))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", matID+1))
+            f.write(pack("B", 0xA6))
+            f.write(pack("B", 255))
             f.write(pack("B", 0))
-        f.write(pack("<f", 0.418045550584793))
-        f.write(pack("<I", 19))
-        for i in range(12):
             f.write(pack("B", 0))
-        f.write(pack("<f", 0.5))
-        f.write(pack("<f", 0.5))
-        f.write(pack("<f", 0.5))
-        for i in range(20):
+
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
+            f.write(pack("<I", 0))
             f.write(pack("B", 0))
-        f.write(pack("<f", 0.991739988327026))
-        f.write(pack("<I", 0))
-        f.write(pack("<I", matID+1))
-        f.write(pack("B", 0xA6))
-        f.write(pack("B", 255))
-        f.write(pack("B", 0))
-        f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0xFF))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
+            f.write(pack("B", 0))
 
-        f.write(pack("<I", 0))
-        f.write(pack("<I", 0))
-        f.write(pack("<I", 0))
-        f.write(pack("<I", 0))
-        f.write(pack("<I", 0))
-        f.write(pack("<I", 0))
-        f.write(pack("B", 0))
-        f.write(pack("B", 0))
-        f.write(pack("B", 0))
-        f.write(pack("B", 0xFF))
-        f.write(pack("B", 0))
-        f.write(pack("B", 0))
-        f.write(pack("B", 0))
-        f.write(pack("B", 0))
-
-        matID+=1
+            matID+=1
 
     namedt = f.seek(FileSize7,1)
 
@@ -8438,6 +8476,114 @@ def ghg_skinned_0x040200010380XX6C_STRIPLISTINFO(f, filepath):
                     f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
                 elif faces0000k[0:29] == [[0, 1, 2], [4, 5, 6], [4, 3, 5], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [10, 11, 12], [10, 9, 11], [14, 15, 16], [14, 13, 15]]:
                     f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [4, 5, 6], [4, 3, 5], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [10, 11, 12], [10, 9, 11], [12, 11, 13], [14, 15, 16]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 1, 3], [4, 5, 6], [8, 9, 10], [8, 7, 9], [10, 11, 12], [10, 9, 11], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 1, 3], [4, 5, 6], [6, 5, 7], [8, 9, 10], [10, 11, 12], [10, 9, 11], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 1, 3], [4, 5, 6], [6, 7, 8], [6, 5, 7], [10, 11, 12], [10, 9, 11], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 1, 3], [4, 5, 6], [6, 7, 8], [6, 5, 7], [8, 7, 9], [10, 11, 12], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 1, 3], [4, 5, 6], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 1, 3], [4, 5, 6], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [10, 9, 11], [12, 13, 14], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 1, 3], [4, 5, 6], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [10, 11, 12], [10, 9, 11], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 1, 3], [4, 5, 6], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [10, 11, 12], [10, 9, 11], [12, 11, 13], [14, 15, 16]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [6, 5, 7], [8, 9, 10], [10, 11, 12], [10, 9, 11], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [6, 7, 8], [6, 5, 7], [10, 11, 12], [10, 9, 11], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [6, 7, 8], [6, 5, 7], [8, 7, 9], [10, 11, 12], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [6, 7, 8], [6, 5, 7], [8, 7, 9], [8, 9, 10], [12, 11, 13], [12, 13, 14], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [10, 9, 11], [12, 13, 14], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [10, 11, 12], [10, 9, 11], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [6, 7, 8], [6, 5, 7], [8, 9, 10], [8, 7, 9], [10, 11, 12], [10, 9, 11], [12, 11, 13], [14, 15, 16]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [4, 3, 5], [6, 7, 8], [10, 11, 12], [10, 9, 11], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [4, 3, 5], [6, 7, 8], [8, 7, 9], [10, 11, 12], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [4, 3, 5], [6, 7, 8], [8, 9, 10], [8, 7, 9], [12, 13, 14], [12, 11, 13], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 1));f.write(pack("B", 128));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1);f.seek(28,1);f.write(pack("B", 0));f.write(pack("B", 0));f.seek(2,1)
+                elif faces0000k[0:29] == [[0, 1, 2], [2, 3, 4], [2, 1, 3], [4, 3, 5], [6, 7, 8], [8, 9, 10], [8, 7, 9], [10, 9, 11], [12, 13, 14], [14, 15, 16], [14, 13, 15]]:
+                    f.seek(-544,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 1))
+                    f.write(pack("B", 128))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 1))
+                    f.write(pack("B", 128))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 1))
+                    f.write(pack("B", 128))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 1))
+                    f.write(pack("B", 128))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 1))
+                    f.write(pack("B", 128))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 1))
+                    f.write(pack("B", 128))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
+                    f.seek(12,1)
+                    f.write(pack("B", 0))
+                    f.write(pack("B", 0))
+                    f.seek(2,1)
             f.write(pack("<I", 16777473))
             f.write(pack("<I", 1610907653))
             f.write(pack("<f", 1))
